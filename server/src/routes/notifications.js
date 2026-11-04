@@ -3,10 +3,8 @@ const router = express.Router();
 const notificationService = require('../services/notificationService');
 const db = require('../config/db');
 
-// In-memory cache for recent Good Notes for instant retrieval
 const goodNotesCache = new Map();
 
-// 1. Dispatch Order Notifications & Generate Atelier Good Note
 router.post('/order-dispatch', async (req, res) => {
   try {
     const { order, customer, items, shippingAddress } = req.body;
@@ -36,17 +34,14 @@ router.post('/order-dispatch', async (req, res) => {
   }
 });
 
-// 2. View/Download Atelier Good Note by Order Number (Printable Web Dossier)
 router.get('/good-note/:orderNumber', async (req, res) => {
   const { orderNumber } = req.params;
 
-  // 1. Check in-memory cache
   if (goodNotesCache.has(orderNumber)) {
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     return res.send(goodNotesCache.get(orderNumber));
   }
 
-  // 2. Try looking up in PostgreSQL database if available
   try {
     const orderRes = await db.query(
       'SELECT * FROM orders WHERE order_number = $1 LIMIT 1',
@@ -81,10 +76,8 @@ router.get('/good-note/:orderNumber', async (req, res) => {
       return res.send(html);
     }
   } catch (e) {
-    // ignore db error, proceed to fallback
   }
 
-  // Fallback demo Good Note
   const { buildAtelierGoodNoteHtml } = require('../templates/goodNoteTemplate');
   const fallbackHtml = buildAtelierGoodNoteHtml({
     orderNumber,
@@ -96,7 +89,6 @@ router.get('/good-note/:orderNumber', async (req, res) => {
   res.send(fallbackHtml);
 });
 
-// 3. Welcome Note Dispatch (Newsletter / New Account)
 router.post('/welcome', async (req, res) => {
   try {
     const { email, customerName, promoCode } = req.body;
@@ -117,7 +109,6 @@ router.post('/welcome', async (req, res) => {
   }
 });
 
-// 4. Contact Inquiry Auto-Acknowledgment
 router.post('/inquiry-acknowledgment', async (req, res) => {
   try {
     const { name, email, phone, subject } = req.body;

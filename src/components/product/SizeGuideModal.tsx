@@ -57,7 +57,6 @@ export const SizeGuideModal: React.FC = () => {
             DUKAAN pieces are cut with intentional ease, dropping slightly off the shoulder to celebrate natural drape. For an editorial, relaxed silhouette, select your true size. For a more conventional fitted look, size down one step.
           </p>
 
-          {/* Unit Toggle */}
           <div className="flex items-center justify-end mt-4 mb-2 gap-2 text-xs">
             <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-medium mr-1">Units:</span>
             <div className="inline-flex p-0.5 bg-[#FAF9F6] border border-[#141414]/15 rounded-full">
@@ -84,7 +83,6 @@ export const SizeGuideModal: React.FC = () => {
             </div>
           </div>
 
-          {/* Table */}
           <div className="overflow-x-auto border border-[#141414]/10 bg-white">
             <table className="w-full text-left text-xs">
               <thead className="bg-[#FAF9F6] border-b border-[#141414]/10">

@@ -32,7 +32,6 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         wrapperClassName
       )}
     >
-      {/* Skeleton / Placeholder shimmer */}
       {!isLoaded && !hasError && (
         <div className="absolute inset-0 bg-[#E8E3D9] animate-pulse pointer-events-none" />
       )}

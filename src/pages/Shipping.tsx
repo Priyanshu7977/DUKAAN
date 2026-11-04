@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 export const Shipping: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Shipping & Delivery' }]} className="mb-2" />
@@ -22,9 +21,7 @@ export const Shipping: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6">
-        {/* Key Highlights Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
@@ -57,7 +54,6 @@ export const Shipping: React.FC = () => {
           </div>
         </div>
 
-        {/* Delivery Rates & Timeline Table */}
         <div className="space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-1">
             <div>
@@ -103,7 +99,6 @@ export const Shipping: React.FC = () => {
           </div>
         </div>
 
-        {/* Dispatch Rules & FAQs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
           <div className="bg-white p-5 border border-[#141414]/8 space-y-2">
             <h4 className="font-serif text-base text-[#141414]">Order Tracking</h4>
@@ -120,7 +115,6 @@ export const Shipping: React.FC = () => {
           </div>
         </div>
 
-        {/* Contact Banner */}
         <div className="p-6 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Need help with an ongoing delivery?</h4>

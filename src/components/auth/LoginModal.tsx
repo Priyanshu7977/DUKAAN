@@ -19,7 +19,6 @@ export const LoginModal: React.FC = () => {
   const [attempts, setAttempts] = useState(0);
   const [resetSent, setResetSent] = useState(false);
 
-  // 30-second automatic countdown for OTP resend
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (otpStep && countdown > 0) {
@@ -34,7 +33,6 @@ export const LoginModal: React.FC = () => {
     e.preventDefault();
     setErrorMessage('');
 
-    // Rate-limiting defense: max 4 requests per session before lock
     if (attempts >= 4) {
       setErrorMessage('Too many OTP attempts. For security, please wait 5 minutes before trying again.');
       return;
@@ -139,7 +137,6 @@ export const LoginModal: React.FC = () => {
         className="relative w-full max-w-md bg-white border border-[#141414]/10 shadow-[0_25px_60px_rgba(0,0,0,0.25)] rounded-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close (Cut) Button - User can cut that and see whole website */}
         <button
           onClick={closeLoginModal}
           className="absolute top-4 right-4 z-20 p-2 text-[#73706B] hover:text-[#141414] hover:bg-[#F3EEEB] rounded-full transition-colors"
@@ -148,7 +145,6 @@ export const LoginModal: React.FC = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Top Luxury Banner */}
         <div className="bg-[#FAF8F5] border-b border-[#141414]/8 p-6 text-center space-y-1">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[10px] uppercase tracking-widest font-semibold mb-1">
             <Sparkles className="w-3 h-3" />
@@ -162,7 +158,6 @@ export const LoginModal: React.FC = () => {
           </p>
         </div>
 
-        {/* Tab Toggle: Phone OTP vs Email */}
         <div className="flex border-b border-[#141414]/8 bg-[#FDFCFB]">
           <button
             type="button"
@@ -196,7 +191,6 @@ export const LoginModal: React.FC = () => {
           </button>
         </div>
 
-        {/* Error Alert if any */}
         {errorMessage && (
           <div className="mx-6 mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700 flex items-start gap-2">
             <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
@@ -204,7 +198,6 @@ export const LoginModal: React.FC = () => {
           </div>
         )}
 
-        {/* Form Body */}
         <div className="p-6 space-y-4">
           {authMode === 'phone' ? (
             !otpStep ? (
@@ -386,7 +379,6 @@ export const LoginModal: React.FC = () => {
               </button>
             </form>
           ) : (
-            /* Forgot Password Flow */
             <div className="space-y-4">
               <div className="space-y-1">
                 <h3 className="font-serif text-lg text-[#141414]">Reset Your Password</h3>
@@ -454,7 +446,6 @@ export const LoginModal: React.FC = () => {
             </div>
           )}
 
-          {/* Social One-Click Login */}
           <div className="relative pt-2">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-[#141414]/10" />
@@ -491,7 +482,6 @@ export const LoginModal: React.FC = () => {
           </button>
         </div>
 
-        {/* Footer: Dismiss & Browse as Guest ("He can cut that an can see whole website") */}
         <div className="bg-[#FAF8F5] border-t border-[#141414]/8 px-6 py-3 text-center">
           <button
             type="button"

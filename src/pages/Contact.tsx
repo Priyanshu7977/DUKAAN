@@ -18,12 +18,10 @@ export const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Strict text only handler: prevents any numbers from being typed
   const handleNameChange = (val: string) => {
     setForm((prev) => ({ ...prev, name: val.replace(/[0-9]/g, '') }));
   };
 
-  // Strict number only handler: prevents any text/letters from being typed
   const handlePhoneChange = (val: string) => {
     setForm((prev) => ({ ...prev, phone: val.replace(/\D/g, '').slice(0, 10) }));
   };
@@ -42,7 +40,6 @@ export const Contact: React.FC = () => {
 
     setIsSubmitting(true);
 
-    // Multi-channel inquiry auto-reply dispatch
     fetch('/api/notifications/inquiry-acknowledgment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -64,7 +61,6 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Help & Contact' }]} className="mb-2" />
@@ -80,15 +76,12 @@ export const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Grid: Form (7 cols) + Contact Info (5 cols) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Form */}
           <div className="lg:col-span-7">
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 sm:p-8 border border-[#141414]/8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Name (Letters only) */}
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-medium mb-1">
                       Full Name (Letters only) *
@@ -103,7 +96,6 @@ export const Contact: React.FC = () => {
                     />
                   </div>
 
-                  {/* Phone (Numbers only) */}
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-medium mb-1">
                       Mobile Number (Numbers only)
@@ -124,7 +116,6 @@ export const Contact: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Email */}
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-medium mb-1">
                       Email Address *
@@ -139,7 +130,6 @@ export const Contact: React.FC = () => {
                     />
                   </div>
 
-                  {/* Inquiry Topic */}
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-medium mb-1">
                       How can we help you?
@@ -229,9 +219,7 @@ export const Contact: React.FC = () => {
             )}
           </div>
 
-          {/* Contact Direct Info */}
           <div className="lg:col-span-5 space-y-5">
-            {/* Phone & WhatsApp Card */}
             <div className="bg-white p-6 border border-[#141414]/8 space-y-3">
               <div className="flex items-center gap-2.5 text-[#141414]">
                 <Phone className="w-4 h-4 text-[#A7654A]" />
@@ -258,7 +246,6 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Email Card */}
             <div className="bg-white p-6 border border-[#141414]/8 space-y-3">
               <div className="flex items-center gap-2.5 text-[#141414]">
                 <Mail className="w-4 h-4 text-[#A7654A]" />
@@ -277,7 +264,6 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Delivery & Returns Assurance */}
             <div className="bg-[#FAF9F6] p-5 border border-[#141414]/10 space-y-2 text-xs">
               <div className="flex items-center gap-2 text-[#141414] font-medium">
                 <Clock className="w-4 h-4 text-[#A7654A]" />

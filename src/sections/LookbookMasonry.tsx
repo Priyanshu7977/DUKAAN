@@ -52,7 +52,6 @@ export const LookbookMasonry: React.FC = () => {
           </Link>
         </div>
 
-        {/* 4-Image Editorial Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {looks.map((look) => (
             <Link

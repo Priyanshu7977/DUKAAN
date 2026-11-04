@@ -5,7 +5,6 @@ import { Mail, Phone } from 'lucide-react';
 export const Terms: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Breadcrumbs items={[{ label: 'Client Covenant & Terms of Service' }]} className="mb-2" />
@@ -21,7 +20,6 @@ export const Terms: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 space-y-6 text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
         <div className="space-y-2.5">
           <h3 className="font-serif text-lg sm:text-xl text-[#141414]">1. Order Placement & Contract Formation</h3>
@@ -44,7 +42,6 @@ export const Terms: React.FC = () => {
           </p>
         </div>
 
-        {/* Section 5: Official Contact Info */}
         <div className="space-y-2.5 p-5 bg-white border border-[#141414]/8">
           <h3 className="font-serif text-base text-[#141414]">4. Legal Notices & Corporate Inquiries</h3>
           <p className="text-xs text-[#73706B]">

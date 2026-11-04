@@ -49,7 +49,6 @@ export const QuickViewModal: React.FC = () => {
           exit={{ opacity: 0, scale: 0.96 }}
           className="bg-white border border-[#141414]/10 shadow-2xl max-w-3xl w-full my-8 relative overflow-hidden rounded-2xl grid grid-cols-1 md:grid-cols-2"
         >
-          {/* Close button */}
           <button
             onClick={closeQuickView}
             className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-[#141414]/10 shadow-xs flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all"
@@ -58,7 +57,6 @@ export const QuickViewModal: React.FC = () => {
             <X className="w-4 h-4" />
           </button>
 
-          {/* Left Column: Image Gallery */}
           <div className="relative bg-[#ECE7DD] flex flex-col justify-between p-4">
             <div className="aspect-[3/4] overflow-hidden">
               <img
@@ -68,7 +66,6 @@ export const QuickViewModal: React.FC = () => {
               />
             </div>
 
-            {/* Thumbnail dots/selectors */}
             {product.images.length > 1 && (
               <div className="flex gap-2 mt-3 justify-center">
                 {product.images.slice(0, 4).map((img, idx) => (
@@ -86,7 +83,6 @@ export const QuickViewModal: React.FC = () => {
             )}
           </div>
 
-          {/* Right Column: Details & Actions */}
           <div className="p-5 sm:p-6 flex flex-col justify-between">
             <div>
               <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold">
@@ -102,7 +98,6 @@ export const QuickViewModal: React.FC = () => {
                 {product.description}
               </p>
 
-              {/* Color Selection */}
               <div className="mt-4 pt-3 border-t border-[#141414]/8">
                 <div className="flex justify-between items-center text-xs mb-1.5">
                   <span className="uppercase tracking-wider text-[#73706B] text-[10px]">Shade: {selectedColor}</span>
@@ -126,7 +121,6 @@ export const QuickViewModal: React.FC = () => {
                 </div>
               </div>
 
-              {/* Size Selection */}
               <div className="mt-3.5 pt-3 border-t border-[#141414]/8">
                 <div className="flex justify-between items-center text-xs mb-1.5">
                   <span className="uppercase tracking-wider text-[#73706B] text-[10px]">Size</span>
@@ -158,7 +152,6 @@ export const QuickViewModal: React.FC = () => {
               </div>
             </div>
 
-            {/* Actions */}
             <div className="mt-5 pt-3 border-t border-[#141414]/8 space-y-2">
               <button
                 onClick={handleAddToBag}

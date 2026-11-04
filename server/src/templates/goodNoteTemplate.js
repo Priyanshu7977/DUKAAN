@@ -1,8 +1,3 @@
-/**
- * DUKAAN Atelier - Luxury Digital Packing Slip & Good Note Generator
- * Generates an archival, letterpress-style certificate of authenticity and personal note.
- */
-
 function buildAtelierGoodNoteHtml(order) {
   const {
     orderNumber = 'DUK-IN-000000',

@@ -14,7 +14,6 @@ export const MobileMenu: React.FC = () => {
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex flex-col bg-[#FAF9F6] overflow-y-auto">
-        {/* Header */}
         <div className="px-5 py-4 flex items-center justify-between border-b border-[#141414]/8 bg-white">
           <Link
             to="/"
@@ -32,7 +31,6 @@ export const MobileMenu: React.FC = () => {
           </button>
         </div>
 
-        {/* Quick Search Action */}
         <div className="p-5 border-b border-[#141414]/8 bg-white">
           <button
             onClick={() => {
@@ -49,7 +47,6 @@ export const MobileMenu: React.FC = () => {
           </button>
         </div>
 
-        {/* Primary Links */}
         <div className="px-5 py-6 flex-1">
           <ul className="space-y-4">
             {[
@@ -129,7 +126,6 @@ export const MobileMenu: React.FC = () => {
           </div>
         </div>
 
-        {/* Footer info in drawer */}
         <div className="p-4 bg-white border-t border-[#141414]/8 text-[11px] text-[#73706B] flex items-center justify-between">
           <span>Free Delivery Across India on ₹1,999+</span>
           <span>© DUKAAN</span>

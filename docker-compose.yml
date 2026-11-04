@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # 1. NGINX Reverse Proxy & Upstream Load Balancer (Entrypoint)
   load-balancer:
     image: nginx:alpine
     container_name: dukaan-load-balancer
@@ -18,7 +17,6 @@ services:
     networks:
       - dukaan-network
 
-  # 2. Production React/Vite Frontend Container
   frontend:
     build:
       context: .
@@ -28,7 +26,6 @@ services:
     networks:
       - dukaan-network
 
-  # 3. Node.js Express Clustered Instance 1
   api-1:
     build:
       context: ./server
@@ -48,7 +45,6 @@ services:
     networks:
       - dukaan-network
 
-  # 4. Node.js Express Clustered Instance 2
   api-2:
     build:
       context: ./server
@@ -68,7 +64,6 @@ services:
     networks:
       - dukaan-network
 
-  # 5. PostgreSQL Database with Row Level Security (RLS)
   postgres:
     image: postgres:16-alpine
     container_name: dukaan-postgres-db
@@ -90,7 +85,6 @@ services:
     networks:
       - dukaan-network
 
-  # 6. Automated Database Backup Service (runs every 24 hours)
   db-backup:
     image: postgres:16-alpine
     container_name: dukaan-db-backup-cron

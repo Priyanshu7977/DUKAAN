@@ -13,9 +13,6 @@ env:
   BACKEND_IMAGE_NAME: ${{ github.repository }}-backend
 
 jobs:
-  # ========================================================
-  # Stage 1: Code Quality, Lint & Build Verification
-  # ========================================================
   verify-and-test:
     name: 🧪 1. Lint, Typecheck & Build
     runs-on: ubuntu-latest
@@ -43,9 +40,6 @@ jobs:
         working-directory: ./server
         run: node -c src/index.js
 
-  # ========================================================
-  # Stage 2: Security & Dependency Vulnerability Audit
-  # ========================================================
   security-audit:
     name: 🛡️ 2. Security & Vulnerability Scan
     runs-on: ubuntu-latest
@@ -66,9 +60,6 @@ jobs:
         working-directory: ./server
         run: npm audit --audit-level=high || true
 
-  # ========================================================
-  # Stage 3: Validate Kubernetes Manifests Syntax & Schema
-  # ========================================================
   validate-k8s:
     name: ☸️ 3. Validate Kubernetes Manifests
     runs-on: ubuntu-latest
@@ -88,9 +79,6 @@ jobs:
           kubectl kustomize k8s/ > /dev/null
           echo "✓ All Kubernetes manifests are syntactically valid and properly ordered!"
 
-  # ========================================================
-  # Stage 4: Docker Multi-Stage Build & Container Registry Push
-  # ========================================================
   build-and-push-docker:
     name: 🐳 4. Build & Push Docker Images
     runs-on: ubuntu-latest
@@ -116,7 +104,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Build & Push Frontend Image
       - name: Extract Frontend Docker Metadata
         id: meta-frontend
         uses: docker/metadata-action@v5
@@ -137,7 +124,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Build & Push Backend Image
       - name: Extract Backend Docker Metadata
         id: meta-backend
         uses: docker/metadata-action@v5
@@ -158,9 +144,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # ========================================================
-  # Stage 5: Zero-Downtime Rolling Kubernetes Deployment
-  # ========================================================
   deploy-production:
     name: 🚀 5. Zero-Downtime Kubernetes Deployment
     runs-on: ubuntu-latest
@@ -187,7 +170,7 @@ jobs:
         run: |
           echo "Applying Kubernetes manifests in correct sequential order..."
           kubectl apply -k k8s/
-          
+
           echo "Awaiting zero-downtime rolling update status..."
           kubectl rollout status deployment/dukaan-backend -n dukaan-production --timeout=180s
           kubectl rollout status deployment/dukaan-frontend -n dukaan-production --timeout=180s

@@ -1,8 +1,3 @@
-/**
- * DUKAAN - Luxury Email Notification Templates
- * Styled for universal email clients (Apple Mail, Gmail, Outlook, iOS, Android)
- */
-
 function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddress }) {
   const itemsList = (items || []).map((it) => `
     <tr>
@@ -42,7 +37,7 @@ function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddre
       <td style="padding: 32px;">
         <span style="display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #A7654A; font-weight: 600; margin-bottom: 8px;">Order Confirmed • #${order.orderNumber}</span>
         <h2 style="margin: 0 0 16px 0; font-family: 'Times New Roman', serif; font-size: 24px; color: #141414; font-weight: normal;">Your pieces are being prepared, ${customer.fullName || 'Patron'}.</h2>
-        
+
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 24px 0;">
           We have received your order and our tailors have begun hand-checking, pressing, and packaging your garments in natural protective kraft dust bags at our Mumbai Atelier.
         </p>
@@ -142,7 +137,7 @@ function buildWelcomeEmailHtml({ customerName = 'Patron', promoCode = 'WELCOME50
       <td style="padding: 36px 32px;">
         <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #A7654A; font-weight: 600;">Welcome to the Atelier</span>
         <h2 style="margin: 8px 0 16px 0; font-family: 'Times New Roman', serif; font-size: 26px; font-weight: normal;">Greetings, ${customerName}.</h2>
-        
+
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 20px 0;">
           We are honored to welcome you. At DUKAAN, we discard fast-fashion synthetics and disposable trends. Every silhouette in our wardrobe is built with pure European flax linen, breathable double-gauze cotton, and relaxed dropped geometries.
         </p>
@@ -192,7 +187,7 @@ function buildContactAcknowledgmentHtml({ customerName, ticketId, subject }) {
       <td style="padding: 32px;">
         <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #A7654A; font-weight: 600;">Ticket Coordinate: #${ticketId}</span>
         <h2 style="margin: 8px 0 16px 0; font-family: 'Times New Roman', serif; font-size: 22px; font-weight: normal;">Inquiry Received, ${customerName}.</h2>
-        
+
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 16px 0;">
           Thank you for reaching out regarding <strong>"${subject || 'Atelier Assistance'}"</strong>. Your request has been assigned to our primary customer team.
         </p>

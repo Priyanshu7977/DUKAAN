@@ -12,14 +12,11 @@ export const Skeleton: React.FC<{ className?: string }> = ({ className = '' }) =
 export const ProductCardSkeleton: React.FC = () => {
   return (
     <div className="space-y-3">
-      {/* Thumbnail Aspect Ratio 3:4 */}
       <Skeleton className="aspect-[3/4] w-full" />
-      {/* Title */}
       <div className="space-y-1.5">
         <Skeleton className="h-3 w-1/3" />
         <Skeleton className="h-4 w-4/5" />
       </div>
-      {/* Price */}
       <Skeleton className="h-4 w-1/4" />
     </div>
   );

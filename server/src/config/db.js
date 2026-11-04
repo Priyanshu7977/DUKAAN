@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/dukaan_db',
-  max: 20, // Max clients in connection pool
+  max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 5000,
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
@@ -13,10 +13,6 @@ pool.on('error', (err) => {
   console.error('[PostgreSQL] Unexpected error on idle client:', err);
 });
 
-/**
- * Execute a query with Row Level Security (RLS) context set.
- * Ensures the database enforces user isolation at engine level.
- */
 async function queryWithRLS(userId, role, text, params) {
   const client = await pool.connect();
   try {

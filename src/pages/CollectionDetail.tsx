@@ -18,7 +18,6 @@ export const CollectionDetail: React.FC = () => {
   );
   const otherCollections = COLLECTIONS.filter((c) => c.slug !== collection.slug);
 
-  // Pagination state: Desktop = 16 images, Mobile = 8 images
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
@@ -32,7 +31,6 @@ export const CollectionDetail: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Reset page when collection changes
   useEffect(() => {
     setCurrentPage(1);
   }, [collection.slug]);
@@ -40,7 +38,6 @@ export const CollectionDetail: React.FC = () => {
   const pageSize = isMobile ? 8 : 16;
   const totalPages = Math.max(1, Math.ceil(collectionProducts.length / pageSize));
 
-  // Ensure current page does not exceed total pages
   useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(totalPages);
@@ -64,7 +61,6 @@ export const CollectionDetail: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Hero Header - High Fashion Editorial */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-3">
@@ -94,7 +90,6 @@ export const CollectionDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* Editorial Narrative & Color Palette Strip */}
       <section className="py-8 sm:py-10 bg-white border-b border-[#141414]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
@@ -112,7 +107,6 @@ export const CollectionDetail: React.FC = () => {
                 {collection.description}
               </p>
 
-              {/* Palette swatches */}
               <div className="pt-2">
                 <span className="text-[10px] uppercase tracking-widest text-[#73706B] block mb-1.5 font-medium">
                   Material Color Spectrum
@@ -131,7 +125,6 @@ export const CollectionDetail: React.FC = () => {
               </div>
             </div>
 
-            {/* Editorial Secondary Image */}
             <div className="lg:col-span-5">
               <div className="overflow-hidden bg-[#ECE7DD] aspect-[3/4] max-h-[380px] rounded-sm">
                 <ImageWithFallback
@@ -145,7 +138,6 @@ export const CollectionDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* Collection Garments Grid with Desktop (16) & Mobile (8) Pagination */}
       <section ref={gridRef} className="py-8 sm:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-3 mb-6 pb-3 border-b border-[#141414]/8">
           <div>
@@ -181,7 +173,6 @@ export const CollectionDetail: React.FC = () => {
               ))}
             </div>
 
-            {/* Luxury Pagination Controls */}
             {totalPages > 1 && (
               <div className="mt-10 sm:mt-12 pt-6 border-t border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <span className="text-xs text-[#73706B]">
@@ -189,7 +180,6 @@ export const CollectionDetail: React.FC = () => {
                 </span>
 
                 <div className="flex items-center gap-1.5 sm:gap-2">
-                  {/* Previous Button */}
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
@@ -200,10 +190,8 @@ export const CollectionDetail: React.FC = () => {
                     <span className="hidden sm:inline text-[11px] uppercase tracking-wider font-medium">Prev</span>
                   </button>
 
-                  {/* Page Numbers */}
                   {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
                     const isCurrent = pageNum === currentPage;
-                    // For many pages, show current, first, last, and immediate siblings
                     if (
                       totalPages > 7 &&
                       pageNum !== 1 &&
@@ -237,7 +225,6 @@ export const CollectionDetail: React.FC = () => {
                     );
                   })}
 
-                  {/* Next Button */}
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
@@ -258,7 +245,6 @@ export const CollectionDetail: React.FC = () => {
         )}
       </section>
 
-      {/* Explore Other Collections */}
       <section className="border-t border-[#141414]/8 bg-white py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-4">

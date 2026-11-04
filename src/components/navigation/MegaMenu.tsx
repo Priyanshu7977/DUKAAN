@@ -23,7 +23,6 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
         onMouseLeave={onClose}
         className="absolute top-full left-4 right-4 mt-2 mx-auto max-w-5xl w-full bg-white border border-[#141414]/12 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.14)] py-6 px-8 z-50 pointer-events-auto before:content-[''] before:absolute before:-top-3 before:inset-x-0 before:h-4"
       >
-        {/* Top bar with category badge & quick close */}
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#141414]/8">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#A7654A]" />
@@ -41,7 +40,6 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
         </div>
 
         <div className="grid grid-cols-12 gap-6 lg:gap-8">
-          {/* Column 1: Core Garment Categories */}
           <div className="col-span-4 space-y-2">
             <span className="text-[10px] uppercase tracking-[0.22em] text-[#73706B] block font-semibold mb-2">
               Categories
@@ -100,7 +98,6 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
             </ul>
           </div>
 
-          {/* Column 2: Editions / Collections */}
           <div className="col-span-4 space-y-2 border-l border-[#141414]/8 pl-6">
             <span className="text-[10px] uppercase tracking-[0.22em] text-[#73706B] block font-semibold mb-2">
               Editions Archive
@@ -126,7 +123,6 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
             </ul>
           </div>
 
-          {/* Column 3: Visual Campaign Feature */}
           <div className="col-span-4 border-l border-[#141414]/8 pl-6 flex flex-col justify-between">
             <Link
               to="/collections/solstice-atelier"

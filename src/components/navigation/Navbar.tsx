@@ -22,7 +22,6 @@ export const Navbar: React.FC = () => {
   const cartCount = getItemCount();
   const wishlistCount = wishlistItems.length;
 
-  // Close mega menu on route change
   useEffect(() => {
     setActiveMegaMenu(null);
   }, [location.pathname]);
@@ -44,7 +43,6 @@ export const Navbar: React.FC = () => {
           'px-5 sm:px-8 py-2.5 sm:py-3 flex items-center justify-between'
         )}
       >
-        {/* FULL LEFT: Brand Wordmark Logo */}
         <div className="flex items-center shrink-0">
           <Link
             to="/"
@@ -57,9 +55,7 @@ export const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* REST ON RIGHT SIDE: Desktop Nav Links + Actions + Mobile Hamburger */}
         <div className="flex items-center justify-end gap-3 sm:gap-6">
-          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-6 text-[11px] uppercase tracking-[0.18em] font-medium">
             {navLinks.map((link) => (
               <div
@@ -85,15 +81,12 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Vertical Divider for Desktop */}
           <div className="hidden lg:block h-4 w-[1px] bg-[#141414]/15" />
 
-          {/* Action Icons (Search, Wishlist, Bag, and Mobile Hamburger on far right) */}
           <div
             className="flex items-center gap-1.5 sm:gap-2.5"
             onMouseEnter={() => setActiveMegaMenu(null)}
           >
-            {/* Search */}
             <button
               onClick={openSearch}
               className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"
@@ -102,7 +95,6 @@ export const Navbar: React.FC = () => {
               <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
             </button>
 
-            {/* Wishlist */}
             <Link
               to="/wishlist"
               className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative"
@@ -116,7 +108,6 @@ export const Navbar: React.FC = () => {
               )}
             </Link>
 
-            {/* User Profile / Login */}
             {isAuthenticated ? (
               <Link
                 to="/profile"
@@ -139,7 +130,6 @@ export const Navbar: React.FC = () => {
               </button>
             )}
 
-            {/* Cart / Bag */}
             <button
               onClick={openCart}
               className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative flex items-center gap-1.5"
@@ -158,7 +148,6 @@ export const Navbar: React.FC = () => {
               </span>
             </button>
 
-            {/* Mobile Hamburger Menu on Full Right */}
             <button
               onClick={openMobileMenu}
               className="lg:hidden p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors ml-0.5"
@@ -170,7 +159,6 @@ export const Navbar: React.FC = () => {
         </div>
       </header>
 
-      {/* Mega Menu Dropdown */}
       <MegaMenu
         isOpen={Boolean(activeMegaMenu)}
         activeMenu={activeMegaMenu}

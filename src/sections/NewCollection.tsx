@@ -7,7 +7,6 @@ export const NewCollection: React.FC = () => {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-[#F3F0E9] border-b border-[#211E1A]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        {/* Section Top Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
           <div>
             <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1.5">
@@ -23,9 +22,7 @@ export const NewCollection: React.FC = () => {
           </p>
         </div>
 
-        {/* Asymmetrical Editorial Composition (Calibrated Screen Fit) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Main Large Image (7 cols desktop, constrained max-height) */}
           <div className="lg:col-span-7">
             <div className="relative group overflow-hidden rounded-2xl bg-[#E8E3D9] max-h-[520px]">
               <ImageWithFallback
@@ -49,9 +46,7 @@ export const NewCollection: React.FC = () => {
             </div>
           </div>
 
-          {/* Supporting Side Column (5 cols desktop) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-            {/* Supporting Detail Image */}
             <div className="relative group overflow-hidden rounded-2xl bg-[#E8E3D9] max-h-[220px]">
               <ImageWithFallback
                 src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131_06d49f6a-e2c0-46a2-871e-12ba8fc4cbde.jpg?v=1775042151"
@@ -64,7 +59,6 @@ export const NewCollection: React.FC = () => {
               </span>
             </div>
 
-            {/* Editorial Copy */}
             <div className="space-y-3.5">
               <div className="border-l-2 border-[#A7654A] pl-4">
                 <blockquote className="font-serif text-base sm:text-lg text-[#211E1A] italic leading-relaxed">
@@ -79,7 +73,6 @@ export const NewCollection: React.FC = () => {
                 Rather than forcing rigid internal structures into the clothes, Solstice balances weight and gravity. Dropped shoulders, expansive pleats, and unlined constructions invite sea breezes while maintaining a clean contour.
               </p>
 
-              {/* Color Swatches */}
               <div className="pt-1">
                 <span className="text-[10px] uppercase tracking-widest text-[#777765] block mb-2 font-medium">
                   Collection Pigments
@@ -104,7 +97,6 @@ export const NewCollection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Explore CTA */}
               <div className="pt-2">
                 <Link
                   to="/collections/solstice-atelier"

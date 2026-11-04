@@ -56,7 +56,7 @@ export interface Product {
 }
 
 export interface CartItem {
-  id: string; // unique combo of product.id + size + color
+  id: string;
   product: Product;
   selectedColor: string;
   selectedSize: string;

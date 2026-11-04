@@ -30,7 +30,6 @@ const HERO_SLIDES: HeroSlide[] = [
 export const HeroCampaign: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-advance slides every 7 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -43,11 +42,6 @@ export const HeroCampaign: React.FC = () => {
 
   return (
     <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden bg-[#141414] flex items-end justify-center pb-8 sm:pb-12 select-none">
-      {/* 
-        Full-Screen Edge-to-Edge Responsive Banners:
-        - Desktop: 1500x1000 landscape banners that fill 100% of the screen with zero white gaps
-        - Mobile: 668x978 vertical portrait banners optimized for smartphones
-      */}
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === currentSlide;
         return (
@@ -77,10 +71,8 @@ export const HeroCampaign: React.FC = () => {
         );
       })}
 
-      {/* Subtle bottom vignette for CTA readability */}
       <div className="absolute inset-x-0 bottom-0 h-44 sm:h-52 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none z-10" />
 
-      {/* Desktop Chevron Controls */}
       <button
         onClick={prevSlide}
         aria-label="Previous Banner"
@@ -97,7 +89,6 @@ export const HeroCampaign: React.FC = () => {
         <ChevronRight className="w-5 h-5" />
       </button>
 
-      {/* Slide Indicator Dots (2 slides only) */}
       <div className="absolute bottom-24 lg:bottom-28 z-20 flex items-center gap-2">
         {HERO_SLIDES.map((slide, idx) => (
           <button
@@ -113,7 +104,6 @@ export const HeroCampaign: React.FC = () => {
         ))}
       </div>
 
-      {/* Floating CTAs - Optimized for Mobile, Tablet & Desktop */}
       <div className="relative z-20 flex flex-row items-center justify-center gap-2.5 sm:gap-4 px-4 w-full max-w-sm sm:max-w-md mx-auto">
         <Link
           to="/shop"

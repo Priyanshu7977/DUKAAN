@@ -37,7 +37,6 @@ export const FAQ: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Help & FAQs' }]} className="mb-3" />
@@ -53,7 +52,6 @@ export const FAQ: React.FC = () => {
             </p>
           </div>
 
-          {/* Search filter input */}
           <div className="relative max-w-xl">
             <input
               type="text"
@@ -65,7 +63,6 @@ export const FAQ: React.FC = () => {
             <Search className="w-4 h-4 text-[#73706B] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
 
-          {/* Category Tabs */}
           <div className="flex flex-wrap items-center gap-2 mt-4">
             {categories.map((cat) => (
               <button
@@ -84,7 +81,6 @@ export const FAQ: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Accordion List */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         {filteredItems.length === 0 ? (
           <div className="py-12 text-center space-y-3 bg-white p-6 border border-[#141414]/8">
@@ -108,7 +104,6 @@ export const FAQ: React.FC = () => {
           </div>
         )}
 
-        {/* Concierge Banner */}
         <div className="mt-8 p-5 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Have an unlisted inquiry?</h4>

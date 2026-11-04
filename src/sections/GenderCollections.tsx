@@ -8,7 +8,6 @@ export const GenderCollections: React.FC = () => {
     <section className="py-20 sm:py-28 lg:py-36 bg-[#F3F0E9] border-b border-[#211E1A]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Men's Collection Block */}
           <div className="relative group overflow-hidden rounded-3xl bg-[#E8E3D9] flex flex-col justify-end min-h-[560px] sm:min-h-[640px] lg:min-h-[720px]">
             <div className="absolute inset-0">
               <ImageWithFallback
@@ -42,7 +41,6 @@ export const GenderCollections: React.FC = () => {
             </div>
           </div>
 
-          {/* Women's Collection Block */}
           <div className="relative group overflow-hidden rounded-3xl bg-[#E8E3D9] flex flex-col justify-end min-h-[560px] sm:min-h-[640px] lg:min-h-[720px]">
             <div className="absolute inset-0">
               <ImageWithFallback

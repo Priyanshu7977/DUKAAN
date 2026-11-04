@@ -54,10 +54,9 @@ export const Checkout: React.FC = () => {
     state: 'Maharashtra',
     pincode: '',
     addressType: 'Home',
-    paymentMethod: 'prepaid', // 'prepaid' | 'cod'
+    paymentMethod: 'prepaid',
   });
 
-  // Coupon / Promo code state
   const [couponCode, setCouponCode] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState<{ code: string; percent: number; amount: number } | null>(null);
   const [couponError, setCouponError] = useState('');
@@ -73,11 +72,9 @@ export const Checkout: React.FC = () => {
     goodNoteUrl: string;
   } | null>(null);
 
-  // Financial Calculations
   const subtotal = getCartTotal();
   const shippingFee = subtotal >= 1999 ? 0 : 150;
-  
-  // Standard Indian E-Commerce COD Handling Charge Rule: ₹99 extra on Cash on Delivery
+
   const codHandlingFee = formData.paymentMethod === 'cod' ? 99 : 0;
 
   const discountAmount = appliedDiscount
@@ -86,19 +83,16 @@ export const Checkout: React.FC = () => {
 
   const finalTotal = Math.max(0, subtotal - discountAmount + shippingFee + codHandlingFee);
 
-  // Strict text-only handler (strips any digits)
   const handleTextOnly = (field: 'fullName' | 'city', value: string) => {
     const textOnly = value.replace(/[0-9]/g, '');
     setFormData((prev) => ({ ...prev, [field]: textOnly }));
   };
 
-  // Strict number-only handler (strips any non-digits)
   const handleDigitsOnly = (field: 'phone' | 'pincode', value: string, maxLen: number) => {
     const digitsOnly = value.replace(/\D/g, '').slice(0, maxLen);
     setFormData((prev) => ({ ...prev, [field]: digitsOnly }));
   };
 
-  // Coupon validation
   const handleApplyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
     setCouponError('');
@@ -130,7 +124,6 @@ export const Checkout: React.FC = () => {
     showToast('Coupon removed', 'info');
   };
 
-  // Form submission
   const handleSubmitOrder = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -218,14 +211,12 @@ export const Checkout: React.FC = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       showToast('Order confirmed successfully!', 'success');
 
-      // Multi-channel automation dispatch
       dispatchAutomatedOrderNotifications(payload).then((res) => {
         setNotificationStatus(res);
       });
     }, 1100);
   };
 
-  // If cart is empty and order is not complete
   if (items.length === 0 && !isComplete) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center py-16 px-4 bg-[#FAF9F6]">
@@ -250,12 +241,10 @@ export const Checkout: React.FC = () => {
     );
   }
 
-  // Order Confirmation View
   if (isComplete && confirmedOrder) {
     return (
       <div className="min-h-screen bg-[#FAF9F6] py-10 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto space-y-6">
-          {/* Success Banner */}
           <div className="bg-white p-6 sm:p-8 border border-[#141414]/10 text-center space-y-3">
             <div className="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-emerald-800">
               <CheckCircle className="w-8 h-8 stroke-[1.5]" />
@@ -277,7 +266,6 @@ export const Checkout: React.FC = () => {
               <span className="text-[#73706B]">{confirmedOrder.date}</span>
             </div>
 
-            {/* Automated Dispatch Status Badges */}
             <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-semibold rounded-full shadow-2xs">
                 <CheckCircle className="w-3 h-3 text-emerald-700" />
@@ -293,7 +281,6 @@ export const Checkout: React.FC = () => {
               </span>
             </div>
 
-            {/* Prominent Multi-Channel Action CTAs */}
             {confirmedNotificationPayload && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 max-w-xl mx-auto">
                 <button
@@ -318,9 +305,7 @@ export const Checkout: React.FC = () => {
             )}
           </div>
 
-          {/* Details Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Delivery Details */}
             <div className="bg-white p-5 border border-[#141414]/10 space-y-3 text-xs">
               <h3 className="font-serif text-base text-[#141414] pb-2 border-b border-[#141414]/8">
                 Delivery Address
@@ -347,7 +332,6 @@ export const Checkout: React.FC = () => {
               </div>
             </div>
 
-            {/* Payment Summary */}
             <div className="bg-white p-5 border border-[#141414]/10 space-y-3 text-xs">
               <h3 className="font-serif text-base text-[#141414] pb-2 border-b border-[#141414]/8">
                 Payment Summary
@@ -399,7 +383,6 @@ export const Checkout: React.FC = () => {
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
             <a
               href="https://wa.me/917977641125"
@@ -419,7 +402,6 @@ export const Checkout: React.FC = () => {
             </button>
           </div>
 
-          {/* Archival Good Note Modal */}
           {confirmedNotificationPayload && (
             <AtelierGoodNoteModal
               isOpen={showGoodNoteModal}
@@ -434,7 +416,6 @@ export const Checkout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] pb-16">
-      {/* Clean Distraction-Free Checkout Top Header */}
       <header className="bg-white border-b border-[#141414]/8 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Link
@@ -456,12 +437,9 @@ export const Checkout: React.FC = () => {
         </div>
       </header>
 
-      {/* Main 2-Column Checkout Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Left Column (7 cols): Customer Info, Delivery Address & Payment */}
           <div className="lg:col-span-7 space-y-6">
-            {/* Step 1: Contact Details */}
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <div className="flex items-center gap-2">
@@ -511,7 +489,6 @@ export const Checkout: React.FC = () => {
               </div>
             </div>
 
-            {/* Step 2: Delivery Address */}
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <div className="flex items-center gap-2">
@@ -524,7 +501,6 @@ export const Checkout: React.FC = () => {
               </div>
 
               <div className="space-y-3.5 text-xs">
-                {/* Full Name */}
                 <div>
                   <label className="block text-[11px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
                     Full Name (Letters only) *
@@ -539,7 +515,6 @@ export const Checkout: React.FC = () => {
                   />
                 </div>
 
-                {/* Street / Building Address */}
                 <div>
                   <label className="block text-[11px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
                     Flat / House No., Building Name *
@@ -554,7 +529,6 @@ export const Checkout: React.FC = () => {
                   />
                 </div>
 
-                {/* Area & Landmark */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
@@ -583,7 +557,6 @@ export const Checkout: React.FC = () => {
                   </div>
                 </div>
 
-                {/* PIN Code, City & State */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
@@ -629,7 +602,6 @@ export const Checkout: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Address Type Pill Selector */}
                 <div className="pt-1">
                   <label className="block text-[11px] uppercase tracking-wider text-[#73706B] mb-1.5 font-medium">
                     Address Type
@@ -654,7 +626,6 @@ export const Checkout: React.FC = () => {
               </div>
             </div>
 
-            {/* Step 3: Payment Method with COD Handling Fee Rule */}
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <div className="flex items-center gap-2">
@@ -667,7 +638,6 @@ export const Checkout: React.FC = () => {
               </div>
 
               <div className="space-y-3">
-                {/* Option 1: Prepaid / Online (Free COD fee + Instant Incentive) */}
                 <label
                   className={`block p-4 border cursor-pointer transition-all ${
                     formData.paymentMethod === 'prepaid'
@@ -703,7 +673,6 @@ export const Checkout: React.FC = () => {
                   </div>
                 </label>
 
-                {/* Option 2: Cash on Delivery (COD Rules: ₹99 Extra Handling Fee) */}
                 <label
                   className={`block p-4 border cursor-pointer transition-all ${
                     formData.paymentMethod === 'cod'
@@ -750,7 +719,6 @@ export const Checkout: React.FC = () => {
               </div>
             </div>
 
-            {/* Place Order CTA Button */}
             <div className="pt-2">
               <button
                 type="submit"
@@ -772,9 +740,7 @@ export const Checkout: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column (5 cols): Order Review, Promo Code & Billing Breakdown */}
           <div className="lg:col-span-5 space-y-5">
-            {/* Items Summary Card */}
             <div className="bg-white p-5 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <h3 className="font-serif text-base text-[#141414]">Order Review</h3>
@@ -783,7 +749,6 @@ export const Checkout: React.FC = () => {
                 </span>
               </div>
 
-              {/* Items List */}
               <div className="space-y-3.5 max-h-[380px] overflow-y-auto pr-1 divide-y divide-[#141414]/8">
                 {items.map((item) => (
                   <div key={item.id} className="pt-3.5 first:pt-0 flex gap-3">
@@ -824,7 +789,6 @@ export const Checkout: React.FC = () => {
               </div>
             </div>
 
-            {/* Promo Code Input Card */}
             <div className="bg-white p-5 border border-[#141414]/10 space-y-2.5">
               <div className="flex items-center gap-1.5 text-xs text-[#141414] font-medium">
                 <Tag className="w-3.5 h-3.5 text-[#A7654A]" />
@@ -869,7 +833,6 @@ export const Checkout: React.FC = () => {
               )}
             </div>
 
-            {/* Bill / Price Breakdown Card */}
             <div className="bg-white p-5 border border-[#141414]/10 space-y-3 text-xs">
               <h3 className="font-serif text-base text-[#141414] pb-2 border-b border-[#141414]/8">
                 Bill Summary
@@ -899,7 +862,6 @@ export const Checkout: React.FC = () => {
                   </span>
                 </div>
 
-                {/* COD Extra Charge Row */}
                 <div className="flex justify-between items-center">
                   <span>Cash on Delivery Handling Charge</span>
                   <span>
@@ -923,7 +885,6 @@ export const Checkout: React.FC = () => {
               </div>
             </div>
 
-            {/* Trust Assurances Card */}
             <div className="bg-[#FAF9F6] p-4 border border-[#141414]/10 space-y-2.5 text-xs text-[#73706B]">
               <div className="flex items-center gap-2 text-[#141414] font-medium text-[11px]">
                 <RotateCcw className="w-3.5 h-3.5 text-[#A7654A]" />

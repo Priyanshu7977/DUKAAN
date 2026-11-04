@@ -26,7 +26,6 @@ export const SignatureProducts: React.FC = () => {
   return (
     <section className="py-8 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-5 sm:mb-7 gap-3">
           <div>
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
@@ -37,7 +36,6 @@ export const SignatureProducts: React.FC = () => {
             </h2>
           </div>
 
-          {/* Minimal Luxury Filter Pills */}
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             {tabs.map((tab) => (
               <button
@@ -55,14 +53,12 @@ export const SignatureProducts: React.FC = () => {
           </div>
         </div>
 
-        {/* 4-Column Desktop / 2-Column Mobile Product Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-5 gap-y-6 sm:gap-y-8">
           {displayedItems.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <div className="mt-10 sm:mt-12 text-center">
           <Link
             to="/shop"

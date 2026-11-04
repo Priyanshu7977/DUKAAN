@@ -13,12 +13,10 @@ export const OnboardingModal: React.FC = () => {
     try {
       const onboarded = localStorage.getItem(ONBOARDING_KEY);
       if (!onboarded) {
-        // Show after 1.5 seconds of first visit
         const timer = setTimeout(() => setIsOpen(true), 1500);
         return () => clearTimeout(timer);
       }
     } catch {
-      // ignore
     }
   }, []);
 
@@ -26,7 +24,6 @@ export const OnboardingModal: React.FC = () => {
     try {
       localStorage.setItem(ONBOARDING_KEY, 'true');
     } catch {
-      // ignore
     }
     setIsOpen(false);
   };
@@ -94,7 +91,6 @@ export const OnboardingModal: React.FC = () => {
         className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-[#141414]/10 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[#FAF8F5] hover:bg-[#EAE5DF] flex items-center justify-center text-[#73706B] hover:text-[#141414] transition-colors"
@@ -103,7 +99,6 @@ export const OnboardingModal: React.FC = () => {
           <X className="w-4 h-4" />
         </button>
 
-        {/* Content Box */}
         <div className="p-7 sm:p-9 space-y-5">
           <div className="flex items-center justify-between">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[10px] uppercase tracking-widest font-semibold">
@@ -136,7 +131,6 @@ export const OnboardingModal: React.FC = () => {
 
           {current.action}
 
-          {/* Stepper Navigation */}
           <div className="pt-3 border-t border-[#141414]/8 flex items-center justify-between gap-3">
             {currentStep > 0 ? (
               <button

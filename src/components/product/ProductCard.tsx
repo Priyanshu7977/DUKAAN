@@ -47,16 +47,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Visual Image Container - Sharp, Clean 5feet11 Style */}
       <div className={`relative overflow-hidden bg-[#F0ECE1] ${aspectRatio}`}>
-        {/* Subtle Discount / Sale Badge if applicable */}
         {product.originalPrice && product.originalPrice > product.price && (
           <span className="absolute top-2.5 left-2.5 z-10 bg-[#141414] text-[#FAF9F6] text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium">
             Sale
           </span>
         )}
 
-        {/* Wishlist Button - Clean Minimal Floating Heart */}
         <button
           onClick={handleWishlistToggle}
           className="absolute top-2.5 right-2.5 z-10 w-8 h-8 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all opacity-90 group-hover:opacity-100 hover:scale-105 shadow-xs"
@@ -69,7 +66,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           />
         </button>
 
-        {/* Primary & Secondary Alternate Image Swap on Hover */}
         <Link to={`/product/${product.slug}`} className="block w-full h-full">
           <ImageWithFallback
             src={product.images[0]}
@@ -92,7 +88,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </Link>
 
-        {/* Quick View Button on Desktop Hover */}
         {showQuickView && (
           <div className="absolute inset-x-0 bottom-0 p-2.5 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
             <button
@@ -106,7 +101,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </div>
 
-      {/* Meta details - Clean & Minimal Typography */}
       <div className="pt-2.5 flex flex-col justify-between flex-1">
         <div>
           <Link to={`/product/${product.slug}`}>

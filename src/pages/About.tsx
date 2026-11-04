@@ -7,7 +7,6 @@ import { ArrowRight, Check } from 'lucide-react';
 export const About: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Editorial Header - Pure, Clean & Luminous */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -28,7 +27,6 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Chapter 1: The Origin */}
       <section className="py-8 sm:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#141414]/8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           <div className="lg:col-span-6 space-y-3">
@@ -59,7 +57,6 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Chapter 2: The Three Pillars */}
       <section className="py-8 sm:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#141414]/8">
         <div className="text-center max-w-xl mx-auto mb-8 space-y-1">
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
@@ -97,7 +94,6 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Direct Contact Banner */}
       <section className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-6 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>

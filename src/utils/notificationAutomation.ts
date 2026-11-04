@@ -1,8 +1,3 @@
-/**
- * DUKAAN Client-Side Notification & Good Note Automation Engine
- * Connects frontend order flow to WhatsApp, Email API, and Archival Dossiers.
- */
-
 export interface OrderNotificationPayload {
   orderNumber: string;
   customerName: string;
@@ -30,9 +25,6 @@ export interface OrderNotificationPayload {
   createdAt: string;
 }
 
-/**
- * Builds the direct WhatsApp concierge confirmation link
- */
 export function buildWhatsAppOrderLink(order: OrderNotificationPayload): string {
   const itemsText = order.items
     .map((it) => `• ${it.name} (${it.size}) × ${it.quantity}`)
@@ -57,9 +49,6 @@ Reply to this chat anytime for 24/7 client care updates!`;
   return `https://wa.me/917977641125?text=${encodeURIComponent(text)}`;
 }
 
-/**
- * Automatically dispatches the order notification to the backend
- */
 export async function dispatchAutomatedOrderNotifications(order: OrderNotificationPayload): Promise<{
   emailDispatched: boolean;
   whatsAppReady: boolean;
@@ -100,9 +89,6 @@ export async function dispatchAutomatedOrderNotifications(order: OrderNotificati
   };
 }
 
-/**
- * Dispatches VIP Welcome Note with Promo Gift Code
- */
 export async function dispatchAutomatedWelcomeNote(email: string, name = 'Patron'): Promise<boolean> {
   try {
     const res = await fetch('/api/notifications/welcome', {

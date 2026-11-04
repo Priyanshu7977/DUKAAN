@@ -7,7 +7,6 @@ export const EditorialSplitBanners: React.FC = () => {
     <section className="py-12 sm:py-16 bg-[#FAF9F6] border-b border-[#141414]/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Banner 1: The Vacation Edit */}
           <Link
             to="/collections/solstice-atelier"
             className="group block bg-white border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-xs hover:shadow-lg"
@@ -38,7 +37,6 @@ export const EditorialSplitBanners: React.FC = () => {
             </div>
           </Link>
 
-          {/* Banner 2: Architectural Linen */}
           <Link
             to="/shop?category=shirts"
             className="group block bg-white border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-xs hover:shadow-lg"

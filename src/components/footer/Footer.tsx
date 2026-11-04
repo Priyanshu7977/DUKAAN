@@ -18,7 +18,6 @@ export const Footer: React.FC = () => {
     setIsSubscribed(true);
     showToast('Thank you for subscribing to DUKAAN.', 'success');
 
-    // Trigger VIP Welcome Note via automated notification engine
     fetch('/api/notifications/welcome', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -28,9 +27,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="w-full px-3 sm:px-6 pt-6 pb-6 sm:pb-8">
-      {/* Container aligned with the exact max-w-6xl boundaries and borders of the header */}
       <div className="max-w-6xl mx-auto bg-[#141414] text-[#FAF9F6] rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-2xl">
-        {/* Top Newsletter & Brand Statement */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           <div className="lg:col-span-6 space-y-2.5">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
@@ -77,9 +74,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Links Navigation Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-10 border-b border-white/10 text-xs">
-          {/* Col 1: Brand Wordmark & Client Care Contacts */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2 space-y-3 pr-4">
             <span className="font-serif text-2xl tracking-[0.25em] uppercase text-white block font-medium">
               DUKAAN
@@ -107,7 +102,6 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 2: Wardrobe Categories */}
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[11px] font-semibold text-white/70 block">
               Wardrobe
@@ -122,7 +116,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Collections */}
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[11px] font-semibold text-white/70 block">
               Collections
@@ -136,7 +129,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: Assistance */}
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[11px] font-semibold text-white/70 block">
               Client Care
@@ -152,7 +144,6 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#8A8780] gap-3">
           <p>© {new Date().getFullYear()} DUKAAN. All rights reserved.</p>
           <div className="flex items-center space-x-5 uppercase tracking-wider text-[10px]">

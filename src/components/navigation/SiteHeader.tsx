@@ -12,14 +12,11 @@ export const SiteHeader: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Always show at top of page
       if (currentScrollY <= 20) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY.current && currentScrollY - lastScrollY.current > 6) {
-        // Scrolling down -> hide header smoothly
         setIsVisible(false);
       } else if (currentScrollY < lastScrollY.current && lastScrollY.current - currentScrollY > 6) {
-        // Scrolling up -> show header smoothly without covering content
         setIsVisible(true);
       }
 
@@ -30,7 +27,6 @@ export const SiteHeader: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // On page change, ensure header is visible
   useEffect(() => {
     setIsVisible(true);
   }, [location.pathname]);

@@ -35,7 +35,6 @@ export const NotFound: React.FC = () => {
           </Link>
         </div>
 
-        {/* Curated quick links */}
         <div className="pt-8 border-t border-[#141414]/10 text-xs">
           <span className="text-[#73706B] uppercase tracking-wider block mb-2 text-[11px]">
             Recommended Navigation

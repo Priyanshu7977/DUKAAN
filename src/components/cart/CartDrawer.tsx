@@ -23,7 +23,6 @@ export const CartDrawer: React.FC = () => {
 
   const { showToast, openSizeGuide } = useUIStore();
 
-  // Size Drawer State
   const [editingSizeItem, setEditingSizeItem] = useState<CartItem | null>(null);
   const [tempSelectedSize, setTempSelectedSize] = useState<string>('');
 
@@ -33,7 +32,6 @@ export const CartDrawer: React.FC = () => {
 
   if (!isOpen) return null;
 
-  // Active product for size selection drawer
   const activeMasterProduct = editingSizeItem
     ? PRODUCTS.find((p) => p.id === editingSizeItem.product.id) || editingSizeItem.product
     : null;
@@ -62,7 +60,6 @@ export const CartDrawer: React.FC = () => {
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 overflow-hidden">
-        {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -74,7 +71,6 @@ export const CartDrawer: React.FC = () => {
           className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
         />
 
-        {/* Drawer Panel */}
         <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
           <motion.div
             initial={{ x: '100%' }}
@@ -83,7 +79,6 @@ export const CartDrawer: React.FC = () => {
             transition={{ type: 'spring', damping: 28, stiffness: 260 }}
             className="w-screen max-w-md bg-[#FAF9F6] shadow-2xl flex flex-col border-l border-[#141414]/10 relative overflow-hidden"
           >
-            {/* Header */}
             <div className="px-5 py-4 border-b border-[#141414]/8 flex items-center justify-between bg-white">
               <div>
                 <h3 className="font-serif text-lg sm:text-xl text-[#141414]">Shopping Bag</h3>
@@ -103,7 +98,6 @@ export const CartDrawer: React.FC = () => {
               </button>
             </div>
 
-            {/* Free Shipping Progress Meter */}
             <div className="px-5 py-3 bg-[#EAE7DF] text-xs border-b border-[#141414]/8">
               {diff > 0 ? (
                 <p className="text-[#141414] font-light text-[11px]">
@@ -123,7 +117,6 @@ export const CartDrawer: React.FC = () => {
               </div>
             </div>
 
-            {/* Items List */}
             <div className="flex-1 overflow-y-auto px-5 py-3 divide-y divide-[#141414]/8">
               {items.length === 0 ? (
                 <div className="py-16 text-center space-y-3">
@@ -176,7 +169,6 @@ export const CartDrawer: React.FC = () => {
                         <div className="text-[11px] text-[#73706B] mt-0.5 space-y-0.5">
                           <p>Color: <span className="text-[#141414] font-medium">{item.selectedColor}</span></p>
 
-                          {/* Seamless Inline Size Trigger */}
                           <p className="flex items-center gap-1">
                             <span>Size:</span>
                             <button
@@ -196,7 +188,6 @@ export const CartDrawer: React.FC = () => {
                       </div>
 
                       <div className="flex items-center justify-between mt-2 pt-1">
-                        {/* Quantity controls */}
                         <div className="flex items-center border border-[#141414]/15 bg-white px-1.5 py-0.5 rounded-lg">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -227,7 +218,6 @@ export const CartDrawer: React.FC = () => {
               )}
             </div>
 
-            {/* Subtotal & Checkout Footer */}
             {items.length > 0 && (
               <div className="p-5 border-t border-[#141414]/8 bg-white space-y-3">
                 <div className="space-y-1 text-xs">
@@ -265,7 +255,6 @@ export const CartDrawer: React.FC = () => {
               </div>
             )}
 
-            {/* NESTED SIZE SELECTION DRAWER */}
             <AnimatePresence>
               {editingSizeItem && (
                 <motion.div
@@ -275,7 +264,6 @@ export const CartDrawer: React.FC = () => {
                   transition={{ type: 'spring', damping: 27, stiffness: 280 }}
                   className="absolute inset-0 z-30 bg-white flex flex-col shadow-2xl"
                 >
-                  {/* Size Drawer Top Bar */}
                   <div className="px-5 py-4 border-b border-[#141414]/10 flex items-center justify-between bg-[#FAF9F6]">
                     <button
                       type="button"
@@ -298,7 +286,6 @@ export const CartDrawer: React.FC = () => {
                     </button>
                   </div>
 
-                  {/* Garment Header Card */}
                   <div className="p-4 border-b border-[#141414]/8 bg-[#FAF8F5] flex gap-3.5 items-center">
                     <img
                       src={editingSizeItem.product.images[0]}
@@ -320,7 +307,6 @@ export const CartDrawer: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Sizing Grid & Guidance */}
                   <div className="flex-1 overflow-y-auto p-5 space-y-5">
                     <div>
                       <div className="flex items-center justify-between mb-3">
@@ -344,7 +330,6 @@ export const CartDrawer: React.FC = () => {
                         </button>
                       </div>
 
-                      {/* Interactive Size Options */}
                       <div className="grid grid-cols-3 gap-2.5">
                         {availableSizes.map((s) => {
                           const isCurrent = editingSizeItem.selectedSize === s.size;
@@ -375,7 +360,6 @@ export const CartDrawer: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Sizing Fit Note */}
                     <div className="p-4 bg-[#FAF9F6] border border-[#141414]/10 rounded-xl space-y-1 text-xs text-[#73706B] leading-relaxed">
                       <div className="flex items-center gap-1.5 text-[#141414] font-semibold">
                         <Sparkles className="w-3.5 h-3.5 text-[#A7654A]" />
@@ -387,7 +371,6 @@ export const CartDrawer: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Size Drawer Footer CTA */}
                   <div className="p-4 border-t border-[#141414]/10 bg-white space-y-2">
                     <button
                       type="button"

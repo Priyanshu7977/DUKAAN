@@ -1,15 +1,7 @@
-/**
- * DUKAAN - Automated Multi-Channel Notification & Good Note Service
- * Orchestrates Email (SMTP/API), WhatsApp/SMS, and Archival Atelier Good Notes.
- */
-
 const { buildOrderConfirmationEmailHtml, buildWelcomeEmailHtml, buildContactAcknowledgmentHtml } = require('../templates/emailTemplates');
 const { buildAtelierGoodNoteHtml } = require('../templates/goodNoteTemplate');
 
 class NotificationService {
-  /**
-   * Dispatches complete order confirmation across Email, WhatsApp/SMS, and generates Good Note
-   */
   async dispatchOrderNotifications({ order, customer, items, shippingAddress }) {
     const timestamp = new Date().toISOString();
     const orderNumber = order.order_number || order.orderNumber || `DUK-IN-${Math.floor(100000 + Math.random() * 900000)}`;
@@ -29,7 +21,6 @@ class NotificationService {
       createdAt: order.created_at || timestamp,
     };
 
-    // 1. Generate Email Payload
     const emailHtml = buildOrderConfirmationEmailHtml({
       order: normalizedOrder,
       customer,
@@ -37,7 +28,6 @@ class NotificationService {
       shippingAddress: normalizedOrder.shippingAddress,
     });
 
-    // 2. Generate WhatsApp Text & Click-To-Chat Deep-Link
     const itemsSummary = normalizedOrder.items.map((it) => `• ${it.name} (${it.size}) × ${it.quantity || 1}`).join('\n');
     const whatsAppMessage = 
 `✨ *DUKAAN Atelier — Order Confirmed* ✨
@@ -57,10 +47,8 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
 
     const whatsAppUrl = `https://wa.me/917977641125?text=${encodeURIComponent(whatsAppMessage)}`;
 
-    // 3. Generate Digital Atelier Good Note (Printable / Archival Dossier)
     const goodNoteHtml = buildAtelierGoodNoteHtml(normalizedOrder);
 
-    // 4. Simulated or Production Email Dispatch
     const emailResult = await this.sendEmail({
       to: customer.email,
       subject: `Order Confirmed #${orderNumber} — DUKAAN Atelier`,
@@ -94,9 +82,6 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
     };
   }
 
-  /**
-   * Dispatches VIP Welcome Note with Promo Gift Code
-   */
   async dispatchWelcomeNotification({ email, customerName, promoCode = 'WELCOME500' }) {
     const emailHtml = buildWelcomeEmailHtml({ customerName, promoCode });
     const result = await this.sendEmail({
@@ -109,9 +94,6 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
     return { status: 'success', recipient: email, promoCode };
   }
 
-  /**
-   * Dispatches instant acknowledgment for concierge contact inquiries
-   */
   async dispatchInquiryAcknowledgment({ name, email, phone, subject }) {
     const ticketId = `TKT-${Math.floor(10000 + Math.random() * 90000)}`;
     const emailHtml = buildContactAcknowledgmentHtml({ customerName: name, ticketId, subject });
@@ -134,11 +116,7 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
     };
   }
 
-  /**
-   * Core mail sender with graceful multi-environment fallback
-   */
   async sendEmail({ to, subject, html }) {
-    // In production with SMTP credentials (e.g., SendGrid, Resend, AWS SES)
     if (process.env.SMTP_HOST && process.env.SMTP_USER) {
       try {
         const nodemailer = require('nodemailer');
@@ -165,7 +143,6 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
       }
     }
 
-    // High-performance simulated production mailer (generates real preview payload)
     return {
       status: 'simulated_success',
       messageId: `msg_${Date.now()}_${Math.random().toString(36).substring(7)}`,

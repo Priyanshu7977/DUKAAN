@@ -5,7 +5,6 @@ import { Mail, Phone } from 'lucide-react';
 export const Privacy: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Breadcrumbs items={[{ label: 'Privacy & Data Governance' }]} className="mb-2" />
@@ -21,9 +20,7 @@ export const Privacy: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 space-y-6 text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
-        {/* Officer Banner */}
         <div className="p-5 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
@@ -44,7 +41,6 @@ export const Privacy: React.FC = () => {
           </div>
         </div>
 
-        {/* Section 1 */}
         <div className="space-y-2.5">
           <h3 className="font-serif text-lg sm:text-xl text-[#141414]">1. Purpose & Core Principles</h3>
           <p>
@@ -55,7 +51,6 @@ export const Privacy: React.FC = () => {
           </p>
         </div>
 
-        {/* Section 2 */}
         <div className="space-y-2.5">
           <h3 className="font-serif text-lg sm:text-xl text-[#141414]">2. Categories of Information Collected</h3>
           <p>
@@ -69,7 +64,6 @@ export const Privacy: React.FC = () => {
           </ul>
         </div>
 
-        {/* Section 3 */}
         <div className="space-y-2.5">
           <h3 className="font-serif text-lg sm:text-xl text-[#141414]">3. Data Subject Rights & Deletion Inquiries</h3>
           <p>

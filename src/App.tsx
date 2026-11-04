@@ -31,10 +31,8 @@ export const App: React.FC = () => {
       <BrowserRouter>
         <OnboardingModal />
         <Routes>
-          {/* Dedicated Full-Page Distraction-Free Checkout */}
           <Route path="checkout" element={<Checkout />} />
 
-          {/* Main Store Layout */}
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Home />} />
             <Route path="shop" element={<Shop />} />

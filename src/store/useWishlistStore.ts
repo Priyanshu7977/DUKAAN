@@ -5,7 +5,7 @@ interface WishlistStore {
   items: Product[];
   addItem: (product: Product) => void;
   removeItem: (productId: string) => void;
-  toggleWishlist: (product: Product) => boolean; // returns true if added, false if removed
+  toggleWishlist: (product: Product) => boolean;
   isInWishlist: (productId: string) => boolean;
   clearWishlist: () => void;
 }
@@ -34,7 +34,6 @@ const saveWishlist = (items: Product[]) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   } catch (e) {
-    // ignore
   }
 };
 

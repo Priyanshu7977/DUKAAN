@@ -1,4 +1,3 @@
-// DUKAAN - Complete 5feet11 Real Product Catalog (180 Items Across All Categories)
 import { Product } from '../types';
 
 export const PRODUCTS: Product[] = [

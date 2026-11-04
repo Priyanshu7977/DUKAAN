@@ -37,13 +37,11 @@ export const CheckoutModal: React.FC = () => {
   const shipping = subtotal >= 1999 ? 0 : 150;
   const total = subtotal + shipping;
 
-  // Strict text-only handler: completely blocks any digits
   const handleTextOnlyChange = (field: 'fullName' | 'city', value: string) => {
     const textOnly = value.replace(/[0-9]/g, '');
     setFormData((prev) => ({ ...prev, [field]: textOnly }));
   };
 
-  // Strict number-only handler: completely blocks any letters or symbols
   const handleNumberOnlyChange = (field: 'phone' | 'pincode', value: string, maxLen: number) => {
     const digitsOnly = value.replace(/\D/g, '').slice(0, maxLen);
     setFormData((prev) => ({ ...prev, [field]: digitsOnly }));
@@ -90,7 +88,6 @@ export const CheckoutModal: React.FC = () => {
           exit={{ opacity: 0, scale: 0.96 }}
           className="bg-white border border-[#141414]/15 shadow-2xl max-w-2xl w-full my-6 relative overflow-hidden"
         >
-          {/* Top Secure Header */}
           <div className="bg-[#141414] text-white text-[10px] uppercase tracking-widest font-medium py-2.5 px-6 flex items-center justify-between">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-[#A7654A]" />
@@ -119,7 +116,6 @@ export const CheckoutModal: React.FC = () => {
                   </h3>
                 </div>
 
-                {/* Bill Summary */}
                 <div className="mb-5 p-3.5 bg-[#FAF9F6] border border-[#141414]/8 divide-y divide-[#141414]/8 text-xs">
                   <div className="flex justify-between pb-2 text-[#73706B]">
                     <span>Items ({items.length})</span>
@@ -145,7 +141,6 @@ export const CheckoutModal: React.FC = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
-                  {/* Full Name (Letters only) & Phone (Numbers only) */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
@@ -180,7 +175,6 @@ export const CheckoutModal: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Email */}
                   <div>
                     <label className="block text-[10px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
                       Email Address for Order Updates *
@@ -195,7 +189,6 @@ export const CheckoutModal: React.FC = () => {
                     />
                   </div>
 
-                  {/* Address */}
                   <div>
                     <label className="block text-[10px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
                       Flat / House No., Building, Street Address *
@@ -210,7 +203,6 @@ export const CheckoutModal: React.FC = () => {
                     />
                   </div>
 
-                  {/* City, State & Pincode */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div>
                       <label className="block text-[10px] uppercase tracking-wider text-[#73706B] mb-1 font-medium">
@@ -256,7 +248,6 @@ export const CheckoutModal: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Payment Options */}
                   <div className="pt-2">
                     <label className="block text-[10px] uppercase tracking-wider text-[#73706B] mb-1.5 font-medium">
                       Select Payment Method

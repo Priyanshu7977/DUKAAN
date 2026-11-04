@@ -45,7 +45,6 @@ export const Search: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header & Search Bar */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Search Wardrobe' }]} className="mb-3" />
@@ -76,7 +75,6 @@ export const Search: React.FC = () => {
             </button>
           </form>
 
-          {/* Quick suggestions */}
           <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
             <span className="text-[#73706B] uppercase tracking-wider text-[10px] mr-1 font-semibold">Popular:</span>
             {['Linen', 'Corduroy', 'Trousers', 'Gauze', 'Pullover', 'Solstice', 'Co-ord'].map((tag) => (
@@ -95,7 +93,6 @@ export const Search: React.FC = () => {
         </div>
       </section>
 
-      {/* Results Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-5 border-b border-[#141414]/8 gap-3 text-xs">
           <div>
@@ -111,7 +108,6 @@ export const Search: React.FC = () => {
             )}
           </div>
 
-          {/* Category Filter Pills */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
             {['all', 'shirts', 'trousers', 'co-ords', 'outerwear', 'knitwear'].map((cat) => (
               <button
@@ -129,7 +125,6 @@ export const Search: React.FC = () => {
           </div>
         </div>
 
-        {/* 4-Column Product Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {filteredProducts.map((product) => (

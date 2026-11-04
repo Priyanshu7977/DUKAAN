@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 export const EditorialCampaign: React.FC = () => {
   return (
     <section className="relative py-28 sm:py-36 lg:py-44 bg-[#211E1A] text-[#F3F0E9] overflow-hidden">
-      {/* Background image overlay */}
       <div className="absolute inset-0 opacity-30">
         <img
           src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1118_1de102c2-2879-4d49-97d8-172066acae36.jpg?v=1763799127"

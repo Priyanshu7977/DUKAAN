@@ -28,8 +28,7 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-md overflow-y-auto animate-fadeIn">
       <div className="relative w-full max-w-2xl bg-white border border-[#141414]/15 rounded-2xl shadow-2xl overflow-hidden my-6 print:m-0 print:border-none print:shadow-none">
-        
-        {/* Top Modal Controls (Hidden in Print) */}
+
         <div className="px-5 py-3.5 bg-[#FAF9F6] border-b border-[#141414]/10 flex items-center justify-between print:hidden">
           <div className="flex items-center gap-2 text-xs text-[#141414]">
             <Sparkles className="w-4 h-4 text-[#A7654A]" />
@@ -57,14 +56,11 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
           </div>
         </div>
 
-        {/* Printable Archival Sheet */}
         <div className="p-6 sm:p-10 bg-white relative space-y-6">
-          {/* Subtle Watermark */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 pointer-events-none select-none font-serif text-6xl sm:text-8xl text-black/[0.02] tracking-widest font-bold">
             DUKAAN
           </div>
 
-          {/* Letterhead Header */}
           <div className="border-b-2 border-[#141414] pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
             <div>
               <h1 className="font-serif text-3xl sm:text-4xl tracking-[0.25em] uppercase text-[#141414] font-normal leading-tight">
@@ -85,7 +81,6 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
             </div>
           </div>
 
-          {/* Hand-Crafted Good Note Box */}
           <div className="bg-[#FAF8F5] border border-[#ECE7DD] border-l-4 border-l-[#A7654A] rounded-xl p-4 sm:p-5 space-y-2">
             <div className="flex items-center gap-1.5 text-xs text-[#A7654A] font-semibold uppercase tracking-wider">
               <Heart className="w-3.5 h-3.5 fill-[#A7654A]" />
@@ -100,7 +95,6 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
             </p>
           </div>
 
-          {/* Consignee & Shipping Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div className="p-3.5 bg-[#FAF9F6] border border-[#ECE7DD] rounded-xl space-y-1">
               <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
@@ -130,7 +124,6 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
             </div>
           </div>
 
-          {/* Items Table */}
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
@@ -163,7 +156,6 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
             </table>
           </div>
 
-          {/* Totals Section */}
           <div className="w-64 ml-auto space-y-1.5 text-xs pt-2">
             <div className="flex justify-between text-[#73706B]">
               <span>Subtotal:</span>
@@ -185,7 +177,6 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
             </div>
           </div>
 
-          {/* Signature & Concierge Footer */}
           <div className="pt-6 border-t border-[#ECE7DD] flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="text-[10px] uppercase tracking-widest text-[#73706B] block">
@@ -206,7 +197,6 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
             </div>
           </div>
 
-          {/* Print button footer (Hidden on print) */}
           <div className="pt-4 flex flex-col sm:flex-row items-center gap-3 print:hidden">
             <a
               href={whatsAppUrl}

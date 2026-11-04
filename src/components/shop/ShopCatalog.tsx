@@ -47,7 +47,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
   );
   const gridTopRef = useRef<HTMLDivElement>(null);
 
-  // Sync state if URL query params change
   useEffect(() => {
     if (searchParams.get('category')) {
       setSelectedCategory(searchParams.get('category') as Category);
@@ -58,12 +57,10 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
     }
   }, [searchParams]);
 
-  // Reset to page 1 whenever any filter or sorting changes
   useEffect(() => {
     setCurrentPage(1);
   }, [selectedCategory, selectedGender, selectedSizes, selectedColors, inStockOnly, priceRange, sortBy]);
 
-  // Extract unique available sizes and colors from all products
   const allSizes = useMemo(() => {
     const sizeSet = new Set<string>();
     PRODUCTS.forEach((p) => p.sizes.forEach((s) => sizeSet.add(s.size)));
@@ -80,7 +77,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
     return Array.from(map.entries()).map(([name, hex]) => ({ name, hex }));
   }, []);
 
-  // Filter products
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
       if (selectedCategory !== 'all' && product.category !== selectedCategory) {
@@ -211,7 +207,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Editorial Luxury Header - Pure, Clean & Luminous */}
       <div className="pt-6 sm:pt-8 pb-6 sm:pb-8 border-b border-[#141414]/10 bg-white mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-3">
@@ -235,11 +230,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
         </div>
       </div>
 
-      {/* Main Filter & Grid Container - Zero Extraneous Whitespace */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
-        {/* Top Control Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between pb-3.5 border-b border-[#141414]/8 gap-3">
-          {/* Category Horizontal Navigation */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
             {categories.map((cat) => (
               <button
@@ -264,9 +256,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
             ))}
           </div>
 
-          {/* Right Controls: Sort & Mobile Filter Toggle */}
           <div className="flex items-center justify-between md:justify-end gap-3">
-            {/* Mobile Filter Button */}
             <button
               onClick={() => setIsMobileFilterOpen(true)}
               className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 border border-[#141414]/20 bg-white text-[11px] uppercase tracking-wider text-[#141414] font-medium"
@@ -275,7 +265,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               <span>Filters {hasActiveFilters && '• Active'}</span>
             </button>
 
-            {/* Sort Selector */}
             <div className="flex items-center gap-2 text-xs">
               <span className="text-[#73706B] uppercase tracking-wider text-[10px] hidden sm:inline">Sort:</span>
               <div className="relative">
@@ -296,7 +285,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
           </div>
         </div>
 
-        {/* Active Filter Pills Bar */}
         {hasActiveFilters && (
           <div className="py-2.5 flex flex-wrap items-center gap-1.5 border-b border-[#141414]/8 text-xs">
             <span className="text-[#73706B] uppercase tracking-wider text-[10px] mr-1">Active:</span>
@@ -364,11 +352,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
           </div>
         )}
 
-        {/* Content Layout: Desktop Sidebar (3 cols) + Product Grid (9 cols) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 pt-4">
-          {/* Desktop Filter Sidebar */}
           <aside className="hidden lg:block lg:col-span-3 space-y-5 pr-4 border-r border-[#141414]/8 text-xs">
-            {/* Gender filter */}
             {showGenderFilter && (
               <div className="space-y-2">
                 <span className="font-serif text-xs uppercase tracking-wider text-[#141414] block font-semibold">Silhouette</span>
@@ -394,7 +379,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               </div>
             )}
 
-            {/* Price Filter */}
             <div className="space-y-2 pt-4 border-t border-[#141414]/8">
               <div className="flex justify-between items-center">
                 <span className="font-serif text-xs uppercase tracking-wider text-[#141414] font-semibold">Max Price</span>
@@ -415,7 +399,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               </div>
             </div>
 
-            {/* Sizes */}
             <div className="space-y-2 pt-4 border-t border-[#141414]/8">
               <span className="font-serif text-xs uppercase tracking-wider text-[#141414] block font-semibold">Sizes</span>
               <div className="grid grid-cols-4 gap-1">
@@ -438,7 +421,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               </div>
             </div>
 
-            {/* Colors */}
             <div className="space-y-2 pt-4 border-t border-[#141414]/8">
               <span className="font-serif text-xs uppercase tracking-wider text-[#141414] block font-semibold">Color Palette</span>
               <div className="space-y-1">
@@ -466,7 +448,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               </div>
             </div>
 
-            {/* In Stock Only Checkbox */}
             <div className="pt-4 border-t border-[#141414]/8">
               <label className="flex items-center gap-2 cursor-pointer text-[#141414]">
                 <input
@@ -480,7 +461,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
             </div>
           </aside>
 
-          {/* Product Grid Area (9 cols desktop) */}
           <main className="lg:col-span-9" ref={gridTopRef}>
             {filteredProducts.length === 0 ? (
               <div className="py-16 text-center space-y-2 bg-white p-6 border border-dashed border-[#141414]/15">
@@ -497,22 +477,18 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               </div>
             ) : (
               <div>
-                {/* Product Grid - Tight, no giant gaps */}
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-5 gap-y-6 sm:gap-y-8">
                   {paginatedProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
 
-                {/* Numbered Pagination Bar */}
                 <div className="mt-8 sm:mt-10 pt-5 border-t border-[#141414]/8 flex flex-col md:flex-row items-center justify-between gap-4">
-                  {/* Results Summary Telemetry */}
                   <div className="text-xs text-[#73706B]">
                     Showing <strong className="text-[#141414] font-medium">{startIndex + 1}–{endIndex}</strong> of{' '}
                     <strong className="text-[#141414] font-medium">{filteredProducts.length}</strong> garments
                   </div>
 
-                  {/* Numbered Page Buttons */}
                   {totalPages > 1 && (
                     <div className="flex items-center gap-1">
                       <button
@@ -555,7 +531,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                     </div>
                   )}
 
-                  {/* Page Size Selector */}
                   <div className="flex items-center gap-1.5 text-xs text-[#73706B]">
                     <span className="uppercase tracking-wider text-[10px]">Show:</span>
                     {[8, 16, 32].map((size) => (
@@ -582,7 +557,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
         </div>
       </div>
 
-      {/* Mobile Filter Drawer */}
       {isMobileFilterOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/40 backdrop-blur-sm lg:hidden">
           <div className="w-full max-w-xs bg-[#FAF9F6] h-full flex flex-col p-4 overflow-y-auto">
@@ -598,7 +572,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
             </div>
 
             <div className="py-4 space-y-4 flex-1 text-xs">
-              {/* Category */}
               <div>
                 <span className="font-serif text-xs text-[#141414] block mb-1.5 font-semibold">Category</span>
                 <div className="flex flex-wrap gap-1">
@@ -616,7 +589,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                 </div>
               </div>
 
-              {/* Price */}
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <span className="font-serif text-xs text-[#141414] font-semibold">Max Price</span>
@@ -633,7 +605,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                 />
               </div>
 
-              {/* Sizes */}
               <div>
                 <span className="font-serif text-xs text-[#141414] block mb-1.5 font-semibold">Sizes</span>
                 <div className="grid grid-cols-4 gap-1">
@@ -653,7 +624,6 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                 </div>
               </div>
 
-              {/* Stock */}
               <label className="flex items-center gap-2 pt-1 cursor-pointer">
                 <input
                   type="checkbox"

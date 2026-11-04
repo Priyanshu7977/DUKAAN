@@ -23,7 +23,6 @@ export const Wishlist: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Saved Wishlist' }]} className="mb-3" />
@@ -54,7 +53,6 @@ export const Wishlist: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         {items.length === 0 ? (
           <div className="py-16 text-center max-w-md mx-auto space-y-4">
@@ -77,7 +75,6 @@ export const Wishlist: React.FC = () => {
             {items.map((product) => (
               <div key={product.id} className="group relative flex flex-col justify-between bg-white border border-[#141414]/8 rounded-xl p-3 shadow-xs hover:border-[#141414]/20 transition-all">
                 <div>
-                  {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#ECE7DD] mb-2.5">
                     <Link to={`/product/${product.slug}`} className="block w-full h-full">
                       <ImageWithFallback
@@ -99,7 +96,6 @@ export const Wishlist: React.FC = () => {
                     </button>
                   </div>
 
-                  {/* Info */}
                   <div className="space-y-0.5">
                     <p className="text-[10px] uppercase tracking-wider text-[#73706B]">
                       {product.category}
@@ -115,7 +111,6 @@ export const Wishlist: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Move to bag button */}
                 <div className="mt-3">
                   <button
                     onClick={() => handleMoveToBag(product)}

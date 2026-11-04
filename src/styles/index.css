@@ -24,7 +24,6 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-    /* Ensure numbers match the font style of the text */
     font-feature-settings: 'tnum' 1, 'cv05' 1;
   }
 
@@ -44,19 +43,16 @@
     font-feature-settings: 'lnum' 1;
   }
 
-  /* Universal number styling matching text typography */
   span, p, a, button, input, select, textarea {
     font-variant-numeric: normal;
   }
 
-  /* Prevent iOS Safari auto-zoom when tapping inputs */
   @media screen and (max-width: 767px) {
     input, select, textarea {
       font-size: 16px !important;
     }
   }
 
-  /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -97,7 +93,6 @@
     line-height: 1.6;
   }
 
-  /* Safe Area Insets for iOS & Android Edge-to-Edge Displays */
   .safe-area-top {
     padding-top: env(safe-area-inset-top, 0px);
   }
@@ -106,7 +101,6 @@
   }
 }
 
-/* Unified Button Standard Sizing - Universal Equal Heights */
 .btn-unified-primary {
   height: 2.875rem; /* 46px - standard touch target */
   padding-left: 1.75rem;
@@ -160,7 +154,6 @@
   transform: scale(0.98);
 }
 
-/* Image zoom & hover transitions */
 .editorial-img-container {
   overflow: hidden;
   position: relative;
@@ -175,7 +168,6 @@
   transform: scale(1.04);
 }
 
-/* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

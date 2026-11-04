@@ -22,7 +22,6 @@ export const JournalArticle: React.FC = () => {
 
   return (
     <article className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Article Header */}
       <header className="pt-4 pb-5 max-w-4xl mx-auto px-4 sm:px-6">
         <Breadcrumbs
           items={[
@@ -71,7 +70,6 @@ export const JournalArticle: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Cover Image */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-10">
         <div className="aspect-[16/9] overflow-hidden bg-[#ECE7DD]">
           <ImageWithFallback
@@ -83,7 +81,6 @@ export const JournalArticle: React.FC = () => {
         </div>
       </div>
 
-      {/* Article Content Body */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-6 text-sm sm:text-base text-[#141414] font-light leading-relaxed">
         {article.content.map((block, idx) => {
           if (block.type === 'paragraph') {
@@ -135,7 +132,6 @@ export const JournalArticle: React.FC = () => {
         })}
       </div>
 
-      {/* Related Articles Footer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-10 border-t border-[#141414]/8">
         <div className="flex justify-between items-end mb-6">
           <div>

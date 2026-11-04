@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 export const Returns: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Easy Returns & Exchanges' }]} className="mb-2" />
@@ -22,15 +21,13 @@ export const Returns: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6 text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
-        {/* Step-by-Step Return Process */}
         <div className="space-y-3">
           <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
             How It Works
           </span>
           <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">Simple 3-Step Return & Exchange</h3>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-1">
             <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
@@ -64,7 +61,6 @@ export const Returns: React.FC = () => {
           </div>
         </div>
 
-        {/* Free Size Exchange */}
         <div className="space-y-2 p-5 bg-white border border-[#141414]/8">
           <div className="flex items-center gap-2 text-[#141414]">
             <RotateCcw className="w-4 h-4 text-[#A7654A]" />
@@ -75,7 +71,6 @@ export const Returns: React.FC = () => {
           </p>
         </div>
 
-        {/* Direct Help Card */}
         <div className="p-5 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Need help with a return or exchange?</h4>

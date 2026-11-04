@@ -21,7 +21,6 @@ export const RootLayout: React.FC = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // 5-second login popup trigger on website
   useEffect(() => {
     const hasDismissed = sessionStorage.getItem('dukaan_login_dismissed');
     if (!isAuthenticated && !hasDismissed && !hasAutoPrompted) {
@@ -34,10 +33,8 @@ export const RootLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF9F6] text-[#141414] relative selection:bg-[#141414] selection:text-white">
-      {/* Sleek Floating Capsule Header (Zero unnecessary bars) */}
       <SiteHeader />
 
-      {/* Main Body with clean, uniform padding */}
       <main
         className={cn(
           'flex-1 transition-all duration-300',
@@ -49,7 +46,6 @@ export const RootLayout: React.FC = () => {
 
       <Footer />
 
-      {/* Global Modals & Overlays */}
       <LoginModal />
       <SearchOverlay />
       <MobileMenu />

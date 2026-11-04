@@ -30,11 +30,9 @@ export const ProductDetail: React.FC = () => {
   const [activeImageIdx, setActiveImageIdx] = useState<number>(0);
   const [recentlyViewed, setRecentlyViewed] = useState<Product[]>([]);
 
-  // Sticky Mobile Bottom Bar
   const ctaRef = useRef<HTMLDivElement>(null);
   const [showStickyBar, setShowStickyBar] = useState(false);
 
-  // Delivery Estimator State
   const [pincode, setPincode] = useState(() => {
     try {
       return localStorage.getItem('dukaan_pincode') || '';
@@ -52,7 +50,6 @@ export const ProductDetail: React.FC = () => {
         return calculateDelivery(saved);
       }
     } catch {
-      // ignore
     }
     return null;
   });
@@ -60,7 +57,6 @@ export const ProductDetail: React.FC = () => {
 
   function calculateDelivery(pin: string) {
     const deliveryDate = new Date();
-    // Fast 2-3 business days delivery
     deliveryDate.setDate(deliveryDate.getDate() + 3);
     const dateStr = deliveryDate.toLocaleDateString('en-IN', {
       weekday: 'short',
@@ -93,7 +89,6 @@ export const ProductDetail: React.FC = () => {
     try {
       localStorage.setItem('dukaan_pincode', pin);
     } catch {
-      // ignore
     }
   };
 
@@ -125,7 +120,6 @@ export const ProductDetail: React.FC = () => {
         const recentProducts = PRODUCTS.filter((p) => updated.includes(p.id) && p.id !== product.id);
         setRecentlyViewed(recentProducts);
       } catch (e) {
-        // ignore
       }
     }
   }, [product, slug]);
@@ -230,7 +224,6 @@ export const ProductDetail: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Top Breadcrumb Header - Tight */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-2">
         <Breadcrumbs
           items={[
@@ -241,12 +234,9 @@ export const ProductDetail: React.FC = () => {
         />
       </div>
 
-      {/* Main PDP Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-          {/* Left Column: Image Gallery (7 cols) */}
           <div className="lg:col-span-7 flex flex-col-reverse md:flex-row gap-2.5 sm:gap-3">
-            {/* Thumbnail Column */}
             {product.images.length > 1 && (
               <div className="flex md:flex-col gap-1.5 shrink-0 overflow-x-auto md:overflow-y-auto max-h-[580px] scrollbar-none">
                 {product.images.map((img, idx) => (
@@ -266,7 +256,6 @@ export const ProductDetail: React.FC = () => {
               </div>
             )}
 
-            {/* Main Stage Image - Sharp 5feet11 rectangle */}
             <div className="flex-1 relative bg-[#ECE7DD] overflow-hidden group aspect-[3/4]">
               {product.originalPrice && product.originalPrice > product.price && (
                 <span className="absolute top-2.5 left-2.5 z-10 bg-[#141414] text-white text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium">
@@ -295,7 +284,6 @@ export const ProductDetail: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Commerce Actions (5 cols) */}
           <div className="lg:col-span-5 lg:sticky lg:top-16 space-y-4">
             <div className="space-y-3.5">
               <div>
@@ -325,12 +313,10 @@ export const ProductDetail: React.FC = () => {
                 </div>
               </div>
 
-              {/* Description */}
               <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
                 {product.description}
               </p>
 
-              {/* Color Selection */}
               <div className="pt-3 border-t border-[#141414]/8">
                 <div className="flex justify-between items-center text-xs mb-1.5">
                   <span className="uppercase tracking-wider text-[#73706B] text-[10px] font-medium">
@@ -363,7 +349,6 @@ export const ProductDetail: React.FC = () => {
                 </div>
               </div>
 
-              {/* Size Selection */}
               <div className="pt-3 border-t border-[#141414]/8">
                 <div className="flex justify-between items-center text-xs mb-1.5">
                   <span className="uppercase tracking-wider text-[#73706B] text-[10px] font-medium">
@@ -407,7 +392,6 @@ export const ProductDetail: React.FC = () => {
                 )}
               </div>
 
-              {/* Quantity Selector & Purchase Actions */}
               <div ref={ctaRef} className="pt-3 border-t border-[#141414]/8 space-y-2.5">
                 <div className="flex items-center gap-2.5">
                   <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-medium">
@@ -452,7 +436,6 @@ export const ProductDetail: React.FC = () => {
                 </div>
               </div>
 
-              {/* Service Badges */}
               <div className="grid grid-cols-3 gap-2 pt-2.5 border-t border-[#141414]/8 text-[10px] text-[#73706B]">
                 <div className="flex items-center gap-1">
                   <Truck className="w-3 h-3 text-[#A7654A] shrink-0" />
@@ -468,7 +451,6 @@ export const ProductDetail: React.FC = () => {
                 </div>
               </div>
 
-              {/* Live Indian PIN Code Delivery Estimator */}
               <div className="pt-3.5 border-t border-[#141414]/8 space-y-2">
                 <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-semibold block flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-[#A7654A]" />
@@ -524,7 +506,6 @@ export const ProductDetail: React.FC = () => {
               </div>
             </div>
 
-            {/* Accordion Specs */}
             <div className="mt-4 pt-2">
               <Accordion items={accordionItems} defaultOpenId="composition" />
             </div>
@@ -532,7 +513,6 @@ export const ProductDetail: React.FC = () => {
         </div>
       </div>
 
-      {/* Related Products Section */}
       {relatedProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
           <div className="flex justify-between items-end mb-4 pb-2 border-b border-[#141414]/8">
@@ -560,7 +540,6 @@ export const ProductDetail: React.FC = () => {
         </section>
       )}
 
-      {/* Recently Viewed Products Section */}
       {recentlyViewed.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10">
           <div className="mb-4 pb-2 border-b border-[#141414]/8">
@@ -580,7 +559,6 @@ export const ProductDetail: React.FC = () => {
         </section>
       )}
 
-      {/* Mobile Sticky Add to Bag Dock (Appears when scrolled past main purchase buttons) */}
       <div
         className={`fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#141414]/10 px-4 pt-2.5 pb-[calc(env(safe-area-inset-bottom,0px)+0.6rem)] sm:hidden transition-transform duration-300 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] ${
           showStickyBar ? 'translate-y-0' : 'translate-y-full pointer-events-none'

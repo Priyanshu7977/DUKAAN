@@ -49,10 +49,8 @@ export const Profile: React.FC = () => {
   const [editPhone, setEditPhone] = useState(user?.phone || '');
   const [editEmail, setEditEmail] = useState(user?.email || '');
 
-  // Email verification state
   const [isEmailVerified, setIsEmailVerified] = useState(true);
 
-  // Delete account confirmation modal
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteConfirmationInput, setDeleteConfirmationInput] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -76,7 +74,6 @@ export const Profile: React.FC = () => {
     }, 800);
   };
 
-  // New address modal state
   const [isAddingAddress, setIsAddingAddress] = useState(false);
   const [newStreet, setNewStreet] = useState('');
   const [newCity, setNewCity] = useState('');
@@ -148,11 +145,9 @@ export const Profile: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#FAF9F6] py-8 sm:py-12 border-b border-[#141414]/8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
-        {/* Top Profile Header Card */}
+
         <div className="bg-white border border-[#141414]/10 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div className="flex items-center gap-4 sm:gap-5">
-            {/* User Avatar Circle */}
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#141414] text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold shadow-md shrink-0">
               {user.name.charAt(0).toUpperCase()}
             </div>
@@ -204,7 +199,6 @@ export const Profile: React.FC = () => {
           </div>
         </div>
 
-        {/* Dashboard Navigation Tabs */}
         <div className="flex items-center border-b border-[#141414]/10 overflow-x-auto gap-2 sm:gap-6 bg-white px-4 sm:px-6 py-2 rounded-xl shadow-sm">
           <button
             onClick={() => setActiveTab('orders')}
@@ -252,7 +246,6 @@ export const Profile: React.FC = () => {
           </button>
         </div>
 
-        {/* Tab 1: Orders */}
         {activeTab === 'orders' && (
           <div className="space-y-4">
             <h2 className="font-serif text-xl text-[#141414]">Order History & Real-Time Tracking</h2>
@@ -299,7 +292,6 @@ export const Profile: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Order Items */}
                   <div className="space-y-3">
                     {order.items.map((item) => (
                       <div key={item.id} className="flex items-center gap-4">
@@ -325,7 +317,6 @@ export const Profile: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Tracking status bar */}
                   <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#141414]/6 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2 text-[#141414]">
                       <Truck className="w-4 h-4 text-[#A7654A]" />
@@ -347,7 +338,6 @@ export const Profile: React.FC = () => {
           </div>
         )}
 
-        {/* Tab 2: Addresses */}
         {activeTab === 'addresses' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
@@ -489,7 +479,6 @@ export const Profile: React.FC = () => {
           </div>
         )}
 
-        {/* Tab 3: Wishlist */}
         {activeTab === 'wishlist' && (
           <div className="space-y-4">
             <h2 className="font-serif text-xl text-[#141414]">Saved Wishlist Pieces</h2>
@@ -544,7 +533,6 @@ export const Profile: React.FC = () => {
           </div>
         )}
 
-        {/* Tab 4: Settings & Security */}
         {activeTab === 'settings' && (
           <div className="bg-white border border-[#141414]/10 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6 max-w-2xl">
             <h2 className="font-serif text-xl text-[#141414]">Personal Information & Security</h2>
@@ -596,7 +584,6 @@ export const Profile: React.FC = () => {
               </div>
             </form>
 
-            {/* Danger Zone: Account Deletion */}
             <div className="pt-6 border-t border-red-200 space-y-3">
               <div className="flex items-center gap-2 text-red-700">
                 <ShieldAlert className="w-4 h-4" />
@@ -622,7 +609,6 @@ export const Profile: React.FC = () => {
 
       </div>
 
-      {/* Delete Account Double Confirmation Modal */}
       {showDeleteModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
           <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-5 border border-red-200 shadow-2xl">

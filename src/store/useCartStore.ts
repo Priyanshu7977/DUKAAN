@@ -22,16 +22,11 @@ interface CartStore {
 const STORAGE_KEY = 'dukaan_cart';
 const LEGACY_STORAGE_KEY = 'forme_atelier_cart';
 
-/**
- * Sanitizes and validates cart items against the authoritative product catalog.
- * Defends against client-side parameter tampering (e.g. price manipulation in DevTools).
- */
 const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
   if (!Array.isArray(rawItems)) return [];
 
   return rawItems
     .map((item) => {
-      // Find official authoritative product from master data
       const masterProduct = PRODUCTS.find((p) => p.id === item.product?.id);
       if (!masterProduct) return null;
 
@@ -39,7 +34,6 @@ const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
 
       return {
         ...item,
-        // Enforce verified price from catalog - blocks price tampering
         product: {
           ...item.product,
           price: masterProduct.price,
@@ -56,7 +50,6 @@ const loadSavedCart = (): CartItem[] => {
   if (current && current.length > 0) {
     return sanitizeCartItems(current);
   }
-  // Seamless migration from legacy storage key
   const legacy = safeStorage.getItem<CartItem[]>(LEGACY_STORAGE_KEY, []);
   if (legacy && legacy.length > 0) {
     const sanitized = sanitizeCartItems(legacy);
@@ -81,7 +74,6 @@ export const useCartStore = create<CartStore>((set, get) => ({
   toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
 
   addItem: (product: Product, size: string, color: string, quantity = 1) => {
-    // Look up verified master product
     const masterProduct = PRODUCTS.find((p) => p.id === product.id) || product;
     const safeQty = sanitizeNumeric(quantity, 1, 1, 99);
 
@@ -103,7 +95,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
           id: itemId,
           product: {
             ...product,
-            price: masterProduct.price, // Authoritative price guarantee
+            price: masterProduct.price,
           },
           selectedColor: color,
           selectedSize: size,
@@ -145,7 +137,6 @@ export const useCartStore = create<CartStore>((set, get) => ({
 
     let updatedItems: CartItem[];
     if (existingTargetIndex > -1) {
-      // Merge with existing item of same product & new size
       updatedItems = items
         .filter((i) => i.id !== itemId)
         .map((i) =>
@@ -154,7 +145,6 @@ export const useCartStore = create<CartStore>((set, get) => ({
             : i
         );
     } else {
-      // Update this item's size and composite ID
       updatedItems = items.map((i) =>
         i.id === itemId
           ? { ...i, id: newId, selectedSize: newSize }
@@ -174,7 +164,6 @@ export const useCartStore = create<CartStore>((set, get) => ({
 
   getCartTotal: () => {
     return get().items.reduce((sum, item) => {
-      // Re-verify against master product to prevent runtime tampering
       const masterProduct = PRODUCTS.find((p) => p.id === item.product.id);
       const verifiedPrice = masterProduct ? masterProduct.price : item.product.price;
       return sum + verifiedPrice * item.quantity;

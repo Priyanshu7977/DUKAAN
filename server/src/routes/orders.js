@@ -5,7 +5,6 @@ const { requireAuth } = require('../middleware/auth');
 const { orderLimiter } = require('../middleware/rateLimiter');
 const notificationService = require('../services/notificationService');
 
-// 1. CREATE ORDER (Authoritative Server-Side Price Verification)
 router.post('/create', orderLimiter, async (req, res) => {
   const { customer, items, shippingAddress, paymentMethod, couponCode } = req.body;
 
@@ -20,12 +19,10 @@ router.post('/create', orderLimiter, async (req, res) => {
     let verifiedSubtotal = 0;
     const validatedItems = [];
 
-    // Verify each item's price against the master products database
     for (const item of items) {
       const prodRes = await client.query('SELECT id, name, price FROM products WHERE id = $1', [item.productId]);
-      
+
       let price = prodRes.rows[0]?.price;
-      // Fallback to client item price only if not found in db yet, but bounded
       if (!price) {
         price = item.price || 2500;
       }
@@ -43,7 +40,6 @@ router.post('/create', orderLimiter, async (req, res) => {
       });
     }
 
-    // Apply coupon discount if valid
     let discountAmount = 0;
     const normCoupon = couponCode ? couponCode.toUpperCase().trim() : '';
     if (['WELCOME500', 'DUKAAN500'].includes(normCoupon)) {
@@ -81,7 +77,6 @@ router.post('/create', orderLimiter, async (req, res) => {
 
     const createdOrder = orderInsertRes.rows[0];
 
-    // Insert order items
     for (const valItem of validatedItems) {
       await client.query(
         `INSERT INTO order_items (order_id, product_id, product_name, size, color, price, quantity)
@@ -92,7 +87,6 @@ router.post('/create', orderLimiter, async (req, res) => {
 
     await client.query('COMMIT');
 
-    // Automatic multi-channel notification & Good Note dispatch
     let notificationData = null;
     try {
       notificationData = await notificationService.dispatchOrderNotifications({
@@ -132,7 +126,6 @@ router.post('/create', orderLimiter, async (req, res) => {
   }
 });
 
-// 2. GET USER ORDERS (Protected with Row Level Security)
 router.get('/my-orders', requireAuth, async (req, res) => {
   try {
     const ordersRes = await db.queryWithRLS(

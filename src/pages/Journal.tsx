@@ -16,7 +16,6 @@ export const Journal: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Editorial Journal Masthead */}
       <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-3">
@@ -39,7 +38,6 @@ export const Journal: React.FC = () => {
             </p>
           </div>
 
-          {/* Luxury Filter Pills */}
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
               <button
@@ -58,7 +56,6 @@ export const Journal: React.FC = () => {
         </div>
       </section>
 
-      {/* Articles Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {filteredArticles.map((article) => (
