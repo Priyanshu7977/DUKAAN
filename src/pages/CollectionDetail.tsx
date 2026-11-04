@@ -64,51 +64,65 @@ export const CollectionDetail: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Refined Editorial Masthead & Narrative */}
-      <section className="pt-6 sm:pt-8 pb-10 bg-white border-b border-[#141414]/8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Header - Compact */}
+      <section className="relative overflow-hidden min-h-[24vh] sm:min-h-[30vh] max-h-[340px] flex items-end pb-6 sm:pb-8 bg-[#141414] mb-4">
+        <ImageWithFallback
+          src={collection.heroImage}
+          alt={collection.title}
+          aspectRatioClass="w-full h-full"
+          wrapperClassName="absolute inset-0"
+          className="opacity-75 object-cover object-[center_35%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/90 via-[#141414]/40 to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
           <Breadcrumbs
             items={[
               { label: 'Collections', href: '/collections/solstice-atelier' },
               { label: collection.title },
             ]}
-            className="mb-4"
+            className="mb-2 text-white/70"
           />
+          <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
+            {collection.season} • {collection.year}
+          </span>
+          <h1 className="font-serif text-2xl sm:text-4xl text-white font-normal leading-tight max-w-3xl">
+            {collection.title}
+          </h1>
+          <p className="text-xs sm:text-sm text-white/80 max-w-2xl font-light mt-1 leading-relaxed">
+            {collection.tagline}
+          </p>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[10px] uppercase tracking-widest font-semibold">
-                <span>{collection.season}</span>
-                <span>•</span>
-                <span>{collection.year} Edition</span>
-              </div>
-
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
-                {collection.title}
-              </h1>
-
-              <p className="font-serif text-lg sm:text-xl text-[#141414] italic leading-relaxed text-[#141414]/90 border-l-2 border-[#A7654A] pl-4">
+      {/* Editorial Narrative & Color Palette Strip */}
+      <section className="py-8 sm:py-10 bg-white border-b border-[#141414]/8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+            <div className="lg:col-span-7 space-y-3">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#73706B] font-semibold block">
+                The Narrative
+              </span>
+              <p className="font-serif text-lg sm:text-2xl text-[#141414] leading-relaxed">
                 "{collection.featuredQuote}"
               </p>
-
               <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
                 {collection.story}
               </p>
-
               <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
                 {collection.description}
               </p>
 
-              {/* Material Color Spectrum */}
+              {/* Palette swatches */}
               <div className="pt-2">
-                <span className="text-[10px] uppercase tracking-widest text-[#73706B] block mb-2 font-semibold">
+                <span className="text-[10px] uppercase tracking-widest text-[#73706B] block mb-1.5 font-medium">
                   Material Color Spectrum
                 </span>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   {collection.palette.map((p) => (
-                    <div key={p.name} className="flex items-center gap-2 bg-[#FAF8F5] px-2.5 py-1 rounded-full border border-[#141414]/8">
+                    <div key={p.name} className="flex items-center gap-1.5">
                       <span
-                        className="w-3.5 h-3.5 rounded-full border border-black/15 inline-block shrink-0"
+                        className="w-3 h-3 rounded-full border border-black/15 inline-block"
                         style={{ backgroundColor: p.hex }}
                       />
                       <span className="text-xs text-[#141414] font-medium">{p.name}</span>
@@ -118,14 +132,13 @@ export const CollectionDetail: React.FC = () => {
               </div>
             </div>
 
-            {/* Editorial Secondary Image - Beautifully Framed Card */}
+            {/* Editorial Secondary Image */}
             <div className="lg:col-span-5">
-              <div className="overflow-hidden bg-[#ECE7DD] aspect-[3/4] max-h-[440px] rounded-2xl shadow-[0_12px_36px_rgba(0,0,0,0.06)] border border-[#141414]/10">
+              <div className="overflow-hidden bg-[#ECE7DD] aspect-[3/4] max-h-[380px] rounded-sm">
                 <ImageWithFallback
                   src={collection.editorialImage}
                   alt={`${collection.title} editorial vignette`}
                   aspectRatioClass="w-full h-full"
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </div>

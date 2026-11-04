@@ -16,39 +16,34 @@ export const Journal: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header - Editorial Masthead */}
-      <section className="pt-6 sm:pt-8 pb-6 bg-white border-b border-[#141414]/8">
+      {/* Header */}
+      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ label: 'Journal' }]} className="mb-3" />
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5">
-            <div className="space-y-1.5 max-w-2xl">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-                ✦ DUKAAN Notes & Monographs
+          <Breadcrumbs items={[{ label: 'Editorial Journal' }]} className="mb-2" />
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
+                Atelier Notes & Monographs
               </span>
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight">
-                The Atelier Journal
+              <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
+                The Journal
               </h1>
-              <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
-                Curated investigations into textile botany, European flax harvesting, and modern relaxed proportions.
-              </p>
             </div>
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="px-3 py-1 bg-[#FAF8F5] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-wider text-[#141414] font-medium tabular-nums">
-                {filteredArticles.length} Dispatches
-              </span>
-            </div>
+            <p className="text-xs text-[#73706B] max-w-md font-light leading-relaxed">
+              Curated investigations into textile botany, architecture, and unstructured tailoring dialogues.
+            </p>
           </div>
 
           {/* Filter categories */}
-          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none pt-2 border-t border-[#141414]/6">
+          <div className="flex gap-1.5 mt-3 overflow-x-auto pb-1 scrollbar-none">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`h-10 px-4 inline-flex items-center text-[11px] uppercase tracking-wider font-medium rounded-sm transition-colors ${
+                className={`px-3 py-1 text-[11px] uppercase tracking-wider font-medium transition-colors ${
                   selectedCategory === cat
                     ? 'bg-[#141414] text-white'
-                    : 'bg-[#FAF8F5] border border-[#141414]/10 text-[#73706B] hover:text-[#141414]'
+                    : 'bg-[#EAE7DF] text-[#73706B] hover:text-[#141414]'
                 }`}
               >
                 {cat === 'all' ? 'All Dispatches' : cat}

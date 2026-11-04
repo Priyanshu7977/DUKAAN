@@ -211,30 +211,45 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Elegant Editorial Header */}
-      <div className="pt-6 sm:pt-8 pb-6 border-b border-[#141414]/8 bg-white mb-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={breadcrumbs} className="mb-3" />
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div className="space-y-1.5 max-w-2xl">
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-                ✦ Pure European Linen & Breathable Cotton
-              </span>
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight">
-                {title}
-              </h1>
-              <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
-                {subtitle}
-              </p>
-            </div>
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="px-3 py-1 bg-[#FAF8F5] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-wider text-[#141414] font-medium tabular-nums">
+      {/* Banner / Header - Compact & Tight */}
+      {bannerImage ? (
+        <div className="relative overflow-hidden min-h-[22vh] sm:min-h-[28vh] max-h-[320px] flex items-end pb-6 sm:pb-8 bg-[#141414] mb-4">
+          <img
+            src={bannerImage}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover opacity-70 object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/90 via-[#141414]/40 to-transparent" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
+            <Breadcrumbs items={breadcrumbs} className="mb-2 text-white/70" />
+            <h1 className="font-serif text-2xl sm:text-4xl text-white font-normal">
+              {title}
+            </h1>
+            <p className="text-xs sm:text-sm text-white/80 max-w-xl font-light mt-1 leading-relaxed">
+              {subtitle}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div className="pt-4 pb-4 border-b border-[#141414]/8 bg-white mb-2">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Breadcrumbs items={breadcrumbs} className="mb-2" />
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-2">
+              <div>
+                <h1 className="font-serif text-2xl sm:text-3xl text-[#141414] font-normal">
+                  {title}
+                </h1>
+                <p className="text-xs text-[#73706B] max-w-xl font-light mt-0.5">
+                  {subtitle}
+                </p>
+              </div>
+              <span className="text-[11px] uppercase tracking-widest text-[#73706B] font-medium tabular-nums">
                 {filteredProducts.length} {filteredProducts.length === 1 ? 'Garment' : 'Garments'}
               </span>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Filter & Grid Container - Zero Extraneous Whitespace */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">
@@ -410,7 +425,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                 onChange={(e) => setPriceRange(Number(e.target.value))}
                 className="w-full accent-[#141414] cursor-pointer"
               />
-              <div className="flex justify-between text-[10px] text-[#73706B] tabular-nums font-medium">
+              <div className="flex justify-between text-[10px] text-[#73706B]">
                 <span>₹1,000</span>
                 <span>₹7,500+</span>
               </div>
@@ -419,7 +434,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
             {/* Sizes */}
             <div className="space-y-2 pt-4 border-t border-[#141414]/8">
               <span className="font-serif text-xs uppercase tracking-wider text-[#141414] block font-semibold">Sizes</span>
-              <div className="grid grid-cols-4 gap-1.5">
+              <div className="grid grid-cols-4 gap-1">
                 {allSizes.map((size) => {
                   const isSelected = selectedSizes.includes(size);
                   return (
@@ -515,14 +530,14 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
 
                   {/* Numbered Page Buttons */}
                   {totalPages > 1 && (
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1">
                       <button
                         onClick={() => handlePageChange(validPage - 1)}
                         disabled={validPage === 1}
                         aria-label="Previous Page"
-                        className="w-9 h-9 sm:w-10 sm:h-10 border border-[#141414]/15 rounded-sm flex items-center justify-center text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-25 disabled:pointer-events-none transition-all active:scale-[0.98]"
+                        className="w-9 h-9 sm:w-10 sm:h-10 border border-[#141414]/15 flex items-center justify-center text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-25 disabled:pointer-events-none transition-colors"
                       >
-                        <ChevronLeft className="w-4 h-4" />
+                        <ChevronLeft className="w-3.5 h-3.5" />
                       </button>
 
                       {getPageNumbers().map((p, idx) => (
@@ -530,16 +545,16 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                           <button
                             key={p}
                             onClick={() => handlePageChange(p)}
-                            className={`w-9 h-9 sm:w-10 sm:h-10 text-xs font-semibold tabular-nums rounded-sm transition-all flex items-center justify-center active:scale-[0.98] ${
+                            className={`w-9 h-9 sm:w-10 sm:h-10 text-xs font-semibold tabular-nums transition-colors flex items-center justify-center ${
                               validPage === p
-                                ? 'bg-[#141414] text-white shadow-xs'
-                                : 'border border-[#141414]/15 text-[#141414] hover:bg-[#FAF8F5]'
+                                ? 'bg-[#141414] text-white font-semibold'
+                                : 'border border-[#141414]/15 text-[#141414] hover:bg-[#EAE7DF]'
                             }`}
                           >
                             {p}
                           </button>
                         ) : (
-                          <span key={`dots-${idx}`} className="w-5 text-center text-[#73706B] font-medium text-xs">
+                          <span key={`dots-${idx}`} className="w-4 text-center text-[#73706B] text-xs font-semibold tabular-nums">
                             ...
                           </span>
                         )
@@ -549,16 +564,16 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                         onClick={() => handlePageChange(validPage + 1)}
                         disabled={validPage === totalPages}
                         aria-label="Next Page"
-                        className="w-9 h-9 sm:w-10 sm:h-10 border border-[#141414]/15 rounded-sm flex items-center justify-center text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-25 disabled:pointer-events-none transition-all active:scale-[0.98]"
+                        className="w-9 h-9 sm:w-10 sm:h-10 border border-[#141414]/15 flex items-center justify-center text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-25 disabled:pointer-events-none transition-colors"
                       >
-                        <ChevronRight className="w-4 h-4" />
+                        <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   )}
 
                   {/* Page Size Selector */}
                   <div className="flex items-center gap-1.5 text-xs text-[#73706B]">
-                    <span className="uppercase tracking-wider text-[10px] font-medium">Show:</span>
+                    <span className="uppercase tracking-wider text-[10px]">Show:</span>
                     {[8, 16, 32].map((size) => (
                       <button
                         key={size}
@@ -566,10 +581,10 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                           setPageSize(size);
                           setCurrentPage(1);
                         }}
-                        className={`h-9 px-3 text-xs font-medium tabular-nums rounded-sm transition-all flex items-center justify-center active:scale-[0.98] ${
+                        className={`h-9 px-3 text-xs font-medium tabular-nums transition-colors flex items-center justify-center ${
                           pageSize === size
-                            ? 'bg-[#141414] text-white shadow-xs'
-                            : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:bg-[#FAF8F5]'
+                            ? 'bg-[#141414] text-white font-medium'
+                            : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414]'
                         }`}
                       >
                         {size}
@@ -621,7 +636,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <span className="font-serif text-xs text-[#141414] font-semibold">Max Price</span>
-                  <span className="text-xs font-semibold tabular-nums text-[#141414]">{formatPrice(priceRange)}</span>
+                  <span className="text-xs font-semibold tabular-nums">{formatPrice(priceRange)}</span>
                 </div>
                 <input
                   type="range"
@@ -637,7 +652,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               {/* Sizes */}
               <div>
                 <span className="font-serif text-xs text-[#141414] block mb-1.5 font-semibold">Sizes</span>
-                <div className="grid grid-cols-4 gap-1.5">
+                <div className="grid grid-cols-4 gap-1">
                   {allSizes.map((size) => (
                     <button
                       key={size}
