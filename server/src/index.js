@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
 const orderRoutes = require('./routes/orders');
+const notificationRoutes = require('./routes/notifications');
 const { generalLimiter } = require('./middleware/rateLimiter');
 
 const app = express();
@@ -54,6 +55,7 @@ app.get('/health', (req, res) => {
 // 6. API Route Handlers
 app.use('/api/auth', authRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // 7. Global 404 Route
 app.use((req, res) => {

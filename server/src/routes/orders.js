@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../config/db');
 const { requireAuth } = require('../middleware/auth');
 const { orderLimiter } = require('../middleware/rateLimiter');
+const notificationService = require('../services/notificationService');
 
 // 1. CREATE ORDER (Authoritative Server-Side Price Verification)
 router.post('/create', orderLimiter, async (req, res) => {
@@ -91,6 +92,27 @@ router.post('/create', orderLimiter, async (req, res) => {
 
     await client.query('COMMIT');
 
+    // Automatic multi-channel notification & Good Note dispatch
+    let notificationData = null;
+    try {
+      notificationData = await notificationService.dispatchOrderNotifications({
+        order: {
+          orderNumber: createdOrder.order_number,
+          subtotal: verifiedSubtotal,
+          discountAmount,
+          shippingFee,
+          totalAmount,
+          paymentMethod,
+          created_at: createdOrder.created_at,
+        },
+        customer,
+        items: validatedItems,
+        shippingAddress,
+      });
+    } catch (notifErr) {
+      console.warn('[Notification Error]', notifErr.message);
+    }
+
     res.status(201).json({
       status: 'success',
       order: {
@@ -98,6 +120,7 @@ router.post('/create', orderLimiter, async (req, res) => {
         total: createdOrder.total_amount,
         items: validatedItems,
         createdAt: createdOrder.created_at,
+        notifications: notificationData,
       },
     });
   } catch (err) {

@@ -14,8 +14,16 @@ export const Footer: React.FC = () => {
       showToast('Please enter a valid email address', 'error');
       return;
     }
+    const targetEmail = email.trim();
     setIsSubscribed(true);
     showToast('Thank you for subscribing to DUKAAN.', 'success');
+
+    // Trigger VIP Welcome Note via automated notification engine
+    fetch('/api/notifications/welcome', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: targetEmail }),
+    }).catch(() => {});
   };
 
   return (

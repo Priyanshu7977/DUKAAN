@@ -173,25 +173,25 @@ export const CartDrawer: React.FC = () => {
                           </button>
                         </div>
 
-                        <div className="text-[11px] text-[#73706B] mt-0.5 space-y-1">
+                        <div className="text-[11px] text-[#73706B] mt-0.5 space-y-0.5">
                           <p>Color: <span className="text-[#141414] font-medium">{item.selectedColor}</span></p>
 
-                          {/* Interactive Size Trigger Button */}
-                          <div className="flex items-center gap-1.5 pt-0.5">
-                            <span className="text-[#73706B]">Size:</span>
+                          {/* Seamless Inline Size Trigger */}
+                          <p className="flex items-center gap-1">
+                            <span>Size:</span>
                             <button
                               type="button"
                               onClick={() => {
                                 setEditingSizeItem(item);
                                 setTempSelectedSize(item.selectedSize);
                               }}
-                              className="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-[#141414]/20 hover:border-[#141414] text-[#141414] font-semibold rounded-md transition-all active:scale-95 group shadow-2xs"
+                              className="inline-flex items-center gap-0.5 text-[#141414] font-medium hover:text-[#A7654A] transition-colors cursor-pointer group"
                               title="Click to select size"
                             >
-                              <span className="uppercase text-xs font-semibold">{item.selectedSize}</span>
-                              <ChevronDown className="w-3 h-3 text-[#73706B] group-hover:text-[#141414] transition-transform" />
+                              <span className="uppercase font-semibold underline underline-offset-2 decoration-[#141414]/30 group-hover:decoration-[#A7654A]">{item.selectedSize}</span>
+                              <ChevronDown className="w-3 h-3 text-[#73706B] group-hover:text-[#A7654A] transition-transform" />
                             </button>
-                          </div>
+                          </p>
                         </div>
                       </div>
 

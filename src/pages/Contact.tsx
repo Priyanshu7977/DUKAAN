@@ -42,6 +42,19 @@ export const Contact: React.FC = () => {
 
     setIsSubmitting(true);
 
+    // Multi-channel inquiry auto-reply dispatch
+    fetch('/api/notifications/inquiry-acknowledgment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        subject: form.subject || form.inquiryType,
+        message: form.message,
+      }),
+    }).catch(() => {});
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);

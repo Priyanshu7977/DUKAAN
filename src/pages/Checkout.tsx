@@ -16,10 +16,18 @@ import {
   ShoppingBag,
   CreditCard,
   Banknote,
-  PhoneCall
+  PhoneCall,
+  FileText,
+  MessageSquare
 } from 'lucide-react';
 import { ToastContainer } from '../components/common/ToastContainer';
 import { isValidIndianPhone, isValidPincode, sanitizeInput } from '../utils/security';
+import { AtelierGoodNoteModal } from '../components/common/AtelierGoodNoteModal';
+import {
+  OrderNotificationPayload,
+  dispatchAutomatedOrderNotifications,
+  buildWhatsAppOrderLink,
+} from '../utils/notificationAutomation';
 
 const INDIAN_STATES = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
@@ -57,6 +65,13 @@ export const Checkout: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [confirmedOrder, setConfirmedOrder] = useState<any>(null);
+  const [confirmedNotificationPayload, setConfirmedNotificationPayload] = useState<OrderNotificationPayload | null>(null);
+  const [showGoodNoteModal, setShowGoodNoteModal] = useState(false);
+  const [notificationStatus, setNotificationStatus] = useState<{
+    emailDispatched: boolean;
+    whatsAppReady: boolean;
+    goodNoteUrl: string;
+  } | null>(null);
 
   // Financial Calculations
   const subtotal = getCartTotal();
@@ -168,12 +183,45 @@ export const Checkout: React.FC = () => {
         paymentMethod: formData.paymentMethod,
       };
 
+      const payload: OrderNotificationPayload = {
+        orderNumber: orderId,
+        customerName: sanitizeInput(formData.fullName),
+        customerEmail: sanitizeInput(formData.email) || 'client@dukaan.in',
+        customerPhone: formData.phone.trim(),
+        shippingAddress: {
+          address: sanitizeInput(formData.address),
+          area: sanitizeInput(formData.area),
+          city: sanitizeInput(formData.city),
+          state: sanitizeInput(formData.state),
+          pincode: formData.pincode.trim(),
+        },
+        items: items.map((it) => ({
+          name: it.product.name,
+          size: it.selectedSize,
+          color: it.selectedColor,
+          price: it.product.price,
+          quantity: it.quantity,
+        })),
+        subtotal,
+        discountAmount,
+        shippingFee,
+        totalAmount: finalTotal,
+        paymentMethod: formData.paymentMethod,
+        createdAt: new Date().toISOString(),
+      };
+
+      setConfirmedNotificationPayload(payload);
       setConfirmedOrder(orderSummary);
       setIsComplete(true);
       setIsSubmitting(false);
       clearCart();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       showToast('Order confirmed successfully!', 'success');
+
+      // Multi-channel automation dispatch
+      dispatchAutomatedOrderNotifications(payload).then((res) => {
+        setNotificationStatus(res);
+      });
     }, 1100);
   };
 
@@ -228,6 +276,46 @@ export const Checkout: React.FC = () => {
               <span className="text-[#73706B]">•</span>
               <span className="text-[#73706B]">{confirmedOrder.date}</span>
             </div>
+
+            {/* Automated Dispatch Status Badges */}
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-semibold rounded-full shadow-2xs">
+                <CheckCircle className="w-3 h-3 text-emerald-700" />
+                <span>Email Confirmation Dispatched</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50/80 border border-emerald-200/80 text-emerald-800 text-[11px] font-semibold rounded-full shadow-2xs">
+                <MessageSquare className="w-3 h-3 text-[#128C7E]" />
+                <span>WhatsApp Notification Ready</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200/80 text-amber-900 text-[11px] font-semibold rounded-full shadow-2xs">
+                <Sparkles className="w-3 h-3 text-[#A7654A]" />
+                <span>Atelier Good Note Generated</span>
+              </span>
+            </div>
+
+            {/* Prominent Multi-Channel Action CTAs */}
+            {confirmedNotificationPayload && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 max-w-xl mx-auto">
+                <button
+                  type="button"
+                  onClick={() => setShowGoodNoteModal(true)}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#141414] hover:bg-[#A7654A] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>View Archival Good Note</span>
+                </button>
+
+                <a
+                  href={buildWhatsAppOrderLink(confirmedNotificationPayload)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                >
+                  <MessageSquare className="w-4 h-4 fill-white" />
+                  <span>Open WhatsApp Receipt</span>
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Details Grid */}
@@ -330,6 +418,15 @@ export const Checkout: React.FC = () => {
               Continue Shopping
             </button>
           </div>
+
+          {/* Archival Good Note Modal */}
+          {confirmedNotificationPayload && (
+            <AtelierGoodNoteModal
+              isOpen={showGoodNoteModal}
+              onClose={() => setShowGoodNoteModal(false)}
+              order={confirmedNotificationPayload}
+            />
+          )}
         </div>
       </div>
     );
