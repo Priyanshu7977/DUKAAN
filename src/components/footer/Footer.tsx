@@ -15,15 +15,16 @@ export const Footer: React.FC = () => {
       return;
     }
     setIsSubscribed(true);
-    showToast('Thank you for subscribing to Dukaan.', 'success');
+    showToast('Thank you for subscribing to DUKAAN.', 'success');
   };
 
   return (
-    <footer className="bg-[#141414] text-[#FAF9F6] pt-16 pb-10 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="w-full px-3 sm:px-6 pt-6 pb-6 sm:pb-8">
+      {/* Container aligned with the exact max-w-6xl boundaries and borders of the header */}
+      <div className="max-w-6xl mx-auto bg-[#141414] text-[#FAF9F6] rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-2xl">
         {/* Top Newsletter & Brand Statement */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-12 border-b border-white/10">
-          <div className="lg:col-span-6 space-y-3">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pb-10 border-b border-white/10">
+          <div className="lg:col-span-6 space-y-2.5">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
               Stay in Touch
             </span>
@@ -44,7 +45,7 @@ export const Footer: React.FC = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="w-full bg-transparent text-xs sm:text-sm text-white placeholder:text-white/40 focus:outline-none"
+                    className="flex-1 bg-transparent text-xs sm:text-sm text-white placeholder:text-white/40 focus:outline-none"
                     required
                   />
                   <button
@@ -60,18 +61,18 @@ export const Footer: React.FC = () => {
                 </span>
               </form>
             ) : (
-              <div className="p-3 bg-white/5 border border-white/10 flex items-center gap-2.5 text-xs text-white">
+              <div className="p-3 bg-white/5 border border-white/10 flex items-center gap-2.5 text-xs text-white rounded-lg">
                 <Check className="w-4 h-4 text-[#A7654A]" />
-                <span>You have been added to the Private Atelier registry.</span>
+                <span>You have been added to the Private DUKAAN Atelier registry.</span>
               </div>
             )}
           </div>
         </div>
 
         {/* Links Navigation Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-12 border-b border-white/10 text-xs">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 py-10 border-b border-white/10 text-xs">
           {/* Col 1: Brand Wordmark & Client Care Contacts */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-2 space-y-3.5 pr-6">
+          <div className="col-span-2 md:col-span-4 lg:col-span-2 space-y-3 pr-4">
             <span className="font-serif text-2xl tracking-[0.25em] uppercase text-white block font-medium">
               DUKAAN
             </span>
@@ -100,7 +101,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 2: Wardrobe Categories */}
           <div className="space-y-2.5">
-            <span className="uppercase tracking-widest text-[11px] font-medium text-white/50 block">
+            <span className="uppercase tracking-widest text-[11px] font-semibold text-white/70 block">
               Wardrobe
             </span>
             <ul className="space-y-1.5 text-[#8A8780]">
@@ -115,7 +116,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Collections */}
           <div className="space-y-2.5">
-            <span className="uppercase tracking-widest text-[11px] font-medium text-white/50 block">
+            <span className="uppercase tracking-widest text-[11px] font-semibold text-white/70 block">
               Collections
             </span>
             <ul className="space-y-1.5 text-[#8A8780]">
@@ -129,7 +130,7 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Assistance */}
           <div className="space-y-2.5">
-            <span className="uppercase tracking-widest text-[11px] font-medium text-white/50 block">
+            <span className="uppercase tracking-widest text-[11px] font-semibold text-white/70 block">
               Client Care
             </span>
             <ul className="space-y-1.5 text-[#8A8780]">
@@ -145,7 +146,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom copyright */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#8A8780] gap-3">
-          <p>© {new Date().getFullYear()} FORME ATELIER. All rights reserved. Master Atelier Edition.</p>
+          <p>© {new Date().getFullYear()} DUKAAN. All rights reserved.</p>
           <div className="flex items-center space-x-5 uppercase tracking-wider text-[10px]">
             <span>Instagram</span>
             <span>Substack</span>

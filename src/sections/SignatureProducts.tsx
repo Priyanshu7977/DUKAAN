@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { PRODUCTS } from '../data/products';
 import { ProductCard } from '../components/product/ProductCard';
@@ -7,11 +7,13 @@ import { ArrowRight } from 'lucide-react';
 export const SignatureProducts: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'shirts' | 'co-ords' | 'trousers' | 'knitwear'>('all');
 
-  const signatureItems = PRODUCTS.filter((p) => p.isSignature);
-
-  const displayedItems = filter === 'all'
-    ? signatureItems.slice(0, 8)
-    : signatureItems.filter((p) => p.category === filter).slice(0, 8);
+  const displayedItems = useMemo(() => {
+    if (filter === 'all') {
+      return PRODUCTS.slice(0, 8);
+    }
+    const filtered = PRODUCTS.filter((p) => p.category === filter);
+    return filtered.length > 0 ? filtered.slice(0, 8) : PRODUCTS.slice(0, 8);
+  }, [filter]);
 
   const tabs: Array<{ id: 'all' | 'shirts' | 'co-ords' | 'trousers' | 'knitwear'; label: string }> = [
     { id: 'all', label: 'All Items' },
