@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: dukaan-production
+
+# Resources listed in the exact deployment order
+resources:
+  - 00-namespace.yaml
+  - 01-configmap.yaml
+  - 02-secrets.yaml
+  - 03-postgres-pvc.yaml
+  - 04-postgres-statefulset.yaml
+  - 05-backend-deployment.yaml
+  - 06-backend-service.yaml
+  - 07-frontend-deployment.yaml
+  - 08-frontend-service.yaml
+  - 09-ingress.yaml
+  - 10-hpa.yaml
+  - 11-backup-cronjob.yaml
+
+commonLabels:
+  app.kubernetes.io/managed-by: kustomize
+  app.kubernetes.io/part-of: dukaan-platform

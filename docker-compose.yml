@@ -1,22 +1,34 @@
 version: '3.8'
 
 services:
-  # 1. NGINX Reverse Proxy & Upstream Load Balancer
+  # 1. NGINX Reverse Proxy & Upstream Load Balancer (Entrypoint)
   load-balancer:
     image: nginx:alpine
     container_name: dukaan-load-balancer
     restart: always
     ports:
+      - "80:80"
       - "8080:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
+      - frontend
       - api-1
       - api-2
     networks:
       - dukaan-network
 
-  # 2. Node.js Express Clustered Instance 1
+  # 2. Production React/Vite Frontend Container
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dukaan-frontend-app
+    restart: always
+    networks:
+      - dukaan-network
+
+  # 3. Node.js Express Clustered Instance 1
   api-1:
     build:
       context: ./server
@@ -29,14 +41,14 @@ services:
       - INSTANCE_ID=node-worker-replica-1
       - DATABASE_URL=postgresql://postgres:postgres_secure_pass_9921@postgres:5432/dukaan_db
       - JWT_SECRET=dukaan_jwt_secret_super_hard_token_991823712
-      - FRONTEND_URL=http://localhost:3000
+      - FRONTEND_URL=http://localhost
     depends_on:
       postgres:
         condition: service_healthy
     networks:
       - dukaan-network
 
-  # 3. Node.js Express Clustered Instance 2
+  # 4. Node.js Express Clustered Instance 2
   api-2:
     build:
       context: ./server
@@ -49,14 +61,14 @@ services:
       - INSTANCE_ID=node-worker-replica-2
       - DATABASE_URL=postgresql://postgres:postgres_secure_pass_9921@postgres:5432/dukaan_db
       - JWT_SECRET=dukaan_jwt_secret_super_hard_token_991823712
-      - FRONTEND_URL=http://localhost:3000
+      - FRONTEND_URL=http://localhost
     depends_on:
       postgres:
         condition: service_healthy
     networks:
       - dukaan-network
 
-  # 4. PostgreSQL Database with RLS
+  # 5. PostgreSQL Database with Row Level Security (RLS)
   postgres:
     image: postgres:16-alpine
     container_name: dukaan-postgres-db
@@ -78,7 +90,7 @@ services:
     networks:
       - dukaan-network
 
-  # 5. Automated Database Backup Service (runs every 24 hours)
+  # 6. Automated Database Backup Service (runs every 24 hours)
   db-backup:
     image: postgres:16-alpine
     container_name: dukaan-db-backup-cron
@@ -109,4 +121,6 @@ networks:
 
 volumes:
   postgres-data:
+    driver: local
   dukaan-backups:
+    driver: local

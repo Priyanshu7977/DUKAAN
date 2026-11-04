@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dukaan-production
+  labels:
+    app.kubernetes.io/name: dukaan
+    app.kubernetes.io/part-of: dukaan-platform
+    environment: production

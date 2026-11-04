@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dukaan-backend-service
+  namespace: dukaan-production
+  labels:
+    app.kubernetes.io/name: backend
+    app.kubernetes.io/part-of: dukaan-platform
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5000
+      targetPort: 5000
+      name: http
+      protocol: TCP
+  selector:
+    app: backend
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: dukaan-backend-pdb
+  namespace: dukaan-production
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: backend
