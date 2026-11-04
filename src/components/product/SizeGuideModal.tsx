@@ -54,28 +54,34 @@ export const SizeGuideModal: React.FC = () => {
           </h3>
 
           <p className="text-xs text-[#73706B] mt-1.5 font-light leading-relaxed">
-            FORME ATELIER pieces are cut with intentional ease, dropping slightly off the shoulder to celebrate natural drape. For an editorial, relaxed silhouette, select your true size. For a more conventional fitted look, size down one step.
+            DUKAAN pieces are cut with intentional ease, dropping slightly off the shoulder to celebrate natural drape. For an editorial, relaxed silhouette, select your true size. For a more conventional fitted look, size down one step.
           </p>
 
           {/* Unit Toggle */}
-          <div className="flex items-center justify-end mt-4 mb-2 gap-1 text-xs">
-            <span className="text-[10px] uppercase tracking-wider text-[#73706B] mr-1">Units:</span>
-            <button
-              onClick={() => setUnit('cm')}
-              className={`h-8 px-3 text-xs tabular-nums transition-colors ${
-                unit === 'cm' ? 'bg-[#141414] text-white font-medium' : 'bg-[#EAE7DF] text-[#73706B]'
-              }`}
-            >
-              Centimetres (cm)
-            </button>
-            <button
-              onClick={() => setUnit('in')}
-              className={`h-8 px-3 text-xs tabular-nums transition-colors ${
-                unit === 'in' ? 'bg-[#141414] text-white font-medium' : 'bg-[#EAE7DF] text-[#73706B]'
-              }`}
-            >
-              Inches (in)
-            </button>
+          <div className="flex items-center justify-end mt-4 mb-2 gap-2 text-xs">
+            <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-medium mr-1">Units:</span>
+            <div className="inline-flex p-0.5 bg-[#FAF9F6] border border-[#141414]/15 rounded-full">
+              <button
+                onClick={() => setUnit('cm')}
+                className={`h-7 px-3.5 text-xs rounded-full tabular-nums font-semibold transition-all ${
+                  unit === 'cm'
+                    ? 'bg-[#141414] text-white shadow-xs'
+                    : 'text-[#73706B] hover:text-[#141414]'
+                }`}
+              >
+                Centimetres (cm)
+              </button>
+              <button
+                onClick={() => setUnit('in')}
+                className={`h-7 px-3.5 text-xs rounded-full tabular-nums font-semibold transition-all ${
+                  unit === 'in'
+                    ? 'bg-[#141414] text-white shadow-xs'
+                    : 'text-[#73706B] hover:text-[#141414]'
+                }`}
+              >
+                Inches (in)
+              </button>
+            </div>
           </div>
 
           {/* Table */}

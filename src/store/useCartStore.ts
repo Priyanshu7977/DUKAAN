@@ -18,7 +18,8 @@ interface CartStore {
   freeShippingThreshold: number;
 }
 
-const STORAGE_KEY = 'forme_atelier_cart';
+const STORAGE_KEY = 'dukaan_cart';
+const LEGACY_STORAGE_KEY = 'forme_atelier_cart';
 
 /**
  * Sanitizes and validates cart items against the authoritative product catalog.
@@ -50,8 +51,19 @@ const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
 };
 
 const loadSavedCart = (): CartItem[] => {
-  const raw = safeStorage.getItem<CartItem[]>(STORAGE_KEY, []);
-  return sanitizeCartItems(raw);
+  const current = safeStorage.getItem<CartItem[]>(STORAGE_KEY, []);
+  if (current && current.length > 0) {
+    return sanitizeCartItems(current);
+  }
+  // Seamless migration from legacy storage key
+  const legacy = safeStorage.getItem<CartItem[]>(LEGACY_STORAGE_KEY, []);
+  if (legacy && legacy.length > 0) {
+    const sanitized = sanitizeCartItems(legacy);
+    safeStorage.setItem(STORAGE_KEY, sanitized);
+    try { localStorage.removeItem(LEGACY_STORAGE_KEY); } catch {}
+    return sanitized;
+  }
+  return [];
 };
 
 const saveCart = (items: CartItem[]) => {

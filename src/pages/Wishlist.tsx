@@ -24,26 +24,27 @@ export const Wishlist: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
       {/* Header */}
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ label: 'Saved Wishlist' }]} className="mb-2" />
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-            <div>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
+          <Breadcrumbs items={[{ label: 'Saved Wishlist' }]} className="mb-3" />
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div className="space-y-1">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
                 Personal Archive
               </span>
-              <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
                 Saved Objects
               </h1>
             </div>
             {items.length > 0 && (
               <div className="flex items-center gap-3 text-xs">
-                <span className="text-[#73706B]">
-                  {items.length} {items.length === 1 ? 'object saved' : 'objects saved'}
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-widest text-[#141414] font-semibold tabular-nums">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  <span>{items.length} {items.length === 1 ? 'object saved' : 'objects saved'}</span>
                 </span>
                 <button
                   onClick={clearWishlist}
-                  className="text-[#A7654A] underline hover:text-[#141414] transition-colors uppercase tracking-wider text-[10px]"
+                  className="text-[#A7654A] underline hover:text-[#141414] transition-colors uppercase tracking-wider text-[10px] font-medium"
                 >
                   Clear All
                 </button>
@@ -54,30 +55,30 @@ export const Wishlist: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         {items.length === 0 ? (
-          <div className="py-16 text-center max-w-md mx-auto space-y-3">
-            <h3 className="font-serif text-xl text-[#141414]">No Objects in Wishlist</h3>
+          <div className="py-16 text-center max-w-md mx-auto space-y-4">
+            <h3 className="font-serif text-2xl text-[#141414]">No Objects in Wishlist</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               You haven't saved any garments yet. Click the heart icon on any product to preserve pieces for future orders.
             </p>
             <div className="pt-2">
               <Link
                 to="/shop"
-                className="inline-flex items-center justify-center gap-2 h-12 px-8 bg-[#141414] text-white text-[11px] uppercase tracking-[0.2em] font-medium transition-all hover:bg-[#A7654A] rounded-sm shadow-xs"
+                className="inline-flex items-center justify-center gap-2 h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all rounded-lg shadow-md active:scale-[0.99]"
               >
                 <span>Explore Wardrobe</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {items.map((product) => (
-              <div key={product.id} className="group relative flex flex-col justify-between">
+              <div key={product.id} className="group relative flex flex-col justify-between bg-white border border-[#141414]/8 rounded-xl p-3 shadow-xs hover:border-[#141414]/20 transition-all">
                 <div>
                   {/* Image */}
-                  <div className="relative aspect-[3/4] overflow-hidden bg-[#ECE7DD] mb-2.5">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#ECE7DD] mb-2.5">
                     <Link to={`/product/${product.slug}`} className="block w-full h-full">
                       <ImageWithFallback
                         src={product.images[0]}
@@ -108,7 +109,7 @@ export const Wishlist: React.FC = () => {
                         {product.name}
                       </h4>
                     </Link>
-                    <p className="text-xs font-serif text-[#141414] font-medium pt-0.5 tabular-nums">
+                    <p className="text-xs font-serif text-[#141414] font-semibold pt-0.5 tabular-nums">
                       {formatPrice(product.price)}
                     </p>
                   </div>
@@ -118,7 +119,7 @@ export const Wishlist: React.FC = () => {
                 <div className="mt-3">
                   <button
                     onClick={() => handleMoveToBag(product)}
-                    className="w-full h-10 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-1.5 rounded-sm active:scale-98 shadow-xs"
+                    className="w-full h-11 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-1.5 rounded-lg active:scale-98 shadow-xs"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" />
                     <span>Move to Bag</span>

@@ -7,31 +7,24 @@ import { ArrowRight, Check } from 'lucide-react';
 export const About: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Editorial Header - Compact */}
-      <section className="relative overflow-hidden min-h-[24vh] sm:min-h-[30vh] max-h-[340px] flex items-end pb-6 sm:pb-8 bg-[#141414] mb-4">
-        <ImageWithFallback
-          src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_1.jpg?v=1787463484"
-          alt="Dukaan Story"
-          aspectRatioClass="w-full h-full"
-          wrapperClassName="absolute inset-0"
-          className="opacity-70 object-cover object-[center_35%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/90 via-[#141414]/40 to-transparent" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
+      {/* Editorial Header - Pure, Clean & Luminous */}
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[{ label: 'Our Story' }]}
-            className="mb-2 text-white/70"
+            className="mb-3"
           />
-          <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
-            About The Brand
-          </span>
-          <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-white font-normal max-w-3xl leading-tight">
-            Objects of Everyday Expression
-          </h1>
-          <p className="text-xs sm:text-sm text-white/80 max-w-xl font-light mt-1 leading-relaxed">
-            Contemporary unisex clothing crafted with 100% pure European linen, soft cotton gauze, and timeless relaxed silhouettes.
-          </p>
+          <div className="max-w-3xl space-y-2">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
+              About The Brand
+            </span>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
+              Objects of Everyday Expression
+            </h1>
+            <p className="text-xs sm:text-sm text-[#73706B] font-light mt-1 leading-relaxed">
+              Contemporary unisex clothing crafted with 100% pure European linen, soft cotton gauze, and timeless relaxed silhouettes.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -115,7 +108,7 @@ export const About: React.FC = () => {
           </div>
           <Link
             to="/shop"
-            className="px-6 py-2.5 bg-[#141414] hover:bg-[#A7654A] text-white text-[10px] uppercase tracking-widest font-medium transition-colors shrink-0"
+            className="h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold transition-all rounded-lg shadow-md flex items-center justify-center shrink-0 active:scale-[0.99]"
           >
             Explore Wardrobe
           </Link>

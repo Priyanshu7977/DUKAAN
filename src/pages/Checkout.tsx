@@ -66,7 +66,7 @@ export const Checkout: React.FC = () => {
   const codHandlingFee = formData.paymentMethod === 'cod' ? 99 : 0;
 
   const discountAmount = appliedDiscount
-    ? Math.round((subtotal * appliedDiscount.percent) / 100)
+    ? appliedDiscount.amount
     : 0;
 
   const finalTotal = Math.max(0, subtotal - discountAmount + shippingFee + codHandlingFee);
@@ -91,12 +91,19 @@ export const Checkout: React.FC = () => {
 
     if (!code) return;
 
-    if (code === 'DUKAAN10' || code === 'FORME10' || code === 'WELCOME10' || code === 'FIRSTBUY') {
-      const discount = { code, percent: 10, amount: Math.round(subtotal * 0.1) };
+    if (code === 'WELCOME500' || code === 'DUKAAN500') {
+      const amount = Math.min(subtotal, 500);
+      const percent = Math.min(100, Math.round((amount / (subtotal || 1)) * 100));
+      const discount = { code, percent, amount };
+      setAppliedDiscount(discount);
+      showToast(`Welcome Coupon "${code}" applied! You saved ₹500`, 'success');
+    } else if (code === 'DUKAAN10' || code === 'WELCOME10' || code === 'FIRSTBUY') {
+      const amount = Math.round(subtotal * 0.1);
+      const discount = { code, percent: 10, amount };
       setAppliedDiscount(discount);
       showToast(`Coupon "${code}" applied! You saved 10%`, 'success');
     } else {
-      setCouponError('Invalid coupon code. Try "DUKAAN10" for 10% off');
+      setCouponError('Invalid coupon code. Try "WELCOME500" or "DUKAAN10"');
       showToast('Invalid coupon code', 'error');
     }
   };

@@ -41,7 +41,7 @@ export const RootLayout: React.FC = () => {
       <main
         className={cn(
           'flex-1 transition-all duration-300',
-          isHomePage ? 'pt-0' : 'pt-[64px] sm:pt-[70px]'
+          isHomePage ? 'pt-0' : 'pt-[70px] sm:pt-[76px]'
         )}
       >
         <Outlet />

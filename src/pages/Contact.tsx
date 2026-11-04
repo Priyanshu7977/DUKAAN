@@ -52,13 +52,13 @@ export const Contact: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
       {/* Header */}
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Help & Contact' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
             Customer Support
           </span>
-          <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
             Contact Us
           </h1>
           <p className="text-xs sm:text-sm text-[#73706B] max-w-xl font-light mt-1 leading-relaxed">
@@ -86,7 +86,7 @@ export const Contact: React.FC = () => {
                       value={form.name}
                       onChange={(e) => handleNameChange(e.target.value)}
                       placeholder="Enter full name"
-                      className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
+                      className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414] transition-colors"
                     />
                   </div>
 
@@ -95,8 +95,8 @@ export const Contact: React.FC = () => {
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-medium mb-1">
                       Mobile Number (Numbers only)
                     </label>
-                    <div className="flex">
-                      <span className="inline-flex items-center px-2.5 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-medium tabular-nums">
+                    <div className="flex rounded-lg overflow-hidden border border-[#141414]/15 focus-within:border-[#141414] bg-[#FAF9F6]">
+                      <span className="inline-flex items-center px-3 bg-[#EAE7DF] border-r border-[#141414]/10 text-xs text-[#73706B] font-medium tabular-nums select-none">
                         +91
                       </span>
                       <input
@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                         value={form.phone}
                         onChange={(e) => handlePhoneChange(e.target.value)}
                         placeholder="10-digit number"
-                        className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
+                        className="w-full bg-transparent px-3 py-2.5 text-xs text-[#141414] focus:outline-none font-medium tabular-nums"
                       />
                     </div>
                   </div>
@@ -122,7 +122,7 @@ export const Contact: React.FC = () => {
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="Enter email address"
-                      className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
+                      className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414] transition-colors"
                     />
                   </div>
 
@@ -134,7 +134,7 @@ export const Contact: React.FC = () => {
                     <select
                       value={form.inquiryType}
                       onChange={(e) => setForm({ ...form, inquiryType: e.target.value })}
-                      className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
+                      className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414] transition-colors"
                     >
                       <option value="Order & Delivery Status">Order & Delivery Status</option>
                       <option value="Size & Fit Consultation">Size & Fit Guidance</option>
@@ -154,7 +154,7 @@ export const Contact: React.FC = () => {
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     placeholder="Enter message subject"
-                    className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
+                    className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414] transition-colors"
                   />
                 </div>
 
@@ -168,14 +168,14 @@ export const Contact: React.FC = () => {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Write your message here..."
-                    className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
+                    className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414] transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-12 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-50 rounded-lg shadow-md active:scale-[0.99]"
                 >
                   {isSubmitting ? (
                     <span>Sending Message...</span>

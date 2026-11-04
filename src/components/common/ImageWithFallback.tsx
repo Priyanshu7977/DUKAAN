@@ -11,7 +11,7 @@ const DEFAULT_FALLBACK = 'https://images.unsplash.com/photo-1594938298603-c8148c
 
 export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   src,
-  alt = 'FORME ATELIER garment',
+  alt = 'DUKAAN garment',
   className,
   wrapperClassName,
   aspectRatioClass = 'aspect-[3/4]',

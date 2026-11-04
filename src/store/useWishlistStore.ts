@@ -10,12 +10,21 @@ interface WishlistStore {
   clearWishlist: () => void;
 }
 
-const STORAGE_KEY = 'forme_atelier_wishlist';
+const STORAGE_KEY = 'dukaan_wishlist';
+const LEGACY_STORAGE_KEY = 'forme_atelier_wishlist';
 
 const loadSavedWishlist = (): Product[] => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
+    if (raw) return JSON.parse(raw);
+    const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+    if (legacy) {
+      const parsed = JSON.parse(legacy);
+      localStorage.setItem(STORAGE_KEY, legacy);
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+      return parsed;
+    }
+    return [];
   } catch (e) {
     return [];
   }

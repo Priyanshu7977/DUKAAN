@@ -44,7 +44,10 @@ router.post('/create', orderLimiter, async (req, res) => {
 
     // Apply coupon discount if valid
     let discountAmount = 0;
-    if (couponCode && ['DUKAAN10', 'WELCOME10', 'FORME10'].includes(couponCode.toUpperCase())) {
+    const normCoupon = couponCode ? couponCode.toUpperCase().trim() : '';
+    if (['WELCOME500', 'DUKAAN500'].includes(normCoupon)) {
+      discountAmount = Math.min(verifiedSubtotal, 500);
+    } else if (['DUKAAN10', 'WELCOME10', 'FIRSTBUY'].includes(normCoupon)) {
       discountAmount = Math.round(verifiedSubtotal * 0.1);
     }
 

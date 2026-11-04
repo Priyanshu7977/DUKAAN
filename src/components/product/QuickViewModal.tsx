@@ -47,12 +47,12 @@ export const QuickViewModal: React.FC = () => {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.96 }}
-          className="bg-white border border-[#141414]/10 shadow-2xl max-w-3xl w-full my-8 relative overflow-hidden grid grid-cols-1 md:grid-cols-2"
+          className="bg-white border border-[#141414]/10 shadow-2xl max-w-3xl w-full my-8 relative overflow-hidden rounded-2xl grid grid-cols-1 md:grid-cols-2"
         >
           {/* Close button */}
           <button
             onClick={closeQuickView}
-            className="absolute top-3 right-3 z-20 text-[#141414] hover:text-[#A7654A] p-1.5 transition-colors bg-white/80 backdrop-blur-sm"
+            className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-[#141414]/10 shadow-xs flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all"
             aria-label="Close quick view"
           >
             <X className="w-4 h-4" />
@@ -75,7 +75,7 @@ export const QuickViewModal: React.FC = () => {
                   <button
                     key={idx}
                     onClick={() => setActiveImageIdx(idx)}
-                    className={`w-10 h-14 overflow-hidden border transition-all ${
+                    className={`w-10 h-14 overflow-hidden rounded-md border transition-all ${
                       activeImageIdx === idx ? 'border-[#141414]' : 'border-transparent opacity-60'
                     }`}
                   >
@@ -95,7 +95,7 @@ export const QuickViewModal: React.FC = () => {
               <h2 className="font-serif text-xl sm:text-2xl text-[#141414] mt-1 leading-snug font-normal">
                 {product.name}
               </h2>
-              <p className="text-base font-medium text-[#141414] mt-1.5">
+              <p className="text-base font-semibold text-[#141414] mt-1.5 tabular-nums">
                 {formatPrice(product.price)}
               </p>
               <p className="text-xs text-[#73706B] mt-2 line-clamp-3 leading-relaxed font-light">
@@ -143,7 +143,7 @@ export const QuickViewModal: React.FC = () => {
                       key={s.size}
                       disabled={!s.inStock}
                       onClick={() => setSelectedSize(s.size)}
-                      className={`h-9 px-3.5 text-xs uppercase font-medium tracking-wider border rounded-sm transition-all flex items-center justify-center ${
+                      className={`h-10 px-4 text-xs uppercase font-medium tracking-wider border rounded-lg transition-all flex items-center justify-center ${
                         !s.inStock
                           ? 'border-black/10 text-black/25 line-through cursor-not-allowed bg-black/5'
                           : selectedSize === s.size
@@ -162,7 +162,7 @@ export const QuickViewModal: React.FC = () => {
             <div className="mt-5 pt-3 border-t border-[#141414]/8 space-y-2">
               <button
                 onClick={handleAddToBag}
-                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-sm"
+                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-lg font-semibold"
               >
                 <Check className="w-3.5 h-3.5" />
                 <span>Add to Bag</span>

@@ -7,13 +7,13 @@ export const Returns: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
       {/* Header */}
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Easy Returns & Exchanges' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
             Customer Guarantee
           </span>
-          <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
             Returns & Exchanges
           </h1>
           <p className="text-xs sm:text-sm text-[#73706B] max-w-xl font-light mt-1 leading-relaxed">
@@ -23,7 +23,7 @@ export const Returns: React.FC = () => {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6 text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6 text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
         {/* Step-by-Step Return Process */}
         <div className="space-y-3">
           <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
@@ -97,7 +97,7 @@ export const Returns: React.FC = () => {
           </div>
           <Link
             to="/shop"
-            className="px-5 py-2.5 bg-[#141414] text-white text-[10px] uppercase tracking-widest font-medium hover:bg-[#A7654A] transition-colors shrink-0"
+            className="h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-lg shadow-md flex items-center justify-center shrink-0 transition-all active:scale-[0.99]"
           >
             Browse Catalogue
           </Link>

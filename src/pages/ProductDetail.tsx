@@ -12,7 +12,7 @@ import { ProductCard } from '../components/product/ProductCard';
 import { Heart, Plus, Minus, Check, ShieldCheck, Truck, RotateCcw, Sparkles, MapPin } from 'lucide-react';
 import { ImageWithFallback } from '../components/common/ImageWithFallback';
 
-const RECENTLY_VIEWED_KEY = 'forme_recently_viewed';
+const RECENTLY_VIEWED_KEY = 'dukaan_recently_viewed';
 
 export const ProductDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -139,7 +139,7 @@ export const ProductDetail: React.FC = () => {
         </p>
         <Link
           to="/shop"
-          className="px-5 py-2 bg-[#141414] text-white text-[11px] uppercase tracking-widest inline-block"
+          className="h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold inline-flex items-center justify-center rounded-lg shadow-md transition-all active:scale-[0.99]"
         >
           Explore All Objects
         </Link>
@@ -315,7 +315,7 @@ export const ProductDetail: React.FC = () => {
                     {formatPrice(product.price)}
                   </span>
                   {product.originalPrice && product.originalPrice > product.price && (
-                    <span className="text-xs text-[#73706B] line-through">
+                    <span className="text-xs text-[#73706B] line-through tabular-nums">
                       {formatPrice(product.originalPrice)}
                     </span>
                   )}
@@ -384,7 +384,7 @@ export const ProductDetail: React.FC = () => {
                         key={s.size}
                         disabled={!s.inStock}
                         onClick={() => setSelectedSize(s.size)}
-                        className={`h-11 text-xs uppercase font-medium tracking-wider border transition-all flex items-center justify-center rounded-sm ${
+                        className={`h-11 text-xs uppercase font-medium tracking-wider border transition-all flex items-center justify-center rounded-lg ${
                           !s.inStock
                             ? 'border-black/10 text-black/25 line-through cursor-not-allowed bg-black/5'
                             : isSelected
@@ -413,7 +413,7 @@ export const ProductDetail: React.FC = () => {
                   <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-medium">
                     Qty
                   </span>
-                  <div className="flex items-center border border-[#141414]/15 bg-white h-11 px-2 rounded-sm">
+                  <div className="flex items-center border border-[#141414]/15 bg-white h-11 px-2 rounded-lg">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
                       className="w-7 h-full flex items-center justify-center hover:text-[#A7654A] transition-colors"
@@ -437,7 +437,7 @@ export const ProductDetail: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <button
                     onClick={handleAddToBag}
-                    className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-sm"
+                    className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-lg font-semibold"
                   >
                     <Check className="w-3.5 h-3.5" />
                     <span>Add to Bag</span>
@@ -445,7 +445,7 @@ export const ProductDetail: React.FC = () => {
 
                   <button
                     onClick={handleBuyNow}
-                    className="w-full h-12 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center transition-all active:scale-[0.99] rounded-sm bg-white"
+                    className="w-full h-12 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center transition-all active:scale-[0.99] rounded-lg font-semibold bg-white"
                   >
                     <span>Instant Checkout</span>
                   </button>
@@ -582,7 +582,7 @@ export const ProductDetail: React.FC = () => {
 
       {/* Mobile Sticky Add to Bag Dock (Appears when scrolled past main purchase buttons) */}
       <div
-        className={`fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#141414]/10 px-4 py-2.5 sm:hidden transition-transform duration-300 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] safe-area-bottom ${
+        className={`fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#141414]/10 px-4 pt-2.5 pb-[calc(env(safe-area-inset-bottom,0px)+0.6rem)] sm:hidden transition-transform duration-300 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] ${
           showStickyBar ? 'translate-y-0' : 'translate-y-full pointer-events-none'
         }`}
       >
@@ -591,7 +591,7 @@ export const ProductDetail: React.FC = () => {
             <img
               src={product.images[0]}
               alt={product.name}
-              className="w-10 h-10 object-cover rounded-sm bg-[#FAF8F5] border border-[#141414]/10 shrink-0"
+              className="w-10 h-10 object-cover rounded-lg bg-[#FAF8F5] border border-[#141414]/10 shrink-0"
             />
             <div className="min-w-0">
               <p className="text-xs font-serif text-[#141414] truncate font-medium">{product.name}</p>
@@ -607,7 +607,7 @@ export const ProductDetail: React.FC = () => {
 
           <button
             onClick={handleAddToBag}
-            className="h-11 px-5 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-wider font-semibold rounded-sm shrink-0 flex items-center gap-1.5 shadow-sm active:scale-98 transition-all"
+            className="h-11 px-5 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-wider font-semibold rounded-lg shrink-0 flex items-center gap-1.5 shadow-sm active:scale-98 transition-all"
           >
             <Check className="w-3.5 h-3.5" />
             <span>Add to Bag</span>

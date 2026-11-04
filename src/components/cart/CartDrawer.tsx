@@ -93,7 +93,7 @@ export const CartDrawer: React.FC = () => {
                   <Link
                     to="/shop"
                     onClick={closeCart}
-                    className="inline-block mt-3 px-6 py-2.5 bg-[#141414] text-white text-[10px] uppercase tracking-widest hover:bg-[#A7654A] transition-colors font-medium"
+                    className="inline-flex items-center justify-center h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-lg shadow-md transition-all active:scale-[0.99] mt-3"
                   >
                     Explore Wardrobe
                   </Link>
@@ -104,7 +104,7 @@ export const CartDrawer: React.FC = () => {
                     <Link
                       to={`/product/${item.product.slug}`}
                       onClick={closeCart}
-                      className="w-16 h-22 shrink-0 bg-[#ECE7DD] overflow-hidden block"
+                      className="w-16 h-22 shrink-0 bg-[#ECE7DD] overflow-hidden rounded-lg block"
                     >
                       <img
                         src={item.product.images[0]}
@@ -140,7 +140,7 @@ export const CartDrawer: React.FC = () => {
 
                       <div className="flex items-center justify-between mt-2 pt-1">
                         {/* Quantity controls */}
-                        <div className="flex items-center border border-[#141414]/15 bg-white px-1">
+                        <div className="flex items-center border border-[#141414]/15 bg-white px-1.5 py-0.5 rounded-lg">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                             className="p-0.5 hover:text-[#A7654A] transition-colors"
@@ -160,7 +160,7 @@ export const CartDrawer: React.FC = () => {
                           </button>
                         </div>
 
-                        <span className="font-serif text-sm font-medium text-[#141414]">
+                        <span className="font-serif text-sm font-semibold text-[#141414] tabular-nums">
                           {formatPrice(item.product.price * item.quantity)}
                         </span>
                       </div>
@@ -176,7 +176,7 @@ export const CartDrawer: React.FC = () => {
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between text-[#73706B]">
                     <span>Subtotal</span>
-                    <span className="text-sm text-[#141414] font-medium">
+                    <span className="text-sm text-[#141414] font-semibold tabular-nums">
                       {formatPrice(subtotal)}
                     </span>
                   </div>
@@ -195,7 +195,7 @@ export const CartDrawer: React.FC = () => {
                     closeCart();
                     navigate('/checkout');
                   }}
-                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-sm"
+                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-lg"
                 >
                   <span>Proceed to Checkout</span>
                   <ArrowRight className="w-3.5 h-3.5" />

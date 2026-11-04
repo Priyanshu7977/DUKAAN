@@ -38,41 +38,43 @@ export const FAQ: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
       {/* Header */}
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <Breadcrumbs items={[{ label: 'Help & FAQs' }]} className="mb-2" />
-          <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
-            Help Center
-          </span>
-          <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xs text-[#73706B] max-w-xl font-light mt-1 leading-relaxed">
-            Everything you need to know about delivery across India, sizes & fit, natural fabrics, payments, and 7-day easy returns.
-          </p>
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Help & FAQs' }]} className="mb-3" />
+          <div className="max-w-3xl space-y-2 mb-4">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
+              Atelier Client Care
+            </span>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
+              Everything you need to know about delivery across India, sizes & fit, natural fabrics, payments, and 7-day easy returns.
+            </p>
+          </div>
 
           {/* Search filter input */}
-          <div className="mt-3.5 relative">
+          <div className="relative max-w-xl">
             <input
               type="text"
               value={filterQuery}
               onChange={(e) => setFilterQuery(e.target.value)}
               placeholder="Filter topics (e.g., shipping, linen, returns, sizes)..."
-              className="w-full bg-[#FAF9F6] border border-[#141414]/15 py-2 pl-3.5 pr-10 text-xs sm:text-sm text-[#141414] placeholder:text-[#73706B]/50 focus:outline-none focus:border-[#141414]"
+              className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-full py-2.5 pl-4 pr-10 text-xs sm:text-sm text-[#141414] placeholder:text-[#73706B]/50 focus:outline-none focus:border-[#141414] shadow-xs"
             />
-            <Search className="w-4 h-4 text-[#73706B] absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#73706B] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
 
           {/* Category Tabs */}
-          <div className="flex gap-1.5 mt-3 overflow-x-auto pb-1 scrollbar-none">
+          <div className="flex flex-wrap items-center gap-2 mt-4">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1 text-[11px] uppercase tracking-wider font-medium whitespace-nowrap transition-colors ${
+                className={`h-9 px-4 text-xs uppercase tracking-wider font-semibold rounded-full transition-all flex items-center justify-center ${
                   activeCategory === cat
-                    ? 'bg-[#141414] text-white'
-                    : 'bg-[#EAE7DF] text-[#73706B] hover:text-[#141414]'
+                    ? 'bg-[#141414] text-white shadow-xs ring-1 ring-[#141414]'
+                    : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40 hover:bg-[#FAF9F6]'
                 }`}
               >
                 {cat === 'all' ? 'All Questions' : cat}
@@ -83,7 +85,7 @@ export const FAQ: React.FC = () => {
       </section>
 
       {/* Main Accordion List */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         {filteredItems.length === 0 ? (
           <div className="py-12 text-center space-y-3 bg-white p-6 border border-[#141414]/8">
             <h3 className="font-serif text-lg text-[#141414]">No entries located</h3>
@@ -95,7 +97,7 @@ export const FAQ: React.FC = () => {
                 setFilterQuery('');
                 setActiveCategory('all');
               }}
-              className="px-4 py-2 bg-[#141414] text-white text-[10px] uppercase tracking-widest font-medium"
+              className="h-10 px-6 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold rounded-lg shadow-sm transition-all"
             >
               Reset Filters
             </button>
@@ -116,7 +118,7 @@ export const FAQ: React.FC = () => {
           </div>
           <Link
             to="/contact"
-            className="px-5 py-2.5 bg-[#141414] text-white text-[10px] uppercase tracking-widest font-medium hover:bg-[#A7654A] transition-colors shrink-0"
+            className="h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-lg shadow-md flex items-center justify-center shrink-0 transition-all active:scale-[0.99]"
           >
             Connect With Concierge
           </Link>

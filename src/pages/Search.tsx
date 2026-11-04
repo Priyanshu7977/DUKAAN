@@ -46,25 +46,30 @@ export const Search: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
       {/* Header & Search Bar */}
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ label: 'Search Wardrobe' }]} className="mb-2" />
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[{ label: 'Search Wardrobe' }]} className="mb-3" />
 
-          <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] mb-3 font-normal">
-            Search Catalogue
-          </h1>
+          <div className="max-w-3xl space-y-2 mb-5">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
+              Atelier Archive Search
+            </span>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
+              Search Catalogue
+            </h1>
+          </div>
 
-          <form onSubmit={handleSearch} className="relative">
+          <form onSubmit={handleSearch} className="relative max-w-2xl">
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search shirts, linen, trousers, corduroy, co-ords..."
-              className="w-full bg-[#FAF9F6] border border-[#141414]/20 py-2.5 pl-4 pr-12 text-sm font-serif text-[#141414] placeholder:text-[#73706B]/60 focus:outline-none focus:border-[#141414]"
+              className="w-full bg-[#FAF9F6] border border-[#141414]/20 rounded-full py-3.5 pl-5 pr-14 text-sm text-[#141414] placeholder:text-[#73706B]/60 focus:outline-none focus:border-[#141414] shadow-xs transition-colors"
             />
             <button
               type="submit"
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-[#141414] text-white hover:bg-[#A7654A] transition-colors"
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#141414] text-white hover:bg-black transition-all flex items-center justify-center shadow-xs active:scale-95"
               aria-label="Search"
             >
               <SearchIcon className="w-4 h-4" />
@@ -72,8 +77,8 @@ export const Search: React.FC = () => {
           </form>
 
           {/* Quick suggestions */}
-          <div className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
-            <span className="text-[#73706B] uppercase tracking-wider text-[10px] mr-1 font-medium">Popular:</span>
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-xs">
+            <span className="text-[#73706B] uppercase tracking-wider text-[10px] mr-1 font-semibold">Popular:</span>
             {['Linen', 'Corduroy', 'Trousers', 'Gauze', 'Pullover', 'Solstice', 'Co-ord'].map((tag) => (
               <button
                 key={tag}
@@ -81,7 +86,7 @@ export const Search: React.FC = () => {
                   setSearchTerm(tag);
                   setSearchParams({ q: tag });
                 }}
-                className="h-8 px-3 rounded-full bg-[#FAF9F6] hover:bg-[#141414] hover:text-white transition-all text-[11px] text-[#141414] border border-[#141414]/10 inline-flex items-center justify-center font-medium shadow-2xs"
+                className="h-8 px-4 rounded-full bg-white hover:bg-[#141414] hover:text-white transition-all text-xs text-[#141414] border border-[#141414]/15 inline-flex items-center justify-center font-medium shadow-xs"
               >
                 {tag}
               </button>
