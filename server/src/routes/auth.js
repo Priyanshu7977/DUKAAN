@@ -14,16 +14,29 @@ router.post('/register', authLimiter, async (req, res) => {
     return res.status(400).json({ status: 'error', message: 'All fields are required.' });
   }
 
+  const cleanName = String(fullName).trim().substring(0, 100);
+  const cleanEmail = String(email).trim().toLowerCase().substring(0, 255);
+  const cleanPhone = String(phone).trim().substring(0, 20);
+  const cleanPass = String(password);
+
+  if (cleanPass.length < 6 || cleanPass.length > 128) {
+    return res.status(400).json({ status: 'error', message: 'Password must be between 6 and 128 characters.' });
+  }
+
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(cleanEmail)) {
+    return res.status(400).json({ status: 'error', message: 'Please provide a valid email address.' });
+  }
+
   try {
     const salt = await bcrypt.genSalt(12);
-    const passwordHash = await bcrypt.hash(password, salt);
+    const passwordHash = await bcrypt.hash(cleanPass, salt);
     const verificationToken = crypto.randomBytes(32).toString('hex');
 
     const result = await db.query(
       `INSERT INTO users (full_name, email, phone, password_hash, verification_token)
        VALUES ($1, $2, $3, $4, $5)
        RETURNING id, full_name, email, phone, is_email_verified, role, created_at`,
-      [fullName.trim(), email.trim().toLowerCase(), phone.trim(), passwordHash, verificationToken]
+      [cleanName, cleanEmail, cleanPhone, passwordHash, verificationToken]
     );
 
     const user = result.rows[0];

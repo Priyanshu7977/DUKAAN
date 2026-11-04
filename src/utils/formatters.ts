@@ -5,23 +5,26 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formatPrice(amount: number): string {
+export function formatPrice(amount: unknown): string {
+  const num = typeof amount === 'number' && !isNaN(amount) && isFinite(amount) ? amount : (Number(amount) || 0);
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
     maximumFractionDigits: 0,
-  }).format(amount);
+  }).format(num);
 }
 
-export function formatDate(dateStr: string): string {
+export function formatDate(dateStr: unknown): string {
   try {
-    const d = new Date(dateStr);
+    if (!dateStr) return 'Recently';
+    const d = new Date(String(dateStr));
+    if (isNaN(d.getTime())) return String(dateStr);
     return new Intl.DateTimeFormat('en-IN', {
       month: 'long',
       day: 'numeric',
       year: 'numeric',
     }).format(d);
-  } catch (e) {
-    return dateStr;
+  } catch {
+    return String(dateStr || '');
   }
 }

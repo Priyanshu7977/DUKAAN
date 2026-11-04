@@ -249,7 +249,7 @@ export const Profile: React.FC = () => {
         {activeTab === 'orders' && (
           <div className="space-y-4">
             <h2 className="font-serif text-xl text-[#141414]">Order History & Real-Time Tracking</h2>
-            {user.orders.length === 0 ? (
+            {(user.orders || []).length === 0 ? (
               <div className="bg-white p-8 rounded-2xl text-center space-y-3 border border-[#141414]/10">
                 <p className="text-sm text-[#73706B]">You have no active orders yet.</p>
                 <Link
@@ -260,7 +260,7 @@ export const Profile: React.FC = () => {
                 </Link>
               </div>
             ) : (
-              user.orders.map((order) => (
+              (user.orders || []).map((order) => (
                 <div
                   key={order.id}
                   className="bg-white border border-[#141414]/10 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4"
@@ -431,7 +431,7 @@ export const Profile: React.FC = () => {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {user.addresses.map((addr) => (
+              {(user.addresses || []).map((addr) => (
                 <div
                   key={addr.id}
                   className={`bg-white border rounded-2xl p-5 space-y-3 relative shadow-sm ${

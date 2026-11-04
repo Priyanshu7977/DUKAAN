@@ -3,7 +3,16 @@ const router = express.Router();
 const notificationService = require('../services/notificationService');
 const db = require('../config/db');
 
+const MAX_CACHE_SIZE = 500;
 const goodNotesCache = new Map();
+
+function cacheGoodNote(key, html) {
+  if (goodNotesCache.size >= MAX_CACHE_SIZE) {
+    const oldestKey = goodNotesCache.keys().next().value;
+    goodNotesCache.delete(oldestKey);
+  }
+  goodNotesCache.set(key, html);
+}
 
 router.post('/order-dispatch', async (req, res) => {
   try {
@@ -20,7 +29,7 @@ router.post('/order-dispatch', async (req, res) => {
     });
 
     if (result.orderNumber && result.goodNoteHtml) {
-      goodNotesCache.set(result.orderNumber, result.goodNoteHtml);
+      cacheGoodNote(result.orderNumber, result.goodNoteHtml);
     }
 
     res.json({
@@ -71,7 +80,7 @@ router.get('/good-note/:orderNumber', async (req, res) => {
         createdAt: order.created_at,
       });
 
-      goodNotesCache.set(orderNumber, html);
+      cacheGoodNote(orderNumber, html);
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       return res.send(html);
     }

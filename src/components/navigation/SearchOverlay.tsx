@@ -36,11 +36,11 @@ export const SearchOverlay: React.FC = () => {
     }
     const filtered = PRODUCTS.filter(
       (p) =>
-        p.name.toLowerCase().includes(trimmed) ||
-        p.subtitle.toLowerCase().includes(trimmed) ||
-        p.category.toLowerCase().includes(trimmed) ||
-        p.tags.some((t) => t.toLowerCase().includes(trimmed)) ||
-        p.collection.toLowerCase().includes(trimmed)
+        (p.name || '').toLowerCase().includes(trimmed) ||
+        (p.subtitle || '').toLowerCase().includes(trimmed) ||
+        (p.category || '').toLowerCase().includes(trimmed) ||
+        (p.tags || []).some((t) => (t || '').toLowerCase().includes(trimmed)) ||
+        (p.collection || '').toLowerCase().includes(trimmed)
     );
     setResults(filtered);
   }, [query]);

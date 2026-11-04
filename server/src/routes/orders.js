@@ -8,40 +8,55 @@ const notificationService = require('../services/notificationService');
 router.post('/create', orderLimiter, async (req, res) => {
   const { customer, items, shippingAddress, paymentMethod, couponCode } = req.body;
 
-  if (!items || !items.length || !customer || !shippingAddress) {
-    return res.status(400).json({ status: 'error', message: 'Incomplete order payload.' });
+  if (!items || !Array.isArray(items) || items.length === 0 || !customer || !shippingAddress) {
+    return res.status(400).json({ status: 'error', message: 'Incomplete or malformed order payload.' });
   }
 
-  const client = await db.pool.connect();
+  let client;
   try {
+    client = await db.pool.connect();
     await client.query('BEGIN');
 
     let verifiedSubtotal = 0;
     const validatedItems = [];
 
     for (const item of items) {
-      const prodRes = await client.query('SELECT id, name, price FROM products WHERE id = $1', [item.productId]);
+      let price = 2500;
+      let name = item.name || 'DUKAAN Garment';
 
-      let price = prodRes.rows[0]?.price;
-      if (!price) {
-        price = item.price || 2500;
+      try {
+        if (item.productId) {
+          const prodRes = await client.query('SELECT id, name, price FROM products WHERE id = $1', [item.productId]);
+          if (prodRes.rows && prodRes.rows[0]) {
+            price = prodRes.rows[0].price;
+            name = prodRes.rows[0].name;
+          } else if (item.price && Number.isFinite(Number(item.price))) {
+            price = Math.max(0, Number(item.price));
+          }
+        } else if (item.price && Number.isFinite(Number(item.price))) {
+          price = Math.max(0, Number(item.price));
+        }
+      } catch {
+        if (item.price && Number.isFinite(Number(item.price))) {
+          price = Math.max(0, Number(item.price));
+        }
       }
 
-      const qty = Math.max(1, parseInt(item.quantity, 10) || 1);
+      const qty = Math.min(99, Math.max(1, parseInt(item.quantity, 10) || 1));
       verifiedSubtotal += price * qty;
 
       validatedItems.push({
-        productId: item.productId,
-        name: prodRes.rows[0]?.name || item.name || 'DUKAAN Garment',
-        size: item.size || 'M',
-        color: item.color || 'Standard',
+        productId: item.productId || 'custom-garment',
+        name,
+        size: String(item.size || 'M').substring(0, 10),
+        color: String(item.color || 'Standard').substring(0, 30),
         price,
         quantity: qty,
       });
     }
 
     let discountAmount = 0;
-    const normCoupon = couponCode ? couponCode.toUpperCase().trim() : '';
+    const normCoupon = couponCode ? String(couponCode).toUpperCase().trim() : '';
     if (['WELCOME500', 'DUKAAN500'].includes(normCoupon)) {
       discountAmount = Math.min(verifiedSubtotal, 500);
     } else if (['DUKAAN10', 'WELCOME10', 'FIRSTBUY'].includes(normCoupon)) {
@@ -63,15 +78,15 @@ router.post('/create', orderLimiter, async (req, res) => {
       [
         orderNumber,
         req.user?.id || null,
-        customer.fullName,
-        customer.email,
-        customer.phone,
+        String(customer.fullName || 'Patron').substring(0, 100),
+        String(customer.email || 'client@dukaan.in').substring(0, 150).toLowerCase(),
+        String(customer.phone || '').substring(0, 20),
         JSON.stringify(shippingAddress),
         verifiedSubtotal,
         discountAmount,
         shippingFee,
         totalAmount,
-        paymentMethod,
+        paymentMethod === 'cod' ? 'cod' : 'prepaid',
       ]
     );
 
@@ -104,7 +119,7 @@ router.post('/create', orderLimiter, async (req, res) => {
         shippingAddress,
       });
     } catch (notifErr) {
-      console.warn('[Notification Error]', notifErr.message);
+      console.warn('[Notification Notice]', notifErr.message);
     }
 
     res.status(201).json({
@@ -118,11 +133,13 @@ router.post('/create', orderLimiter, async (req, res) => {
       },
     });
   } catch (err) {
-    await client.query('ROLLBACK');
+    if (client) {
+      try { await client.query('ROLLBACK'); } catch {}
+    }
     console.error('[Create Order Error]', err);
     res.status(500).json({ status: 'error', message: 'Failed to create order.' });
   } finally {
-    client.release();
+    if (client) client.release();
   }
 });
 

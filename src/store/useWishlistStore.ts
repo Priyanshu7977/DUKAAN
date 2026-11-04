@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { Product } from '../types';
+import { safeStorage } from '../utils/security';
 
 interface WishlistStore {
   items: Product[];
@@ -15,26 +16,25 @@ const LEGACY_STORAGE_KEY = 'forme_atelier_wishlist';
 
 const loadSavedWishlist = (): Product[] => {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
-    const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-    if (legacy) {
-      const parsed = JSON.parse(legacy);
-      localStorage.setItem(STORAGE_KEY, legacy);
-      localStorage.removeItem(LEGACY_STORAGE_KEY);
-      return parsed;
+    const raw = safeStorage.getItem<Product[]>(STORAGE_KEY, []);
+    if (Array.isArray(raw) && raw.length > 0) {
+      return raw.filter((p) => p && typeof p.id === 'string');
+    }
+    const legacy = safeStorage.getItem<Product[]>(LEGACY_STORAGE_KEY, []);
+    if (Array.isArray(legacy) && legacy.length > 0) {
+      const valid = legacy.filter((p) => p && typeof p.id === 'string');
+      safeStorage.setItem(STORAGE_KEY, valid);
+      safeStorage.removeItem(LEGACY_STORAGE_KEY);
+      return valid;
     }
     return [];
-  } catch (e) {
+  } catch {
     return [];
   }
 };
 
 const saveWishlist = (items: Product[]) => {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-  } catch (e) {
-  }
+  safeStorage.setItem(STORAGE_KEY, items);
 };
 
 export const useWishlistStore = create<WishlistStore>((set, get) => ({

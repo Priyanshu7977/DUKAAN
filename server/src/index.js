@@ -8,6 +8,14 @@ const orderRoutes = require('./routes/orders');
 const notificationRoutes = require('./routes/notifications');
 const { generalLimiter } = require('./middleware/rateLimiter');
 
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('[Process Alert] Unhandled Promise Rejection at:', promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('[Process Alert] Uncaught Exception thrown:', err);
+});
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const INSTANCE_ID = process.env.INSTANCE_ID || `node-instance-${process.pid}`;
@@ -23,10 +31,12 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
         callback(null, true);
       } else {
-        callback(new Error('Blocked by CORS security policy.'));
+        const err = new Error('Blocked by CORS security policy.');
+        err.name = 'CorsError';
+        callback(err);
       }
     },
     credentials: true,
@@ -44,6 +54,7 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString(),
     instance: INSTANCE_ID,
     uptimeSeconds: Math.floor(process.uptime()),
+    memoryUsageMB: Math.round(process.memoryUsage().heapUsed / 1024 / 1024),
   });
 });
 
@@ -56,10 +67,32 @@ app.use((req, res) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error('[Unhandled Server Exception]:', err.message);
+  if (err.name === 'CorsError') {
+    return res.status(403).json({ status: 'error', message: 'Access denied by CORS security policy.' });
+  }
+
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    return res.status(400).json({ status: 'error', message: 'Malformed JSON payload detected.' });
+  }
+
+  console.error('[Unhandled Server Exception]:', err.message || err);
   res.status(500).json({ status: 'error', message: 'Internal server error occurred.' });
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`[DUKAAN API Server] Running on port ${PORT} [Instance: ${INSTANCE_ID}]`);
 });
+
+const gracefulShutdown = (signal) => {
+  console.log(`[DUKAAN API] ${signal} signal received: closing HTTP server gracefully...`);
+  server.close(async () => {
+    try {
+      const db = require('./config/db');
+      if (db.pool && db.pool.end) await db.pool.end();
+    } catch {}
+    process.exit(0);
+  });
+};
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));

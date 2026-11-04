@@ -113,8 +113,12 @@ export const ProductDetail: React.FC = () => {
 
       try {
         const stored = localStorage.getItem(RECENTLY_VIEWED_KEY);
-        const existing: string[] = stored ? JSON.parse(stored) : [];
-        const updated = [product.id, ...existing.filter((id) => id !== product.id)].slice(0, 5);
+        let existing: string[] = [];
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed)) existing = parsed;
+        }
+        const updated = [product.id, ...existing.filter((id) => typeof id === 'string' && id !== product.id)].slice(0, 5);
         localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(updated));
 
         const recentProducts = PRODUCTS.filter((p) => updated.includes(p.id) && p.id !== product.id);

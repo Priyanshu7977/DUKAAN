@@ -30,12 +30,12 @@ export const Search: React.FC = () => {
     if (!q) return true;
 
     const matchesQuery =
-      product.name.toLowerCase().includes(q) ||
-      product.subtitle.toLowerCase().includes(q) ||
-      product.description.toLowerCase().includes(q) ||
-      product.category.toLowerCase().includes(q) ||
-      product.collection.toLowerCase().includes(q) ||
-      product.tags.some((t) => t.toLowerCase().includes(q));
+      (product.name || '').toLowerCase().includes(q) ||
+      (product.subtitle || '').toLowerCase().includes(q) ||
+      (product.description || '').toLowerCase().includes(q) ||
+      (product.category || '').toLowerCase().includes(q) ||
+      (product.collection || '').toLowerCase().includes(q) ||
+      (product.tags || []).some((t) => (t || '').toLowerCase().includes(q));
 
     const matchesCategory =
       activeCategory === 'all' || product.category === activeCategory;
