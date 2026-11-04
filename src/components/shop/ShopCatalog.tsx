@@ -42,7 +42,9 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const [currentPage, setCurrentPage] = useState<number>(isNaN(paramPage) || paramPage < 1 ? 1 : paramPage);
-  const [pageSize, setPageSize] = useState<number>(12);
+  const [pageSize, setPageSize] = useState<number>(() =>
+    typeof window !== 'undefined' && window.innerWidth < 768 ? 8 : 16
+  );
   const gridTopRef = useRef<HTMLDivElement>(null);
 
   // Sync state if URL query params change
@@ -572,7 +574,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                   {/* Page Size Selector */}
                   <div className="flex items-center gap-1.5 text-xs text-[#73706B]">
                     <span className="uppercase tracking-wider text-[10px]">Show:</span>
-                    {[12, 24, 48].map((size) => (
+                    {[8, 16, 32].map((size) => (
                       <button
                         key={size}
                         onClick={() => {

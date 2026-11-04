@@ -9,6 +9,7 @@ import { QuickViewModal } from '../components/product/QuickViewModal';
 import { SizeGuideModal } from '../components/product/SizeGuideModal';
 import { ToastContainer } from '../components/common/ToastContainer';
 import { LoginModal } from '../components/auth/LoginModal';
+import { CustomCursor } from '../components/common/CustomCursor';
 import { useAuthStore } from '../store/useAuthStore';
 import { cn } from '../utils/formatters';
 
@@ -50,6 +51,7 @@ export const RootLayout: React.FC = () => {
       <Footer />
 
       {/* Global Modals & Overlays */}
+      <CustomCursor />
       <LoginModal />
       <SearchOverlay />
       <MobileMenu />
