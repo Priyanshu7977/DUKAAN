@@ -185,12 +185,11 @@ export const CartDrawer: React.FC = () => {
                                 setEditingSizeItem(item);
                                 setTempSelectedSize(item.selectedSize);
                               }}
-                              className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-white border border-[#141414]/20 hover:border-[#141414] text-[#141414] font-semibold rounded-md transition-all active:scale-95 group shadow-2xs"
-                              title="Click to fix or change garment size"
+                              className="inline-flex items-center gap-1 px-2 py-0.5 bg-white border border-[#141414]/20 hover:border-[#141414] text-[#141414] font-semibold rounded-md transition-all active:scale-95 group shadow-2xs"
+                              title="Click to select size"
                             >
-                              <span className="uppercase">{item.selectedSize}</span>
+                              <span className="uppercase text-xs font-semibold">{item.selectedSize}</span>
                               <ChevronDown className="w-3 h-3 text-[#73706B] group-hover:text-[#141414] transition-transform" />
-                              <span className="text-[9px] uppercase tracking-wider text-[#A7654A] font-medium ml-0.5">Change</span>
                             </button>
                           </div>
                         </div>
