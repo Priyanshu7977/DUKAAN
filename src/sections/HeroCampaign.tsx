@@ -1,0 +1,131 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+
+interface HeroSlide {
+  id: number;
+  desktop: string;
+  mobile: string;
+  alt: string;
+}
+
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: 1,
+    desktop: 'https://www.5feet11.com/cdn/shop/files/desktopbanner4.png',
+    mobile: 'https://www.5feet11.com/cdn/shop/files/mbbanner4.png',
+    alt: 'Dukaan Poolside Resort Edit',
+  },
+  {
+    id: 2,
+    desktop: 'https://www.5feet11.com/cdn/shop/files/desktopbn2.png',
+    mobile: 'https://www.5feet11.com/cdn/shop/files/mobile_banner2.png',
+    alt: 'Dukaan Casual Linen Gathering',
+  },
+];
+
+export const HeroCampaign: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-advance slides every 7 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+
+  return (
+    <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden bg-[#141414] flex items-end justify-center pb-8 sm:pb-12 select-none">
+      {/* 
+        Full-Screen Edge-to-Edge Responsive Banners:
+        - Desktop: 1500x1000 landscape banners that fill 100% of the screen with zero white gaps
+        - Mobile: 668x978 vertical portrait banners optimized for smartphones
+      */}
+      {HERO_SLIDES.map((slide, index) => {
+        const isActive = index === currentSlide;
+        return (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+              isActive ? 'opacity-100 z-0 pointer-events-auto' : 'opacity-0 -z-10 pointer-events-none'
+            }`}
+          >
+            <picture className="w-full h-full block">
+              <source
+                media="(max-width: 767px)"
+                srcSet={slide.mobile}
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet={slide.desktop}
+              />
+              <img
+                src={slide.desktop}
+                alt={slide.alt}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                className="w-full h-full object-cover object-center pointer-events-none"
+              />
+            </picture>
+          </div>
+        );
+      })}
+
+      {/* Subtle bottom vignette for CTA readability */}
+      <div className="absolute inset-x-0 bottom-0 h-44 sm:h-52 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none z-10" />
+
+      {/* Desktop Chevron Controls */}
+      <button
+        onClick={prevSlide}
+        aria-label="Previous Banner"
+        className="hidden md:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center rounded-full bg-black/25 hover:bg-black/55 text-white backdrop-blur-md transition-all shadow-md"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        aria-label="Next Banner"
+        className="hidden md:flex absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 items-center justify-center rounded-full bg-black/25 hover:bg-black/55 text-white backdrop-blur-md transition-all shadow-md"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Slide Indicator Dots (2 slides only) */}
+      <div className="absolute bottom-24 lg:bottom-28 z-20 flex items-center gap-2">
+        {HERO_SLIDES.map((slide, idx) => (
+          <button
+            key={slide.id}
+            onClick={() => setCurrentSlide(idx)}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`transition-all duration-300 rounded-full ${
+              currentSlide === idx
+                ? 'w-7 h-1.5 bg-white'
+                : 'w-1.5 h-1.5 bg-white/50 hover:bg-white/80'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Floating CTAs - Optimized for Mobile, Tablet & Desktop */}
+      <div className="relative z-20 flex flex-row items-center justify-center gap-2.5 sm:gap-4 px-4 w-full max-w-sm sm:max-w-md mx-auto">
+        <Link
+          to="/shop"
+          className="flex-1 sm:flex-initial px-6 sm:px-8 py-3 bg-white hover:bg-[#FAF8F5] text-[#141414] text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all flex items-center justify-center gap-1.5 shadow-xl hover:scale-105 active:scale-95"
+        >
+          <span>Explore Clothes</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
+        <Link
+          to="/collections/solstice-atelier"
+          className="flex-1 sm:flex-initial px-6 sm:px-8 py-3 bg-black/45 hover:bg-black/65 border border-white/60 hover:border-white text-white text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all shadow-xl text-center active:scale-95"
+        >
+          <span>Summer Edit</span>
+        </Link>
+      </div>
+    </section>
+  );
+};
