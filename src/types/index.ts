@@ -113,3 +113,47 @@ export interface FilterState {
   inStockOnly: boolean;
   sortBy: 'featured' | 'newest' | 'price-asc' | 'price-desc' | 'name-asc';
 }
+
+export interface UserAddress {
+  id: string;
+  fullName: string;
+  phone: string;
+  street: string;
+  apartment?: string;
+  city: string;
+  state: string;
+  pincode: string;
+  isDefault?: boolean;
+}
+
+export interface UserOrder {
+  id: string;
+  date: string;
+  status: 'Processing' | 'In Transit' | 'Delivered' | 'Cancelled';
+  total: number;
+  paymentMethod: 'COD' | 'Prepaid Online';
+  items: Array<{
+    id: string;
+    name: string;
+    price: number;
+    size: string;
+    color: string;
+    image: string;
+    quantity: number;
+  }>;
+  trackingNumber?: string;
+  estimatedDelivery?: string;
+}
+
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatar?: string;
+  memberSince: string;
+  tier: string;
+  walletBalance: number;
+  addresses: UserAddress[];
+  orders: UserOrder[];
+}

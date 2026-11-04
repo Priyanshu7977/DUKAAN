@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useCartStore } from '../../store/useCartStore';
 import { useWishlistStore } from '../../store/useWishlistStore';
 import { useUIStore } from '../../store/useUIStore';
-import { Search, ShoppingBag, Heart, Menu } from 'lucide-react';
+import { useAuthStore } from '../../store/useAuthStore';
+import { Search, ShoppingBag, Heart, Menu, User } from 'lucide-react';
 import { MegaMenu } from './MegaMenu';
 import { cn } from '../../utils/formatters';
 
@@ -16,6 +17,7 @@ export const Navbar: React.FC = () => {
   const wishlistItems = useWishlistStore((state) => state.items);
   const openSearch = useUIStore((state) => state.openSearch);
   const openMobileMenu = useUIStore((state) => state.openMobileMenu);
+  const { isAuthenticated, user, openLoginModal } = useAuthStore();
 
   const cartCount = getItemCount();
   const wishlistCount = wishlistItems.length;
@@ -113,6 +115,29 @@ export const Navbar: React.FC = () => {
                 </span>
               )}
             </Link>
+
+            {/* User Profile / Login */}
+            {isAuthenticated ? (
+              <Link
+                to="/profile"
+                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative flex items-center justify-center group"
+                aria-label={`Account of ${user?.name || 'User'}`}
+                title={`Profile: ${user?.name}`}
+              >
+                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#141414] text-white text-[10px] font-medium flex items-center justify-center group-hover:bg-[#A7654A] transition-colors shadow-xs">
+                  {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                </div>
+              </Link>
+            ) : (
+              <button
+                onClick={openLoginModal}
+                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"
+                aria-label="Sign in to your account"
+                title="Sign In / Register"
+              >
+                <User className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
+              </button>
+            )}
 
             {/* Cart / Bag */}
             <button

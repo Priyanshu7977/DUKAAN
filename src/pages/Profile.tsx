@@ -1,0 +1,556 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../store/useAuthStore';
+import { useWishlistStore } from '../store/useWishlistStore';
+import { useCartStore } from '../store/useCartStore';
+import {
+  User,
+  Package,
+  MapPin,
+  Heart,
+  Shield,
+  LogOut,
+  Phone,
+  Mail,
+  ChevronRight,
+  Plus,
+  Trash2,
+  CheckCircle,
+  Truck,
+  Clock,
+  Sparkles,
+} from 'lucide-react';
+
+export const Profile: React.FC = () => {
+  const {
+    user,
+    isAuthenticated,
+    logout,
+    updateProfile,
+    addAddress,
+    deleteAddress,
+    setDefaultAddress,
+    openLoginModal,
+  } = useAuthStore();
+  const wishlistItems = useWishlistStore((state) => state.items);
+  const addItemToCart = useCartStore((state) => state.addItem);
+  const openCart = useCartStore((state) => state.openCart);
+  const navigate = useNavigate();
+
+  const [activeTab, setActiveTab] = useState<'orders' | 'addresses' | 'wishlist' | 'settings'>('orders');
+  const [isEditingProfile, setIsEditingProfile] = useState(false);
+  const [editName, setEditName] = useState(user?.name || '');
+  const [editPhone, setEditPhone] = useState(user?.phone || '');
+  const [editEmail, setEditEmail] = useState(user?.email || '');
+
+  // New address modal state
+  const [isAddingAddress, setIsAddingAddress] = useState(false);
+  const [newStreet, setNewStreet] = useState('');
+  const [newCity, setNewCity] = useState('');
+  const [newState, setNewState] = useState('');
+  const [newPincode, setNewPincode] = useState('');
+
+  if (!isAuthenticated || !user) {
+    return (
+      <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 bg-[#FAF9F6]">
+        <div className="max-w-md w-full bg-white border border-[#141414]/10 rounded-2xl p-8 text-center space-y-5 shadow-lg">
+          <div className="w-16 h-16 bg-[#FAF8F5] border border-[#141414]/10 rounded-full flex items-center justify-center mx-auto text-[#141414]">
+            <User className="w-8 h-8 stroke-[1.5]" />
+          </div>
+          <div className="space-y-1.5">
+            <h2 className="font-serif text-2xl text-[#141414]">Sign In to Your Account</h2>
+            <p className="text-xs text-[#73706B] font-light max-w-xs mx-auto">
+              Access your order history, delivery tracking, and saved preferences with your phone or email.
+            </p>
+          </div>
+          <button
+            onClick={openLoginModal}
+            className="w-full py-3 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-medium rounded-lg transition-all shadow-md"
+          >
+            Sign In / Register Now
+          </button>
+          <div className="pt-2">
+            <Link to="/shop" className="text-xs text-[#73706B] hover:text-[#141414] underline">
+              Browse Wardrobe Collection →
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const handleSaveProfile = (e: React.FormEvent) => {
+    e.preventDefault();
+    updateProfile({
+      name: editName,
+      phone: editPhone,
+      email: editEmail,
+    });
+    setIsEditingProfile(false);
+  };
+
+  const handleCreateAddress = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newStreet || !newCity || !newPincode) return;
+    addAddress({
+      fullName: user.name,
+      phone: user.phone,
+      street: newStreet,
+      city: newCity,
+      state: newState || 'Maharashtra',
+      pincode: newPincode,
+    });
+    setNewStreet('');
+    setNewCity('');
+    setNewState('');
+    setNewPincode('');
+    setIsAddingAddress(false);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FAF9F6] py-8 sm:py-12 border-b border-[#141414]/8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        {/* Top Profile Header Card */}
+        <div className="bg-white border border-[#141414]/10 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="flex items-center gap-4 sm:gap-5">
+            {/* User Avatar Circle */}
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#141414] text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold shadow-md shrink-0">
+              {user.name.charAt(0).toUpperCase()}
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <h1 className="font-serif text-2xl sm:text-3xl text-[#141414] font-normal">
+                  {user.name}
+                </h1>
+                <span className="inline-flex items-center gap-1 text-[10px] tracking-wider uppercase bg-[#A7654A]/10 text-[#A7654A] px-2.5 py-0.5 rounded-full font-semibold">
+                  <Sparkles className="w-3 h-3" />
+                  <span>{user.tier}</span>
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#73706B]">
+                <span className="flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5" />
+                  <span className="font-mono">{user.phone}</span>
+                </span>
+                <span className="flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>{user.email}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 border border-red-200 text-red-600 hover:bg-red-50 text-xs uppercase tracking-wider font-medium rounded-lg transition-colors flex items-center gap-1.5"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>Log Out</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Dashboard Navigation Tabs */}
+        <div className="flex items-center border-b border-[#141414]/10 overflow-x-auto gap-2 sm:gap-6 bg-white px-4 sm:px-6 py-2 rounded-xl shadow-sm">
+          <button
+            onClick={() => setActiveTab('orders')}
+            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'orders'
+                ? 'border-[#141414] text-[#141414] font-bold'
+                : 'border-transparent text-[#73706B] hover:text-[#141414]'
+            }`}
+          >
+            <Package className="w-4 h-4" />
+            <span>Orders ({user.orders.length})</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('addresses')}
+            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'addresses'
+                ? 'border-[#141414] text-[#141414] font-bold'
+                : 'border-transparent text-[#73706B] hover:text-[#141414]'
+            }`}
+          >
+            <MapPin className="w-4 h-4" />
+            <span>Addresses ({user.addresses.length})</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('wishlist')}
+            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'wishlist'
+                ? 'border-[#141414] text-[#141414] font-bold'
+                : 'border-transparent text-[#73706B] hover:text-[#141414]'
+            }`}
+          >
+            <Heart className="w-4 h-4" />
+            <span>Saved Wishlist ({wishlistItems.length})</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('settings')}
+            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'settings'
+                ? 'border-[#141414] text-[#141414] font-bold'
+                : 'border-transparent text-[#73706B] hover:text-[#141414]'
+            }`}
+          >
+            <Shield className="w-4 h-4" />
+            <span>Settings</span>
+          </button>
+        </div>
+
+        {/* Tab 1: Orders */}
+        {activeTab === 'orders' && (
+          <div className="space-y-4">
+            <h2 className="font-serif text-xl text-[#141414]">Order History & Real-Time Tracking</h2>
+            {user.orders.length === 0 ? (
+              <div className="bg-white p-8 rounded-2xl text-center space-y-3 border border-[#141414]/10">
+                <p className="text-sm text-[#73706B]">You have no active orders yet.</p>
+                <Link
+                  to="/shop"
+                  className="inline-block px-6 py-2.5 bg-[#141414] text-white text-xs uppercase tracking-wider font-medium rounded-lg"
+                >
+                  Start Shopping →
+                </Link>
+              </div>
+            ) : (
+              user.orders.map((order) => (
+                <div
+                  key={order.id}
+                  className="bg-white border border-[#141414]/10 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#141414]/8 gap-2">
+                    <div className="space-y-0.5">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs font-bold text-[#141414]">Order {order.id}</span>
+                        <span
+                          className={`text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-semibold ${
+                            order.status === 'Delivered'
+                              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                              : 'bg-amber-50 text-amber-700 border border-amber-200'
+                          }`}
+                        >
+                          {order.status}
+                        </span>
+                      </div>
+                      <span className="text-[11px] text-[#73706B]">Placed on {order.date}</span>
+                    </div>
+
+                    <div className="text-left sm:text-right">
+                      <span className="font-serif text-base font-semibold text-[#141414]">
+                        ₹{order.total.toLocaleString('en-IN')}
+                      </span>
+                      <span className="text-[10px] text-[#73706B] block uppercase tracking-wider">
+                        {order.paymentMethod}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Order Items */}
+                  <div className="space-y-3">
+                    {order.items.map((item) => (
+                      <div key={item.id} className="flex items-center gap-4">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-16 h-20 object-cover rounded-lg bg-[#F3EEEB] border border-[#141414]/8"
+                        />
+                        <div className="flex-1 space-y-1">
+                          <h4 className="font-serif text-sm text-[#141414] font-medium leading-snug">
+                            {item.name}
+                          </h4>
+                          <div className="flex items-center gap-2 text-xs text-[#73706B]">
+                            <span>Size: {item.size}</span>
+                            <span>•</span>
+                            <span>Qty: {item.quantity}</span>
+                          </div>
+                          <span className="font-mono text-xs font-semibold text-[#141414] block">
+                            ₹{item.price.toLocaleString('en-IN')}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tracking status bar */}
+                  <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#141414]/6 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2 text-[#141414]">
+                      <Truck className="w-4 h-4 text-[#A7654A]" />
+                      <span>
+                        {order.status === 'Delivered'
+                          ? `Delivered on ${order.estimatedDelivery}`
+                          : `Estimated Delivery: ${order.estimatedDelivery}`}
+                      </span>
+                    </div>
+                    {order.trackingNumber && (
+                      <span className="font-mono text-[11px] text-[#73706B]">
+                        Tracking: {order.trackingNumber}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        )}
+
+        {/* Tab 2: Addresses */}
+        {activeTab === 'addresses' && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="font-serif text-xl text-[#141414]">Saved Delivery Addresses</h2>
+              <button
+                onClick={() => setIsAddingAddress(true)}
+                className="px-4 py-2 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-medium rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
+              >
+                <Plus className="w-3.5 h-3.5" />
+                <span>Add Address</span>
+              </button>
+            </div>
+
+            {isAddingAddress && (
+              <form
+                onSubmit={handleCreateAddress}
+                className="bg-white border border-[#141414]/15 rounded-2xl p-6 shadow-md space-y-4"
+              >
+                <h3 className="font-serif text-base text-[#141414]">Add New Delivery Address</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="space-y-1 sm:col-span-2">
+                    <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                      Street Address & Building
+                    </label>
+                    <input
+                      type="text"
+                      value={newStreet}
+                      onChange={(e) => setNewStreet(e.target.value)}
+                      placeholder="e.g. Flat 301, Palm Grove, Linking Road"
+                      required
+                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      value={newCity}
+                      onChange={(e) => setNewCity(e.target.value)}
+                      placeholder="e.g. Mumbai"
+                      required
+                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                      State
+                    </label>
+                    <input
+                      type="text"
+                      value={newState}
+                      onChange={(e) => setNewState(e.target.value)}
+                      placeholder="e.g. Maharashtra"
+                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                      Pincode (6 Digits)
+                    </label>
+                    <input
+                      type="text"
+                      maxLength={6}
+                      value={newPincode}
+                      onChange={(e) => setNewPincode(e.target.value.replace(/\D/g, ''))}
+                      placeholder="400050"
+                      required
+                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-mono"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 pt-2">
+                  <button
+                    type="submit"
+                    className="px-6 py-2.5 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-medium rounded-lg"
+                  >
+                    Save Address
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsAddingAddress(false)}
+                    className="px-4 py-2.5 border border-[#141414]/20 text-[#141414] text-xs uppercase tracking-wider rounded-lg"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {user.addresses.map((addr) => (
+                <div
+                  key={addr.id}
+                  className={`bg-white border rounded-2xl p-5 space-y-3 relative shadow-sm ${
+                    addr.isDefault ? 'border-[#141414] ring-1 ring-[#141414]' : 'border-[#141414]/10'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-serif text-sm font-bold text-[#141414]">{addr.fullName}</span>
+                    {addr.isDefault && (
+                      <span className="text-[10px] uppercase tracking-wider bg-[#141414] text-white px-2 py-0.5 rounded-full font-medium">
+                        Default
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-[#73706B] leading-relaxed">
+                    {addr.street}
+                    {addr.apartment && `, ${addr.apartment}`}
+                    <br />
+                    {addr.city}, {addr.state} — {addr.pincode}
+                  </p>
+                  <span className="text-xs text-[#141414] font-mono block">Phone: {addr.phone}</span>
+
+                  <div className="pt-2 flex items-center gap-3 border-t border-[#141414]/8">
+                    {!addr.isDefault && (
+                      <button
+                        onClick={() => setDefaultAddress(addr.id)}
+                        className="text-xs text-[#141414] hover:underline font-medium"
+                      >
+                        Set as Default
+                      </button>
+                    )}
+                    {user.addresses.length > 1 && (
+                      <button
+                        onClick={() => deleteAddress(addr.id)}
+                        className="text-xs text-red-600 hover:underline flex items-center gap-1 ml-auto"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                        <span>Delete</span>
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Tab 3: Wishlist */}
+        {activeTab === 'wishlist' && (
+          <div className="space-y-4">
+            <h2 className="font-serif text-xl text-[#141414]">Saved Wishlist Pieces</h2>
+            {wishlistItems.length === 0 ? (
+              <div className="bg-white p-8 rounded-2xl text-center space-y-3 border border-[#141414]/10">
+                <p className="text-sm text-[#73706B]">Your wishlist is currently empty.</p>
+                <Link
+                  to="/shop"
+                  className="inline-block px-6 py-2.5 bg-[#141414] text-white text-xs uppercase tracking-wider font-medium rounded-lg"
+                >
+                  Explore Collection →
+                </Link>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {wishlistItems.map((product) => (
+                  <div
+                    key={product.id}
+                    className="bg-white border border-[#141414]/10 rounded-xl overflow-hidden shadow-sm flex flex-col"
+                  >
+                    <Link to={`/product/${product.slug}`} className="aspect-[3/4] overflow-hidden bg-[#F3EEEB]">
+                      <img
+                        src={product.images[0]}
+                        alt={product.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </Link>
+                    <div className="p-3.5 space-y-2 flex-1 flex flex-col justify-between">
+                      <div>
+                        <h4 className="font-serif text-xs text-[#141414] font-medium truncate">
+                          {product.name}
+                        </h4>
+                        <span className="font-mono text-xs font-semibold text-[#141414] block mt-0.5">
+                          ₹{product.price.toLocaleString('en-IN')}
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => {
+                          addItemToCart(product, product.sizes[0]?.size || 'M', product.colors[0]?.name || 'Standard');
+                          openCart();
+                        }}
+                        className="w-full py-2 bg-[#141414] text-white text-[10px] uppercase tracking-wider font-medium rounded-md hover:bg-black transition-colors"
+                      >
+                        Move to Bag
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Tab 4: Settings & Security */}
+        {activeTab === 'settings' && (
+          <div className="bg-white border border-[#141414]/10 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6 max-w-2xl">
+            <h2 className="font-serif text-xl text-[#141414]">Personal Information & Security</h2>
+
+            <form onSubmit={handleSaveProfile} className="space-y-4">
+              <div className="space-y-1">
+                <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  value={editName}
+                  onChange={(e) => setEditName(e.target.value)}
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  value={editEmail}
+                  onChange={(e) => setEditEmail(e.target.value)}
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-[10px] uppercase tracking-wider font-semibold text-[#141414]">
+                  Primary Phone
+                </label>
+                <input
+                  type="tel"
+                  value={editPhone}
+                  onChange={(e) => setEditPhone(e.target.value)}
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-mono"
+                />
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="px-6 py-2.5 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-medium rounded-lg transition-colors shadow-sm"
+                >
+                  Save Profile Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+};

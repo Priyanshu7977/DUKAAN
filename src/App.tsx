@@ -20,6 +20,7 @@ import { Returns } from './pages/Returns';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { Checkout } from './pages/Checkout';
+import { Profile } from './pages/Profile';
 import { NotFound } from './pages/NotFound';
 
 export const App: React.FC = () => {
@@ -48,6 +49,7 @@ export const App: React.FC = () => {
           <Route path="returns" element={<Returns />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

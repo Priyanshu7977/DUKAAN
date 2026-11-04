@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useUIStore } from '../../store/useUIStore';
-import { X, ArrowRight, Heart, Search } from 'lucide-react';
+import { useAuthStore } from '../../store/useAuthStore';
+import { X, ArrowRight, Heart, Search, User } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export const MobileMenu: React.FC = () => {
   const { isMobileMenuOpen, closeMobileMenu, openSearch } = useUIStore();
+  const { isAuthenticated, user, openLoginModal } = useAuthStore();
 
   if (!isMobileMenuOpen) return null;
 
@@ -78,6 +80,30 @@ export const MobileMenu: React.FC = () => {
           </ul>
 
           <div className="mt-8 pt-6 border-t border-[#141414]/8 space-y-3">
+            {isAuthenticated ? (
+              <Link
+                to="/profile"
+                onClick={closeMobileMenu}
+                className="flex items-center gap-2.5 text-xs text-[#141414] hover:text-[#A7654A] transition-colors font-semibold"
+              >
+                <div className="w-5 h-5 rounded-full bg-[#141414] text-white text-[10px] flex items-center justify-center">
+                  {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                </div>
+                <span>My Profile ({user?.name})</span>
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  closeMobileMenu();
+                  openLoginModal();
+                }}
+                className="flex items-center gap-2.5 text-xs text-[#141414] hover:text-[#A7654A] transition-colors font-medium w-full text-left"
+              >
+                <User className="w-3.5 h-3.5 text-[#141414]" />
+                <span>Sign In / Atelier Membership</span>
+              </button>
+            )}
+
             <Link
               to="/wishlist"
               onClick={closeMobileMenu}

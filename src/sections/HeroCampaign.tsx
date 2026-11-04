@@ -7,6 +7,7 @@ interface HeroSlide {
   desktop: string;
   mobile: string;
   alt: string;
+  objectPosition?: string;
 }
 
 const HERO_SLIDES: HeroSlide[] = [
@@ -15,12 +16,14 @@ const HERO_SLIDES: HeroSlide[] = [
     desktop: 'https://www.5feet11.com/cdn/shop/files/desktopbanner4.png',
     mobile: 'https://www.5feet11.com/cdn/shop/files/mbbanner4.png',
     alt: 'Dukaan Poolside Resort Edit',
+    objectPosition: 'object-[center_top]',
   },
   {
     id: 2,
     desktop: 'https://www.5feet11.com/cdn/shop/files/desktopbn2.png',
     mobile: 'https://www.5feet11.com/cdn/shop/files/mobile_banner2.png',
     alt: 'Dukaan Casual Linen Gathering',
+    objectPosition: 'object-[center_top]',
   },
 ];
 
@@ -67,7 +70,7 @@ export const HeroCampaign: React.FC = () => {
                 src={slide.desktop}
                 alt={slide.alt}
                 loading={index === 0 ? 'eager' : 'lazy'}
-                className="w-full h-full object-cover object-center pointer-events-none"
+                className={`w-full h-full object-cover ${slide.objectPosition || 'object-[center_top]'} pointer-events-none`}
               />
             </picture>
           </div>
