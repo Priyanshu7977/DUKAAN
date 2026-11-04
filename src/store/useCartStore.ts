@@ -12,6 +12,7 @@ interface CartStore {
   addItem: (product: Product, size: string, color: string, quantity?: number) => void;
   removeItem: (itemId: string) => void;
   updateQuantity: (itemId: string, quantity: number) => void;
+  updateItemSize: (itemId: string, newSize: string) => boolean;
   clearCart: () => void;
   getCartTotal: () => number;
   getItemCount: () => number;
@@ -132,6 +133,38 @@ export const useCartStore = create<CartStore>((set, get) => ({
     );
     saveCart(updatedItems);
     set({ items: updatedItems });
+  },
+
+  updateItemSize: (itemId: string, newSize: string) => {
+    const items = get().items;
+    const targetItem = items.find((i) => i.id === itemId);
+    if (!targetItem || targetItem.selectedSize === newSize) return false;
+
+    const newId = `${targetItem.product.id}-${newSize}-${targetItem.selectedColor}`;
+    const existingTargetIndex = items.findIndex((i) => i.id === newId && i.id !== itemId);
+
+    let updatedItems: CartItem[];
+    if (existingTargetIndex > -1) {
+      // Merge with existing item of same product & new size
+      updatedItems = items
+        .filter((i) => i.id !== itemId)
+        .map((i) =>
+          i.id === newId
+            ? { ...i, quantity: Math.min(99, i.quantity + targetItem.quantity) }
+            : i
+        );
+    } else {
+      // Update this item's size and composite ID
+      updatedItems = items.map((i) =>
+        i.id === itemId
+          ? { ...i, id: newId, selectedSize: newSize }
+          : i
+      );
+    }
+
+    saveCart(updatedItems);
+    set({ items: updatedItems });
+    return true;
   },
 
   clearCart: () => {
