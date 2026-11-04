@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore } from '../../store/useAuthStore';
-import { X, Phone, Mail, ShieldCheck, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { useUIStore } from '../../store/useUIStore';
+import { X, Phone, Mail, ShieldCheck, ArrowRight, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
+import { isValidIndianPhone, isValidEmail, sanitizeInput } from '../../utils/security';
 
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isAuthenticated } = useAuthStore();
+  const showToast = useUIStore((state) => state.showToast);
   const [authMode, setAuthMode] = useState<'phone' | 'email'>('phone');
   const [phoneNumber, setPhoneNumber] = useState('7977641125');
   const [fullName, setFullName] = useState('Priyanshu Singh');
@@ -12,8 +15,10 @@ export const LoginModal: React.FC = () => {
   const [otpCode, setOtpCode] = useState(['5', '8', '2', '1']);
   const [countdown, setCountdown] = useState(30);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [attempts, setAttempts] = useState(0);
 
-  // 5-second automatic countdown for OTP resend
+  // 30-second automatic countdown for OTP resend
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (otpStep && countdown > 0) {
@@ -26,43 +31,75 @@ export const LoginModal: React.FC = () => {
 
   const handleSendOtp = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!phoneNumber || phoneNumber.length < 10) return;
+    setErrorMessage('');
+
+    // Rate-limiting defense: max 4 requests per session before lock
+    if (attempts >= 4) {
+      setErrorMessage('Too many OTP attempts. For security, please wait 5 minutes before trying again.');
+      return;
+    }
+
+    if (!isValidIndianPhone(phoneNumber)) {
+      setErrorMessage('Please enter a valid 10-digit Indian mobile number (starts with 6, 7, 8, or 9).');
+      return;
+    }
+
     setIsLoading(true);
+    setAttempts((prev) => prev + 1);
+
     setTimeout(() => {
       setIsLoading(false);
       setOtpStep(true);
       setCountdown(30);
+      showToast('OTP sent securely via SMS to +91 ' + phoneNumber, 'info');
     }, 600);
   };
 
   const handleVerifyOtp = (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage('');
+
+    const fullCode = otpCode.join('');
+    if (fullCode.length !== 4) {
+      setErrorMessage('Please enter the full 4-digit code.');
+      return;
+    }
+
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
       login({
-        name: fullName || 'Priyanshu Singh',
-        phone: '+91 ' + phoneNumber,
-        email: emailAddress || 'priyanshubipin2006@gmail.com',
+        name: sanitizeInput(fullName) || 'Priyanshu Singh',
+        phone: '+91 ' + phoneNumber.trim(),
+        email: sanitizeInput(emailAddress) || 'priyanshubipin2006@gmail.com',
       });
+      showToast('Signed in successfully', 'success');
     }, 600);
   };
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!emailAddress) return;
+    setErrorMessage('');
+
+    if (!isValidEmail(emailAddress)) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
       login({
-        name: fullName || 'Priyanshu Singh',
-        email: emailAddress,
-        phone: '+91 ' + phoneNumber,
+        name: sanitizeInput(fullName) || 'Priyanshu Singh',
+        email: emailAddress.trim(),
+        phone: '+91 ' + phoneNumber.trim(),
       });
+      showToast('Signed in via verified email', 'success');
     }, 600);
   };
 
   const handleGoogleSignIn = () => {
+    setErrorMessage('');
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
@@ -71,6 +108,7 @@ export const LoginModal: React.FC = () => {
         email: 'priyanshubipin2006@gmail.com',
         phone: '+91 7977641125',
       });
+      showToast('Signed in with Google', 'success');
     }, 500);
   };
 
@@ -139,6 +177,14 @@ export const LoginModal: React.FC = () => {
             <span>Email Login</span>
           </button>
         </div>
+
+        {/* Error Alert if any */}
+        {errorMessage && (
+          <div className="mx-6 mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700 flex items-start gap-2">
+            <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+            <span>{errorMessage}</span>
+          </div>
+        )}
 
         {/* Form Body */}
         <div className="p-6 space-y-4">

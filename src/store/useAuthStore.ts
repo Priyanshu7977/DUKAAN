@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { UserProfile, UserAddress, UserOrder } from '../types';
+import { safeStorage, sanitizeInput } from '../utils/security';
 
 interface AuthState {
   user: UserProfile | null;
@@ -76,13 +77,7 @@ const DEFAULT_ADDRESSES: UserAddress[] = [
 const STORAGE_KEY = 'dukaan_auth_user';
 
 const loadStoredUser = (): UserProfile | null => {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
-  } catch (e) {
-    console.error('Failed to parse stored user', e);
-  }
-  return null;
+  return safeStorage.getItem<UserProfile | null>(STORAGE_KEY, null);
 };
 
 export const useAuthStore = create<AuthState>((set, get) => ({
@@ -96,11 +91,15 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   login: (userData) => {
     const existing = get().user;
+    const cleanName = sanitizeInput(userData.name) || 'Priyanshu Singh';
+    const cleanEmail = sanitizeInput(userData.email) || 'priyanshubipin2006@gmail.com';
+    const cleanPhone = sanitizeInput(userData.phone) || '+91 7977641125';
+
     const newUser: UserProfile = {
       id: existing?.id || 'usr-' + Date.now().toString(36),
-      name: userData.name || 'Priyanshu Singh',
-      email: userData.email || 'priyanshubipin2006@gmail.com',
-      phone: userData.phone || '+91 7977641125',
+      name: cleanName,
+      email: cleanEmail,
+      phone: cleanPhone,
       memberSince: existing?.memberSince || 'May 2025',
       tier: 'DUKAAN Atelier Member',
       walletBalance: 500,
@@ -108,7 +107,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       orders: existing?.orders?.length ? existing.orders : DEFAULT_ORDERS,
     };
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(newUser));
+    safeStorage.setItem(STORAGE_KEY, newUser);
     set({
       user: newUser,
       isAuthenticated: true,
@@ -118,7 +117,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   logout: () => {
-    localStorage.removeItem(STORAGE_KEY);
+    safeStorage.removeItem(STORAGE_KEY);
     set({
       user: null,
       isAuthenticated: false,
@@ -129,8 +128,13 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   updateProfile: (data) => {
     const current = get().user;
     if (!current) return;
-    const updated = { ...current, ...data };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    const sanitizedData: Partial<UserProfile> = {};
+    if (data.name) sanitizedData.name = sanitizeInput(data.name);
+    if (data.email) sanitizedData.email = sanitizeInput(data.email);
+    if (data.phone) sanitizedData.phone = sanitizeInput(data.phone);
+
+    const updated = { ...current, ...data, ...sanitizedData };
+    safeStorage.setItem(STORAGE_KEY, updated);
     set({ user: updated });
   },
 
@@ -138,7 +142,13 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     const current = get().user;
     if (!current) return;
     const newAddress: UserAddress = {
-      ...addrData,
+      fullName: sanitizeInput(addrData.fullName),
+      phone: sanitizeInput(addrData.phone),
+      street: sanitizeInput(addrData.street),
+      apartment: addrData.apartment ? sanitizeInput(addrData.apartment) : '',
+      city: sanitizeInput(addrData.city),
+      state: sanitizeInput(addrData.state),
+      pincode: sanitizeInput(addrData.pincode),
       id: 'addr-' + Date.now().toString(36),
       isDefault: current.addresses.length === 0,
     };
@@ -146,7 +156,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       ...current,
       addresses: [...current.addresses, newAddress],
     };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    safeStorage.setItem(STORAGE_KEY, updated);
     set({ user: updated });
   },
 
@@ -157,7 +167,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       ...current,
       addresses: current.addresses.filter((a) => a.id !== id),
     };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    safeStorage.setItem(STORAGE_KEY, updated);
     set({ user: updated });
   },
 
@@ -171,7 +181,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         isDefault: a.id === id,
       })),
     };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    safeStorage.setItem(STORAGE_KEY, updated);
     set({ user: updated });
   },
 }));

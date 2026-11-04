@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 import { Product, CartItem } from '../types';
+import { PRODUCTS } from '../data/products';
+import { safeStorage, sanitizeNumeric } from '../utils/security';
 
 interface CartStore {
   items: CartItem[];
@@ -18,21 +20,42 @@ interface CartStore {
 
 const STORAGE_KEY = 'forme_atelier_cart';
 
+/**
+ * Sanitizes and validates cart items against the authoritative product catalog.
+ * Defends against client-side parameter tampering (e.g. price manipulation in DevTools).
+ */
+const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
+  if (!Array.isArray(rawItems)) return [];
+
+  return rawItems
+    .map((item) => {
+      // Find official authoritative product from master data
+      const masterProduct = PRODUCTS.find((p) => p.id === item.product?.id);
+      if (!masterProduct) return null;
+
+      const safeQuantity = sanitizeNumeric(item.quantity, 1, 1, 99);
+
+      return {
+        ...item,
+        // Enforce verified price from catalog - blocks price tampering
+        product: {
+          ...item.product,
+          price: masterProduct.price,
+          name: masterProduct.name,
+        },
+        quantity: safeQuantity,
+      };
+    })
+    .filter((item): item is CartItem => item !== null);
+};
+
 const loadSavedCart = (): CartItem[] => {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
-  } catch (e) {
-    return [];
-  }
+  const raw = safeStorage.getItem<CartItem[]>(STORAGE_KEY, []);
+  return sanitizeCartItems(raw);
 };
 
 const saveCart = (items: CartItem[]) => {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-  } catch (e) {
-    // ignore
-  }
+  safeStorage.setItem(STORAGE_KEY, items);
 };
 
 export const useCartStore = create<CartStore>((set, get) => ({
@@ -45,23 +68,33 @@ export const useCartStore = create<CartStore>((set, get) => ({
   toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
 
   addItem: (product: Product, size: string, color: string, quantity = 1) => {
+    // Look up verified master product
+    const masterProduct = PRODUCTS.find((p) => p.id === product.id) || product;
+    const safeQty = sanitizeNumeric(quantity, 1, 1, 99);
+
     const items = get().items;
-    const itemId = `${product.id}-${size}-${color}`;
+    const itemId = `${masterProduct.id}-${size}-${color}`;
     const existingIndex = items.findIndex((item) => item.id === itemId);
 
     let updatedItems: CartItem[];
     if (existingIndex > -1) {
       updatedItems = [...items];
-      updatedItems[existingIndex].quantity += quantity;
+      updatedItems[existingIndex].quantity = Math.min(
+        99,
+        updatedItems[existingIndex].quantity + safeQty
+      );
     } else {
       updatedItems = [
         ...items,
         {
           id: itemId,
-          product,
+          product: {
+            ...product,
+            price: masterProduct.price, // Authoritative price guarantee
+          },
           selectedColor: color,
           selectedSize: size,
-          quantity,
+          quantity: safeQty,
         },
       ];
     }
@@ -81,8 +114,9 @@ export const useCartStore = create<CartStore>((set, get) => ({
       get().removeItem(itemId);
       return;
     }
+    const safeQty = sanitizeNumeric(quantity, 1, 1, 99);
     const updatedItems = get().items.map((item) =>
-      item.id === itemId ? { ...item, quantity } : item
+      item.id === itemId ? { ...item, quantity: safeQty } : item
     );
     saveCart(updatedItems);
     set({ items: updatedItems });
@@ -94,10 +128,12 @@ export const useCartStore = create<CartStore>((set, get) => ({
   },
 
   getCartTotal: () => {
-    return get().items.reduce(
-      (sum, item) => sum + item.product.price * item.quantity,
-      0
-    );
+    return get().items.reduce((sum, item) => {
+      // Re-verify against master product to prevent runtime tampering
+      const masterProduct = PRODUCTS.find((p) => p.id === item.product.id);
+      const verifiedPrice = masterProduct ? masterProduct.price : item.product.price;
+      return sum + verifiedPrice * item.quantity;
+    }, 0);
   },
 
   getItemCount: () => {

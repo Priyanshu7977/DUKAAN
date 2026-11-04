@@ -19,6 +19,7 @@ import {
   PhoneCall
 } from 'lucide-react';
 import { ToastContainer } from '../components/common/ToastContainer';
+import { isValidIndianPhone, isValidPincode, sanitizeInput } from '../utils/security';
 
 const INDIAN_STATES = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
@@ -116,13 +117,13 @@ export const Checkout: React.FC = () => {
       return;
     }
 
-    if (formData.phone.length !== 10) {
-      showToast('Please enter a valid 10-digit mobile number', 'error');
+    if (!isValidIndianPhone(formData.phone)) {
+      showToast('Please enter a valid 10-digit mobile number (starts with 6, 7, 8, or 9)', 'error');
       return;
     }
 
-    if (formData.pincode.length !== 6) {
-      showToast('Please enter a valid 6-digit PIN code', 'error');
+    if (!isValidPincode(formData.pincode)) {
+      showToast('Please enter a valid 6-digit postal PIN code', 'error');
       return;
     }
 
@@ -134,12 +135,24 @@ export const Checkout: React.FC = () => {
     setIsSubmitting(true);
 
     setTimeout(() => {
-      const orderId = `FA-IN-${Math.floor(100000 + Math.random() * 900000)}`;
+      const orderId = `DUK-IN-${Math.floor(100000 + Math.random() * 900000)}`;
       const orderSummary = {
         orderId,
         date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
         items: [...items],
-        customer: { ...formData },
+        customer: {
+          fullName: sanitizeInput(formData.fullName),
+          phone: formData.phone.trim(),
+          email: sanitizeInput(formData.email),
+          address: sanitizeInput(formData.address),
+          area: sanitizeInput(formData.area),
+          landmark: sanitizeInput(formData.landmark),
+          city: sanitizeInput(formData.city),
+          state: sanitizeInput(formData.state),
+          pincode: formData.pincode.trim(),
+          addressType: formData.addressType,
+          paymentMethod: formData.paymentMethod,
+        },
         subtotal,
         discountAmount,
         shippingFee,
