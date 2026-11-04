@@ -1,6 +1,5 @@
 import React from 'react';
 import { HeroCampaign } from '../sections/HeroCampaign';
-import { TrustPillars } from '../sections/TrustPillars';
 import { SignatureProducts } from '../sections/SignatureProducts';
 import { EditorialSplitBanners } from '../sections/EditorialSplitBanners';
 import { FeaturedCategories } from '../sections/FeaturedCategories';
@@ -14,10 +13,7 @@ export const Home: React.FC = () => {
       {/* 1. Pure Full-Bleed Video Hero (Unobstructed cinematic video with subtle bottom CTA) */}
       <HeroCampaign />
 
-      {/* 2. Luxury Confidence & Shipping Pillars */}
-      <TrustPillars />
-
-      {/* 3. Curated Wardrobe Objects (Real 5feet11 Best Sellers with category tabs) */}
+      {/* 2. Curated Wardrobe Objects (Real 5feet11 Best Sellers with category tabs) */}
       <SignatureProducts />
 
       {/* 4. Editorial Split Banners (The Vacation Edit & Architectural Linen Luxe) */}
