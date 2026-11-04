@@ -241,7 +241,7 @@ export const ProductDetail: React.FC = () => {
                       {formatPrice(product.originalPrice)}
                     </span>
                   )}
-                  <span className="text-[10px] uppercase tracking-wider text-[#73706B] bg-[#EAE7DF] px-1.5 py-0.5 font-mono">
+                  <span className="text-[10px] uppercase tracking-wider text-[#73706B] bg-[#EAE7DF] px-2 py-0.5 font-medium rounded-xs">
                     Duties Included (DDP)
                   </span>
                 </div>
@@ -306,11 +306,11 @@ export const ProductDetail: React.FC = () => {
                         key={s.size}
                         disabled={!s.inStock}
                         onClick={() => setSelectedSize(s.size)}
-                        className={`py-2 text-xs uppercase font-mono font-medium border transition-all ${
+                        className={`h-11 text-xs uppercase font-medium tracking-wider border transition-all flex items-center justify-center rounded-sm ${
                           !s.inStock
                             ? 'border-black/10 text-black/25 line-through cursor-not-allowed bg-black/5'
                             : isSelected
-                            ? 'border-[#141414] bg-[#141414] text-white'
+                            ? 'border-[#141414] bg-[#141414] text-white shadow-xs'
                             : 'border-[#141414]/15 text-[#141414] hover:border-[#141414] bg-white'
                         }`}
                       >
@@ -335,31 +335,31 @@ export const ProductDetail: React.FC = () => {
                   <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-medium">
                     Qty
                   </span>
-                  <div className="flex items-center border border-[#141414]/15 bg-white px-1">
+                  <div className="flex items-center border border-[#141414]/15 bg-white h-11 px-2 rounded-sm">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="px-1.5 py-0.5 hover:text-[#A7654A] transition-colors"
+                      className="w-7 h-full flex items-center justify-center hover:text-[#A7654A] transition-colors"
                       aria-label="Decrease quantity"
                     >
-                      <Minus className="w-3 h-3" />
+                      <Minus className="w-3.5 h-3.5" />
                     </button>
-                    <span className="px-2 text-xs font-mono font-medium text-[#141414]">
+                    <span className="px-3 text-xs font-semibold text-[#141414] tabular-nums">
                       {quantity}
                     </span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="px-1.5 py-0.5 hover:text-[#A7654A] transition-colors"
+                      className="w-7 h-full flex items-center justify-center hover:text-[#A7654A] transition-colors"
                       aria-label="Increase quantity"
                     >
-                      <Plus className="w-3 h-3" />
+                      <Plus className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-0.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <button
                     onClick={handleAddToBag}
-                    className="w-full py-3 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-1.5 transition-colors"
+                    className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-sm"
                   >
                     <Check className="w-3.5 h-3.5" />
                     <span>Add to Bag</span>
@@ -367,7 +367,7 @@ export const ProductDetail: React.FC = () => {
 
                   <button
                     onClick={handleBuyNow}
-                    className="w-full py-3 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] uppercase tracking-[0.2em] font-medium transition-colors"
+                    className="w-full h-12 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center transition-all active:scale-[0.99] rounded-sm bg-white"
                   >
                     <span>Instant Checkout</span>
                   </button>

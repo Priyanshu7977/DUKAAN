@@ -165,7 +165,7 @@ export const CheckoutModal: React.FC = () => {
                         Mobile Number (Numbers only) *
                       </label>
                       <div className="flex">
-                        <span className="inline-flex items-center px-2.5 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-mono">
+                        <span className="inline-flex items-center px-2.5 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-medium tabular-nums">
                           +91
                         </span>
                         <input
@@ -293,7 +293,7 @@ export const CheckoutModal: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
+                      className="w-full h-12 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
                     >
                       {isSubmitting ? (
                         <span>Processing Order...</span>
@@ -317,16 +317,16 @@ export const CheckoutModal: React.FC = () => {
                   Thank you, <strong>{formData.fullName}</strong>. Your order is confirmed and will be delivered to:
                 </p>
                 <div className="p-3 bg-[#FAF9F6] border border-[#141414]/10 text-xs text-[#141414] max-w-sm mx-auto">
-                  <p className="font-mono text-sm font-bold mb-1">Order ID: {orderNumber}</p>
+                  <p className="text-sm font-bold mb-1 tabular-nums">Order ID: {orderNumber}</p>
                   <p className="font-light">{formData.address}, {formData.city}, {formData.state} - {formData.pincode}</p>
-                  <p className="text-[11px] text-[#73706B] mt-1 font-mono">Mobile: +91 {formData.phone}</p>
+                  <p className="text-[11px] text-[#73706B] mt-1 tabular-nums">Mobile: +91 {formData.phone}</p>
                 </div>
                 <p className="text-[11px] text-[#73706B] max-w-xs mx-auto">
                   SMS and WhatsApp shipment tracking updates will be sent to +91 {formData.phone}.
                 </p>
                 <button
                   onClick={handleClose}
-                  className="px-6 py-2.5 bg-[#141414] text-white text-[11px] uppercase tracking-widest font-medium hover:bg-[#A7654A] transition-colors"
+                  className="h-11 px-8 inline-flex items-center justify-center bg-[#141414] text-white text-[11px] uppercase tracking-widest font-medium hover:bg-[#A7654A] transition-colors"
                 >
                   Continue Shopping
                 </button>

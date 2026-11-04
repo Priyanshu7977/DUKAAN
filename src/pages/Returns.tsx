@@ -33,17 +33,17 @@ export const Returns: React.FC = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-1">
             <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
-              <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center font-mono text-xs font-semibold text-[#A7654A]">
+              <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 01
               </div>
               <h4 className="font-serif text-base text-[#141414]">Message on WhatsApp</h4>
               <p className="text-xs leading-relaxed">
-                Send a quick message with your order number to <a href="https://wa.me/917977641125" className="text-[#141414] font-medium underline">+91 7977641125</a> or email <a href="mailto:priyanshubipin2006@gmail.com" className="text-[#141414] font-medium underline">priyanshubipin2006@gmail.com</a>.
+                Send a quick message with your order number to <a href="https://wa.me/917977641125" className="text-[#141414] font-medium underline tabular-nums">+91 7977641125</a> or email <a href="mailto:priyanshubipin2006@gmail.com" className="text-[#141414] font-medium underline">priyanshubipin2006@gmail.com</a>.
               </p>
             </div>
 
             <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
-              <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center font-mono text-xs font-semibold text-[#A7654A]">
+              <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 02
               </div>
               <h4 className="font-serif text-base text-[#141414]">Pack the Garment</h4>
@@ -53,7 +53,7 @@ export const Returns: React.FC = () => {
             </div>
 
             <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
-              <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center font-mono text-xs font-semibold text-[#A7654A]">
+              <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 03
               </div>
               <h4 className="font-serif text-base text-[#141414]">Doorstep Pickup & Refund</h4>

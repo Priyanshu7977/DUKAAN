@@ -38,15 +38,15 @@ export const SignatureProducts: React.FC = () => {
           </div>
 
           {/* Minimal Flat Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-2">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`px-3 py-1 text-[11px] uppercase tracking-wider font-medium transition-colors ${
+                className={`h-10 px-4 text-[11px] uppercase tracking-wider font-medium rounded-sm transition-all flex items-center justify-center ${
                   filter === tab.id
-                    ? 'bg-[#141414] text-white'
-                    : 'bg-[#EAE7DF] text-[#73706B] hover:text-[#141414]'
+                    ? 'bg-[#141414] text-white shadow-xs'
+                    : 'bg-[#EAE7DF] text-[#73706B] hover:text-[#141414] hover:bg-[#E0DDD3]'
                 }`}
               >
                 {tab.label}
@@ -63,10 +63,10 @@ export const SignatureProducts: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-8 text-center">
+        <div className="mt-8 sm:mt-10 text-center">
           <Link
             to="/shop"
-            className="inline-flex items-center gap-2 px-6 py-2.5 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[10px] uppercase tracking-[0.2em] font-medium transition-colors"
+            className="inline-flex items-center justify-center gap-2 h-12 px-8 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] uppercase tracking-[0.2em] font-medium transition-all rounded-sm shadow-xs active:scale-[0.99]"
           >
             <span>View All {PRODUCTS.length} Wardrobe Pieces</span>
             <ArrowRight className="w-3.5 h-3.5" />

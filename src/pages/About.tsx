@@ -79,7 +79,7 @@ export const About: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 border border-[#141414]/8 space-y-2">
-            <span className="font-mono text-xs text-[#A7654A] font-bold">01</span>
+            <span className="text-xs text-[#A7654A] font-bold tabular-nums tracking-wider">01</span>
             <h3 className="font-serif text-lg text-[#141414]">100% Pure Natural Fibres</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               No plastic or synthetic blends. Only organic linen and soft combed cotton that keep you naturally cool, comfortable, and fresh all day long.
@@ -87,7 +87,7 @@ export const About: React.FC = () => {
           </div>
 
           <div className="bg-white p-6 border border-[#141414]/8 space-y-2">
-            <span className="font-mono text-xs text-[#A7654A] font-bold">02</span>
+            <span className="text-xs text-[#A7654A] font-bold tabular-nums tracking-wider">02</span>
             <h3 className="font-serif text-lg text-[#141414]">Relaxed Unisex Tailoring</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               Flattering dropped shoulders, airy volume, and comfortable pull-on waists designed to look effortlessly sharp on all body types.
@@ -95,7 +95,7 @@ export const About: React.FC = () => {
           </div>
 
           <div className="bg-white p-6 border border-[#141414]/8 space-y-2">
-            <span className="font-mono text-xs text-[#A7654A] font-bold">03</span>
+            <span className="text-xs text-[#A7654A] font-bold tabular-nums tracking-wider">03</span>
             <h3 className="font-serif text-lg text-[#141414]">Direct-to-Customer Value</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               By designing, producing, and delivering directly to you, we provide international luxury fashion quality at fair, transparent Indian prices.

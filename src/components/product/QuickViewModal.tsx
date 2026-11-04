@@ -143,12 +143,12 @@ export const QuickViewModal: React.FC = () => {
                       key={s.size}
                       disabled={!s.inStock}
                       onClick={() => setSelectedSize(s.size)}
-                      className={`px-3 py-1 text-xs uppercase font-mono border transition-all ${
+                      className={`h-9 px-3.5 text-xs uppercase font-medium tracking-wider border rounded-sm transition-all flex items-center justify-center ${
                         !s.inStock
-                          ? 'border-black/10 text-black/25 line-through cursor-not-allowed'
+                          ? 'border-black/10 text-black/25 line-through cursor-not-allowed bg-black/5'
                           : selectedSize === s.size
-                          ? 'border-[#141414] bg-[#141414] text-white'
-                          : 'border-[#141414]/15 text-[#141414] hover:border-[#141414]'
+                          ? 'border-[#141414] bg-[#141414] text-white shadow-xs'
+                          : 'border-[#141414]/15 text-[#141414] hover:border-[#141414] bg-white'
                       }`}
                     >
                       {s.size}
@@ -162,7 +162,7 @@ export const QuickViewModal: React.FC = () => {
             <div className="mt-5 pt-3 border-t border-[#141414]/8 space-y-2">
               <button
                 onClick={handleAddToBag}
-                className="w-full py-3 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-widest font-medium flex items-center justify-center gap-1.5 transition-colors"
+                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-sm"
               >
                 <Check className="w-3.5 h-3.5" />
                 <span>Add to Bag</span>

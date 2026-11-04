@@ -70,7 +70,7 @@ export const LookbookMasonry: React.FC = () => {
               </div>
               <div className="p-3 bg-white border-t border-[#141414]/6 flex items-center justify-between">
                 <div>
-                  <span className="text-[9px] uppercase tracking-widest text-[#73706B] block font-mono">
+                  <span className="text-[9px] uppercase tracking-widest text-[#73706B] block font-medium">
                     {look.category}
                   </span>
                   <h3 className="font-serif text-xs sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors truncate">

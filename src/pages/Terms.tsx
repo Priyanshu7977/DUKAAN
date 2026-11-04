@@ -54,13 +54,13 @@ export const Terms: React.FC = () => {
             <p><strong>Primary Client Representative:</strong> Priyanshu Bipin</p>
             <p>
               Mobile / WhatsApp:{' '}
-              <a href="tel:+917977641125" className="hover:text-[#A7654A] font-mono underline">
+              <a href="tel:+917977641125" className="hover:text-[#A7654A] tabular-nums font-medium underline">
                 +91 7977641125
               </a>
             </p>
             <p>
               Direct Legal & Client Care Email:{' '}
-              <a href="mailto:priyanshubipin2006@gmail.com" className="hover:text-[#A7654A] font-mono underline">
+              <a href="mailto:priyanshubipin2006@gmail.com" className="hover:text-[#A7654A] font-medium underline">
                 priyanshubipin2006@gmail.com
               </a>
             </p>

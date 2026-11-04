@@ -79,7 +79,7 @@ export const FeaturedCategories: React.FC = () => {
                   <h3 className="font-serif text-xs sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors leading-snug">
                     {cat.title}
                   </h3>
-                  <span className="text-[10px] text-[#73706B] uppercase tracking-wider block mt-0.5 font-mono">
+                  <span className="text-[10px] text-[#73706B] uppercase tracking-wider block mt-0.5 tabular-nums font-medium">
                     {cat.count}
                   </span>
                 </div>

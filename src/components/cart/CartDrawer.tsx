@@ -148,7 +148,7 @@ export const CartDrawer: React.FC = () => {
                           >
                             <Minus className="w-3 h-3" />
                           </button>
-                          <span className="px-2 text-xs font-mono font-medium text-[#141414]">
+                          <span className="px-2 text-xs font-semibold text-[#141414] tabular-nums">
                             {item.quantity}
                           </span>
                           <button
@@ -195,7 +195,7 @@ export const CartDrawer: React.FC = () => {
                     closeCart();
                     navigate('/checkout');
                   }}
-                  className="w-full py-3.5 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-widest font-medium flex items-center justify-center gap-2 transition-colors shadow-md"
+                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-sm"
                 >
                   <span>Proceed to Checkout</span>
                   <ArrowRight className="w-3.5 h-3.5" />

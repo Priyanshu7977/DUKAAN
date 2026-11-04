@@ -181,11 +181,11 @@ export const CollectionDetail: React.FC = () => {
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="p-2 sm:px-3 sm:py-2 border border-[#141414]/15 rounded-sm text-xs text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-colors flex items-center gap-1"
+                    className="h-10 px-3.5 border border-[#141414]/15 rounded-sm text-xs text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-all flex items-center justify-center gap-1 active:scale-[0.98]"
                     aria-label="Previous page"
                   >
                     <ChevronLeft className="w-4 h-4" />
-                    <span className="hidden sm:inline text-[11px] uppercase tracking-wider">Prev</span>
+                    <span className="hidden sm:inline text-[11px] uppercase tracking-wider font-medium">Prev</span>
                   </button>
 
                   {/* Page Numbers */}
@@ -200,7 +200,7 @@ export const CollectionDetail: React.FC = () => {
                     ) {
                       if (pageNum === 2 || pageNum === totalPages - 1) {
                         return (
-                          <span key={pageNum} className="px-1 text-xs text-[#73706B]">
+                          <span key={pageNum} className="w-6 text-center text-xs text-[#73706B] font-medium">
                             ...
                           </span>
                         );
@@ -212,7 +212,7 @@ export const CollectionDetail: React.FC = () => {
                       <button
                         key={pageNum}
                         onClick={() => handlePageChange(pageNum)}
-                        className={`w-8 h-8 sm:w-9 sm:h-9 text-xs font-mono font-medium rounded-sm transition-all ${
+                        className={`w-10 h-10 text-xs font-semibold rounded-sm transition-all tabular-nums flex items-center justify-center active:scale-[0.98] ${
                           isCurrent
                             ? 'bg-[#141414] text-white shadow-xs'
                             : 'border border-[#141414]/15 text-[#141414] hover:bg-[#FAF8F5]'
@@ -229,10 +229,10 @@ export const CollectionDetail: React.FC = () => {
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="p-2 sm:px-3 sm:py-2 border border-[#141414]/15 rounded-sm text-xs text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-colors flex items-center gap-1"
+                    className="h-10 px-3.5 border border-[#141414]/15 rounded-sm text-xs text-[#141414] hover:bg-[#141414] hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-all flex items-center justify-center gap-1 active:scale-[0.98]"
                     aria-label="Next page"
                   >
-                    <span className="hidden sm:inline text-[11px] uppercase tracking-wider">Next</span>
+                    <span className="hidden sm:inline text-[11px] uppercase tracking-wider font-medium">Next</span>
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>

@@ -164,7 +164,7 @@ export const LoginModal: React.FC = () => {
                     Mobile Number (India)
                   </label>
                   <div className="flex rounded-lg overflow-hidden border border-[#141414]/15 focus-within:border-[#141414] bg-[#FAF8F5]">
-                    <span className="px-3 py-2.5 text-xs text-[#73706B] bg-[#EAE5DF] font-mono border-r border-[#141414]/10 select-none">
+                    <span className="px-3 py-2.5 text-xs text-[#73706B] bg-[#EAE5DF] font-medium border-r border-[#141414]/10 select-none">
                       +91
                     </span>
                     <input
@@ -174,7 +174,7 @@ export const LoginModal: React.FC = () => {
                       onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
                       placeholder="9876543210"
                       required
-                      className="flex-1 px-3 py-2.5 text-xs bg-transparent focus:outline-none font-mono"
+                      className="flex-1 px-3 py-2.5 text-xs bg-transparent focus:outline-none font-medium tabular-nums"
                     />
                   </div>
                   <span className="text-[10px] text-[#73706B]">
@@ -185,7 +185,7 @@ export const LoginModal: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isLoading || phoneNumber.length < 10}
-                  className="w-full py-3 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 disabled:opacity-50"
+                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 disabled:opacity-50 shadow-md active:scale-[0.99]"
                 >
                   <span>{isLoading ? 'Sending Code...' : 'Get OTP Code'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -224,7 +224,7 @@ export const LoginModal: React.FC = () => {
                           copy[idx] = val;
                           setOtpCode(copy);
                         }}
-                        className="w-12 h-12 text-center text-lg font-mono font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-lg focus:outline-none focus:border-[#141414]"
+                        className="w-12 h-12 text-center text-lg font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-lg focus:outline-none focus:border-[#141414] tabular-nums"
                       />
                     ))}
                   </div>
@@ -233,7 +233,7 @@ export const LoginModal: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full py-3 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5"
+                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-[0.99]"
                 >
                   <ShieldCheck className="w-4 h-4" />
                   <span>{isLoading ? 'Verifying...' : 'Verify & Sign In'}</span>
@@ -302,7 +302,7 @@ export const LoginModal: React.FC = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full py-3 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5"
+                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-[0.99]"
               >
                 <span>{isLoading ? 'Signing In...' : 'Sign In with Email'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -323,7 +323,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="button"
             onClick={handleGoogleSignIn}
-            className="w-full py-2.5 px-4 bg-[#FAF8F5] hover:bg-[#EAE5DF] border border-[#141414]/15 rounded-lg text-xs font-medium text-[#141414] transition-colors flex items-center justify-center gap-2"
+            className="w-full h-12 px-4 bg-[#FAF8F5] hover:bg-[#EAE5DF] border border-[#141414]/15 rounded-lg text-xs font-semibold text-[#141414] transition-all flex items-center justify-center gap-2 active:scale-[0.99] shadow-2xs"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path

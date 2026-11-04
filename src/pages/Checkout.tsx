@@ -202,7 +202,7 @@ export const Checkout: React.FC = () => {
               Your order has been received and is being prepared for dispatch. Live tracking updates will be sent to your WhatsApp & Email.
             </p>
 
-            <div className="pt-2 inline-flex items-center gap-3 px-4 py-2 bg-[#FAF9F6] border border-[#141414]/10 font-mono text-xs">
+            <div className="pt-2 inline-flex items-center gap-3 px-4 py-2 bg-[#FAF9F6] border border-[#141414]/10 font-medium tabular-nums text-xs">
               <span className="text-[#73706B]">Order ID:</span>
               <span className="font-bold text-[#141414]">{confirmedOrder.orderId}</span>
               <span className="text-[#73706B]">•</span>
@@ -227,7 +227,7 @@ export const Checkout: React.FC = () => {
                 <p className="text-[#73706B] font-light">
                   {confirmedOrder.customer.city}, {confirmedOrder.customer.state} — {confirmedOrder.customer.pincode}
                 </p>
-                <p className="pt-1 font-mono text-[#141414]">
+                <p className="pt-1 font-medium text-[#141414] tabular-nums">
                   Mobile: +91 {confirmedOrder.customer.phone}
                 </p>
                 <p className="text-[#73706B]">Email: {confirmedOrder.customer.email}</p>
@@ -348,7 +348,7 @@ export const Checkout: React.FC = () => {
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-[#141414] text-white text-xs flex items-center justify-center font-mono">
+                  <span className="w-6 h-6 rounded-full bg-[#141414] text-white text-xs flex items-center justify-center font-bold">
                     1
                   </span>
                   <h2 className="font-serif text-lg text-[#141414]">Contact Information</h2>
@@ -362,7 +362,7 @@ export const Checkout: React.FC = () => {
                     Mobile Number (10 digits) *
                   </label>
                   <div className="flex">
-                    <span className="inline-flex items-center px-3 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-mono">
+                    <span className="inline-flex items-center px-3 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-medium">
                       +91
                     </span>
                     <input
@@ -398,7 +398,7 @@ export const Checkout: React.FC = () => {
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-[#141414] text-white text-xs flex items-center justify-center font-mono">
+                  <span className="w-6 h-6 rounded-full bg-[#141414] text-white text-xs flex items-center justify-center font-bold">
                     2
                   </span>
                   <h2 className="font-serif text-lg text-[#141414]">Delivery Address</h2>
@@ -541,7 +541,7 @@ export const Checkout: React.FC = () => {
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-[#141414]/8">
                 <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-[#141414] text-white text-xs flex items-center justify-center font-mono">
+                  <span className="w-6 h-6 rounded-full bg-[#141414] text-white text-xs flex items-center justify-center font-bold">
                     3
                   </span>
                   <h2 className="font-serif text-lg text-[#141414]">Select Payment Method</h2>
@@ -638,7 +638,7 @@ export const Checkout: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-[#141414] hover:bg-[#A7654A] text-white text-xs uppercase tracking-[0.22em] font-semibold flex items-center justify-center gap-2 shadow-lg transition-all disabled:opacity-50"
+                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-[0.2em] font-semibold flex items-center justify-center gap-2 shadow-lg transition-all disabled:opacity-50 active:scale-[0.99] rounded-sm"
               >
                 {isSubmitting ? (
                   <span>Processing Your Order...</span>
@@ -676,7 +676,7 @@ export const Checkout: React.FC = () => {
                         alt={item.product.name}
                         className="w-full h-full object-cover"
                       />
-                      <span className="absolute bottom-0 right-0 bg-[#141414] text-white text-[9px] px-1 font-mono">
+                      <span className="absolute bottom-0 right-0 bg-[#141414] text-white text-[9px] px-1.5 py-0.5 font-medium tabular-nums">
                         ×{item.quantity}
                       </span>
                     </div>

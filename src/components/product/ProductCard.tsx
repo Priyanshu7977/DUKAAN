@@ -59,11 +59,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Wishlist Button - Clean Minimal Floating Heart */}
         <button
           onClick={handleWishlistToggle}
-          className="absolute top-2.5 right-2.5 z-10 w-7 h-7 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all opacity-80 group-hover:opacity-100 hover:scale-105"
+          className="absolute top-2.5 right-2.5 z-10 w-8 h-8 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all opacity-90 group-hover:opacity-100 hover:scale-105 shadow-xs"
           aria-label={isFavorited ? 'Remove from wishlist' : 'Save to wishlist'}
         >
           <Heart
-            className={`w-3.5 h-3.5 transition-colors ${
+            className={`w-4 h-4 transition-colors ${
               isFavorited ? 'fill-[#A7654A] text-[#A7654A]' : 'text-[#141414]'
             }`}
           />
@@ -97,9 +97,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <div className="absolute inset-x-0 bottom-0 p-2.5 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
             <button
               onClick={handleQuickView}
-              className="w-full py-2 bg-white/95 hover:bg-[#141414] hover:text-white text-[#141414] text-[10px] uppercase tracking-widest font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm"
+              className="w-full h-10 bg-white/95 hover:bg-[#141414] hover:text-white text-[#141414] text-[10px] uppercase tracking-widest font-semibold transition-all flex items-center justify-center gap-1.5 shadow-sm rounded-sm"
             >
-              <Eye className="w-3 h-3" />
+              <Eye className="w-3.5 h-3.5" />
               <span>Quick View</span>
             </button>
           </div>

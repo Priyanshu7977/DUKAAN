@@ -124,7 +124,7 @@ export const JournalArticle: React.FC = () => {
                   />
                 </div>
                 {block.caption && (
-                  <figcaption className="text-xs text-[#73706B] font-mono mt-2 text-center">
+                  <figcaption className="text-xs text-[#73706B] font-light italic mt-2 text-center">
                     {block.caption}
                   </figcaption>
                 )}

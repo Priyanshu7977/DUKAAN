@@ -19,6 +19,7 @@ import {
   Truck,
   Clock,
   Sparkles,
+  ShoppingBag,
 } from 'lucide-react';
 
 export const Profile: React.FC = () => {
@@ -136,7 +137,7 @@ export const Profile: React.FC = () => {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#73706B]">
                 <span className="flex items-center gap-1">
                   <Phone className="w-3.5 h-3.5" />
-                  <span className="font-mono">{user.phone}</span>
+                  <span className="font-medium tabular-nums">{user.phone}</span>
                 </span>
                 <span className="flex items-center gap-1">
                   <Mail className="w-3.5 h-3.5" />
@@ -228,7 +229,7 @@ export const Profile: React.FC = () => {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#141414]/8 gap-2">
                     <div className="space-y-0.5">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs font-bold text-[#141414]">Order {order.id}</span>
+                        <span className="text-xs font-bold text-[#141414] tracking-wide">Order {order.id}</span>
                         <span
                           className={`text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-semibold ${
                             order.status === 'Delivered'
@@ -270,7 +271,7 @@ export const Profile: React.FC = () => {
                             <span>•</span>
                             <span>Qty: {item.quantity}</span>
                           </div>
-                          <span className="font-mono text-xs font-semibold text-[#141414] block">
+                          <span className="text-xs font-semibold text-[#141414] block">
                             ₹{item.price.toLocaleString('en-IN')}
                           </span>
                         </div>
@@ -289,7 +290,7 @@ export const Profile: React.FC = () => {
                       </span>
                     </div>
                     {order.trackingNumber && (
-                      <span className="font-mono text-[11px] text-[#73706B]">
+                      <span className="text-[11px] text-[#73706B] font-medium tracking-wide">
                         Tracking: {order.trackingNumber}
                       </span>
                     )}
@@ -370,7 +371,7 @@ export const Profile: React.FC = () => {
                       onChange={(e) => setNewPincode(e.target.value.replace(/\D/g, ''))}
                       placeholder="400050"
                       required
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-mono"
+                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-medium tabular-nums"
                     />
                   </div>
                 </div>
@@ -378,14 +379,14 @@ export const Profile: React.FC = () => {
                 <div className="flex items-center gap-3 pt-2">
                   <button
                     type="submit"
-                    className="px-6 py-2.5 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-medium rounded-lg"
+                    className="h-11 px-6 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold rounded-lg shadow-sm flex items-center justify-center transition-all active:scale-[0.99]"
                   >
                     Save Address
                   </button>
                   <button
                     type="button"
                     onClick={() => setIsAddingAddress(false)}
-                    className="px-4 py-2.5 border border-[#141414]/20 text-[#141414] text-xs uppercase tracking-wider rounded-lg"
+                    className="h-11 px-5 border border-[#141414]/20 text-[#141414] text-xs uppercase tracking-wider font-medium rounded-lg hover:bg-[#FAF8F5] flex items-center justify-center transition-all"
                   >
                     Cancel
                   </button>
@@ -415,7 +416,7 @@ export const Profile: React.FC = () => {
                     <br />
                     {addr.city}, {addr.state} — {addr.pincode}
                   </p>
-                  <span className="text-xs text-[#141414] font-mono block">Phone: {addr.phone}</span>
+                  <span className="text-xs text-[#141414] font-medium block">Phone: {addr.phone}</span>
 
                   <div className="pt-2 flex items-center gap-3 border-t border-[#141414]/8">
                     {!addr.isDefault && (
@@ -451,7 +452,7 @@ export const Profile: React.FC = () => {
                 <p className="text-sm text-[#73706B]">Your wishlist is currently empty.</p>
                 <Link
                   to="/shop"
-                  className="inline-block px-6 py-2.5 bg-[#141414] text-white text-xs uppercase tracking-wider font-medium rounded-lg"
+                  className="inline-flex items-center justify-center h-11 px-6 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold rounded-lg shadow-sm"
                 >
                   Explore Collection →
                 </Link>
@@ -475,7 +476,7 @@ export const Profile: React.FC = () => {
                         <h4 className="font-serif text-xs text-[#141414] font-medium truncate">
                           {product.name}
                         </h4>
-                        <span className="font-mono text-xs font-semibold text-[#141414] block mt-0.5">
+                        <span className="text-xs font-semibold text-[#141414] block mt-0.5">
                           ₹{product.price.toLocaleString('en-IN')}
                         </span>
                       </div>
@@ -484,9 +485,10 @@ export const Profile: React.FC = () => {
                           addItemToCart(product, product.sizes[0]?.size || 'M', product.colors[0]?.name || 'Standard');
                           openCart();
                         }}
-                        className="w-full py-2 bg-[#141414] text-white text-[10px] uppercase tracking-wider font-medium rounded-md hover:bg-black transition-colors"
+                        className="w-full h-10 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-wider font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-all active:scale-[0.99] shadow-2xs"
                       >
-                        Move to Bag
+                        <ShoppingBag className="w-3.5 h-3.5" />
+                        <span>Move to Bag</span>
                       </button>
                     </div>
                   </div>
@@ -534,14 +536,14 @@ export const Profile: React.FC = () => {
                   type="tel"
                   value={editPhone}
                   onChange={(e) => setEditPhone(e.target.value)}
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-mono"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-medium tabular-nums"
                 />
               </div>
 
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="px-6 py-2.5 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-medium rounded-lg transition-colors shadow-sm"
+                  className="h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold rounded-lg transition-all shadow-md active:scale-[0.99] flex items-center justify-center"
                 >
                   Save Profile Changes
                 </button>

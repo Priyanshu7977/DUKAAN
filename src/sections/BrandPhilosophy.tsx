@@ -51,7 +51,7 @@ export const BrandPhilosophy: React.FC = () => {
                   aspectRatioClass="w-full h-full"
                   className="group-hover:scale-105 transition-transform duration-500 ease-out object-cover"
                 />
-                <span className="absolute top-2.5 left-2.5 bg-[#141414] text-white text-[10px] font-mono px-2 py-0.5">
+                <span className="absolute top-2.5 left-2.5 bg-[#141414] text-white text-[10px] tabular-nums font-semibold px-2 py-0.5">
                   {pillar.number}
                 </span>
               </div>

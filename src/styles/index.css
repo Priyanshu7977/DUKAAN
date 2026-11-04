@@ -4,33 +4,56 @@
 
 @layer base {
   :root {
-    --color-bg: #F3F0E9;
-    --color-dark: #211E1A;
-    --color-secondary: #777765;
+    --color-bg: #FAF9F6;
+    --color-dark: #141414;
+    --color-secondary: #73706B;
     --color-accent: #A7654A;
-    --color-surface: #E8E3D9;
+    --color-surface: #FAF8F5;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
-    background-color: #F3F0E9;
-    color: #211E1A;
+    background-color: #FAF9F6;
+    color: #141414;
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+    /* Ensure numbers match the font style of the text */
+    font-feature-settings: 'tnum' 1, 'cv05' 1;
   }
 
   body {
     overflow-x: hidden;
     min-height: 100vh;
-    background-color: #F3F0E9;
-    color: #211E1A;
+    min-height: -webkit-fill-available;
+    background-color: #FAF9F6;
+    color: #141414;
+    touch-action: manipulation;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bodoni Moda', Georgia, serif;
     font-weight: 500;
     letter-spacing: -0.015em;
+    font-feature-settings: 'lnum' 1;
+  }
+
+  /* Universal number styling matching text typography */
+  span, p, a, button, input, select, textarea {
+    font-variant-numeric: normal;
+  }
+
+  /* Prevent iOS Safari auto-zoom when tapping inputs */
+  @media screen and (max-width: 767px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
   }
 
   /* Custom scrollbar */
@@ -39,11 +62,11 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #F3F0E9;
+    background: #FAF9F6;
   }
   ::-webkit-scrollbar-thumb {
     background: #D8D2C4;
-    border-radius: 0px;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #A7654A;
@@ -68,11 +91,73 @@
   }
   .editorial-sub {
     font-family: 'DM Sans', sans-serif;
-    color: #777765;
+    color: #73706B;
     letter-spacing: 0.04em;
     font-size: 0.875rem;
     line-height: 1.6;
   }
+
+  /* Safe Area Insets for iOS & Android Edge-to-Edge Displays */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Unified Button Standard Sizing - Universal Equal Heights */
+.btn-unified-primary {
+  height: 2.875rem; /* 46px - standard touch target */
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  background-color: #141414;
+  color: #FAF9F6;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+.btn-unified-primary:hover {
+  background-color: #000000;
+}
+.btn-unified-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-unified-secondary {
+  height: 2.875rem; /* 46px */
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  background-color: transparent;
+  color: #141414;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+.btn-unified-secondary:hover {
+  background-color: #141414;
+  color: #FAF9F6;
+  border-color: #141414;
+}
+.btn-unified-secondary:active {
+  transform: scale(0.98);
 }
 
 /* Image zoom & hover transitions */

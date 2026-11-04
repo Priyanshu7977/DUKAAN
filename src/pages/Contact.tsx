@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
                       Mobile Number (Numbers only)
                     </label>
                     <div className="flex">
-                      <span className="inline-flex items-center px-2.5 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-mono">
+                      <span className="inline-flex items-center px-2.5 bg-[#EAE7DF] border border-r-0 border-[#141414]/15 text-xs text-[#141414] font-medium tabular-nums">
                         +91
                       </span>
                       <input
@@ -175,7 +175,7 @@ export const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full h-12 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] uppercase tracking-[0.2em] font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span>Sending Message...</span>
@@ -230,7 +230,7 @@ export const Contact: React.FC = () => {
               <div className="pt-1">
                 <a
                   href="tel:+917977641125"
-                  className="font-mono text-sm text-[#141414] hover:text-[#A7654A] font-semibold transition-colors block"
+                  className="text-sm text-[#141414] hover:text-[#A7654A] font-semibold tabular-nums transition-colors block"
                 >
                   +91 7977641125
                 </a>
@@ -257,7 +257,7 @@ export const Contact: React.FC = () => {
               <div className="pt-1">
                 <a
                   href="mailto:priyanshubipin2006@gmail.com"
-                  className="font-mono text-sm text-[#141414] hover:text-[#A7654A] font-semibold transition-colors block"
+                  className="text-sm text-[#141414] hover:text-[#A7654A] font-medium transition-colors block"
                 >
                   priyanshubipin2006@gmail.com
                 </a>

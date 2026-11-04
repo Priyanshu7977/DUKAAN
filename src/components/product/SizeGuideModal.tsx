@@ -62,7 +62,7 @@ export const SizeGuideModal: React.FC = () => {
             <span className="text-[10px] uppercase tracking-wider text-[#73706B] mr-1">Units:</span>
             <button
               onClick={() => setUnit('cm')}
-              className={`px-2.5 py-1 text-xs font-mono transition-colors ${
+              className={`h-8 px-3 text-xs tabular-nums transition-colors ${
                 unit === 'cm' ? 'bg-[#141414] text-white font-medium' : 'bg-[#EAE7DF] text-[#73706B]'
               }`}
             >
@@ -70,7 +70,7 @@ export const SizeGuideModal: React.FC = () => {
             </button>
             <button
               onClick={() => setUnit('in')}
-              className={`px-2.5 py-1 text-xs font-mono transition-colors ${
+              className={`h-8 px-3 text-xs tabular-nums transition-colors ${
                 unit === 'in' ? 'bg-[#141414] text-white font-medium' : 'bg-[#EAE7DF] text-[#73706B]'
               }`}
             >
@@ -90,7 +90,7 @@ export const SizeGuideModal: React.FC = () => {
                   <th className="p-3 font-semibold">Body Length</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#141414]/8 font-mono text-[#141414] text-xs">
+              <tbody className="divide-y divide-[#141414]/8 tabular-nums text-[#141414] text-xs">
                 {data.map((row) => (
                   <tr key={row.size} className="hover:bg-[#FAF9F6] transition-colors">
                     <td className="p-3 font-bold">{row.size}</td>
@@ -106,7 +106,7 @@ export const SizeGuideModal: React.FC = () => {
 
           <div className="mt-4 p-3.5 bg-[#FAF9F6] border border-[#141414]/8 text-xs text-[#73706B] space-y-1 font-light">
             <p><strong>Unisex Sizing Reference:</strong> Size XS corresponds to Women's S / Men's XS. Size S corresponds to Women's M / Men's S. Size M corresponds to Women's L / Men's M.</p>
-            <p>For custom tailoring advice, contact our concierge at <a href="tel:+917977641125" className="text-[#141414] underline font-mono">+91 7977641125</a>.</p>
+            <p>For custom tailoring advice, contact our concierge at <a href="tel:+917977641125" className="text-[#141414] underline tabular-nums font-medium">+91 7977641125</a>.</p>
           </div>
         </motion.div>
       </div>

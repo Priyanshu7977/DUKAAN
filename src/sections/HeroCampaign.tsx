@@ -117,14 +117,14 @@ export const HeroCampaign: React.FC = () => {
       <div className="relative z-20 flex flex-row items-center justify-center gap-2.5 sm:gap-4 px-4 w-full max-w-sm sm:max-w-md mx-auto">
         <Link
           to="/shop"
-          className="flex-1 sm:flex-initial px-6 sm:px-8 py-3 bg-white hover:bg-[#FAF8F5] text-[#141414] text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all flex items-center justify-center gap-1.5 shadow-xl hover:scale-105 active:scale-95"
+          className="flex-1 sm:flex-initial h-12 px-6 sm:px-8 bg-white hover:bg-[#FAF8F5] text-[#141414] text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all flex items-center justify-center gap-1.5 shadow-xl hover:scale-105 active:scale-95 rounded-sm"
         >
           <span>Explore Clothes</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
         <Link
           to="/collections/solstice-atelier"
-          className="flex-1 sm:flex-initial px-6 sm:px-8 py-3 bg-black/45 hover:bg-black/65 border border-white/60 hover:border-white text-white text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all shadow-xl text-center active:scale-95"
+          className="flex-1 sm:flex-initial h-12 px-6 sm:px-8 bg-black/45 hover:bg-black/65 border border-white/60 hover:border-white text-white text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all shadow-xl flex items-center justify-center active:scale-95 rounded-sm"
         >
           <span>Summer Edit</span>
         </Link>

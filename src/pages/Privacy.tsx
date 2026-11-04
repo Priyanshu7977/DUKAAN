@@ -33,11 +33,11 @@ export const Privacy: React.FC = () => {
             <p className="text-xs text-[#73706B]">Dukaan Apparel Private Ltd. • Customer Protection Office</p>
           </div>
           <div className="flex flex-col gap-1 text-xs text-[#141414]">
-            <a href="tel:+917977641125" className="flex items-center gap-2 hover:text-[#A7654A] transition-colors font-mono">
+            <a href="tel:+917977641125" className="flex items-center gap-2 hover:text-[#A7654A] transition-colors tabular-nums font-medium">
               <Phone className="w-3.5 h-3.5 text-[#A7654A]" />
               <span>+91 7977641125</span>
             </a>
-            <a href="mailto:priyanshubipin2006@gmail.com" className="flex items-center gap-2 hover:text-[#A7654A] transition-colors font-mono">
+            <a href="mailto:priyanshubipin2006@gmail.com" className="flex items-center gap-2 hover:text-[#A7654A] transition-colors font-medium">
               <Mail className="w-3.5 h-3.5 text-[#A7654A]" />
               <span>priyanshubipin2006@gmail.com</span>
             </a>

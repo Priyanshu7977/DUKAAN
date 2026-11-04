@@ -33,7 +33,7 @@ export const Journal: React.FC = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
-              <span className="px-3 py-1 bg-[#FAF8F5] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-wider text-[#141414] font-medium font-mono">
+              <span className="px-3 py-1 bg-[#FAF8F5] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-wider text-[#141414] font-medium tabular-nums">
                 {filteredArticles.length} Dispatches
               </span>
             </div>
@@ -45,7 +45,7 @@ export const Journal: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 text-[11px] uppercase tracking-wider font-medium rounded-sm transition-colors ${
+                className={`h-10 px-4 inline-flex items-center text-[11px] uppercase tracking-wider font-medium rounded-sm transition-colors ${
                   selectedCategory === cat
                     ? 'bg-[#141414] text-white'
                     : 'bg-[#FAF8F5] border border-[#141414]/10 text-[#73706B] hover:text-[#141414]'

@@ -83,13 +83,13 @@ export const Footer: React.FC = () => {
               <p className="text-white/90 font-medium">Concierge & Client Care:</p>
               <p>
                 Mobile / WhatsApp:{' '}
-                <a href="tel:+917977641125" className="text-white hover:text-[#A7654A] font-mono transition-colors">
+                <a href="tel:+917977641125" className="text-white hover:text-[#A7654A] tabular-nums font-medium transition-colors">
                   +91 7977641125
                 </a>
               </p>
               <p>
                 Email:{' '}
-                <a href="mailto:priyanshubipin2006@gmail.com" className="text-white hover:text-[#A7654A] font-mono transition-colors">
+                <a href="mailto:priyanshubipin2006@gmail.com" className="text-white hover:text-[#A7654A] transition-colors">
                   priyanshubipin2006@gmail.com
                 </a>
               </p>
