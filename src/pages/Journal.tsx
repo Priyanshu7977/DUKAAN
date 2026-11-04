@@ -16,34 +16,39 @@ export const Journal: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Header */}
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
+      {/* Editorial Journal Masthead */}
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs items={[{ label: 'Editorial Journal' }]} className="mb-2" />
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
-            <div>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
-                Atelier Notes & Monographs
-              </span>
-              <h1 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
-                The Journal
-              </h1>
-            </div>
-            <p className="text-xs text-[#73706B] max-w-md font-light leading-relaxed">
-              Curated investigations into textile botany, architecture, and unstructured tailoring dialogues.
+          <div className="flex items-center justify-between mb-3">
+            <Breadcrumbs items={[{ label: 'Editorial Journal' }]} />
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-widest text-[#141414] font-semibold tabular-nums">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+              <span>{filteredArticles.length} Dispatches</span>
+            </span>
+          </div>
+
+          <div className="max-w-3xl space-y-2 mb-6">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
+              Atelier Notes & Monographs
+            </span>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
+              The Journal
+            </h1>
+            <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed pt-1">
+              Curated investigations into textile botany, architectural silhouette geometries, and unstructured tailoring dialogues.
             </p>
           </div>
 
-          {/* Filter categories */}
-          <div className="flex gap-1.5 mt-3 overflow-x-auto pb-1 scrollbar-none">
+          {/* Luxury Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1 text-[11px] uppercase tracking-wider font-medium transition-colors ${
+                className={`h-10 px-5 text-xs uppercase tracking-wider font-semibold rounded-full transition-all flex items-center justify-center ${
                   selectedCategory === cat
-                    ? 'bg-[#141414] text-white'
-                    : 'bg-[#EAE7DF] text-[#73706B] hover:text-[#141414]'
+                    ? 'bg-[#141414] text-white shadow-sm ring-1 ring-[#141414]'
+                    : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40 hover:bg-[#FAF9F6]'
                 }`}
               >
                 {cat === 'all' ? 'All Dispatches' : cat}

@@ -211,45 +211,29 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      {/* Banner / Header - Compact & Tight */}
-      {bannerImage ? (
-        <div className="relative overflow-hidden min-h-[22vh] sm:min-h-[28vh] max-h-[320px] flex items-end pb-6 sm:pb-8 bg-[#141414] mb-4">
-          <img
-            src={bannerImage}
-            alt={title}
-            className="absolute inset-0 w-full h-full object-cover opacity-75 object-[center_25%] sm:object-[center_top]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/90 via-[#141414]/40 to-transparent" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">
-            <Breadcrumbs items={breadcrumbs} className="mb-2 text-white/70" />
-            <h1 className="font-serif text-2xl sm:text-4xl text-white font-normal">
+      {/* Editorial Luxury Header - Pure, Clean & Luminous */}
+      <div className="pt-6 sm:pt-8 pb-6 sm:pb-8 border-b border-[#141414]/10 bg-white mb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-3">
+            <Breadcrumbs items={breadcrumbs} />
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-widest text-[#141414] font-semibold tabular-nums">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+              <span>{filteredProducts.length} {filteredProducts.length === 1 ? 'Garment' : 'Garments'}</span>
+            </span>
+          </div>
+          <div className="max-w-3xl space-y-2">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
+              Atelier Wardrobe Curation
+            </span>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
               {title}
             </h1>
-            <p className="text-xs sm:text-sm text-white/80 max-w-xl font-light mt-1 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#73706B] font-light leading-relaxed pt-1">
               {subtitle}
             </p>
           </div>
         </div>
-      ) : (
-        <div className="pt-4 pb-4 border-b border-[#141414]/8 bg-white mb-2">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumbs items={breadcrumbs} className="mb-2" />
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-2">
-              <div>
-                <h1 className="font-serif text-2xl sm:text-3xl text-[#141414] font-normal">
-                  {title}
-                </h1>
-                <p className="text-xs text-[#73706B] max-w-xl font-light mt-0.5">
-                  {subtitle}
-                </p>
-              </div>
-              <span className="text-[11px] uppercase tracking-widest text-[#73706B] font-medium tabular-nums">
-                {filteredProducts.length} {filteredProducts.length === 1 ? 'Garment' : 'Garments'}
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
 
       {/* Main Filter & Grid Container - Zero Extraneous Whitespace */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2">

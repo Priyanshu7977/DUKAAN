@@ -7,7 +7,7 @@ import { isValidIndianPhone, isValidEmail, sanitizeInput } from '../../utils/sec
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isAuthenticated } = useAuthStore();
   const showToast = useUIStore((state) => state.showToast);
-  const [authMode, setAuthMode] = useState<'phone' | 'email'>('phone');
+  const [authMode, setAuthMode] = useState<'phone' | 'email' | 'forgot_password'>('phone');
   const [phoneNumber, setPhoneNumber] = useState('7977641125');
   const [fullName, setFullName] = useState('Priyanshu Singh');
   const [emailAddress, setEmailAddress] = useState('priyanshubipin2006@gmail.com');
@@ -17,6 +17,7 @@ export const LoginModal: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [attempts, setAttempts] = useState(0);
+  const [resetSent, setResetSent] = useState(false);
 
   // 30-second automatic countdown for OTP resend
   useEffect(() => {
@@ -110,6 +111,23 @@ export const LoginModal: React.FC = () => {
       });
       showToast('Signed in with Google', 'success');
     }, 500);
+  };
+
+  const handleForgotPassword = (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    if (!isValidEmail(emailAddress)) {
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setResetSent(true);
+      showToast('Password reset link sent to ' + emailAddress, 'success');
+    }, 800);
   };
 
   return (
@@ -302,7 +320,7 @@ export const LoginModal: React.FC = () => {
                 </div>
               </form>
             )
-          ) : (
+          ) : authMode === 'email' ? (
             <form onSubmit={handleEmailSubmit} className="space-y-3.5">
               <div className="space-y-1">
                 <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
@@ -333,9 +351,22 @@ export const LoginModal: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
-                  Password
-                </label>
+                <div className="flex items-center justify-between">
+                  <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                    Password
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAuthMode('forgot_password');
+                      setResetSent(false);
+                      setErrorMessage('');
+                    }}
+                    className="text-[10px] text-[#A7654A] hover:underline"
+                  >
+                    Forgot password?
+                  </button>
+                </div>
                 <input
                   type="password"
                   defaultValue="dukaanPass@123"
@@ -354,6 +385,73 @@ export const LoginModal: React.FC = () => {
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </form>
+          ) : (
+            /* Forgot Password Flow */
+            <div className="space-y-4">
+              <div className="space-y-1">
+                <h3 className="font-serif text-lg text-[#141414]">Reset Your Password</h3>
+                <p className="text-xs text-[#73706B] font-light leading-relaxed">
+                  Enter your registered account email and we will dispatch a secure single-use password reset link.
+                </p>
+              </div>
+
+              {!resetSent ? (
+                <form onSubmit={handleForgotPassword} className="space-y-3.5">
+                  <div className="space-y-1">
+                    <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                      Registered Email
+                    </label>
+                    <input
+                      type="email"
+                      value={emailAddress}
+                      onChange={(e) => setEmailAddress(e.target.value)}
+                      placeholder="priyanshubipin2006@gmail.com"
+                      required
+                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-[0.99]"
+                  >
+                    <span>{isLoading ? 'Dispatching Link...' : 'Send Password Reset Link'}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setAuthMode('email')}
+                    className="w-full text-center text-xs text-[#73706B] hover:text-[#141414] pt-1 underline font-medium"
+                  >
+                    Back to Sign In
+                  </button>
+                </form>
+              ) : (
+                <div className="p-4 bg-[#FAF8F5] border border-[#141414]/10 rounded-xl text-center space-y-3">
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-5 h-5" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <h4 className="font-serif text-base text-[#141414]">Reset Link Dispatched</h4>
+                    <p className="text-xs text-[#73706B]">
+                      We sent verification instructions to <strong>{emailAddress}</strong>. Check your inbox and follow the link to establish your new password.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAuthMode('email');
+                      setResetSent(false);
+                    }}
+                    className="h-10 px-5 bg-[#141414] text-white text-[11px] uppercase tracking-wider font-semibold rounded-md"
+                  >
+                    Return to Sign In
+                  </button>
+                </div>
+              )}
+            </div>
           )}
 
           {/* Social One-Click Login */}

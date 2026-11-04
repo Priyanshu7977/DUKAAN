@@ -21,7 +21,7 @@ export const NotFound: React.FC = () => {
         <div className="pt-2 flex flex-wrap justify-center gap-3">
           <Link
             to="/shop"
-            className="px-7 py-3 bg-[#141414] hover:bg-[#A7654A] text-white text-xs uppercase tracking-widest font-semibold transition-colors flex items-center gap-2"
+            className="h-12 px-8 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold transition-all rounded-lg shadow-md flex items-center justify-center gap-2 active:scale-[0.99]"
           >
             <span>Return to Wardrobe</span>
             <ArrowRight className="w-4 h-4" />
@@ -29,7 +29,7 @@ export const NotFound: React.FC = () => {
 
           <Link
             to="/"
-            className="px-7 py-3 border border-[#141414]/20 hover:border-[#141414] text-[#141414] text-xs uppercase tracking-widest font-medium transition-colors"
+            className="h-12 px-8 border border-[#141414]/20 hover:border-[#141414] hover:bg-white text-[#141414] text-xs uppercase tracking-widest font-semibold transition-all rounded-lg flex items-center justify-center active:scale-[0.99]"
           >
             Atelier Home
           </Link>

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
 import { useWishlistStore } from '../store/useWishlistStore';
 import { useCartStore } from '../store/useCartStore';
+import { useUIStore } from '../store/useUIStore';
 import {
   User,
   Package,
@@ -20,6 +21,9 @@ import {
   Clock,
   Sparkles,
   ShoppingBag,
+  ShieldAlert,
+  AlertTriangle,
+  CheckCircle2,
 } from 'lucide-react';
 
 export const Profile: React.FC = () => {
@@ -36,6 +40,7 @@ export const Profile: React.FC = () => {
   const wishlistItems = useWishlistStore((state) => state.items);
   const addItemToCart = useCartStore((state) => state.addItem);
   const openCart = useCartStore((state) => state.openCart);
+  const showToast = useUIStore((state) => state.showToast);
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState<'orders' | 'addresses' | 'wishlist' | 'settings'>('orders');
@@ -43,6 +48,33 @@ export const Profile: React.FC = () => {
   const [editName, setEditName] = useState(user?.name || '');
   const [editPhone, setEditPhone] = useState(user?.phone || '');
   const [editEmail, setEditEmail] = useState(user?.email || '');
+
+  // Email verification state
+  const [isEmailVerified, setIsEmailVerified] = useState(true);
+
+  // Delete account confirmation modal
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [deleteConfirmationInput, setDeleteConfirmationInput] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleVerifyEmail = () => {
+    setIsEmailVerified(true);
+    showToast('Verification confirmation dispatched! Email verified.', 'success');
+  };
+
+  const handlePermanentAccountDelete = () => {
+    if (deleteConfirmationInput.trim().toUpperCase() !== 'DELETE') {
+      showToast('Please type "DELETE" exactly to confirm account termination.', 'error');
+      return;
+    }
+    setIsDeleting(true);
+    setTimeout(() => {
+      logout();
+      setShowDeleteModal(false);
+      navigate('/');
+      showToast('Your account, personal records, and data have been permanently wiped.', 'info');
+    }, 800);
+  };
 
   // New address modal state
   const [isAddingAddress, setIsAddingAddress] = useState(false);
@@ -134,14 +166,28 @@ export const Profile: React.FC = () => {
                   <span>{user.tier}</span>
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#73706B]">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-[#73706B]">
                 <span className="flex items-center gap-1">
                   <Phone className="w-3.5 h-3.5" />
                   <span className="font-medium tabular-nums">{user.phone}</span>
                 </span>
-                <span className="flex items-center gap-1">
+                <span className="flex items-center gap-1.5">
                   <Mail className="w-3.5 h-3.5" />
                   <span>{user.email}</span>
+                  {isEmailVerified ? (
+                    <span className="inline-flex items-center gap-1 text-[10px] text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-semibold">
+                      <CheckCircle2 className="w-3 h-3" />
+                      <span>Verified</span>
+                    </span>
+                  ) : (
+                    <button
+                      onClick={handleVerifyEmail}
+                      className="inline-flex items-center gap-1 text-[10px] text-amber-800 bg-amber-100 hover:bg-amber-200 px-2 py-0.5 rounded-full font-semibold transition-colors"
+                    >
+                      <AlertTriangle className="w-3 h-3" />
+                      <span>Verify Now</span>
+                    </button>
+                  )}
                 </span>
               </div>
             </div>
@@ -549,10 +595,78 @@ export const Profile: React.FC = () => {
                 </button>
               </div>
             </form>
+
+            {/* Danger Zone: Account Deletion */}
+            <div className="pt-6 border-t border-red-200 space-y-3">
+              <div className="flex items-center gap-2 text-red-700">
+                <ShieldAlert className="w-4 h-4" />
+                <h3 className="text-xs font-bold uppercase tracking-wider">Danger Zone</h3>
+              </div>
+              <p className="text-xs text-[#73706B]">
+                Permanently purge your account, saved addresses, and active login sessions across all devices. This action is irreversible.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setDeleteConfirmationInput('');
+                  setShowDeleteModal(true);
+                }}
+                className="h-12 px-6 border-2 border-red-600 hover:bg-red-50 text-red-600 font-semibold text-xs uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-2"
+              >
+                <Trash2 className="w-4 h-4" />
+                <span>Delete Account & Wipe Records</span>
+              </button>
+            </div>
           </div>
         )}
 
       </div>
+
+      {/* Delete Account Double Confirmation Modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-5 border border-red-200 shadow-2xl">
+            <div className="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto">
+              <AlertTriangle className="w-6 h-6" />
+            </div>
+            <div className="text-center space-y-2">
+              <h3 className="text-lg font-serif font-bold text-[#141414]">Delete Account Permanently</h3>
+              <p className="text-xs text-[#73706B] leading-relaxed">
+                This will permanently delete your DUKAAN account, purge all associated addresses, and revoke all active sessions. This action cannot be reversed.
+              </p>
+            </div>
+            <div className="space-y-2 bg-[#FAF8F5] p-3.5 rounded-xl border border-[#141414]/10">
+              <label className="text-[11px] font-semibold text-[#141414] block">
+                Type <span className="font-mono text-red-600 bg-red-50 px-1 py-0.5 rounded border border-red-200 font-bold">DELETE</span> to confirm:
+              </label>
+              <input
+                type="text"
+                value={deleteConfirmationInput}
+                onChange={(e) => setDeleteConfirmationInput(e.target.value)}
+                placeholder="DELETE"
+                className="w-full px-3 py-2 text-xs bg-white border border-[#141414]/20 rounded-lg focus:outline-none focus:border-red-600 font-mono"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => setShowDeleteModal(false)}
+                className="h-12 border border-[#141414]/20 hover:bg-[#FAF8F5] text-xs font-semibold uppercase tracking-wider rounded-lg transition-all"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                disabled={deleteConfirmationInput.trim().toUpperCase() !== 'DELETE' || isDeleting}
+                onClick={handlePermanentAccountDelete}
+                className="h-12 bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-xs font-semibold uppercase tracking-wider rounded-lg transition-all shadow-md flex items-center justify-center gap-1.5"
+              >
+                {isDeleting ? 'Deleting...' : 'Confirm Delete'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

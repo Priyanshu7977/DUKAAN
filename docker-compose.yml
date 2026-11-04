@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  # 1. NGINX Reverse Proxy & Upstream Load Balancer
+  load-balancer:
+    image: nginx:alpine
+    container_name: dukaan-load-balancer
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api-1
+      - api-2
+    networks:
+      - dukaan-network
+
+  # 2. Node.js Express Clustered Instance 1
+  api-1:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: dukaan-api-instance-1
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - INSTANCE_ID=node-worker-replica-1
+      - DATABASE_URL=postgresql://postgres:postgres_secure_pass_9921@postgres:5432/dukaan_db
+      - JWT_SECRET=dukaan_jwt_secret_super_hard_token_991823712
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - dukaan-network
+
+  # 3. Node.js Express Clustered Instance 2
+  api-2:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: dukaan-api-instance-2
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - INSTANCE_ID=node-worker-replica-2
+      - DATABASE_URL=postgresql://postgres:postgres_secure_pass_9921@postgres:5432/dukaan_db
+      - JWT_SECRET=dukaan_jwt_secret_super_hard_token_991823712
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - dukaan-network
+
+  # 4. PostgreSQL Database with RLS
+  postgres:
+    image: postgres:16-alpine
+    container_name: dukaan-postgres-db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres_secure_pass_9921
+      - POSTGRES_DB=dukaan_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./server/src/db/schema.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dukaan_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dukaan-network
+
+  # 5. Automated Database Backup Service (runs every 24 hours)
+  db-backup:
+    image: postgres:16-alpine
+    container_name: dukaan-db-backup-cron
+    restart: always
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres_secure_pass_9921
+      - DB_NAME=dukaan_db
+    volumes:
+      - ./server/scripts/backup.sh:/backup.sh:ro
+      - dukaan-backups:/backups
+    entrypoint: |
+      /bin/sh -c '
+        echo "0 2 * * * /backup.sh >> /var/log/backup.log 2>&1" > /etc/crontabs/root
+        crond -f -l 8
+      '
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - dukaan-network
+
+networks:
+  dukaan-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  dukaan-backups:
