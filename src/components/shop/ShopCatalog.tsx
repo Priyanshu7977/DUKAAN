@@ -217,7 +217,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
           <img
             src={bannerImage}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover opacity-70 object-center"
+            className="absolute inset-0 w-full h-full object-cover opacity-75 object-[center_25%] sm:object-[center_top]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/90 via-[#141414]/40 to-transparent" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-white">

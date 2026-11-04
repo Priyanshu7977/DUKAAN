@@ -73,7 +73,7 @@ export const Search: React.FC = () => {
 
           {/* Quick suggestions */}
           <div className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
-            <span className="text-[#73706B] uppercase tracking-wider text-[10px] mr-1">Popular:</span>
+            <span className="text-[#73706B] uppercase tracking-wider text-[10px] mr-1 font-medium">Popular:</span>
             {['Linen', 'Corduroy', 'Trousers', 'Gauze', 'Pullover', 'Solstice', 'Co-ord'].map((tag) => (
               <button
                 key={tag}
@@ -81,7 +81,7 @@ export const Search: React.FC = () => {
                   setSearchTerm(tag);
                   setSearchParams({ q: tag });
                 }}
-                className="px-2.5 py-1 bg-[#FAF9F6] hover:bg-[#141414] hover:text-white transition-colors text-[11px] text-[#141414] border border-[#141414]/10"
+                className="h-8 px-3 rounded-full bg-[#FAF9F6] hover:bg-[#141414] hover:text-white transition-all text-[11px] text-[#141414] border border-[#141414]/10 inline-flex items-center justify-center font-medium shadow-2xs"
               >
                 {tag}
               </button>
@@ -112,9 +112,9 @@ export const Search: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1 text-[11px] uppercase tracking-wider transition-colors whitespace-nowrap ${
+                className={`h-9 px-3.5 text-[11px] uppercase tracking-wider transition-all rounded-sm whitespace-nowrap inline-flex items-center justify-center font-medium ${
                   activeCategory === cat
-                    ? 'bg-[#141414] text-white font-medium'
+                    ? 'bg-[#141414] text-white shadow-xs'
                     : 'bg-white border border-[#141414]/10 text-[#73706B] hover:text-[#141414]'
                 }`}
               >
@@ -143,7 +143,7 @@ export const Search: React.FC = () => {
                 setSearchParams({});
                 setActiveCategory('all');
               }}
-              className="px-5 py-2 bg-[#141414] text-white text-[11px] uppercase tracking-widest font-medium"
+              className="h-11 px-8 bg-[#141414] text-white text-[11px] uppercase tracking-[0.2em] font-medium hover:bg-[#A7654A] transition-colors rounded-sm inline-flex items-center justify-center"
             >
               Clear Search
             </button>

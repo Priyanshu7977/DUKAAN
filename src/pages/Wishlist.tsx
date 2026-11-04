@@ -64,7 +64,7 @@ export const Wishlist: React.FC = () => {
             <div className="pt-2">
               <Link
                 to="/shop"
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#141414] text-white text-[11px] uppercase tracking-widest font-medium"
+                className="inline-flex items-center justify-center gap-2 h-12 px-8 bg-[#141414] text-white text-[11px] uppercase tracking-[0.2em] font-medium transition-all hover:bg-[#A7654A] rounded-sm shadow-xs"
               >
                 <span>Explore Wardrobe</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -91,7 +91,7 @@ export const Wishlist: React.FC = () => {
                         removeItem(product.id);
                         showToast(`Removed ${product.name} from wishlist`, 'info');
                       }}
-                      className="absolute top-2.5 right-2.5 w-7 h-7 bg-white/80 backdrop-blur-sm flex items-center justify-center text-[#73706B] hover:text-[#A7654A] transition-colors"
+                      className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 shadow-2xs backdrop-blur-sm flex items-center justify-center text-[#73706B] hover:text-[#A7654A] transition-all"
                       aria-label="Remove item"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -108,7 +108,7 @@ export const Wishlist: React.FC = () => {
                         {product.name}
                       </h4>
                     </Link>
-                    <p className="text-xs font-serif text-[#141414] font-medium pt-0.5">
+                    <p className="text-xs font-serif text-[#141414] font-medium pt-0.5 tabular-nums">
                       {formatPrice(product.price)}
                     </p>
                   </div>
@@ -118,7 +118,7 @@ export const Wishlist: React.FC = () => {
                 <div className="mt-3">
                   <button
                     onClick={() => handleMoveToBag(product)}
-                    className="w-full py-2 bg-[#141414] text-white hover:bg-[#A7654A] text-[10px] uppercase tracking-widest font-medium transition-colors flex items-center justify-center gap-1.5"
+                    className="w-full h-10 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-1.5 rounded-sm active:scale-98 shadow-xs"
                   >
                     <ShoppingBag className="w-3.5 h-3.5" />
                     <span>Move to Bag</span>
