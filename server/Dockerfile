@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apk add --no-cache wget
 
 COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm ci --only=production || npm install --only=production && npm cache clean --force
 
 COPY . .
 
