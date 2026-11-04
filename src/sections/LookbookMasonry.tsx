@@ -32,11 +32,11 @@ export const LookbookMasonry: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-8 gap-2">
           <div>
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5 sm:mb-1">
               Lookbook Archive
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl text-[#141414] font-normal">
@@ -57,7 +57,7 @@ export const LookbookMasonry: React.FC = () => {
             <Link
               key={look.category}
               to={look.link}
-              className="group block relative overflow-hidden bg-[#ECE7DD]"
+              className="group block relative overflow-hidden bg-[#ECE7DD] rounded-lg sm:rounded-none border border-[#141414]/8 shadow-2xs"
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <ImageWithFallback
@@ -67,16 +67,16 @@ export const LookbookMasonry: React.FC = () => {
                   className="group-hover:scale-105 transition-transform duration-700 ease-out object-cover"
                 />
               </div>
-              <div className="p-3 bg-white border-t border-[#141414]/6 flex items-center justify-between">
-                <div>
+              <div className="p-2.5 sm:p-3 bg-white border-t border-[#141414]/6 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
+                <div className="min-w-0 flex-1 pr-1.5">
                   <span className="text-[9px] uppercase tracking-widest text-[#73706B] block font-medium">
                     {look.category}
                   </span>
-                  <h3 className="font-serif text-xs sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors truncate">
+                  <h3 className="font-serif text-[11px] sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors truncate leading-tight">
                     {look.title}
                   </h3>
                 </div>
-                <ArrowRight className="w-3.5 h-3.5 text-[#73706B] group-hover:text-[#A7654A] group-hover:translate-x-0.5 transition-transform shrink-0 ml-1" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#73706B] group-hover:text-[#A7654A] group-hover:translate-x-0.5 transition-transform shrink-0" />
               </div>
             </Link>
           ))}

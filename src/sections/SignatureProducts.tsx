@@ -24,9 +24,9 @@ export const SignatureProducts: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-5 sm:mb-7 gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-7 gap-3">
           <div>
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
               Customer Favorites
@@ -36,12 +36,12 @@ export const SignatureProducts: React.FC = () => {
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-none pb-1 sm:pb-0 sm:flex-wrap">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`h-10 px-5 text-xs uppercase tracking-wider font-semibold rounded-full transition-all flex items-center justify-center ${
+                className={`h-9 sm:h-10 px-4 sm:px-5 text-[11px] sm:text-xs uppercase tracking-wider font-semibold rounded-full transition-all shrink-0 flex items-center justify-center ${
                   filter === tab.id
                     ? 'bg-[#141414] text-white shadow-sm ring-1 ring-[#141414]'
                     : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40 hover:bg-[#FAF9F6]'
@@ -53,16 +53,16 @@ export const SignatureProducts: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-5 gap-y-6 sm:gap-y-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-5 gap-y-5 sm:gap-y-8">
           {displayedItems.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        <div className="mt-10 sm:mt-12 text-center">
+        <div className="mt-8 sm:mt-12 text-center">
           <Link
             to="/shop"
-            className="inline-flex items-center justify-center gap-2.5 h-12 px-9 border-2 border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-xs uppercase tracking-[0.2em] font-semibold transition-all rounded-lg shadow-sm active:scale-[0.99]"
+            className="inline-flex items-center justify-center gap-2.5 h-11 sm:h-12 px-7 sm:px-9 border-2 border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] sm:text-xs uppercase tracking-[0.2em] font-semibold transition-all rounded-lg shadow-sm active:scale-[0.99]"
           >
             <span>View All {PRODUCTS.length} Wardrobe Pieces</span>
             <ArrowRight className="w-4 h-4" />

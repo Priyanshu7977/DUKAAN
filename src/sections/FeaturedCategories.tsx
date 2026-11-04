@@ -38,9 +38,9 @@ export const FeaturedCategories: React.FC = () => {
   ];
 
   return (
-    <section className="py-8 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-5 sm:mb-7 gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-7 gap-2">
           <div>
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
               Categories
@@ -58,13 +58,15 @@ export const FeaturedCategories: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-          {categories.map((cat) => (
+          {categories.map((cat, idx) => (
             <Link
               key={cat.slug}
               to={`/shop?category=${cat.slug}`}
-              className="group block relative bg-white border border-[#141414]/8"
+              className={`group block relative bg-white border border-[#141414]/8 overflow-hidden rounded-lg sm:rounded-none shadow-2xs ${
+                idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+              }`}
             >
-              <div className="aspect-[3/4] overflow-hidden bg-[#ECE7DD]">
+              <div className={`overflow-hidden bg-[#ECE7DD] ${idx === 4 ? 'aspect-[16/9] sm:aspect-[3/4]' : 'aspect-[3/4]'}`}>
                 <ImageWithFallback
                   src={cat.image}
                   alt={cat.title}
@@ -73,16 +75,16 @@ export const FeaturedCategories: React.FC = () => {
                 />
               </div>
 
-              <div className="p-2.5 sm:p-3 bg-white flex items-start justify-between border-t border-[#141414]/6">
-                <div>
-                  <h3 className="font-serif text-xs sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors leading-snug">
+              <div className="p-2.5 sm:p-3 bg-white flex items-center justify-between border-t border-[#141414]/6 min-h-[52px] sm:min-h-[58px]">
+                <div className="min-w-0 pr-1">
+                  <h3 className="font-serif text-xs sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors leading-tight truncate">
                     {cat.title}
                   </h3>
                   <span className="text-[10px] text-[#73706B] uppercase tracking-wider block mt-0.5 tabular-nums font-medium">
                     {cat.count}
                   </span>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#73706B] group-hover:text-[#A7654A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 mt-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#73706B] group-hover:text-[#A7654A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
               </div>
             </Link>
           ))}

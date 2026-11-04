@@ -43,24 +43,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div
-      className="group relative flex flex-col bg-transparent"
+      className="group relative flex flex-col bg-transparent h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`relative overflow-hidden bg-[#F0ECE1] ${aspectRatio}`}>
+      <div className={`relative overflow-hidden bg-[#F0ECE1] ${aspectRatio} rounded-lg sm:rounded-none`}>
         {product.originalPrice && product.originalPrice > product.price && (
-          <span className="absolute top-2.5 left-2.5 z-10 bg-[#141414] text-[#FAF9F6] text-[9px] uppercase tracking-wider px-2 py-0.5 font-medium">
+          <span className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 z-10 bg-[#141414] text-[#FAF9F6] text-[8px] sm:text-[9px] uppercase tracking-wider px-1.5 py-0.5 sm:px-2 sm:py-0.5 font-medium rounded-xs">
             Sale
           </span>
         )}
 
         <button
           onClick={handleWishlistToggle}
-          className="absolute top-2.5 right-2.5 z-10 w-8 h-8 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all opacity-90 group-hover:opacity-100 hover:scale-105 shadow-xs"
+          className="absolute top-2 right-2 sm:top-2.5 sm:right-2.5 z-10 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#141414] hover:text-[#A7654A] transition-all opacity-90 group-hover:opacity-100 hover:scale-105 shadow-xs"
           aria-label={isFavorited ? 'Remove from wishlist' : 'Save to wishlist'}
         >
           <Heart
-            className={`w-4 h-4 transition-colors ${
+            className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-colors ${
               isFavorited ? 'fill-[#A7654A] text-[#A7654A]' : 'text-[#141414]'
             }`}
           />
@@ -101,24 +101,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         )}
       </div>
 
-      <div className="pt-2.5 flex flex-col justify-between flex-1">
-        <div>
+      <div className="pt-2 sm:pt-2.5 flex flex-col justify-between flex-1 min-h-[58px] sm:min-h-[68px]">
+        <div className="min-w-0">
           <Link to={`/product/${product.slug}`}>
-            <h3 className="font-serif text-[13px] sm:text-[14px] text-[#141414] group-hover:text-[#A7654A] transition-colors leading-snug line-clamp-1 font-normal">
+            <h3 className="font-serif text-[12px] sm:text-[14px] text-[#141414] group-hover:text-[#A7654A] transition-colors leading-tight sm:leading-snug truncate font-normal">
               {product.name}
             </h3>
           </Link>
-          <p className="text-[11px] text-[#73706B] font-light line-clamp-1 mt-0.5">
-            {product.subtitle || product.collection}
+          <p className="text-[10px] sm:text-[11px] text-[#73706B] font-light truncate mt-0.5">
+            {product.subtitle || product.collection || 'Pure Natural Atelier'}
           </p>
         </div>
 
-        <div className="mt-1.5 flex items-center gap-2">
-          <span className="text-[13px] sm:text-[14px] font-medium text-[#141414]">
+        <div className="mt-1 flex items-center gap-1.5 sm:gap-2">
+          <span className="text-[12px] sm:text-[14px] font-semibold text-[#141414] tabular-nums">
             {formatPrice(product.price)}
           </span>
           {product.originalPrice && product.originalPrice > product.price && (
-            <span className="text-[11px] text-[#73706B] line-through">
+            <span className="text-[10px] sm:text-[11px] text-[#73706B] line-through tabular-nums">
               {formatPrice(product.originalPrice)}
             </span>
           )}
