@@ -61,7 +61,7 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Help & Contact' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-7">
             {!isSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 sm:p-8 border border-[#141414]/8">
+              <form onSubmit={handleSubmit} className="space-y-4 bg-[#FAF8F5] p-6 sm:p-8 border border-[#141414]/8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-medium mb-1">

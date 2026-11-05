@@ -208,7 +208,7 @@ export const OrderTracking: React.FC = () => {
 
   return (
     <div className="w-full pb-16 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-6">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-6">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Order Tracking' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
@@ -224,7 +224,7 @@ export const OrderTracking: React.FC = () => {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#141414]/10 shadow-sm">
+        <div className="bg-[#FAF8F5] p-5 sm:p-6 rounded-2xl border border-[#141414]/8 shadow-sm">
           <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-3">
             <div className="flex-1 relative">
               <input
@@ -258,7 +258,7 @@ export const OrderTracking: React.FC = () => {
 
         {activeOrder ? (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-8 bg-white p-6 sm:p-8 rounded-2xl border border-[#141414]/10 shadow-sm space-y-6">
+            <div className="lg:col-span-8 bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl border border-[#141414]/8 shadow-sm space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[#141414]/10">
                 <div>
                   <div className="flex items-center gap-2">
@@ -356,7 +356,7 @@ export const OrderTracking: React.FC = () => {
 
                 <Link
                   to="/returns"
-                  className="px-4 py-2.5 bg-white border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors flex items-center gap-1.5"
+                  className="px-4 py-2.5 bg-[#FAF9F6] border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors flex items-center gap-1.5"
                 >
                   <RotateCcw className="w-3.5 h-3.5 text-[#A7654A]" />
                   <span>Request Size Exchange</span>
@@ -365,7 +365,7 @@ export const OrderTracking: React.FC = () => {
             </div>
 
             <div className="lg:col-span-4 space-y-6">
-              <div className="bg-white p-5 rounded-2xl border border-[#141414]/10 shadow-sm space-y-4">
+              <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#141414]/8 shadow-sm space-y-4">
                 <h3 className="font-serif text-base text-[#141414] pb-2 border-b border-[#141414]/10">
                   Garments in Order ({activeOrder.items.length})
                 </h3>
@@ -412,7 +412,7 @@ export const OrderTracking: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-white p-12 rounded-2xl border border-[#141414]/10 text-center space-y-3">
+          <div className="bg-[#FAF8F5] p-12 rounded-2xl border border-[#141414]/8 text-center space-y-3">
             <Package className="w-10 h-10 text-[#73706B] mx-auto stroke-[1.5]" />
             <h3 className="font-serif text-xl text-[#141414]">No Order Located</h3>
             <p className="text-xs text-[#73706B] max-w-sm mx-auto font-light leading-relaxed">

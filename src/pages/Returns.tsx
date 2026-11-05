@@ -23,7 +23,7 @@ export const Returns: React.FC = () => {
 
   return (
     <div className="w-full pb-16 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-6">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-6">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Easy Returns & Exchanges' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
@@ -39,7 +39,7 @@ export const Returns: React.FC = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#141414]/10 shadow-sm">
+        <div className="bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl border border-[#141414]/10 shadow-sm">
           <div className="max-w-2xl">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1">
               Automated Self-Service Portal

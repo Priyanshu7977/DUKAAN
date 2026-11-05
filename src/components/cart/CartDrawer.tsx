@@ -79,7 +79,7 @@ export const CartDrawer: React.FC = () => {
             transition={{ type: 'spring', damping: 28, stiffness: 260 }}
             className="w-screen max-w-md bg-[#FAF9F6] shadow-2xl flex flex-col border-l border-[#141414]/10 relative overflow-hidden"
           >
-            <div className="px-5 py-4 border-b border-[#141414]/8 flex items-center justify-between bg-white">
+            <div className="px-5 py-4 border-b border-[#141414]/8 flex items-center justify-between bg-[#FAF8F5]">
               <div>
                 <h3 className="font-serif text-lg sm:text-xl text-[#141414]">Shopping Bag</h3>
                 <span className="text-[11px] uppercase tracking-widest text-[#73706B]">
@@ -229,7 +229,7 @@ export const CartDrawer: React.FC = () => {
             </div>
 
             {items.length > 0 && (
-              <div className="p-5 border-t border-[#141414]/8 bg-white space-y-3">
+              <div className="p-5 border-t border-[#141414]/8 bg-[#FAF8F5] space-y-3">
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between text-[#73706B]">
                     <span>Subtotal</span>

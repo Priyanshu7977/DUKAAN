@@ -147,7 +147,7 @@ export const Profile: React.FC = () => {
     <div className="min-h-screen bg-[#FAF9F6] py-8 sm:py-12 border-b border-[#141414]/8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
-        <div className="bg-white border border-[#141414]/10 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <div className="bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div className="flex items-center gap-4 sm:gap-5">
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#141414] text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold shadow-md shrink-0">
               {user.name.charAt(0).toUpperCase()}
@@ -200,7 +200,7 @@ export const Profile: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex items-center border-b border-[#141414]/10 overflow-x-auto gap-2 sm:gap-6 bg-white px-4 sm:px-6 py-2 rounded-xl shadow-sm">
+        <div className="flex items-center border border-[#141414]/8 overflow-x-auto gap-2 sm:gap-6 bg-[#FAF8F5] px-4 sm:px-6 py-2 rounded-xl shadow-sm">
           <button
             onClick={() => setActiveTab('orders')}
             className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
@@ -251,7 +251,7 @@ export const Profile: React.FC = () => {
           <div className="space-y-4">
             <h2 className="font-serif text-xl text-[#141414]">Order History & Real-Time Tracking</h2>
             {(user.orders || []).length === 0 ? (
-              <div className="bg-white p-8 rounded-2xl text-center space-y-3 border border-[#141414]/10">
+              <div className="bg-[#FAF8F5] p-8 rounded-2xl text-center space-y-3 border border-[#141414]/8">
                 <p className="text-sm text-[#73706B]">You have no active orders yet.</p>
                 <Link
                   to="/shop"
@@ -264,7 +264,7 @@ export const Profile: React.FC = () => {
               (user.orders || []).map((order) => (
                 <div
                   key={order.id}
-                  className="bg-white border border-[#141414]/10 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4"
+                  className="bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#141414]/8 gap-2">
                     <div className="space-y-0.5">
@@ -329,7 +329,7 @@ export const Profile: React.FC = () => {
                     </div>
                     <Link
                       to={`/track/${order.id}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-colors w-fit shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF9F6] border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-colors w-fit shadow-xs"
                     >
                       <span>Track Shipment</span>
                       <ArrowRight className="w-3 h-3 text-[#A7654A]" />
@@ -357,7 +357,7 @@ export const Profile: React.FC = () => {
             {isAddingAddress && (
               <form
                 onSubmit={handleCreateAddress}
-                className="bg-white border border-[#141414]/15 rounded-2xl p-6 shadow-md space-y-4"
+                className="bg-[#FAF8F5] border border-[#141414]/10 rounded-2xl p-6 shadow-sm space-y-4"
               >
                 <h3 className="font-serif text-base text-[#141414]">Add New Delivery Address</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -437,8 +437,8 @@ export const Profile: React.FC = () => {
               {(user.addresses || []).map((addr) => (
                 <div
                   key={addr.id}
-                  className={`bg-white border rounded-2xl p-5 space-y-3 relative shadow-sm ${
-                    addr.isDefault ? 'border-[#141414] ring-1 ring-[#141414]' : 'border-[#141414]/10'
+                  className={`bg-[#FAF8F5] border rounded-2xl p-5 space-y-3 relative shadow-sm ${
+                    addr.isDefault ? 'border-[#141414] ring-1 ring-[#141414]' : 'border-[#141414]/8'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -486,7 +486,7 @@ export const Profile: React.FC = () => {
           <div className="space-y-4">
             <h2 className="font-serif text-xl text-[#141414]">Saved Wishlist Pieces</h2>
             {wishlistItems.length === 0 ? (
-              <div className="bg-white p-8 rounded-2xl text-center space-y-3 border border-[#141414]/10">
+              <div className="bg-[#FAF8F5] p-8 rounded-2xl text-center space-y-3 border border-[#141414]/8">
                 <p className="text-sm text-[#73706B]">Your wishlist is currently empty.</p>
                 <Link
                   to="/shop"
@@ -500,7 +500,7 @@ export const Profile: React.FC = () => {
                 {wishlistItems.map((product) => (
                   <div
                     key={product.id}
-                    className="bg-white border border-[#141414]/10 rounded-xl overflow-hidden shadow-sm flex flex-col"
+                    className="bg-[#FAF8F5] border border-[#141414]/8 rounded-xl overflow-hidden shadow-sm flex flex-col"
                   >
                     <Link to={`/product/${product.slug}`} className="aspect-[3/4] overflow-hidden bg-[#F3EEEB]">
                       <img
@@ -537,7 +537,7 @@ export const Profile: React.FC = () => {
         )}
 
         {activeTab === 'settings' && (
-          <div className="bg-white border border-[#141414]/10 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6 max-w-2xl">
+          <div className="bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6 max-w-2xl">
             <h2 className="font-serif text-xl text-[#141414]">Personal Information & Security</h2>
 
             <form onSubmit={handleSaveProfile} className="space-y-4">

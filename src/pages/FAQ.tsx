@@ -37,7 +37,7 @@ export const FAQ: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Help & FAQs' }]} className="mb-3" />
           <div className="max-w-3xl space-y-2 mb-4">
@@ -71,7 +71,7 @@ export const FAQ: React.FC = () => {
                 className={`h-9 px-4 text-xs uppercase tracking-wider font-semibold rounded-full transition-all flex items-center justify-center ${
                   activeCategory === cat
                     ? 'bg-[#141414] text-white shadow-xs ring-1 ring-[#141414]'
-                    : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40 hover:bg-[#FAF9F6]'
+                    : 'bg-[#FAF8F5] border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40'
                 }`}
               >
                 {cat === 'all' ? 'All Questions' : cat}
@@ -83,7 +83,7 @@ export const FAQ: React.FC = () => {
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         {filteredItems.length === 0 ? (
-          <div className="py-12 text-center space-y-3 bg-white p-6 border border-[#141414]/8">
+          <div className="py-12 text-center space-y-3 bg-[#FAF8F5] p-6 border border-[#141414]/8">
             <h3 className="font-serif text-lg text-[#141414]">No entries located</h3>
             <p className="text-xs text-[#73706B] max-w-sm mx-auto font-light">
               We couldn't locate any questions matching "{filterQuery}". Please clear your search or message our concierge.

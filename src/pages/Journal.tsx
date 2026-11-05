@@ -16,7 +16,7 @@ export const Journal: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-3">
             <Breadcrumbs items={[{ label: 'Editorial Journal' }]} className="min-w-0" />
@@ -46,7 +46,7 @@ export const Journal: React.FC = () => {
                 className={`h-10 px-5 text-xs uppercase tracking-wider font-semibold rounded-full transition-all flex items-center justify-center ${
                   selectedCategory === cat
                     ? 'bg-[#141414] text-white shadow-sm ring-1 ring-[#141414]'
-                    : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40 hover:bg-[#FAF9F6]'
+                    : 'bg-[#FAF8F5] border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40'
                 }`}
               >
                 {cat === 'all' ? 'All Dispatches' : cat}
@@ -59,7 +59,7 @@ export const Journal: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {filteredArticles.map((article) => (
-            <article key={article.id} className="group flex flex-col justify-between bg-white border border-[#141414]/8 p-4">
+            <article key={article.id} className="group flex flex-col justify-between bg-[#FAF8F5] border border-[#141414]/8 p-4">
               <div>
                 <Link
                   to={`/journal/${article.slug}`}

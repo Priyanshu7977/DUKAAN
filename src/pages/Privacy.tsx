@@ -5,7 +5,7 @@ import { Mail, Phone } from 'lucide-react';
 export const Privacy: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
+      <section className="pt-4 pb-5 bg-[#FAF8F5] border-b border-[#141414]/8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Breadcrumbs items={[{ label: 'Privacy & Data Governance' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
@@ -21,7 +21,7 @@ export const Privacy: React.FC = () => {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 space-y-6 text-xs sm:text-sm text-[#73706B] font-light leading-relaxed">
-        <div className="p-5 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
               Designated Data Protection Officer (DPO)

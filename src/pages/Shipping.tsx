@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const Shipping: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Shipping & Delivery' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
@@ -23,7 +23,7 @@ export const Shipping: React.FC = () => {
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
+          <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 space-y-2">
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
               <Truck className="w-4 h-4" />
             </div>
@@ -33,7 +33,7 @@ export const Shipping: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
+          <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 space-y-2">
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -43,7 +43,7 @@ export const Shipping: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-5 bg-white border border-[#141414]/8 space-y-2">
+          <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 space-y-2">
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
               <PackageCheck className="w-4 h-4" />
             </div>
@@ -65,7 +65,7 @@ export const Shipping: React.FC = () => {
             <span className="text-xs text-[#73706B]">Dispatched Monday through Saturday</span>
           </div>
 
-          <div className="overflow-x-auto border border-[#141414]/10 bg-white">
+          <div className="overflow-x-auto border border-[#141414]/10 bg-[#FAF8F5]">
             <table className="w-full text-left text-xs border-collapse">
               <thead className="bg-[#FAF9F6] border-b border-[#141414]/10">
                 <tr className="text-[#141414] uppercase tracking-wider text-[10px]">

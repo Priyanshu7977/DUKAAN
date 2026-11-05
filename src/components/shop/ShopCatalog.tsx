@@ -207,7 +207,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <div className="pt-6 sm:pt-8 pb-6 sm:pb-8 border-b border-[#141414]/10 bg-white mb-4">
+      <div className="pt-6 sm:pt-8 pb-6 sm:pb-8 border-b border-[#141414]/8 bg-[#FAF8F5] mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-3">
             <Breadcrumbs items={breadcrumbs} className="min-w-0" />
@@ -259,7 +259,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
           <div className="flex items-center justify-between md:justify-end gap-3">
             <button
               onClick={() => setIsMobileFilterOpen(true)}
-              className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 border border-[#141414]/20 bg-white text-[11px] uppercase tracking-wider text-[#141414] font-medium"
+              className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 border border-[#141414]/20 bg-[#FAF8F5] text-[11px] uppercase tracking-wider text-[#141414] font-medium"
             >
               <SlidersHorizontal className="w-3 h-3 text-[#A7654A]" />
               <span>Filters {hasActiveFilters && '• Active'}</span>
@@ -271,7 +271,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="appearance-none bg-white border border-[#141414]/15 pl-3 pr-7 py-1 text-xs text-[#141414] font-medium focus:outline-none cursor-pointer"
+                  className="appearance-none bg-[#FAF8F5] border border-[#141414]/15 pl-3 pr-7 py-1 text-xs text-[#141414] font-medium focus:outline-none cursor-pointer"
                 >
                   <option value="featured">Featured</option>
                   <option value="newest">Latest Release</option>

@@ -45,7 +45,7 @@ export const Search: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Search Wardrobe' }]} className="mb-3" />
 
@@ -84,7 +84,7 @@ export const Search: React.FC = () => {
                   setSearchTerm(tag);
                   setSearchParams({ q: tag });
                 }}
-                className="h-8 px-4 rounded-full bg-white hover:bg-[#141414] hover:text-white transition-all text-xs text-[#141414] border border-[#141414]/15 inline-flex items-center justify-center font-medium shadow-xs"
+                className="h-8 px-4 rounded-full bg-[#FAF8F5] hover:bg-[#141414] hover:text-white transition-all text-xs text-[#141414] border border-[#141414]/15 inline-flex items-center justify-center font-medium shadow-xs"
               >
                 {tag}
               </button>

@@ -75,7 +75,7 @@ export const CollectionDetail: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-3">
             <Breadcrumbs
@@ -105,7 +105,7 @@ export const CollectionDetail: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-8 sm:py-10 bg-white border-b border-[#141414]/8">
+      <section className="py-8 sm:py-10 bg-[#FAF8F5] border-b border-[#141414]/8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             <div className="lg:col-span-7 space-y-3">
@@ -181,7 +181,7 @@ export const CollectionDetail: React.FC = () => {
         </div>
 
         
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 bg-white p-3 rounded-xl border border-[#141414]/8">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 bg-[#FAF8F5] p-3 rounded-xl border border-[#141414]/8">
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
             {['all', 'shirts', 'trousers', 'co-ords', 'outerwear'].map((cat) => (
               <button
@@ -294,7 +294,7 @@ export const CollectionDetail: React.FC = () => {
         )}
       </section>
 
-      <section className="border-t border-[#141414]/8 bg-white py-8 sm:py-10">
+      <section className="border-t border-[#141414]/8 bg-[#FAF8F5] py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-4">
             <span className="text-[10px] uppercase tracking-widest text-[#73706B] font-semibold block">

@@ -5,7 +5,7 @@ import { Mail, Phone } from 'lucide-react';
 export const Terms: React.FC = () => {
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-4 pb-5 bg-white border-b border-[#141414]/8">
+      <section className="pt-4 pb-5 bg-[#FAF8F5] border-b border-[#141414]/8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Breadcrumbs items={[{ label: 'Client Covenant & Terms of Service' }]} className="mb-2" />
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">

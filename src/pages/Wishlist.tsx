@@ -23,7 +23,7 @@ export const Wishlist: React.FC = () => {
 
   return (
     <div className="w-full pb-12 bg-[#FAF9F6]">
-      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-white border-b border-[#141414]/10 mb-4">
+      <section className="pt-6 sm:pt-8 pb-6 sm:pb-8 bg-[#FAF8F5] border-b border-[#141414]/8 mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Saved Wishlist' }]} className="mb-3" />
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
@@ -73,7 +73,7 @@ export const Wishlist: React.FC = () => {
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {items.map((product) => (
-              <div key={product.id} className="group relative flex flex-col justify-between bg-white border border-[#141414]/8 rounded-xl p-3 shadow-xs hover:border-[#141414]/20 transition-all">
+              <div key={product.id} className="group relative flex flex-col justify-between bg-[#FAF8F5] border border-[#141414]/8 rounded-xl p-3 shadow-xs hover:border-[#141414]/20 transition-all">
                 <div>
                   <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#ECE7DD] mb-2.5">
                     <Link to={`/product/${product.slug}`} className="block w-full h-full">
