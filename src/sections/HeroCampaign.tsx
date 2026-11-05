@@ -41,13 +41,13 @@ export const HeroCampaign: React.FC = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
 
   return (
-    <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden bg-[#141414] flex items-end justify-center pb-8 sm:pb-12 select-none">
+    <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden bg-[#FAF9F6] flex items-end justify-center pb-8 sm:pb-12 select-none">
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === currentSlide;
         return (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-x-0 bottom-0 top-[56px] sm:top-[72px] w-full transition-opacity duration-1000 ease-in-out ${
               isActive ? 'opacity-100 z-0 pointer-events-auto' : 'opacity-0 -z-10 pointer-events-none'
             }`}
           >

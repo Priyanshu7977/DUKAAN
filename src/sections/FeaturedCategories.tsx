@@ -38,7 +38,7 @@ export const FeaturedCategories: React.FC = () => {
   ];
 
   return (
-    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-7 sm:py-14 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-7 gap-2">
           <div>
@@ -62,7 +62,7 @@ export const FeaturedCategories: React.FC = () => {
             <Link
               key={cat.slug}
               to={`/shop?category=${cat.slug}`}
-              className={`group block relative bg-white border border-[#141414]/8 overflow-hidden rounded-lg sm:rounded-none shadow-2xs ${
+              className={`group block relative bg-[#FAF8F5] border border-[#141414]/8 overflow-hidden rounded-lg sm:rounded-none shadow-2xs ${
                 idx === 4 ? 'col-span-2 sm:col-span-1' : ''
               }`}
             >
@@ -75,7 +75,7 @@ export const FeaturedCategories: React.FC = () => {
                 />
               </div>
 
-              <div className="p-2.5 sm:p-3 bg-white flex items-center justify-between border-t border-[#141414]/6 min-h-[52px] sm:min-h-[58px]">
+              <div className="p-2.5 sm:p-3 bg-[#FAF8F5] flex items-center justify-between border-t border-[#141414]/6 min-h-[52px] sm:min-h-[58px]">
                 <div className="min-w-0 pr-1">
                   <h3 className="font-serif text-xs sm:text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors leading-tight truncate">
                     {cat.title}

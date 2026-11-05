@@ -32,7 +32,7 @@ export const LookbookMasonry: React.FC = () => {
   ];
 
   return (
-    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-7 sm:py-14 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-8 gap-2">
           <div>
@@ -67,7 +67,7 @@ export const LookbookMasonry: React.FC = () => {
                   className="group-hover:scale-105 transition-transform duration-700 ease-out object-cover"
                 />
               </div>
-              <div className="p-2.5 sm:p-3 bg-white border-t border-[#141414]/6 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
+              <div className="p-2.5 sm:p-3 bg-[#FAF8F5] border-t border-[#141414]/6 flex items-center justify-between min-h-[50px] sm:min-h-[56px]">
                 <div className="min-w-0 flex-1 pr-1.5">
                   <span className="text-[9px] uppercase tracking-widest text-[#73706B] block font-medium">
                     {look.category}

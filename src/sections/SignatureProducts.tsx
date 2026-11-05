@@ -24,7 +24,7 @@ export const SignatureProducts: React.FC = () => {
   ];
 
   return (
-    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-8 sm:py-14 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-7 gap-3">
           <div>
@@ -44,7 +44,7 @@ export const SignatureProducts: React.FC = () => {
                 className={`h-9 sm:h-10 px-4 sm:px-5 text-[11px] sm:text-xs uppercase tracking-wider font-semibold rounded-full transition-all shrink-0 flex items-center justify-center ${
                   filter === tab.id
                     ? 'bg-[#141414] text-white shadow-sm ring-1 ring-[#141414]'
-                    : 'bg-white border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40 hover:bg-[#FAF9F6]'
+                    : 'bg-[#FAF8F5] border border-[#141414]/15 text-[#73706B] hover:text-[#141414] hover:border-[#141414]/40'
                 }`}
               >
                 {tab.label}

@@ -27,7 +27,7 @@ export const BrandPhilosophy: React.FC = () => {
   ];
 
   return (
-    <section className="py-7 sm:py-12 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-8 sm:py-14 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-5 sm:mb-8 space-y-1">
           <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
@@ -43,7 +43,7 @@ export const BrandPhilosophy: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {pillars.map((pillar) => (
-            <div key={pillar.number} className="flex flex-col space-y-2.5 group bg-white sm:bg-transparent p-3.5 sm:p-0 rounded-xl sm:rounded-none border border-[#141414]/6 sm:border-none shadow-2xs sm:shadow-none">
+            <div key={pillar.number} className="flex flex-col space-y-2.5 group bg-transparent p-3.5 sm:p-0 rounded-xl sm:rounded-none border border-[#141414]/6 sm:border-none shadow-2xs sm:shadow-none">
               <div className="overflow-hidden bg-[#ECE7DD] aspect-[16/10] sm:aspect-[4/5] rounded-lg sm:rounded-none relative">
                 <ImageWithFallback
                   src={pillar.image}

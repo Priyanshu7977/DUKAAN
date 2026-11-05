@@ -21,7 +21,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
         exit={{ opacity: 0, y: -4 }}
         transition={{ duration: 0.16, ease: 'easeOut' }}
         onMouseLeave={onClose}
-        className="absolute top-full left-4 right-4 mt-2 mx-auto max-w-5xl w-full bg-white border border-[#141414]/12 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.14)] py-6 px-8 z-50 pointer-events-auto before:content-[''] before:absolute before:-top-3 before:inset-x-0 before:h-4"
+        className="absolute top-full left-0 right-0 mt-3 mx-auto max-w-5xl w-full bg-[#FAF9F6]/98 backdrop-blur-md border border-[#141414]/12 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.14)] py-6 px-8 z-50 pointer-events-auto before:content-[''] before:absolute before:-top-3 before:inset-x-0 before:h-4"
       >
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#141414]/8">
           <div className="flex items-center gap-2">

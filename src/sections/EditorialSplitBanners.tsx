@@ -4,12 +4,12 @@ import { ArrowRight } from 'lucide-react';
 
 export const EditorialSplitBanners: React.FC = () => {
   return (
-    <section className="py-8 sm:py-16 bg-[#FAF9F6] border-b border-[#141414]/8">
+    <section className="py-8 sm:py-16 bg-[#FAF9F6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           <Link
             to="/collections/solstice-atelier"
-            className="group block bg-white border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-2xs hover:shadow-lg flex flex-col justify-between"
+            className="group block bg-[#FAF8F5] border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-2xs hover:shadow-lg flex flex-col justify-between"
           >
             <div className="relative overflow-hidden aspect-[16/11] bg-[#ECE7DD]">
               <img
@@ -39,7 +39,7 @@ export const EditorialSplitBanners: React.FC = () => {
 
           <Link
             to="/shop?category=shirts"
-            className="group block bg-white border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-2xs hover:shadow-lg flex flex-col justify-between"
+            className="group block bg-[#FAF8F5] border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-2xs hover:shadow-lg flex flex-col justify-between"
           >
             <div className="relative overflow-hidden aspect-[16/11] bg-[#ECE7DD]">
               <img

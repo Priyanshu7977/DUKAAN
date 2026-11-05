@@ -36,15 +36,15 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full pointer-events-auto">
+    <div className="relative w-full max-w-6xl pointer-events-auto">
       <header
         className={cn(
           'w-full transition-all duration-200',
-          'bg-white/95 backdrop-blur-md border-b border-[#141414]/10 shadow-[0_1px_3px_rgba(0,0,0,0.02)]'
+          'rounded-full bg-[#FAF9F6]/95 backdrop-blur-md border border-[#141414]/12 shadow-[0_4px_24px_rgba(0,0,0,0.06)]',
+          'px-4 sm:px-8 h-12 sm:h-14 flex items-center justify-between'
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
-          <div className="flex items-center shrink-0">
+        <div className="flex items-center shrink-0">
             <Link
               to="/"
               className="inline-block group"
@@ -158,8 +158,7 @@ export const Navbar: React.FC = () => {
               </button>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       <MegaMenu
         isOpen={activeMegaMenu !== null}
