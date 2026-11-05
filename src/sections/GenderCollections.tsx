@@ -5,10 +5,10 @@ import { ImageWithFallback } from '../components/common/ImageWithFallback';
 
 export const GenderCollections: React.FC = () => {
   return (
-    <section className="py-12 sm:py-24 lg:py-32 bg-[#F3F0E9] border-b border-[#211E1A]/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
-          <div className="relative group overflow-hidden rounded-2xl sm:rounded-3xl bg-[#E8E3D9] flex flex-col justify-end min-h-[420px] sm:min-h-[540px] lg:min-h-[660px] shadow-sm">
+    <section className="py-8 sm:py-16 bg-[#FAF9F6] border-b border-[#141414]/8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8">
+          <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl bg-[#ECE7DD] flex flex-col justify-end min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] shadow-sm">
             <div className="absolute inset-0">
               <ImageWithFallback
                 src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050"
@@ -41,7 +41,7 @@ export const GenderCollections: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative group overflow-hidden rounded-2xl sm:rounded-3xl bg-[#E8E3D9] flex flex-col justify-end min-h-[420px] sm:min-h-[540px] lg:min-h-[660px] shadow-sm">
+          <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl bg-[#ECE7DD] flex flex-col justify-end min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] shadow-sm">
             <div className="absolute inset-0">
               <ImageWithFallback
                 src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_1.jpg?v=1790957049"

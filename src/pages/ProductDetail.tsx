@@ -727,7 +727,7 @@ export const ProductDetail: React.FC = () => {
                     type="text"
                     required
                     value={newReviewName}
-                    onChange={(e) => setNewReviewName(e.target.value)}
+                    onChange={(e) => setNewReviewName(e.target.value.replace(/[^a-zA-Z\s]/g, ''))}
                     placeholder="e.g. Priyanshu S."
                     className="w-full h-11 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
                   />
@@ -739,7 +739,7 @@ export const ProductDetail: React.FC = () => {
                   <input
                     type="text"
                     value={newReviewCity}
-                    onChange={(e) => setNewReviewCity(e.target.value)}
+                    onChange={(e) => setNewReviewCity(e.target.value.replace(/[^a-zA-Z\s]/g, ''))}
                     placeholder="e.g. Mumbai, Maharashtra"
                     className="w-full h-11 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
                   />

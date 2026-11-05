@@ -91,7 +91,7 @@ export const Checkout: React.FC = () => {
   const finalTotal = Math.max(0, subtotal - discountAmount + shippingFee + codHandlingFee);
 
   const handleTextOnly = (field: 'fullName' | 'city', value: string) => {
-    const textOnly = value.replace(/[0-9]/g, '');
+    const textOnly = value.replace(/[^a-zA-Z\s]/g, '');
     setFormData((prev) => ({ ...prev, [field]: textOnly }));
   };
 

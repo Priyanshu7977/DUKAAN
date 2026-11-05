@@ -5,8 +5,8 @@ import { ImageWithFallback } from '../components/common/ImageWithFallback';
 
 export const NewCollection: React.FC = () => {
   return (
-    <section className="py-12 sm:py-20 lg:py-24 bg-[#F3F0E9] border-b border-[#211E1A]/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+    <section className="py-8 sm:py-16 bg-[#FAF9F6] border-b border-[#141414]/8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-3 sm:gap-4">
           <div>
             <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1">

@@ -19,7 +19,7 @@ export const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleNameChange = (val: string) => {
-    setForm((prev) => ({ ...prev, name: val.replace(/[0-9]/g, '') }));
+    setForm((prev) => ({ ...prev, name: val.replace(/[^a-zA-Z\s]/g, '') }));
   };
 
   const handlePhoneChange = (val: string) => {

@@ -548,7 +548,7 @@ export const Profile: React.FC = () => {
                 <input
                   type="text"
                   value={editName}
-                  onChange={(e) => setEditName(e.target.value)}
+                  onChange={(e) => setEditName(e.target.value.replace(/[^a-zA-Z\s]/g, ''))}
                   className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
                 />
               </div>
@@ -572,7 +572,7 @@ export const Profile: React.FC = () => {
                 <input
                   type="tel"
                   value={editPhone}
-                  onChange={(e) => setEditPhone(e.target.value)}
+                  onChange={(e) => setEditPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
                   className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-medium tabular-nums"
                 />
               </div>
