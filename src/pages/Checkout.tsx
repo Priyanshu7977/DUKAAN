@@ -23,6 +23,9 @@ import {
 import { ToastContainer } from '../components/common/ToastContainer';
 import { isValidIndianPhone, isValidPincode, sanitizeInput } from '../utils/security';
 import { AtelierGoodNoteModal } from '../components/common/AtelierGoodNoteModal';
+import { UPIPaymentModal } from '../components/checkout/UPIPaymentModal';
+import { useAuthStore } from '../store/useAuthStore';
+import { UserOrder } from '../types';
 import {
   OrderNotificationPayload,
   dispatchAutomatedOrderNotifications,
@@ -56,6 +59,10 @@ export const Checkout: React.FC = () => {
     addressType: 'Home',
     paymentMethod: 'prepaid',
   });
+
+  const addOrder = useAuthStore((state) => state.addOrder);
+  const [showUPIModal, setShowUPIModal] = useState(false);
+  const [pendingOrderId, setPendingOrderId] = useState('');
 
   const [couponCode, setCouponCode] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState<{ code: string; percent: number; amount: number } | null>(null);
@@ -147,10 +154,21 @@ export const Checkout: React.FC = () => {
       return;
     }
 
+    const generatedOrderId = pendingOrderId || `DUK-IN-${Math.floor(100000 + Math.random() * 900000)}`;
+    setPendingOrderId(generatedOrderId);
+
+    if (formData.paymentMethod === 'prepaid') {
+      setShowUPIModal(true);
+      return;
+    }
+
+    finalizeOrder(generatedOrderId);
+  };
+
+  const finalizeOrder = (orderId: string, utrNumber?: string) => {
     setIsSubmitting(true);
 
     setTimeout(() => {
-      const orderId = `DUK-IN-${Math.floor(100000 + Math.random() * 900000)}`;
       const orderSummary = {
         orderId,
         date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
@@ -174,6 +192,7 @@ export const Checkout: React.FC = () => {
         codHandlingFee,
         total: finalTotal,
         paymentMethod: formData.paymentMethod,
+        utrNumber,
       };
 
       const payload: OrderNotificationPayload = {
@@ -203,6 +222,26 @@ export const Checkout: React.FC = () => {
         createdAt: new Date().toISOString(),
       };
 
+      const userOrder: UserOrder = {
+        id: orderId,
+        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+        status: 'Processing',
+        total: finalTotal,
+        paymentMethod: formData.paymentMethod === 'cod' ? 'COD' : 'Prepaid Online',
+        trackingNumber: `BLUEDART-${Math.floor(1000000 + Math.random() * 9000000)}`,
+        estimatedDelivery: '3 – 5 Business Days',
+        items: items.map((it, idx) => ({
+          id: `item-${idx}-${Date.now()}`,
+          name: it.product.name,
+          price: it.product.price,
+          size: it.selectedSize,
+          color: it.selectedColor,
+          image: it.product.images[0],
+          quantity: it.quantity,
+        })),
+      };
+
+      addOrder(userOrder);
       setConfirmedNotificationPayload(payload);
       setConfirmedOrder(orderSummary);
       setIsComplete(true);
@@ -282,24 +321,32 @@ export const Checkout: React.FC = () => {
             </div>
 
             {confirmedNotificationPayload && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 max-w-xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 max-w-2xl mx-auto">
                 <button
                   type="button"
                   onClick={() => setShowGoodNoteModal(true)}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#141414] hover:bg-[#A7654A] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#141414] hover:bg-[#A7654A] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
                 >
                   <FileText className="w-4 h-4" />
-                  <span>View Archival Good Note</span>
+                  <span>Archival Note</span>
                 </button>
+
+                <Link
+                  to={`/track/${confirmedOrder.orderId}`}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#FAF8F5] border border-[#141414]/20 hover:border-[#141414] text-[#141414] text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                >
+                  <Truck className="w-4 h-4 text-[#A7654A]" />
+                  <span>Track Live</span>
+                </Link>
 
                 <a
                   href={buildWhatsAppOrderLink(confirmedNotificationPayload)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
                 >
                   <MessageSquare className="w-4 h-4 fill-white" />
-                  <span>Open WhatsApp Receipt</span>
+                  <span>WhatsApp Receipt</span>
                 </a>
               </div>
             )}
@@ -902,6 +949,16 @@ export const Checkout: React.FC = () => {
           </div>
         </form>
       </div>
+      <UPIPaymentModal
+        isOpen={showUPIModal}
+        onClose={() => setShowUPIModal(false)}
+        onConfirmPayment={(utrNumber) => {
+          setShowUPIModal(false);
+          finalizeOrder(pendingOrderId, utrNumber);
+        }}
+        totalAmount={finalTotal}
+        orderNumber={pendingOrderId}
+      />
       <ToastContainer />
     </div>
   );

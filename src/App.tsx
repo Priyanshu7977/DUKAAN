@@ -23,12 +23,16 @@ import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
 import { Checkout } from './pages/Checkout';
 import { Profile } from './pages/Profile';
+import { OrderTracking } from './pages/OrderTracking';
 import { NotFound } from './pages/NotFound';
+
+import { DocumentTitle } from './components/common/DocumentTitle';
 
 export const App: React.FC = () => {
   return (
     <ErrorBoundary>
       <BrowserRouter>
+        <DocumentTitle />
         <OnboardingModal />
         <Routes>
           <Route path="checkout" element={<Checkout />} />
@@ -52,6 +56,8 @@ export const App: React.FC = () => {
             <Route path="privacy" element={<Privacy />} />
             <Route path="terms" element={<Terms />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="track" element={<OrderTracking />} />
+            <Route path="track/:orderId" element={<OrderTracking />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

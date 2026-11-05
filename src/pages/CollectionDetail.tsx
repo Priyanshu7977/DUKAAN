@@ -19,6 +19,8 @@ export const CollectionDetail: React.FC = () => {
   const otherCollections = COLLECTIONS.filter((c) => c.slug !== collection.slug);
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<string>('featured');
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
   );
@@ -33,10 +35,22 @@ export const CollectionDetail: React.FC = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [collection.slug]);
+  }, [collection.slug, selectedCategory, sortBy]);
+
+  const filteredAndSortedProducts = useMemo(() => {
+    let list = collectionProducts;
+    if (selectedCategory !== 'all') {
+      list = list.filter((p) => p.category === selectedCategory);
+    }
+    const copy = [...list];
+    if (sortBy === 'price-asc') copy.sort((a, b) => a.price - b.price);
+    else if (sortBy === 'price-desc') copy.sort((a, b) => b.price - a.price);
+    else if (sortBy === 'name-asc') copy.sort((a, b) => a.name.localeCompare(b.name));
+    return copy;
+  }, [collectionProducts, selectedCategory, sortBy]);
 
   const pageSize = isMobile ? 8 : 16;
-  const totalPages = Math.max(1, Math.ceil(collectionProducts.length / pageSize));
+  const totalPages = Math.max(1, Math.ceil(filteredAndSortedProducts.length / pageSize));
 
   useEffect(() => {
     if (currentPage > totalPages) {
@@ -45,10 +59,10 @@ export const CollectionDetail: React.FC = () => {
   }, [totalPages, currentPage]);
 
   const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = Math.min(startIndex + pageSize, collectionProducts.length);
+  const endIndex = Math.min(startIndex + pageSize, filteredAndSortedProducts.length);
   const paginatedProducts = useMemo(
-    () => collectionProducts.slice(startIndex, endIndex),
-    [collectionProducts, startIndex, endIndex]
+    () => filteredAndSortedProducts.slice(startIndex, endIndex),
+    [filteredAndSortedProducts, startIndex, endIndex]
   );
 
   const handlePageChange = (page: number) => {
@@ -139,18 +153,18 @@ export const CollectionDetail: React.FC = () => {
       </section>
 
       <section ref={gridRef} className="py-8 sm:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-3 mb-6 pb-3 border-b border-[#141414]/8">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-3 mb-4 pb-3 border-b border-[#141414]/8">
           <div>
             <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
               Curated Selection
             </span>
             <h2 className="font-serif text-xl sm:text-2xl text-[#141414] mt-0.5 font-normal">
-              Objects in this Edition ({collectionProducts.length})
+              Objects in this Edition ({filteredAndSortedProducts.length})
             </h2>
           </div>
           <div className="flex items-center gap-4 text-xs text-[#73706B]">
             <span>
-              Showing {collectionProducts.length > 0 ? startIndex + 1 : 0}–{endIndex} of {collectionProducts.length} pieces
+              Showing {filteredAndSortedProducts.length > 0 ? startIndex + 1 : 0}–{endIndex} of {filteredAndSortedProducts.length} pieces
             </span>
             <span className="hidden sm:inline text-[#141414]/20">•</span>
             <span className="hidden sm:inline text-[10px] uppercase tracking-wider text-[#141414] font-medium bg-[#ECE7DD] px-2 py-0.5 rounded-sm">
@@ -162,6 +176,40 @@ export const CollectionDetail: React.FC = () => {
             >
               View Full Catalog →
             </Link>
+          </div>
+        </div>
+
+        
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 bg-white p-3 rounded-xl border border-[#141414]/8">
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+            {['all', 'shirts', 'trousers', 'co-ords', 'outerwear'].map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`h-8 px-3.5 text-[11px] uppercase tracking-wider rounded-lg font-medium transition-all whitespace-nowrap ${
+                  selectedCategory === cat
+                    ? 'bg-[#141414] text-white shadow-xs'
+                    : 'bg-[#FAF9F6] text-[#73706B] hover:text-[#141414] border border-[#141414]/10'
+                }`}
+              >
+                {cat === 'all' ? 'All Pieces' : cat}
+              </button>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 text-xs text-[#73706B] ml-auto">
+            <span className="text-[11px] uppercase tracking-wider font-semibold text-[#141414]">Sort:</span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="h-8 px-2.5 bg-[#FAF9F6] border border-[#141414]/15 rounded-lg text-xs text-[#141414] focus:outline-none"
+            >
+              <option value="featured">Featured Curations</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Alphabetical (A–Z)</option>
+            </select>
           </div>
         </div>
 

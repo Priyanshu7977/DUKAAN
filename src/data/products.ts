@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-11-04T06:19:44.672Z"
   },
@@ -142,7 +142,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-11-03T06:19:44.673Z"
   },
@@ -214,7 +214,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-11-02T06:19:44.673Z"
   },
@@ -287,7 +287,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-11-01T06:19:44.673Z"
   },
@@ -359,7 +359,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-31T06:19:44.673Z"
   },
@@ -431,7 +431,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-30T06:19:44.673Z"
   },
@@ -505,7 +505,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-29T06:19:44.673Z"
   },
@@ -577,7 +577,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-28T06:19:44.673Z"
   },
@@ -649,7 +649,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-27T06:19:44.673Z"
   },
@@ -721,7 +721,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-26T06:19:44.673Z"
   },
@@ -792,7 +792,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-25T06:19:44.673Z"
   },
@@ -864,7 +864,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-24T06:19:44.673Z"
   },
@@ -936,7 +936,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-23T06:19:44.673Z"
   },
@@ -1007,7 +1007,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-22T06:19:44.673Z"
   },
@@ -1080,7 +1080,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-21T06:19:44.674Z"
   },
@@ -1151,7 +1151,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-20T06:19:44.674Z"
   },
@@ -1222,7 +1222,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-19T06:19:44.674Z"
   },
@@ -1294,7 +1294,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-18T06:19:44.674Z"
   },
@@ -1366,7 +1366,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-17T06:19:44.674Z"
   },
@@ -1439,7 +1439,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-16T06:19:44.674Z"
   },
@@ -1510,7 +1510,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-15T06:19:44.674Z"
   },
@@ -1581,7 +1581,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-14T06:19:44.674Z"
   },
@@ -1652,7 +1652,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-13T06:19:44.674Z"
   },
@@ -1724,7 +1724,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-12T06:19:44.674Z"
   },
@@ -1796,7 +1796,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-11T06:19:44.674Z"
   },
@@ -1868,7 +1868,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-10T06:19:44.674Z"
   },
@@ -1941,7 +1941,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-09T06:19:44.674Z"
   },
@@ -2012,7 +2012,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-08T06:19:44.674Z"
   },
@@ -2083,7 +2083,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-07T06:19:44.674Z"
   },
@@ -2155,7 +2155,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-06T06:19:44.674Z"
   },
@@ -2227,7 +2227,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-05T06:19:44.674Z"
   },
@@ -2298,7 +2298,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-04T06:19:44.674Z"
   },
@@ -2369,7 +2369,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-03T06:19:44.674Z"
   },
@@ -2440,7 +2440,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-02T06:19:44.674Z"
   },
@@ -2512,7 +2512,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-10-01T06:19:44.674Z"
   },
@@ -2583,7 +2583,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-30T06:19:44.674Z"
   },
@@ -2654,7 +2654,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-29T06:19:44.674Z"
   },
@@ -2727,7 +2727,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-28T06:19:44.674Z"
   },
@@ -2798,7 +2798,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-27T06:19:44.674Z"
   },
@@ -2871,7 +2871,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-26T06:19:44.674Z"
   },
@@ -2943,7 +2943,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-25T06:19:44.674Z"
   },
@@ -3016,7 +3016,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-24T06:19:44.674Z"
   },
@@ -3089,7 +3089,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-23T06:19:44.674Z"
   },
@@ -3161,7 +3161,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-22T06:19:44.674Z"
   },
@@ -3233,7 +3233,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-21T06:19:44.674Z"
   },
@@ -3305,7 +3305,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-20T06:19:44.674Z"
   },
@@ -3376,7 +3376,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-19T06:19:44.674Z"
   },
@@ -3447,7 +3447,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-18T06:19:44.674Z"
   },
@@ -3519,7 +3519,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-17T06:19:44.674Z"
   },
@@ -3592,7 +3592,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-16T06:19:44.674Z"
   },
@@ -3664,7 +3664,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-15T06:19:44.674Z"
   },
@@ -3736,7 +3736,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-14T06:19:44.674Z"
   },
@@ -3809,7 +3809,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-13T06:19:44.674Z"
   },
@@ -3881,7 +3881,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-12T06:19:44.674Z"
   },
@@ -3953,7 +3953,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-11T06:19:44.674Z"
   },
@@ -4024,7 +4024,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-10T06:19:44.674Z"
   },
@@ -4095,7 +4095,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-09T06:19:44.674Z"
   },
@@ -4167,7 +4167,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-08T06:19:44.674Z"
   },
@@ -4238,7 +4238,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-07T06:19:44.674Z"
   },
@@ -4309,7 +4309,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-06T06:19:44.674Z"
   },
@@ -4380,7 +4380,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-05T06:19:44.674Z"
   },
@@ -4452,7 +4452,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-04T06:19:44.674Z"
   },
@@ -4524,7 +4524,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-03T06:19:44.674Z"
   },
@@ -4596,7 +4596,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-02T06:19:44.674Z"
   },
@@ -4667,7 +4667,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-09-01T06:19:44.675Z"
   },
@@ -4739,7 +4739,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-31T06:19:44.675Z"
   },
@@ -4811,7 +4811,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-30T06:19:44.675Z"
   },
@@ -4882,7 +4882,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-29T06:19:44.675Z"
   },
@@ -4955,7 +4955,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-28T06:19:44.675Z"
   },
@@ -5026,7 +5026,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-27T06:19:44.675Z"
   },
@@ -5098,7 +5098,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-26T06:19:44.675Z"
   },
@@ -5169,7 +5169,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-25T06:19:44.675Z"
   },
@@ -5240,7 +5240,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-24T06:19:44.675Z"
   },
@@ -5312,7 +5312,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-23T06:19:44.675Z"
   },
@@ -5383,7 +5383,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-22T06:19:44.675Z"
   },
@@ -5454,7 +5454,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-21T06:19:44.675Z"
   },
@@ -5527,7 +5527,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-20T06:19:44.675Z"
   },
@@ -5599,7 +5599,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-19T06:19:44.675Z"
   },
@@ -5670,7 +5670,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-18T06:19:44.675Z"
   },
@@ -5741,7 +5741,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-17T06:19:44.675Z"
   },
@@ -5813,7 +5813,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-16T06:19:44.675Z"
   },
@@ -5884,7 +5884,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-15T06:19:44.675Z"
   },
@@ -5955,7 +5955,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-14T06:19:44.675Z"
   },
@@ -6027,7 +6027,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-13T06:19:44.675Z"
   },
@@ -6098,7 +6098,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-12T06:19:44.675Z"
   },
@@ -6170,7 +6170,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-11T06:19:44.675Z"
   },
@@ -6241,7 +6241,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-10T06:19:44.675Z"
   },
@@ -6313,7 +6313,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-09T06:19:44.675Z"
   },
@@ -6384,7 +6384,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-08T06:19:44.675Z"
   },
@@ -6456,7 +6456,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-07T06:19:44.675Z"
   },
@@ -6528,7 +6528,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-06T06:19:44.675Z"
   },
@@ -6600,7 +6600,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-05T06:19:44.675Z"
   },
@@ -6672,7 +6672,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-04T06:19:44.675Z"
   },
@@ -6743,7 +6743,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-03T06:19:44.675Z"
   },
@@ -6815,7 +6815,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-02T06:19:44.675Z"
   },
@@ -6886,7 +6886,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-08-01T06:19:44.675Z"
   },
@@ -6957,7 +6957,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-31T06:19:44.675Z"
   },
@@ -7029,7 +7029,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-30T06:19:44.675Z"
   },
@@ -7101,7 +7101,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-29T06:19:44.675Z"
   },
@@ -7174,7 +7174,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-28T06:19:44.675Z"
   },
@@ -7246,7 +7246,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-27T06:19:44.675Z"
   },
@@ -7317,7 +7317,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-26T06:19:44.675Z"
   },
@@ -7389,7 +7389,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-25T06:19:44.675Z"
   },
@@ -7462,7 +7462,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-24T06:19:44.675Z"
   },
@@ -7534,7 +7534,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-23T06:19:44.675Z"
   },
@@ -7606,7 +7606,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-22T06:19:44.675Z"
   },
@@ -7677,7 +7677,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-21T06:19:44.675Z"
   },
@@ -7748,7 +7748,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-20T06:19:44.675Z"
   },
@@ -7820,7 +7820,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-19T06:19:44.675Z"
   },
@@ -7892,7 +7892,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-18T06:19:44.675Z"
   },
@@ -7963,7 +7963,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-17T06:19:44.675Z"
   },
@@ -8035,7 +8035,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-16T06:19:44.675Z"
   },
@@ -8107,7 +8107,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-15T06:19:44.675Z"
   },
@@ -8178,7 +8178,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-14T06:19:44.675Z"
   },
@@ -8251,7 +8251,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-13T06:19:44.675Z"
   },
@@ -8322,7 +8322,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-12T06:19:44.675Z"
   },
@@ -8394,7 +8394,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-11T06:19:44.675Z"
   },
@@ -8465,7 +8465,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-10T06:19:44.675Z"
   },
@@ -8536,7 +8536,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-09T06:19:44.675Z"
   },
@@ -8608,7 +8608,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-08T06:19:44.675Z"
   },
@@ -8679,7 +8679,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-07T06:19:44.675Z"
   },
@@ -8751,7 +8751,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-06T06:19:44.675Z"
   },
@@ -8823,7 +8823,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-05T06:19:44.675Z"
   },
@@ -8894,7 +8894,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-04T06:19:44.675Z"
   },
@@ -8965,7 +8965,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-03T06:19:44.676Z"
   },
@@ -9036,7 +9036,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-02T06:19:44.676Z"
   },
@@ -9109,7 +9109,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-07-01T06:19:44.676Z"
   },
@@ -9180,7 +9180,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-30T06:19:44.676Z"
   },
@@ -9253,7 +9253,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-29T06:19:44.676Z"
   },
@@ -9324,7 +9324,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-28T06:19:44.676Z"
   },
@@ -9396,7 +9396,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-27T06:19:44.676Z"
   },
@@ -9468,7 +9468,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-26T06:19:44.676Z"
   },
@@ -9539,7 +9539,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-25T06:19:44.676Z"
   },
@@ -9610,7 +9610,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-24T06:19:44.676Z"
   },
@@ -9681,7 +9681,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-23T06:19:44.676Z"
   },
@@ -9752,7 +9752,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-22T06:19:44.676Z"
   },
@@ -9824,7 +9824,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-21T06:19:44.676Z"
   },
@@ -9895,7 +9895,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-20T06:19:44.676Z"
   },
@@ -9968,7 +9968,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-19T06:19:44.676Z"
   },
@@ -10039,7 +10039,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-18T06:19:44.676Z"
   },
@@ -10110,7 +10110,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-17T06:19:44.676Z"
   },
@@ -10181,7 +10181,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-16T06:19:44.676Z"
   },
@@ -10253,7 +10253,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-15T06:19:44.676Z"
   },
@@ -10324,7 +10324,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-14T06:19:44.676Z"
   },
@@ -10396,7 +10396,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-13T06:19:44.676Z"
   },
@@ -10467,7 +10467,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-12T06:19:44.676Z"
   },
@@ -10540,7 +10540,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-11T06:19:44.676Z"
   },
@@ -10611,7 +10611,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-10T06:19:44.676Z"
   },
@@ -10683,7 +10683,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-09T06:19:44.676Z"
   },
@@ -10754,7 +10754,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-08T06:19:44.676Z"
   },
@@ -10826,7 +10826,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-07T06:19:44.676Z"
   },
@@ -10897,7 +10897,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-06T06:19:44.676Z"
   },
@@ -10968,7 +10968,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-05T06:19:44.676Z"
   },
@@ -11041,7 +11041,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-04T06:19:44.676Z"
   },
@@ -11112,7 +11112,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-03T06:19:44.676Z"
   },
@@ -11186,7 +11186,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-02T06:19:44.676Z"
   },
@@ -11257,7 +11257,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-06-01T06:19:44.676Z"
   },
@@ -11328,7 +11328,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-31T06:19:44.676Z"
   },
@@ -11400,7 +11400,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-30T06:19:44.676Z"
   },
@@ -11471,7 +11471,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-29T06:19:44.676Z"
   },
@@ -11543,7 +11543,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-28T06:19:44.676Z"
   },
@@ -11614,7 +11614,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-27T06:19:44.676Z"
   },
@@ -11686,7 +11686,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-26T06:19:44.676Z"
   },
@@ -11758,7 +11758,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-25T06:19:44.676Z"
   },
@@ -11829,7 +11829,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-24T06:19:44.676Z"
   },
@@ -11901,7 +11901,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-23T06:19:44.676Z"
   },
@@ -11973,7 +11973,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-22T06:19:44.676Z"
   },
@@ -12044,7 +12044,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-21T06:19:44.676Z"
   },
@@ -12116,7 +12116,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-20T06:19:44.676Z"
   },
@@ -12187,7 +12187,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-19T06:19:44.676Z"
   },
@@ -12259,7 +12259,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-18T06:19:44.676Z"
   },
@@ -12331,7 +12331,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-17T06:19:44.676Z"
   },
@@ -12404,7 +12404,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-16T06:19:44.676Z"
   },
@@ -12476,7 +12476,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-15T06:19:44.676Z"
   },
@@ -12548,7 +12548,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-14T06:19:44.676Z"
   },
@@ -12620,7 +12620,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-13T06:19:44.676Z"
   },
@@ -12691,7 +12691,7 @@ export const PRODUCTS: Product[] = [
       "solstice-atelier",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-12T06:19:44.676Z"
   },
@@ -12762,7 +12762,7 @@ export const PRODUCTS: Product[] = [
       "terra-monochrome",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-11T06:19:44.676Z"
   },
@@ -12835,7 +12835,7 @@ export const PRODUCTS: Product[] = [
       "transitional-wardrobe",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-10T06:19:44.676Z"
   },
@@ -12906,7 +12906,7 @@ export const PRODUCTS: Product[] = [
       "architectural-linen",
       "organic",
       "unisex",
-      "5feet11-archive"
+      "dukaan-archive"
     ],
     "createdAt": "2026-05-09T06:19:44.676Z"
   }

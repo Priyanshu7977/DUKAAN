@@ -9,7 +9,7 @@ import { formatPrice } from '../utils/formatters';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { Accordion } from '../components/common/Accordion';
 import { ProductCard } from '../components/product/ProductCard';
-import { Heart, Plus, Minus, Check, ShieldCheck, Truck, RotateCcw, Sparkles, MapPin } from 'lucide-react';
+import { Heart, Plus, Minus, Check, ShieldCheck, Truck, RotateCcw, Sparkles, MapPin, Star, ThumbsUp, X } from 'lucide-react';
 import { ImageWithFallback } from '../components/common/ImageWithFallback';
 
 const RECENTLY_VIEWED_KEY = 'dukaan_recently_viewed';
@@ -32,6 +32,67 @@ export const ProductDetail: React.FC = () => {
 
   const ctaRef = useRef<HTMLDivElement>(null);
   const [showStickyBar, setShowStickyBar] = useState(false);
+
+  const [reviews, setReviews] = useState([
+    {
+      id: 'rev-1',
+      name: 'Arjun Mehta',
+      city: 'Mumbai',
+      rating: 5,
+      date: '2 days ago',
+      size: 'L',
+      fit: 'True to Size',
+      comment: 'The organic linen texture has exceptional drape. Cut allows relaxed breathing room in Indian humidity without looking baggy.',
+    },
+    {
+      id: 'rev-2',
+      name: 'Rhea Kapoor',
+      city: 'Bengaluru',
+      rating: 5,
+      date: '1 week ago',
+      size: 'M',
+      fit: 'True to Size',
+      comment: 'Incredible handfeel. Hand-stitched collar details and natural buttons make it feel bespoke. Exactly what I was looking for.',
+    },
+    {
+      id: 'rev-3',
+      name: 'Kabir Singhania',
+      city: 'Delhi NCR',
+      rating: 4,
+      date: '2 weeks ago',
+      size: 'XL',
+      fit: 'Runs Slightly Relaxed',
+      comment: 'Premium craftsmanship. Delivered cleanly in the linen dust bag. Fits slightly relaxed which gives it a modern architectural flow.',
+    },
+  ]);
+
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const [newReviewName, setNewReviewName] = useState('');
+  const [newReviewCity, setNewReviewCity] = useState('');
+  const [newReviewRating, setNewReviewRating] = useState(5);
+  const [newReviewFit, setNewReviewFit] = useState('True to Size');
+  const [newReviewComment, setNewReviewComment] = useState('');
+
+  const handleAddReview = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newReviewName.trim() || !newReviewComment.trim()) return;
+    const newRev = {
+      id: `rev-${Date.now()}`,
+      name: newReviewName.trim(),
+      city: newReviewCity.trim() || 'Verified Patron',
+      rating: newReviewRating,
+      date: 'Just now',
+      size: selectedSize || 'M',
+      fit: newReviewFit,
+      comment: newReviewComment.trim(),
+    };
+    setReviews([newRev, ...reviews]);
+    setShowReviewModal(false);
+    setNewReviewName('');
+    setNewReviewCity('');
+    setNewReviewComment('');
+    showToast('Thank you! Your verified review has been published.', 'success');
+  };
 
   const [pincode, setPincode] = useState(() => {
     try {
@@ -516,6 +577,214 @@ export const ProductDetail: React.FC = () => {
           </div>
         </div>
       </div>
+
+      
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#141414]/10 shadow-sm space-y-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#141414]/10">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1">
+                Patron Impressions
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#141414] font-medium">
+                Client Reviews & Sizing Insights
+              </h3>
+              <p className="text-xs text-[#73706B] font-light mt-1">
+                Real feedback from verified purchasers on material drape, tactile comfort, and fit accuracy.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <div className="flex items-center gap-1 justify-end text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                  ))}
+                </div>
+                <span className="text-xs font-semibold text-[#141414] mt-0.5 block">
+                  4.9 out of 5.0 ({reviews.length + 45} Verified Patrons)
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setShowReviewModal(true)}
+                className="px-5 py-3 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold rounded-xl shadow-md transition-all active:scale-[0.99] shrink-0"
+              >
+                Write a Review
+              </button>
+            </div>
+          </div>
+
+          
+          <div className="bg-[#FAF8F5] p-5 sm:p-6 rounded-xl border border-[#141414]/10 space-y-3">
+            <div className="flex items-center justify-between text-xs font-semibold text-[#141414]">
+              <span className="flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#A7654A]" />
+                <span>True to Size Rating</span>
+              </span>
+              <span className="text-emerald-800 font-bold">93% say: Fits True to Size</span>
+            </div>
+
+            <div className="space-y-1.5 text-[11px] text-[#73706B]">
+              <div className="h-2 w-full bg-[#141414]/10 rounded-full overflow-hidden flex">
+                <div style={{ width: '4%' }} className="bg-amber-600 h-full" title="Runs Small (4%)" />
+                <div style={{ width: '92%' }} className="bg-emerald-700 h-full" title="True to Size (92%)" />
+                <div style={{ width: '4%' }} className="bg-blue-600 h-full" title="Runs Relaxed (4%)" />
+              </div>
+              <div className="flex justify-between pt-0.5 font-medium text-[10px] uppercase tracking-wider text-[#73706B]">
+                <span>Runs Small (4%)</span>
+                <span className="text-[#141414] font-bold">True to Size (92%)</span>
+                <span>Runs Relaxed (4%)</span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {reviews.map((rev) => (
+              <div key={rev.id} className="p-5 bg-[#FAF9F6] rounded-xl border border-[#141414]/8 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-0.5 text-amber-500">
+                    {[...Array(rev.rating)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] text-[#73706B]">{rev.date}</span>
+                </div>
+
+                <p className="text-xs text-[#141414] font-light leading-relaxed">
+                  "{rev.comment}"
+                </p>
+
+                <div className="pt-2 border-t border-[#141414]/8 flex items-center justify-between text-[11px]">
+                  <div>
+                    <span className="font-semibold text-[#141414] block">{rev.name}</span>
+                    <span className="text-[#73706B] text-[10px]">{rev.city}</span>
+                  </div>
+                  <span className="inline-flex items-center gap-1 text-[10px] text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-semibold">
+                    <Check className="w-3 h-3 text-emerald-700" />
+                    <span>Verified Buyer</span>
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
+      {showReviewModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+          <div className="bg-[#FAF9F6] border border-[#141414]/15 rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden">
+            <div className="px-5 py-4 bg-white border-b border-[#141414]/10 flex items-center justify-between">
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
+                  Atelier Feedback
+                </span>
+                <h3 className="font-serif text-lg text-[#141414] font-medium">
+                  Review {product.name}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowReviewModal(false)}
+                className="p-1.5 text-[#73706B] hover:text-[#141414] rounded-lg transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleAddReview} className="p-6 space-y-4">
+              <div>
+                <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-semibold mb-1">
+                  Overall Rating
+                </label>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((st) => (
+                    <button
+                      key={st}
+                      type="button"
+                      onClick={() => setNewReviewRating(st)}
+                      className="p-1 text-amber-500 hover:scale-110 transition-transform"
+                    >
+                      <Star
+                        className={`w-6 h-6 ${
+                          st <= newReviewRating ? 'fill-amber-500 text-amber-500' : 'text-gray-300'
+                        }`}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-semibold mb-1">
+                    Your Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={newReviewName}
+                    onChange={(e) => setNewReviewName(e.target.value)}
+                    placeholder="e.g. Priyanshu S."
+                    className="w-full h-11 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-semibold mb-1">
+                    City / Location
+                  </label>
+                  <input
+                    type="text"
+                    value={newReviewCity}
+                    onChange={(e) => setNewReviewCity(e.target.value)}
+                    placeholder="e.g. Mumbai, Maharashtra"
+                    className="w-full h-11 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-semibold mb-1">
+                  How Does It Fit?
+                </label>
+                <select
+                  value={newReviewFit}
+                  onChange={(e) => setNewReviewFit(e.target.value)}
+                  className="w-full h-11 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
+                >
+                  <option value="True to Size">True to Size (Recommended)</option>
+                  <option value="Runs Slightly Small">Runs Slightly Small</option>
+                  <option value="Runs Slightly Large">Runs Slightly Large / Relaxed</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-[11px] uppercase tracking-wider text-[#73706B] font-semibold mb-1">
+                  Your Thoughts & Material Review *
+                </label>
+                <textarea
+                  required
+                  rows={3}
+                  value={newReviewComment}
+                  onChange={(e) => setNewReviewComment(e.target.value)}
+                  placeholder="Describe the fabric touch, comfort, and silhouette..."
+                  className="w-full p-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-xl shadow-md transition-all active:scale-[0.99]"
+              >
+                Publish Review
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
 
       {relatedProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">

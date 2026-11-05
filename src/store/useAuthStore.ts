@@ -15,6 +15,7 @@ interface AuthState {
   addAddress: (address: Omit<UserAddress, 'id'>) => void;
   deleteAddress: (id: string) => void;
   setDefaultAddress: (id: string) => void;
+  addOrder: (order: UserOrder) => void;
 }
 
 const DEFAULT_ORDERS: UserOrder[] = [
@@ -183,5 +184,25 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     };
     safeStorage.setItem(STORAGE_KEY, updated);
     set({ user: updated });
+  },
+
+  addOrder: (newOrder) => {
+    const current = get().user;
+    if (current) {
+      const updatedUser: UserProfile = {
+        ...current,
+        orders: [newOrder, ...current.orders.filter((o) => o.id !== newOrder.id)],
+      };
+      safeStorage.setItem(STORAGE_KEY, updatedUser);
+      set({ user: updatedUser });
+    }
+    
+    try {
+      const stored = localStorage.getItem('dukaan_guest_orders');
+      let existing: UserOrder[] = stored ? JSON.parse(stored) : [];
+      if (!Array.isArray(existing)) existing = [];
+      const updated = [newOrder, ...existing.filter((o) => o.id !== newOrder.id)];
+      localStorage.setItem('dukaan_guest_orders', JSON.stringify(updated));
+    } catch {}
   },
 }));

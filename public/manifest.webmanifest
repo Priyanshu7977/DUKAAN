@@ -1,0 +1,17 @@
+{
+  "short_name": "DUKAAN",
+  "name": "DUKAAN — Objects of Everyday Expression",
+  "description": "Contemporary clothing engineered with pure European linen, soft cotton gauze, and timeless comfortable silhouettes.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FAF9F6",
+  "theme_color": "#141414",
+  "display": "standalone",
+  "orientation": "portrait"
+}

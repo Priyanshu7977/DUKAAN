@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
     <footer className="w-full px-3 sm:px-6 pt-6 pb-6 sm:pb-8 select-none">
       <div className="max-w-6xl mx-auto bg-[#141414] text-[#FAF9F6] rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-12 border border-white/10 shadow-2xl overflow-hidden">
         
-        {/* Newsletter Subscription Section */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-white/10">
           <div className="lg:col-span-7 space-y-2">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
@@ -76,10 +76,10 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Links Navigation Grid */}
+        
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 py-8 sm:py-10 border-b border-white/10 text-xs">
           
-          {/* Brand Manifesto & Concierge Contacts */}
+          
           <div className="col-span-2 md:col-span-4 lg:col-span-2 space-y-3 sm:pr-4">
             <span className="font-serif text-xl sm:text-2xl tracking-[0.25em] uppercase text-white block font-medium">
               DUKAAN
@@ -122,7 +122,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 2: Wardrobe */}
+          
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold text-white/70 block">
               Wardrobe
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 3: Collections */}
+          
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold text-white/70 block">
               Collections
@@ -152,14 +152,15 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: Client Care */}
+          
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold text-white/70 block">
               Client Care
             </span>
             <ul className="space-y-2 text-[#8A8780]">
+              <li><Link to="/track" className="hover:text-white transition-colors block py-0.5 font-medium text-white/90">Track Order</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors block py-0.5">Contact Concierge</Link></li>
-              <li><Link to="/shipping" className="hover:text-white transition-colors block py-0.5">Delivery & Tracking</Link></li>
+              <li><Link to="/shipping" className="hover:text-white transition-colors block py-0.5">Shipping & Delivery</Link></li>
               <li><Link to="/returns" className="hover:text-white transition-colors block py-0.5">Returns & Exchanges</Link></li>
               <li><Link to="/faq" className="hover:text-white transition-colors block py-0.5">Client FAQs</Link></li>
               <li><Link to="/privacy" className="hover:text-white transition-colors block py-0.5">Privacy Policy</Link></li>
@@ -167,7 +168,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 5: Atelier Service Badges (Balances Mobile 2-Col Grid) */}
+          
           <div className="space-y-2.5">
             <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold text-white/70 block">
               Atelier Promise
@@ -193,7 +194,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Copyright & Badges */}
+        
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#8A8780] gap-3 text-center sm:text-left">
           <p>© {new Date().getFullYear()} DUKAAN. All rights reserved. Handcrafted for India & Worldwide.</p>
           <div className="flex items-center justify-center space-x-6 uppercase tracking-wider text-[10px]">

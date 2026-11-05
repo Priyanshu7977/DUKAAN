@@ -24,6 +24,7 @@ import {
   ShieldAlert,
   AlertTriangle,
   CheckCircle2,
+  ArrowRight,
 } from 'lucide-react';
 
 export const Profile: React.FC = () => {
@@ -317,7 +318,7 @@ export const Profile: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#141414]/6 flex items-center justify-between text-xs">
+                  <div className="bg-[#FAF8F5] p-3.5 rounded-xl border border-[#141414]/6 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
                     <div className="flex items-center gap-2 text-[#141414]">
                       <Truck className="w-4 h-4 text-[#A7654A]" />
                       <span>
@@ -326,11 +327,13 @@ export const Profile: React.FC = () => {
                           : `Estimated Delivery: ${order.estimatedDelivery}`}
                       </span>
                     </div>
-                    {order.trackingNumber && (
-                      <span className="text-[11px] text-[#73706B] font-medium tracking-wide">
-                        Tracking: {order.trackingNumber}
-                      </span>
-                    )}
+                    <Link
+                      to={`/track/${order.id}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-colors w-fit shadow-xs"
+                    >
+                      <span>Track Shipment</span>
+                      <ArrowRight className="w-3 h-3 text-[#A7654A]" />
+                    </Link>
                   </div>
                 </div>
               ))

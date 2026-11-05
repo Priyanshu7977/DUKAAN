@@ -98,24 +98,34 @@ export const CartDrawer: React.FC = () => {
               </button>
             </div>
 
-            <div className="px-5 py-3 bg-[#EAE7DF] text-xs border-b border-[#141414]/8">
-              {diff > 0 ? (
-                <p className="text-[#141414] font-light text-[11px]">
-                  Add <strong className="font-medium text-[#A7654A]">{formatPrice(diff)}</strong> more to get <strong className="font-medium text-[#141414]">FREE Delivery</strong> across India.
-                </p>
-              ) : (
-                <p className="text-[#141414] font-medium flex items-center gap-1.5 text-[11px]">
-                  <span className="w-2 h-2 rounded-full bg-[#A7654A] inline-block" />
-                  You have unlocked FREE express delivery across India!
-                </p>
-              )}
-              <div className="w-full h-1 bg-black/10 mt-2 overflow-hidden">
-                <div
-                  className="h-full bg-[#141414] transition-all duration-500 ease-out"
-                  style={{ width: `${progressPercent}%` }}
-                />
+            {items.length > 0 ? (
+              <div className="px-5 py-3 bg-[#EAE7DF] text-xs border-b border-[#141414]/8">
+                {diff > 0 ? (
+                  <p className="text-[#141414] font-light text-[11px]">
+                    Add <strong className="font-medium text-[#A7654A]">{formatPrice(diff)}</strong> more to get <strong className="font-medium text-[#141414]">FREE Delivery</strong> across India.
+                  </p>
+                ) : (
+                  <p className="text-[#141414] font-medium flex items-center gap-1.5 text-[11px]">
+                    <span className="w-2 h-2 rounded-full bg-[#A7654A] inline-block" />
+                    You have unlocked FREE express delivery across India!
+                  </p>
+                )}
+                <div className="w-full h-1 bg-black/10 mt-2 overflow-hidden">
+                  <div
+                    className="h-full bg-[#141414] transition-all duration-500 ease-out"
+                    style={{ width: `${progressPercent}%` }}
+                  />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="px-5 py-2.5 bg-[#FAF8F5] text-xs border-b border-[#141414]/8 flex items-center justify-between text-[#73706B] text-[11px]">
+                <span className="flex items-center gap-1.5 text-[#141414] font-medium">
+                  <Sparkles className="w-3.5 h-3.5 text-[#A7654A]" />
+                  <span>Free Express Delivery</span>
+                </span>
+                <span>On all orders over ₹1,999</span>
+              </div>
+            )}
 
             <div className="flex-1 overflow-y-auto px-5 py-3 divide-y divide-[#141414]/8">
               {items.length === 0 ? (
