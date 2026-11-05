@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { OnboardingModal } from './components/common/OnboardingModal';
+import { initAuthRealtimeListener } from './store/useAuthStore';
 
 import { Home } from './pages/Home';
 import { Shop } from './pages/Shop';
@@ -29,6 +30,13 @@ import { NotFound } from './pages/NotFound';
 import { DocumentTitle } from './components/common/DocumentTitle';
 
 export const App: React.FC = () => {
+  useEffect(() => {
+    const unsubscribe = initAuthRealtimeListener();
+    return () => {
+      if (unsubscribe) unsubscribe();
+    };
+  }, []);
+
   return (
     <ErrorBoundary>
       <BrowserRouter>

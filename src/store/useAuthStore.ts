@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { UserProfile, UserAddress, UserOrder } from '../types';
 import { safeStorage, sanitizeInput } from '../utils/security';
+import { logoutFirebase, subscribeToRealtimeAuth } from '../services/firebaseAuth';
 
 interface AuthState {
   user: UserProfile | null;
@@ -123,6 +124,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   logout: () => {
+    logoutFirebase().catch(() => {});
     safeStorage.removeItem(STORAGE_KEY);
     set({
       user: null,
@@ -211,3 +213,38 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     } catch {}
   },
 }));
+
+let hasInitializedFirebase = false;
+
+export const initAuthRealtimeListener = () => {
+  if (hasInitializedFirebase) return () => {};
+  hasInitializedFirebase = true;
+  return subscribeToRealtimeAuth((firebaseUser) => {
+    if (firebaseUser) {
+      const state = useAuthStore.getState();
+      const existing = state.user;
+      const cleanName = firebaseUser.displayName || existing?.name || 'DUKAAN Member';
+      const cleanEmail = firebaseUser.email || existing?.email || '';
+      const cleanPhone = firebaseUser.phoneNumber || existing?.phone || '';
+
+      const updatedUser: UserProfile = {
+        id: firebaseUser.uid || existing?.id || 'usr-' + Date.now().toString(36),
+        name: cleanName,
+        email: cleanEmail,
+        phone: cleanPhone,
+        memberSince: existing?.memberSince || 'May 2025',
+        tier: 'DUKAAN Atelier Member',
+        walletBalance: existing?.walletBalance || 500,
+        addresses: existing?.addresses?.length ? existing.addresses : DEFAULT_ADDRESSES,
+        orders: existing?.orders?.length ? existing.orders : DEFAULT_ORDERS,
+      };
+
+      safeStorage.setItem(STORAGE_KEY, updatedUser);
+      useAuthStore.setState({
+        user: updatedUser,
+        isAuthenticated: true,
+        isLoginModalOpen: false,
+      });
+    }
+  });
+};

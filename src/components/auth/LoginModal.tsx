@@ -3,6 +3,13 @@ import { useAuthStore } from '../../store/useAuthStore';
 import { useUIStore } from '../../store/useUIStore';
 import { X, Phone, Mail, ShieldCheck, ArrowRight, Sparkles, CheckCircle2, AlertCircle, MessageSquare } from 'lucide-react';
 import { isValidIndianPhone, isValidEmail, sanitizeInput } from '../../utils/security';
+import {
+  signInWithEmail,
+  signUpWithEmail,
+  signInWithGoogle,
+  resetPassword,
+} from '../../services/firebaseAuth';
+import { isFirebaseConfigured } from '../../lib/firebase';
 
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isAuthenticated } = useAuthStore();
@@ -134,7 +141,7 @@ export const LoginModal: React.FC = () => {
     }, 450);
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
@@ -153,39 +160,59 @@ export const LoginModal: React.FC = () => {
       return;
     }
 
+    setIsLoading(true);
+
+    if (isFirebaseConfigured) {
+      let res = await signInWithEmail(emailAddress, password);
+      if (!res.success && (res.error?.includes('Invalid email or password') || res.error?.includes('not found'))) {
+        res = await signUpWithEmail(emailAddress, password, fullName);
+      }
+
+      if (!res.success) {
+        setIsLoading(false);
+        setErrorMessage(res.error || 'Authentication failed. Please check your credentials.');
+        return;
+      }
+    }
+
     fetch('/api/notifications/welcome', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: emailAddress, customerName: fullName }),
     }).catch(() => {});
 
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      login({
-        name: sanitizeInput(fullName) || 'DUKAAN Member',
-        email: emailAddress.trim(),
-        phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
-      });
-      showToast('Signed in via verified email', 'success');
-    }, 450);
+    setIsLoading(false);
+    login({
+      name: sanitizeInput(fullName) || 'DUKAAN Member',
+      email: emailAddress.trim(),
+      phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
+    });
+    showToast('Signed in via verified email', 'success');
   };
 
-  const handleGoogleSignIn = () => {
+  const handleGoogleSignIn = async () => {
     setErrorMessage('');
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      login({
-        name: sanitizeInput(fullName) || 'DUKAAN Member',
-        email: sanitizeInput(emailAddress) || 'member@dukaan.com',
-        phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
-      });
-      showToast('Signed in with Google', 'success');
-    }, 400);
+
+    if (isFirebaseConfigured) {
+      const res = await signInWithGoogle();
+      if (!res.success) {
+        setIsLoading(false);
+        setErrorMessage(res.error || 'Google sign-in was not completed.');
+        return;
+      }
+    }
+
+    setIsLoading(false);
+    login({
+      name: sanitizeInput(fullName) || 'DUKAAN Member',
+      email: sanitizeInput(emailAddress) || 'member@dukaan.com',
+      phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
+    });
+    showToast('Signed in with Google', 'success');
   };
 
-  const handleForgotPassword = (e: React.FormEvent) => {
+  const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
@@ -196,17 +223,24 @@ export const LoginModal: React.FC = () => {
 
     setIsLoading(true);
 
+    if (isFirebaseConfigured) {
+      const res = await resetPassword(emailAddress);
+      if (!res.success) {
+        setIsLoading(false);
+        setErrorMessage(res.error || 'Failed to send password reset email.');
+        return;
+      }
+    }
+
     fetch('/api/auth/forgot-password', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: emailAddress }),
     }).catch(() => {});
 
-    setTimeout(() => {
-      setIsLoading(false);
-      setResetSent(true);
-      showToast('Password reset link sent to ' + emailAddress, 'success');
-    }, 600);
+    setIsLoading(false);
+    setResetSent(true);
+    showToast('Password reset link sent to ' + emailAddress, 'success');
   };
 
   return (
