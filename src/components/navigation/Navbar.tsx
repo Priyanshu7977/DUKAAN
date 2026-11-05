@@ -4,7 +4,6 @@ import { useCartStore } from '../../store/useCartStore';
 import { useWishlistStore } from '../../store/useWishlistStore';
 import { useUIStore } from '../../store/useUIStore';
 import { useAuthStore } from '../../store/useAuthStore';
-import { useCurrencyStore, CURRENCIES, CurrencyCode } from '../../store/useCurrencyStore';
 import { Search, ShoppingBag, Heart, Menu, User } from 'lucide-react';
 import { MegaMenu } from './MegaMenu';
 import { cn } from '../../utils/formatters';
@@ -19,7 +18,6 @@ export const Navbar: React.FC = () => {
   const openSearch = useUIStore((state) => state.openSearch);
   const openMobileMenu = useUIStore((state) => state.openMobileMenu);
   const { isAuthenticated, user, openLoginModal } = useAuthStore();
-  const { currentCurrency, setCurrency } = useCurrencyStore();
 
   const cartCount = getItemCount();
   const wishlistCount = wishlistItems.length;
@@ -90,21 +88,6 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-1.5 sm:gap-2.5"
             onMouseEnter={() => setActiveMegaMenu(null)}
           >
-            <div className="relative flex items-center pr-1 border-r border-[#141414]/15">
-              <select
-                value={currentCurrency}
-                onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
-                aria-label="Select currency"
-                className="bg-transparent text-[10px] sm:text-[11px] font-semibold tracking-wider text-[#141414] hover:text-[#A7654A] cursor-pointer py-1 pl-1 pr-3 focus:outline-none appearance-none"
-              >
-                {Object.keys(CURRENCIES).map((code) => (
-                  <option key={code} value={code} className="bg-white text-[#141414]">
-                    {CURRENCIES[code as CurrencyCode].name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             <button
               onClick={openSearch}
               className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"

@@ -18,27 +18,35 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
   AED: { code: 'AED', symbol: 'AED ', rate: 0.044, locale: 'en-AE', name: 'AED (د.إ)' },
 };
 
+const resolveInitialCurrency = (): CurrencyCode => {
+  try {
+    const saved = localStorage.getItem('dukaan_currency');
+    if (saved && saved in CURRENCIES) {
+      return saved as CurrencyCode;
+    }
+
+    if (typeof Intl !== 'undefined' && Intl.DateTimeFormat) {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (tz.startsWith('America/') || tz.startsWith('US/')) return 'USD';
+      if (tz.startsWith('Europe/London')) return 'GBP';
+      if (tz.startsWith('Europe/')) return 'EUR';
+      if (tz.startsWith('Asia/Dubai')) return 'AED';
+    }
+  } catch {}
+  return 'INR';
+};
+
 interface CurrencyState {
   currentCurrency: CurrencyCode;
   setCurrency: (code: CurrencyCode) => void;
 }
 
-export const useCurrencyStore = create<CurrencyState>((set) => {
-  let initial: CurrencyCode = 'INR';
-  try {
-    const saved = localStorage.getItem('dukaan_currency');
-    if (saved && saved in CURRENCIES) {
-      initial = saved as CurrencyCode;
-    }
-  } catch {}
-
-  return {
-    currentCurrency: initial,
-    setCurrency: (code) => {
-      try {
-        localStorage.setItem('dukaan_currency', code);
-      } catch {}
-      set({ currentCurrency: code });
-    },
-  };
-});
+export const useCurrencyStore = create<CurrencyState>((set) => ({
+  currentCurrency: resolveInitialCurrency(),
+  setCurrency: (code) => {
+    try {
+      localStorage.setItem('dukaan_currency', code);
+    } catch {}
+    set({ currentCurrency: code });
+  },
+}));
