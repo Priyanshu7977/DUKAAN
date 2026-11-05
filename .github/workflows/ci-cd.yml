@@ -56,6 +56,16 @@ jobs:
           npm audit --audit-level=critical || true
           cd server && npm audit --audit-level=critical || true
 
+      - name: Verify No Sensitive .env Files Tracked
+        run: |
+          TRACKED_ENV=$(git ls-files | grep -E "(^|/)\.env($|\..*)" | grep -v "\.env\.example" || true)
+          if [ -n "$TRACKED_ENV" ]; then
+            echo "❌ CRITICAL SECURITY ALERT: Found tracked .env file in git repository:"
+            echo "$TRACKED_ENV"
+            exit 1
+          fi
+          echo "✅ Secret audit passed: Zero .env files tracked in repository."
+
   validate-k8s:
     name: ☸️ 3. Validate Kubernetes Manifests
     runs-on: ubuntu-latest

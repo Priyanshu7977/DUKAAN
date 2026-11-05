@@ -1,6 +1,9 @@
 node_modules
 backups
 .env
+.env*
+.env.*
+*.env
 *.log
 .git
 .github
