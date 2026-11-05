@@ -88,13 +88,18 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   hasAutoPrompted: false,
 
   openLoginModal: () => set({ isLoginModalOpen: true }),
-  closeLoginModal: () => set({ isLoginModalOpen: false, hasAutoPrompted: true }),
+  closeLoginModal: () => {
+    try {
+      sessionStorage.setItem('dukaan_login_dismissed', 'true');
+    } catch {}
+    set({ isLoginModalOpen: false, hasAutoPrompted: true });
+  },
 
   login: (userData) => {
     const existing = get().user;
-    const cleanName = sanitizeInput(userData.name) || 'Priyanshu Singh';
-    const cleanEmail = sanitizeInput(userData.email) || 'priyanshubipin2006@gmail.com';
-    const cleanPhone = sanitizeInput(userData.phone) || '+91 7977641125';
+    const cleanName = sanitizeInput(userData.name) || 'DUKAAN Member';
+    const cleanEmail = sanitizeInput(userData.email) || '';
+    const cleanPhone = sanitizeInput(userData.phone) || '';
 
     const newUser: UserProfile = {
       id: existing?.id || 'usr-' + Date.now().toString(36),

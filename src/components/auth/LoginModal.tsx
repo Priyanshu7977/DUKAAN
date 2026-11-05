@@ -8,11 +8,12 @@ export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isAuthenticated } = useAuthStore();
   const showToast = useUIStore((state) => state.showToast);
   const [authMode, setAuthMode] = useState<'phone' | 'email' | 'forgot_password'>('phone');
-  const [phoneNumber, setPhoneNumber] = useState('7977641125');
-  const [fullName, setFullName] = useState('Priyanshu Singh');
-  const [emailAddress, setEmailAddress] = useState('priyanshubipin2006@gmail.com');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [password, setPassword] = useState('');
   const [otpStep, setOtpStep] = useState(false);
-  const [otpCode, setOtpCode] = useState(['5', '8', '2', '1']);
+  const [otpCode, setOtpCode] = useState(['', '', '', '']);
   const [countdown, setCountdown] = useState(30);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -29,9 +30,50 @@ export const LoginModal: React.FC = () => {
 
   if (!isLoginModalOpen || isAuthenticated) return null;
 
+  const handleNameChange = (val: string) => {
+    const clean = val.replace(/[^a-zA-Z\s]/g, '');
+    setFullName(clean);
+  };
+
+  const handlePhoneChange = (val: string) => {
+    const clean = val.replace(/\D/g, '').slice(0, 10);
+    setPhoneNumber(clean);
+  };
+
+  const handleOtpInput = (index: number, val: string) => {
+    const cleanVal = val.replace(/\D/g, '').slice(-1);
+    const copy = [...otpCode];
+    copy[index] = cleanVal;
+    setOtpCode(copy);
+
+    if (cleanVal && index < 3) {
+      const nextInput = document.getElementById(`otp-input-${index + 1}`);
+      if (nextInput) (nextInput as HTMLInputElement).focus();
+    }
+  };
+
+  const handleOtpKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace' && !otpCode[index] && index > 0) {
+      const prevInput = document.getElementById(`otp-input-${index - 1}`);
+      if (prevInput) (prevInput as HTMLInputElement).focus();
+    }
+  };
+
+  const handleClose = () => {
+    try {
+      sessionStorage.setItem('dukaan_login_dismissed', 'true');
+    } catch {}
+    closeLoginModal();
+  };
+
   const handleSendOtp = (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
+
+    if (!fullName.trim()) {
+      setErrorMessage('Please enter your full name.');
+      return;
+    }
 
     if (attempts >= 4) {
       setErrorMessage('Too many OTP attempts. For security, please wait 5 minutes before trying again.');
@@ -51,7 +93,7 @@ export const LoginModal: React.FC = () => {
       setOtpStep(true);
       setCountdown(30);
       showToast('OTP sent securely via SMS to +91 ' + phoneNumber, 'info');
-    }, 600);
+    }, 450);
   };
 
   const handleVerifyOtp = (e: React.FormEvent) => {
@@ -68,20 +110,30 @@ export const LoginModal: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
       login({
-        name: sanitizeInput(fullName) || 'Priyanshu Singh',
+        name: sanitizeInput(fullName) || 'DUKAAN Member',
         phone: '+91 ' + phoneNumber.trim(),
-        email: sanitizeInput(emailAddress) || 'priyanshubipin2006@gmail.com',
+        email: sanitizeInput(emailAddress) || '',
       });
       showToast('Signed in successfully', 'success');
-    }, 600);
+    }, 450);
   };
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
+    if (!fullName.trim()) {
+      setErrorMessage('Please enter your full name.');
+      return;
+    }
+
     if (!isValidEmail(emailAddress)) {
       setErrorMessage('Please enter a valid email address.');
+      return;
+    }
+
+    if (!password) {
+      setErrorMessage('Please enter your password.');
       return;
     }
 
@@ -89,12 +141,12 @@ export const LoginModal: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
       login({
-        name: sanitizeInput(fullName) || 'Priyanshu Singh',
+        name: sanitizeInput(fullName) || 'DUKAAN Member',
         email: emailAddress.trim(),
-        phone: '+91 ' + phoneNumber.trim(),
+        phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
       });
       showToast('Signed in via verified email', 'success');
-    }, 600);
+    }, 450);
   };
 
   const handleGoogleSignIn = () => {
@@ -103,12 +155,12 @@ export const LoginModal: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
       login({
-        name: 'Priyanshu Singh',
-        email: 'priyanshubipin2006@gmail.com',
-        phone: '+91 7977641125',
+        name: sanitizeInput(fullName) || 'DUKAAN Member',
+        email: sanitizeInput(emailAddress) || 'member@dukaan.com',
+        phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
       });
       showToast('Signed in with Google', 'success');
-    }, 500);
+    }, 400);
   };
 
   const handleForgotPassword = (e: React.FormEvent) => {
@@ -125,36 +177,36 @@ export const LoginModal: React.FC = () => {
       setIsLoading(false);
       setResetSent(true);
       showToast('Password reset link sent to ' + emailAddress, 'success');
-    }, 800);
+    }, 600);
   };
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
-      onClick={closeLoginModal}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-fade-in"
+      onClick={handleClose}
     >
       <div
-        className="relative w-full max-w-md bg-white border border-[#141414]/10 shadow-[0_25px_60px_rgba(0,0,0,0.25)] rounded-2xl overflow-hidden"
+        className="relative w-full max-w-[350px] bg-white border border-[#141414]/12 shadow-[0_20px_50px_rgba(0,0,0,0.22)] rounded-xl overflow-hidden animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          onClick={closeLoginModal}
-          className="absolute top-4 right-4 z-20 p-2 text-[#73706B] hover:text-[#141414] hover:bg-[#F3EEEB] rounded-full transition-colors"
+          onClick={handleClose}
+          className="absolute top-2.5 right-2.5 z-20 w-7 h-7 flex items-center justify-center text-[#73706B] hover:text-[#141414] hover:bg-[#F3EEEB] rounded-full transition-colors"
           aria-label="Close login dialog"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4" />
         </button>
 
-        <div className="bg-[#FAF8F5] border-b border-[#141414]/8 p-6 text-center space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[10px] uppercase tracking-widest font-semibold mb-1">
-            <Sparkles className="w-3 h-3" />
+        <div className="bg-[#FAF8F5] border-b border-[#141414]/8 px-4 pt-4 pb-3 text-center space-y-1">
+          <div className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[9px] uppercase tracking-wider font-semibold">
+            <Sparkles className="w-2.5 h-2.5" />
             <span>DUKAAN Atelier Membership</span>
           </div>
-          <h2 className="font-serif text-2xl text-[#141414] font-normal">
+          <h2 className="font-serif text-lg text-[#141414] font-normal tracking-wide">
             Welcome to DUKAAN
           </h2>
-          <p className="text-xs text-[#73706B] font-light max-w-xs mx-auto">
-            Sign in to access your saved orders, tailored wishlist, and enjoy instant ₹500 discount on your first order.
+          <p className="text-[11px] text-[#73706B] font-light max-w-[270px] mx-auto leading-tight">
+            Sign in to access your saved orders, tailored wishlist & instant ₹500 welcome discount.
           </p>
         </div>
 
@@ -164,14 +216,15 @@ export const LoginModal: React.FC = () => {
             onClick={() => {
               setAuthMode('phone');
               setOtpStep(false);
+              setErrorMessage('');
             }}
-            className={`flex-1 py-3 text-[11px] uppercase tracking-wider font-medium text-center transition-all flex items-center justify-center gap-1.5 ${
+            className={`flex-1 py-2 text-[10px] uppercase tracking-wider font-medium text-center transition-all flex items-center justify-center gap-1.5 ${
               authMode === 'phone'
                 ? 'text-[#141414] border-b-2 border-[#141414] bg-white font-semibold'
                 : 'text-[#73706B] hover:text-[#141414]'
             }`}
           >
-            <Phone className="w-3.5 h-3.5" />
+            <Phone className="w-3 h-3" />
             <span>Mobile OTP</span>
           </button>
           <button
@@ -179,80 +232,81 @@ export const LoginModal: React.FC = () => {
             onClick={() => {
               setAuthMode('email');
               setOtpStep(false);
+              setErrorMessage('');
             }}
-            className={`flex-1 py-3 text-[11px] uppercase tracking-wider font-medium text-center transition-all flex items-center justify-center gap-1.5 ${
+            className={`flex-1 py-2 text-[10px] uppercase tracking-wider font-medium text-center transition-all flex items-center justify-center gap-1.5 ${
               authMode === 'email'
                 ? 'text-[#141414] border-b-2 border-[#141414] bg-white font-semibold'
                 : 'text-[#73706B] hover:text-[#141414]'
             }`}
           >
-            <Mail className="w-3.5 h-3.5" />
+            <Mail className="w-3 h-3" />
             <span>Email Login</span>
           </button>
         </div>
 
         {errorMessage && (
-          <div className="mx-6 mt-4 p-3 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700 flex items-start gap-2">
-            <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-            <span>{errorMessage}</span>
+          <div className="mx-4 mt-2.5 p-2 bg-red-50 border border-red-200 rounded-md text-[11px] text-red-700 flex items-start gap-1.5">
+            <AlertCircle className="w-3.5 h-3.5 text-red-600 shrink-0 mt-0.5" />
+            <span className="leading-tight">{errorMessage}</span>
           </div>
         )}
 
-        <div className="p-6 space-y-4">
+        <div className="p-4 space-y-3">
           {authMode === 'phone' ? (
             !otpStep ? (
-              <form onSubmit={handleSendOtp} className="space-y-4">
-                <div className="space-y-1.5">
-                  <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+              <form onSubmit={handleSendOtp} className="space-y-2.5">
+                <div className="space-y-1">
+                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
                     Full Name
                   </label>
                   <input
                     type="text"
                     value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Enter your name"
+                    onChange={(e) => handleNameChange(e.target.value)}
                     required
-                    className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] transition-colors"
+                    autoComplete="name"
+                    className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414] transition-colors"
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                <div className="space-y-1">
+                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
                     Mobile Number (India)
                   </label>
-                  <div className="flex rounded-lg overflow-hidden border border-[#141414]/15 focus-within:border-[#141414] bg-[#FAF8F5]">
-                    <span className="px-3 py-2.5 text-xs text-[#73706B] bg-[#EAE5DF] font-medium border-r border-[#141414]/10 select-none">
+                  <div className="flex h-9 rounded-md overflow-hidden border border-[#141414]/15 focus-within:border-[#141414] bg-[#FAF8F5]">
+                    <span className="px-2.5 flex items-center text-xs text-[#73706B] bg-[#EAE5DF] font-medium border-r border-[#141414]/10 select-none">
                       +91
                     </span>
                     <input
                       type="tel"
                       maxLength={10}
                       value={phoneNumber}
-                      onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, ''))}
-                      placeholder="9876543210"
+                      onChange={(e) => handlePhoneChange(e.target.value)}
                       required
-                      className="flex-1 px-3 py-2.5 text-xs bg-transparent focus:outline-none font-medium tabular-nums"
+                      autoComplete="tel"
+                      className="flex-1 px-2.5 text-xs bg-transparent focus:outline-none font-medium tabular-nums"
                     />
                   </div>
-                  <span className="text-[10px] text-[#73706B]">
-                    We will send a 4-digit verification code via SMS
+                  <span className="text-[9px] text-[#73706B] block">
+                    4-digit verification code will be sent via SMS
                   </span>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isLoading || phoneNumber.length < 10}
-                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 disabled:opacity-50 shadow-md active:scale-[0.99]"
+                  className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 disabled:opacity-50 shadow-xs active:scale-[0.99]"
                 >
                   <span>{isLoading ? 'Sending Code...' : 'Get OTP Code'}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3 h-3" />
                 </button>
               </form>
             ) : (
-              <form onSubmit={handleVerifyOtp} className="space-y-4">
-                <div className="text-center space-y-1 py-1">
-                  <CheckCircle2 className="w-8 h-8 text-[#0F6B38] mx-auto" />
-                  <p className="text-xs text-[#141414] font-medium">
+              <form onSubmit={handleVerifyOtp} className="space-y-3">
+                <div className="text-center space-y-0.5 py-1">
+                  <CheckCircle2 className="w-6 h-6 text-[#0F6B38] mx-auto" />
+                  <p className="text-[11px] text-[#141414] font-medium">
                     Code sent to +91 {phoneNumber}
                   </p>
                   <button
@@ -264,24 +318,22 @@ export const LoginModal: React.FC = () => {
                   </button>
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414] block text-center">
+                <div className="space-y-1">
+                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414] block text-center">
                     Enter 4-Digit Verification Code
                   </label>
-                  <div className="flex items-center justify-center gap-3">
+                  <div className="flex items-center justify-center gap-2">
                     {otpCode.map((digit, idx) => (
                       <input
                         key={idx}
+                        id={`otp-input-${idx}`}
                         type="text"
+                        inputMode="numeric"
                         maxLength={1}
                         value={digit}
-                        onChange={(e) => {
-                          const val = e.target.value.replace(/\D/g, '');
-                          const copy = [...otpCode];
-                          copy[idx] = val;
-                          setOtpCode(copy);
-                        }}
-                        className="w-12 h-12 text-center text-lg font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-lg focus:outline-none focus:border-[#141414] tabular-nums"
+                        onChange={(e) => handleOtpInput(idx, e.target.value)}
+                        onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                        className="w-10 h-10 text-center text-base font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums"
                       />
                     ))}
                   </div>
@@ -290,22 +342,22 @@ export const LoginModal: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-[0.99]"
+                  className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99]"
                 >
-                  <ShieldCheck className="w-4 h-4" />
+                  <ShieldCheck className="w-3.5 h-3.5" />
                   <span>{isLoading ? 'Verifying...' : 'Verify & Sign In'}</span>
                 </button>
 
                 <div className="text-center">
                   {countdown > 0 ? (
-                    <span className="text-[10px] text-[#73706B]">
+                    <span className="text-[9px] text-[#73706B]">
                       Resend code in {countdown}s
                     </span>
                   ) : (
                     <button
                       type="button"
                       onClick={() => setCountdown(30)}
-                      className="text-[10px] text-[#141414] underline font-medium"
+                      className="text-[9px] text-[#141414] underline font-medium"
                     >
                       Resend OTP now
                     </button>
@@ -314,38 +366,38 @@ export const LoginModal: React.FC = () => {
               </form>
             )
           ) : authMode === 'email' ? (
-            <form onSubmit={handleEmailSubmit} className="space-y-3.5">
+            <form onSubmit={handleEmailSubmit} className="space-y-2.5">
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
                   Full Name
                 </label>
                 <input
                   type="text"
                   value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Priyanshu Singh"
+                  onChange={(e) => handleNameChange(e.target.value)}
                   required
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                  autoComplete="name"
+                  className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
                   Email Address
                 </label>
                 <input
                   type="email"
                   value={emailAddress}
                   onChange={(e) => setEmailAddress(e.target.value)}
-                  placeholder="priyanshubipin2006@gmail.com"
                   required
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                  autoComplete="email"
+                  className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414]"
                 />
               </div>
 
               <div className="space-y-1">
                 <div className="flex items-center justify-between">
-                  <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
                     Password
                   </label>
                   <button
@@ -355,80 +407,81 @@ export const LoginModal: React.FC = () => {
                       setResetSent(false);
                       setErrorMessage('');
                     }}
-                    className="text-[10px] text-[#A7654A] hover:underline"
+                    className="text-[9px] text-[#A7654A] hover:underline"
                   >
                     Forgot password?
                   </button>
                 </div>
                 <input
                   type="password"
-                  defaultValue="dukaanPass@123"
-                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                  autoComplete="current-password"
+                  className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414]"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-[0.99]"
+                className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99]"
               >
                 <span>{isLoading ? 'Signing In...' : 'Sign In with Email'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3 h-3" />
               </button>
             </form>
           ) : (
-            <div className="space-y-4">
-              <div className="space-y-1">
-                <h3 className="font-serif text-lg text-[#141414]">Reset Your Password</h3>
-                <p className="text-xs text-[#73706B] font-light leading-relaxed">
-                  Enter your registered account email and we will dispatch a secure single-use password reset link.
+            <div className="space-y-3">
+              <div className="space-y-0.5">
+                <h3 className="font-serif text-base text-[#141414]">Reset Password</h3>
+                <p className="text-[11px] text-[#73706B] font-light leading-tight">
+                  Enter your account email to receive a password reset link.
                 </p>
               </div>
 
               {!resetSent ? (
-                <form onSubmit={handleForgotPassword} className="space-y-3.5">
+                <form onSubmit={handleForgotPassword} className="space-y-2.5">
                   <div className="space-y-1">
-                    <label className="text-[10px] uppercase tracking-widest font-semibold text-[#141414]">
+                    <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
                       Registered Email
                     </label>
                     <input
                       type="email"
                       value={emailAddress}
                       onChange={(e) => setEmailAddress(e.target.value)}
-                      placeholder="priyanshubipin2006@gmail.com"
                       required
-                      className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
+                      autoComplete="email"
+                      className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414]"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md active:scale-[0.99]"
+                    className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99]"
                   >
-                    <span>{isLoading ? 'Dispatching Link...' : 'Send Password Reset Link'}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>{isLoading ? 'Sending Link...' : 'Send Reset Link'}</span>
+                    <ArrowRight className="w-3 h-3" />
                   </button>
 
                   <button
                     type="button"
                     onClick={() => setAuthMode('email')}
-                    className="w-full text-center text-xs text-[#73706B] hover:text-[#141414] pt-1 underline font-medium"
+                    className="w-full text-center text-[10px] text-[#73706B] hover:text-[#141414] underline font-medium"
                   >
                     Back to Sign In
                   </button>
                 </form>
               ) : (
-                <div className="p-4 bg-[#FAF8F5] border border-[#141414]/10 rounded-xl text-center space-y-3">
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-5 h-5" />
+                <div className="p-3 bg-[#FAF8F5] border border-[#141414]/10 rounded-lg text-center space-y-2">
+                  <div className="w-8 h-8 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="font-serif text-base text-[#141414]">Reset Link Dispatched</h4>
-                    <p className="text-xs text-[#73706B]">
-                      We sent verification instructions to <strong>{emailAddress}</strong>. Check your inbox and follow the link to establish your new password.
+                    <h4 className="font-serif text-sm text-[#141414]">Reset Link Dispatched</h4>
+                    <p className="text-[10px] text-[#73706B]">
+                      Instructions sent to <strong>{emailAddress}</strong>.
                     </p>
                   </div>
                   <button
@@ -437,7 +490,7 @@ export const LoginModal: React.FC = () => {
                       setAuthMode('email');
                       setResetSent(false);
                     }}
-                    className="h-10 px-5 bg-[#141414] text-white text-[11px] uppercase tracking-wider font-semibold rounded-md"
+                    className="h-8 px-4 bg-[#141414] text-white text-[10px] uppercase tracking-wider font-medium rounded-md"
                   >
                     Return to Sign In
                   </button>
@@ -446,11 +499,11 @@ export const LoginModal: React.FC = () => {
             </div>
           )}
 
-          <div className="relative pt-2">
+          <div className="relative pt-1">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-[#141414]/10" />
             </div>
-            <div className="relative flex justify-center text-[10px] uppercase tracking-wider text-[#73706B] bg-white px-2">
+            <div className="relative flex justify-center text-[9px] uppercase tracking-wider text-[#73706B] bg-white px-2">
               <span>Or sign in with</span>
             </div>
           </div>
@@ -458,9 +511,9 @@ export const LoginModal: React.FC = () => {
           <button
             type="button"
             onClick={handleGoogleSignIn}
-            className="w-full h-12 px-4 bg-[#FAF8F5] hover:bg-[#EAE5DF] border border-[#141414]/15 rounded-lg text-xs font-semibold text-[#141414] transition-all flex items-center justify-center gap-2 active:scale-[0.99] shadow-2xs"
+            className="w-full h-9 px-3 bg-[#FAF8F5] hover:bg-[#EAE5DF] border border-[#141414]/15 rounded-md text-[11px] font-medium text-[#141414] transition-all flex items-center justify-center gap-2 active:scale-[0.99]"
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
               <path
                 fill="#4285F4"
                 d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.14z"
@@ -482,11 +535,11 @@ export const LoginModal: React.FC = () => {
           </button>
         </div>
 
-        <div className="bg-[#FAF8F5] border-t border-[#141414]/8 px-6 py-3 text-center">
+        <div className="bg-[#FAF8F5] border-t border-[#141414]/8 px-4 py-2 text-center">
           <button
             type="button"
-            onClick={closeLoginModal}
-            className="text-[11px] text-[#73706B] hover:text-[#141414] font-medium underline"
+            onClick={handleClose}
+            className="text-[10px] text-[#73706B] hover:text-[#141414] font-medium underline"
           >
             Continue as Guest & Browse Website →
           </button>
