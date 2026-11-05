@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+
 const app = express();
 
 app.disable('x-powered-by');
@@ -70,8 +71,8 @@ app.post('/api/notifications/order-dispatch', (req, res) => {
   });
 });
 
-app.all('*', (req, res) => {
+app.use((req, res) => {
   res.json({ status: 'success', endpoint: req.url });
 });
 
-module.exports = app;
+export default app;
