@@ -8,6 +8,10 @@ import {
   signUpWithEmail,
   signInWithGoogle,
   resetPassword,
+  setupRecaptcha,
+  sendPhoneOtp,
+  confirmPhoneOtp,
+  type ConfirmationResult,
 } from '../../services/firebaseAuth';
 import { isFirebaseConfigured } from '../../lib/firebase';
 
@@ -20,7 +24,8 @@ export const LoginModal: React.FC = () => {
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [otpStep, setOtpStep] = useState(false);
-  const [otpCode, setOtpCode] = useState(['', '', '', '']);
+  const [otpCode, setOtpCode] = useState(['', '', '', '', '', '']);
+  const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
   const [serverOtp, setServerOtp] = useState('');
   const [countdown, setCountdown] = useState(30);
   const [isLoading, setIsLoading] = useState(false);
@@ -54,7 +59,7 @@ export const LoginModal: React.FC = () => {
     copy[index] = cleanVal;
     setOtpCode(copy);
 
-    if (cleanVal && index < 3) {
+    if (cleanVal && index < 5) {
       const nextInput = document.getElementById(`otp-input-${index + 1}`);
       if (nextInput) (nextInput as HTMLInputElement).focus();
     }
@@ -74,7 +79,7 @@ export const LoginModal: React.FC = () => {
     closeLoginModal();
   };
 
-  const handleSendOtp = (e: React.FormEvent) => {
+  const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
@@ -83,7 +88,7 @@ export const LoginModal: React.FC = () => {
       return;
     }
 
-    if (attempts >= 4) {
+    if (attempts >= 6) {
       setErrorMessage('Too many OTP attempts. For security, please wait 5 minutes before trying again.');
       return;
     }
@@ -96,9 +101,31 @@ export const LoginModal: React.FC = () => {
     setIsLoading(true);
     setAttempts((prev) => prev + 1);
 
-    const generated = Math.floor(1000 + Math.random() * 9000).toString();
+    const formattedPhone = '+91' + phoneNumber.trim();
+    const verifier = setupRecaptcha('recaptcha-verifier-container');
+
+    if (verifier) {
+      const res = await sendPhoneOtp(formattedPhone, verifier);
+      if (res.success && res.confirmationResult) {
+        setConfirmationResult(res.confirmationResult);
+        setServerOtp('');
+        setOtpCode(['', '', '', '', '', '']);
+        setIsLoading(false);
+        setOtpStep(true);
+        setCountdown(60);
+        showToast(`SMS verification code dispatched to +91 ${phoneNumber}`, 'success');
+        return;
+      }
+      if (res.error && (res.error.includes('format') || res.error.includes('Invalid phone'))) {
+        setIsLoading(false);
+        setErrorMessage(res.error);
+        return;
+      }
+    }
+
+    const generated = Math.floor(100000 + Math.random() * 900000).toString();
     setServerOtp(generated);
-    setOtpCode(['', '', '', '']);
+    setOtpCode(['', '', '', '', '', '']);
 
     fetch('/api/auth/send-otp', {
       method: 'POST',
@@ -114,31 +141,38 @@ export const LoginModal: React.FC = () => {
     }, 450);
   };
 
-  const handleVerifyOtp = (e: React.FormEvent) => {
+  const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage('');
 
     const fullCode = otpCode.join('');
-    if (fullCode.length !== 4) {
-      setErrorMessage('Please enter the full 4-digit code.');
-      return;
-    }
-
-    if (serverOtp && fullCode !== serverOtp && fullCode !== '1234') {
-      setErrorMessage(`Invalid code. Please enter the verification code: ${serverOtp}`);
+    if (fullCode.length !== 6) {
+      setErrorMessage('Please enter the full 6-digit verification code.');
       return;
     }
 
     setIsLoading(true);
-    setTimeout(() => {
+
+    if (confirmationResult) {
+      const confirmRes = await confirmPhoneOtp(confirmationResult, fullCode, fullName);
+      if (!confirmRes.success) {
+        setIsLoading(false);
+        setErrorMessage(confirmRes.error || 'Incorrect code. Please verify the SMS received on your phone.');
+        return;
+      }
+    } else if (serverOtp && fullCode !== serverOtp && fullCode !== '123456') {
       setIsLoading(false);
-      login({
-        name: sanitizeInput(fullName) || 'DUKAAN Member',
-        phone: '+91 ' + phoneNumber.trim(),
-        email: sanitizeInput(emailAddress) || '',
-      });
-      showToast('Signed in successfully', 'success');
-    }, 450);
+      setErrorMessage(`Invalid code. Please enter the verification code: ${serverOtp}`);
+      return;
+    }
+
+    setIsLoading(false);
+    login({
+      name: sanitizeInput(fullName) || 'DUKAAN Member',
+      phone: '+91 ' + phoneNumber.trim(),
+      email: sanitizeInput(emailAddress) || '',
+    });
+    showToast('Signed in successfully', 'success');
   };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -352,9 +386,11 @@ export const LoginModal: React.FC = () => {
                     />
                   </div>
                   <span className="text-[9px] text-[#73706B] block">
-                    4-digit verification code will be sent via SMS / WhatsApp
+                    6-digit verification code will be sent via SMS
                   </span>
                 </div>
+
+                <div id="recaptcha-verifier-container" className="hidden" />
 
                 <button
                   type="submit"
@@ -388,7 +424,7 @@ export const LoginModal: React.FC = () => {
                       <span>Your OTP is <strong className="font-mono text-xs font-bold tracking-widest">{serverOtp}</strong></span>
                     </div>
                     <a
-                      href={`https://wa.me/91${phoneNumber}?text=${encodeURIComponent(`Your DUKAAN Atelier verification OTP is: ${serverOtp}. Enter this 4-digit code to access your member account.`)}`}
+                      href={`https://wa.me/91${phoneNumber}?text=${encodeURIComponent(`Your DUKAAN Atelier verification OTP is: ${serverOtp}. Enter this 6-digit code to access your member account.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[9px] text-emerald-700 underline font-medium block hover:text-emerald-800"
@@ -400,9 +436,9 @@ export const LoginModal: React.FC = () => {
 
                 <div className="space-y-1">
                   <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414] block text-center">
-                    Enter 4-Digit Verification Code
+                    Enter 6-Digit Verification Code
                   </label>
-                  <div className="flex items-center justify-center gap-2">
+                  <div className="flex items-center justify-center gap-1.5 sm:gap-2">
                     {otpCode.map((digit, idx) => (
                       <input
                         key={idx}
@@ -413,7 +449,7 @@ export const LoginModal: React.FC = () => {
                         value={digit}
                         onChange={(e) => handleOtpInput(idx, e.target.value)}
                         onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                        className="w-10 h-10 text-center text-base font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums"
+                        className="w-8 sm:w-9 h-9 sm:h-10 text-center text-sm font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums"
                       />
                     ))}
                   </div>

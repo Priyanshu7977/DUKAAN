@@ -6,6 +6,9 @@ import {
   sendPasswordResetEmail,
   updateProfile,
   onAuthStateChanged,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+  ConfirmationResult,
   User as FirebaseUser,
 } from 'firebase/auth';
 import { auth, googleProvider, isFirebaseConfigured } from '../lib/firebase';
@@ -101,6 +104,78 @@ export const resetPassword = async (email: string): Promise<AuthResponse> => {
   }
 };
 
+let activeRecaptcha: RecaptchaVerifier | null = null;
+
+export const setupRecaptcha = (containerId: string): RecaptchaVerifier | null => {
+  if (!isFirebaseConfigured || typeof window === 'undefined') return null;
+  try {
+    if (activeRecaptcha) {
+      try {
+        activeRecaptcha.clear();
+      } catch {}
+      activeRecaptcha = null;
+    }
+    activeRecaptcha = new RecaptchaVerifier(auth, containerId, {
+      size: 'invisible',
+      callback: () => {},
+    });
+    return activeRecaptcha;
+  } catch {
+    return null;
+  }
+};
+
+export const sendPhoneOtp = async (
+  phoneNumber: string,
+  verifier: RecaptchaVerifier
+): Promise<{ success: boolean; confirmationResult?: ConfirmationResult; error?: string }> => {
+  if (!isFirebaseConfigured) {
+    return { success: false, error: 'Firebase is not yet configured with API credentials.' };
+  }
+  try {
+    const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, verifier);
+    return { success: true, confirmationResult };
+  } catch (err: any) {
+    let message = 'Unable to send SMS verification code.';
+    if (err.code === 'auth/invalid-phone-number') {
+      message = 'Invalid phone number. Please enter a valid Indian number (+91).';
+    } else if (err.code === 'auth/quota-exceeded') {
+      message = 'Daily SMS quota reached for this project. Please contact concierge or use Google login.';
+    } else if (err.code === 'auth/captcha-check-failed') {
+      message = 'Security verification failed. Please try again.';
+    } else if (err.code === 'auth/too-many-requests') {
+      message = 'Too many requests. Please wait a few moments before trying again.';
+    } else if (err.message) {
+      message = err.message;
+    }
+    return { success: false, error: message };
+  }
+};
+
+export const confirmPhoneOtp = async (
+  confirmationResult: ConfirmationResult,
+  code: string,
+  displayName?: string
+): Promise<AuthResponse> => {
+  try {
+    const credential = await confirmationResult.confirm(code.trim());
+    if (displayName && displayName.trim() && credential.user) {
+      try {
+        await updateProfile(credential.user, { displayName: displayName.trim() });
+      } catch {}
+    }
+    return { success: true, user: credential.user };
+  } catch (err: any) {
+    let message = 'Incorrect verification code. Please check the SMS on your device.';
+    if (err.code === 'auth/invalid-verification-code') {
+      message = 'Invalid SMS code. Please re-check the 6-digit code received on your phone.';
+    } else if (err.code === 'auth/code-expired') {
+      message = 'This verification code has expired. Please request a new code.';
+    }
+    return { success: false, error: message };
+  }
+};
+
 export const logoutFirebase = async (): Promise<void> => {
   if (!isFirebaseConfigured) return;
   try {
@@ -118,3 +193,5 @@ export const subscribeToRealtimeAuth = (
     callback(user);
   });
 };
+
+export type { ConfirmationResult };
