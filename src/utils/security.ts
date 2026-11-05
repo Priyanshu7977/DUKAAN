@@ -14,7 +14,7 @@ export function sanitizeInput(input: string): string {
   if (typeof input !== 'string') return '';
   return input
     .replace(/<[^>]*>?/gm, '')
-    .replace(/[<>'";\\]/g, '') // Strip script/injection control characters
+    .replace(/[<>'";\\]/g, '')
     .trim();
 }
 

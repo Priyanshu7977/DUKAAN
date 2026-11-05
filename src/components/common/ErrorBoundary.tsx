@@ -37,8 +37,8 @@ export class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen bg-[#FAF9F6] flex items-center justify-center p-4 select-none">
-          <div className="max-w-md w-full bg-white border border-[#141414]/10 rounded-2xl p-8 text-center space-y-4 shadow-xl">
-            <div className="w-14 h-14 bg-[#FAF8F5] border border-[#141414]/10 rounded-full flex items-center justify-center mx-auto text-[#A7654A]">
+          <div className="max-w-md w-full bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-8 text-center space-y-4 shadow-xl">
+            <div className="w-14 h-14 bg-[#FAF9F6] border border-[#141414]/8 rounded-full flex items-center justify-center mx-auto text-[#A7654A]">
               <AlertCircle className="w-7 h-7" />
             </div>
 
