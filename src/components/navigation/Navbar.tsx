@@ -36,134 +36,135 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full max-w-6xl pointer-events-auto">
+    <div className="relative w-full pointer-events-auto">
       <header
         className={cn(
           'w-full transition-all duration-200',
-          'rounded-full bg-white/95 backdrop-blur-md border border-[#141414]/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)]',
-          'px-4 sm:px-8 py-2 sm:py-3 flex items-center justify-between'
+          'bg-white/95 backdrop-blur-md border-b border-[#141414]/10 shadow-[0_1px_3px_rgba(0,0,0,0.02)]'
         )}
       >
-        <div className="flex items-center shrink-0">
-          <Link
-            to="/"
-            className="inline-block group"
-            onMouseEnter={() => setActiveMegaMenu(null)}
-          >
-            <span className="font-serif text-lg sm:text-2xl tracking-[0.2em] sm:tracking-[0.25em] font-medium uppercase text-[#141414] group-hover:opacity-70 transition-opacity">
-              DUKAAN
-            </span>
-          </Link>
-        </div>
-
-        <div className="flex items-center justify-end gap-2 sm:gap-6">
-          <nav className="hidden lg:flex items-center space-x-6 text-[11px] uppercase tracking-[0.18em] font-medium">
-            {navLinks.map((link) => (
-              <div
-                key={link.to}
-                className="relative"
-                onMouseEnter={() => setActiveMegaMenu(link.megaMenu)}
-              >
-                <Link
-                  to={link.to}
-                  className={cn(
-                    'py-1 transition-colors duration-150',
-                    location.pathname === link.to || (link.to !== '/' && location.pathname.startsWith(link.to))
-                      ? 'text-[#141414] font-semibold'
-                      : 'text-[#73706B] hover:text-[#141414]'
-                  )}
-                >
-                  {link.label}
-                </Link>
-                {(location.pathname === link.to || (link.to !== '/' && location.pathname.startsWith(link.to))) && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#141414]" />
-                )}
-              </div>
-            ))}
-          </nav>
-
-          <div className="hidden lg:block h-4 w-[1px] bg-[#141414]/15" />
-
-          <div
-            className="flex items-center gap-1.5 sm:gap-2.5"
-            onMouseEnter={() => setActiveMegaMenu(null)}
-          >
-            <button
-              onClick={openSearch}
-              className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"
-              aria-label="Search garments"
-            >
-              <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
-            </button>
-
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
+          <div className="flex items-center shrink-0">
             <Link
-              to="/wishlist"
-              className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative"
-              aria-label="Saved wishlist"
+              to="/"
+              className="inline-block group"
+              onMouseEnter={() => setActiveMegaMenu(null)}
             >
-              <Heart className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
-              {wishlistCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 bg-[#A7654A] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
-                  {wishlistCount}
-                </span>
-              )}
+              <span className="font-serif text-lg sm:text-2xl tracking-[0.2em] sm:tracking-[0.25em] font-medium uppercase text-[#141414] group-hover:opacity-70 transition-opacity">
+                DUKAAN
+              </span>
             </Link>
+          </div>
 
-            {isAuthenticated ? (
-              <Link
-                to="/profile"
-                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative flex items-center justify-center group"
-                aria-label={`Account of ${user?.name || 'User'}`}
-                title={`Profile: ${user?.name}`}
-              >
-                <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#141414] text-white text-[10px] font-medium flex items-center justify-center group-hover:bg-[#A7654A] transition-colors shadow-xs">
-                  {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+          <div className="flex items-center justify-end gap-2 sm:gap-6">
+            <nav className="hidden lg:flex items-center space-x-6 text-[11px] uppercase tracking-[0.18em] font-medium">
+              {navLinks.map((link) => (
+                <div
+                  key={link.to}
+                  className="relative"
+                  onMouseEnter={() => setActiveMegaMenu(link.megaMenu)}
+                >
+                  <Link
+                    to={link.to}
+                    className={cn(
+                      'py-1 transition-colors duration-150',
+                      location.pathname === link.to || (link.to !== '/' && location.pathname.startsWith(link.to))
+                        ? 'text-[#141414] font-semibold'
+                        : 'text-[#73706B] hover:text-[#141414]'
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                  {(location.pathname === link.to || (link.to !== '/' && location.pathname.startsWith(link.to))) && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#141414]" />
+                  )}
                 </div>
-              </Link>
-            ) : (
-              <button
-                onClick={openLoginModal}
-                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"
-                aria-label="Sign in to your account"
-                title="Sign In / Register"
-              >
-                <User className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
-              </button>
-            )}
+              ))}
+            </nav>
 
-            <button
-              onClick={openCart}
-              className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative flex items-center gap-1.5"
-              aria-label={`Shopping bag with ${cartCount} items`}
+            <div className="hidden lg:block h-4 w-[1px] bg-[#141414]/15" />
+
+            <div
+              className="flex items-center gap-1.5 sm:gap-2.5"
+              onMouseEnter={() => setActiveMegaMenu(null)}
             >
-              <div className="relative">
-                <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 bg-[#141414] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
-                    {cartCount}
+              <button
+                onClick={openSearch}
+                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"
+                aria-label="Search garments"
+              >
+                <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
+              </button>
+
+              <Link
+                to="/wishlist"
+                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative"
+                aria-label="Saved wishlist"
+              >
+                <Heart className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
+                {wishlistCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 bg-[#A7654A] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
+                    {wishlistCount}
                   </span>
                 )}
-              </div>
-              <span className="hidden xl:inline text-xs font-serif italic text-[#73706B] ml-0.5">
-                Bag {cartCount > 0 && `(${cartCount})`}
-              </span>
-            </button>
+              </Link>
 
-            <button
-              onClick={openMobileMenu}
-              className="lg:hidden p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors ml-0.5"
-              aria-label="Open navigation menu"
-            >
-              <Menu className="w-5 h-5 stroke-[1.5]" />
-            </button>
+              {isAuthenticated ? (
+                <Link
+                  to="/profile"
+                  className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative flex items-center justify-center group"
+                  aria-label={`Account of ${user?.name || 'User'}`}
+                  title={`Profile: ${user?.name}`}
+                >
+                  <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#141414] text-white text-[10px] font-medium flex items-center justify-center group-hover:bg-[#A7654A] transition-colors shadow-xs">
+                    {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+                  </div>
+                </Link>
+              ) : (
+                <button
+                  onClick={openLoginModal}
+                  className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors"
+                  aria-label="Sign in to your account"
+                  title="Sign In / Register"
+                >
+                  <User className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
+                </button>
+              )}
+
+              <button
+                onClick={openCart}
+                className="p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors relative flex items-center gap-1.5"
+                aria-label={`Shopping bag with ${cartCount} items`}
+              >
+                <div className="relative">
+                  <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.5]" />
+                  {cartCount > 0 && (
+                    <span className="absolute -top-0.5 -right-0.5 bg-[#141414] text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
+                      {cartCount}
+                    </span>
+                  )}
+                </div>
+                <span className="hidden xl:inline text-xs font-serif italic text-[#73706B] ml-0.5">
+                  Bag {cartCount > 0 && `(${cartCount})`}
+                </span>
+              </button>
+
+              <button
+                onClick={openMobileMenu}
+                className="lg:hidden p-1.5 text-[#141414] hover:text-[#A7654A] transition-colors ml-0.5"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="w-5 h-5 stroke-[1.5]" />
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       <MegaMenu
-        isOpen={Boolean(activeMegaMenu)}
-        activeMenu={activeMegaMenu}
+        isOpen={activeMegaMenu !== null}
         onClose={() => setActiveMegaMenu(null)}
+        activeMenu={activeMegaMenu}
       />
     </div>
   );

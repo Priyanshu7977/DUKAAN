@@ -34,8 +34,8 @@ export const SiteHeader: React.FC = () => {
   return (
     <div
       className={cn(
-        'fixed inset-x-0 top-0 z-50 flex justify-center pointer-events-none transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] px-3 sm:px-6 pt-2 sm:pt-3 pb-1',
-        isVisible ? 'translate-y-0' : '-translate-y-28'
+        'fixed inset-x-0 top-0 z-50 w-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none',
+        isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
       <Navbar />
