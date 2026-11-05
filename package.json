@@ -9,10 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
     "firebase": "^13.2.0",
     "framer-motion": "^11.5.4",
     "gsap": "^3.12.5",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
     "lenis": "^1.1.13",
     "lucide-react": "^0.441.0",
     "react": "^18.3.1",

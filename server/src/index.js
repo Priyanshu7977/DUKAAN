@@ -79,20 +79,24 @@ app.use((err, req, res, next) => {
   res.status(500).json({ status: 'error', message: 'Internal server error occurred.' });
 });
 
-const server = app.listen(PORT, () => {
-  console.log(`[DUKAAN API Server] Running on port ${PORT} [Instance: ${INSTANCE_ID}]`);
-});
-
-const gracefulShutdown = (signal) => {
-  console.log(`[DUKAAN API] ${signal} signal received: closing HTTP server gracefully...`);
-  server.close(async () => {
-    try {
-      const db = require('./config/db');
-      if (db.pool && db.pool.end) await db.pool.end();
-    } catch {}
-    process.exit(0);
+if (!process.env.VERCEL) {
+  const server = app.listen(PORT, () => {
+    console.log(`[DUKAAN API Server] Running on port ${PORT} [Instance: ${INSTANCE_ID}]`);
   });
-};
 
-process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
-process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+  const gracefulShutdown = (signal) => {
+    console.log(`[DUKAAN API] ${signal} signal received: closing HTTP server gracefully...`);
+    server.close(async () => {
+      try {
+        const db = require('./config/db');
+        if (db.pool && db.pool.end) await db.pool.end();
+      } catch {}
+      process.exit(0);
+    });
+  };
+
+  process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+  process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+}
+
+module.exports = app;
