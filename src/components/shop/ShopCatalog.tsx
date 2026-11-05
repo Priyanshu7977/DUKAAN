@@ -209,11 +209,11 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
     <div className="w-full pb-12 bg-[#FAF9F6]">
       <div className="pt-6 sm:pt-8 pb-6 sm:pb-8 border-b border-[#141414]/10 bg-white mb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-3">
-            <Breadcrumbs items={breadcrumbs} />
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-widest text-[#141414] font-semibold tabular-nums">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-              <span>{filteredProducts.length} {filteredProducts.length === 1 ? 'Garment' : 'Garments'}</span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-3">
+            <Breadcrumbs items={breadcrumbs} className="min-w-0" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[10px] sm:text-[11px] uppercase tracking-wider text-[#141414] font-semibold tabular-nums shrink-0 whitespace-nowrap self-start sm:self-auto">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0"></span>
+              <span className="whitespace-nowrap">{filteredProducts.length} {filteredProducts.length === 1 ? 'Garment' : 'Garments'}</span>
             </span>
           </div>
           <div className="max-w-3xl space-y-2">

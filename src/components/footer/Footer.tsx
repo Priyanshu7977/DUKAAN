@@ -33,26 +33,26 @@ export const Footer: React.FC = () => {
     <footer className="w-full bg-[#141414] text-[#FAF9F6] border-t border-white/10 select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="py-4 border-b border-white/10 grid grid-cols-2 md:grid-cols-4 gap-3 text-[11px] text-[#A6A39C]">
-          <div className="flex items-center gap-2">
+        <div className="py-3 sm:py-4 border-b border-white/10 grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 text-[10px] sm:text-[11px] text-[#A6A39C]">
+          <div className="flex items-center gap-2 min-h-[34px] sm:min-h-0">
             <Truck className="w-3.5 h-3.5 text-[#A7654A] shrink-0" />
-            <span>Free Express Air on ₹1,999+</span>
+            <span className="leading-tight">Free Express Air on ₹1,999+</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 min-h-[34px] sm:min-h-0">
             <RotateCcw className="w-3.5 h-3.5 text-[#A7654A] shrink-0" />
-            <span>7-Day Doorstep Size Exchange</span>
+            <span className="leading-tight">7-Day Doorstep Size Exchange</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 min-h-[34px] sm:min-h-0">
             <ShieldCheck className="w-3.5 h-3.5 text-[#A7654A] shrink-0" />
-            <span>Cash on Delivery & Secure UPI</span>
+            <span className="leading-tight">Cash on Delivery & Secure UPI</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 min-h-[34px] sm:min-h-0">
             <Sparkles className="w-3.5 h-3.5 text-[#A7654A] shrink-0" />
-            <span>100% Pure Normandy Flax Linen</span>
+            <span className="leading-tight">100% Pure Normandy Flax Linen</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 py-8 sm:py-10 text-xs border-b border-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 py-6 sm:py-8 text-xs border-b border-white/10">
           
           <div className="col-span-2 md:col-span-1 space-y-3">
             <Link to="/" className="inline-block">

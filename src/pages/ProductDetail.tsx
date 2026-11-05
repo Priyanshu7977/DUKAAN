@@ -617,13 +617,13 @@ export const ProductDetail: React.FC = () => {
           </div>
 
           
-          <div className="bg-[#FAF8F5] p-5 sm:p-6 rounded-xl border border-[#141414]/10 space-y-3">
-            <div className="flex items-center justify-between text-xs font-semibold text-[#141414]">
+          <div className="bg-[#FAF8F5] p-4 sm:p-6 rounded-xl border border-[#141414]/10 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-1.5 text-xs font-semibold text-[#141414]">
               <span className="flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#A7654A]" />
                 <span>True to Size Rating</span>
               </span>
-              <span className="text-emerald-800 font-bold">93% say: Fits True to Size</span>
+              <span className="text-emerald-800 font-bold whitespace-nowrap">93% say: Fits True to Size</span>
             </div>
 
             <div className="space-y-1.5 text-[11px] text-[#73706B]">
@@ -632,7 +632,7 @@ export const ProductDetail: React.FC = () => {
                 <div style={{ width: '92%' }} className="bg-emerald-700 h-full" title="True to Size (92%)" />
                 <div style={{ width: '4%' }} className="bg-blue-600 h-full" title="Runs Relaxed (4%)" />
               </div>
-              <div className="flex justify-between pt-0.5 font-medium text-[10px] uppercase tracking-wider text-[#73706B]">
+              <div className="flex justify-between pt-0.5 font-medium text-[9px] sm:text-[10px] uppercase tracking-wider text-[#73706B] whitespace-nowrap">
                 <span>Runs Small (4%)</span>
                 <span className="text-[#141414] font-bold">True to Size (92%)</span>
                 <span>Runs Relaxed (4%)</span>

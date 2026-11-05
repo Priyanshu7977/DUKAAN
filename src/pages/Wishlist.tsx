@@ -37,9 +37,9 @@ export const Wishlist: React.FC = () => {
             </div>
             {items.length > 0 && (
               <div className="flex items-center gap-3 text-xs">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[11px] uppercase tracking-widest text-[#141414] font-semibold tabular-nums">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-                  <span>{items.length} {items.length === 1 ? 'object saved' : 'objects saved'}</span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF9F6] border border-[#141414]/10 rounded-full text-[10px] sm:text-[11px] uppercase tracking-wider text-[#141414] font-semibold tabular-nums shrink-0 whitespace-nowrap">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0"></span>
+                  <span className="whitespace-nowrap">{items.length} {items.length === 1 ? 'object saved' : 'objects saved'}</span>
                 </span>
                 <button
                   onClick={clearWishlist}

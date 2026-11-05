@@ -306,16 +306,16 @@ export const Checkout: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[11px] font-semibold rounded-full shadow-2xs">
-                <CheckCircle className="w-3 h-3 text-emerald-700" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-[10px] sm:text-[11px] font-semibold rounded-full shadow-2xs shrink-0 whitespace-nowrap">
+                <CheckCircle className="w-3 h-3 text-emerald-700 shrink-0" />
                 <span>Email Confirmation Dispatched</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50/80 border border-emerald-200/80 text-emerald-800 text-[11px] font-semibold rounded-full shadow-2xs">
-                <MessageSquare className="w-3 h-3 text-[#128C7E]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50/80 border border-emerald-200/80 text-emerald-800 text-[10px] sm:text-[11px] font-semibold rounded-full shadow-2xs shrink-0 whitespace-nowrap">
+                <MessageSquare className="w-3 h-3 text-[#128C7E] shrink-0" />
                 <span>WhatsApp Notification Ready</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200/80 text-amber-900 text-[11px] font-semibold rounded-full shadow-2xs">
-                <Sparkles className="w-3 h-3 text-[#A7654A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200/80 text-amber-900 text-[10px] sm:text-[11px] font-semibold rounded-full shadow-2xs shrink-0 whitespace-nowrap">
+                <Sparkles className="w-3 h-3 text-[#A7654A] shrink-0" />
                 <span>Atelier Good Note Generated</span>
               </span>
             </div>
