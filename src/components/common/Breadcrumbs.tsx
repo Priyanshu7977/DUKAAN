@@ -27,11 +27,11 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
             <li key={index} className="flex items-center gap-1.5 sm:gap-2 min-w-0">
               <ChevronRight className="w-3 h-3 text-[#A7654A]/60 shrink-0" />
               {isLast || !item.href ? (
-                <span className="text-[#211E1A] font-medium truncate max-w-[200px] sm:max-w-none inline-block align-bottom" aria-current="page" title={item.label}>
+                <span className="text-[#211E1A] font-medium truncate max-w-[130px] sm:max-w-[280px] lg:max-w-none inline-block align-bottom" aria-current="page" title={item.label}>
                   {item.label}
                 </span>
               ) : (
-                <Link to={item.href} className="hover:text-[#211E1A] transition-colors truncate max-w-[140px] sm:max-w-none inline-block align-bottom">
+                <Link to={item.href} className="hover:text-[#211E1A] transition-colors truncate max-w-[110px] sm:max-w-[200px] lg:max-w-none inline-block align-bottom">
                   {item.label}
                 </Link>
               )}

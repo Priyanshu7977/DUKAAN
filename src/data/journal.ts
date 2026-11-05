@@ -55,7 +55,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       name: 'Julian Vance',
       role: 'Creative Director',
     },
-    coverImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE735-scaled.jpg?v=1740307050',
+    coverImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050',
     excerpt: 'In our Neapolitan workshop, tailor Marco Vieri explains why the absence of padding exposes every seam to scrutiny, and how floating canvas allows a garment to breathe with the wearer.',
     content: [
       {
@@ -68,7 +68,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       },
       {
         type: 'image',
-        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE735-scaled.jpg?v=1740307050',
+        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050',
         caption: 'Hand-basting the pleat lines on our Beige Corduroy Trousers using silk thread.',
       },
       {

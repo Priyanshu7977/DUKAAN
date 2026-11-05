@@ -100,14 +100,14 @@ export const Shipping: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
-          <div className="bg-white p-5 border border-[#141414]/8 space-y-2">
+          <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
             <h4 className="font-serif text-base text-[#141414]">Order Tracking</h4>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               As soon as your order is packed and dispatched, you will receive an SMS and WhatsApp message with your tracking link to follow your parcel in real-time.
             </p>
           </div>
 
-          <div className="bg-white p-5 border border-[#141414]/8 space-y-2">
+          <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
             <h4 className="font-serif text-base text-[#141414]">Address Changes</h4>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               Need to modify your delivery address or contact number? Please contact us on WhatsApp at <strong>+91 7977641125</strong> within 6 hours of placing your order.
@@ -115,7 +115,7 @@ export const Shipping: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-6 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Need help with an ongoing delivery?</h4>
             <p className="text-xs text-[#73706B] font-light">

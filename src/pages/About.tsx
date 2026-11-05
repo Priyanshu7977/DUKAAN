@@ -68,7 +68,7 @@ export const About: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 border border-[#141414]/8 space-y-2">
+          <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
             <span className="text-xs text-[#A7654A] font-bold tabular-nums tracking-wider">01</span>
             <h3 className="font-serif text-lg text-[#141414]">100% Pure Natural Fibres</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
@@ -76,7 +76,7 @@ export const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white p-6 border border-[#141414]/8 space-y-2">
+          <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
             <span className="text-xs text-[#A7654A] font-bold tabular-nums tracking-wider">02</span>
             <h3 className="font-serif text-lg text-[#141414]">Relaxed Unisex Tailoring</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-white p-6 border border-[#141414]/8 space-y-2">
+          <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
             <span className="text-xs text-[#A7654A] font-bold tabular-nums tracking-wider">03</span>
             <h3 className="font-serif text-lg text-[#141414]">Direct-to-Customer Value</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
@@ -95,7 +95,7 @@ export const About: React.FC = () => {
       </section>
 
       <section className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Have questions about our fabrics or fit?</h4>
             <p className="text-xs text-[#73706B] font-light">

@@ -99,12 +99,12 @@ export const FAQ: React.FC = () => {
             </button>
           </div>
         ) : (
-          <div className="bg-white border border-[#141414]/8 p-4 sm:p-6">
+          <div className="bg-[#FAF8F5] border border-[#141414]/8 p-4 sm:p-6 rounded-2xl shadow-xs">
             <Accordion items={accordionItems} />
           </div>
         )}
 
-        <div className="mt-8 p-5 bg-white border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 p-5 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Have an unlisted inquiry?</h4>
             <p className="text-xs text-[#73706B] font-light">

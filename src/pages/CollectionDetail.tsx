@@ -310,12 +310,13 @@ export const CollectionDetail: React.FC = () => {
               <Link
                 key={col.id}
                 to={`/collections/${col.slug}`}
-                className="group block bg-[#FAF9F6] border border-[#141414]/8 overflow-hidden rounded-sm"
+                className="group block bg-[#FAF8F5] border border-[#141414]/8 overflow-hidden rounded-xl shadow-xs"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-[#ECE7DD]">
-                  <img
+                  <ImageWithFallback
                     src={col.heroImage}
                     alt={col.title}
+                    aspectRatioClass="w-full h-full"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

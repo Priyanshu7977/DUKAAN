@@ -315,7 +315,12 @@ export const ProductDetail: React.FC = () => {
                     }`}
                     aria-label={`View garment angle ${idx + 1}`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
+                    <img
+                      src={img}
+                      alt=""
+                      className="w-full h-full object-cover"
+                      onError={(e) => { e.currentTarget.style.opacity = '0.3'; }}
+                    />
                   </button>
                 ))}
               </div>
@@ -580,7 +585,7 @@ export const ProductDetail: React.FC = () => {
 
       
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
-        <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#141414]/10 shadow-sm space-y-8">
+        <div className="bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl border border-[#141414]/8 shadow-sm space-y-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#141414]/10">
             <div>
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1">
@@ -833,7 +838,7 @@ export const ProductDetail: React.FC = () => {
       )}
 
       <div
-        className={`fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#141414]/10 px-4 pt-2.5 pb-[calc(env(safe-area-inset-bottom,0px)+0.6rem)] sm:hidden transition-transform duration-300 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] ${
+        className={`fixed inset-x-0 bottom-0 z-40 bg-[#FAF8F5]/95 backdrop-blur-md border-t border-[#141414]/8 px-4 pt-2.5 pb-[calc(env(safe-area-inset-bottom,0px)+0.6rem)] sm:hidden transition-transform duration-300 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] ${
           showStickyBar ? 'translate-y-0' : 'translate-y-full pointer-events-none'
         }`}
       >
@@ -842,6 +847,7 @@ export const ProductDetail: React.FC = () => {
             <img
               src={product.images[0]}
               alt={product.name}
+              onError={(e) => { e.currentTarget.style.display = 'none'; }}
               className="w-10 h-10 object-cover rounded-lg bg-[#FAF8F5] border border-[#141414]/10 shrink-0"
             />
             <div className="min-w-0">

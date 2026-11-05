@@ -252,7 +252,7 @@ export const Returns: React.FC = () => {
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-1">
-            <div className="p-5 bg-white border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
+            <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 01
               </div>
@@ -262,7 +262,7 @@ export const Returns: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-5 bg-white border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
+            <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 02
               </div>
@@ -272,7 +272,7 @@ export const Returns: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-5 bg-white border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
+            <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 03
               </div>
@@ -284,7 +284,7 @@ export const Returns: React.FC = () => {
           </div>
         </div>
 
-        <div className="p-6 bg-white border border-[#141414]/10 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
+        <div className="p-6 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
           <div>
             <h4 className="font-serif text-base text-[#141414]">Need personalized assistance?</h4>
             <p className="text-xs text-[#73706B] font-light">
