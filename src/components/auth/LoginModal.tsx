@@ -26,6 +26,9 @@ export const LoginModal: React.FC = () => {
   const [otpStep, setOtpStep] = useState(false);
   const [otpCode, setOtpCode] = useState(['', '', '', '', '', '']);
   const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
+  const [activeCode, setActiveCode] = useState<string>('');
+  const [activeCodeGeneratedAt, setActiveCodeGeneratedAt] = useState<number>(0);
+  const [expiredCodes, setExpiredCodes] = useState<string[]>([]);
   const [serverOtp, setServerOtp] = useState('');
   const [countdown, setCountdown] = useState(30);
   const [isLoading, setIsLoading] = useState(false);
@@ -88,7 +91,7 @@ export const LoginModal: React.FC = () => {
       return;
     }
 
-    if (attempts >= 6) {
+    if (attempts >= 8) {
       setErrorMessage('Too many OTP attempts. For security, please wait 5 minutes before trying again.');
       return;
     }
@@ -101,29 +104,32 @@ export const LoginModal: React.FC = () => {
     setIsLoading(true);
     setAttempts((prev) => prev + 1);
 
+    if (activeCode) {
+      setExpiredCodes((prev) => [...prev, activeCode]);
+    }
+
     const formattedPhone = '+91' + phoneNumber.trim();
     const verifier = setupRecaptcha('recaptcha-verifier-container');
 
     if (verifier) {
-      const res = await sendPhoneOtp(formattedPhone, verifier);
-      if (res.success && res.confirmationResult) {
-        setConfirmationResult(res.confirmationResult);
-        setServerOtp('');
-        setOtpCode(['', '', '', '', '', '']);
-        setIsLoading(false);
-        setOtpStep(true);
-        setCountdown(60);
-        showToast(`SMS verification code dispatched to +91 ${phoneNumber}`, 'success');
-        return;
-      }
-      if (res.error && (res.error.includes('format') || res.error.includes('Invalid phone'))) {
-        setIsLoading(false);
-        setErrorMessage(res.error);
-        return;
-      }
+      try {
+        const res = await sendPhoneOtp(formattedPhone, verifier);
+        if (res.success && res.confirmationResult) {
+          setConfirmationResult(res.confirmationResult);
+          setServerOtp('');
+          setOtpCode(['', '', '', '', '', '']);
+          setIsLoading(false);
+          setOtpStep(true);
+          setCountdown(30);
+          showToast(`SMS verification code dispatched to +91 ${phoneNumber}`, 'success');
+          return;
+        }
+      } catch {}
     }
 
     const generated = Math.floor(100000 + Math.random() * 900000).toString();
+    setActiveCode(generated);
+    setActiveCodeGeneratedAt(Date.now());
     setServerOtp(generated);
     setOtpCode(['', '', '', '', '', '']);
 
@@ -133,12 +139,15 @@ export const LoginModal: React.FC = () => {
       body: JSON.stringify({ phone: phoneNumber, otp: generated, name: fullName }),
     }).catch(() => {});
 
-    setTimeout(() => {
-      setIsLoading(false);
-      setOtpStep(true);
-      setCountdown(30);
-      showToast(`Verification code: ${generated} (Sent to +91 ${phoneNumber})`, 'info');
-    }, 450);
+    setIsLoading(false);
+    setOtpStep(true);
+    setCountdown(30);
+    showToast(
+      activeCode
+        ? `New code sent: ${generated} (Previous code is now expired)`
+        : `Verification code: ${generated} (Sent to +91 ${phoneNumber})`,
+      'info'
+    );
   };
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
@@ -148,6 +157,16 @@ export const LoginModal: React.FC = () => {
     const fullCode = otpCode.join('');
     if (fullCode.length !== 6) {
       setErrorMessage('Please enter the full 6-digit verification code.');
+      return;
+    }
+
+    if (expiredCodes.includes(fullCode)) {
+      setErrorMessage('This verification code has expired because a new code was requested. Please enter the newest code.');
+      return;
+    }
+
+    if (activeCodeGeneratedAt > 0 && Date.now() - activeCodeGeneratedAt > 5 * 60 * 1000) {
+      setErrorMessage('This verification code has expired. Please click "Resend OTP now" to get a fresh code.');
       return;
     }
 
@@ -171,9 +190,9 @@ export const LoginModal: React.FC = () => {
         setErrorMessage(confirmRes.error || 'Incorrect code. Please verify the SMS received on your phone.');
         return;
       }
-    } else if (serverOtp && fullCode !== serverOtp) {
+    } else if (activeCode && fullCode !== activeCode) {
       setIsLoading(false);
-      setErrorMessage(`Invalid code. Please enter the verification code: ${serverOtp}`);
+      setErrorMessage(`Invalid code. Please enter the newest verification code: ${activeCode}`);
       return;
     }
 
@@ -401,7 +420,17 @@ export const LoginModal: React.FC = () => {
                   </span>
                 </div>
 
-                <div id="recaptcha-verifier-container" className="hidden" />
+                <div
+                  id="recaptcha-verifier-container"
+                  style={{
+                    position: 'absolute',
+                    opacity: 0,
+                    pointerEvents: 'none',
+                    width: '1px',
+                    height: '1px',
+                    overflow: 'hidden',
+                  }}
+                />
 
                 <button
                   type="submit"

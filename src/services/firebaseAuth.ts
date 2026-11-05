@@ -133,11 +133,20 @@ export const sendPhoneOtp = async (
     return { success: false, error: 'Firebase is not yet configured with API credentials.' };
   }
   try {
-    const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, verifier);
+    const confirmationResult = await Promise.race([
+      signInWithPhoneNumber(auth, phoneNumber, verifier),
+      new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('timeout')), 3500)
+      ),
+    ]);
     return { success: true, confirmationResult };
   } catch (err: any) {
     let message = 'Unable to send SMS verification code.';
-    if (err.code === 'auth/invalid-phone-number') {
+    if (err.message === 'timeout') {
+      message = 'SMS request timed out. Please try again.';
+    } else if (err.code === 'auth/operation-not-allowed') {
+      message = 'Phone provider is not enabled in Firebase Console.';
+    } else if (err.code === 'auth/invalid-phone-number') {
       message = 'Invalid phone number. Please enter a valid Indian number (+91).';
     } else if (err.code === 'auth/quota-exceeded') {
       message = 'Daily SMS quota reached for this project. Please contact concierge or use Google login.';
