@@ -125,7 +125,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
 
           <div className="col-span-4 border-l border-[#141414]/8 pl-6 flex flex-col justify-between">
             <Link
-              to="/collections/solstice-atelier"
+              to="/collections/solstice-edition"
               onClick={onClose}
               className="group block"
             >

@@ -53,7 +53,7 @@ export const MobileMenu: React.FC = () => {
               { label: 'All Clothes', path: '/shop' },
               { label: "Men's Collection", path: '/men' },
               { label: "Women's Collection", path: '/women' },
-              { label: 'Summer Collections', path: '/collections/solstice-atelier' },
+              { label: 'Summer Collections', path: '/collections/solstice-edition' },
               { label: 'About Us', path: '/about' },
               { label: 'Style Stories & Journal', path: '/journal' },
               { label: 'Help & Contact', path: '/contact' },
@@ -97,7 +97,7 @@ export const MobileMenu: React.FC = () => {
                 className="flex items-center gap-2.5 text-xs text-[#141414] hover:text-[#A7654A] transition-colors font-medium w-full text-left"
               >
                 <User className="w-3.5 h-3.5 text-[#141414]" />
-                <span>Sign In / Atelier Membership</span>
+                <span>Sign In / Membership</span>
               </button>
             )}
 

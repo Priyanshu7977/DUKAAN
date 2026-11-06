@@ -8,7 +8,7 @@ export const EditorialSplitBanners: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           <Link
-            to="/collections/solstice-atelier"
+            to="/collections/solstice-edition"
             className="group block bg-[#FAF8F5] border border-[#141414]/10 rounded-2xl overflow-hidden hover:border-[#141414]/30 transition-all duration-300 shadow-2xs hover:shadow-lg flex flex-col justify-between"
           >
             <div className="relative overflow-hidden aspect-[16/11] bg-[#ECE7DD]">

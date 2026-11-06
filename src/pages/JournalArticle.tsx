@@ -151,7 +151,7 @@ export const JournalArticle: React.FC = () => {
               Read Further
             </span>
             <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">
-              Related Atelier Dispatches
+              Related Dispatches
             </h3>
           </div>
           <Link

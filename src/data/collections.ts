@@ -3,15 +3,15 @@ import { Collection } from '../types';
 export const COLLECTIONS: Collection[] = [
   {
     id: 'col-04',
-    slug: 'solstice-atelier',
-    title: 'Collection 04: Solstice Atelier',
+    slug: 'solstice-edition',
+    title: 'Collection 04: Solstice Edition',
     tagline: 'High Summer Architectural Linen & Mediterranean Geometries',
     season: 'Spring / Summer',
     year: '2025',
     heroImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_1.jpg?v=1787463484',
     editorialImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
     secondaryImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131_06d49f6a-e2c0-46a2-871e-12ba8fc4cbde.jpg?v=1775042151',
-    story: 'Solstice Atelier investigates the interplay between warm sunlight and sculptural shelter. Developed using 100% Normandy raw flax linen, extra-fine double-gauze cotton, and tactile slub poplins, each garment acts as an architectural boundary between body and environment.',
+    story: 'Solstice Edition investigates the interplay between warm sunlight and sculptural shelter. Developed using 100% Normandy raw flax linen, extra-fine double-gauze cotton, and tactile slub poplins, each garment acts as an architectural boundary between body and environment.',
     description: 'A study in volume, dropped shoulder lines, and fluid silhouettes designed to breathe with the wearer through warm desert winds and coastal solstices.',
     palette: [
       { name: 'Almond White', hex: '#EDE8DF' },

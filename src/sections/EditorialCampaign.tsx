@@ -41,7 +41,7 @@ export const EditorialCampaign: React.FC = () => {
               to="/about"
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#F3F0E9] hover:bg-[#A7654A] hover:text-[#F3F0E9] text-[#211E1A] text-[11px] sm:text-xs uppercase tracking-[0.2em] font-semibold transition-all flex items-center justify-center gap-2.5 group shadow-md active:scale-95 text-center"
             >
-              <span>Read The Atelier Manifesto</span>
+              <span>Read The Brand Manifesto</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 

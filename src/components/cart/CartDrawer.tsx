@@ -304,7 +304,7 @@ export const CartDrawer: React.FC = () => {
                     />
                     <div className="min-w-0 flex-1">
                       <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
-                        {editingSizeItem.product.collection || 'Atelier'}
+                        {editingSizeItem.product.collection || 'DUKAAN'}
                       </span>
                       <h4 className="font-serif text-sm text-[#141414] truncate font-normal mt-0.5">
                         {editingSizeItem.product.name}

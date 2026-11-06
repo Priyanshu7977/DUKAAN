@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
     { label: 'Shop', to: '/shop', megaMenu: 'shop' },
     { label: 'Men', to: '/men', megaMenu: null },
     { label: 'Women', to: '/women', megaMenu: null },
-    { label: 'Collections', to: '/collections/solstice-atelier', megaMenu: 'collections' },
+    { label: 'Collections', to: '/collections/solstice-edition', megaMenu: 'collections' },
     { label: 'Track', to: '/track', megaMenu: null },
     { label: 'Journal', to: '/journal', megaMenu: null },
   ];

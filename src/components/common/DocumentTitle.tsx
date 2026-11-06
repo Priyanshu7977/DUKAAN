@@ -14,7 +14,7 @@ export const DocumentTitle: React.FC = () => {
     if (path === '/') {
       title = 'DUKAAN — Objects of Everyday Expression';
     } else if (path === '/shop') {
-      title = 'Complete Wardrobe — DUKAAN Atelier';
+      title = 'Complete Wardrobe — DUKAAN';
       description = 'Explore foundational organic shirts, pleated trousers, and co-ords.';
     } else if (path === '/men') {
       title = "Men's Edit — DUKAAN";
@@ -39,7 +39,7 @@ export const DocumentTitle: React.FC = () => {
     } else if (path === '/contact') {
       title = 'Concierge & Client Care — DUKAAN';
     } else if (path === '/about') {
-      title = 'Atelier Philosophy & Materiality — DUKAAN';
+      title = 'Brand Philosophy & Materiality — DUKAAN';
     } else if (path === '/journal') {
       title = 'Editorial Journal & Essays — DUKAAN';
     } else if (path === '/profile') {

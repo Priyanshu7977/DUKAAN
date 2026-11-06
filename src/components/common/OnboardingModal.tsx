@@ -43,7 +43,7 @@ export const OnboardingModal: React.FC = () => {
       subtitle: 'Pure European Flax & 100% Breathable Cotton',
       description:
         'We craft quiet luxury garments engineered without synthetic polymers or polyester blends. Soft, breathable, and architecturally relaxed for everyday Indian summers.',
-      badge: 'Atelier Foundations',
+      badge: 'Wardrobe Foundations',
       icon: <Sparkles className="w-6 h-6 text-[#A7654A]" />,
     },
     {
@@ -55,7 +55,7 @@ export const OnboardingModal: React.FC = () => {
       icon: <ShieldCheck className="w-6 h-6 text-[#A7654A]" />,
     },
     {
-      title: 'Your Atelier Welcome Gift',
+      title: 'Your Welcome Gift',
       subtitle: 'Instant ₹500 Off Your First Wardrobe Piece',
       description:
         'Use exclusive promo code WELCOME500 at checkout on orders above ₹1,999. Includes nationwide express delivery and 7-day doorstep size exchange.',

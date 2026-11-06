@@ -194,7 +194,7 @@ export const ProductDetail: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-20 text-center bg-[#FAF9F6]">
         <h2 className="font-serif text-2xl text-[#141414]">Garment Not Located</h2>
         <p className="text-xs text-[#73706B] mt-1 mb-4">
-          This piece may have retired to our permanent atelier archive.
+          This piece may have retired to our permanent archive.
         </p>
         <Link
           to="/shop"
@@ -685,7 +685,7 @@ export const ProductDetail: React.FC = () => {
             <div className="px-5 py-4 bg-white border-b border-[#141414]/10 flex items-center justify-between">
               <div>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-                  Atelier Feedback
+                  Client Feedback
                 </span>
                 <h3 className="font-serif text-lg text-[#141414] font-medium">
                   Review {product.name}
@@ -822,7 +822,7 @@ export const ProductDetail: React.FC = () => {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10">
           <div className="mb-4 pb-2 border-b border-[#141414]/8">
             <span className="text-[10px] uppercase tracking-widest text-[#73706B] font-semibold block">
-              Atelier Memory
+              Wardrobe Memory
             </span>
             <h3 className="font-serif text-base sm:text-lg text-[#141414]">
               Recently Inspected

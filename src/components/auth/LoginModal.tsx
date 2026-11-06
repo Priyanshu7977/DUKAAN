@@ -327,7 +327,7 @@ export const LoginModal: React.FC = () => {
         <div className="bg-[#FAF8F5] border-b border-[#141414]/8 px-4 pt-4 pb-3 text-center space-y-1">
           <div className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[9px] uppercase tracking-wider font-semibold">
             <Sparkles className="w-2.5 h-2.5" />
-            <span>DUKAAN Atelier Membership</span>
+            <span>DUKAAN VIP Membership</span>
           </div>
           <h2 className="font-serif text-lg text-[#141414] font-normal tracking-wide">
             Welcome to DUKAAN
@@ -464,7 +464,7 @@ export const LoginModal: React.FC = () => {
                       <span>Your OTP is <strong className="font-mono text-xs font-bold tracking-widest">{serverOtp}</strong></span>
                     </div>
                     <a
-                      href={`https://wa.me/91${phoneNumber}?text=${encodeURIComponent(`Your DUKAAN Atelier verification OTP is: ${serverOtp}. Enter this 6-digit code to access your member account.`)}`}
+                      href={`https://wa.me/91${phoneNumber}?text=${encodeURIComponent(`Your DUKAAN verification OTP is: ${serverOtp}. Enter this 6-digit code to access your member account.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[9px] text-emerald-700 underline font-medium block hover:text-emerald-800"

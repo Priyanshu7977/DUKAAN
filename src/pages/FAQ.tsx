@@ -42,7 +42,7 @@ export const FAQ: React.FC = () => {
           <Breadcrumbs items={[{ label: 'Help & FAQs' }]} className="mb-3" />
           <div className="max-w-3xl space-y-2 mb-4">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-              Atelier Client Care
+              Client Care
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
               Frequently Asked Questions

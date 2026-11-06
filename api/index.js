@@ -58,7 +58,7 @@ app.post('/api/auth/forgot-password', (req, res) => {
 app.post('/api/notifications/inquiry-acknowledgment', (req, res) => {
   res.json({
     status: 'success',
-    message: 'Atelier concierge inquiry received',
+    message: 'Concierge inquiry received',
   });
 });
 

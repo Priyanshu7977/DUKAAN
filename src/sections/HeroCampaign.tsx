@@ -113,7 +113,7 @@ export const HeroCampaign: React.FC = () => {
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
         <Link
-          to="/collections/solstice-atelier"
+          to="/collections/solstice-edition"
           className="flex-1 sm:flex-initial h-12 px-6 sm:px-8 bg-black/45 hover:bg-black/65 border border-white/60 hover:border-white text-white text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium backdrop-blur-sm transition-all shadow-xl flex items-center justify-center active:scale-95 rounded-sm"
         >
           <span>Summer Edit</span>

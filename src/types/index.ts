@@ -84,7 +84,7 @@ export interface JournalArticle {
   slug: string;
   title: string;
   subtitle: string;
-  category: 'Atelier Notes' | 'Materiality' | 'Architecture' | 'Conversations' | 'Campaign';
+  category: 'Journal Notes' | 'Materiality' | 'Architecture' | 'Conversations' | 'Campaign';
   date: string;
   readTime: string;
   author: {

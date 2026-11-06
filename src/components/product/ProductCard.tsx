@@ -109,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </h3>
           </Link>
           <p className="text-[10px] sm:text-[11px] text-[#73706B] font-light truncate mt-0.5">
-            {product.subtitle || product.collection || 'Pure Natural Atelier'}
+            {product.subtitle || product.collection || 'Pure Natural Linen'}
           </p>
         </div>
 

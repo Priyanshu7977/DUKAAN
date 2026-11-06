@@ -80,7 +80,7 @@ export const CollectionDetail: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-3">
             <Breadcrumbs
               items={[
-                { label: 'Collections', href: '/collections/solstice-atelier' },
+                { label: 'Collections', href: '/collections/solstice-edition' },
                 { label: collection.title },
               ]}
               className="min-w-0"
@@ -289,7 +289,7 @@ export const CollectionDetail: React.FC = () => {
           </>
         ) : (
           <p className="text-xs text-[#73706B] py-12 text-center">
-            Additional garments for this collection are undergoing finishing in our atelier.
+            Additional garments for this collection are undergoing finishing in our studio.
           </p>
         )}
       </section>
@@ -298,7 +298,7 @@ export const CollectionDetail: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-4">
             <span className="text-[10px] uppercase tracking-widest text-[#73706B] font-semibold block">
-              Atelier Archive
+              Collection Archive
             </span>
             <h3 className="font-serif text-lg sm:text-xl text-[#141414]">
               Explore Other Editions

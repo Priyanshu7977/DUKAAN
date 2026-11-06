@@ -20,7 +20,7 @@ interface CartStore {
 }
 
 const STORAGE_KEY = 'dukaan_cart';
-const LEGACY_STORAGE_KEY = 'forme_atelier_cart';
+const LEGACY_STORAGE_KEY = 'forme_legacy_cart';
 
 const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
   if (!Array.isArray(rawItems)) return [];

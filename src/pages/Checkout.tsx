@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import { ToastContainer } from '../components/common/ToastContainer';
 import { isValidIndianPhone, isValidPincode, sanitizeInput } from '../utils/security';
-import { AtelierGoodNoteModal } from '../components/common/AtelierGoodNoteModal';
+import { CareGoodNoteModal } from '../components/common/CareGoodNoteModal';
 import { UPIPaymentModal } from '../components/checkout/UPIPaymentModal';
 import { useAuthStore } from '../store/useAuthStore';
 import { UserOrder } from '../types';
@@ -316,7 +316,7 @@ export const Checkout: React.FC = () => {
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200/80 text-amber-900 text-[10px] sm:text-[11px] font-semibold rounded-full shadow-2xs shrink-0 whitespace-nowrap">
                 <Sparkles className="w-3 h-3 text-[#A7654A] shrink-0" />
-                <span>Atelier Good Note Generated</span>
+                <span>Care Good Note Generated</span>
               </span>
             </div>
 
@@ -450,7 +450,7 @@ export const Checkout: React.FC = () => {
           </div>
 
           {confirmedNotificationPayload && (
-            <AtelierGoodNoteModal
+            <CareGoodNoteModal
               isOpen={showGoodNoteModal}
               onClose={() => setShowGoodNoteModal(false)}
               order={confirmedNotificationPayload}

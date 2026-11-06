@@ -28,7 +28,7 @@ export const Journal: React.FC = () => {
 
           <div className="max-w-3xl space-y-2 mb-6">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-              Atelier Notes & Monographs
+              Journal Notes & Monographs
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
               The Journal

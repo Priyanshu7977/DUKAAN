@@ -46,7 +46,7 @@ export const SizeGuideModal: React.FC = () => {
 
           <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold mb-1">
             <Ruler className="w-3.5 h-3.5" />
-            <span>Atelier Sizing Guide</span>
+            <span>DUKAAN Sizing Guide</span>
           </div>
 
           <h3 className="font-serif text-xl sm:text-2xl text-[#141414] font-normal">

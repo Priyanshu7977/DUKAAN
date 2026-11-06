@@ -31,7 +31,7 @@ export function buildWhatsAppOrderLink(order: OrderNotificationPayload): string 
     .join('\n');
 
   const text = 
-`✨ *DUKAAN Atelier — Order Confirmed* ✨
+`✨ *DUKAAN — Order Confirmed* ✨
 Dear ${order.customerName}, your order *#${order.orderNumber}* has been received.
 
 📦 *Garments in Dispatch:*
@@ -41,7 +41,7 @@ ${itemsText}
 🚚 *Courier:* BlueDart / Delhivery Express Air
 ⏱️ *Timeline:* 2 – 3 Business Days to ${order.shippingAddress.city} (${order.shippingAddress.pincode})
 
-🌿 *Atelier Care Good Note:*
+🌿 *DUKAAN Care Good Note:*
 Crafted in 100% pure Normandy flax & organic cotton gauze. 7-day complimentary doorstep size exchange included.
 
 Reply to this chat anytime for 24/7 client care updates!`;

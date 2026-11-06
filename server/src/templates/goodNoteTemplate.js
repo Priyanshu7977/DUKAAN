@@ -1,4 +1,4 @@
-function buildAtelierGoodNoteHtml(order) {
+function buildGoodNoteHtml(order) {
   const {
     orderNumber = 'DUK-IN-000000',
     customerName = 'Valued Patron',
@@ -46,7 +46,7 @@ function buildAtelierGoodNoteHtml(order) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DUKAAN Atelier — Archival Good Note & Packing Dossier #${orderNumber}</title>
+  <title>DUKAAN — Archival Good Note & Packing Dossier #${orderNumber}</title>
   <style>
     @page { size: A4; margin: 20mm; }
     body {
@@ -173,7 +173,7 @@ function buildAtelierGoodNoteHtml(order) {
     <div class="header">
       <div>
         <h1 class="logo">DUKAAN</h1>
-        <div class="tagline">Objects of Everyday Expression • Atelier Registry</div>
+        <div class="tagline">Objects of Everyday Expression • DUKAAN Registry</div>
       </div>
       <div style="text-align: right;">
         <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #73706B;">Order Coordinate</div>
@@ -182,9 +182,9 @@ function buildAtelierGoodNoteHtml(order) {
       </div>
     </div>
 
-    <!-- Personal Atelier Good Note -->
+    <!-- Personal Care Good Note -->
     <div class="note-box">
-      <h3 class="note-heading">A Personal Note From The Atelier Desk</h3>
+      <h3 class="note-heading">A Personal Note From The DUKAAN Desk</h3>
       <p class="note-text">
         Dear <strong>${customerName}</strong>,<br><br>
         Thank you for welcoming DUKAAN into your wardrobe. Each piece in this dispatch has been individually inspected, hand-steamed, and wrapped in natural kraft paper by our tailors in Mumbai.
@@ -232,7 +232,7 @@ function buildAtelierGoodNoteHtml(order) {
     <!-- Totals Summary -->
     <div style="width: 280px; margin-left: auto; margin-bottom: 24px; font-size: 12px;">
       <div style="display: flex; justify-content: space-between; padding: 4px 0; color: #73706B;">
-        <span>Atelier Subtotal:</span>
+        <span>Subtotal:</span>
         <span style="color: #141414; font-variant-numeric: tabular-nums;">₹${subtotal.toLocaleString('en-IN')}</span>
       </div>
       ${discountAmount > 0 ? `
@@ -262,7 +262,7 @@ function buildAtelierGoodNoteHtml(order) {
         <strong style="color: #141414;">24/7 Client Care Concierge:</strong><br>
         WhatsApp / Call: +91 7977641125<br>
         Email: priyanshubipin2006@gmail.com<br>
-        Mumbai Atelier • Worldwide Courier
+        Mumbai Studio • Worldwide Courier
       </div>
     </div>
 
@@ -275,5 +275,5 @@ function buildAtelierGoodNoteHtml(order) {
 }
 
 module.exports = {
-  buildAtelierGoodNoteHtml,
+  buildGoodNoteHtml,
 };

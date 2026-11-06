@@ -41,7 +41,7 @@ interface ChatbotState {
 const INITIAL_GREETING: ChatMessage = {
   id: 'msg-welcome-01',
   sender: 'bot',
-  text: 'Welcome to DUKAAN Client Care. I am your personal Atelier Concierge, trained to assist with live order tracking, 7-day doorstep size exchanges, fabric care, or personalized styling advice. How may I assist you today?',
+  text: 'Welcome to DUKAAN Client Care. I am your personal Concierge, trained to assist with live order tracking, 7-day doorstep size exchanges, fabric care, or personalized styling advice. How may I assist you today?',
   timestamp: 'Just now',
   type: 'text',
   quickReplies: [

@@ -60,7 +60,7 @@ export const Privacy: React.FC = () => {
             <li><strong>Identity Coordinates:</strong> Full client name, title, and contact preferences.</li>
             <li><strong>Fulfillment Logistics:</strong> Physical shipping and billing addresses, apartment/suite credentials, and telephone numbers for live courier dispatch notifications.</li>
             <li><strong>Transaction Telemetry:</strong> Anonymized payment confirmations processed securely via Level-1 PCI-DSS certified gateways (Stripe, Razorpay, Apple Pay). Dukaan never stores raw credit card numbers.</li>
-            <li><strong>Atelier Sizing Notes:</strong> Bespoke measurements, sleeve lengths, and preferred fit silhouettes recorded during private concierge consultations.</li>
+            <li><strong>Client Sizing Notes:</strong> Bespoke measurements, sleeve lengths, and preferred fit silhouettes recorded during private concierge consultations.</li>
           </ul>
         </div>
 

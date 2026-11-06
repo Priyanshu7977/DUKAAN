@@ -1,5 +1,5 @@
 const { buildOrderConfirmationEmailHtml, buildWelcomeEmailHtml, buildContactAcknowledgmentHtml } = require('../templates/emailTemplates');
-const { buildAtelierGoodNoteHtml } = require('../templates/goodNoteTemplate');
+const { buildGoodNoteHtml } = require('../templates/goodNoteTemplate');
 
 class NotificationService {
   async dispatchOrderNotifications({ order, customer, items, shippingAddress }) {
@@ -30,7 +30,7 @@ class NotificationService {
 
     const itemsSummary = normalizedOrder.items.map((it) => `• ${it.name} (${it.size}) × ${it.quantity || 1}`).join('\n');
     const whatsAppMessage = 
-`✨ *DUKAAN Atelier — Order Confirmed* ✨
+`✨ *DUKAAN — Order Confirmed* ✨
 Dear ${normalizedOrder.customerName}, your order *#${orderNumber}* has been received and scheduled for hand-crafted preparation in Mumbai.
 
 📦 *Garments in Dispatch:*
@@ -40,18 +40,18 @@ ${itemsSummary}
 🚚 *Courier Partner:* BlueDart / Delhivery Express
 ⏱️ *Estimated Delivery:* 2 – 3 Business Days
 
-🌿 *Atelier Care Good Note:*
+🌿 *DUKAAN Care Good Note:*
 Each piece is 100% natural Normandy flax or organic gauze cotton. Free 7-day doorstep size exchange is included.
 
 Need styling or tracking assistance? Reply directly to this WhatsApp chat or call concierge at +91 7977641125.`;
 
     const whatsAppUrl = `https://wa.me/917977641125?text=${encodeURIComponent(whatsAppMessage)}`;
 
-    const goodNoteHtml = buildAtelierGoodNoteHtml(normalizedOrder);
+    const goodNoteHtml = buildGoodNoteHtml(normalizedOrder);
 
     const emailResult = await this.sendEmail({
       to: customer.email,
-      subject: `Order Confirmed #${orderNumber} — DUKAAN Atelier`,
+      subject: `Order Confirmed #${orderNumber} — DUKAAN`,
       html: emailHtml,
     });
 
@@ -86,7 +86,7 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
     const emailHtml = buildWelcomeEmailHtml({ customerName, promoCode });
     const result = await this.sendEmail({
       to: email,
-      subject: `Welcome to DUKAAN Atelier — Your VIP ₹500 Privilege Gift`,
+      subject: `Welcome to DUKAAN — Your VIP ₹500 Privilege Gift`,
       html: emailHtml,
     });
 
@@ -100,7 +100,7 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
 
     await this.sendEmail({
       to: email,
-      subject: `Concierge Ticket #${ticketId} — DUKAAN Atelier Inquiry Received`,
+      subject: `Concierge Ticket #${ticketId} — DUKAAN Inquiry Received`,
       html: emailHtml,
     });
 
@@ -131,7 +131,7 @@ Need styling or tracking assistance? Reply directly to this WhatsApp chat or cal
         });
 
         const info = await transporter.sendMail({
-          from: `"DUKAAN Atelier" <${process.env.SMTP_FROM || 'concierge@dukaan.app'}>`,
+          from: `"DUKAAN" <${process.env.SMTP_FROM || 'concierge@dukaan.app'}>`,
           to,
           subject,
           html,

@@ -218,7 +218,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
           </div>
           <div className="max-w-3xl space-y-2">
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-              Atelier Wardrobe Curation
+              Wardrobe Curation
             </span>
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight leading-tight">
               {title}

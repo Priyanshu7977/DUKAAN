@@ -44,7 +44,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
             <div className="space-y-1">
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-                Atelier Exception Handler
+                System Exception Handler
               </span>
               <h2 className="font-serif text-2xl text-[#141414]">
                 Something Interrupted Your View
@@ -69,7 +69,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 className="flex-1 h-12 bg-[#FAF8F5] hover:bg-[#EAE5DF] text-[#141414] border border-[#141414]/15 text-[11px] uppercase tracking-wider font-semibold rounded-lg flex items-center justify-center gap-2 transition-all"
               >
                 <Home className="w-3.5 h-3.5" />
-                <span>Atelier Home</span>
+                <span>DUKAAN Home</span>
               </button>
             </div>
 

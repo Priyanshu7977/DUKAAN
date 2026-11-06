@@ -5,19 +5,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10495068274869",
     "slug": "a-day-in-tulum-printed-cropped-shirt",
     "name": "A Day in Tulum Printed Cropped Shirt",
-    "subtitle": "Botanical Natural • Solstice Atelier",
+    "subtitle": "Botanical Natural • Solstice Edition",
     "price": 4100,
     "originalPrice": 4600,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     "badge": "New Release",
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -161,7 +161,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -234,7 +234,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -295,18 +295,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10400848445621",
     "slug": "almond-white-linen-pullover",
     "name": "Almond White Linen Pullover",
-    "subtitle": "Almond White • Solstice Atelier",
+    "subtitle": "Almond White • Solstice Edition",
     "price": 4200,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -356,7 +356,7 @@ export const PRODUCTS: Product[] = [
     "badge": "New Release",
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -378,7 +378,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -451,7 +451,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -524,7 +524,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -585,19 +585,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10618904871093",
     "slug": "amethyst-drape-shirt",
     "name": "Amethyst - Drape Shirt",
-    "subtitle": "Soft Amethyst • Solstice Atelier",
+    "subtitle": "Soft Amethyst • Solstice Edition",
     "price": 3900,
     "originalPrice": 4400,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -646,7 +646,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -669,7 +669,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -740,7 +740,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -811,7 +811,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -872,18 +872,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10655739019445",
     "slug": "apricot-grey-striped-cropped-shirt",
     "name": "Apricot & Grey Striped Cropped Shirt",
-    "subtitle": "Botanical Natural • Solstice Atelier",
+    "subtitle": "Botanical Natural • Solstice Edition",
     "price": 2700,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -933,7 +933,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -955,7 +955,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1027,7 +1027,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1099,7 +1099,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1159,18 +1159,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167084687541",
     "slug": "aquamarine",
     "name": "Aquamarine",
-    "subtitle": "Botanical Natural • Solstice Atelier",
+    "subtitle": "Botanical Natural • Solstice Edition",
     "price": 2800,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1219,7 +1219,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -1242,7 +1242,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1313,7 +1313,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1386,7 +1386,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Organic Waffle Knit Cotton",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1447,18 +1447,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10250421338293",
     "slug": "baby-blue-olive-striped-poplin-shirt",
     "name": "Baby Blue & Olive Striped Poplin Shirt",
-    "subtitle": "Faded Sage • Solstice Atelier",
+    "subtitle": "Faded Sage • Solstice Edition",
     "price": 4100,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1507,7 +1507,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -1529,7 +1529,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1600,7 +1600,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1671,7 +1671,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1732,18 +1732,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10455944888501",
     "slug": "baby-blue-gauze-holiday-shirt",
     "name": "Baby Blue Gauze Holiday Shirt",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3800,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1793,7 +1793,7 @@ export const PRODUCTS: Product[] = [
     "badge": "Signature Piece",
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -1816,7 +1816,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1888,7 +1888,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -1960,7 +1960,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2020,18 +2020,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10193670013109",
     "slug": "bandana-gauze-pull-on-pants",
     "name": "Bandana Gauze Pull-on Pants",
-    "subtitle": "Botanical Natural • Solstice Atelier",
+    "subtitle": "Botanical Natural • Solstice Edition",
     "price": 3000,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2080,7 +2080,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -2102,7 +2102,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2174,7 +2174,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2246,7 +2246,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2306,18 +2306,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167092453557",
     "slug": "baromasi",
     "name": "Baromasi",
-    "subtitle": "Botanical Natural • Solstice Atelier",
+    "subtitle": "Botanical Natural • Solstice Edition",
     "price": 2700,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2366,7 +2366,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -2388,7 +2388,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2460,7 +2460,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2531,7 +2531,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2591,18 +2591,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10495068307637",
     "slug": "beach-bingo-printed-cropped-shirt",
     "name": "Beach Bingo Printed Cropped Shirt",
-    "subtitle": "Botanical Natural • Solstice Atelier",
+    "subtitle": "Botanical Natural • Solstice Edition",
     "price": 4200,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2651,7 +2651,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -2674,7 +2674,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2746,7 +2746,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2818,7 +2818,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2879,18 +2879,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10373666504885",
     "slug": "beige-maroon-checkered-oversized-cropped-shirt",
     "name": "Beige & Maroon Checkered Oversized Cropped Shirt",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 4300,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -2940,7 +2940,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -2963,7 +2963,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3035,7 +3035,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3109,7 +3109,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3169,19 +3169,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10324411646133",
     "slug": "beige-checkered-tweed-zipper-shacket",
     "name": "Beige Checkered Tweed Zipper Shacket",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 4200,
     "originalPrice": 4700,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3230,7 +3230,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -3253,7 +3253,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3324,7 +3324,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3395,7 +3395,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3455,19 +3455,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10324409188533",
     "slug": "beige-corduroy-pull-on-pants",
     "name": "Beige Corduroy Pull-on Pants",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 3400,
     "originalPrice": 3900,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3516,7 +3516,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -3539,7 +3539,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3611,7 +3611,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3683,7 +3683,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Organic Waffle Knit Cotton",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3744,19 +3744,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10337060913333",
     "slug": "beige-gauze-holiday-shirt",
     "name": "Beige Gauze Holiday Shirt",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 3800,
     "originalPrice": 4300,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3806,7 +3806,7 @@ export const PRODUCTS: Product[] = [
     "badge": "Signature Piece",
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -3828,7 +3828,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3900,7 +3900,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -3972,7 +3972,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4032,18 +4032,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167090618549",
     "slug": "beige-linen-shirt-copy",
     "name": "Beige Linen Shirt",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 2700,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4092,7 +4092,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -4114,7 +4114,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4186,7 +4186,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4257,7 +4257,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4317,18 +4317,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10618023510197",
     "slug": "beige-pinstriped-baggy-fit-trousers",
     "name": "Beige Pinstriped Baggy Fit Trousers",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 3300,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4377,7 +4377,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -4400,7 +4400,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4471,7 +4471,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4543,7 +4543,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4604,18 +4604,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10618018398389",
     "slug": "beige-textured-baggy-fit-trousers",
     "name": "Beige Textured Baggy Fit Trousers",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 3100,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4664,7 +4664,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -4687,7 +4687,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4758,7 +4758,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4830,7 +4830,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4890,19 +4890,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10528665534645",
     "slug": "black-beige-checkered-oversized-cropped-shirt",
     "name": "Black & Beige Checkered Oversized Cropped Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3100,
     "originalPrice": 3600,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -4952,7 +4952,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -4974,7 +4974,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5045,7 +5045,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Organic Waffle Knit Cotton",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5117,7 +5117,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5177,18 +5177,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10606575354037",
     "slug": "black-white-striped-cropped-poplin-shirt",
     "name": "Black & White Striped Cropped Poplin Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3000,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5237,7 +5237,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -5260,7 +5260,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5331,7 +5331,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5402,7 +5402,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5462,19 +5462,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167082000565",
     "slug": "black-cargo-trousers",
     "name": "Black Cargo Trousers",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3300,
     "originalPrice": 3800,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5524,7 +5524,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -5546,7 +5546,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5618,7 +5618,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5689,7 +5689,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5749,18 +5749,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10307572138165",
     "slug": "black-checkered-poplin-cropped-shirt",
     "name": "Black Checkered Poplin Cropped Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3900,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5810,7 +5810,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -5832,7 +5832,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5903,7 +5903,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -5974,7 +5974,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6035,18 +6035,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10298390151349",
     "slug": "black-corduroy-oversized-shirt",
     "name": "Black Corduroy Oversized Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 4400,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6095,7 +6095,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -6117,7 +6117,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6189,7 +6189,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6260,7 +6260,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6321,18 +6321,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10335492833461",
     "slug": "black-drape-shirt",
     "name": "Black Drape Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3000,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6381,7 +6381,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -6404,7 +6404,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6475,7 +6475,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6547,7 +6547,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6608,19 +6608,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10178269380789",
     "slug": "black-linen-blend-shirt",
     "name": "Black Half Sleeve Linen Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 4400,
     "originalPrice": 4900,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6669,7 +6669,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -6691,7 +6691,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6762,7 +6762,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6834,7 +6834,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Organic Waffle Knit Cotton",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6894,18 +6894,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10373666930869",
     "slug": "black-jorts",
     "name": "Black Jorts",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 4200,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -6954,7 +6954,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -6976,7 +6976,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7048,7 +7048,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7121,7 +7121,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7182,19 +7182,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167081705653",
     "slug": "black-linen-pull-on-pants",
     "name": "Black Linen Pull-on Pants (Pre-Order)",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 4100,
     "originalPrice": 4600,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7243,7 +7243,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -7265,7 +7265,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7337,7 +7337,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7409,7 +7409,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7470,19 +7470,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10376489861301",
     "slug": "black-loose-fit-cropped-t-shirt",
     "name": "Black Loose Fit Cropped T-Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 4200,
     "originalPrice": 4700,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7531,7 +7531,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -7553,7 +7553,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7625,7 +7625,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7696,7 +7696,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7756,18 +7756,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10218799464629",
     "slug": "black-pinstriped-baggy-fit-trousers",
     "name": "Black Pinstriped Baggy Fit Trousers",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 2800,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7817,7 +7817,7 @@ export const PRODUCTS: Product[] = [
     "badge": "Signature Piece",
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -7840,7 +7840,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7911,7 +7911,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -7983,7 +7983,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8043,19 +8043,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167086620853",
     "slug": "black-poplin-shirt",
     "name": "Black Poplin Shirt",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3100,
     "originalPrice": 3600,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8104,7 +8104,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -8126,7 +8126,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8197,7 +8197,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8270,7 +8270,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8330,19 +8330,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10495053529269",
     "slug": "black-striped-pull-on-pants",
     "name": "Black Striped Pull-on Pants",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 2900,
     "originalPrice": 3400,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8391,7 +8391,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -8413,7 +8413,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8484,7 +8484,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8555,7 +8555,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8616,18 +8616,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10577904992437",
     "slug": "black-trouser-shorts",
     "name": "Black Trouser Shorts",
-    "subtitle": "Obsidian Noir • Solstice Atelier",
+    "subtitle": "Obsidian Noir • Solstice Edition",
     "price": 3400,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8676,7 +8676,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -8698,7 +8698,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8770,7 +8770,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Organic Waffle Knit Cotton",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8842,7 +8842,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8902,18 +8902,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10606653309109",
     "slug": "blue-beige-checkered-cropped-shirt",
     "name": "Blue & Beige Checkered Cropped Shirt",
-    "subtitle": "Desert Sand • Solstice Atelier",
+    "subtitle": "Desert Sand • Solstice Edition",
     "price": 2900,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -8962,7 +8962,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -8984,7 +8984,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9056,7 +9056,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9128,7 +9128,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9188,19 +9188,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10298471973045",
     "slug": "blue-grey-checked-baggy-fit-trousers",
     "name": "Blue & Grey Checked Baggy Fit Trousers",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3200,
     "originalPrice": 3700,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9250,7 +9250,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -9272,7 +9272,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9344,7 +9344,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9415,7 +9415,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9476,18 +9476,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10528761413813",
     "slug": "blue-red-madras-checkered-oversized-cropped-shirt",
     "name": "Blue & Red Madras Checkered Oversized Cropped Shirt",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3100,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9536,7 +9536,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -9558,7 +9558,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9629,7 +9629,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9700,7 +9700,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9760,19 +9760,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10441345138869",
     "slug": "blue-white-striped-drape-shirt",
     "name": "Blue & White Striped Drape Shirt",
-    "subtitle": "Almond White • Solstice Atelier",
+    "subtitle": "Almond White • Solstice Edition",
     "price": 3900,
     "originalPrice": 4400,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9821,7 +9821,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -9843,7 +9843,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9915,7 +9915,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -9987,7 +9987,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10047,18 +10047,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10373666734261",
     "slug": "blue-yellow-checkered-oversized-cropped-shirt",
     "name": "Blue & Yellow Checkered Oversized Cropped Shirt",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 4300,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10107,7 +10107,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -10129,7 +10129,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10201,7 +10201,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10272,7 +10272,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10332,18 +10332,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167083901109",
     "slug": "blue-away",
     "name": "Blue Away",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 2500,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10393,7 +10393,7 @@ export const PRODUCTS: Product[] = [
     "badge": "Signature Piece",
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -10415,7 +10415,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10487,7 +10487,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10559,7 +10559,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10619,18 +10619,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167094223029",
     "slug": "blue-checked-holiday-shirt",
     "name": "Blue Checked Holiday Shirt",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 2500,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10680,7 +10680,7 @@ export const PRODUCTS: Product[] = [
     "badge": "Signature Piece",
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -10702,7 +10702,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10774,7 +10774,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10845,7 +10845,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10905,18 +10905,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10324411187381",
     "slug": "blue-checkered-woolen-pants",
     "name": "Blue Checkered Woolen Pants",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3200,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -10965,7 +10965,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -10987,7 +10987,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11060,7 +11060,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11132,7 +11132,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11194,18 +11194,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10495066472629",
     "slug": "blue-floral-pinstriped-printed-cropped-shirt",
     "name": "Blue Floral Pinstriped Printed Cropped Shirt",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 4200,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11254,7 +11254,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -11276,7 +11276,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11348,7 +11348,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11419,7 +11419,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11479,18 +11479,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10606634041525",
     "slug": "blue-green-white-checkered-cropped-poplin-shirt",
     "name": "Blue Green & White Checkered Cropped Poplin Shirt",
-    "subtitle": "Almond White • Solstice Atelier",
+    "subtitle": "Almond White • Solstice Edition",
     "price": 2900,
     "category": "shirts",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11540,7 +11540,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "shirts",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -11562,7 +11562,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11633,7 +11633,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11705,7 +11705,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11766,18 +11766,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167087145141",
     "slug": "blue-linen-trousers",
     "name": "Blue Linen Trousers",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 2900,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11826,7 +11826,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -11848,7 +11848,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11920,7 +11920,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -11992,7 +11992,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12052,19 +12052,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-10193674109109",
     "slug": "blue-patterned-satin-pullover",
     "name": "Blue Patterned Satin Pullover",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3900,
     "originalPrice": 4400,
     "category": "co-ords",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12113,7 +12113,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "co-ords",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -12135,7 +12135,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12207,7 +12207,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12279,7 +12279,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12339,19 +12339,19 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167088881845",
     "slug": "blue-pinstriped-trousers",
     "name": "Blue Pinstriped Trousers",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3300,
     "originalPrice": 3800,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12401,7 +12401,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": true,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -12424,7 +12424,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12495,7 +12495,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Normandy Flax Linen & Double Gauze",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12568,7 +12568,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12628,18 +12628,18 @@ export const PRODUCTS: Product[] = [
     "id": "fa-8167094550709",
     "slug": "blue-straight-fit-trousers",
     "name": "Blue Straight Fit Trousers",
-    "subtitle": "Dusk Indigo • Solstice Atelier",
+    "subtitle": "Dusk Indigo • Solstice Edition",
     "price": 3100,
     "category": "trousers",
     "gender": "unisex",
-    "collection": "Solstice Atelier",
-    "collectionSlug": "solstice-atelier",
+    "collection": "Solstice Edition",
+    "collectionSlug": "solstice-edition",
     "description": "Crafted from pure organic fibres with unlined architectural construction. Designed with a generous contemporary drape that balances weight and movement.",
     "shortDescription": "Pure artisanal botanical construction with dropped shoulder roll and natural horn closures.",
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12688,7 +12688,7 @@ export const PRODUCTS: Product[] = [
     "isFeatured": false,
     "tags": [
       "trousers",
-      "solstice-atelier",
+      "solstice-edition",
       "organic",
       "unisex",
       "dukaan-archive"
@@ -12710,7 +12710,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12782,7 +12782,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },
@@ -12854,7 +12854,7 @@ export const PRODUCTS: Product[] = [
     "details": {
       "composition": "100% Unbleached Botanical Twill",
       "fit": "Relaxed contemporary architectural drape. True to standard sizing.",
-      "origin": "Woven in Porto, assembled in Milan Atelier.",
+      "origin": "Woven in Porto, assembled in Milan Studio.",
       "washCare": "Cold gentle hand wash or dry clean. Reshape flat in natural shade.",
       "weight": "240 gsm"
     },

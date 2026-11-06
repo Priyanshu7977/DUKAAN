@@ -19,7 +19,7 @@ import {
   ChevronRight,
   ExternalLink
 } from 'lucide-react';
-import { AtelierGoodNoteModal } from '../components/common/AtelierGoodNoteModal';
+import { CareGoodNoteModal } from '../components/common/CareGoodNoteModal';
 import { UserOrder } from '../types';
 
 export const OrderTracking: React.FC = () => {
@@ -162,13 +162,13 @@ export const OrderTracking: React.FC = () => {
   const trackingSteps = [
     {
       title: 'Order Confirmed',
-      description: 'Atelier tailoring team received order and verified fabric availability.',
+      description: 'Tailoring team received order and verified fabric availability.',
       date: activeOrder?.date || 'Today',
       isCompleted: true,
       isCurrent: activeOrder?.status === 'Processing',
     },
     {
-      title: 'Atelier Quality & Packaging',
+      title: 'Quality & Packaging',
       description: 'Hand-ironed, inspect thread counts, and placed in breathable organic dust bag.',
       date: 'Next Day',
       isCompleted: activeOrder?.status === 'In Transit' || activeOrder?.status === 'Delivered',
@@ -344,7 +344,7 @@ export const OrderTracking: React.FC = () => {
 
                 <a
                   href={`https://wa.me/917977641125?text=${encodeURIComponent(
-                    `Hello DUKAAN Atelier, I would like an update on my Order ID: ${activeOrder.id}`
+                    `Hello DUKAAN, I would like an update on my Order ID: ${activeOrder.id}`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -423,7 +423,7 @@ export const OrderTracking: React.FC = () => {
       </div>
 
       {activeOrder && (
-        <AtelierGoodNoteModal
+        <CareGoodNoteModal
           isOpen={showGoodNote}
           onClose={() => setShowGoodNote(false)}
           order={{

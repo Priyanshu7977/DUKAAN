@@ -65,13 +65,13 @@ export const NewCollection: React.FC = () => {
                   "We stripped every excess stitch to let the natural tension of the linen define its silhouette."
                 </blockquote>
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#777765] block mt-1.5">
-                  — Atelier Studio Notes, Porto
+                  — Studio Notes, Porto
                 </span>
               </div>
 
               <div className="pt-1 sm:pt-2">
                 <Link
-                  to="/collections/solstice-atelier"
+                  to="/collections/solstice-edition"
                   className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-[#211E1A] hover:text-[#A7654A] transition-colors"
                 >
                   <span>Explore Solstice Lookbook</span>

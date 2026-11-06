@@ -3,13 +3,13 @@ import { X, Printer, MessageSquare, Sparkles, Heart } from 'lucide-react';
 import { OrderNotificationPayload, buildWhatsAppOrderLink } from '../../utils/notificationAutomation';
 import { formatPrice } from '../../utils/formatters';
 
-interface AtelierGoodNoteModalProps {
+interface CareGoodNoteModalProps {
   isOpen: boolean;
   onClose: () => void;
   order: OrderNotificationPayload;
 }
 
-export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
+export const CareGoodNoteModal: React.FC<CareGoodNoteModalProps> = ({
   isOpen,
   onClose,
   order,
@@ -68,7 +68,7 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
                 DUKAAN
               </h1>
               <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#A7654A] font-semibold mt-0.5">
-                Objects of Everyday Expression • Atelier Registry
+                Objects of Everyday Expression • DUKAAN Registry
               </p>
             </div>
             <div className="sm:text-right text-xs text-[#73706B]">
@@ -85,11 +85,11 @@ export const AtelierGoodNoteModal: React.FC<AtelierGoodNoteModalProps> = ({
           <div className="bg-[#FAF8F5] border border-[#ECE7DD] border-l-4 border-l-[#A7654A] rounded-lg p-3 sm:p-4 space-y-1.5">
             <div className="flex items-center gap-1.5 text-[11px] text-[#A7654A] font-semibold uppercase tracking-wider">
               <Heart className="w-3 h-3 fill-[#A7654A]" />
-              <span>A Personal Note From The Atelier Desk</span>
+              <span>A Personal Note From The DUKAAN Desk</span>
             </div>
             <p className="text-[11px] sm:text-xs text-[#55524E] leading-relaxed">
               Dear <strong>{order.customerName}</strong>,<br />
-              Thank you for welcoming DUKAAN into your wardrobe. Each garment in this dispatch was inspected, hand-steamed, and wrapped in protective natural kraft paper at our Mumbai Atelier.
+              Thank you for welcoming DUKAAN into your wardrobe. Each garment in this dispatch was inspected, hand-steamed, and wrapped in protective natural kraft paper at our Mumbai Studio.
             </p>
             <p className="text-[11px] sm:text-xs text-[#55524E] leading-relaxed">
               We work exclusively with pure European flax linen, airy double-gauze cotton, and textural micro-corduroy. With wear and gentle laundering, these natural plant fibres will soften to your body’s unique rhythm. Should you require any size exchange, our 7-day complimentary doorstep courier is at your service.

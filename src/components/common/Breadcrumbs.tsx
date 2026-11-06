@@ -18,7 +18,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = '' 
       <ol className="flex items-center flex-wrap gap-1.5 sm:gap-2">
         <li className="shrink-0">
           <Link to="/" className="hover:text-[#211E1A] transition-colors">
-            Atelier
+            DUKAAN
           </Link>
         </li>
         {items.map((item, index) => {

@@ -86,7 +86,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
   const timeFormatted = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
   const upiIntentUri = `upi://pay?pa=${encodeURIComponent(currentMethod.upiId)}&pn=${encodeURIComponent(
-    'DUKAAN Atelier'
+    'DUKAAN'
   )}&am=${totalAmount}&cu=INR&tn=${encodeURIComponent(`Order ${orderNumber}`)}`;
 
   const handleSubmit = (e: React.FormEvent) => {

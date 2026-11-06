@@ -28,7 +28,7 @@ function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddre
     <tr>
       <td style="padding: 32px 32px 24px 32px; text-align: center; border-bottom: 2px solid #141414; background-color: #141414;">
         <h1 style="margin: 0; font-family: 'Times New Roman', serif; font-size: 28px; letter-spacing: 0.3em; text-transform: uppercase; color: #FFFFFF; font-weight: 400;">DUKAAN</h1>
-        <p style="margin: 6px 0 0 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: #EAE7DF;">Atelier Dispatch Notice</p>
+        <p style="margin: 6px 0 0 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.25em; color: #EAE7DF;">Dispatch Notice</p>
       </td>
     </tr>
 
@@ -39,14 +39,14 @@ function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddre
         <h2 style="margin: 0 0 16px 0; font-family: 'Times New Roman', serif; font-size: 24px; color: #141414; font-weight: normal;">Your pieces are being prepared, ${customer.fullName || 'Patron'}.</h2>
 
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 24px 0;">
-          We have received your order and our tailors have begun hand-checking, pressing, and packaging your garments in natural protective kraft dust bags at our Mumbai Atelier.
+          We have received your order and our tailors have begun hand-checking, pressing, and packaging your garments in natural protective kraft dust bags at our Mumbai Studio.
         </p>
 
         <!-- Good Note Box -->
         <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #FAF8F5; border-left: 3px solid #A7654A; border-radius: 6px; padding: 16px 20px; margin-bottom: 24px;">
           <tr>
             <td>
-              <h4 style="margin: 0 0 6px 0; font-family: 'Times New Roman', serif; font-size: 15px; color: #141414;">Atelier Good Note</h4>
+              <h4 style="margin: 0 0 6px 0; font-family: 'Times New Roman', serif; font-size: 15px; color: #141414;">Care Good Note</h4>
               <p style="margin: 0; font-size: 12px; line-height: 1.6; color: #73706B;">
                 "Natural fibres breathe with your body. We recommend gentle cold washing and flat drying in natural shade to preserve the architectural drape of your linen and cotton pieces."
               </p>
@@ -108,7 +108,7 @@ function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddre
       <td style="padding: 24px 32px; background-color: #FAF8F5; border-top: 1px solid #ECE7DD; text-align: center; font-size: 11px; color: #73706B; line-height: 1.6;">
         <strong style="color: #141414;">DUKAAN Concierge & Client Care</strong><br>
         Direct Hotline / WhatsApp: +91 7977641125 • Email: priyanshubipin2006@gmail.com<br>
-        Mumbai Design Atelier • Nationwide Express Delivery Across 19,000+ PIN Codes
+        Mumbai Design Studio • Nationwide Express Delivery Across 19,000+ PIN Codes
       </td>
     </tr>
   </table>
@@ -123,7 +123,7 @@ function buildWelcomeEmailHtml({ customerName = 'Patron', promoCode = 'WELCOME50
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Welcome to DUKAAN Atelier</title>
+  <title>Welcome to DUKAAN</title>
 </head>
 <body style="margin: 0; padding: 24px; background-color: #FAF9F6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #141414;">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 580px; margin: 0 auto; background-color: #FFFFFF; border: 1px solid #EAE5DF; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
@@ -135,7 +135,7 @@ function buildWelcomeEmailHtml({ customerName = 'Patron', promoCode = 'WELCOME50
     </tr>
     <tr>
       <td style="padding: 36px 32px;">
-        <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #A7654A; font-weight: 600;">Welcome to the Atelier</span>
+        <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #A7654A; font-weight: 600;">Welcome to DUKAAN</span>
         <h2 style="margin: 8px 0 16px 0; font-family: 'Times New Roman', serif; font-size: 26px; font-weight: normal;">Greetings, ${customerName}.</h2>
 
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 20px 0;">
@@ -144,7 +144,7 @@ function buildWelcomeEmailHtml({ customerName = 'Patron', promoCode = 'WELCOME50
 
         <!-- VIP Privilege Box -->
         <div style="background-color: #FAF8F5; border: 1px dashed #A7654A; border-radius: 8px; padding: 20px; text-align: center; margin: 24px 0;">
-          <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #73706B; font-weight: 600;">Your Exclusive First Atelier Acquisition Gift</span>
+          <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #73706B; font-weight: 600;">Your Exclusive Welcome Gift</span>
           <div style="font-family: monospace; font-size: 26px; font-weight: bold; letter-spacing: 0.15em; color: #141414; margin: 8px 0;">${promoCode}</div>
           <p style="margin: 0; font-size: 11px; color: #A7654A; font-weight: 500;">Enjoy ₹500 off on your order at checkout.</p>
         </div>
@@ -189,7 +189,7 @@ function buildContactAcknowledgmentHtml({ customerName, ticketId, subject }) {
         <h2 style="margin: 8px 0 16px 0; font-family: 'Times New Roman', serif; font-size: 22px; font-weight: normal;">Inquiry Received, ${customerName}.</h2>
 
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 16px 0;">
-          Thank you for reaching out regarding <strong>"${subject || 'Atelier Assistance'}"</strong>. Your request has been assigned to our primary customer team.
+          Thank you for reaching out regarding <strong>"${subject || 'Client Assistance'}"</strong>. Your request has been assigned to our primary customer team.
         </p>
 
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 24px 0;">
@@ -206,7 +206,7 @@ function buildContactAcknowledgmentHtml({ customerName, ticketId, subject }) {
     </tr>
     <tr>
       <td style="padding: 20px; background-color: #FAF8F5; border-top: 1px solid #ECE7DD; text-align: center; font-size: 11px; color: #73706B;">
-        DUKAAN Client Care • Mumbai Atelier
+        DUKAAN Client Care • Mumbai Studio
       </td>
     </tr>
   </table>

@@ -1,4 +1,4 @@
-# 🏗️ DUKAAN Atelier — Enterprise Docker, Kubernetes & CI/CD Architecture
+# 🏗️ DUKAAN — Enterprise Docker, Kubernetes & CI/CD Architecture
 
 Production deployment guide and architectural specification for the **DUKAAN** luxury e-commerce platform.
 

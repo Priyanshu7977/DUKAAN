@@ -322,7 +322,7 @@ const INTENT_PATTERNS: Record<CustomerIntent, string[]> = {
     'about your brand',
     'where are you located',
     'where are fabrics sourced',
-    'porto atelier',
+    'porto studio',
     'brand philosophy',
     'why european flax',
     'physical store address',
@@ -546,14 +546,14 @@ export class NLPEngine {
     if (sentiment.priorityEscalation) {
       const ticketRef = `TCK-${Math.floor(100000 + Math.random() * 900000)}`;
       return {
-        text: `I truly apologize for the distress and inconvenience this has caused you. As an atelier dedicated to uncompromising client satisfaction, I have immediately prioritized your request under VIP Support Ticket #${ticketRef}. A senior concierge will directly attend to this. You can also connect with our direct leadership line on WhatsApp right away.`,
+        text: `I truly apologize for the distress and inconvenience this has caused you. As a brand dedicated to uncompromising client satisfaction, I have immediately prioritized your request under VIP Support Ticket #${ticketRef}. A senior concierge will directly attend to this. You can also connect with our direct leadership line on WhatsApp right away.`,
         type: 'ticket_card',
         data: {
           ticketId: ticketRef,
           status: 'High Priority Escalated',
           reason: 'Client Satisfaction Priority',
           phone: '+91 7977641125',
-          email: 'concierge@dukaan-atelier.com',
+          email: 'concierge@dukaan-store.com',
         },
         quickReplies: ['💬 Open WhatsApp Chat', '📦 Check Order', '🔄 7-Day Returns', '📐 Sizing Help'],
       };
@@ -598,7 +598,7 @@ export class NLPEngine {
             ],
           };
           return {
-            text: `Here is the live status for order **${orderId}**: It has been inspected, packaged in biodegradable atelier pouches, and handed over to our courier partner.`,
+            text: `Here is the live status for order **${orderId}**: It has been inspected, packaged in biodegradable packaging, and handed over to our courier partner.`,
             type: 'order_card',
             data: dynamicOrder,
             quickReplies: ['Delivery Time Details', 'Request Address Change', 'Speak to Concierge'],
@@ -720,7 +720,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
       case 'DAMAGED_DEFECTIVE': {
         const ticketRef = `TCK-${Math.floor(100000 + Math.random() * 900000)}`;
         return {
-          text: `I am deeply sorry that your garment was not in pristine condition. Dukaan holds every stitch to stringent atelier standards. I have immediately raised Priority Ticket **#${ticketRef}**. We will arrange an immediate priority doorstep replacement with zero questions asked.`,
+          text: `I am deeply sorry that your garment was not in pristine condition. Dukaan holds every stitch to stringent craftsmanship standards. I have immediately raised Priority Ticket **#${ticketRef}**. We will arrange an immediate priority doorstep replacement with zero questions asked.`,
           type: 'ticket_card',
           data: {
             ticketId: ticketRef,
@@ -737,14 +737,14 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
         return {
           text: `Our dedicated Client Care Concierge is at your service:
 • **WhatsApp Direct**: [+91 7977641125](https://wa.me/917977641125) (Instant responses 9 AM - 9 PM IST)
-• **Concierge Desk**: concierge@dukaan-atelier.com
+• **Concierge Desk**: concierge@dukaan-store.com
 • **Callback Ticket**: **#${ticketRef}** has been reserved for your inquiry.`,
           type: 'ticket_card',
           data: {
             ticketId: ticketRef,
             status: 'Ready for Live Concierge',
             phone: '+91 7977641125',
-            email: 'concierge@dukaan-atelier.com',
+            email: 'concierge@dukaan-store.com',
           },
           quickReplies: ['💬 Chat on WhatsApp', 'Track an Order', 'Size Consultation', 'Returns Help'],
         };
@@ -753,7 +753,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
       case 'DISCOUNTS_PROMOS': {
         return {
           text: `We practice mindful, fair pricing on all our handcrafted natural fiber garments year-round:
-• **Welcome Offer**: Use code **ATELIER10** at checkout for **10% OFF** your first order.
+• **Welcome Offer**: Use code **DUKAAN10** at checkout for **10% OFF** your first order.
 • **Complimentary Shipping**: All orders over ₹1,999 include 100% free express delivery.
 Enter the code in the discount field on the checkout page to apply your savings.`,
           type: 'text',
@@ -772,7 +772,7 @@ Enter the code in the discount field on the checkout page to apply your savings.
       case 'GREETINGS':
       default: {
         return {
-          text: `Welcome to DUKAAN Atelier Concierge. I am here to assist you with order tracking, doorstep size exchanges, fabric care instructions, or personalized styling recommendations. How may I assist you today?`,
+          text: `Welcome to DUKAAN Concierge. I am here to assist you with order tracking, doorstep size exchanges, fabric care instructions, or personalized styling recommendations. How may I assist you today?`,
           type: 'text',
           quickReplies: ['📦 Track My Order', '🔄 Returns & Exchanges', '📐 Size & Fit Guide', '🌿 Fabric Care Guide', '💬 Speak to Concierge'],
         };

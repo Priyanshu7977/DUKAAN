@@ -80,7 +80,7 @@ export const Returns: React.FC = () => {
                 <div className="pt-2 flex flex-wrap gap-3">
                   <a
                     href={`https://wa.me/917977641125?text=${encodeURIComponent(
-                      `Hello DUKAAN Atelier, I have initiated a return/exchange request (${returnRef}) for Order ${orderId}.`
+                      `Hello DUKAAN, I have initiated a return/exchange request (${returnRef}) for Order ${orderId}.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -245,7 +245,7 @@ export const Returns: React.FC = () => {
 
         <div className="space-y-3">
           <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
-            Atelier Standards
+            Quality Standards
           </span>
           <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">
             Simple 3-Step Return Process
@@ -288,7 +288,7 @@ export const Returns: React.FC = () => {
           <div>
             <h4 className="font-serif text-base text-[#141414]">Need personalized assistance?</h4>
             <p className="text-xs text-[#73706B] font-light">
-              Speak directly with an atelier stylist via WhatsApp or telephone:
+              Speak directly with an personal stylist via WhatsApp or telephone:
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-2 text-xs">
               <a

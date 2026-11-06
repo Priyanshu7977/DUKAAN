@@ -4,7 +4,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
   {
     id: 'journal-01',
     slug: 'the-architecture-of-normandy-flax',
-    title: 'The Architecture of Normandy Flax: From Field to Atelier',
+    title: 'The Architecture of Normandy Flax: From Field to Garment',
     subtitle: 'An examination into how northern coastal humidity cultivates the world’s most resilient linen fibers.',
     category: 'Materiality',
     date: 'May 18, 2025',
@@ -27,7 +27,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       {
         type: 'image',
         image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_3.jpg?v=1787463484',
-        caption: 'The raw 260gsm Normandy slub linen cut with relaxed dropped shoulders in our Porto atelier.',
+        caption: 'The raw 260gsm Normandy slub linen cut with relaxed dropped shoulders in our Porto studio.',
       },
       {
         type: 'heading',
@@ -98,7 +98,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     content: [
       {
         type: 'paragraph',
-        text: 'The Solstice Atelier collection required an environment stripped of ornament. Menorca’s whitewashed stone quarries and modernist coastal dwellings provided the ideal backdrop: severe rectilinear planes softened only by salt air, olive trees, and the shifting angles of the afternoon sun.',
+        text: 'The Solstice collection required an environment stripped of ornament. Menorca’s whitewashed stone quarries and modernist coastal dwellings provided the ideal backdrop: severe rectilinear planes softened only by salt air, olive trees, and the shifting angles of the afternoon sun.',
       },
       {
         type: 'quote',

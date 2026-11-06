@@ -12,7 +12,7 @@ interface WishlistStore {
 }
 
 const STORAGE_KEY = 'dukaan_wishlist';
-const LEGACY_STORAGE_KEY = 'forme_atelier_wishlist';
+const LEGACY_STORAGE_KEY = 'forme_legacy_wishlist';
 
 const loadSavedWishlist = (): Product[] => {
   try {

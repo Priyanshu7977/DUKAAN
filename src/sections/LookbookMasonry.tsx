@@ -9,7 +9,7 @@ export const LookbookMasonry: React.FC = () => {
       title: 'Botanical Palm Print Robe',
       category: 'Study 01',
       image: 'https://www.5feet11.com/cdn/shop/files/desktopbn7.png',
-      link: '/collections/solstice-atelier',
+      link: '/collections/solstice-edition',
     },
     {
       title: 'Washed Denim & Sun Shirt',
@@ -44,7 +44,7 @@ export const LookbookMasonry: React.FC = () => {
             </h2>
           </div>
           <Link
-            to="/collections/solstice-atelier"
+            to="/collections/solstice-edition"
             className="text-[11px] uppercase tracking-wider text-[#141414] hover:text-[#A7654A] transition-colors font-medium underline flex items-center gap-1"
           >
             <span>Explore Complete Lookbook</span>

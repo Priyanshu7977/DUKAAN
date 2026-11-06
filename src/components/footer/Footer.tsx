@@ -107,7 +107,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/shipping" className="hover:text-white transition-colors block py-0.5">Shipping Policy</Link></li>
               <li><Link to="/returns" className="hover:text-white transition-colors block py-0.5">Returns & Exchanges</Link></li>
               <li><Link to="/faq" className="hover:text-white transition-colors block py-0.5">Client FAQs</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors block py-0.5">Atelier Philosophy</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors block py-0.5">Brand Philosophy</Link></li>
             </ul>
           </div>
 
@@ -116,7 +116,7 @@ export const Footer: React.FC = () => {
               Newsletter
             </span>
             <p className="text-[11px] text-[#8A8780] font-light leading-relaxed">
-              Thoughtful updates on seasonal capsule drops and private atelier events.
+              Thoughtful updates on seasonal capsule drops and private events.
             </p>
 
             {!isSubscribed ? (

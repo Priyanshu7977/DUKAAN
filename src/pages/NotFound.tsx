@@ -31,7 +31,7 @@ export const NotFound: React.FC = () => {
             to="/"
             className="h-12 px-8 border border-[#141414]/20 hover:border-[#141414] hover:bg-white text-[#141414] text-xs uppercase tracking-widest font-semibold transition-all rounded-lg flex items-center justify-center active:scale-[0.99]"
           >
-            Atelier Home
+            DUKAAN Home
           </Link>
         </div>
 
@@ -40,8 +40,8 @@ export const NotFound: React.FC = () => {
             Recommended Navigation
           </span>
           <div className="flex justify-center gap-5 text-[#141414] font-medium text-[11px] uppercase tracking-wider">
-            <Link to="/collections/solstice-atelier" className="hover:text-[#A7654A] underline">
-              Solstice Atelier
+            <Link to="/collections/solstice-edition" className="hover:text-[#A7654A] underline">
+              Solstice Edition
             </Link>
             <Link to="/men" className="hover:text-[#A7654A] underline">
               Men's Edit

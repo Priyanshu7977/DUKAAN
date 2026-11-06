@@ -34,7 +34,7 @@ router.post('/order-dispatch', async (req, res) => {
 
     res.json({
       status: 'success',
-      message: 'Automated notifications dispatched across Email, WhatsApp, and Atelier Registry.',
+      message: 'Automated notifications dispatched across Email, WhatsApp, and DUKAAN Registry.',
       data: result,
     });
   } catch (err) {
@@ -64,8 +64,8 @@ router.get('/good-note/:orderNumber', async (req, res) => {
         [order.id]
       );
 
-      const { buildAtelierGoodNoteHtml } = require('../templates/goodNoteTemplate');
-      const html = buildAtelierGoodNoteHtml({
+      const { buildGoodNoteHtml } = require('../templates/goodNoteTemplate');
+      const html = buildGoodNoteHtml({
         orderNumber: order.order_number,
         customerName: order.customer_name,
         customerEmail: order.customer_email,
@@ -87,8 +87,8 @@ router.get('/good-note/:orderNumber', async (req, res) => {
   } catch (e) {
   }
 
-  const { buildAtelierGoodNoteHtml } = require('../templates/goodNoteTemplate');
-  const fallbackHtml = buildAtelierGoodNoteHtml({
+  const { buildGoodNoteHtml } = require('../templates/goodNoteTemplate');
+  const fallbackHtml = buildGoodNoteHtml({
     orderNumber,
     customerName: 'DUKAAN Patron',
     totalAmount: 4100,
