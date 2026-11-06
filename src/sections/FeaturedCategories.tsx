@@ -9,31 +9,31 @@ export const FeaturedCategories: React.FC = () => {
       title: 'Linen Shirts',
       slug: 'shirts',
       count: '70+ Styles',
-      image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
+      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/040A1473.jpg?v=1740306788',
     },
     {
       title: 'Pleated Trousers',
       slug: 'trousers',
       count: '35+ Styles',
-      image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80',
+      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_1.jpg?v=1790961467',
     },
     {
       title: 'Co-Ord Sets',
       slug: 'co-ords',
       count: '45+ Sets',
-      image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=800&q=80',
+      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt1.jpg?v=1784180849',
     },
     {
       title: 'Jackets & Overshirts',
       slug: 'outerwear',
       count: '15+ Styles',
-      image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80',
+      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeIrishLinen_4.jpg?v=1792569947',
     },
     {
       title: 'Textured Knitwear',
       slug: 'knitwear',
       count: '15+ Styles',
-      image: 'https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=800&q=80',
+      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BaatikBlue-PulloverShirt_3.jpg?v=1792570553',
     },
   ];
 

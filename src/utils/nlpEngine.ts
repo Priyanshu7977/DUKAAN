@@ -592,7 +592,7 @@ export class NLPEngine {
                 price: 3890,
                 size: 'L',
                 color: 'Natural Cream',
-                image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80',
+                image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
                 quantity: 1,
               },
             ],
@@ -681,7 +681,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
             name: 'Almond White Gauze Holiday Shirt',
             price: 3890,
             category: 'shirts',
-            image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80',
+            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
           },
           {
             id: 'fa-2',
@@ -689,7 +689,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
             name: 'Beige Baggy Fit Trousers',
             price: 3490,
             category: 'trousers',
-            image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80',
+            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_1.jpg?v=1790961467',
           },
           {
             id: 'fa-3',
@@ -697,7 +697,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
             name: 'A Day in Tulum Printed Co-Ord',
             price: 4100,
             category: 'co-ords',
-            image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=600&q=80',
+            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt1.jpg?v=1784180849',
           },
         ];
 

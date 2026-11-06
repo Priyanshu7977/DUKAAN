@@ -131,7 +131,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose, activeMenu 
             >
               <div className="aspect-[16/11] overflow-hidden rounded-lg bg-[#ECE7DD] mb-2.5 shadow-xs">
                 <img
-                  src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80"
+                  src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_1.jpg?v=1787463484"
                   alt="Solstice Collection"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
