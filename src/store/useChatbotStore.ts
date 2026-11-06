@@ -41,7 +41,7 @@ interface ChatbotState {
 const INITIAL_GREETING: ChatMessage = {
   id: 'msg-welcome-01',
   sender: 'bot',
-  text: 'Welcome to DUKAAN Client Care. I am your personal Concierge, trained to assist with live order tracking, 7-day doorstep size exchanges, fabric care, or personalized styling advice. How may I assist you today?',
+  text: 'Welcome to DUKAAN Client Care. I am your personal Concierge, trained to assist with live order tracking, 7-day doorstep size exchanges, fabric care, or personalized styling advice.\n\nHow may I assist you today?',
   timestamp: 'Just now',
   type: 'text',
   quickReplies: [
@@ -156,9 +156,12 @@ export const useChatbotStore = create<ChatbotState>()(
       },
     }),
     {
-      name: 'dukaan_chatbot_storage',
+      name: 'dukaan_chatbot_v2',
       partialize: (state) => ({
-        messages: state.messages.slice(-30),
+        messages: state.messages.slice(-30).map((m) => ({
+          ...m,
+          text: m.text.replace(/atelier/gi, 'DUKAAN'),
+        })),
         hasInteracted: state.hasInteracted,
       }),
     }

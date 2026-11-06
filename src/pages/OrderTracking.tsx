@@ -47,55 +47,10 @@ export const OrderTracking: React.FC = () => {
       }
     } catch {}
 
-    const sampleOrders: UserOrder[] = [
-      {
-        id: 'DUK-88219',
-        date: 'Oct 28, 2026',
-        status: 'Delivered',
-        total: 3890,
-        paymentMethod: 'Prepaid Online',
-        trackingNumber: 'DTDC-884910283',
-        estimatedDelivery: 'Oct 31, 2026',
-        items: [
-          {
-            id: 'item-1',
-            name: 'Almond White Gauze Holiday Shirt',
-            price: 3890,
-            size: 'L',
-            color: 'Natural Cream',
-            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
-            quantity: 1,
-          },
-        ],
-      },
-      {
-        id: 'DUK-77104',
-        date: 'Nov 02, 2026',
-        status: 'In Transit',
-        total: 3589,
-        paymentMethod: 'COD',
-        trackingNumber: 'BLUEDART-7719284',
-        estimatedDelivery: 'Tomorrow, Nov 05',
-        items: [
-          {
-            id: 'item-2',
-            name: 'Beige Baggy Fit Trousers',
-            price: 3490,
-            size: '32',
-            color: 'Oatmeal Beige',
-            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_1.jpg?v=1790961467',
-            quantity: 1,
-          },
-        ],
-      },
-    ];
-
-    list.push(...sampleOrders);
-
     const map = new Map<string, UserOrder>();
     list.forEach((o) => {
-      if (o.id && !map.has(o.id.toUpperCase())) {
-        map.set(o.id.toUpperCase(), o);
+      if (o && o.id && !map.has(String(o.id).toUpperCase())) {
+        map.set(String(o.id).toUpperCase(), o);
       }
     });
 
@@ -110,29 +65,6 @@ export const OrderTracking: React.FC = () => {
     const found = all.find((o) => o.id.toUpperCase() === cleanId || o.id.toUpperCase().includes(cleanId));
 
     if (found) return found;
-
-    if (cleanId.startsWith('DUK-')) {
-      return {
-        id: cleanId,
-        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
-        status: 'Processing',
-        total: 3490,
-        paymentMethod: 'Prepaid Online',
-        trackingNumber: `BLUEDART-${Math.floor(1000000 + Math.random() * 9000000)}`,
-        estimatedDelivery: 'Within 3 Business Days',
-        items: [
-          {
-            id: 'item-dyn-1',
-            name: 'Raw Gauze Holiday Shirt',
-            price: 3490,
-            size: 'M',
-            color: 'Natural Cream',
-            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
-            quantity: 1,
-          },
-        ],
-      } as UserOrder;
-    }
 
     return null;
   };

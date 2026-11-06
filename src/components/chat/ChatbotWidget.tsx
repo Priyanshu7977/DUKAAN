@@ -21,6 +21,107 @@ import { useAuthStore } from '../../store/useAuthStore';
 import { PRODUCTS } from '../../data/products';
 import { formatPrice } from '../../utils/formatters';
 
+const parseFormattedInline = (content: string) => {
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*.*?\*\*|\[.*?\]\(.*?\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(content)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(content.substring(lastIndex, match.index));
+    }
+    const token = match[0];
+    if (token.startsWith('**') && token.endsWith('**')) {
+      parts.push(
+        <strong key={match.index} className="font-semibold text-inherit">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith('[') && token.includes('](') && token.endsWith(')')) {
+      const labelMatch = token.match(/^\[(.*?)\]\((.*?)\)$/);
+      if (labelMatch) {
+        parts.push(
+          <a
+            key={match.index}
+            href={labelMatch[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#A7654A] underline font-medium hover:opacity-80 transition-opacity"
+          >
+            {labelMatch[1]}
+          </a>
+        );
+      } else {
+        parts.push(token);
+      }
+    }
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < content.length) {
+    parts.push(content.substring(lastIndex));
+  }
+
+  return parts;
+};
+
+const FormattedMessageText: React.FC<{ text: string; isUser: boolean }> = ({ text, isUser }) => {
+  if (isUser) {
+    return <span className="whitespace-pre-wrap break-words">{text}</span>;
+  }
+
+  const lines = text.split('\n');
+
+  return (
+    <div className="space-y-1.5 leading-relaxed break-words">
+      {lines.map((line, idx) => {
+        const trimmed = line.trim();
+        if (!trimmed) {
+          return <div key={idx} className="h-1" />;
+        }
+
+        const isBullet = trimmed.startsWith('•') || trimmed.startsWith('- ') || trimmed.startsWith('* ');
+        const isNumbered = /^\d+\.\s/.test(trimmed);
+
+        const cleanLine = isBullet
+          ? trimmed.replace(/^[•\-*]\s*/, '')
+          : isNumbered
+          ? trimmed.replace(/^\d+\.\s*/, '')
+          : trimmed;
+
+        const rendered = parseFormattedInline(cleanLine);
+
+        if (isBullet) {
+          return (
+            <div key={idx} className="flex items-start gap-1.5 pl-0.5">
+              <span className="text-[#A7654A] font-bold text-xs mt-0.5 select-none shrink-0">•</span>
+              <span className="flex-1">{rendered}</span>
+            </div>
+          );
+        }
+
+        if (isNumbered) {
+          const numMatch = trimmed.match(/^(\d+)\./);
+          const num = numMatch ? numMatch[1] : '1';
+          return (
+            <div key={idx} className="flex items-start gap-1.5 pl-0.5">
+              <span className="text-[#A7654A] font-semibold text-[11px] mt-0.5 select-none shrink-0">{num}.</span>
+              <span className="flex-1">{rendered}</span>
+            </div>
+          );
+        }
+
+        return (
+          <p key={idx} className="my-0.5">
+            {rendered}
+          </p>
+        );
+      })}
+    </div>
+  );
+};
+
 export const ChatbotWidget: React.FC = () => {
   const {
     isOpen,
@@ -44,7 +145,7 @@ export const ChatbotWidget: React.FC = () => {
 
   const getCombinedOrders = () => {
     const list: any[] = [];
-    if (user?.orders) {
+    if (user?.orders && Array.isArray(user.orders)) {
       list.push(...user.orders);
     }
     try {
@@ -55,50 +156,14 @@ export const ChatbotWidget: React.FC = () => {
       }
     } catch {}
 
-    list.push(
-      {
-        id: 'DUK-88219',
-        date: 'Oct 28, 2026',
-        status: 'Delivered',
-        total: 3890,
-        paymentMethod: 'Prepaid Online',
-        trackingNumber: 'DTDC-884910283',
-        estimatedDelivery: 'Oct 31, 2026',
-        items: [
-          {
-            id: 'item-1',
-            name: 'Almond White Gauze Holiday Shirt',
-            price: 3890,
-            size: 'L',
-            color: 'Natural Cream',
-            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
-            quantity: 1,
-          },
-        ],
-      },
-      {
-        id: 'DUK-77104',
-        date: 'Nov 02, 2026',
-        status: 'In Transit',
-        total: 3589,
-        paymentMethod: 'COD',
-        trackingNumber: 'BLUEDART-7719284',
-        estimatedDelivery: 'Tomorrow, Nov 07',
-        items: [
-          {
-            id: 'item-2',
-            name: 'Beige Baggy Fit Trousers',
-            price: 3490,
-            size: '32',
-            color: 'Oatmeal Beige',
-            image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_1.jpg?v=1790961467',
-            quantity: 1,
-          },
-        ],
+    const map = new Map<string, any>();
+    list.forEach((o) => {
+      if (o && o.id && !map.has(String(o.id).toUpperCase())) {
+        map.set(String(o.id).toUpperCase(), o);
       }
-    );
+    });
 
-    return list;
+    return Array.from(map.values());
   };
 
   const scrollToBottom = () => {
@@ -397,20 +462,20 @@ export const ChatbotWidget: React.FC = () => {
                     key={msg.id}
                     className={`flex flex-col ${isUser ? 'items-end' : 'items-start'}`}
                   >
-                    <div className="flex items-end gap-2 max-w-full">
+                    <div className={`flex items-end gap-2 max-w-full ${isUser ? 'justify-end' : 'justify-start'}`}>
                       {!isUser && (
-                        <div className="w-5 h-5 rounded-full bg-[#141414] text-[#FAF9F6] flex items-center justify-center text-[10px] font-serif shrink-0 mb-1">
+                        <div className="w-5 h-5 rounded-full bg-[#141414] text-[#FAF9F6] flex items-center justify-center text-[10px] font-serif shrink-0 mb-1 select-none">
                           D
                         </div>
                       )}
                       <div
-                        className={`px-3.5 py-2.5 text-xs sm:text-[13px] leading-relaxed shadow-2xs whitespace-pre-line ${
+                        className={`px-3.5 py-2.5 text-xs sm:text-[13px] leading-relaxed shadow-2xs ${
                           isUser
-                            ? 'bg-[#141414] text-[#FAF9F6] rounded-2xl rounded-br-xs max-w-[85%]'
+                            ? 'bg-[#141414] text-[#FAF9F6] rounded-2xl rounded-br-xs max-w-[85%] w-fit break-words'
                             : 'bg-[#FAF8F5] text-[#141414] border border-[#141414]/8 rounded-2xl rounded-bl-xs max-w-[92%]'
                         }`}
                       >
-                        {msg.text}
+                        <FormattedMessageText text={msg.text} isUser={isUser} />
                         {renderCard(msg)}
                       </div>
                     </div>

@@ -21,6 +21,8 @@ export type CustomerIntent =
   | 'DISCOUNTS_PROMOS'
   | 'BRAND_STORY'
   | 'GREETINGS'
+  | 'GRATITUDE'
+  | 'HOSTILITY_DISMISSAL'
   | 'FALLBACK';
 
 export interface ExtractedEntities {
@@ -60,9 +62,28 @@ const CONTRACTIONS: Record<string, string> = {
   "what's": "what is",
   "where's": "where is",
   "how's": "how is",
+  "dont": "do not",
+  "cant": "cannot",
+  "wont": "will not",
 };
 
 const SENTIMENT_LEXICON: Record<string, number> = {
+  fuck: -4.0,
+  fucking: -4.0,
+  fucked: -4.0,
+  stfu: -4.0,
+  shit: -3.5,
+  bullshit: -3.5,
+  bitch: -3.5,
+  bastard: -3.5,
+  asshole: -3.5,
+  ass: -2.5,
+  crap: -2.5,
+  idiot: -3.0,
+  stupid: -3.0,
+  dumb: -2.5,
+  rubbish: -2.5,
+  nonsense: -2.5,
   fraud: -3.5,
   scam: -3.5,
   cheat: -3.5,
@@ -341,6 +362,43 @@ const INTENT_PATTERNS: Record<CustomerIntent, string[]> = {
     'namaste',
     'hola',
   ],
+  GRATITUDE: [
+    'thank you',
+    'thanks',
+    'thanks a lot',
+    'thank you so much',
+    'thx',
+    'appreciate it',
+    'great help',
+    'you are awesome',
+    'helpful thanks',
+    'ok thanks',
+    'okay thank you',
+  ],
+  HOSTILITY_DISMISSAL: [
+    'fuck off',
+    'fuck you',
+    'fucking',
+    'fuck',
+    'shut up',
+    'stfu',
+    'leave me alone',
+    'go away',
+    'get lost',
+    'piss off',
+    'screw you',
+    'stop it',
+    'stop messaging',
+    'stop talking',
+    'waste of time',
+    'useless bot',
+    'stupid bot',
+    'idiot bot',
+    'nonsense',
+    'rubbish',
+    'dont talk to me',
+    'don t talk to me',
+  ],
   FALLBACK: [],
 };
 
@@ -468,6 +526,8 @@ export class NLPEngine {
       DAMAGED_DEFECTIVE: ['damaged', 'defect', 'defective', 'torn', 'stain', 'stained', 'broken'],
       HUMAN_CONCIERGE: ['human', 'agent', 'representative', 'whatsapp', 'call', 'talk', 'speak'],
       DISCOUNTS_PROMOS: ['discount', 'coupon', 'promo', 'code', 'sale'],
+      HOSTILITY_DISMISSAL: ['fuck', 'stfu', 'shut', 'idiot', 'stupid', 'bastard', 'bitch', 'asshole', 'rubbish', 'nonsense', 'piss', 'screw'],
+      GRATITUDE: ['thank', 'thanks', 'thx', 'appreciate'],
     };
 
     for (const [intentKey, patterns] of Object.entries(INTENT_PATTERNS) as [CustomerIntent, string[]][]) {
@@ -543,10 +603,18 @@ export class NLPEngine {
   ): BotResponsePayload {
     const { intent, sentiment, entities } = classification;
 
+    if (intent === 'HOSTILITY_DISMISSAL') {
+      return {
+        text: `I apologize if I caused any frustration. I will step back and give you space.\n\nIf you ever need assistance with an order or would like to speak directly with our human team, we are here for you anytime.`,
+        type: 'text',
+        quickReplies: ['💬 Speak to Human Concierge', '📦 Track an Order', 'Clear Chat'],
+      };
+    }
+
     if (sentiment.priorityEscalation) {
       const ticketRef = `TCK-${Math.floor(100000 + Math.random() * 900000)}`;
       return {
-        text: `I truly apologize for the distress and inconvenience this has caused you. As a brand dedicated to uncompromising client satisfaction, I have immediately prioritized your request under VIP Support Ticket #${ticketRef}. A senior concierge will directly attend to this. You can also connect with our direct leadership line on WhatsApp right away.`,
+        text: `I truly apologize for the distress and inconvenience this has caused you. As a brand dedicated to uncompromising client satisfaction, I have immediately prioritized your request under VIP Support Ticket **#${ticketRef}**. A senior concierge will directly attend to this. You can also connect with our direct leadership line on WhatsApp right away.`,
         type: 'ticket_card',
         data: {
           ticketId: ticketRef,
@@ -562,53 +630,44 @@ export class NLPEngine {
     switch (intent) {
       case 'ORDER_TRACKING': {
         const orderId = entities.orderId;
-        if (orderId && storeContext?.orders) {
-          const found = storeContext.orders.find(
+        const userOrders: any[] = storeContext?.orders || [];
+
+        if (orderId) {
+          const found = userOrders.find(
             (o) => o.id && o.id.toUpperCase().replace(/\s+/g, '-') === orderId.toUpperCase()
           );
           if (found) {
             return {
-              text: `I located your order **${found.id}**! It is currently **${found.status}**. Delivery is estimated for **${found.estimatedDelivery}** via ${found.trackingNumber}.`,
+              text: `I located your order **#${found.id}**! It is currently **${found.status}**. Delivery is estimated for **${found.estimatedDelivery || 'Within 2-3 business days'}** via ${found.trackingNumber || 'BlueDart Express'}.`,
               type: 'order_card',
               data: found,
-              quickReplies: ['Track Another Order', 'Need Address Change', 'Speak to Concierge'],
+              quickReplies: ['Need Address Change', 'Returns & Exchanges', 'Speak to Concierge'],
             };
           }
+
+          return {
+            text: `I could not locate an active order matching **#${orderId}** in our dispatch records.\n\nPlease double-check that the order number matches the one in your confirmation email or SMS. If you placed the order under a different mobile number or need manual record verification, please connect directly with our concierge team.`,
+            type: 'text',
+            quickReplies: ['Track by Mobile Number', '💬 Connect on WhatsApp', 'Speak to Concierge'],
+          };
         }
 
-        if (orderId) {
-          const dynamicOrder = {
-            id: orderId,
-            status: 'In Transit',
-            date: 'Recent Order',
-            total: 3890,
-            paymentMethod: 'Prepaid Online',
-            trackingNumber: `BLUEDART-${Math.floor(1000000 + Math.random() * 9000000)}`,
-            estimatedDelivery: 'Within 2-3 Business Days',
-            items: [
-              {
-                id: 'item-1',
-                name: 'Almond White Gauze Holiday Shirt',
-                price: 3890,
-                size: 'L',
-                color: 'Natural Cream',
-                image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
-                quantity: 1,
-              },
-            ],
-          };
+        if (userOrders.length > 0) {
+          const latest = userOrders[0];
           return {
-            text: `Here is the live status for order **${orderId}**: It has been inspected, packaged in biodegradable packaging, and handed over to our courier partner.`,
+            text: `You have **${userOrders.length}** recent order(s) on file. Here is the latest dispatch for order **#${latest.id}** (${latest.status}):`,
             type: 'order_card',
-            data: dynamicOrder,
-            quickReplies: ['Delivery Time Details', 'Request Address Change', 'Speak to Concierge'],
+            data: latest,
+            quickReplies: userOrders.length > 1
+              ? userOrders.slice(1, 3).map((o) => `Track #${o.id}`)
+              : ['Need Address Change', 'Returns & Exchanges', 'Speak to Concierge'],
           };
         }
 
         return {
-          text: `I'd be glad to track your parcel right away! Please share your **Order ID** (for example, **DUK-88219** or the 5-digit number from your confirmation SMS/WhatsApp).`,
+          text: `You do not have any orders associated with this account or browser session yet.\n\nIf you recently placed an order as a guest, please share your **Order ID** (for example, **#DUK-XXXXXX**) or your 10-digit registered mobile number, and I will track it for you right away.`,
           type: 'text',
-          quickReplies: ['DUK-88219', 'DUK-77104', 'How fast is delivery?', 'Speak to Concierge'],
+          quickReplies: ['Track by Mobile Number', 'Check Shipping Timelines', 'Speak to Concierge'],
         };
       }
 
@@ -769,12 +828,28 @@ Enter the code in the discount field on the checkout page to apply your savings.
         };
       }
 
-      case 'GREETINGS':
-      default: {
+      case 'GRATITUDE': {
         return {
-          text: `Welcome to DUKAAN Concierge. I am here to assist you with order tracking, doorstep size exchanges, fabric care instructions, or personalized styling recommendations. How may I assist you today?`,
+          text: `You're most welcome! It is our absolute pleasure to assist you.\n\nPlease feel free to reach out anytime if you need help with styling, sizing, or orders. Have a wonderful day!`,
+          type: 'text',
+          quickReplies: ['Explore Catalog', 'Track My Order', 'Fabric Care Guide'],
+        };
+      }
+
+      case 'GREETINGS': {
+        return {
+          text: `Welcome to DUKAAN Concierge. I am here to assist you with order tracking, doorstep size exchanges, fabric care instructions, or personalized styling recommendations.\n\nHow may I assist you today?`,
           type: 'text',
           quickReplies: ['📦 Track My Order', '🔄 Returns & Exchanges', '📐 Size & Fit Guide', '🌿 Fabric Care Guide', '💬 Speak to Concierge'],
+        };
+      }
+
+      case 'FALLBACK':
+      default: {
+        return {
+          text: `I want to make sure I assist you accurately. As the DUKAAN digital concierge, I specialize in:\n\n• **Live Order Tracking** — Real-time transit & dispatch updates\n• **7-Day Doorstep Returns & Exchanges** — Size swaps with free pickup\n• **Fabric & Linen Care** — Washing, pressing & maintenance advice\n• **Sizing & Silhouette Guide** — Relaxed European tailoring guidance\n• **Payments & Billing** — COD, UPI & instant digital invoices\n\nCould you please rephrase your request, or would you like to speak directly with our concierge team?`,
+          type: 'text',
+          quickReplies: ['📦 Track My Order', '🔄 Returns & Exchanges', '📐 Size & Fit Guide', '💬 Speak to Concierge'],
         };
       }
     }
