@@ -389,6 +389,8 @@ export const LoginModal: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    id="phone-auth-fullname"
+                    name="fullname"
                     value={fullName}
                     onChange={(e) => handleNameChange(e.target.value)}
                     required
@@ -407,6 +409,8 @@ export const LoginModal: React.FC = () => {
                     </span>
                     <input
                       type="tel"
+                      id="phone-auth-number"
+                      name="phone"
                       maxLength={10}
                       value={phoneNumber}
                       onChange={(e) => handlePhoneChange(e.target.value)}
@@ -483,6 +487,7 @@ export const LoginModal: React.FC = () => {
                       <input
                         key={idx}
                         id={`otp-input-${idx}`}
+                        name={`otpDigit${idx}`}
                         type="text"
                         inputMode="numeric"
                         maxLength={1}
@@ -529,6 +534,8 @@ export const LoginModal: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  id="email-auth-fullname"
+                  name="fullname"
                   value={fullName}
                   onChange={(e) => handleNameChange(e.target.value)}
                   required
@@ -543,6 +550,8 @@ export const LoginModal: React.FC = () => {
                 </label>
                 <input
                   type="email"
+                  id="email-auth-email"
+                  name="email"
                   value={emailAddress}
                   onChange={(e) => setEmailAddress(e.target.value)}
                   required
@@ -570,6 +579,8 @@ export const LoginModal: React.FC = () => {
                 </div>
                 <input
                   type="password"
+                  id="email-auth-password"
+                  name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -604,6 +615,8 @@ export const LoginModal: React.FC = () => {
                     </label>
                     <input
                       type="email"
+                      id="forgot-auth-email"
+                      name="email"
                       value={emailAddress}
                       onChange={(e) => setEmailAddress(e.target.value)}
                       required

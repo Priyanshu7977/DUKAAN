@@ -540,6 +540,9 @@ export const ProductDetail: React.FC = () => {
                 >
                   <input
                     type="text"
+                    id="product-pincode-input"
+                    name="pincode"
+                    autoComplete="postal-code"
                     inputMode="numeric"
                     pattern="[0-9]*"
                     maxLength={6}
@@ -735,6 +738,8 @@ export const ProductDetail: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    id="review-name-input"
+                    name="author"
                     required
                     value={newReviewName}
                     onChange={(e) => setNewReviewName(e.target.value.replace(/[^a-zA-Z\s]/g, ''))}
@@ -748,6 +753,8 @@ export const ProductDetail: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    id="review-city-input"
+                    name="city"
                     value={newReviewCity}
                     onChange={(e) => setNewReviewCity(e.target.value.replace(/[^a-zA-Z\s]/g, ''))}
                     placeholder="e.g. Mumbai, Maharashtra"
@@ -761,6 +768,8 @@ export const ProductDetail: React.FC = () => {
                   How Does It Fit?
                 </label>
                 <select
+                  id="review-fit-select"
+                  name="fit"
                   value={newReviewFit}
                   onChange={(e) => setNewReviewFit(e.target.value)}
                   className="w-full h-11 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
@@ -776,6 +785,8 @@ export const ProductDetail: React.FC = () => {
                   Your Thoughts & Material Review *
                 </label>
                 <textarea
+                  id="review-comment-input"
+                  name="comment"
                   required
                   rows={3}
                   value={newReviewComment}

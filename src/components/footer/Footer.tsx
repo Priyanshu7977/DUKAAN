@@ -124,6 +124,9 @@ export const Footer: React.FC = () => {
                 <div className="flex items-center border-b border-white/20 focus-within:border-white transition-colors pb-1.5 gap-2">
                   <input
                     type="email"
+                    id="footer-newsletter-email"
+                    name="email"
+                    autoComplete="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter email address"

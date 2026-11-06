@@ -595,6 +595,9 @@ export const ChatbotWidget: React.FC = () => {
                 <input
                   ref={inputRef}
                   type="text"
+                  id="chatbot-message-input"
+                  name="chatbotMessage"
+                  autoComplete="off"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={handleKeyDown}

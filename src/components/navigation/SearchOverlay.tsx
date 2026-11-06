@@ -81,6 +81,9 @@ export const SearchOverlay: React.FC = () => {
             <input
               ref={inputRef}
               type="text"
+              id="global-search-input"
+              name="query"
+              autoComplete="off"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search garments, textures, collections..."
