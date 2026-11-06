@@ -13,7 +13,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       name: 'Elena Rostova',
       role: 'Head of Textile Research',
     },
-    coverImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_6.jpg?v=1787463484',
+    coverImage: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'True luxury lies in botanical patience. We trace the three-month journey of our certified raw flax from coastal French soil through gentle dew-retting to our weaving mills in Porto.',
     content: [
       {
@@ -26,7 +26,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       },
       {
         type: 'image',
-        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_3.jpg?v=1787463484',
+        image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80',
         caption: 'The raw 260gsm Normandy slub linen cut with relaxed dropped shoulders in our Porto atelier.',
       },
       {
@@ -55,7 +55,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       name: 'Julian Vance',
       role: 'Creative Director',
     },
-    coverImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050',
+    coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'In our Neapolitan workshop, tailor Marco Vieri explains why the absence of padding exposes every seam to scrutiny, and how floating canvas allows a garment to breathe with the wearer.',
     content: [
       {
@@ -68,7 +68,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       },
       {
         type: 'image',
-        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050',
+        image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80',
         caption: 'Hand-basting the pleat lines on our Beige Corduroy Trousers using silk thread.',
       },
       {
@@ -93,7 +93,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       name: 'Sofia Lindqvist',
       role: 'Art Director',
     },
-    coverImage: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze5.jpg?v=1780592855',
+    coverImage: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=80',
     excerpt: 'Exploring the geometry of raw limestone, harsh midday shadows, and the gentle drape of double-gauze holiday textiles along the Balearic coastline.',
     content: [
       {
@@ -106,7 +106,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       },
       {
         type: 'image',
-        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze5.jpg?v=1780592855',
+        image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80',
         caption: 'The Almond White Gauze Holiday Shirt caught in 3 PM cross-breeze against raw sandstone.',
       },
       {

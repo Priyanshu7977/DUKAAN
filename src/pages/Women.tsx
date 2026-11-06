@@ -6,7 +6,7 @@ export const Women: React.FC = () => {
     <ShopCatalog
       title="Women's Collection"
       subtitle="Effortless drape shirts, wide pleated trousers, and breathable linen sets designed for natural comfort and elegance."
-      bannerImage="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_1.jpg?v=1790957049"
+      bannerImage="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80"
       initialGender="women"
       showGenderFilter={false}
       breadcrumbs={[{ label: 'Shop', href: '/shop' }, { label: 'Women' }]}

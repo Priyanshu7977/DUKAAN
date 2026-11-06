@@ -47,7 +47,7 @@ export const About: React.FC = () => {
           <div className="lg:col-span-6">
             <div className="overflow-hidden bg-[#ECE7DD] aspect-[4/5] max-h-[420px]">
               <ImageWithFallback
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050"
+                src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80"
                 alt="Natural Linen Craftsmanship"
                 aspectRatioClass="w-full h-full"
                 className="object-cover w-full h-full"

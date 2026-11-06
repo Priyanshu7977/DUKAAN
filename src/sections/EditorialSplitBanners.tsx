@@ -13,7 +13,7 @@ export const EditorialSplitBanners: React.FC = () => {
           >
             <div className="relative overflow-hidden aspect-[16/11] bg-[#ECE7DD]">
               <img
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855"
+                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
                 alt="The Vacation Edit"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -43,7 +43,7 @@ export const EditorialSplitBanners: React.FC = () => {
           >
             <div className="relative overflow-hidden aspect-[16/11] bg-[#ECE7DD]">
               <img
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_1.jpg?v=1787463484"
+                src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80"
                 alt="Architectural Linen Luxe"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />

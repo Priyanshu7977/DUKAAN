@@ -11,7 +11,7 @@ export const GenderCollections: React.FC = () => {
           <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl bg-[#ECE7DD] flex flex-col justify-end min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] shadow-sm">
             <div className="absolute inset-0">
               <ImageWithFallback
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050"
+                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
                 alt="Dukaan Men's Tailoring"
                 aspectRatioClass="w-full h-full"
                 className="group-hover:scale-105 transition-transform duration-700 ease-out object-cover"
@@ -44,7 +44,7 @@ export const GenderCollections: React.FC = () => {
           <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl bg-[#ECE7DD] flex flex-col justify-end min-h-[380px] sm:min-h-[480px] lg:min-h-[580px] shadow-sm">
             <div className="absolute inset-0">
               <ImageWithFallback
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_1.jpg?v=1790957049"
+                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80"
                 alt="Dukaan Women's Fluid Drape"
                 aspectRatioClass="w-full h-full"
                 className="group-hover:scale-105 transition-transform duration-700 ease-out object-cover"

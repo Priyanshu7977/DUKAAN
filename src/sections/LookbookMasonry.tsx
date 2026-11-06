@@ -6,27 +6,27 @@ import { ImageWithFallback } from '../components/common/ImageWithFallback';
 export const LookbookMasonry: React.FC = () => {
   const looks = [
     {
-      title: 'Botanical Palm Print Robe',
+      title: 'Natural Linen Resort Robe',
       category: 'Study 01',
-      image: 'https://www.5feet11.com/cdn/shop/files/desktopbn7.png',
+      image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
       link: '/collections/solstice-atelier',
     },
     {
-      title: 'Washed Denim & Sun Shirt',
+      title: 'Sunlit Linen & Relaxed Trouser',
       category: 'Study 02',
-      image: 'https://www.5feet11.com/cdn/shop/files/desktopbn8.png',
+      image: 'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=800&q=80',
       link: '/shop',
     },
     {
-      title: 'Striped Cotton Knit Pullover',
+      title: 'Textured Cotton Knit Silhouette',
       category: 'Study 03',
-      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE136_229f120e-3e5c-486f-965a-654277cd60dc.jpg?v=1775042151',
+      image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
       link: '/shop?category=knitwear',
     },
     {
-      title: 'Apricot Flannel Overshirt',
+      title: 'Minimalist Earth Tone Overshirt',
       category: 'Study 04',
-      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_BrownCheckeredFlannelShirt_8.jpg?v=1767087850',
+      image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=800&q=80',
       link: '/shop?category=outerwear',
     },
   ];

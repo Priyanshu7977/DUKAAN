@@ -8,21 +8,21 @@ export const BrandPhilosophy: React.FC = () => {
       title: '100% Natural Fabrics',
       description:
         'Pure European flax linen, breathable double-crinkle cotton, and textured corduroy. No synthetic blends; only natural fabrics that breathe freely in Indian climates.',
-      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_4.jpg?v=1787463484',
+      image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
     },
     {
       number: '02',
       title: 'Comfortable Modern Fit',
       description:
         'Relaxed dropped shoulder silhouettes and comfortable pull-on waistbands that look effortlessly stylish while giving you complete freedom of movement.',
-      image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE383.jpg?v=1771397938',
+      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
     },
     {
       number: '03',
       title: 'Built to Last',
       description:
         'Crafted in limited batches with reinforced French seams and premium buttons so each shirt and trouser outlasts fast-fashion cycles.',
-      image: 'https://www.5feet11.com/cdn/shop/files/desktopbanner5.png',
+      image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=800&q=80',
     },
   ];
 

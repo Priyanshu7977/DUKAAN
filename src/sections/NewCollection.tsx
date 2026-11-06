@@ -26,7 +26,7 @@ export const NewCollection: React.FC = () => {
           <div className="lg:col-span-7">
             <div className="relative group overflow-hidden rounded-2xl bg-[#E8E3D9] max-h-[520px]">
               <ImageWithFallback
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855"
+                src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80"
                 alt="Solstice Collection Gauze Holiday Shirt"
                 aspectRatioClass="aspect-[4/5] max-h-[520px]"
                 className="group-hover:scale-102 transition-transform duration-700 ease-out object-cover"
@@ -49,7 +49,7 @@ export const NewCollection: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col justify-between space-y-4 sm:space-y-6">
             <div className="relative group overflow-hidden rounded-2xl bg-[#E8E3D9] max-h-[220px]">
               <ImageWithFallback
-                src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131_06d49f6a-e2c0-46a2-871e-12ba8fc4cbde.jpg?v=1775042151"
+                src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80"
                 alt="Raw Normandy Flax Tunic Pullover"
                 aspectRatioClass="aspect-[16/10] max-h-[220px]"
                 className="group-hover:scale-105 transition-transform duration-700 ease-out object-cover"

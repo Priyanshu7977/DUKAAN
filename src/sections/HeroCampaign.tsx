@@ -13,17 +13,17 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,
-    desktop: 'https://www.5feet11.com/cdn/shop/files/desktopbanner4.png',
-    mobile: 'https://www.5feet11.com/cdn/shop/files/mbbanner4.png',
-    alt: 'Dukaan Poolside Resort Edit',
-    objectPosition: 'object-[center_top]',
+    desktop: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1920&q=85',
+    mobile: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=85',
+    alt: 'Dukaan High Summer Mediterranean Campaign',
+    objectPosition: 'object-[center_25%]',
   },
   {
     id: 2,
-    desktop: 'https://www.5feet11.com/cdn/shop/files/desktopbn2.png',
-    mobile: 'https://www.5feet11.com/cdn/shop/files/mobile_banner2.png',
-    alt: 'Dukaan Casual Linen Gathering',
-    objectPosition: 'object-[center_top]',
+    desktop: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=85',
+    mobile: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85',
+    alt: 'Dukaan Architectural Linen Edit',
+    objectPosition: 'object-[center_20%]',
   },
 ];
 

@@ -7,7 +7,7 @@ export const EditorialCampaign: React.FC = () => {
     <section className="relative py-16 sm:py-32 lg:py-40 bg-[#211E1A] text-[#F3F0E9] overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img
-          src="https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1118_1de102c2-2879-4d49-97d8-172066acae36.jpg?v=1763799127"
+          src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1600&q=80"
           alt="Monolithic Corduroy Shacket Silhouette"
           className="w-full h-full object-cover object-[center_35%]"
         />

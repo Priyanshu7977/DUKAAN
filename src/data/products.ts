@@ -55,11 +55,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt1.jpg?v=1784180849",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt5.jpg?v=1784180849",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt4.jpg?v=1784180849",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt8.jpg?v=1784180850",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/ADayinTulumPrintedCroppedShirt2.jpg?v=1784180850"
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -127,11 +127,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/040A1473.jpg?v=1740306788",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/040A1475.jpg?v=1740306790",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/040A1478.jpg?v=1740306790",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/040A1471.jpg?v=1740306790",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/040A1476.jpg?v=1740306790"
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -199,11 +199,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze5.jpg?v=1780592855",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze2.jpg?v=1780592855",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze3.jpg?v=1780592855",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze6.jpg?v=1780592855"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -272,11 +272,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_1.jpg?v=1787463484",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_3.jpg?v=1787463484",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_4.jpg?v=1787463484",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_5.jpg?v=1787463484",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AlmondWhiteLinenCropped_6.jpg?v=1787463484"
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -344,11 +344,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131_06d49f6a-e2c0-46a2-871e-12ba8fc4cbde.jpg?v=1775042151",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE136_229f120e-3e5c-486f-965a-654277cd60dc.jpg?v=1775042372",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE132_459099e8-b15f-4bac-8172-8afa249c9362.jpg?v=1775042372",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE138_b48955cb-3d2d-4b7e-9541-0333fc72407c.jpg?v=1775042372",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE133_e89c9bbb-48b6-44b9-93e1-98d2639efe58.jpg?v=1775042372"
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -416,11 +416,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE383.jpg?v=1771397938",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE399_9fde516b-78f6-4461-a6cc-e259edfeb71d.jpg?v=1771397938",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE392_51519575-4296-44e1-bec9-3efa811a1c3f.jpg?v=1771397938",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE406_8f620d8c-b267-46c7-88b0-757b706d6ebe.jpg?v=1771397938",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE394.jpg?v=1771397938"
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -490,11 +490,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE365-scaled.jpg?v=1740307016",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE331-1-scaled.jpg?v=1740307016",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE383-scaled.jpg?v=1740307016",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE333.jpg?v=1740307016",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE354-scaled.jpg?v=1740307016"
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -562,11 +562,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE8846-01-scaled.jpg?v=1740306968",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE8833-01-scaled.jpg?v=1740306967",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE8849-scaled.jpg?v=1740306967",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE8855-scaled.jpg?v=1740306967",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE8842.jpg?v=1740306967"
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -635,11 +635,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_1.jpg?v=1790957049",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_2.jpg?v=1790957049",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_3.jpg?v=1790957049",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_6.jpg?v=1790957049",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Amethyst-DrapeShirt_5.jpg?v=1790957049"
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -707,11 +707,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9087-scaled.jpg?v=1740306965",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9086-01-scaled.jpg?v=1740306964",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9114-scaled.jpg?v=1740306965",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9116-scaled.jpg?v=1740306965",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9119-scaled.jpg?v=1740306965"
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -778,11 +778,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE921-1-scaled.jpg?v=1740307018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE956-scaled.jpg?v=1740307018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE937-scaled.jpg?v=1740307018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE976.jpg?v=1740307017",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE939.jpg?v=1740307016"
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -849,11 +849,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_BrownCheckeredFlannelShirt_8.jpg?v=1793268605",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_BrownCheckeredFlannelShirt_6.jpg?v=1793268605",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_BrownCheckeredFlannelShirt_2.jpg?v=1793268605",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_BrownCheckeredFlannelShirt_7.jpg?v=1793268605",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_BrownCheckeredFlannelShirt_5.jpg?v=1793268605"
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -922,11 +922,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_GreyStripedCroppedShirt_4.jpg?v=1793276425",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_GreyStripedCroppedShirt_1.jpg?v=1793276426",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_GreyStripedCroppedShirt_5.jpg?v=1793276425",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_GreyStripedCroppedShirt_2.jpg?v=1793276425",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Apricot_GreyStripedCroppedShirt_8.jpg?v=1793276425"
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -993,11 +993,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE186_9c7584e2-1b84-4ef4-8930-a8636d53fd13.jpg?v=1779195182",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE191_e41665b0-3767-45ca-9242-dea3be8ec38c.jpg?v=1779195181",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE188_eccfe597-fce6-4be0-9c09-281ed2db2928.jpg?v=1779195182",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE192_3fd1caa3-5bf9-4434-9b31-ef695f645d27.jpg?v=1779195182",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE193_d02501d6-f872-41ee-88e1-f47a8f1c92d3.jpg?v=1779195182"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1066,11 +1066,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AquaGreen1.jpg?v=1776249296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AquaGreen2.jpg?v=1776249296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AquaGreen5.jpg?v=1776249296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AquaGreen4.jpg?v=1776249296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AquaGreen6.jpg?v=1776249296"
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1137,11 +1137,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00010_4a800b47-8e15-4327-b82d-908e19656558.jpg?v=1778391970",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00011_ecc187a4-cd12-417b-b573-b0c7c6292eea.jpg?v=1778391970",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00026_09cd6fad-0f89-45fc-8776-019c06134489.jpg?v=1778391970",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00028_b13357cf-d322-4764-9feb-06a0b65b0bf3.jpg?v=1778391970",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00039_15ffe3aa-c1c3-46fb-b009-e2839be60f71.jpg?v=1778391970"
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1208,11 +1208,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01876-scaled.jpg?v=1740306926",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01873.jpg?v=1740306926",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01888-scaled.jpg?v=1740306926",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01880-scaled.jpg?v=1740306926",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01891-scaled.jpg?v=1740306926"
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1280,11 +1280,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1366-1.jpg?v=1740306917",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1363-1-scaled.jpg?v=1740306916",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1378-1.jpg?v=1740306916",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1376-2-scaled.jpg?v=1740306918",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1381-1-scaled.jpg?v=1740306916"
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1352,11 +1352,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE08117-scaled.jpg?v=1740306844",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE08115-scaled.jpg?v=1740306844",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE08124-scaled.jpg?v=1740306847",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE08122-scaled.jpg?v=1740306845",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE08136-scaled.jpg?v=1740306847"
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1424,11 +1424,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BaatikBlue-PulloverShirt_3.jpg?v=1792570553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BaatikBlue-PulloverShirt_2.jpg?v=1792570553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BaatikBlue-PulloverShirt_8.jpg?v=1792570553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BaatikBlue-PulloverShirt_4.jpg?v=1792570553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BaatikBlue-PulloverShirt_5.jpg?v=1792570553"
+      "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1496,11 +1496,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE185_2.jpg?v=1760094165",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE190.jpg?v=1760094743",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE186_1.jpg?v=1760094743",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE191_041581c8-ebd0-4e0f-8c11-f37e23e6e25e.jpg?v=1760094743",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE187.jpg?v=1760094743"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1567,11 +1567,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE121_a9d21062-b37b-4bea-8201-60bde772c69f.jpg?v=1777573359",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE126_9bd1e603-171b-42a8-8be2-c0115e27df48.jpg?v=1777573359",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE122_d9b2826c-ff85-49c8-b2b5-0d0e07f07dbc.jpg?v=1777573359",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128_a3dd176f-b0c1-41c9-9188-5bf33444dd14.jpg?v=1777573359",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE124_73731a9d-f6a3-4f3f-a54f-5d5e6ccea788.jpg?v=1777573359"
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1638,11 +1638,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9647-scaled.jpg?v=1740306956",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9646-01-scaled.jpg?v=1740306959",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9650-scaled.jpg?v=1740306958",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9664.jpg?v=1740306959",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9654-scaled.jpg?v=1740306957"
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1710,11 +1710,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1118_1de102c2-2879-4d49-97d8-172066acae36.jpg?v=1763799127",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1126_2a3df3e0-57f4-4b40-987a-9c9ba1fa6db3.jpg?v=1763801446",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1143_dc9d8e37-f042-4879-a469-c5e2e3880d0c.jpg?v=1763801446",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1124_ee9bafbc-6c77-4b4e-933e-6d9d3a66e5a8.jpg?v=1763801446",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1139_705af3bf-5187-4a83-9229-a09b0ea0dfff.jpg?v=1763801446"
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": true,
     "isSignature": false,
@@ -1781,11 +1781,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BBGauze1.jpg?v=1780592788",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BBGauze5.jpg?v=1780592787",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BBGauze3.jpg?v=1780592787",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BBGauze6.jpg?v=1780592788",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BBGauze2.jpg?v=1780592787"
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -1854,11 +1854,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BPGauze1.jpg?v=1780592918",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BPGauze6.jpg?v=1780592918",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BPGauze5.jpg?v=1780592918",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BPGauze2.jpg?v=1780592918",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BPGauze3.jpg?v=1780592918"
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -1927,11 +1927,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9942-01-01-scaled.jpg?v=1740306969",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9926-01-scaled.jpg?v=1740306967",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9948-scaled.jpg?v=1740306967",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9941-01-scaled.jpg?v=1740306968",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9940.jpg?v=1740306968"
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -1998,11 +1998,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE565-scaled.jpg?v=1740307011",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE549-1-scaled.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE567.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE583-scaled.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE575-scaled.jpg?v=1740307008"
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2069,11 +2069,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1039_5c9d1194-c586-4926-8afc-3dd08e039865.jpg?v=1753952015",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1065_a1b80f50-48e6-4f8f-a410-950062276bd3.jpg?v=1753952015",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1053.jpg?v=1753952015",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1076.jpg?v=1753952015",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1051.jpg?v=1753952015"
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2141,11 +2141,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE441_7dc50fc8-778a-4c2b-9435-e670a64e1004.jpg?v=1771398090",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE452_d3819c7d-9167-4e68-a678-3542efc64f83.jpg?v=1771398090",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE459_63d48b2c-ad91-4a71-99e7-8b088e55c7f5.jpg?v=1771398090",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE464_47b2a6de-a808-4fb0-84d1-41f814bfbf84.jpg?v=1771398090",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE454.jpg?v=1771398090"
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2213,11 +2213,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1324.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1368.jpg?v=1740307009",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1337.jpg?v=1740307011",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1376-scaled.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1350-scaled.jpg?v=1740307010"
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2284,11 +2284,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1204.jpg?v=1740307009",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1156-scaled.jpg?v=1740307011",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1209.jpg?v=1740307011",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1170-scaled.jpg?v=1740307011",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1169-scaled.jpg?v=1740307010"
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2355,11 +2355,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE634-scaled.jpg?v=1740307017",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE586-scaled.jpg?v=1740307017",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE591-scaled.jpg?v=1740307017",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE639-scaled.jpg?v=1740307017",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE593-scaled.jpg?v=1740307017"
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2426,11 +2426,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE05302.jpg?v=1740306795",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE05297.jpg?v=1740306795",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE05311.jpg?v=1740306794",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE05308-scaled.jpg?v=1740306795",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE05316.jpg?v=1740306795"
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2498,11 +2498,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14537.jpg?v=1740306884",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14526.jpg?v=1740306881",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14538.jpg?v=1740306879",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14532.jpg?v=1740306882",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14536.jpg?v=1740306881"
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2569,11 +2569,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE229-scaled.jpg?v=1740307016",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE201.jpg?v=1740307016",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE238.jpg?v=1740307018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE210-scaled.jpg?v=1740307017",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE202-scaled.jpg?v=1740307017"
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2640,11 +2640,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeachBingoPrintedCroppedShirt1.jpg?v=1784180809",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeachBingoPrintedCroppedShirt7.jpg?v=1784180809",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeachBingoPrintedCroppedShirt5.jpg?v=1784180809",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeachBingoPrintedCroppedShirt8.jpg?v=1784180809",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeachBingoPrintedCroppedShirt2.jpg?v=1784180809"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2712,11 +2712,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE354.jpg?v=1771397833",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE368_09ffbf55-c2fa-498d-924a-9bf4b7cb9740.jpg?v=1771397871",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE378_e4d9ae76-390c-494b-ad7e-08d6c8dd3a36.jpg?v=1771397871",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE369_b4ed2d7d-7ae6-43f7-8889-f3aaf978508d.jpg?v=1771397871",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE363_9206a4ae-727c-4cdd-a554-544dc58aab3d.jpg?v=1771397871"
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2784,11 +2784,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9878-scaled.jpg?v=1740306969",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9863-01-scaled.jpg?v=1740306968",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9873.jpg?v=1740306969",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9870-scaled.jpg?v=1740306969",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE9879-scaled.jpg?v=1740306969"
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2857,11 +2857,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_BrownPinstripedCroppedShirt_4.jpg?v=1793337244",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_BrownPinstripedCroppedShirt_1.jpg?v=1793337244",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_BrownPinstripedCroppedShirt_5.jpg?v=1793337244",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_BrownPinstripedCroppedShirt_3.jpg?v=1793337244",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_BrownPinstripedCroppedShirt_8.jpg?v=1793337244"
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -2929,11 +2929,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE169.jpg?v=1772790096",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE173.jpg?v=1772790147",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE170_e59878fc-87e6-49aa-9a1a-06ce9d242e0d.jpg?v=1772790147",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE176.jpg?v=1772790147",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE174_89d93c02-54f3-4332-a3be-a35de458cd84.jpg?v=1772790147"
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3002,11 +3002,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_WhiteStripedLooseFitCroppedT-Shirt7.jpg?v=1782819900",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_WhiteStripedLooseFitCroppedT-Shirt1.jpg?v=1782819900",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_WhiteStripedLooseFitCroppedT-Shirt5.jpg?v=1782819900",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_WhiteStripedLooseFitCroppedT-Shirt2.jpg?v=1782819900",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_WhiteStripedLooseFitCroppedT-Shirt6.jpg?v=1782819899"
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3074,11 +3074,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_1.jpg?v=1790961467",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_2.jpg?v=1790961467",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_5.jpg?v=1790961467",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_7.jpg?v=1790961467",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_3.jpg?v=1790961467"
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3147,11 +3147,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE159-1-scaled.jpg?v=1740307051",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE154-1-scaled.jpg?v=1740307053",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE161-scaled.jpg?v=1740307054",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE176-scaled.jpg?v=1740307054",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE164-scaled.jpg?v=1740307054"
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3219,11 +3219,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE097_5093c3d8-0438-4c67-b4b4-f5020cec7c32.jpg?v=1767090602",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE102_3ceddfc1-1704-41e7-9fe7-7e39587d5280.jpg?v=1767090708",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE101_508c6c6a-67b6-4eef-ae19-a1b1b1cb092f.jpg?v=1767090708",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE103_2ba1f930-aac1-461a-bfd9-999fd825e14d.jpg?v=1767090708",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE104_a80f04bf-9773-49ec-845e-3bb7100d77d0.jpg?v=1767090708"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3291,11 +3291,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE057_c9718e5b-556c-40bc-9eaf-cfd030daa105.jpg?v=1767088415",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE061_305f089c-7223-4a43-87f1-3b636884ca5b.jpg?v=1767088445",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE059_fe1813a5-75fa-4744-8552-8f99693e69f0.jpg?v=1767088445",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE063_3bd5e226-e0d4-4d32-a3ed-0d3ce7246352.jpg?v=1767088445",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE064_9375902b-41ba-4cf8-b3e2-ae75bd3e02b5.jpg?v=1767088445"
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3362,11 +3362,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01219-01-scaled.jpg?v=1740306919",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01248.jpg?v=1740306919",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01221-scaled.jpg?v=1740306919",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01226-scaled.jpg?v=1740306919",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01260-scaled.jpg?v=1740306919"
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3433,11 +3433,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1488.jpg?v=1753955475",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1461.jpg?v=1753955475",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1498.jpg?v=1753955475",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1468_18a0614a-e08a-4473-8a66-562ad6466300.jpg?v=1753955475",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1504.jpg?v=1753955475"
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3505,11 +3505,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE041_cca392b5-243b-48ee-91c8-4c03eb78f33d.jpg?v=1767088643",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE042_a4c9503e-8d4c-49da-a5a5-ac1eeaf6de4b.jpg?v=1767088642",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE043_bbae0627-e1be-430c-b949-a4218f3b55ea.jpg?v=1767088642",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE044_34eb9981-e085-4d50-ae45-bbf929736a56.jpg?v=1767088642",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE045_6ecccf6d-04bd-4a1b-9398-b12744c9d5c8.jpg?v=1767088642"
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3577,11 +3577,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE605.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE602-scaled.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE610.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE618-1.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE617.jpg?v=1740307062"
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3649,11 +3649,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE733-scaled.jpg?v=1740307050",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE739-scaled.jpg?v=1740307051",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE767-1-scaled.jpg?v=1740307051",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE741-scaled.jpg?v=1740307051",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE743-1-scaled.jpg?v=1740307051"
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3721,11 +3721,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE766-scaled.jpg?v=1740307013",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE725-scaled.jpg?v=1740307013",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE777-scaled.jpg?v=1740307013",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE738-scaled.jpg?v=1740307011",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE743-scaled.jpg?v=1740307013"
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3794,11 +3794,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE279_c805e711-c175-4d7b-9168-e03c806aacc9.jpg?v=1768709839",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE300_d92800af-a3e9-446f-a38d-6b18f8a53e62.jpg?v=1768709851",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE304.jpg?v=1768709851",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE283_89fc668d-0024-451e-8ae7-ecac2c74e357.jpg?v=1768709851",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE289.jpg?v=1768709851"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3867,11 +3867,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeGauzePull-onPants1.jpg?v=1784182239",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeGauzePull-onPants2.jpg?v=1784182239",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeGauzePull-onPants5.jpg?v=1784182239",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeGauzePull-onPants6.jpg?v=1784182239",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeGauzePull-onPants4.jpg?v=1784182239"
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -3939,11 +3939,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4751-scaled.jpg?v=1740307024",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4740-scaled.jpg?v=1740307022",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4749.jpg?v=1740307024",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4770-scaled.jpg?v=1740307024",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4753.jpg?v=1740307025"
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4010,11 +4010,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeIrishLinen_4.jpg?v=1786636721",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeIrishLinen_1.jpg?v=1786636721",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeIrishLinen_5.jpg?v=1786636721",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeIrishLinen_2.jpg?v=1786636721",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeIrishLinen_6.jpg?v=1786636720"
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4081,11 +4081,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE478.jpg?v=1740307003",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE476-scaled.jpg?v=1740307001",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE491.jpg?v=1740307004",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE486-scaled.jpg?v=1740307002",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE484-scaled.jpg?v=1740307003"
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4152,11 +4152,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00030_08c9435d-d791-4068-8ac9-1cfe190c1323.jpg?v=1778392054",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00021_9c1eb4f5-ad31-4239-9cac-a87a9aa32cb7.jpg?v=1778392055",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00031_9b4f5985-0c3b-4a82-91e9-a060e011ed9a.jpg?v=1778392054",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00024_ea748f92-27df-4283-8f3b-a3d50efe8e17.jpg?v=1778392054",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/image00002_01986d3d-d4ea-4bb8-b568-f83eec8ac0c2.jpg?v=1778392054"
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4224,11 +4224,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE121_e03c4eb9-bd8e-400d-b909-65e2ef9aba78.jpg?v=1764937328",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE122_1_a40c173d-5e49-4eb3-b51f-0df19f4e9978.jpg?v=1764937328",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE126_1_dc567267-ca28-4ce7-97ce-6c8545d01ec4.jpg?v=1764937360",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128_ecd8cd4f-a281-41d4-9078-3921c58af06d.jpg?v=1764937360",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127_1_ec98bdeb-359e-4d12-86e8-eb184c01b590.jpg?v=1764937360"
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4295,11 +4295,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0823.jpg?v=1754725163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0798.jpg?v=1754725163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0829.jpg?v=1754725163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0806.jpg?v=1754725163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0834.jpg?v=1754725720"
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4366,11 +4366,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigePinstripedBaggyFitTrousers_1.jpg?v=1790961110",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigePinstripedBaggyFitTrousers_2.jpg?v=1790961110",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigePinstripedBaggyFitTrousers_6.jpg?v=1790961110",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigePinstripedBaggyFitTrousers_7.jpg?v=1790961110",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigePinstripedBaggyFitTrousers_3.jpg?v=1790961110"
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4438,11 +4438,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_Poplin_7.jpg?v=1786010163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_Poplin_2.jpg?v=1786010163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_Poplin_3.jpg?v=1786010163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_Poplin_1.jpg?v=1786010163",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Beige_Poplin_4.jpg?v=1786010163"
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4509,11 +4509,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE079-scaled_41c2fc9c-fa0e-40e2-a5c0-eef09632315b.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE090-scaled.jpg?v=1740307063",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE081-scaled.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE087-scaled.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE083-scaled.jpg?v=1740307062"
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4581,11 +4581,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131181-scaled.jpg?v=1740306980",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131185-scaled.jpg?v=1740306982",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131182.jpg?v=1740306983",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131188.jpg?v=1740306980",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131187-scaled.jpg?v=1740306982"
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4653,11 +4653,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeTexturedBaggyFitTrousers_1.jpg?v=1790961282",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeTexturedBaggyFitTrousers_2.jpg?v=1790961283",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeTexturedBaggyFitTrousers_5.jpg?v=1790961282",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeTexturedBaggyFitTrousers_7.jpg?v=1790961282",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeTexturedBaggyFitTrousers_4.jpg?v=1790961282"
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4725,11 +4725,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE528.jpg?v=1758276232",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE532.jpg?v=1758276233",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE541_c7fe865c-af73-49b7-8313-9208a513bcb4.jpg?v=1758276343",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE540.jpg?v=1758276343",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE549_51551651-acec-429c-9cb8-83877d20fc07.jpg?v=1758276233"
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4797,11 +4797,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BerryGauze2.jpg?v=1780593000",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BerryGauze5.jpg?v=1780593000",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BerryGauze6.jpg?v=1780593000",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BerryGauze3.jpg?v=1780593000",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BerryGauze4.jpg?v=1780593000"
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4868,11 +4868,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE656-scaled.jpg?v=1740307021",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE723-1.jpg?v=1740307021",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE684-1-scaled.jpg?v=1740307022",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE706.jpg?v=1740307019",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE674-scaled.jpg?v=1740307021"
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -4941,11 +4941,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BeigeCheckered_2.jpg?v=1785479637",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BeigeCheckered_6.jpg?v=1785479637",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BeigeCheckered_3.jpg?v=1785479637",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BeigeCheckered_7.jpg?v=1785479637",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BeigeCheckered_4.jpg?v=1785479637"
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5012,11 +5012,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BrownHoundstoothFlannelShirt_4.jpg?v=1793266527",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BrownHoundstoothFlannelShirt_1.jpg?v=1793266527",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BrownHoundstoothFlannelShirt_5.jpg?v=1793266527",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BrownHoundstoothFlannelShirt_3.jpg?v=1793266527",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_BrownHoundstoothFlannelShirt_8.jpg?v=1793266527"
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5084,11 +5084,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14642.jpg?v=1740306897",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14640.jpg?v=1740306898",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14657.jpg?v=1740306898",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14652.jpg?v=1740306898",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14651.jpg?v=1740306898"
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5155,11 +5155,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteSeersuckerOversized_2.jpg?v=1785479625",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteSeersuckerOversized_7.jpg?v=1785479625",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteSeersuckerOversized_4.jpg?v=1785479626",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteSeersuckerOversized_8.jpg?v=1785479625",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteSeersuckerOversized_3.jpg?v=1785479626"
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5226,11 +5226,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteStripedCroppedPoplinShirt_5.jpg?v=1789735391",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteStripedCroppedPoplinShirt_1.jpg?v=1789735391",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteStripedCroppedPoplinShirt_7.jpg?v=1789735391",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteStripedCroppedPoplinShirt_3.jpg?v=1789735391",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_WhiteStripedCroppedPoplinShirt_8.jpg?v=1789735391"
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5298,11 +5298,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteDoubleCheckeredFlannelShirt_4.jpg?v=1793265987",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteDoubleCheckeredFlannelShirt_1.jpg?v=1793265987",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteDoubleCheckeredFlannelShirt_5.jpg?v=1793265987",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteDoubleCheckeredFlannelShirt_3.jpg?v=1793265987",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteDoubleCheckeredFlannelShirt_8.jpg?v=1793265987"
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5369,11 +5369,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteGinghamFlannelShirt_12.jpg?v=1793266410",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteGinghamFlannelShirt_9.jpg?v=1793266410",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteGinghamFlannelShirt_5.jpg?v=1793266410",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteGinghamFlannelShirt_10.jpg?v=1793266410",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackandWhiteGinghamFlannelShirt_6.jpg?v=1793266410"
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5440,11 +5440,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackBaggyFitTrousers_1.jpg?v=1790961998",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackBaggyFitTrousers_3.jpg?v=1790961998",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackBaggyFitTrousers_5.jpg?v=1790961997",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackBaggyFitTrousers_7.jpg?v=1790961997",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackBaggyFitTrousers_4.jpg?v=1790961997"
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5513,11 +5513,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11164.jpg?v=1740306866",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11126-scaled.jpg?v=1740306867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11131-scaled.jpg?v=1740306866",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11171-scaled.jpg?v=1740306866",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11183-scaled.jpg?v=1740306868"
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5585,11 +5585,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE198-scaled.jpg?v=1740307002",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE197.jpg?v=1740307002",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE218-scaled.jpg?v=1740307002",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE227-scaled.jpg?v=1740307002",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE211-scaled.jpg?v=1740307002"
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5656,11 +5656,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE209_28226b55-6b5c-49e8-91aa-bc308669c938.jpg?v=1772791167",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE215_36ddb13f-c5a3-4062-9749-a72c00e334f1.jpg?v=1772791309",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE211_d3ed9232-4a45-4582-b289-dda3dae7b666.jpg?v=1772791309",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE216_e7ffc13e-168e-4a53-9a03-397d15ab04ac.jpg?v=1772791309",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE214_89b2d4ed-1c08-4ba6-ab01-bffe6695587d.jpg?v=1772791309"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5727,11 +5727,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE089.jpg?v=1764937428",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE090_544f533f-4126-4085-8493-8aa2084614c3.jpg?v=1764937428",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE094_1_c4b35c9d-792a-4691-bffb-8edeb467461d.jpg?v=1764937627",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE095.jpg?v=1764937627",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE096_484afae5-280c-4c4c-9f03-67ce4fa497f9.jpg?v=1764937627"
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5799,11 +5799,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE169_1.jpg?v=1764937921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE171_1.jpg?v=1764938046",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE174_9e8be6e6-df04-459e-84c4-54db92462f1a.jpg?v=1764938046",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE175_bc01b756-9876-426f-a74d-aba668a20061.jpg?v=1764938046",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE170_1_fb8a5268-0c02-4e4f-b5e0-4f43776296e6.jpg?v=1764938046"
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5870,11 +5870,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredSeersuckerPull-onPants_2.jpg?v=1785479863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredSeersuckerPull-onPants_3.jpg?v=1785479863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredSeersuckerPull-onPants_5.jpg?v=1785479863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredSeersuckerPull-onPants_6.jpg?v=1785479863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredSeersuckerPull-onPants_4.jpg?v=1785479863"
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -5941,11 +5941,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredTexturedCroppedShirt_5.jpg?v=1789735854",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredTexturedCroppedShirt_1.jpg?v=1789735854",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredTexturedCroppedShirt_6.jpg?v=1789735854",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredTexturedCroppedShirt_2.jpg?v=1789735854",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackCheckeredTexturedCroppedShirt_7.jpg?v=1789735854"
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6013,11 +6013,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01024-scaled.jpg?v=1740306921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01099.jpg?v=1740306921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01103.jpg?v=1740306921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01036.jpg?v=1740306921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE01040.jpg?v=1740306921"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6084,11 +6084,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1150_1.jpg?v=1763817469",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1158_1.jpg?v=1763817469",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1160_0584513c-2938-4cea-8d55-019bbaf2727f.jpg?v=1763817469",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1161_1.jpg?v=1763817469",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1164_2b0b9961-5ba3-4faf-a7ed-4c6d2cebc256.jpg?v=1763817469"
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6156,11 +6156,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE706-1-scaled.jpg?v=1740307037",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE708-scaled.jpg?v=1740307038",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE729-scaled.jpg?v=1740307037",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE714-scaled_39ce0964-6357-4370-91f9-ca6db5b6850a.jpg?v=1740307037",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE724-1-scaled.jpg?v=1740307035"
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6227,11 +6227,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE041_1_c1ff758e-e4b8-4dbc-9347-7a2c07074e9d.jpg?v=1765260315",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE042_1_e6d77f3f-6ef4-459c-8721-366a4e7bd295.jpg?v=1765260315",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE046_2.jpg?v=1765260332",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE047_2.jpg?v=1765260332",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE048_1_34006bac-8cbb-4e64-873a-8e6fd6e2583b.jpg?v=1765260332"
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6299,11 +6299,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE009_639fcdd2-88fc-42eb-8a1f-1665eb510793.jpg?v=1765260873",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE011_87dbfa68-5a21-469a-8007-a38d7f0299f3.jpg?v=1765260886",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE015_e09cab0f-a1bd-4f7f-8231-fa8a91753e12.jpg?v=1765260886",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE016_18db49cf-8b26-4e82-b142-ec0cc5e4564f.jpg?v=1765260886",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE010_55eafd1a-27a4-4bee-b698-f19673747d94.jpg?v=1765260886"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6370,11 +6370,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE651_ea0eb81f-b3ec-4f06-b6d6-9f1645d9fdf6.jpg?v=1768708772",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE674_2662bd99-0bdb-4608-baa4-9c7ab675d907.jpg?v=1768708805",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE673_ed31f240-618c-4f7b-9885-235a17c23e42.jpg?v=1768708805",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE666_f04c1c03-bc04-46dd-a9d3-10ba54aa9c27.jpg?v=1768708805",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE662_ac567d33-e91e-4afd-a95a-6cde5ac3995d.jpg?v=1768708805"
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6442,11 +6442,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE001_06299ead-b67c-47e9-bd3a-8cfa54f361a2.jpg?v=1765260986",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE002_8a296f3c-cb39-4c49-bfa3-e7940d89cbdd.jpg?v=1765260987",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE005_780f2354-df51-441e-b85e-a28dfb88c949.jpg?v=1765261015",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE007_935e3d69-99be-434f-bf5c-2de891bc910a.jpg?v=1765261015",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE003_05a3500f-1c4f-4588-adc1-fb3412e04e71.jpg?v=1765261015"
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6513,11 +6513,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black1.jpg?v=1776249641",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black2.jpg?v=1776249641",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black4.jpg?v=1776249641",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black5.jpg?v=1776249641",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black3.jpg?v=1776249641"
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6585,11 +6585,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE072_4197ba0e-8a74-4971-8b86-aff8bf6b505f.jpg?v=1768710852",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE096.jpg?v=1768710885",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE092_fae195b0-8733-4929-9506-aa0fef162f88.jpg?v=1768710885",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE093_55fdfb4c-9c73-4859-860c-f6a9b705009d.jpg?v=1768710885",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE083_5637bfdf-a3b5-49ee-8b4d-c06ad23bcac3.jpg?v=1768710885"
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6658,11 +6658,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE636_0c3ecedd-d8a3-4e89-be27-51112649a3ed.jpg?v=1752435315",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE613_b81fe29a-19d4-4169-8121-66f5494111e7.jpg?v=1752435315",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE619_52cb510c-1683-4b5c-a2fb-e229b54a722a.jpg?v=1752435315",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE637_1_98ddb2c8-3431-483d-ad43-de5f215b0ed2.jpg?v=1752435315",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE632_9af6d943-50a6-42b8-97be-b65c0f7625b3.jpg?v=1752435315"
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6729,11 +6729,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE481-scaled.jpg?v=1740307009",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE472-scaled.jpg?v=1740307009",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE492-scaled.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE497-scaled.jpg?v=1740307009",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE507-scaled.jpg?v=1740307009"
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6801,11 +6801,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE122_bf52f582-287a-46a8-8c4f-3e304690251a.jpg?v=1779287921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127_3bbe98fd-9031-4d6f-bd18-162d112863c3.jpg?v=1779287921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE124_2555f6a1-41f5-4c99-8a7a-ddf2a65d8ed2.jpg?v=1779287921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128_9bfa04ad-ecaa-4db3-b571-f38360680c3f.jpg?v=1779287921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE123_29d5a3ba-a54f-4d5b-8432-0f08298cbe19.jpg?v=1779287921"
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6872,11 +6872,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE455.jpg?v=1740307085",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE483-scaled.jpg?v=1740307085",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE468-scaled_a9d4812b-4726-4949-9013-e97c82915e57.jpg?v=1740307086",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE465-scaled_75746b3c-1768-4a6b-9e6f-98ea9c311a4b.jpg?v=1740307084",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE473-scaled.jpg?v=1740307085"
+      "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -6943,11 +6943,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE97_2d2ce73a-a7ff-4bd7-b49e-15e4699e0662.jpg?v=1772786912",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE100_b85e2590-8346-4500-9ae8-411f76c4cb01.jpg?v=1772786940",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE98_941ed87b-f1f7-4a02-b776-62957a0e8952.jpg?v=1772786940",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE101_5d5e7186-9a01-4f16-972d-baac97191902.jpg?v=1772786940",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE99_82ff5809-466f-4435-a27f-d349f527791d.jpg?v=1772786940"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7014,11 +7014,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1440.jpg?v=1753954806",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1422.jpg?v=1753954806",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1452.jpg?v=1753954806",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1431_626d666a-dee3-43df-8769-3b73db8fdade.jpg?v=1753954806",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1451.jpg?v=1753954806"
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7087,11 +7087,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_65_f3eb017c-140b-4ce3-9572-b64667b0f362.jpg?v=1769944256",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_70_164fe23c-9dc1-4135-8001-8a143ad2f3ae.jpg?v=1769944755",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_69_c63e3ce4-bef3-496c-a6bf-dc0f7e0d5dea.jpg?v=1769944755",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_71_9e07b773-2899-44ec-bbb0-64516c0d648d.jpg?v=1769944755",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_67_6b230fa8-e88a-44d9-8c79-d0d401f15675.jpg?v=1769944755"
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7160,11 +7160,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_Linen_Cropped_1.jpg?v=1787484296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_Linen_Cropped_3.jpg?v=1787484296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_Linen_Cropped_4.jpg?v=1787484296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_Linen_Cropped_5.jpg?v=1787484296",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Black_Linen_Cropped_6.jpg?v=1787484296"
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7232,11 +7232,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_49_414acaad-0a6c-4e37-aa6b-06e94fbf5208.jpg?v=1769946133",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_53_16a76ab6-667d-4c80-a5e3-23498964c315.jpg?v=1769946173",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_51_bad52dfd-727d-4092-b8f5-0614632da00c.jpg?v=1769946173",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_55_bf6c3a5a-962d-4be8-9e8d-fb0743dc25de.jpg?v=1769946173",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG_52_1c15b4a5-1f12-4102-827a-7a6827473557.jpg?v=1769946173"
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7303,11 +7303,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE449.jpg?v=1756653262",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE456_2d1265ea-c7d8-44f8-8206-865ae7ed3b72.jpg?v=1756653282",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE453.jpg?v=1756653289",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE465.jpg?v=1756653289",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE459_c70f2288-f5ef-4d20-b43b-2c5a0831697b.jpg?v=1756653282"
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7375,11 +7375,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE156.jpg?v=1743417889",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE159_25cc2715-b4a6-4475-9714-3b99a6c8de01.jpg?v=1743417889",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE170.jpg?v=1743417890",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE160_95bde19f-960d-4a0f-9a41-1fe61b593ddd.jpg?v=1743417889",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE163.jpg?v=1743417889"
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7448,11 +7448,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG233.jpg?v=1769877909",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG238.jpg?v=1769877986",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG235.jpg?v=1769877986",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG239.jpg?v=1769877986",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/IMG237.jpg?v=1769877986"
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7520,11 +7520,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE41.jpg?v=1772789102",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE45.jpg?v=1772789180",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE43.jpg?v=1772789180",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE47.jpg?v=1772789180",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE48_85c92500-bcd6-455c-955c-1a2e49bbb844.jpg?v=1772789180"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7591,11 +7591,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackLooseFitSweatpants_5.jpg?v=1788264604",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackLooseFitSweatpants_1.jpg?v=1788264605",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackLooseFitSweatpants_6.jpg?v=1788264605",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackLooseFitSweatpants_2.jpg?v=1788264604",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackLooseFitSweatpants_7.jpg?v=1788264604"
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7663,11 +7663,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE870-scaled.jpg?v=1740307064",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE873-scaled_70a7250e-5c6e-40ba-9e4e-8a81fe4be4e6.jpg?v=1740307064",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE874-scaled.jpg?v=1740307065",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE884-scaled_5ee50a38-d7ff-4995-8009-41f02a192822.jpg?v=1740307064",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE878-scaled.jpg?v=1740307064"
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7734,11 +7734,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14677.jpg?v=1740306925",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14674.jpg?v=1740306925",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14696.jpg?v=1740306925",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14678.jpg?v=1740306925",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE14695.jpg?v=1740306925"
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7805,11 +7805,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPinstripedBaggyFitTrousers_1.jpg?v=1790961857",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPinstripedBaggyFitTrousers_2.jpg?v=1790961856",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPinstripedBaggyFitTrousers_5.jpg?v=1790961856",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPinstripedBaggyFitTrousers_7.jpg?v=1790961856",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPinstripedBaggyFitTrousers_3.jpg?v=1790961856"
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7878,11 +7878,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE004.jpg?v=1760089902",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE001.jpg?v=1760089902",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE006_55f70c7c-6fb2-401c-b4d2-2f032dab561f.jpg?v=1760089902",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE002.jpg?v=1760089902",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE007_d4c6e668-efe8-4acb-9e5a-d04e54e657c3.jpg?v=1760089902"
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -7949,11 +7949,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE233.jpg?v=1760095167",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE237_1.jpg?v=1760095215",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE234_1.jpg?v=1760095215",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE239.jpg?v=1760095215",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE240_bdcc7d5d-8342-4716-b07e-9f641ea53866.jpg?v=1760095215"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8021,11 +8021,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127581-scaled.jpg?v=1740306972",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127587-1-scaled.jpg?v=1740306972",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127582-scaled.jpg?v=1740306972",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127588-scaled.jpg?v=1740306970",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE127586-scaled.jpg?v=1740306972"
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8093,11 +8093,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPoplin_7.jpg?v=1786010696",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPoplin_3.jpg?v=1786010696",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPoplin_8.jpg?v=1786010696",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPoplin_4.jpg?v=1786010696",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackPoplin_1.jpg?v=1786010696"
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8164,11 +8164,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE264_2e6470e4-2e3e-46bc-abf0-9bb2ca6e9b49.jpg?v=1761917922",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE268.jpg?v=1761918014",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE266.jpg?v=1761918014",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE270_b109129a-4707-4054-88e3-c274f5a80198.jpg?v=1761918014",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE265_cfe201c5-7822-4f4d-acf3-444da813b5eb.jpg?v=1761918014"
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8236,11 +8236,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1007-scaled_4e7371c5-f878-4cd4-92a3-e6a4742da667.jpg?v=1740307062",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1023.jpg?v=1740307060",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1013-scaled_793e971f-18c9-4222-9f2b-41c1972a72bc.jpg?v=1740307059",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1021-scaled.jpg?v=1740307061",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1018-scaled_f5875d4c-005b-4bff-819d-39d89cb1fd16.jpg?v=1740307061"
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8308,11 +8308,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE65_ae3d18bf-232a-4f7e-af9c-cd9032016487.jpg?v=1772788456",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE69_20cb8f11-05ff-4004-8625-2469ec31bea6.jpg?v=1772788496",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE67_eb575247-77bb-43cf-9325-2f9ea8b8536b.jpg?v=1772788496",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE72_bd13304c-6879-42af-a8fa-24aebded70ec.jpg?v=1772788496",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE66_b7a3ad08-d8bc-4ede-bab5-d5dd2dc55cba.jpg?v=1772788496"
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8380,11 +8380,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackStripedPull-onPants1.jpg?v=1784182438",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackStripedPull-onPants3.jpg?v=1784182438",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackStripedPull-onPants5.jpg?v=1784182438",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackStripedPull-onPants8.jpg?v=1784182438",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackStripedPull-onPants2.jpg?v=1784182438"
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8451,11 +8451,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE139_5d8f8a1e-9bba-4141-b85f-b6f319c14ad5.jpg?v=1761713863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE136_acc18934-5839-4228-a52f-051fd7608488.jpg?v=1761713863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE140_e8f3eb6f-07ea-4634-a921-bbda462c9027.jpg?v=1761713863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE138.jpg?v=1761713863",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE137_8a9c8253-734b-4080-ba47-2c2d06258bad.jpg?v=1761713863"
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8522,11 +8522,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE179_537a2619-9be6-498a-83c4-f4d5ade73621.jpg?v=1761715627",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE176_33255a8e-aed8-4400-9250-5a0be013c169.jpg?v=1761715627",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE181_0e4a5250-fccc-4ee6-9b53-d4fdb2e4fde6.jpg?v=1761715627",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE177.jpg?v=1761715627",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE180.jpg?v=1761715627"
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8594,11 +8594,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackShorts1.jpg?v=1780593867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackShorts4.jpg?v=1780593867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackShorts2.jpg?v=1780593867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackShorts3.jpg?v=1780593867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackShorts5.jpg?v=1780593867"
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8665,11 +8665,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackTrouserShorts_6.jpg?v=1788263936",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackTrouserShorts_1.jpg?v=1788263936",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackTrouserShorts_8.jpg?v=1788263936",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackTrouserShorts_2.jpg?v=1788263936",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlackTrouserShorts_3.jpg?v=1788263936"
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8737,11 +8737,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE931-scaled_7fee086d-335c-4e72-bac7-f256b50f4a98.jpg?v=1742286262",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE953-scaled.jpg?v=1742286261",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE934-scaled_f700fc8a-7243-4009-8beb-855cb9423316.jpg?v=1742286261",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE968-scaled.jpg?v=1742286259",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE944-scaled_0e5d9326-7a49-484f-ac3d-f07187c7c693.jpg?v=1742286261"
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8808,11 +8808,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE754-scaled.jpg?v=1740307081",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE753-scaled.jpg?v=1740307080",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE767.jpg?v=1740307080",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE768-scaled.jpg?v=1740307080",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE764.jpg?v=1740307080"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8880,11 +8880,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11678-scaled.jpg?v=1740306972",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11670-scaled.jpg?v=1740306972",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11684-scaled.jpg?v=1740306974",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11700-scaled.jpg?v=1740306973",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE11686-scaled.jpg?v=1740306974"
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -8951,11 +8951,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BeigeCheckeredCroppedShirt_5.jpg?v=1789734690",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BeigeCheckeredCroppedShirt_1.jpg?v=1789734690",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BeigeCheckeredCroppedShirt_7.jpg?v=1789734690",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BeigeCheckeredCroppedShirt_2.jpg?v=1789734690",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BeigeCheckeredCroppedShirt_3.jpg?v=1789734690"
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9022,11 +9022,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BlackStripedOversized_2.jpg?v=1785477958",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BlackStripedOversized_7.jpg?v=1785477958",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BlackStripedOversized_3.jpg?v=1785477958",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BlackStripedOversized_8.jpg?v=1785477958",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_BlackStripedOversized_4.jpg?v=1785477958"
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9094,11 +9094,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE111_1.jpg?v=1752436039",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE100_2.jpg?v=1752436039",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE106_1.jpg?v=1752436039",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE117_1.jpg?v=1752436039",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE119_1.jpg?v=1752436039"
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9166,11 +9166,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1402.jpg?v=1753953862",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1383_7c19dadd-720d-4b2f-82e2-3cad169a4625.jpg?v=1753953862",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1408.jpg?v=1753953862",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1391_b1e959a6-a355-4ace-a1a6-6c8df011755f.jpg?v=1753953862",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1406.jpg?v=1753953862"
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9239,11 +9239,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE063_a0aeb272-7eac-4102-8d88-ff4d2793c6d6.jpg?v=1763797569",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE076_27f45cad-55e6-4f13-ab45-6bc28c376883.jpg?v=1763797569",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE067_00d62931-c287-4835-913d-2c2164505690.jpg?v=1763797569",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE079_81bea6b1-7211-4c54-a628-154ec7b72b48.jpg?v=1763797569",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE070_7fe9579d-4761-4f95-bcbd-d2a4a7153da0.jpg?v=1763797569"
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9310,11 +9310,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE137_46d4293c-be6a-4d7e-9a10-a2b5d950bfca.jpg?v=1772790871",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE142_b72cabed-a49a-4eb3-9532-71973308844d.jpg?v=1772790939",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE138_b4c1d1ed-2f41-4cd8-b9d1-cb71bb4ce320.jpg?v=1772790939",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE143_44741f6d-d36b-4448-a306-c36f38bf00ac.jpg?v=1772790939",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE141_38625621-9a35-4f6b-8442-2c2d133d3c7f.jpg?v=1772790939"
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9382,11 +9382,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_PeachStripedPoplinCroppedShirt_5.jpg?v=1789735108",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_PeachStripedPoplinCroppedShirt_1.jpg?v=1789735107",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_PeachStripedPoplinCroppedShirt_6.jpg?v=1789735107",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_PeachStripedPoplinCroppedShirt_3.jpg?v=1789735107",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_PeachStripedPoplinCroppedShirt_7.jpg?v=1789735108"
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9454,11 +9454,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE145.jpg?v=1772789766",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE150_382c5ce2-96f6-4cf7-8172-a29ebecd3f6c.jpg?v=1772789789",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE148_085fd01e-2864-4588-86ee-d3fc4079c35e.jpg?v=1772789789",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE151_c498ecc5-47a6-4096-860a-110513a381b7.jpg?v=1772789789",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE149_8100a8ff-af38-4a35-829b-96511ec4aed3.jpg?v=1772789789"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9525,11 +9525,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_RedMadras_2.jpg?v=1785477774",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_RedMadras_6.jpg?v=1785477774",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_RedMadras_7.jpg?v=1785477774",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_RedMadras_3.jpg?v=1785477774",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_RedMadras_8.jpg?v=1785477774"
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9596,11 +9596,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE871.jpg?v=1749297789",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE863_2caf408a-38b4-4656-8ece-bce3cc48aab2.jpg?v=1749297789",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE883_9238e288-458b-4e21-9967-8e85ccc8bc29.jpg?v=1749297789",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE885.jpg?v=1750238082",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE878.jpg?v=1750238082"
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9667,11 +9667,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhitePinstripedLinenCroppedShirt_3.jpg?v=1792562766",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhitePinstripedLinenCroppedShirt_6.jpg?v=1792562767",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhitePinstripedLinenCroppedShirt_2.jpg?v=1792562766",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhitePinstripedLinenCroppedShirt_4.jpg?v=1792562766",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhitePinstripedLinenCroppedShirt_5.jpg?v=1792562766"
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9738,11 +9738,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhiteStripedCroppedShirt_7.jpg?v=1793276306",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhiteStripedCroppedShirt_4.jpg?v=1793276306",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhiteStripedCroppedShirt_8.jpg?v=1793276307",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhiteStripedCroppedShirt_5.jpg?v=1793276306",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/Blue_WhiteStripedCroppedShirt_1.jpg?v=1793276306"
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9810,11 +9810,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE25_f6ac87eb-60f8-4956-a264-295bf068a004.jpg?v=1779190867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE29_8c9924ea-b6e2-48d0-bdd6-c26acfdfad32.jpg?v=1779190867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE26_5ed7f114-4385-432c-b3e7-0b3821b84ebd.jpg?v=1779190867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE30_f3d98aea-c8f2-478c-afe4-f162ed3d8554.jpg?v=1779190867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE27_6dde00e3-e2e0-4777-8ee4-863955d59b5a.jpg?v=1779190867"
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9881,11 +9881,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE253_44cd9c68-53a5-44e9-b10b-4a66626d27aa.jpg?v=1758276739",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE274.jpg?v=1758276764",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE273.jpg?v=1758276764",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE272_0afef1d4-e164-4486-b2ab-d112aa2885bd.jpg?v=1758276764",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE275_b65e7f3b-709b-401a-91c1-f8ec27c8ab3d.jpg?v=1758276740"
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -9954,11 +9954,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE209_1.jpg?v=1760094118",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE214_1.jpg?v=1760094721",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE211_09756839-deb0-4421-ae9e-d3344f3ab016.jpg?v=1760095397",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE216_fc5c54e3-3e65-4521-ac01-29e3d6083618.jpg?v=1760095397",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE210_d3e657d7-3d21-4e17-9ffc-97c57b951e1a.jpg?v=1760095397"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10025,11 +10025,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE322.jpg?v=1758276719",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE348.jpg?v=1758276735",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE349.jpg?v=1758276735",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE350_f4d190b5-4f97-4120-a599-e2d47cfc5d69.jpg?v=1758276735",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE345.jpg?v=1758276735"
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10096,11 +10096,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE161_534da2da-38d9-4ea1-9066-1ac0ed5d4473.jpg?v=1772789848",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE166_e059a9a5-ef7b-44fb-9507-db7d766be7c6.jpg?v=1772789884",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE162_1dc0dc91-40a2-44de-a804-11e6f204de26.jpg?v=1772789884",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE168_311b663d-f066-4cde-9d41-8d42e1189e65.jpg?v=1772789884",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE163_28c2863b-37ce-43ff-a510-9c070250f728.jpg?v=1772789884"
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10167,11 +10167,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE57_3edb67b6-74a0-4dfe-8553-8ffbb8e8af05.jpg?v=1777569553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE62_c10063b6-1bd4-434d-9a11-8fc09d7de05f.jpg?v=1777569553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE58_2c04da85-adb7-4ebe-bac6-507f08168aeb.jpg?v=1777569554",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE64_c46a8e5b-2feb-4edb-b032-5e3e96f80b5b.jpg?v=1777569553",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE59_ac68509a-a674-4c18-85aa-6bedb84c4fbd.jpg?v=1777569553"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10239,11 +10239,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueandGreenCheckeredFlannelShirt_5.jpg?v=1793267928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueandGreenCheckeredFlannelShirt_9.jpg?v=1793267927",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueandGreenCheckeredFlannelShirt_6.jpg?v=1793267928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueandGreenCheckeredFlannelShirt_10.jpg?v=1793267928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueandGreenCheckeredFlannelShirt_3.jpg?v=1793267928"
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10310,11 +10310,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE02319-01-scaled.jpg?v=1740306810",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE02307-scaled.jpg?v=1740306809",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE02315-scaled.jpg?v=1740306812",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE02322-scaled.jpg?v=1740306809",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE02312.jpg?v=1740306810"
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10381,11 +10381,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE00441-01-scaled.jpg?v=1740306905",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE00438-scaled.jpg?v=1740306905",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE00449-1-scaled.jpg?v=1740306905",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE00439-scaled.jpg?v=1740306905",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE00452-scaled.jpg?v=1740306905"
+      "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10453,11 +10453,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBaggyFitTrousers_1.jpg?v=1790962093",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBaggyFitTrousers_3.jpg?v=1790962093",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBaggyFitTrousers_7.jpg?v=1790962093",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBaggyFitTrousers_8.jpg?v=1790962093",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBaggyFitTrousers_4.jpg?v=1790962093"
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10526,11 +10526,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBoxCheckeredCroppedShirt_5.jpg?v=1789735258",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBoxCheckeredCroppedShirt_1.jpg?v=1789735258",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBoxCheckeredCroppedShirt_6.jpg?v=1789735259",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBoxCheckeredCroppedShirt_3.jpg?v=1789735258",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueBoxCheckeredCroppedShirt_7.jpg?v=1789735258"
+      "https://images.unsplash.com/photo-1589310243389-96a5483213a8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10597,11 +10597,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE154_cf6d1599-9355-42e6-b91f-3dd950fc079b.jpg?v=1779288177",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE158_de979b04-38b6-4e8e-8394-6e43be1d8d78.jpg?v=1779288177",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE156_c66ea540-06aa-4210-a9b2-c581a659a443.jpg?v=1779288177",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE160_a5d81f2d-ccc8-4ad6-970f-305590aab37e.jpg?v=1779288177",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE157_0f4ccb85-f475-45e8-9b03-bcc03ddd4bb3.jpg?v=1779288177"
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10668,11 +10668,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE189-scaled.jpg?v=1740307058",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE185-scaled.jpg?v=1740307058",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE192-scaled_e829bc25-9653-4290-b494-13e889d07890.jpg?v=1740307061",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE211.jpg?v=1740307060",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE210-scaled_c28b8f47-08a6-4478-aecf-5447224651c9.jpg?v=1740307060"
+      "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10740,11 +10740,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE116_1.jpg?v=1760096348",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE113_3.jpg?v=1760096348",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE118_1.jpg?v=1760096348",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE114_2.jpg?v=1760096348",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE117_2.jpg?v=1760096348"
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10812,11 +10812,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE185_c6862b23-e0de-4394-bc93-f1b87654b6ca.jpg?v=1764936921",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE186_1_a5e1095f-43c5-4ea5-ad6c-7d23ff29a3b7.jpg?v=1764936922",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE190_1d9a4739-7db4-45ba-987b-add9b0fd8b76.jpg?v=1764937107",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE191_1.jpg?v=1764937107",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE187_db6e6b1e-7b70-4710-a9db-a6a98bda0105.jpg?v=1764937107"
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10883,11 +10883,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE137_557a7074-c5ee-4919-bf32-9e3f5eae8690.jpg?v=1764937514",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE139_1_c13ba88d-63ec-44b9-ac5b-35ecb7b8c876.jpg?v=1764937662",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE142_0ecf00c4-56d0-4fdf-a6d4-a620b7aed5b7.jpg?v=1764937662",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE143_29801292-6eb1-4564-a03e-d3d844ed7dcf.jpg?v=1764937662",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE138_0470d92d-de68-4025-ac85-37d4049887f7.jpg?v=1764937662"
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -10954,11 +10954,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE081_c30d105b-302a-4249-8f82-909bf974fdb2.jpg?v=1767088363",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE085_b96904d3-f17f-413b-8c80-353613d5bc09.jpg?v=1767088396",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE084_2219636b-8f2e-40d5-999a-59ce6ebca1a0.jpg?v=1767088396",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE087_0f347556-0c0f-4a88-bb3a-7a0147987643.jpg?v=1767088396",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE082_225f6b42-54d2-4028-af4e-2a19aba772e7.jpg?v=1767088396"
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11026,11 +11026,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1538_b37be597-6f2e-488e-80b6-d40cdf3cf34b.jpg?v=1753956491",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1510_ec0b64a2-7b8b-43b8-b562-f411bcab8a41.jpg?v=1753956491",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1541.jpg?v=1753956491",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1530.jpg?v=1753956491",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1556.jpg?v=1753956491"
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11098,11 +11098,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE065_1bfde944-78dd-49ed-9f5b-c8e0f5ba1dbb.jpg?v=1765260611",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE066_a9b8ab4d-8c7b-48a8-9e57-2583086966d7.jpg?v=1765260611",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE070_1.jpg?v=1765260643",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE072_1.jpg?v=1765260643",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE071_cf9e37de-ded9-489a-88da-18bacfa4b892.jpg?v=1765260643"
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11171,11 +11171,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE113_6c6b2692-10dc-49c6-9743-80098fa0f184.jpg?v=1764936867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE114_53dec535-9006-4dde-9545-ed16d3c23b1b.jpg?v=1764936867",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE119_73bfab60-5917-4c58-b7bd-1fc17a8d6bad.jpg?v=1764937034",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE120_1_680c05de-b601-4161-a751-1e388af12663.jpg?v=1764937034",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE115_b69511ef-ef3a-45df-8510-730e29b1476f.jpg?v=1764937034"
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11243,11 +11243,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueFloralPinstripedPrintedCroppedShirt1.jpg?v=1784181346",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueFloralPinstripedPrintedCroppedShirt6.jpg?v=1784181346",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueFloralPinstripedPrintedCroppedShirt4.jpg?v=1784181346",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueFloralPinstripedPrintedCroppedShirt5.jpg?v=1784181346",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueFloralPinstripedPrintedCroppedShirt7.jpg?v=1784181346"
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11314,11 +11314,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1159.jpg?v=1744552529",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1150.jpg?v=1744552529",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1158.jpg?v=1744552529",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1161.jpg?v=1744552529",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1165.jpg?v=1744552529"
+      "https://images.unsplash.com/photo-1495121605193-b116b5b9c5fe?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11386,11 +11386,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGinghamCroppedShirt_5.jpg?v=1789734980",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGinghamCroppedShirt_1.jpg?v=1789734980",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGinghamCroppedShirt_6.jpg?v=1789734980",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGinghamCroppedShirt_3.jpg?v=1789734980",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGinghamCroppedShirt_7.jpg?v=1789734980"
+      "https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11457,11 +11457,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1309_b33df276-e21d-4c00-be4a-bb86ab5885c7.jpg?v=1748680294",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1304.jpg?v=1748680294",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1287.jpg?v=1748680294",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1282.jpg?v=1748680294",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1296.jpg?v=1748680294"
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11529,11 +11529,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGreen_WhiteCheckeredCroppedPoplinShirt_5.jpg?v=1789734999",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGreen_WhiteCheckeredCroppedPoplinShirt_1.jpg?v=1789734999",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGreen_WhiteCheckeredCroppedPoplinShirt_6.jpg?v=1789734999",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGreen_WhiteCheckeredCroppedPoplinShirt_3.jpg?v=1789734999",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueGreen_WhiteCheckeredCroppedPoplinShirt_7.jpg?v=1789734999"
+      "https://images.unsplash.com/photo-1620799139834-6b8f844fbe61?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11600,11 +11600,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE398.jpg?v=1740307012",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE392-scaled.jpg?v=1740307010",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE411-scaled.jpg?v=1740307012",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE414-scaled.jpg?v=1740307012",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE424-scaled.jpg?v=1740307012"
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11671,11 +11671,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4504.jpg?v=1740307028",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4501-scaled.jpg?v=1740307028",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4512.jpg?v=1740307026",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4506-scaled.jpg?v=1740307028",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4530-scaled.jpg?v=1740307028"
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11744,11 +11744,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE12263-scaled.jpg?v=1740306981",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE12261-scaled.jpg?v=1740306981",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE12265-scaled.jpg?v=1740306982",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE12259-scaled.jpg?v=1740306981",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE12250-scaled.jpg?v=1740306979"
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11815,11 +11815,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/5feet118299-scaled.jpg?v=1740306956",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/5feet118304-scaled.jpg?v=1740306956",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/5feet118305-scaled.jpg?v=1740306954",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/5feet118306-scaled.jpg?v=1740306956",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/5feet118312-scaled.jpg?v=1740306956"
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11886,11 +11886,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE410_df5e46ad-8022-4460-990f-72b14572eb5c.jpg?v=1771398018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE420.jpg?v=1771398018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE425_6c662e86-cf52-42a4-8265-edb43055751b.jpg?v=1771398018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE431_dd693935-268d-4a23-8f86-9d19d7bec415.jpg?v=1771398018",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE432_968b15a2-80fb-47bf-93c7-3ed98f2c1d08.jpg?v=1771398018"
+      "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -11959,11 +11959,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueMulticheckedOversized_2.jpg?v=1785479837",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueMulticheckedOversized_7.jpg?v=1785479836",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueMulticheckedOversized_8.jpg?v=1785479837",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueMulticheckedOversized_3.jpg?v=1785479836",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueMulticheckedOversized_1.jpg?v=1785479837"
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12030,11 +12030,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0634.jpg?v=1754725528",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0590.jpg?v=1754725528",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0641.jpg?v=1754725528",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0596.jpg?v=1754725528",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE0659.jpg?v=1754725657"
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12102,11 +12102,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1316.jpg?v=1753958141",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1294_1.jpg?v=1753958141",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1325_1.jpg?v=1753958141",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1307.jpg?v=1753958141",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1305.jpg?v=1753958141"
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12173,11 +12173,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE129_1.jpg?v=1764937938",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE130_dd3a7bc2-0346-44b0-a340-a1fb146c4fa1.jpg?v=1764937938",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE134_ec34e6cc-eb11-4605-ab21-e46702f2a7de.jpg?v=1764938104",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE135_ba234bf6-08df-4488-bfc4-3b8b837b4ffa.jpg?v=1764938104",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE131_f2e32552-716f-481c-84aa-6fa45d914a95.jpg?v=1764938104"
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12245,11 +12245,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE2_cf5e9c4f-5ec1-4aa0-8bdf-7d4194ccbecb.jpg?v=1779191442",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE3_714b6a08-efc9-4e7d-97bb-a4b9585cd10e.jpg?v=1779191443",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE6_9568fbf1-3bbc-4c40-94b0-b22dcd8187e6.jpg?v=1779191443",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE4_6c7e8bc3-7696-4cf2-a8eb-328cfa8c7845.jpg?v=1779191443",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1_4b57dc50-cbf6-42eb-90ec-24128e4c74a5.jpg?v=1779191442"
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12317,11 +12317,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BluePinstripedTrouserShorts_5.jpg?v=1788263928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BluePinstripedTrouserShorts_1.jpg?v=1788263928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BluePinstripedTrouserShorts_6.jpg?v=1788263928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BluePinstripedTrouserShorts_2.jpg?v=1788263928",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BluePinstripedTrouserShorts_7.jpg?v=1788263928"
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12390,11 +12390,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128791-scaled.jpg?v=1740306970",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128796-scaled.jpg?v=1740306971",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128792.jpg?v=1740306971",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128798.jpg?v=1740306971",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE128797-scaled.jpg?v=1740306971"
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12462,11 +12462,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE019.jpg?v=1740307061",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE011-scaled.jpg?v=1740307061",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE030-scaled.jpg?v=1740307061",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE026-scaled.jpg?v=1740307061",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE035-scaled.jpg?v=1740307060"
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12533,11 +12533,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE07055-1.jpg?v=1740306847",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE07066-1-scaled.jpg?v=1740306847",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE07059-scaled.jpg?v=1740306847",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE07065-scaled.jpg?v=1740306847",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE07057-scaled.jpg?v=1740306847"
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12606,11 +12606,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueSafari3.jpg?v=1780594733",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueSafari4.jpg?v=1780594733",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueSafari.jpg?v=1780594733",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueSafari1.jpg?v=1780594733",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BlueSafari2.jpg?v=1780594733"
+      "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12677,11 +12677,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE967-scaled.jpg?v=1740307066",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE983-scaled.jpg?v=1740307067",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE976-scaled.jpg?v=1740307066",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE985-scaled_0ad9a5f3-b534-4472-8cb9-3ef28042d64b.jpg?v=1740307066",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE981-scaled.jpg?v=1740307066"
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12748,11 +12748,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE1_6c1894e4-24c8-4f1b-a043-ca7a40609e0d.jpg?v=1777568461",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE6_7a35033a-9d67-45a9-9b77-0a454f728d96.jpg?v=1777568461",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE3_d6bb457c-1050-46d0-aee6-bb341a6ac204.jpg?v=1777568461",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE8_3cbe858d-4fd6-4d12-95b1-cc2ee35b67cd.jpg?v=1777568462",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE2_f09c7517-982f-47b0-90b0-cc0325808be3.jpg?v=1777568462"
+      "https://images.unsplash.com/photo-1588117260148-b47818741c74?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12821,11 +12821,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE524_1.jpg?v=1748764085",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE536_1.jpg?v=1748764085",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE552_01c4ad50-0404-4335-bde6-e1dfc0f0d63f.jpg?v=1748764085",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE563_02e56ada-460d-403e-8fe0-fc16a7e0227a.jpg?v=1748764085",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE542_1.jpg?v=1748764085"
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,
@@ -12892,11 +12892,11 @@ export const PRODUCTS: Product[] = [
       }
     ],
     "images": [
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE562_ab544c49-2bf5-4f3f-81c1-d8726394b6f3.jpg?v=1768709177",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE572.jpg?v=1768709201",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE574_e77d62b7-4117-4313-9249-8b471132840a.jpg?v=1768709201",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE568_49adc425-c554-4219-aa0a-ec92d660f269.jpg?v=1768709201",
-      "https://cdn.shopify.com/s/files/1/0683/8947/0389/files/FFE571.jpg?v=1768709201"
+      "https://images.unsplash.com/photo-1588117305388-c2631a279f82?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1000&q=80"
     ],
     "isNew": false,
     "isSignature": false,

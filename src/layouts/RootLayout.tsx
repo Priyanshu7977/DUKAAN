@@ -9,6 +9,7 @@ import { QuickViewModal } from '../components/product/QuickViewModal';
 import { SizeGuideModal } from '../components/product/SizeGuideModal';
 import { ToastContainer } from '../components/common/ToastContainer';
 import { LoginModal } from '../components/auth/LoginModal';
+import { ChatbotWidget } from '../components/chat/ChatbotWidget';
 import { useAuthStore } from '../store/useAuthStore';
 import { cn } from '../utils/formatters';
 
@@ -53,6 +54,7 @@ export const RootLayout: React.FC = () => {
       <QuickViewModal />
       <SizeGuideModal />
       <ToastContainer />
+      <ChatbotWidget />
     </div>
   );
 };
