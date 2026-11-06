@@ -31,6 +31,9 @@ interface UIStore {
   isAnnouncementVisible: boolean;
   dismissAnnouncement: () => void;
 
+  hasStickyBottomBar: boolean;
+  setHasStickyBottomBar: (visible: boolean) => void;
+
   toasts: ToastState[];
   showToast: (message: string, type?: 'success' | 'info' | 'error') => void;
   removeToast: (id: string) => void;
@@ -59,6 +62,9 @@ export const useUIStore = create<UIStore>((set, get) => ({
 
   isAnnouncementVisible: true,
   dismissAnnouncement: () => set({ isAnnouncementVisible: false }),
+
+  hasStickyBottomBar: false,
+  setHasStickyBottomBar: (visible: boolean) => set({ hasStickyBottomBar: visible }),
 
   toasts: [],
   showToast: (message: string, type: 'success' | 'info' | 'error' = 'info') => {

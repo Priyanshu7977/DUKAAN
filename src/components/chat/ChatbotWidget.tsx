@@ -19,8 +19,9 @@ import {
 } from 'lucide-react';
 import { useChatbotStore, ChatMessage } from '../../store/useChatbotStore';
 import { useAuthStore } from '../../store/useAuthStore';
+import { useUIStore } from '../../store/useUIStore';
 import { PRODUCTS } from '../../data/products';
-import { formatPrice } from '../../utils/formatters';
+import { formatPrice, cn } from '../../utils/formatters';
 
 const parseFormattedInline = (content: string) => {
   const parts: React.ReactNode[] = [];
@@ -144,6 +145,7 @@ export const ChatbotWidget: React.FC = () => {
   } = useChatbotStore();
 
   const user = useAuthStore((state) => state.user);
+  const hasStickyBottomBar = useUIStore((state) => state.hasStickyBottomBar);
   const [inputValue, setInputValue] = useState('');
   const [showTooltip, setShowTooltip] = useState(!hasInteracted);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -426,7 +428,15 @@ export const ChatbotWidget: React.FC = () => {
   };
 
   return (
-    <aside aria-label="Customer Care Concierge" className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 select-none">
+    <aside
+      aria-label="Customer Care Concierge"
+      className={cn(
+        'fixed right-4 sm:right-6 z-50 select-none transition-all duration-300 ease-out',
+        hasStickyBottomBar && !isOpen
+          ? 'bottom-[calc(env(safe-area-inset-bottom,0px)+4.75rem)] sm:bottom-6'
+          : 'bottom-5 sm:bottom-6'
+      )}
+    >
       <AnimatePresence>
         {showTooltip && !isOpen && (
           <motion.div

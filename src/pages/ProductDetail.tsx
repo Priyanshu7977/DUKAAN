@@ -22,7 +22,7 @@ export const ProductDetail: React.FC = () => {
 
   const addItem = useCartStore((state) => state.addItem);
   const { toggleWishlist, isInWishlist } = useWishlistStore();
-  const { showToast, openSizeGuide } = useUIStore();
+  const { showToast, openSizeGuide, setHasStickyBottomBar } = useUIStore();
 
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('');
@@ -157,12 +157,17 @@ export const ProductDetail: React.FC = () => {
     const handleScroll = () => {
       if (!ctaRef.current) return;
       const rect = ctaRef.current.getBoundingClientRect();
-      setShowStickyBar(rect.bottom < 60);
+      const isVisible = rect.bottom < 60;
+      setShowStickyBar(isVisible);
+      setHasStickyBottomBar(isVisible);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      setHasStickyBottomBar(false);
+    };
+  }, [setHasStickyBottomBar]);
 
   useEffect(() => {
     if (product) {
