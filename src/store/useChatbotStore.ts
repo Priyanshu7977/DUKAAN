@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { NLPEngine, SentimentAnalysisResult, SentimentType } from '../utils/nlpEngine';
+import { NLPEngine, SentimentAnalysisResult, SentimentType, CustomerIntent } from '../utils/nlpEngine';
 
 export interface ChatMessage {
   id: string;
   sender: 'user' | 'bot';
   text: string;
   timestamp: string;
-  type?: 'text' | 'order_card' | 'return_card' | 'product_card' | 'ticket_card';
+  type?: 'text' | 'order_card' | 'return_card' | 'product_card' | 'ticket_card' | 'address_card';
   data?: any;
   sentiment?: SentimentAnalysisResult;
   quickReplies?: string[];
@@ -20,6 +20,8 @@ interface ChatbotState {
   unreadCount: number;
   activeSentiment: SentimentType;
   hasInteracted: boolean;
+  lastIntent?: CustomerIntent;
+  pendingAction?: 'AWAITING_ADDRESS' | 'AWAITING_SIZE' | 'AWAITING_ORDER_ID' | 'AWAITING_EXCHANGE' | null;
   messages: ChatMessage[];
   openChat: () => void;
   closeChat: () => void;
@@ -96,6 +98,8 @@ export const useChatbotStore = create<ChatbotState>()(
           ],
           activeSentiment: 'neutral',
           unreadCount: 0,
+          lastIntent: undefined,
+          pendingAction: null,
         });
       },
 
@@ -112,7 +116,9 @@ export const useChatbotStore = create<ChatbotState>()(
         const trimmed = userText.trim();
         if (!trimmed) return;
 
-        const classification = NLPEngine.processInput(trimmed);
+        const { lastIntent, pendingAction } = get();
+        const conversationCtx = { ...context, lastIntent, pendingAction };
+        const classification = NLPEngine.processInput(trimmed, conversationCtx);
 
         const now = new Date();
         const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -134,7 +140,7 @@ export const useChatbotStore = create<ChatbotState>()(
 
         await new Promise((resolve) => setTimeout(resolve, 600));
 
-        const botPayload = NLPEngine.generateResponse(classification, context);
+        const botPayload = NLPEngine.generateResponse(classification, conversationCtx);
 
         const botMsg: ChatMessage = {
           id: `msg-b-${Date.now()}`,
@@ -151,12 +157,14 @@ export const useChatbotStore = create<ChatbotState>()(
         set((state) => ({
           messages: [...state.messages, botMsg],
           isTyping: false,
+          lastIntent: classification.intent,
+          pendingAction: botPayload.pendingAction || null,
           unreadCount: isOpen ? 0 : state.unreadCount + 1,
         }));
       },
     }),
     {
-      name: 'dukaan_chatbot_v2',
+      name: 'dukaan_chatbot_v3',
       partialize: (state) => ({
         messages: state.messages.slice(-30).map((m) => ({
           ...m,
@@ -164,6 +172,14 @@ export const useChatbotStore = create<ChatbotState>()(
         })),
         hasInteracted: state.hasInteracted,
       }),
+      onRehydrateStorage: () => () => {
+        if (typeof window !== 'undefined') {
+          try {
+            localStorage.removeItem('dukaan_chatbot_storage');
+            localStorage.removeItem('dukaan_chatbot_v2');
+          } catch {}
+        }
+      },
     }
   )
 );

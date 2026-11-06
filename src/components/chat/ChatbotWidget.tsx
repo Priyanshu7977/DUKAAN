@@ -15,6 +15,7 @@ import {
   CheckCircle,
   Phone,
   ShoppingBag,
+  MapPin,
 } from 'lucide-react';
 import { useChatbotStore, ChatMessage } from '../../store/useChatbotStore';
 import { useAuthStore } from '../../store/useAuthStore';
@@ -68,7 +69,12 @@ const parseFormattedInline = (content: string) => {
 
 const FormattedMessageText: React.FC<{ text: string; isUser: boolean }> = ({ text, isUser }) => {
   if (isUser) {
-    return <span className="whitespace-pre-wrap break-words">{text}</span>;
+    const isShort = !text.includes('\n') && text.trim().length <= 40;
+    return (
+      <span className={isShort ? 'whitespace-nowrap inline-block' : 'whitespace-pre-wrap break-words'}>
+        {text}
+      </span>
+    );
   }
 
   const lines = text.split('\n');
@@ -370,6 +376,52 @@ export const ChatbotWidget: React.FC = () => {
       );
     }
 
+    if (msg.type === 'address_card' && msg.data) {
+      const addr = msg.data;
+      return (
+        <div className="mt-2.5 p-3.5 bg-white border border-[#A7654A]/30 rounded-xl space-y-2.5 shadow-2xs">
+          <div className="flex items-center justify-between pb-2 border-b border-[#141414]/6">
+            <div className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#A7654A]" />
+              <span className="text-[10px] uppercase tracking-wider text-[#A7654A] font-semibold">
+                Address Modification
+              </span>
+            </div>
+            <span className="text-[10px] font-mono font-bold text-[#141414]">
+              {addr.requestId}
+            </span>
+          </div>
+
+          <div className="space-y-1 text-[11px]">
+            <div className="text-[#73706B]">
+              <span className="text-[#141414] font-medium block">Updated Address:</span>
+              <p className="mt-0.5 text-[#141414] bg-[#FAF8F5] p-2 rounded-lg border border-[#141414]/6 font-mono text-[11px]">
+                {addr.address}
+              </p>
+            </div>
+            <div className="flex items-center justify-between pt-1">
+              <span className="text-[#73706B]">Fulfillment Status:</span>
+              <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full text-[10px] border border-emerald-200">
+                {addr.status}
+              </span>
+            </div>
+          </div>
+
+          <a
+            href={`https://wa.me/917977641125?text=Hello%20DUKAAN%20Concierge,%20I%20requested%20an%20address%20modification%20(${addr.requestId})%20for%20delivery%20to:%20${encodeURIComponent(
+              addr.address
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full mt-2 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white text-[10px] uppercase tracking-widest font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-xs"
+          >
+            <Phone className="w-3 h-3" />
+            <span>Confirm on WhatsApp Desk</span>
+          </a>
+        </div>
+      );
+    }
+
     return null;
   };
 
@@ -457,6 +509,9 @@ export const ChatbotWidget: React.FC = () => {
             <div className="flex-1 overflow-y-auto p-4 space-y-3.5 scroll-smooth bg-[#FAF9F6]">
               {messages.map((msg) => {
                 const isUser = msg.sender === 'user';
+                const isShortUser = isUser && !msg.text.includes('\n') && msg.text.trim().length <= 40;
+                const isSingleToken = isUser && msg.text.trim().length <= 3;
+
                 return (
                   <div
                     key={msg.id}
@@ -469,10 +524,16 @@ export const ChatbotWidget: React.FC = () => {
                         </div>
                       )}
                       <div
-                        className={`px-3.5 py-2.5 text-xs sm:text-[13px] leading-relaxed shadow-2xs ${
+                        className={`text-xs sm:text-[13px] leading-relaxed shadow-2xs ${
                           isUser
-                            ? 'bg-[#141414] text-[#FAF9F6] rounded-2xl rounded-br-xs max-w-[85%] w-fit break-words'
-                            : 'bg-[#FAF8F5] text-[#141414] border border-[#141414]/8 rounded-2xl rounded-bl-xs max-w-[92%]'
+                            ? `bg-[#141414] text-[#FAF9F6] rounded-2xl rounded-br-xs max-w-[85%] ${
+                                isSingleToken
+                                  ? 'px-3.5 py-1.5 min-w-[36px] text-center font-medium inline-block'
+                                  : isShortUser
+                                  ? 'px-3.5 py-2 whitespace-nowrap inline-flex items-center w-auto'
+                                  : 'px-3.5 py-2.5 whitespace-pre-wrap break-words'
+                              }`
+                            : 'px-3.5 py-2.5 bg-[#FAF8F5] text-[#141414] border border-[#141414]/8 rounded-2xl rounded-bl-xs max-w-[92%]'
                         }`}
                       >
                         <FormattedMessageText text={msg.text} isUser={isUser} />

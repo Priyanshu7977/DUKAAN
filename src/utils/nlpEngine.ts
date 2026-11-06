@@ -23,6 +23,9 @@ export type CustomerIntent =
   | 'GREETINGS'
   | 'GRATITUDE'
   | 'HOSTILITY_DISMISSAL'
+  | 'ADDRESS_UPDATE'
+  | 'AFFIRMATIVE'
+  | 'NEGATIVE'
   | 'FALLBACK';
 
 export interface ExtractedEntities {
@@ -30,6 +33,7 @@ export interface ExtractedEntities {
   phone?: string;
   size?: string;
   category?: string;
+  address?: string;
 }
 
 export interface NLPClassificationResult {
@@ -39,11 +43,20 @@ export interface NLPClassificationResult {
   entities: ExtractedEntities;
 }
 
+export interface ConversationContext {
+  lastIntent?: CustomerIntent;
+  pendingAction?: 'AWAITING_ADDRESS' | 'AWAITING_SIZE' | 'AWAITING_ORDER_ID' | 'AWAITING_EXCHANGE' | null;
+  orders?: any[];
+  products?: any[];
+  activeUser?: any;
+}
+
 export interface BotResponsePayload {
   text: string;
-  type: 'text' | 'order_card' | 'return_card' | 'product_card' | 'ticket_card';
+  type: 'text' | 'order_card' | 'return_card' | 'product_card' | 'ticket_card' | 'address_card';
   data?: any;
   quickReplies: string[];
+  pendingAction?: 'AWAITING_ADDRESS' | 'AWAITING_SIZE' | 'AWAITING_ORDER_ID' | 'AWAITING_EXCHANGE' | null;
 }
 
 const CONTRACTIONS: Record<string, string> = {
@@ -399,6 +412,36 @@ const INTENT_PATTERNS: Record<CustomerIntent, string[]> = {
     'dont talk to me',
     'don t talk to me',
   ],
+  ADDRESS_UPDATE: [
+    'need address change',
+    'change my address',
+    'update delivery address',
+    'wrong address',
+    'change address',
+    'change shipping address',
+    'new address',
+    'modify address',
+    'wrong delivery address',
+    'update shipping address',
+  ],
+  AFFIRMATIVE: [
+    'yes',
+    'sure',
+    'ok',
+    'okay',
+    'yup',
+    'yeah',
+    'please',
+    'confirm',
+    'proceed',
+  ],
+  NEGATIVE: [
+    'no',
+    'nope',
+    'cancel',
+    'never mind',
+    'not now',
+  ],
   FALLBACK: [],
 };
 
@@ -468,8 +511,9 @@ export class NLPEngine {
     };
   }
 
-  static extractEntities(input: string): ExtractedEntities {
+  static extractEntities(input: string, context?: ConversationContext): ExtractedEntities {
     const raw = input.trim();
+    const cleaned = this.cleanText(input);
     const entities: ExtractedEntities = {};
 
     const orderMatch = raw.match(/\b(duk[- ]?\d{4,8}|\d{5,8})\b/i);
@@ -488,6 +532,8 @@ export class NLPEngine {
     const sizeMatch = raw.match(/\b(xxl|xl|xs|[sml]|28|30|32|34|36|38|40)\b/i);
     if (sizeMatch) {
       entities.size = sizeMatch[1].toUpperCase();
+    } else if (['m', 'l', 's', 'xl', 'xs', 'xxl', 'medium', 'large', 'small'].includes(cleaned)) {
+      entities.size = cleaned.toUpperCase();
     }
 
     const catMatch = raw.match(/\b(shirts?|trousers?|pants?|co-?ords?|jackets?|overshirts?|knitwear|sweaters?)\b/i);
@@ -500,19 +546,56 @@ export class NLPEngine {
       else if (c.includes('knit') || c.includes('sweater')) entities.category = 'knitwear';
     }
 
+    if (context?.pendingAction === 'AWAITING_ADDRESS' || raw.includes(',') || (/\d/.test(raw) && raw.length >= 4 && !orderMatch && !phoneMatch)) {
+      entities.address = raw;
+    }
+
     return entities;
   }
 
-  static classifyIntent(input: string): { intent: CustomerIntent; confidence: number } {
+  static classifyIntent(input: string, context?: ConversationContext): { intent: CustomerIntent; confidence: number } {
     const cleaned = this.cleanText(input);
     const tokens = this.tokenize(input);
-    const bigrams = this.getNGrams(tokens, 2);
-    const trigrams = this.getNGrams(tokens, 3);
-    const allFeatures = new Set([...tokens, ...bigrams, ...trigrams]);
 
     if (tokens.length === 0) {
       return { intent: 'GREETINGS', confidence: 1.0 };
     }
+
+    const STANDALONE_SIZES = new Set(['xs', 's', 'm', 'l', 'xl', 'xxl', '2xl', '3xl', 'medium', 'large', 'small', '30', '32', '34', '36', '38', '40']);
+    if (STANDALONE_SIZES.has(cleaned)) {
+      return { intent: 'SIZING_FIT', confidence: 1.0 };
+    }
+
+    const AFFIRMATIVE_WORDS = new Set(['yes', 'sure', 'ok', 'okay', 'yup', 'yeah', 'please', 'confirm', 'proceed']);
+    if (AFFIRMATIVE_WORDS.has(cleaned)) {
+      return { intent: 'AFFIRMATIVE', confidence: 1.0 };
+    }
+
+    const NEGATIVE_WORDS = new Set(['no', 'nope', 'cancel', 'never mind', 'not now']);
+    if (NEGATIVE_WORDS.has(cleaned)) {
+      return { intent: 'NEGATIVE', confidence: 1.0 };
+    }
+
+    if (context?.pendingAction === 'AWAITING_ADDRESS') {
+      if (!cleaned.includes('hello') && !cleaned.includes('hi') && cleaned.length >= 3) {
+        return { intent: 'ADDRESS_UPDATE', confidence: 0.95 };
+      }
+    }
+
+    if (context?.pendingAction === 'AWAITING_SIZE') {
+      return { intent: 'SIZING_FIT', confidence: 0.95 };
+    }
+
+    if (context?.pendingAction === 'AWAITING_ORDER_ID') {
+      const orderMatch = input.match(/\b(duk[- ]?\d{4,8}|\d{5,8})\b/i);
+      if (orderMatch) {
+        return { intent: 'ORDER_TRACKING', confidence: 0.95 };
+      }
+    }
+
+    const bigrams = this.getNGrams(tokens, 2);
+    const trigrams = this.getNGrams(tokens, 3);
+    const allFeatures = new Set([...tokens, ...bigrams, ...trigrams]);
 
     let bestIntent: CustomerIntent = 'FALLBACK';
     let highestScore = 0;
@@ -528,6 +611,7 @@ export class NLPEngine {
       DISCOUNTS_PROMOS: ['discount', 'coupon', 'promo', 'code', 'sale'],
       HOSTILITY_DISMISSAL: ['fuck', 'stfu', 'shut', 'idiot', 'stupid', 'bastard', 'bitch', 'asshole', 'rubbish', 'nonsense', 'piss', 'screw'],
       GRATITUDE: ['thank', 'thanks', 'thx', 'appreciate'],
+      ADDRESS_UPDATE: ['address', 'destination', 'location', 'pincode', 'street', 'house', 'flat', 'city'],
     };
 
     for (const [intentKey, patterns] of Object.entries(INTENT_PATTERNS) as [CustomerIntent, string[]][]) {
@@ -580,10 +664,10 @@ export class NLPEngine {
     };
   }
 
-  static processInput(input: string): NLPClassificationResult {
+  static processInput(input: string, context?: ConversationContext): NLPClassificationResult {
     const sentiment = this.analyzeSentiment(input);
-    const entities = this.extractEntities(input);
-    const { intent, confidence } = this.classifyIntent(input);
+    const entities = this.extractEntities(input, context);
+    const { intent, confidence } = this.classifyIntent(input, context);
 
     return {
       intent,
@@ -595,11 +679,7 @@ export class NLPEngine {
 
   static generateResponse(
     classification: NLPClassificationResult,
-    storeContext?: {
-      orders?: any[];
-      products?: any[];
-      activeUser?: any;
-    }
+    storeContext?: ConversationContext
   ): BotResponsePayload {
     const { intent, sentiment, entities } = classification;
 
@@ -628,6 +708,34 @@ export class NLPEngine {
     }
 
     switch (intent) {
+      case 'ADDRESS_UPDATE': {
+        const address = entities.address || '';
+        const isProvidingAddress = storeContext?.pendingAction === 'AWAITING_ADDRESS' || address.includes(',') || /\d/.test(address);
+
+        if (isProvidingAddress && address.length >= 3) {
+          const modRef = `REQ-ADDR-${Math.floor(100000 + Math.random() * 900000)}`;
+          return {
+            text: `I have recorded your updated delivery destination request:\n\n• **Updated Shipping Address**: ${address}\n• **Modification Dossier**: #${modRef}\n• **Status**: Queued for Dispatch Supervisor Review\n\nOur fulfillment center updates the carrier manifest before the courier airway bill is generated. Would you like me to instantly send this address update to our dispatch manager on WhatsApp?`,
+            type: 'address_card',
+            data: {
+              requestId: modRef,
+              address: address,
+              status: 'Queued for Airway Bill Update',
+              phone: '+91 7977641125',
+            },
+            quickReplies: ['💬 Confirm on WhatsApp', '📦 Track My Order', 'Speak to Concierge'],
+            pendingAction: null,
+          };
+        }
+
+        return {
+          text: `You can modify your delivery destination or contact phone number anytime before courier dispatch.\n\nPlease share your **new delivery address** (for example: house number, street, city, pincode) and your **Order ID**, and our dispatch team will update the manifest immediately.`,
+          type: 'text',
+          quickReplies: ['Change Size Instead', 'Speak to Concierge', 'Track My Order'],
+          pendingAction: 'AWAITING_ADDRESS',
+        };
+      }
+
       case 'ORDER_TRACKING': {
         const orderId = entities.orderId;
         const userOrders: any[] = storeContext?.orders || [];
@@ -668,6 +776,7 @@ export class NLPEngine {
           text: `You do not have any orders associated with this account or browser session yet.\n\nIf you recently placed an order as a guest, please share your **Order ID** (for example, **#DUK-XXXXXX**) or your 10-digit registered mobile number, and I will track it for you right away.`,
           type: 'text',
           quickReplies: ['Track by Mobile Number', 'Check Shipping Timelines', 'Speak to Concierge'],
+          pendingAction: 'AWAITING_ORDER_ID',
         };
       }
 
@@ -687,13 +796,91 @@ export class NLPEngine {
       }
 
       case 'SIZING_FIT': {
+        const size = (entities.size || '').toUpperCase();
+        if (size === 'M' || size === 'MEDIUM') {
+          return {
+            text: `Here is the comprehensive fit dossier for size **Medium (M)**:\n\n• **Chest Width**: 40 inches (102 cm) with 2 inches of comfortable European drape\n• **Shoulder Posture**: Architectural relaxed dropped shoulder\n• **Recommended Body**: Height 5'8" – 5'11" (172 – 180 cm), chest 38"–40"\n• **Fit Silhouette**: Unrestrictive and airy. Standard M provides clean drape without cling.\n• **Trouser Pairing**: Size 32 waist with double pleats and back elastic ease.\n\nAll Dukaan orders include complimentary 7-day doorstep size replacement.`,
+            type: 'text',
+            quickReplies: ['Check Size L Fit', 'Check Size S Fit', 'Recommend M Shirt', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
+        if (size === 'L' || size === 'LARGE') {
+          return {
+            text: `Here is the comprehensive fit dossier for size **Large (L)**:\n\n• **Chest Width**: 42 inches (107 cm) with generous volume\n• **Shoulder Posture**: Modern dropped shoulder cut\n• **Recommended Body**: Height 5'10" – 6'2" (178 – 188 cm), chest 41"–43"\n• **Trouser Pairing**: Size 34 waist with relaxed wide-leg drape.\n\nIncludes 7-day doorstep replacement if you need a size adjustment.`,
+            type: 'text',
+            quickReplies: ['Check Size M Fit', 'Check Size XL Fit', 'Recommend L Shirt', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
+        if (size === 'S' || size === 'SMALL') {
+          return {
+            text: `Here is the comprehensive fit dossier for size **Small (S)**:\n\n• **Chest Width**: 38 inches (96 cm)\n• **Shoulder Posture**: Clean subtle drop shoulder\n• **Recommended Body**: Height 5'5" – 5'8" (165 – 173 cm), chest 36"–38"\n• **Trouser Pairing**: Size 30 waist.`,
+            type: 'text',
+            quickReplies: ['Check Size M Fit', 'Recommend S Shirt', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
+        if (size === 'XL' || size === 'EXTRA LARGE') {
+          return {
+            text: `Here is the comprehensive fit dossier for size **Extra Large (XL)**:\n\n• **Chest Width**: 44 inches (112 cm)\n• **Recommended Body**: Height 6'0"+ (183 cm+), chest 43"–45"\n• **Trouser Pairing**: Size 36 waist.`,
+            type: 'text',
+            quickReplies: ['Check Size L Fit', 'Check Size XXL Fit', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
+        if (size === 'XS') {
+          return {
+            text: `Here is the comprehensive fit dossier for size **Extra Small (XS)**:\n\n• **Chest Width**: 36 inches (91 cm)\n• **Recommended Body**: Height up to 5'6" (167 cm), chest 34"–36"\n• **Trouser Pairing**: Size 28 waist.`,
+            type: 'text',
+            quickReplies: ['Check Size S Fit', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
+        if (size === 'XXL' || size === '2XL') {
+          return {
+            text: `Here is the comprehensive fit dossier for size **XXL (46")**:\n\n• **Chest Width**: 46 inches (117 cm)\n• **Recommended Body**: Chest 45"–48"\n• **Trouser Pairing**: Size 38 waist.`,
+            type: 'text',
+            quickReplies: ['Check Size XL Fit', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
+        if (['28', '30', '32', '34', '36', '38', '40'].includes(size)) {
+          return {
+            text: `Here is the trouser sizing breakdown for waist **${size}**:\n\n• Built-in internal drawstring with elasticated back waist for 2 inches of natural ease\n• Features deep front architectural double pleats and fluid wide-leg cut\n• Inseam length: 30–31 inches tailored for clean break over loafers or sandals.`,
+            type: 'text',
+            quickReplies: ['Explore Trousers', 'Check Shirt Sizing', 'View Size Guide'],
+            pendingAction: 'AWAITING_SIZE',
+          };
+        }
+
         return {
-          text: `Dukaan silhouettes are cut with a relaxed, modern unisex posture inspired by European tailoring:
-• **Shirts**: Feature relaxed dropped shoulders and generous chest volume. Choose your true standard size for an effortless drape, or size down if you prefer a classic tailored fit.
-• **Trousers**: Engineered with comfortable pull-on elasticated waistbands and deep double pleats for fluid ease of movement.
-• **Sizes Available**: XS (36"), S (38"), M (40"), L (42"), XL (44"), XXL (46").`,
+          text: `Dukaan silhouettes are cut with a relaxed, modern unisex posture inspired by European tailoring:\n\n• **Shirts**: Feature relaxed dropped shoulders and generous chest volume. Choose true standard size for an effortless drape, or size down for tailored fit.\n• **Trousers**: Engineered with comfortable pull-on elasticated waistbands and deep double pleats for fluid ease of movement.\n• **Sizes Available**: XS (36"), S (38"), M (40"), L (42"), XL (44"), XXL (46").\n\nWhich size would you like a detailed measurement breakdown for? (e.g. S, M, L, XL)`,
           type: 'text',
-          quickReplies: ['View Size Guide', 'Exchange Current Size', 'Recommend Shirt', 'Fabric Care'],
+          quickReplies: ['Size S', 'Size M', 'Size L', 'Size XL', 'Size Guide'],
+          pendingAction: 'AWAITING_SIZE',
+        };
+      }
+
+      case 'AFFIRMATIVE': {
+        return {
+          text: `Wonderful! How may I best proceed to assist you? You can ask for real-time order tracking, doorstep size replacement, fabric care guidance, or direct human concierge connection.`,
+          type: 'text',
+          quickReplies: ['📦 Track My Order', '🔄 7-Day Exchange', '💬 Speak to Human Concierge'],
+        };
+      }
+
+      case 'NEGATIVE': {
+        return {
+          text: `Understood! I'll be right here whenever you need anything. Please feel free to ask anytime.`,
+          type: 'text',
+          quickReplies: ['Explore Catalog', 'Track My Order', 'Size Guide'],
         };
       }
 
@@ -770,9 +957,10 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
 
       case 'ORDER_CANCELLATION': {
         return {
-          text: `You can modify your delivery address, update your phone number, or cancel your order anytime before dispatch. If your order has not yet left our warehouse, message us with your **Order ID** and the new details, and our concierge team will amend it instantly.`,
+          text: `You can modify your delivery destination, update contact details, or cancel your order anytime before courier dispatch.\n\nIf your order has not yet left our fulfillment hub, message us with your **Order ID** and the new details, and our concierge team will amend it instantly.`,
           type: 'text',
-          quickReplies: ['Provide Order ID', 'Change Size Instead', 'Speak to Concierge', 'Track Order'],
+          quickReplies: ['Need Address Change', 'Change Size Instead', 'Speak to Concierge', 'Track My Order'],
+          pendingAction: 'AWAITING_ADDRESS',
         };
       }
 
