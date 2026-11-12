@@ -147,7 +147,6 @@ export const ChatbotWidget: React.FC = () => {
   const user = useAuthStore((state) => state.user);
   const hasStickyBottomBar = useUIStore((state) => state.hasStickyBottomBar);
   const [inputValue, setInputValue] = useState('');
-  const [showTooltip, setShowTooltip] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -181,7 +180,6 @@ export const ChatbotWidget: React.FC = () => {
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
-      setShowTooltip(false);
       setTimeout(() => inputRef.current?.focus(), 250);
     }
   }, [isOpen, messages, isTyping]);
@@ -442,34 +440,6 @@ export const ChatbotWidget: React.FC = () => {
           : 'bottom-5 sm:bottom-6'
       )}
     >
-      <AnimatePresence>
-        {showTooltip && !isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.95 }}
-            className="absolute bottom-16 right-0 mb-1 w-64 p-3 bg-[#141414] text-[#FAF9F6] rounded-xl shadow-xl border border-white/10 flex items-start gap-2.5 pointer-events-auto"
-          >
-            <Sparkles className="w-4 h-4 text-[#A7654A] shrink-0 mt-0.5" />
-            <div className="flex-1 pr-1">
-              <p className="text-[11px] font-medium leading-tight">
-                Need help with sizing or orders?
-              </p>
-              <p className="text-[10px] text-[#FAF9F6]/70 font-light mt-0.5">
-                Dukaan Concierge is online to assist you.
-              </p>
-            </div>
-            <button
-              onClick={() => setShowTooltip(false)}
-              className="text-[#FAF9F6]/50 hover:text-white p-0.5"
-              aria-label="Dismiss message"
-            >
-              <X className="w-3 h-3" />
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <AnimatePresence>
         {isOpen && (
           <motion.div

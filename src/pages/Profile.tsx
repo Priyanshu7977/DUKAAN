@@ -204,50 +204,50 @@ export const Profile: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex items-center border border-[#141414]/8 overflow-x-auto gap-2 sm:gap-6 bg-[#FAF8F5] px-4 sm:px-6 py-2 rounded-xl shadow-sm">
+        <div className="grid grid-cols-4 border border-[#141414]/8 bg-[#FAF8F5] p-1 rounded-xl shadow-xs gap-1 sm:flex sm:items-center sm:gap-6 sm:px-6 sm:py-2">
           <button
             onClick={() => setActiveTab('orders')}
-            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+            className={`py-2 sm:py-3 px-1 sm:px-3 text-[10px] sm:text-xs uppercase tracking-wider font-medium flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-lg sm:rounded-none sm:border-b-2 transition-all ${
               activeTab === 'orders'
-                ? 'border-[#141414] text-[#141414] font-bold'
+                ? 'bg-white sm:bg-transparent shadow-xs sm:shadow-none sm:border-[#141414] text-[#141414] font-bold'
                 : 'border-transparent text-[#73706B] hover:text-[#141414]'
             }`}
           >
-            <Package className="w-4 h-4" />
-            <span>Orders ({user.orders.length})</span>
+            <Package className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+            <span className="truncate">Orders <span className="text-[9px] sm:text-xs opacity-75">({user.orders.length})</span></span>
           </button>
           <button
             onClick={() => setActiveTab('addresses')}
-            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+            className={`py-2 sm:py-3 px-1 sm:px-3 text-[10px] sm:text-xs uppercase tracking-wider font-medium flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-lg sm:rounded-none sm:border-b-2 transition-all ${
               activeTab === 'addresses'
-                ? 'border-[#141414] text-[#141414] font-bold'
+                ? 'bg-white sm:bg-transparent shadow-xs sm:shadow-none sm:border-[#141414] text-[#141414] font-bold'
                 : 'border-transparent text-[#73706B] hover:text-[#141414]'
             }`}
           >
-            <MapPin className="w-4 h-4" />
-            <span>Addresses ({user.addresses.length})</span>
+            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+            <span className="truncate">Addresses <span className="text-[9px] sm:text-xs opacity-75">({user.addresses.length})</span></span>
           </button>
           <button
             onClick={() => setActiveTab('wishlist')}
-            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+            className={`py-2 sm:py-3 px-1 sm:px-3 text-[10px] sm:text-xs uppercase tracking-wider font-medium flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-lg sm:rounded-none sm:border-b-2 transition-all ${
               activeTab === 'wishlist'
-                ? 'border-[#141414] text-[#141414] font-bold'
+                ? 'bg-white sm:bg-transparent shadow-xs sm:shadow-none sm:border-[#141414] text-[#141414] font-bold'
                 : 'border-transparent text-[#73706B] hover:text-[#141414]'
             }`}
           >
-            <Heart className="w-4 h-4" />
-            <span>Saved Wishlist ({wishlistItems.length})</span>
+            <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+            <span className="truncate">Wishlist <span className="text-[9px] sm:text-xs opacity-75">({wishlistItems.length})</span></span>
           </button>
           <button
             onClick={() => setActiveTab('settings')}
-            className={`py-3 px-3 text-xs uppercase tracking-wider font-medium flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
+            className={`py-2 sm:py-3 px-1 sm:px-3 text-[10px] sm:text-xs uppercase tracking-wider font-medium flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-lg sm:rounded-none sm:border-b-2 transition-all ${
               activeTab === 'settings'
-                ? 'border-[#141414] text-[#141414] font-bold'
+                ? 'bg-white sm:bg-transparent shadow-xs sm:shadow-none sm:border-[#141414] text-[#141414] font-bold'
                 : 'border-transparent text-[#73706B] hover:text-[#141414]'
             }`}
           >
-            <Shield className="w-4 h-4" />
-            <span>Settings</span>
+            <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+            <span className="truncate">Settings</span>
           </button>
         </div>
 
