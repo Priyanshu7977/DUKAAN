@@ -198,24 +198,39 @@ export const CartDrawer: React.FC = () => {
                       </div>
 
                       <div className="flex items-center justify-between mt-2 pt-1">
-                        <div className="flex items-center border border-[#141414]/15 bg-white px-1.5 py-0.5 rounded-lg">
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="p-0.5 hover:text-[#A7654A] transition-colors"
-                            aria-label="Decrease quantity"
-                          >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <span className="px-2 text-xs font-semibold text-[#141414] tabular-nums">
-                            {item.quantity}
-                          </span>
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="p-0.5 hover:text-[#A7654A] transition-colors"
-                            aria-label="Increase quantity"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center border border-[#141414]/15 bg-white px-1.5 py-0.5 rounded-lg">
+                            <button
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              className="p-0.5 hover:text-[#A7654A] transition-colors"
+                              aria-label="Decrease quantity"
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="px-2 text-xs font-semibold text-[#141414] tabular-nums">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() => {
+                                if (item.quantity >= 5) {
+                                  showToast('Maximum 5 pieces per garment. For bulk inquiries, please contact Concierge.', 'info');
+                                  return;
+                                }
+                                updateQuantity(item.id, item.quantity + 1);
+                              }}
+                              className={`p-0.5 transition-colors ${
+                                item.quantity >= 5 ? 'opacity-30 cursor-not-allowed text-[#73706B]' : 'hover:text-[#A7654A]'
+                              }`}
+                              aria-label="Increase quantity"
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                          </div>
+                          {item.quantity >= 5 && (
+                            <span className="text-[9px] text-[#A7654A] font-medium tracking-wide uppercase">
+                              Max 5
+                            </span>
+                          )}
                         </div>
 
                         <span className="font-serif text-sm font-semibold text-[#141414] tabular-nums">

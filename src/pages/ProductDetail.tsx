@@ -21,6 +21,7 @@ export const ProductDetail: React.FC = () => {
   const product = PRODUCTS.find((p) => p.slug === slug);
 
   const addItem = useCartStore((state) => state.addItem);
+  const items = useCartStore((state) => state.items);
   const { toggleWishlist, isInWishlist } = useWishlistStore();
   const { showToast, openSizeGuide, setHasStickyBottomBar } = useUIStore();
 
@@ -221,6 +222,13 @@ export const ProductDetail: React.FC = () => {
   const handleAddToBag = () => {
     if (!selectedSize) {
       showToast('Please select a size', 'error');
+      return;
+    }
+    const currentItem = items.find(
+      (it) => it.product.id === product.id && it.selectedSize === selectedSize && it.selectedColor === selectedColor
+    );
+    if (currentItem && currentItem.quantity >= 5) {
+      showToast('Maximum 5 pieces allowed per garment. You already have 5 in your bag.', 'info');
       return;
     }
     addItem(product, selectedSize, selectedColor, quantity);
@@ -485,13 +493,26 @@ export const ProductDetail: React.FC = () => {
                       {quantity}
                     </span>
                     <button
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="w-7 h-full flex items-center justify-center hover:text-[#A7654A] transition-colors"
+                      onClick={() => {
+                        if (quantity >= 5) {
+                          showToast('Maximum 5 pieces per garment. For bulk inquiries, please contact Concierge.', 'info');
+                          return;
+                        }
+                        setQuantity((q) => Math.min(5, q + 1));
+                      }}
+                      className={`w-7 h-full flex items-center justify-center transition-colors ${
+                        quantity >= 5 ? 'opacity-30 cursor-not-allowed text-[#73706B]' : 'hover:text-[#A7654A]'
+                      }`}
                       aria-label="Increase quantity"
                     >
                       <Plus className="w-3.5 h-3.5" />
                     </button>
                   </div>
+                  {quantity >= 5 && (
+                    <span className="text-[10px] text-[#A7654A] font-medium">
+                      Max 5 per order
+                    </span>
+                  )}
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">

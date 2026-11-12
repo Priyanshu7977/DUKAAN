@@ -21,6 +21,7 @@ interface CartStore {
 
 const STORAGE_KEY = 'dukaan_cart';
 const LEGACY_STORAGE_KEY = 'forme_legacy_cart';
+export const MAX_ITEM_QUANTITY = 5;
 
 const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
   if (!Array.isArray(rawItems)) return [];
@@ -30,7 +31,7 @@ const sanitizeCartItems = (rawItems: CartItem[]): CartItem[] => {
       const masterProduct = PRODUCTS.find((p) => p.id === item.product?.id);
       if (!masterProduct) return null;
 
-      const safeQuantity = sanitizeNumeric(item.quantity, 1, 1, 99);
+      const safeQuantity = sanitizeNumeric(item.quantity, 1, 1, MAX_ITEM_QUANTITY);
 
       return {
         ...item,
@@ -75,7 +76,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
 
   addItem: (product: Product, size: string, color: string, quantity = 1) => {
     const masterProduct = PRODUCTS.find((p) => p.id === product.id) || product;
-    const safeQty = sanitizeNumeric(quantity, 1, 1, 99);
+    const safeQty = sanitizeNumeric(quantity, 1, 1, MAX_ITEM_QUANTITY);
 
     const items = get().items;
     const itemId = `${masterProduct.id}-${size}-${color}`;
@@ -85,7 +86,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
     if (existingIndex > -1) {
       updatedItems = [...items];
       updatedItems[existingIndex].quantity = Math.min(
-        99,
+        MAX_ITEM_QUANTITY,
         updatedItems[existingIndex].quantity + safeQty
       );
     } else {
@@ -119,7 +120,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
       get().removeItem(itemId);
       return;
     }
-    const safeQty = sanitizeNumeric(quantity, 1, 1, 99);
+    const safeQty = sanitizeNumeric(quantity, 1, 1, MAX_ITEM_QUANTITY);
     const updatedItems = get().items.map((item) =>
       item.id === itemId ? { ...item, quantity: safeQty } : item
     );
@@ -141,7 +142,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
         .filter((i) => i.id !== itemId)
         .map((i) =>
           i.id === newId
-            ? { ...i, quantity: Math.min(99, i.quantity + targetItem.quantity) }
+            ? { ...i, quantity: Math.min(MAX_ITEM_QUANTITY, i.quantity + targetItem.quantity) }
             : i
         );
     } else {
