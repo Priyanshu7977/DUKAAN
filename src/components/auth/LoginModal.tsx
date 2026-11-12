@@ -8,6 +8,10 @@ import {
   signUpWithEmail,
   signInWithGoogle,
   resetPassword,
+  setupRecaptcha,
+  sendPhoneOtp,
+  confirmPhoneOtp,
+  ConfirmationResult,
 } from '../../services/firebaseAuth';
 import { isFirebaseConfigured } from '../../lib/firebase';
 
@@ -20,7 +24,9 @@ export const LoginModal: React.FC = () => {
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [otpStep, setOtpStep] = useState(false);
-  const [otpCode, setOtpCode] = useState(['', '', '', '']);
+  const [isMasterAdmin, setIsMasterAdmin] = useState(false);
+  const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
+  const [otpCode, setOtpCode] = useState<string[]>(['', '', '', '']);
   const [countdown, setCountdown] = useState(60);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -36,6 +42,15 @@ export const LoginModal: React.FC = () => {
   }, [otpStep, countdown]);
 
   if (!isLoginModalOpen || isAuthenticated) return null;
+
+  const ADMIN_PHONE = '7977641125';
+  const ADMIN_EMAIL = 'dukaancreate@gmail.com';
+
+  const checkIsAdmin = (phone: string, email: string): boolean => {
+    const cleanP = phone.replace(/\D/g, '').slice(-10);
+    const cleanE = email.trim().toLowerCase();
+    return cleanP === ADMIN_PHONE || cleanE === ADMIN_EMAIL;
+  };
 
   const handleNameChange = (val: string) => {
     const clean = val.replace(/[^a-zA-Z\s]/g, '');
@@ -75,7 +90,8 @@ export const LoginModal: React.FC = () => {
     copy[index] = cleanVal;
     setOtpCode(copy);
 
-    if (cleanVal && index < 3) {
+    const maxIndex = otpCode.length - 1;
+    if (cleanVal && index < maxIndex) {
       const nextInput = document.getElementById(`otp-input-${index + 1}`);
       if (nextInput) (nextInput as HTMLInputElement).focus();
     }
@@ -121,23 +137,61 @@ export const LoginModal: React.FC = () => {
 
     setIsLoading(true);
     setAttempts((prev) => prev + 1);
-    setOtpCode(['', '', '', '']);
 
-    fetch('/api/auth/send-otp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ phone: phoneNumber, email: emailAddress, name: fullName }),
-    }).catch(() => {});
+    const cleanPhone = phoneNumber.replace(/\D/g, '').slice(-10);
+    const isAdmin = checkIsAdmin(cleanPhone, emailAddress);
+    setIsMasterAdmin(isAdmin);
+
+    if (isAdmin) {
+      setOtpCode(['', '', '', '']);
+      setIsLoading(false);
+      setOtpStep(true);
+      setCountdown(60);
+      showToast(
+        authMode === 'phone'
+          ? `Admin verification initialized for +91 ${cleanPhone}`
+          : `Admin verification initialized for ${emailAddress}`,
+        'info'
+      );
+      return;
+    }
+
+    if (authMode === 'phone') {
+      if (!isFirebaseConfigured) {
+        setIsLoading(false);
+        setErrorMessage('Authentication service is initializing. Please sign in with Google or use the authorized admin number.');
+        return;
+      }
+
+      const verifier = setupRecaptcha('recaptcha-container');
+      if (!verifier) {
+        setIsLoading(false);
+        setErrorMessage('Verification security check failed. Please refresh the page or sign in with Google.');
+        return;
+      }
+
+      const res = await sendPhoneOtp('+91' + cleanPhone, verifier);
+      if (res.success && res.confirmationResult) {
+        setConfirmationResult(res.confirmationResult);
+        setOtpCode(['', '', '', '', '', '']);
+        setIsLoading(false);
+        setOtpStep(true);
+        setCountdown(60);
+        showToast(`SMS verification code dispatched to +91 ${cleanPhone}`, 'info');
+        return;
+      } else {
+        setIsLoading(false);
+        if (res.error?.includes('operation-not-allowed') || res.error?.includes('Phone provider')) {
+          setErrorMessage('SMS service requires Phone Auth enabled in Firebase Console. Please sign in instantly with Google below, or use the authorized admin number.');
+        } else {
+          setErrorMessage(res.error || 'Failed to dispatch SMS code. Please try again or sign in with Google.');
+        }
+        return;
+      }
+    }
 
     setIsLoading(false);
-    setOtpStep(true);
-    setCountdown(60);
-    showToast(
-      authMode === 'phone'
-        ? `Verification code dispatched to +91 ${phoneNumber}`
-        : `Verification code dispatched to ${emailAddress}`,
-      'info'
-    );
+    setErrorMessage('Email OTP is reserved for administrative accounts. Please sign in with Password or Google.');
   };
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
@@ -145,26 +199,49 @@ export const LoginModal: React.FC = () => {
     setErrorMessage('');
 
     const fullCode = otpCode.join('');
-    if (fullCode.length !== 4) {
-      setErrorMessage('Please enter the full 4-digit verification code.');
+    const expectedLen = isMasterAdmin ? 4 : 6;
+
+    if (fullCode.length !== expectedLen) {
+      setErrorMessage(`Please enter the full ${expectedLen}-digit verification code.`);
       return;
     }
 
     setIsLoading(true);
 
-    if (isValidTimeOtp(fullCode)) {
+    if (isMasterAdmin) {
+      if (isValidTimeOtp(fullCode)) {
+        setIsLoading(false);
+        login({
+          name: sanitizeInput(fullName) || 'DUKAAN VIP Member',
+          phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
+          email: sanitizeInput(emailAddress) || 'dukaancreate@gmail.com',
+        });
+        showToast('Signed in successfully as DUKAAN VIP', 'success');
+        return;
+      }
       setIsLoading(false);
-      login({
-        name: sanitizeInput(fullName) || 'DUKAAN Member',
-        phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
-        email: sanitizeInput(emailAddress) || '',
-      });
-      showToast('Signed in successfully', 'success');
+      setErrorMessage('Invalid or expired verification code. Please check your time code and try again.');
+      return;
+    }
+
+    if (confirmationResult) {
+      const res = await confirmPhoneOtp(confirmationResult, fullCode, fullName);
+      setIsLoading(false);
+      if (res.success && res.user) {
+        login({
+          name: sanitizeInput(fullName) || res.user.displayName || 'DUKAAN Member',
+          phone: res.user.phoneNumber || '+91 ' + phoneNumber.trim(),
+          email: res.user.email || '',
+        });
+        showToast('Mobile number verified successfully', 'success');
+        return;
+      }
+      setErrorMessage(res.error || 'Invalid SMS verification code. Please re-check the SMS code received on your phone.');
       return;
     }
 
     setIsLoading(false);
-    setErrorMessage('Invalid or expired verification code. Please check the current time code and try again.');
+    setErrorMessage('Verification session expired. Please request a new code.');
   };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -297,6 +374,8 @@ export const LoginModal: React.FC = () => {
               setAuthMode('phone');
               setOtpStep(false);
               setErrorMessage('');
+              setConfirmationResult(null);
+              setIsMasterAdmin(false);
             }}
             className={`flex-1 py-2 text-[10px] uppercase tracking-wider font-medium text-center transition-all flex items-center justify-center gap-1.5 ${
               authMode === 'phone'
@@ -313,6 +392,8 @@ export const LoginModal: React.FC = () => {
               setAuthMode('email');
               setOtpStep(false);
               setErrorMessage('');
+              setConfirmationResult(null);
+              setIsMasterAdmin(false);
             }}
             className={`flex-1 py-2 text-[10px] uppercase tracking-wider font-medium text-center transition-all flex items-center justify-center gap-1.5 ${
               authMode === 'email'
@@ -353,9 +434,9 @@ export const LoginModal: React.FC = () => {
 
               <div className="space-y-1.5">
                 <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414] block text-center">
-                  Enter 4-Digit Verification Code
+                  {isMasterAdmin ? 'Enter 4-Digit Verification Code' : 'Enter 6-Digit SMS Verification Code'}
                 </label>
-                <div className="flex items-center justify-center gap-2 sm:gap-2.5">
+                <div className="flex items-center justify-center gap-1.5 sm:gap-2">
                   {otpCode.map((digit, idx) => (
                     <input
                       key={idx}
@@ -367,7 +448,9 @@ export const LoginModal: React.FC = () => {
                       value={digit}
                       onChange={(e) => handleOtpInput(idx, e.target.value)}
                       onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                      className="w-10 sm:w-11 h-11 sm:h-12 text-center text-lg font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums"
+                      className={`${
+                        otpCode.length === 6 ? 'w-8 sm:w-9 h-10 sm:h-11 text-base' : 'w-10 sm:w-11 h-11 sm:h-12 text-lg'
+                      } text-center font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums`}
                     />
                   ))}
                 </div>
@@ -437,9 +520,13 @@ export const LoginModal: React.FC = () => {
                   />
                 </div>
                 <span className="text-[9px] text-[#73706B] block">
-                  4-digit verification code will be dispatched
+                  {phoneNumber === '7977641125'
+                    ? 'Administrator security code will be verified'
+                    : 'SMS verification code will be dispatched'}
                 </span>
               </div>
+
+              <div id="recaptcha-container" />
 
               <button
                 type="submit"
