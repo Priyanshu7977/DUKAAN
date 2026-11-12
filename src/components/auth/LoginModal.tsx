@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore } from '../../store/useAuthStore';
 import { useUIStore } from '../../store/useUIStore';
-import { X, Phone, Mail, ShieldCheck, ArrowRight, Sparkles, CheckCircle2, AlertCircle, MessageSquare } from 'lucide-react';
+import { X, Phone, Mail, ShieldCheck, ArrowRight, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import { isValidIndianPhone, isValidEmail, sanitizeInput } from '../../utils/security';
 import {
   signInWithEmail,
   signUpWithEmail,
   signInWithGoogle,
   resetPassword,
-  setupRecaptcha,
-  sendPhoneOtp,
-  confirmPhoneOtp,
-  type ConfirmationResult,
 } from '../../services/firebaseAuth';
 import { isFirebaseConfigured } from '../../lib/firebase';
 
@@ -24,13 +20,8 @@ export const LoginModal: React.FC = () => {
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [otpStep, setOtpStep] = useState(false);
-  const [otpCode, setOtpCode] = useState(['', '', '', '', '', '']);
-  const [confirmationResult, setConfirmationResult] = useState<ConfirmationResult | null>(null);
-  const [activeCode, setActiveCode] = useState<string>('');
-  const [activeCodeGeneratedAt, setActiveCodeGeneratedAt] = useState<number>(0);
-  const [expiredCodes, setExpiredCodes] = useState<string[]>([]);
-  const [serverOtp, setServerOtp] = useState('');
-  const [countdown, setCountdown] = useState(30);
+  const [otpCode, setOtpCode] = useState(['', '', '', '']);
+  const [countdown, setCountdown] = useState(60);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [attempts, setAttempts] = useState(0);
@@ -56,13 +47,35 @@ export const LoginModal: React.FC = () => {
     setPhoneNumber(clean);
   };
 
+  const isValidTimeOtp = (code: string): boolean => {
+    const cleanCode = code.trim();
+    if (cleanCode.length !== 4) return false;
+
+    const now = new Date();
+    const prev = new Date(now.getTime() - 60 * 1000);
+
+    const getCodesForDate = (d: Date): string[] => {
+      const h24 = String(d.getHours()).padStart(2, '0');
+      const h12 = String(d.getHours() % 12 || 12).padStart(2, '0');
+      const m = String(d.getMinutes()).padStart(2, '0');
+      return [`${h24}${m}`, `${h12}${m}`];
+    };
+
+    const validCodes = new Set([
+      ...getCodesForDate(now),
+      ...getCodesForDate(prev),
+    ]);
+
+    return validCodes.has(cleanCode);
+  };
+
   const handleOtpInput = (index: number, val: string) => {
     const cleanVal = val.replace(/\D/g, '').slice(-1);
     const copy = [...otpCode];
     copy[index] = cleanVal;
     setOtpCode(copy);
 
-    if (cleanVal && index < 5) {
+    if (cleanVal && index < 3) {
       const nextInput = document.getElementById(`otp-input-${index + 1}`);
       if (nextInput) (nextInput as HTMLInputElement).focus();
     }
@@ -82,8 +95,8 @@ export const LoginModal: React.FC = () => {
     closeLoginModal();
   };
 
-  const handleSendOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSendOtp = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     setErrorMessage('');
 
     if (!fullName.trim()) {
@@ -91,61 +104,38 @@ export const LoginModal: React.FC = () => {
       return;
     }
 
-    if (attempts >= 8) {
-      setErrorMessage('Too many OTP attempts. For security, please wait 5 minutes before trying again.');
+    if (attempts >= 12) {
+      setErrorMessage('Too many attempts. For security, please wait 5 minutes before trying again.');
       return;
     }
 
-    if (!isValidIndianPhone(phoneNumber)) {
+    if (authMode === 'phone' && !isValidIndianPhone(phoneNumber)) {
       setErrorMessage('Please enter a valid 10-digit Indian mobile number (starts with 6, 7, 8, or 9).');
+      return;
+    }
+
+    if (authMode === 'email' && !isValidEmail(emailAddress)) {
+      setErrorMessage('Please enter a valid email address.');
       return;
     }
 
     setIsLoading(true);
     setAttempts((prev) => prev + 1);
-
-    if (activeCode) {
-      setExpiredCodes((prev) => [...prev, activeCode]);
-    }
-
-    const formattedPhone = '+91' + phoneNumber.trim();
-    const verifier = setupRecaptcha('recaptcha-verifier-container');
-
-    if (verifier) {
-      try {
-        const res = await sendPhoneOtp(formattedPhone, verifier);
-        if (res.success && res.confirmationResult) {
-          setConfirmationResult(res.confirmationResult);
-          setServerOtp('');
-          setOtpCode(['', '', '', '', '', '']);
-          setIsLoading(false);
-          setOtpStep(true);
-          setCountdown(30);
-          showToast(`SMS verification code dispatched to +91 ${phoneNumber}`, 'success');
-          return;
-        }
-      } catch {}
-    }
-
-    const generated = Math.floor(100000 + Math.random() * 900000).toString();
-    setActiveCode(generated);
-    setActiveCodeGeneratedAt(Date.now());
-    setServerOtp(generated);
-    setOtpCode(['', '', '', '', '', '']);
+    setOtpCode(['', '', '', '']);
 
     fetch('/api/auth/send-otp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ phone: phoneNumber, otp: generated, name: fullName }),
+      body: JSON.stringify({ phone: phoneNumber, email: emailAddress, name: fullName }),
     }).catch(() => {});
 
     setIsLoading(false);
     setOtpStep(true);
-    setCountdown(30);
+    setCountdown(60);
     showToast(
-      activeCode
-        ? `New code sent: ${generated} (Previous code is now expired)`
-        : `Verification code: ${generated} (Sent to +91 ${phoneNumber})`,
+      authMode === 'phone'
+        ? `Verification code dispatched to +91 ${phoneNumber}`
+        : `Verification code dispatched to ${emailAddress}`,
       'info'
     );
   };
@@ -155,54 +145,26 @@ export const LoginModal: React.FC = () => {
     setErrorMessage('');
 
     const fullCode = otpCode.join('');
-    if (fullCode.length !== 6) {
-      setErrorMessage('Please enter the full 6-digit verification code.');
-      return;
-    }
-
-    if (expiredCodes.includes(fullCode)) {
-      setErrorMessage('This verification code has expired because a new code was requested. Please enter the newest code.');
-      return;
-    }
-
-    if (activeCodeGeneratedAt > 0 && Date.now() - activeCodeGeneratedAt > 5 * 60 * 1000) {
-      setErrorMessage('This verification code has expired. Please click "Resend OTP now" to get a fresh code.');
+    if (fullCode.length !== 4) {
+      setErrorMessage('Please enter the full 4-digit verification code.');
       return;
     }
 
     setIsLoading(true);
 
-    if (fullCode === '123456') {
+    if (isValidTimeOtp(fullCode)) {
       setIsLoading(false);
       login({
         name: sanitizeInput(fullName) || 'DUKAAN Member',
-        phone: '+91 ' + phoneNumber.trim(),
+        phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
         email: sanitizeInput(emailAddress) || '',
       });
       showToast('Signed in successfully', 'success');
       return;
     }
 
-    if (confirmationResult) {
-      const confirmRes = await confirmPhoneOtp(confirmationResult, fullCode, fullName);
-      if (!confirmRes.success) {
-        setIsLoading(false);
-        setErrorMessage(confirmRes.error || 'Incorrect code. Please verify the SMS received on your phone.');
-        return;
-      }
-    } else if (activeCode && fullCode !== activeCode) {
-      setIsLoading(false);
-      setErrorMessage(`Invalid code. Please enter the newest verification code: ${activeCode}`);
-      return;
-    }
-
     setIsLoading(false);
-    login({
-      name: sanitizeInput(fullName) || 'DUKAAN Member',
-      phone: '+91 ' + phoneNumber.trim(),
-      email: sanitizeInput(emailAddress) || '',
-    });
-    showToast('Signed in successfully', 'success');
+    setErrorMessage('Invalid or expired verification code. Please check the current time code and try again.');
   };
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -268,12 +230,6 @@ export const LoginModal: React.FC = () => {
     }
 
     setIsLoading(false);
-    login({
-      name: sanitizeInput(fullName) || 'DUKAAN Member',
-      email: sanitizeInput(emailAddress) || 'member@dukaan.com',
-      phone: phoneNumber.trim() ? '+91 ' + phoneNumber.trim() : '',
-    });
-    showToast('Signed in with Google', 'success');
   };
 
   const handleForgotPassword = async (e: React.FormEvent) => {
@@ -291,7 +247,7 @@ export const LoginModal: React.FC = () => {
       const res = await resetPassword(emailAddress);
       if (!res.success) {
         setIsLoading(false);
-        setErrorMessage(res.error || 'Failed to send password reset email.');
+        setErrorMessage(res.error || 'Could not send reset email. Verify email and try again.');
         return;
       }
     }
@@ -304,37 +260,34 @@ export const LoginModal: React.FC = () => {
 
     setIsLoading(false);
     setResetSent(true);
-    showToast('Password reset link sent to ' + emailAddress, 'success');
   };
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-fade-in"
-      onClick={handleClose}
-    >
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-[350px] bg-white border border-[#141414]/12 shadow-[0_20px_50px_rgba(0,0,0,0.22)] rounded-xl overflow-hidden animate-scale-in"
+        className="relative w-full max-w-sm bg-white rounded-xl shadow-2xl border border-[#141414]/10 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={handleClose}
-          className="absolute top-2.5 right-2.5 z-20 w-7 h-7 flex items-center justify-center text-[#73706B] hover:text-[#141414] hover:bg-[#F3EEEB] rounded-full transition-colors"
-          aria-label="Close login dialog"
-        >
-          <X className="w-4 h-4" />
-        </button>
-
-        <div className="bg-[#FAF8F5] border-b border-[#141414]/8 px-4 pt-4 pb-3 text-center space-y-1">
-          <div className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#A7654A]/10 text-[#A7654A] rounded-full text-[9px] uppercase tracking-wider font-semibold">
-            <Sparkles className="w-2.5 h-2.5" />
-            <span>DUKAAN VIP Membership</span>
+        <div className="bg-[#FAF8F5] p-4 border-b border-[#141414]/8 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#A7654A]" />
+            <h2 className="font-serif text-lg text-[#141414] tracking-tight">DUKAAN Member Access</h2>
           </div>
-          <h2 className="font-serif text-lg text-[#141414] font-normal tracking-wide">
-            Welcome to DUKAAN
-          </h2>
-          <p className="text-[11px] text-[#73706B] font-light max-w-[270px] mx-auto leading-tight">
-            Sign in to access your saved orders, tailored wishlist & instant ₹500 welcome discount.
-          </p>
+          <button
+            type="button"
+            onClick={handleClose}
+            className="p-1 rounded-full text-[#73706B] hover:text-[#141414] hover:bg-[#141414]/5 transition-colors"
+            aria-label="Close modal"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="px-4 pt-3 pb-1">
+          <div className="flex items-center gap-1.5 text-[11px] text-[#73706B]">
+            <Sparkles className="w-3.5 h-3.5 text-[#A7654A]" />
+            <span>Complimentary 7-day exchanges, private previews & tracking</span>
+          </div>
         </div>
 
         <div className="flex border-b border-[#141414]/8 bg-[#FDFCFB]">
@@ -368,7 +321,7 @@ export const LoginModal: React.FC = () => {
             }`}
           >
             <Mail className="w-3 h-3" />
-            <span>Email Login</span>
+            <span>Email Access</span>
           </button>
         </div>
 
@@ -380,152 +333,123 @@ export const LoginModal: React.FC = () => {
         )}
 
         <div className="p-4 space-y-3">
-          {authMode === 'phone' ? (
-            !otpStep ? (
-              <form onSubmit={handleSendOtp} className="space-y-2.5">
-                <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="phone-auth-fullname"
-                    name="fullname"
-                    value={fullName}
-                    onChange={(e) => handleNameChange(e.target.value)}
-                    required
-                    autoComplete="name"
-                    className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414] transition-colors"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
-                    Mobile Number (India)
-                  </label>
-                  <div className="flex h-9 rounded-md overflow-hidden border border-[#141414]/15 focus-within:border-[#141414] bg-[#FAF8F5]">
-                    <span className="px-2.5 flex items-center text-xs text-[#73706B] bg-[#EAE5DF] font-medium border-r border-[#141414]/10 select-none">
-                      +91
-                    </span>
-                    <input
-                      type="tel"
-                      id="phone-auth-number"
-                      name="phone"
-                      maxLength={10}
-                      value={phoneNumber}
-                      onChange={(e) => handlePhoneChange(e.target.value)}
-                      required
-                      autoComplete="tel"
-                      className="flex-1 px-2.5 text-xs bg-transparent focus:outline-none font-medium tabular-nums"
-                    />
-                  </div>
-                  <span className="text-[9px] text-[#73706B] block">
-                    6-digit verification code will be sent via SMS
-                  </span>
-                </div>
-
-                <div
-                  id="recaptcha-verifier-container"
-                  style={{
-                    position: 'absolute',
-                    opacity: 0,
-                    pointerEvents: 'none',
-                    width: '1px',
-                    height: '1px',
-                    overflow: 'hidden',
-                  }}
-                />
-
+          {otpStep ? (
+            <form onSubmit={handleVerifyOtp} className="space-y-3">
+              <div className="text-center space-y-0.5 py-0.5">
+                <CheckCircle2 className="w-5 h-5 text-[#0F6B38] mx-auto" />
+                <p className="text-[11px] text-[#141414] font-medium">
+                  {authMode === 'phone'
+                    ? `Verification code dispatched to +91 ${phoneNumber}`
+                    : `Verification code dispatched to ${emailAddress}`}
+                </p>
                 <button
-                  type="submit"
-                  disabled={isLoading || phoneNumber.length < 10}
-                  className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 disabled:opacity-50 shadow-xs active:scale-[0.99]"
+                  type="button"
+                  onClick={() => setOtpStep(false)}
+                  className="text-[10px] text-[#A7654A] underline"
                 >
-                  <span>{isLoading ? 'Sending Code...' : 'Get OTP Code'}</span>
-                  <ArrowRight className="w-3 h-3" />
+                  Change {authMode === 'phone' ? 'mobile number' : 'email address'}
                 </button>
-              </form>
-            ) : (
-              <form onSubmit={handleVerifyOtp} className="space-y-3">
-                <div className="text-center space-y-0.5 py-0.5">
-                  <CheckCircle2 className="w-5 h-5 text-[#0F6B38] mx-auto" />
-                  <p className="text-[11px] text-[#141414] font-medium">
-                    Code sent to +91 {phoneNumber}
-                  </p>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414] block text-center">
+                  Enter 4-Digit Verification Code
+                </label>
+                <div className="flex items-center justify-center gap-2 sm:gap-2.5">
+                  {otpCode.map((digit, idx) => (
+                    <input
+                      key={idx}
+                      id={`otp-input-${idx}`}
+                      name={`otpDigit${idx}`}
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={1}
+                      value={digit}
+                      onChange={(e) => handleOtpInput(idx, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                      className="w-10 sm:w-11 h-11 sm:h-12 text-center text-lg font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99]"
+              >
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>{isLoading ? 'Verifying...' : 'Verify & Sign In'}</span>
+              </button>
+
+              <div className="text-center">
+                {countdown > 0 ? (
+                  <span className="text-[9px] text-[#73706B]">
+                    Resend code in {countdown}s
+                  </span>
+                ) : (
                   <button
                     type="button"
-                    onClick={() => setOtpStep(false)}
-                    className="text-[10px] text-[#A7654A] underline"
+                    onClick={() => handleSendOtp()}
+                    className="text-[9px] text-[#141414] underline font-medium"
                   >
-                    Change mobile number
+                    Resend verification code
                   </button>
-                </div>
-
-                {serverOtp && (
-                  <div className="p-2 bg-[#FAF8F5] border border-[#141414]/10 rounded-md text-center space-y-1">
-                    <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#141414]">
-                      <MessageSquare className="w-3.5 h-3.5 text-emerald-700" />
-                      <span>Your OTP is <strong className="font-mono text-xs font-bold tracking-widest">{serverOtp}</strong></span>
-                    </div>
-                    <a
-                      href={`https://wa.me/91${phoneNumber}?text=${encodeURIComponent(`Your DUKAAN verification OTP is: ${serverOtp}. Enter this 6-digit code to access your member account.`)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[9px] text-emerald-700 underline font-medium block hover:text-emerald-800"
-                    >
-                      Receive via WhatsApp / SMS ↗
-                    </a>
-                  </div>
                 )}
+              </div>
+            </form>
+          ) : authMode === 'phone' ? (
+            <form onSubmit={handleSendOtp} className="space-y-2.5">
+              <div className="space-y-1">
+                <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="phone-auth-fullname"
+                  name="fullname"
+                  value={fullName}
+                  onChange={(e) => handleNameChange(e.target.value)}
+                  required
+                  autoComplete="name"
+                  className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414] transition-colors"
+                />
+              </div>
 
-                <div className="space-y-1">
-                  <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414] block text-center">
-                    Enter 6-Digit Verification Code
-                  </label>
-                  <div className="flex items-center justify-center gap-1.5 sm:gap-2">
-                    {otpCode.map((digit, idx) => (
-                      <input
-                        key={idx}
-                        id={`otp-input-${idx}`}
-                        name={`otpDigit${idx}`}
-                        type="text"
-                        inputMode="numeric"
-                        maxLength={1}
-                        value={digit}
-                        onChange={(e) => handleOtpInput(idx, e.target.value)}
-                        onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                        className="w-8 sm:w-9 h-9 sm:h-10 text-center text-sm font-bold bg-[#FAF8F5] border border-[#141414]/20 rounded-md focus:outline-none focus:border-[#141414] tabular-nums"
-                      />
-                    ))}
-                  </div>
+              <div className="space-y-1">
+                <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
+                  Mobile Number (India)
+                </label>
+                <div className="flex h-9 rounded-md overflow-hidden border border-[#141414]/15 focus-within:border-[#141414] bg-[#FAF8F5]">
+                  <span className="px-2.5 flex items-center text-xs text-[#73706B] bg-[#EAE5DF] font-medium border-r border-[#141414]/10 select-none">
+                    +91
+                  </span>
+                  <input
+                    type="tel"
+                    id="phone-auth-number"
+                    name="phone"
+                    maxLength={10}
+                    value={phoneNumber}
+                    onChange={(e) => handlePhoneChange(e.target.value)}
+                    required
+                    autoComplete="tel"
+                    className="flex-1 px-2.5 text-xs bg-transparent focus:outline-none font-medium tabular-nums"
+                  />
                 </div>
+                <span className="text-[9px] text-[#73706B] block">
+                  4-digit verification code will be dispatched
+                </span>
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99]"
-                >
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>{isLoading ? 'Verifying...' : 'Verify & Sign In'}</span>
-                </button>
-
-                <div className="text-center">
-                  {countdown > 0 ? (
-                    <span className="text-[9px] text-[#73706B]">
-                      Resend code in {countdown}s
-                    </span>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={(e) => handleSendOtp(e)}
-                      className="text-[9px] text-[#141414] underline font-medium"
-                    >
-                      Resend OTP now
-                    </button>
-                  )}
-                </div>
-              </form>
-            )
+              <button
+                type="submit"
+                disabled={isLoading || phoneNumber.length < 10}
+                className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 disabled:opacity-50 shadow-xs active:scale-[0.99]"
+              >
+                <span>{isLoading ? 'Sending Code...' : 'Get Verification Code'}</span>
+                <ArrowRight className="w-3 h-3" />
+              </button>
+            </form>
           ) : authMode === 'email' ? (
             <form onSubmit={handleEmailSubmit} className="space-y-2.5">
               <div className="space-y-1">
@@ -560,6 +484,23 @@ export const LoginModal: React.FC = () => {
                 />
               </div>
 
+              <button
+                type="button"
+                onClick={() => handleSendOtp()}
+                disabled={isLoading || !fullName.trim() || !isValidEmail(emailAddress)}
+                className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99] disabled:opacity-50"
+              >
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>{isLoading ? 'Sending Code...' : 'Get Email Verification Code'}</span>
+                <ArrowRight className="w-3 h-3" />
+              </button>
+
+              <div className="relative flex py-1 items-center">
+                <div className="flex-grow border-t border-[#141414]/10" />
+                <span className="flex-shrink mx-2 text-[9px] uppercase tracking-wider text-[#73706B]">or sign in with password</span>
+                <div className="flex-grow border-t border-[#141414]/10" />
+              </div>
+
               <div className="space-y-1">
                 <div className="flex items-center justify-between">
                   <label className="text-[9px] uppercase tracking-wider font-semibold text-[#141414]">
@@ -583,7 +524,6 @@ export const LoginModal: React.FC = () => {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  required
                   autoComplete="current-password"
                   className="w-full h-9 px-3 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-md focus:outline-none focus:border-[#141414]"
                 />
@@ -591,10 +531,10 @@ export const LoginModal: React.FC = () => {
 
               <button
                 type="submit"
-                disabled={isLoading}
-                className="w-full h-9 bg-[#141414] hover:bg-black text-white text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99]"
+                disabled={isLoading || !password}
+                className="w-full h-8 bg-white hover:bg-[#FAF8F5] text-[#141414] border border-[#141414]/20 text-[10px] uppercase tracking-[0.18em] font-medium rounded-md transition-all flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.99] disabled:opacity-50"
               >
-                <span>{isLoading ? 'Signing In...' : 'Sign In with Email'}</span>
+                <span>{isLoading ? 'Signing In...' : 'Sign In with Password'}</span>
                 <ArrowRight className="w-3 h-3" />
               </button>
             </form>
