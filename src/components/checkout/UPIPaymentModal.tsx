@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { X, Copy, Check, ShieldCheck, Clock, ArrowRight, Sparkles, CheckCircle2, RefreshCw, AlertCircle } from 'lucide-react';
+import { X, Copy, Check, ShieldCheck, Clock, ArrowRight, Sparkles, CheckCircle2, RefreshCw, AlertCircle, Smartphone, QrCode, ExternalLink } from 'lucide-react';
 import { formatPrice } from '../../utils/formatters';
 import { UPIGatewayService, UPIGatewayOrderData } from '../../services/upiGateway';
 
@@ -33,6 +33,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
   const [isSubmittingUtr, setIsSubmittingUtr] = useState(false);
   const [status, setStatus] = useState<'pending' | 'review' | 'paid' | 'expired'>('pending');
   const [secondsRemaining, setSecondsRemaining] = useState(900);
+  const [activeTab, setActiveTab] = useState<'app' | 'qr'>('app');
   const totalDuration = 900;
   const pollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -61,6 +62,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
       setIsSubmittingUtr(false);
       setStatus('pending');
       setSecondsRemaining(900);
+      setActiveTab('app');
       return;
     }
 
@@ -204,37 +206,92 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
     { id: 'bhim', name: 'BHIM UPI', icon: '/images/upi/bhim.svg' },
   ];
 
+  const payableFormatted = formatPrice(order?.amount ? Number(order.amount) : totalAmount);
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/75 backdrop-blur-md animate-fade-in">
       <div
-        className="bg-[#FAF9F6] border border-[#141414]/15 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[92vh]"
+        className="bg-[#FAF9F6] border border-[#141414]/15 rounded-2xl sm:rounded-3xl w-full max-w-lg md:max-w-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[94vh] md:max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full md:w-[260px] bg-[#141414] text-[#FAF9F6] p-5 sm:p-6 flex flex-col justify-between relative shrink-0 border-b md:border-b-0 md:border-r border-white/10">
-          <div>
-            <div className="flex items-center justify-between md:block mb-4 sm:mb-6">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-white text-[#141414] flex items-center justify-center font-serif text-sm font-bold shadow-xs">
-                  D
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#A7654A] font-semibold block">
-                    Direct UPI Gateway
-                  </span>
-                  <span className="font-serif text-sm font-medium text-[#FAF9F6]">
-                    DUKAAN Haute
-                  </span>
-                </div>
+        <div className="md:hidden bg-[#141414] text-[#FAF9F6] p-3.5 sm:p-4 shrink-0 border-b border-white/10">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-white text-[#141414] flex items-center justify-center font-serif text-xs font-bold shadow-xs">
+                D
+              </div>
+              <div>
+                <span className="text-[9px] uppercase tracking-[0.2em] text-[#A7654A] font-semibold block leading-tight">
+                  UPI Gateway
+                </span>
+                <span className="font-serif text-xs font-medium text-white">
+                  DUKAAN
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 bg-white/10 rounded-full text-[10px] font-mono font-medium text-white tabular-nums">
+                <Clock className="w-3 h-3 text-[#A7654A]" />
+                <span>{timeFormatted}</span>
               </div>
 
               <button
                 type="button"
                 onClick={onClose}
-                className="md:hidden p-1.5 text-white/60 hover:text-white rounded-lg transition-colors"
+                className="p-1 text-white/60 hover:text-white rounded-lg transition-colors"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
               </button>
+            </div>
+          </div>
+
+          <div className="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-xs">
+            <div>
+              <span className="text-[9px] uppercase tracking-wider text-white/50 block">Payable</span>
+              <span className="font-serif text-lg text-white font-medium tabular-nums">
+                {payableFormatted}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2 text-[10px]">
+              <button
+                type="button"
+                onClick={handleCopyOrderId}
+                className="px-2 py-1 bg-white/5 hover:bg-white/10 rounded-md border border-white/10 text-white/80 flex items-center gap-1 font-mono transition-colors"
+                title="Copy Order ID"
+              >
+                <span>Ref: {orderNumber.slice(-8)}</span>
+                {copiedOrderId ? <Check className="w-2.5 h-2.5 text-emerald-400" /> : <Copy className="w-2.5 h-2.5 text-white/50" />}
+              </button>
+              <button
+                type="button"
+                onClick={handleCopyVpa}
+                className="px-2 py-1 bg-white/5 hover:bg-white/10 rounded-md border border-white/10 text-white/80 flex items-center gap-1 font-mono transition-colors"
+                title="Copy UPI ID"
+              >
+                <span>{vpa}</span>
+                {copiedVpa ? <Check className="w-2.5 h-2.5 text-emerald-400" /> : <Copy className="w-2.5 h-2.5 text-white/50" />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="hidden md:flex w-[260px] bg-[#141414] text-[#FAF9F6] p-6 flex-col justify-between shrink-0 border-r border-white/10">
+          <div>
+            <div className="flex items-center gap-2.5 mb-6">
+              <div className="w-8 h-8 rounded-full bg-white text-[#141414] flex items-center justify-center font-serif text-sm font-bold shadow-xs">
+                D
+              </div>
+              <div>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#A7654A] font-semibold block">
+                  Direct UPI Gateway
+                </span>
+                <span className="font-serif text-sm font-medium text-[#FAF9F6]">
+                  DUKAAN
+                </span>
+              </div>
             </div>
 
             <div className="space-y-4 pt-1">
@@ -242,8 +299,8 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                 <span className="text-[10px] uppercase tracking-wider text-white/50 block">
                   Payable Amount
                 </span>
-                <span className="font-serif text-2xl sm:text-3xl text-white font-medium tabular-nums tracking-tight">
-                  {formatPrice(order?.amount ? Number(order.amount) : totalAmount)}
+                <span className="font-serif text-3xl text-white font-medium tabular-nums tracking-tight">
+                  {payableFormatted}
                 </span>
               </div>
 
@@ -285,7 +342,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
             </div>
           </div>
 
-          <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4 md:mt-0">
+          <div className="pt-4 border-t border-white/10 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="relative w-10 h-10 flex items-center justify-center shrink-0">
                 <svg className="w-10 h-10 -rotate-90" viewBox="0 0 44 44">
@@ -325,7 +382,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
           </div>
         </div>
 
-        <div className="flex-1 bg-[#FAF9F6] p-5 sm:p-6 overflow-y-auto flex flex-col justify-between">
+        <div className="flex-1 bg-[#FAF9F6] p-4 sm:p-6 overflow-y-auto flex flex-col justify-between">
           <div className="hidden md:flex items-center justify-between pb-3 border-b border-[#141414]/10 mb-4">
             <div>
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#A7654A] font-semibold block">
@@ -358,7 +415,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                   Settlement Confirmed
                 </h4>
                 <p className="text-xs text-[#73706B] max-w-xs mx-auto mt-2">
-                  Your payment of {formatPrice(totalAmount)} was acknowledged via NPCI. Finalizing your couture dispatch now...
+                  Your payment of {formatPrice(totalAmount)} was acknowledged via NPCI. Finalizing your order dispatch now...
                 </p>
               </div>
             </div>
@@ -375,7 +432,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                   Reviewing UTR With Bank
                 </h4>
                 <p className="text-xs text-[#73706B] max-w-sm mx-auto">
-                  UTR Reference <strong className="font-mono text-[#141414]">{utr}</strong> submitted. Confirming clearance with the merchant banking ledger.
+                  UTR Reference <strong className="font-mono text-[#141414]">{utr}</strong> submitted. Confirming clearance with merchant banking ledger.
                 </p>
               </div>
             </div>
@@ -387,7 +444,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
               <div>
                 <h4 className="font-serif text-xl text-[#141414]">Session Expired</h4>
                 <p className="text-xs text-[#73706B] mt-1">
-                  The 15-minute payment window has expired. Please restart checkout to generate a fresh dynamic QR.
+                  The payment window has expired. Please restart checkout to generate a fresh QR.
                 </p>
               </div>
               <button
@@ -399,49 +456,88 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
               </button>
             </div>
           ) : (
-            <div className="space-y-4">
-              <div className="flex flex-col items-center">
-                <div className="relative p-3 bg-white rounded-2xl shadow-sm border border-[#141414]/10 inline-block">
-                  <div className="absolute top-1.5 left-1.5 w-4 h-4 border-t-2 border-l-2 border-[#A7654A] rounded-tl-sm pointer-events-none" />
-                  <div className="absolute top-1.5 right-1.5 w-4 h-4 border-t-2 border-r-2 border-[#A7654A] rounded-tr-sm pointer-events-none" />
-                  <div className="absolute bottom-1.5 left-1.5 w-4 h-4 border-b-2 border-l-2 border-[#A7654A] rounded-bl-sm pointer-events-none" />
-                  <div className="absolute bottom-1.5 right-1.5 w-4 h-4 border-b-2 border-r-2 border-[#A7654A] rounded-br-sm pointer-events-none" />
-
-                  <div
-                    className="w-48 h-48 sm:w-52 sm:h-52 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:rounded-lg"
-                    dangerouslySetInnerHTML={{ __html: qrSvg }}
-                  />
-                </div>
-
-                <span className="text-[10px] text-[#73706B] uppercase tracking-wider font-medium mt-2 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-[#A7654A]" />
-                  <span>Scan with any UPI Scanner • Zero Surcharge</span>
-                </span>
+            <div className="space-y-3.5">
+              <div className="md:hidden flex items-center bg-[#ECE7DD]/80 p-1 rounded-xl">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('app')}
+                  className={`flex-1 py-1.5 text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+                    activeTab === 'app'
+                      ? 'bg-[#141414] text-white shadow-xs'
+                      : 'text-[#73706B] hover:text-[#141414]'
+                  }`}
+                >
+                  <Smartphone className="w-3.5 h-3.5" />
+                  <span>One-Tap Pay</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('qr')}
+                  className={`flex-1 py-1.5 text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-all flex items-center justify-center gap-1.5 ${
+                    activeTab === 'qr'
+                      ? 'bg-[#141414] text-white shadow-xs'
+                      : 'text-[#73706B] hover:text-[#141414]'
+                  }`}
+                >
+                  <QrCode className="w-3.5 h-3.5" />
+                  <span>Scan QR Code</span>
+                </button>
               </div>
 
-              <div>
-                <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-semibold block text-center mb-2">
-                  Or One-Tap Launch on Mobile
-                </span>
-                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+              <div className={`${activeTab === 'app' ? 'block' : 'hidden'} md:block`}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-semibold">
+                    Instant App Launch
+                  </span>
+                  <span className="text-[10px] text-emerald-700 font-medium">Zero Surcharge</span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2">
                   {appButtons.map((app) => (
                     <a
                       key={app.id}
                       href={UPIGatewayService.getAppLaunchUrl(app.id, activeIntentUri)}
-                      className="h-12 px-3 bg-white hover:bg-[#FAF8F5] border border-[#141414]/15 hover:border-[#141414] rounded-xl flex items-center justify-center transition-all active:scale-98 shadow-xs"
+                      className="h-11 px-3 bg-white hover:bg-[#FAF8F5] border border-[#141414]/15 hover:border-[#141414] rounded-xl flex items-center justify-center transition-all active:scale-98 shadow-xs"
                       title={`Pay with ${app.name}`}
                     >
                       <img
                         src={app.icon}
                         alt={app.name}
-                        className="h-6 w-auto max-h-7 max-w-[120px] object-contain"
+                        className="h-5 sm:h-6 w-auto max-h-6 max-w-[110px] object-contain"
                       />
                     </a>
                   ))}
                 </div>
+
+                <a
+                  href={activeIntentUri}
+                  className="mt-2 w-full py-2 bg-[#FAF8F5] hover:bg-white border border-[#141414]/15 rounded-xl flex items-center justify-center gap-1.5 text-[11px] text-[#141414] font-medium transition-colors"
+                >
+                  <span>Open Any Installed UPI App</span>
+                  <ExternalLink className="w-3 h-3 text-[#73706B]" />
+                </a>
               </div>
 
-              <form onSubmit={handleUtrSubmit} className="space-y-2.5 pt-3 border-t border-[#141414]/10">
+              <div className={`${activeTab === 'qr' ? 'block' : 'hidden'} md:block flex flex-col items-center pt-1`}>
+                <div className="relative p-2.5 bg-white rounded-2xl shadow-xs border border-[#141414]/10 inline-block">
+                  <div className="absolute top-1.5 left-1.5 w-3.5 h-3.5 border-t-2 border-l-2 border-[#A7654A] rounded-tl-sm pointer-events-none" />
+                  <div className="absolute top-1.5 right-1.5 w-3.5 h-3.5 border-t-2 border-r-2 border-[#A7654A] rounded-tr-sm pointer-events-none" />
+                  <div className="absolute bottom-1.5 left-1.5 w-3.5 h-3.5 border-b-2 border-l-2 border-[#A7654A] rounded-bl-sm pointer-events-none" />
+                  <div className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 border-b-2 border-r-2 border-[#A7654A] rounded-br-sm pointer-events-none" />
+
+                  <div
+                    className="w-40 h-40 sm:w-48 sm:h-48 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:rounded-lg"
+                    dangerouslySetInnerHTML={{ __html: qrSvg }}
+                  />
+                </div>
+
+                <span className="text-[10px] text-[#73706B] uppercase tracking-wider font-medium mt-1.5 flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-[#A7654A]" />
+                  <span>Scan with GPay, PhonePe, Paytm, CRED</span>
+                </span>
+              </div>
+
+              <form onSubmit={handleUtrSubmit} className="space-y-2 pt-2.5 border-t border-[#141414]/10">
                 <div>
                   <div className="flex justify-between items-center mb-1">
                     <label
@@ -450,7 +546,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                     >
                       12-Digit UTR / Transaction Reference *
                     </label>
-                    <span className="text-[10px] text-[#73706B]/75">From UPI receipt</span>
+                    <span className="text-[10px] text-[#73706B]/75">After payment</span>
                   </div>
                   <input
                     type="text"
@@ -463,7 +559,8 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                       setUtr(e.target.value.replace(/\D/g, '').slice(0, 12));
                       setUtrError('');
                     }}
-                    className="w-full h-11 px-3.5 bg-white border border-[#141414]/15 rounded-xl text-xs font-mono focus:outline-none focus:border-[#141414] tabular-nums"
+                    placeholder="Enter 12-digit UTR from payment receipt"
+                    className="w-full h-10 px-3 bg-white border border-[#141414]/15 rounded-xl text-xs font-mono focus:outline-none focus:border-[#141414] tabular-nums placeholder:text-[#73706B]/50"
                   />
                   {utrError && (
                     <p className="text-[11px] text-rose-600 mt-1 flex items-center gap-1 font-medium">
@@ -478,14 +575,14 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                   disabled={isSubmittingUtr}
                   className="w-full h-11 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-xl shadow-md flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:bg-[#73706B]"
                 >
-                  <span>I Have Transferred ₹{Math.round(totalAmount).toLocaleString('en-IN')} — Confirm</span>
+                  <span>I Have Transferred {payableFormatted} — Confirm</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             </div>
           )}
 
-          <div className="pt-3 border-t border-[#141414]/10 flex items-center justify-center gap-2 text-[10px] text-[#73706B]">
+          <div className="pt-2.5 mt-2 border-t border-[#141414]/10 flex items-center justify-center gap-1.5 text-[9px] sm:text-[10px] text-[#73706B] text-center">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
             <span>Encrypted 256-Bit NPCI Protocol • 100% Buyer Protection Guaranteed</span>
           </div>
