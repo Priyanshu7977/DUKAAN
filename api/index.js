@@ -1,4 +1,5 @@
 import express from 'express';
+import crypto from 'crypto';
 
 const app = express();
 
@@ -192,7 +193,15 @@ app.post('/api/v1/orders/:orderId/utr', (req, res) => {
 });
 
 app.post('/api/v1/webhooks/upi', (req, res) => {
-  const signature = req.headers['x-signature'];
+  const secret = process.env.UPI_WEBHOOK_SECRET;
+  if (secret) {
+    const signature = req.headers['x-signature'];
+    const expected = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body)).digest('hex');
+    if (!signature || signature !== expected) {
+      return res.status(401).json({ success: false, message: 'Invalid webhook signature' });
+    }
+  }
+
   const event = req.body || {};
 
   if (event.event === 'order.paid' && event.data?.order_id) {

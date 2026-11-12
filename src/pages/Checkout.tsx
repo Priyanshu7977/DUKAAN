@@ -318,6 +318,12 @@ export const Checkout: React.FC = () => {
                 <Sparkles className="w-3 h-3 text-[#A7654A] shrink-0" />
                 <span>Care Good Note Generated</span>
               </span>
+              {confirmedOrder.utrNumber && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 border border-blue-200/80 text-blue-900 text-[10px] sm:text-[11px] font-semibold rounded-full shadow-2xs shrink-0 whitespace-nowrap">
+                  <ShieldCheck className="w-3 h-3 text-blue-700 shrink-0" />
+                  <span>UTR {confirmedOrder.utrNumber} Logged</span>
+                </span>
+              )}
             </div>
 
             {confirmedNotificationPayload && (

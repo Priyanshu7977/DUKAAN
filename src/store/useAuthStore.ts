@@ -19,67 +19,22 @@ interface AuthState {
   addOrder: (order: UserOrder) => void;
 }
 
-const DEFAULT_ORDERS: UserOrder[] = [
-  {
-    id: 'DUK-88219',
-    date: 'Oct 28, 2026',
-    status: 'Delivered',
-    total: 3890,
-    paymentMethod: 'Prepaid Online',
-    trackingNumber: 'DTDC-884910283',
-    estimatedDelivery: 'Oct 31, 2026',
-    items: [
-      {
-        id: 'item-1',
-        name: 'Almond White Gauze Holiday Shirt',
-        price: 3890,
-        size: 'L',
-        color: 'Natural Cream',
-        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855',
-        quantity: 1,
-      },
-    ],
-  },
-  {
-    id: 'DUK-77104',
-    date: 'Nov 02, 2026',
-    status: 'In Transit',
-    total: 3589,
-    paymentMethod: 'COD',
-    trackingNumber: 'BLUEDART-7719284',
-    estimatedDelivery: 'Tomorrow, Nov 05',
-    items: [
-      {
-        id: 'item-2',
-        name: 'Beige Baggy Fit Trousers',
-        price: 3490,
-        size: '32',
-        color: 'Oatmeal Beige',
-        image: 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/BeigeBaggyFitTrousers_1.jpg?v=1790961467',
-        quantity: 1,
-      },
-    ],
-  },
-];
+const DEFAULT_ORDERS: UserOrder[] = [];
 
-const DEFAULT_ADDRESSES: UserAddress[] = [
-  {
-    id: 'addr-1',
-    fullName: 'Priyanshu Singh',
-    phone: '+91 7977641125',
-    street: 'Flat 402, Sea Green Heights, Bandra West',
-    apartment: 'Near Carter Road',
-    city: 'Mumbai',
-    state: 'Maharashtra',
-    pincode: '400050',
-    isDefault: true,
-  },
-];
+const DEFAULT_ADDRESSES: UserAddress[] = [];
 
 const STORAGE_KEY = 'dukaan_auth_user';
 
 const loadStoredUser = (): UserProfile | null => {
-  return safeStorage.getItem<UserProfile | null>(STORAGE_KEY, null);
+  const user = safeStorage.getItem<UserProfile | null>(STORAGE_KEY, null);
+  if (!user) return null;
+  const filteredAddresses = (user.addresses || []).filter((a) => !a.street?.includes('Sea Green Heights'));
+  const filteredOrders = (user.orders || []).filter((o) => o.id !== 'DUK-88219' && o.id !== 'DUK-77104');
+  return {
+    ...user,
+    addresses: filteredAddresses,
+    orders: filteredOrders,
+  };
 };
 
 export const useAuthStore = create<AuthState>((set, get) => ({
