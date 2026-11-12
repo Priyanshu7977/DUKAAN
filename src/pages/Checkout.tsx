@@ -26,6 +26,7 @@ import { CareGoodNoteModal } from '../components/common/CareGoodNoteModal';
 import { UPIPaymentModal } from '../components/checkout/UPIPaymentModal';
 import { useAuthStore } from '../store/useAuthStore';
 import { UserOrder } from '../types';
+import { syncOrderToFirestore } from '../services/firestoreService';
 import {
   OrderNotificationPayload,
   dispatchAutomatedOrderNotifications,
@@ -61,6 +62,7 @@ export const Checkout: React.FC = () => {
   });
 
   const addOrder = useAuthStore((state) => state.addOrder);
+  const user = useAuthStore((state) => state.user);
   const [showUPIModal, setShowUPIModal] = useState(false);
   const [pendingOrderId, setPendingOrderId] = useState('');
 
@@ -242,6 +244,7 @@ export const Checkout: React.FC = () => {
       };
 
       addOrder(userOrder);
+      syncOrderToFirestore(userOrder, user?.email || user?.phone || 'guest', payload);
       setConfirmedNotificationPayload(payload);
       setConfirmedOrder(orderSummary);
       setIsComplete(true);

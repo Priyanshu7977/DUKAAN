@@ -14,6 +14,7 @@ import {
   ConfirmationResult,
 } from '../../services/firebaseAuth';
 import { isFirebaseConfigured } from '../../lib/firebase';
+import { syncUserProfileToFirestore } from '../../services/firestoreService';
 
 export const LoginModal: React.FC = () => {
   const { isLoginModalOpen, closeLoginModal, login, isAuthenticated } = useAuthStore();
@@ -225,6 +226,7 @@ export const LoginModal: React.FC = () => {
       const res = await confirmPhoneOtp(confirmationResult, fullCode, fullName);
       setIsLoading(false);
       if (res.success && res.user) {
+        syncUserProfileToFirestore(res.user, { name: fullName, phone: phoneNumber });
         login({
           name: sanitizeInput(fullName) || res.user.displayName || 'DUKAAN Member',
           phone: res.user.phoneNumber || '+91 ' + phoneNumber.trim(),
@@ -273,6 +275,10 @@ export const LoginModal: React.FC = () => {
         setErrorMessage(res.error || 'Authentication failed. Please check your credentials.');
         return;
       }
+
+      if (res.user) {
+        syncUserProfileToFirestore(res.user, { name: fullName });
+      }
     }
 
     fetch('/api/notifications/welcome', {
@@ -300,6 +306,17 @@ export const LoginModal: React.FC = () => {
         setIsLoading(false);
         setErrorMessage(res.error || 'Google sign-in was not completed.');
         return;
+      }
+
+      if (res.user) {
+        syncUserProfileToFirestore(res.user);
+        login({
+          name: sanitizeInput(res.user.displayName || '') || 'DUKAAN VIP Patron',
+          email: res.user.email || '',
+          phone: res.user.phoneNumber || '',
+        });
+        showToast('Signed in via Google', 'success');
+        closeLoginModal();
       }
     }
 
