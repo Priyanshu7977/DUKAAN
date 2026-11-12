@@ -26,6 +26,7 @@ export type CustomerIntent =
   | 'ADDRESS_UPDATE'
   | 'AFFIRMATIVE'
   | 'NEGATIVE'
+  | 'PLAYFUL_BANTER'
   | 'FALLBACK';
 
 export interface ExtractedEntities {
@@ -442,6 +443,35 @@ const INTENT_PATTERNS: Record<CustomerIntent, string[]> = {
     'never mind',
     'not now',
   ],
+  PLAYFUL_BANTER: [
+    'sex',
+    'sexy',
+    'hot',
+    'are you sexy',
+    'you are sexy',
+    'hot guy',
+    'hot girl',
+    'date me',
+    'marry me',
+    'will you marry me',
+    'love you',
+    'i love you',
+    'kiss me',
+    'are you single',
+    'nude',
+    'naked',
+    'send nudes',
+    'girlfriend',
+    'boyfriend',
+    'handsome',
+    'cute',
+    'babe',
+    'baby',
+    'hook up',
+    'wanna hook up',
+    'flirt',
+    'make love',
+  ],
   FALLBACK: [],
 };
 
@@ -612,6 +642,7 @@ export class NLPEngine {
       HOSTILITY_DISMISSAL: ['fuck', 'stfu', 'shut', 'idiot', 'stupid', 'bastard', 'bitch', 'asshole', 'rubbish', 'nonsense', 'piss', 'screw'],
       GRATITUDE: ['thank', 'thanks', 'thx', 'appreciate'],
       ADDRESS_UPDATE: ['address', 'destination', 'location', 'pincode', 'street', 'house', 'flat', 'city'],
+      PLAYFUL_BANTER: ['sex', 'sexy', 'hot', 'nude', 'naked', 'date', 'single', 'kiss', 'babe', 'baby', 'marry'],
     };
 
     for (const [intentKey, patterns] of Object.entries(INTENT_PATTERNS) as [CustomerIntent, string[]][]) {
@@ -1029,6 +1060,14 @@ Enter the code in the discount field on the checkout page to apply your savings.
           text: `Welcome to DUKAAN Concierge. I am here to assist you with order tracking, doorstep size exchanges, fabric care instructions, or personalized styling recommendations.\n\nHow may I assist you today?`,
           type: 'text',
           quickReplies: ['📦 Track My Order', '🔄 Returns & Exchanges', '📐 Size & Fit Guide', '🌿 Fabric Care Guide', '💬 Speak to Concierge'],
+        };
+      }
+
+      case 'PLAYFUL_BANTER': {
+        return {
+          text: `While our pure European linens and mulberry silks feel undeniably sensual against bare skin, as the DUKAAN digital concierge my role is to help you get dressed, not undressed.\n\nMay I assist you with tailored sizing, live order tracking, or styling your next ensemble?`,
+          type: 'text',
+          quickReplies: ['🌿 Explore Pure Linens', '📐 Size & Fit Guide', '📦 Track My Order', '💬 Speak to Human Team'],
         };
       }
 
