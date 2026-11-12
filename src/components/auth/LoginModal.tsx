@@ -110,7 +110,7 @@ export const LoginModal: React.FC = () => {
     try {
       sessionStorage.setItem('dukaan_login_dismissed', 'true');
     } catch {}
-    clearRecaptcha('recaptcha-container');
+    clearRecaptcha();
     closeLoginModal();
   };
 
@@ -150,7 +150,7 @@ export const LoginModal: React.FC = () => {
         return;
       }
 
-      const verifier = setupRecaptcha('recaptcha-container');
+      const verifier = setupRecaptcha();
       if (!verifier) {
         setIsLoading(false);
         setErrorMessage('Security verification check failed. Please refresh the page or sign in with Google.');
@@ -169,7 +169,7 @@ export const LoginModal: React.FC = () => {
         return;
       } else {
         setIsLoading(false);
-        clearRecaptcha('recaptcha-container');
+        clearRecaptcha();
         if (res.error?.includes('operation-not-allowed') || res.error?.includes('Phone provider')) {
           setErrorMessage('Live SMS requires Phone Provider enabled in Firebase Console. Please enable Phone in console.firebase.google.com to send live SMS.');
         } else {
@@ -388,7 +388,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="button"
             onClick={() => {
-              clearRecaptcha('recaptcha-container');
+              clearRecaptcha();
               setAuthMode('phone');
               setOtpStep(false);
               setErrorMessage('');
@@ -407,7 +407,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="button"
             onClick={() => {
-              clearRecaptcha('recaptcha-container');
+              clearRecaptcha();
               setAuthMode('email');
               setOtpStep(false);
               setErrorMessage('');
@@ -445,7 +445,7 @@ export const LoginModal: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    clearRecaptcha('recaptcha-container');
+                    clearRecaptcha();
                     setOtpStep(false);
                   }}
                   className="text-[10px] text-[#A7654A] underline"
@@ -545,8 +545,6 @@ export const LoginModal: React.FC = () => {
                   6-digit SMS verification code will be dispatched to your phone
                 </span>
               </div>
-
-              <div id="recaptcha-container" />
 
               <button
                 type="submit"

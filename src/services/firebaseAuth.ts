@@ -105,8 +105,10 @@ export const resetPassword = async (email: string): Promise<AuthResponse> => {
 };
 
 let activeRecaptcha: RecaptchaVerifier | null = null;
+let currentContainerId: string | null = null;
+let containerCounter = 0;
 
-export const clearRecaptcha = (containerId = 'recaptcha-container') => {
+export const clearRecaptcha = (_containerId?: string) => {
   if (typeof window === 'undefined') return;
   try {
     if (activeRecaptcha) {
@@ -115,43 +117,55 @@ export const clearRecaptcha = (containerId = 'recaptcha-container') => {
       } catch {}
       activeRecaptcha = null;
     }
-    const container = document.getElementById(containerId);
-    if (container) {
-      container.innerHTML = '';
+    if (currentContainerId) {
+      const el = document.getElementById(currentContainerId);
+      if (el && el.parentNode) {
+        el.parentNode.removeChild(el);
+      }
+      currentContainerId = null;
     }
+    const legacy = document.getElementById('recaptcha-container');
+    if (legacy) {
+      legacy.innerHTML = '';
+    }
+    const badges = document.querySelectorAll('.grecaptcha-badge');
+    badges.forEach((b) => b.remove());
   } catch {}
 };
 
-export const setupRecaptcha = (containerId: string): RecaptchaVerifier | null => {
+export const setupRecaptcha = (_containerId?: string): RecaptchaVerifier | null => {
   if (!isFirebaseConfigured || typeof window === 'undefined') return null;
   try {
-    const container = document.getElementById(containerId);
-    if (!container) return null;
+    clearRecaptcha();
 
-    if (activeRecaptcha) {
-      return activeRecaptcha;
-    }
+    containerCounter += 1;
+    const dynamicId = `recaptcha-container-${Date.now()}-${containerCounter}`;
+    const dynamicDiv = document.createElement('div');
+    dynamicDiv.id = dynamicId;
+    dynamicDiv.setAttribute('aria-hidden', 'true');
+    dynamicDiv.style.position = 'absolute';
+    dynamicDiv.style.left = '-9999px';
+    dynamicDiv.style.top = '-9999px';
+    dynamicDiv.style.width = '1px';
+    dynamicDiv.style.height = '1px';
+    dynamicDiv.style.opacity = '0';
+    dynamicDiv.style.pointerEvents = 'none';
+    document.body.appendChild(dynamicDiv);
 
-    container.innerHTML = '';
-    activeRecaptcha = new RecaptchaVerifier(auth, containerId, {
+    currentContainerId = dynamicId;
+
+    activeRecaptcha = new RecaptchaVerifier(auth, dynamicDiv, {
       size: 'invisible',
       callback: () => {},
       'expired-callback': () => {
-        clearRecaptcha(containerId);
+        clearRecaptcha();
       },
     });
+
     return activeRecaptcha;
   } catch {
-    clearRecaptcha(containerId);
-    try {
-      activeRecaptcha = new RecaptchaVerifier(auth, containerId, {
-        size: 'invisible',
-        callback: () => {},
-      });
-      return activeRecaptcha;
-    } catch {
-      return null;
-    }
+    clearRecaptcha();
+    return null;
   }
 };
 
@@ -166,7 +180,7 @@ export const sendPhoneOtp = async (
     const confirmationResult = await Promise.race([
       signInWithPhoneNumber(auth, phoneNumber, verifier),
       new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error('timeout')), 25000)
+        setTimeout(() => reject(new Error('timeout')), 30000)
       ),
     ]);
     return { success: true, confirmationResult };
@@ -177,6 +191,8 @@ export const sendPhoneOtp = async (
       message = 'SMS request timed out. Please check connection and try again.';
     } else if (err.code === 'auth/operation-not-allowed') {
       message = 'Phone provider is not enabled in Firebase Console.';
+    } else if (err.code === 'auth/unauthorized-domain') {
+      message = 'Domain not authorized. Please add dukaan-j5l5.vercel.app to Authorized Domains in Firebase Console.';
     } else if (err.code === 'auth/invalid-phone-number') {
       message = 'Invalid phone number. Please enter a valid Indian number (+91).';
     } else if (err.code === 'auth/quota-exceeded') {
