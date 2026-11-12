@@ -147,7 +147,7 @@ export const ChatbotWidget: React.FC = () => {
   const user = useAuthStore((state) => state.user);
   const hasStickyBottomBar = useUIStore((state) => state.hasStickyBottomBar);
   const [inputValue, setInputValue] = useState('');
-  const [showTooltip, setShowTooltip] = useState(!hasInteracted);
+  const [showTooltip, setShowTooltip] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 

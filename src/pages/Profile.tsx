@@ -144,52 +144,56 @@ export const Profile: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] py-8 sm:py-12 border-b border-[#141414]/8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <div className="min-h-screen bg-[#FAF9F6] py-6 sm:py-12 pb-32 sm:pb-24 border-b border-[#141414]/8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
 
-        <div className="bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-          <div className="flex items-center gap-4 sm:gap-5">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#141414] text-white rounded-full flex items-center justify-center font-serif text-2xl font-bold shadow-md shrink-0">
+        <div className="bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-5 sm:p-8 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+          <div className="flex items-center gap-4 sm:gap-5 min-w-0">
+            <div className="w-14 h-14 sm:w-18 sm:h-18 bg-[#141414] text-white rounded-full flex items-center justify-center font-serif text-xl sm:text-2xl font-bold shadow-sm shrink-0">
               {user.name.charAt(0).toUpperCase()}
             </div>
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <h1 className="font-serif text-2xl sm:text-3xl text-[#141414] font-normal">
+            <div className="space-y-1.5 min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#141414] font-normal truncate">
                   {user.name}
                 </h1>
-                <span className="inline-flex items-center gap-1 text-[10px] tracking-wider uppercase bg-[#A7654A]/10 text-[#A7654A] px-2.5 py-0.5 rounded-full font-semibold">
+                <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] tracking-wider uppercase bg-[#A7654A]/10 text-[#A7654A] px-2.5 py-0.5 rounded-full font-semibold whitespace-nowrap">
                   <Sparkles className="w-3 h-3" />
                   <span>{user.tier}</span>
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-[#73706B]">
-                <span className="flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5" />
-                  <span className="font-medium tabular-nums">{user.phone}</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>{user.email}</span>
-                  {isEmailVerified ? (
-                    <span className="inline-flex items-center gap-1 text-[10px] text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-semibold">
-                      <CheckCircle2 className="w-3 h-3" />
-                      <span>Verified</span>
-                    </span>
-                  ) : (
-                    <button
-                      onClick={handleVerifyEmail}
-                      className="inline-flex items-center gap-1 text-[10px] text-amber-800 bg-amber-100 hover:bg-amber-200 px-2 py-0.5 rounded-full font-semibold transition-colors"
-                    >
-                      <AlertTriangle className="w-3 h-3" />
-                      <span>Verify Now</span>
-                    </button>
-                  )}
-                </span>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#73706B]">
+                {user.phone && (
+                  <span className="flex items-center gap-1.5 font-medium tabular-nums">
+                    <Phone className="w-3.5 h-3.5 text-[#141414]/60" />
+                    <span>{user.phone}</span>
+                  </span>
+                )}
+                {user.email && (
+                  <span className="flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-[#141414]/60" />
+                    <span className="truncate max-w-[200px]">{user.email}</span>
+                    {isEmailVerified ? (
+                      <span className="inline-flex items-center gap-1 text-[9px] text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-semibold">
+                        <CheckCircle2 className="w-2.5 h-2.5" />
+                        <span>Verified</span>
+                      </span>
+                    ) : (
+                      <button
+                        onClick={handleVerifyEmail}
+                        className="inline-flex items-center gap-1 text-[9px] text-amber-800 bg-amber-100 hover:bg-amber-200 px-2 py-0.5 rounded-full font-semibold transition-colors"
+                      >
+                        <AlertTriangle className="w-2.5 h-2.5" />
+                        <span>Verify Now</span>
+                      </button>
+                    )}
+                  </span>
+                )}
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#141414]/8">
             <button
               onClick={handleLogout}
               className="px-4 py-2 border border-red-200 text-red-600 hover:bg-red-50 text-xs uppercase tracking-wider font-medium rounded-lg transition-colors flex items-center gap-1.5"
