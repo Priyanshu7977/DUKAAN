@@ -9,6 +9,7 @@ import {
   signInWithGoogle,
   resetPassword,
   setupRecaptcha,
+  clearRecaptcha,
   sendPhoneOtp,
   confirmPhoneOtp,
   ConfirmationResult,
@@ -109,6 +110,7 @@ export const LoginModal: React.FC = () => {
     try {
       sessionStorage.setItem('dukaan_login_dismissed', 'true');
     } catch {}
+    clearRecaptcha('recaptcha-container');
     closeLoginModal();
   };
 
@@ -167,6 +169,7 @@ export const LoginModal: React.FC = () => {
         return;
       } else {
         setIsLoading(false);
+        clearRecaptcha('recaptcha-container');
         if (res.error?.includes('operation-not-allowed') || res.error?.includes('Phone provider')) {
           setErrorMessage('Live SMS requires Phone Provider enabled in Firebase Console. Please enable Phone in console.firebase.google.com to send live SMS.');
         } else {
@@ -385,6 +388,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="button"
             onClick={() => {
+              clearRecaptcha('recaptcha-container');
               setAuthMode('phone');
               setOtpStep(false);
               setErrorMessage('');
@@ -403,6 +407,7 @@ export const LoginModal: React.FC = () => {
           <button
             type="button"
             onClick={() => {
+              clearRecaptcha('recaptcha-container');
               setAuthMode('email');
               setOtpStep(false);
               setErrorMessage('');
@@ -439,7 +444,10 @@ export const LoginModal: React.FC = () => {
                 </p>
                 <button
                   type="button"
-                  onClick={() => setOtpStep(false)}
+                  onClick={() => {
+                    clearRecaptcha('recaptcha-container');
+                    setOtpStep(false);
+                  }}
                   className="text-[10px] text-[#A7654A] underline"
                 >
                   Change {authMode === 'phone' ? 'mobile number' : 'email address'}

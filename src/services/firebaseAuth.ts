@@ -106,8 +106,8 @@ export const resetPassword = async (email: string): Promise<AuthResponse> => {
 
 let activeRecaptcha: RecaptchaVerifier | null = null;
 
-export const setupRecaptcha = (containerId: string): RecaptchaVerifier | null => {
-  if (!isFirebaseConfigured || typeof window === 'undefined') return null;
+export const clearRecaptcha = (containerId = 'recaptcha-container') => {
+  if (typeof window === 'undefined') return;
   try {
     if (activeRecaptcha) {
       try {
@@ -115,13 +115,43 @@ export const setupRecaptcha = (containerId: string): RecaptchaVerifier | null =>
       } catch {}
       activeRecaptcha = null;
     }
+    const container = document.getElementById(containerId);
+    if (container) {
+      container.innerHTML = '';
+    }
+  } catch {}
+};
+
+export const setupRecaptcha = (containerId: string): RecaptchaVerifier | null => {
+  if (!isFirebaseConfigured || typeof window === 'undefined') return null;
+  try {
+    const container = document.getElementById(containerId);
+    if (!container) return null;
+
+    if (activeRecaptcha) {
+      return activeRecaptcha;
+    }
+
+    container.innerHTML = '';
     activeRecaptcha = new RecaptchaVerifier(auth, containerId, {
       size: 'invisible',
       callback: () => {},
+      'expired-callback': () => {
+        clearRecaptcha(containerId);
+      },
     });
     return activeRecaptcha;
   } catch {
-    return null;
+    clearRecaptcha(containerId);
+    try {
+      activeRecaptcha = new RecaptchaVerifier(auth, containerId, {
+        size: 'invisible',
+        callback: () => {},
+      });
+      return activeRecaptcha;
+    } catch {
+      return null;
+    }
   }
 };
 
@@ -136,14 +166,15 @@ export const sendPhoneOtp = async (
     const confirmationResult = await Promise.race([
       signInWithPhoneNumber(auth, phoneNumber, verifier),
       new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error('timeout')), 3500)
+        setTimeout(() => reject(new Error('timeout')), 25000)
       ),
     ]);
     return { success: true, confirmationResult };
   } catch (err: any) {
+    clearRecaptcha();
     let message = 'Unable to send SMS verification code.';
     if (err.message === 'timeout') {
-      message = 'SMS request timed out. Please try again.';
+      message = 'SMS request timed out. Please check connection and try again.';
     } else if (err.code === 'auth/operation-not-allowed') {
       message = 'Phone provider is not enabled in Firebase Console.';
     } else if (err.code === 'auth/invalid-phone-number') {
@@ -155,7 +186,11 @@ export const sendPhoneOtp = async (
     } else if (err.code === 'auth/too-many-requests') {
       message = 'Too many requests. Please wait a few moments before trying again.';
     } else if (err.message) {
-      message = err.message;
+      if (err.message.includes('reCAPTCHA has already been rendered')) {
+        message = 'Security check refreshed. Please tap Get Verification Code again.';
+      } else {
+        message = err.message;
+      }
     }
     return { success: false, error: message };
   }
