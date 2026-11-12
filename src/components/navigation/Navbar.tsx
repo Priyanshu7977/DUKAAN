@@ -68,14 +68,18 @@ export const Navbar: React.FC = () => {
                     to={link.to}
                     className={cn(
                       'py-1 transition-colors duration-150',
-                      location.pathname === link.to || (link.to !== '/' && location.pathname.startsWith(link.to))
+                      location.pathname === link.to ||
+                        (link.to !== '/' && location.pathname.startsWith(link.to)) ||
+                        (link.to === '/journal' && location.pathname.startsWith('/blog'))
                         ? 'text-[#141414] font-semibold'
                         : 'text-[#73706B] hover:text-[#141414]'
                     )}
                   >
                     {link.label}
                   </Link>
-                  {(location.pathname === link.to || (link.to !== '/' && location.pathname.startsWith(link.to))) && (
+                  {(location.pathname === link.to ||
+                    (link.to !== '/' && location.pathname.startsWith(link.to)) ||
+                    (link.to === '/journal' && location.pathname.startsWith('/blog'))) && (
                     <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#141414]" />
                   )}
                 </div>

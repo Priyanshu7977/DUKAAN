@@ -84,7 +84,7 @@ export interface JournalArticle {
   slug: string;
   title: string;
   subtitle: string;
-  category: 'Journal Notes' | 'Materiality' | 'Architecture' | 'Conversations' | 'Campaign';
+  category: string;
   date: string;
   readTime: string;
   author: {
@@ -93,6 +93,10 @@ export interface JournalArticle {
   };
   coverImage: string;
   excerpt: string;
+  tags?: string[];
+  keyFacts?: Array<{ label: string; value: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
+  relatedProductSlugs?: string[];
   content: Array<{
     type: 'paragraph' | 'heading' | 'quote' | 'image' | 'two-images';
     text?: string;

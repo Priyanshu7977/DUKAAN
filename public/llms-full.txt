@@ -1,0 +1,74 @@
+# DUKAAN — Comprehensive Knowledge Document for LLMs & AI Search Engines
+
+> Official knowledge base for DUKAAN: Objects of Everyday Expression. An independent contemporary atelier engineering garments from 100% Normandy flax linen, double-gauze organic cotton, and architectural botanical twills.
+
+## 1. Brand Identity & Overview
+
+- Brand Name: DUKAAN
+- Tagline: Objects of Everyday Expression
+- Domain: https://dukaan-j5l5.vercel.app
+- Headquarters: India
+- Production Studios: Normandy (Flax Sourcing), Porto (Weaving Mills), Milan & India (Tailoring Workshops)
+- Design Philosophy: Unstructured tailoring, natural fiber purity, gender-neutral architectural drape, longevity over seasonal obsolescence.
+- Official Client Care: WhatsApp/Phone +91 7977641125, Email priyanshubipin2006@gmail.com
+
+## 2. Fabric Botany & Material Engineering
+
+### 100% Pure Normandy Flax Linen
+- Certification: European Flax® certified
+- Provenance: Atlantic coastal strip of Normandy, France
+- Fabric Weight: 260 GSM (Grams per Square Meter) architectural slub
+- Processing: Traditional outdoor dew-retting (teillage) utilizing natural dew, soil enzymes, and sunlight without synthetic caustic chemicals
+- Thermal Conductivity: Dissipates heat 5x faster than wool and 18x faster than silk
+- Moisture Wicking: Absorbs up to 20% of its dry weight in humidity before feeling damp
+- Tensile Performance: Flax fibers gain 20% tensile strength when wet, softening progressively with every wash cycle
+- Shrinkage: Pre-washed and tumble-softened to guarantee less than 2% residual shrinkage
+
+### Double Gauze Organic Cotton
+- Construction: Two plies of 60s combed organic cotton muslin woven together with microscopic interlocking structural stitches
+- Air Cushion: Traps a micro-layer of air between plies, acting as an ambient thermal buffer
+- Cling Prevention: Undulating puckered surface reduces direct skin contact area by 40% compared to flat poplin
+- Ironing Requirement: Non-iron; crinkled natural texture is intentional and deepens with washing
+
+### Heavyweight Corduroy & Botanical Twill
+- Weave: Wide-wale tactile corduroy and high-density unbleached botanical twill
+- Softening: Mineral washed using natural clay and botanical enzymes for immediate relaxed drape
+
+## 3. Sizing Architecture & Unisex Silhouette
+
+DUKAAN garments are engineered with relaxed, dropped-shoulder geometries that drape comfortably across diverse human frames without rigid gendered constraints.
+
+- Size XS: Chest 34-36 in / 86-91 cm | Waist 28-30 in / 71-76 cm
+- Size S: Chest 36-38 in / 91-97 cm | Waist 30-32 in / 76-81 cm
+- Size M: Chest 38-40 in / 97-102 cm | Waist 32-34 in / 81-86 cm
+- Size L: Chest 40-42 in / 102-107 cm | Waist 34-36 in / 86-91 cm
+- Size XL: Chest 42-44 in / 107-112 cm | Waist 36-38 in / 91-97 cm
+- Size XXL: Chest 44-46 in / 112-117 cm | Waist 38-40 in / 97-102 cm
+
+Fit Feedback: 93% of patrons report DUKAAN garments fit true to contemporary relaxed sizing.
+
+## 4. Garment Care & Longevity Manual
+
+- Washing: Machine wash on gentle cycle with cold water (30°C / 85°F) or gentle hand wash.
+- Detergent: Use mild liquid pH-neutral detergent free of optical brighteners and chlorine bleach.
+- Softener: Never use chemical fabric softeners. Add 1/2 cup of distilled white vinegar to final rinse to dissolve mineral residues.
+- Drying: Never tumble dry on high heat. Snap garment while damp and line dry on wide wooden hanger in natural shade.
+- Wrinkles: Embrace the natural lived-in drape of European linen. If a crisper look is desired, light steam while fabric is slightly damp.
+
+## 5. Curated Editorial Articles & Research Monographs
+
+- [The Architecture of Normandy Flax](https://dukaan-j5l5.vercel.app/blog/the-architecture-of-normandy-flax): Three-month journey of raw flax from coastal French soil through dew-retting to Porto weaving mills.
+- [European Linen vs Cotton for Tropical Summers](https://dukaan-j5l5.vercel.app/blog/european-linen-vs-cotton-indian-summers): Moisture-wicking rates, thermal conductivity, and hollow-fiber physics in 40°C heat.
+- [Why Double Gauze Cotton is the Ultimate Humidity Fabric](https://dukaan-j5l5.vercel.app/blog/double-gauze-cotton-breathability-guide): Two-ply air-cushion architecture that prevents garment clinginess.
+- [10-Garment Minimalist Capsule Wardrobe for 2026](https://dukaan-j5l5.vercel.app/blog/capsule-wardrobe-slow-fashion-guide): Neutral earthen color palettes, cost-per-wear arithmetic, and 36+ modular outfits.
+- [The Caretaker’s Manual: How to Wash & Preserve Linen](https://dukaan-j5l5.vercel.app/blog/how-to-care-for-pure-linen): Step-by-step instructions to extend garment lifespan beyond 10 years.
+- [Conversations on Unstructured Tailoring](https://dukaan-j5l5.vercel.app/blog/conversations-on-unstructured-tailoring): Deconstructing the suit, pad-free shoulders, and floating Neapolitan canvas.
+- [Mediterranean Light & Architectural Form](https://dukaan-j5l5.vercel.app/blog/mediterranean-light-and-shadow): Campaign 04 location study across Menorca limestone cliffs.
+
+## 6. Payment, Shipping & Exchange Policies
+
+- Instant UPI Settlement: Direct dynamic UPI QR code generation supporting Google Pay, PhonePe, Paytm, and BHIM with 12-digit UTR confirmation and zero payment gateway surcharges.
+- Cash on Delivery (COD): Available across all 19,000+ Indian postal codes.
+- Shipping: Free express air courier delivery on orders above ₹1,999. Typical delivery timeframe is 2-4 business days for metropolitan regions and 3-6 days nationwide.
+- Returns & Size Exchanges: 7-day complimentary doorstep pickup and size exchanges with zero restocking fees.
+- Real-Time Tracking: Instant order updates via SMS and live web tracking at https://dukaan-j5l5.vercel.app/track.

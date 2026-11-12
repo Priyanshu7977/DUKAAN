@@ -108,6 +108,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/returns" className="hover:text-white transition-colors block py-0.5">Returns & Exchanges</Link></li>
               <li><Link to="/faq" className="hover:text-white transition-colors block py-0.5">Client FAQs</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors block py-0.5">Brand Philosophy</Link></li>
+              <li><Link to="/blog" className="hover:text-white transition-colors block py-0.5">Editorial Blog</Link></li>
             </ul>
           </div>
 
@@ -153,6 +154,7 @@ export const Footer: React.FC = () => {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
               <a href="https://wa.me/917977641125" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
               <Link to="/journal" className="hover:text-white transition-colors">Journal</Link>
+              <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
             </div>
           </div>
 

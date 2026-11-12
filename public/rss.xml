@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DUKAAN — Editorial Journal &amp; Monographs</title>
+    <link>https://dukaan-j5l5.vercel.app/blog</link>
+    <description>Curated investigations into textile botany, architectural silhouette geometries, European linen care, and unstructured tailoring dialogues.</description>
+    <language>en-in</language>
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://dukaan-j5l5.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Architecture of Normandy Flax: From Coastal Field to Garment</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/the-architecture-of-normandy-flax</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/the-architecture-of-normandy-flax</guid>
+      <pubDate>Sun, 18 May 2025 00:00:00 GMT</pubDate>
+      <category>Materiality</category>
+      <author>priyanshubipin2006@gmail.com (Elena Rostova)</author>
+      <description>True luxury lies in botanical patience. We trace the three-month journey of our certified raw flax from coastal French soil through gentle dew-retting to our weaving mills in Porto.</description>
+    </item>
+    <item>
+      <title>European Linen vs Conventional Cotton: The Definitive Guide for Tropical Climates</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/european-linen-vs-cotton-indian-summers</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/european-linen-vs-cotton-indian-summers</guid>
+      <pubDate>Sat, 10 May 2025 00:00:00 GMT</pubDate>
+      <category>Style Guide</category>
+      <author>priyanshubipin2006@gmail.com (Julian Vance)</author>
+      <description>When humidity rises above 70%, conventional cotton tends to saturate and cling. We analyze the molecular difference that makes pure European linen the superior textile for Indian summers.</description>
+    </item>
+    <item>
+      <title>Why Double Gauze Cotton is the Ultimate Humidity-Resistant Fabric</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/double-gauze-cotton-breathability-guide</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/double-gauze-cotton-breathability-guide</guid>
+      <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
+      <category>Materiality</category>
+      <author>priyanshubipin2006@gmail.com (Sofia Lindqvist)</author>
+      <description>Double gauze connects two micro-fine plies with invisible tacking points, creating an insulating air buffer that lifts fabric off the body. Learn why it is the definitive resort wear textile.</description>
+    </item>
+    <item>
+      <title>How to Build a 10-Garment Minimalist Capsule Wardrobe for 2026</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/capsule-wardrobe-slow-fashion-guide</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/capsule-wardrobe-slow-fashion-guide</guid>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 GMT</pubDate>
+      <category>Style Guide</category>
+      <author>priyanshubipin2006@gmail.com (Julian Vance)</author>
+      <description>Eliminate closet fatigue and consumerist clutter. Discover how ten thoughtfully tailored garments in neutral earthy tones unlock thirty-six interchangeable outfits.</description>
+    </item>
+    <item>
+      <title>The Caretaker’s Manual: How to Wash, Dry, and Preserve Pure Linen</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/how-to-care-for-pure-linen</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/how-to-care-for-pure-linen</guid>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+      <category>Care Guide</category>
+      <author>priyanshubipin2006@gmail.com (Elena Rostova)</author>
+      <description>Pure linen is one of the few textiles that becomes softer, stronger, and more luminous with every wash cycle. Follow our master guide to ensure your garments last for decades.</description>
+    </item>
+    <item>
+      <title>Conversations on Unstructured Tailoring: Deconstructing Floating Canvases</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/conversations-on-unstructured-tailoring</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/conversations-on-unstructured-tailoring</guid>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 GMT</pubDate>
+      <category>Conversations</category>
+      <author>priyanshubipin2006@gmail.com (Julian Vance)</author>
+      <description>In our Neapolitan workshop, tailor Marco Vieri explains why the absence of padding exposes every seam to scrutiny, and how floating canvas allows a garment to breathe with the wearer.</description>
+    </item>
+    <item>
+      <title>Mediterranean Light &amp; Architectural Form: Campaign 04 Location Study</title>
+      <link>https://dukaan-j5l5.vercel.app/blog/mediterranean-light-and-shadow</link>
+      <guid isPermaLink="true">https://dukaan-j5l5.vercel.app/blog/mediterranean-light-and-shadow</guid>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 GMT</pubDate>
+      <category>Campaign</category>
+      <author>priyanshubipin2006@gmail.com (Sofia Lindqvist)</author>
+      <description>Exploring the geometry of raw limestone, harsh midday shadows, and the gentle drape of double-gauze holiday textiles along the Balearic coastline.</description>
+    </item>
+  </channel>
+</rss>
