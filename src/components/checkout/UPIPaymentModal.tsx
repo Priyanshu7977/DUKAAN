@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { X, Copy, Check, ShieldCheck, Clock, ArrowRight, Sparkles, CheckCircle2, Loader2, AlertCircle, RefreshCw } from 'lucide-react';
+import { X, Copy, Check, ShieldCheck, Clock, ArrowRight, Sparkles, CheckCircle2, RefreshCw, AlertCircle } from 'lucide-react';
 import { formatPrice } from '../../utils/formatters';
 import { UPIGatewayService, UPIGatewayOrderData } from '../../services/upiGateway';
 
@@ -25,8 +25,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
   customerEmail,
 }) => {
   const [order, setOrder] = useState<UPIGatewayOrderData | null>(null);
-  const [isLoadingOrder, setIsLoadingOrder] = useState(false);
-  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('');
+  const [qrSvg, setQrSvg] = useState('');
   const [copiedVpa, setCopiedVpa] = useState(false);
   const [copiedOrderId, setCopiedOrderId] = useState(false);
   const [utr, setUtr] = useState('');
@@ -40,22 +39,23 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
   const vpa = order?.vpa || '7977641125@ybl';
   const merchantName = order?.merchant_name || 'DUKAAN';
 
-  const baseUpiIntent = useMemo(() => {
-    if (order?.upi_intent) return order.upi_intent;
+  const defaultIntentUri = useMemo(() => {
     return UPIGatewayService.buildUPIIntentUri({
-      vpa,
-      merchantName,
+      vpa: '7977641125@ybl',
+      merchantName: 'DUKAAN',
       amount: totalAmount,
       orderId: orderNumber,
       note: `DUKAAN Order ${orderNumber}`,
     });
-  }, [order, vpa, merchantName, totalAmount, orderNumber]);
+  }, [totalAmount, orderNumber]);
+
+  const activeIntentUri = order?.upi_intent || defaultIntentUri;
 
   useEffect(() => {
     if (!isOpen) {
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
       setOrder(null);
-      setQrCodeDataUrl('');
+      setQrSvg('');
       setUtr('');
       setUtrError('');
       setIsSubmittingUtr(false);
@@ -65,39 +65,38 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
     }
 
     let isMounted = true;
-    setIsLoadingOrder(true);
 
-    (async () => {
-      try {
-        const orderData = await UPIGatewayService.createOrder({
-          amount: totalAmount,
-          clientOrderId: orderNumber,
-          customerName,
-          customerMobile,
-          customerEmail,
-          note: `DUKAAN Order ${orderNumber}`,
-        });
-
-        if (isMounted) {
-          setOrder(orderData);
-          setQrCodeDataUrl(orderData.qr_data_url);
-          setStatus(orderData.status === 'review' ? 'review' : orderData.status === 'paid' ? 'paid' : 'pending');
-        }
-      } catch {
-        const fallbackQr = await UPIGatewayService.generateQRCodeDataUrl(baseUpiIntent);
-        if (isMounted) {
-          setQrCodeDataUrl(fallbackQr);
-        }
-      } finally {
-        if (isMounted) setIsLoadingOrder(false);
+    UPIGatewayService.generateQRCodeSvg(defaultIntentUri).then((svg) => {
+      if (isMounted && svg) {
+        setQrSvg(svg);
       }
-    })();
+    });
+
+    UPIGatewayService.createOrder({
+      amount: totalAmount,
+      clientOrderId: orderNumber,
+      customerName,
+      customerMobile,
+      customerEmail,
+      note: `DUKAAN Order ${orderNumber}`,
+    })
+      .then(async (orderData) => {
+        if (!isMounted) return;
+        setOrder(orderData);
+        if (orderData.upi_intent && orderData.upi_intent !== defaultIntentUri) {
+          const updatedSvg = await UPIGatewayService.generateQRCodeSvg(orderData.upi_intent);
+          if (isMounted && updatedSvg) {
+            setQrSvg(updatedSvg);
+          }
+        }
+      })
+      .catch(() => {});
 
     return () => {
       isMounted = false;
       if (pollTimerRef.current) clearInterval(pollTimerRef.current);
     };
-  }, [isOpen, totalAmount, orderNumber, customerName, customerMobile, customerEmail, baseUpiIntent]);
+  }, [isOpen, orderNumber, totalAmount, defaultIntentUri, customerName, customerMobile, customerEmail]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -117,10 +116,11 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
   }, [isOpen]);
 
   useEffect(() => {
-    if (!isOpen || !order?.order_id || status === 'paid' || status === 'expired') return;
+    const targetOrderId = order?.order_id;
+    if (!isOpen || !targetOrderId || status === 'paid' || status === 'expired') return;
 
     pollTimerRef.current = setInterval(async () => {
-      const res = await UPIGatewayService.checkOrderStatus(order.order_id);
+      const res = await UPIGatewayService.checkOrderStatus(targetOrderId);
       if (res.status === 'paid' || res.paid) {
         setStatus('paid');
         if (pollTimerRef.current) clearInterval(pollTimerRef.current);
@@ -162,7 +162,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
     }
 
     if (!/^\d{12}$/.test(cleanUtr)) {
-      setUtrError('UTR must be exactly 12 numeric digits (e.g. 431289102847).');
+      setUtrError('UTR must be exactly 12 numeric digits.');
       return;
     }
 
@@ -399,7 +399,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
               </button>
             </div>
           ) : (
-            <div className="space-y-5">
+            <div className="space-y-4">
               <div className="flex flex-col items-center">
                 <div className="relative p-3 bg-white rounded-2xl shadow-sm border border-[#141414]/10 inline-block">
                   <div className="absolute top-1.5 left-1.5 w-4 h-4 border-t-2 border-l-2 border-[#A7654A] rounded-tl-sm pointer-events-none" />
@@ -407,17 +407,10 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                   <div className="absolute bottom-1.5 left-1.5 w-4 h-4 border-b-2 border-l-2 border-[#A7654A] rounded-bl-sm pointer-events-none" />
                   <div className="absolute bottom-1.5 right-1.5 w-4 h-4 border-b-2 border-r-2 border-[#A7654A] rounded-br-sm pointer-events-none" />
 
-                  {isLoadingOrder || !qrCodeDataUrl ? (
-                    <div className="w-44 h-44 sm:w-48 sm:h-48 flex items-center justify-center bg-[#FAF9F6] rounded-xl">
-                      <Loader2 className="w-8 h-8 text-[#A7654A] animate-spin" />
-                    </div>
-                  ) : (
-                    <img
-                      src={qrCodeDataUrl}
-                      alt="UPI QR Code"
-                      className="w-44 h-44 sm:w-48 sm:h-48 object-contain rounded-xl"
-                    />
-                  )}
+                  <div
+                    className="w-48 h-48 sm:w-52 sm:h-52 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full [&>svg]:rounded-lg"
+                    dangerouslySetInnerHTML={{ __html: qrSvg }}
+                  />
                 </div>
 
                 <span className="text-[10px] text-[#73706B] uppercase tracking-wider font-medium mt-2 flex items-center gap-1">
@@ -430,29 +423,25 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                 <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-semibold block text-center mb-2">
                   Or One-Tap Launch on Mobile
                 </span>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
                   {appButtons.map((app) => (
                     <a
                       key={app.id}
-                      href={UPIGatewayService.getAppLaunchUrl(app.id, baseUpiIntent)}
-                      className="h-11 px-2.5 bg-white hover:bg-[#FAF8F5] border border-[#141414]/15 rounded-xl flex items-center justify-center gap-2 transition-all hover:border-[#141414] active:scale-95 shadow-xs"
+                      href={UPIGatewayService.getAppLaunchUrl(app.id, activeIntentUri)}
+                      className="h-12 px-3 bg-white hover:bg-[#FAF8F5] border border-[#141414]/15 hover:border-[#141414] rounded-xl flex items-center justify-center transition-all active:scale-98 shadow-xs"
                       title={`Pay with ${app.name}`}
                     >
                       <img
                         src={app.icon}
                         alt={app.name}
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                        }}
-                        className="w-5 h-5 object-contain"
+                        className="h-6 w-auto max-h-7 max-w-[120px] object-contain"
                       />
-                      <span className="text-[11px] font-medium text-[#141414] truncate">{app.name}</span>
                     </a>
                   ))}
                 </div>
               </div>
 
-              <form onSubmit={handleUtrSubmit} className="space-y-3 pt-3 border-t border-[#141414]/10">
+              <form onSubmit={handleUtrSubmit} className="space-y-2.5 pt-3 border-t border-[#141414]/10">
                 <div>
                   <div className="flex justify-between items-center mb-1">
                     <label
@@ -461,7 +450,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                     >
                       12-Digit UTR / Transaction Reference *
                     </label>
-                    <span className="text-[10px] text-[#73706B]/75">After payment completion</span>
+                    <span className="text-[10px] text-[#73706B]/75">From UPI receipt</span>
                   </div>
                   <input
                     type="text"
@@ -474,7 +463,6 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                       setUtr(e.target.value.replace(/\D/g, '').slice(0, 12));
                       setUtrError('');
                     }}
-                    placeholder="Enter 12-digit UTR from your UPI app"
                     className="w-full h-11 px-3.5 bg-white border border-[#141414]/15 rounded-xl text-xs font-mono focus:outline-none focus:border-[#141414] tabular-nums"
                   />
                   {utrError && (
@@ -490,17 +478,8 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                   disabled={isSubmittingUtr}
                   className="w-full h-11 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-xl shadow-md flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:bg-[#73706B]"
                 >
-                  {isSubmittingUtr ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Submitting To Banking Gateway...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>I Have Transferred ₹{Math.round(totalAmount).toLocaleString('en-IN')} — Confirm</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
+                  <span>I Have Transferred ₹{Math.round(totalAmount).toLocaleString('en-IN')} — Confirm</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             </div>

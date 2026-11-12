@@ -69,7 +69,23 @@ export class UPIGatewayService {
     try {
       return await QRCode.toDataURL(intentUri, {
         margin: 1,
-        width: 320,
+        width: 600,
+        errorCorrectionLevel: 'M',
+        color: {
+          dark: '#141414',
+          light: '#FFFFFF',
+        },
+      });
+    } catch {
+      return '';
+    }
+  }
+
+  public static async generateQRCodeSvg(intentUri: string): Promise<string> {
+    try {
+      return await QRCode.toString(intentUri, {
+        type: 'svg',
+        margin: 1,
         errorCorrectionLevel: 'M',
         color: {
           dark: '#141414',
