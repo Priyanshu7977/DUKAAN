@@ -139,34 +139,18 @@ export const LoginModal: React.FC = () => {
     setAttempts((prev) => prev + 1);
 
     const cleanPhone = phoneNumber.replace(/\D/g, '').slice(-10);
-    const isAdmin = checkIsAdmin(cleanPhone, emailAddress);
-    setIsMasterAdmin(isAdmin);
-
-    if (isAdmin) {
-      setOtpCode(['', '', '', '']);
-      setIsLoading(false);
-      setOtpStep(true);
-      setCountdown(60);
-      showToast(
-        authMode === 'phone'
-          ? `Admin verification initialized for +91 ${cleanPhone}`
-          : `Admin verification initialized for ${emailAddress}`,
-        'info'
-      );
-      return;
-    }
 
     if (authMode === 'phone') {
       if (!isFirebaseConfigured) {
         setIsLoading(false);
-        setErrorMessage('Authentication service is initializing. Please sign in with Google or use the authorized admin number.');
+        setErrorMessage('Authentication service is initializing. Please sign in with Google.');
         return;
       }
 
       const verifier = setupRecaptcha('recaptcha-container');
       if (!verifier) {
         setIsLoading(false);
-        setErrorMessage('Verification security check failed. Please refresh the page or sign in with Google.');
+        setErrorMessage('Security verification check failed. Please refresh the page or sign in with Google.');
         return;
       }
 
@@ -174,6 +158,7 @@ export const LoginModal: React.FC = () => {
       if (res.success && res.confirmationResult) {
         setConfirmationResult(res.confirmationResult);
         setOtpCode(['', '', '', '', '', '']);
+        setIsMasterAdmin(false);
         setIsLoading(false);
         setOtpStep(true);
         setCountdown(60);
@@ -182,12 +167,24 @@ export const LoginModal: React.FC = () => {
       } else {
         setIsLoading(false);
         if (res.error?.includes('operation-not-allowed') || res.error?.includes('Phone provider')) {
-          setErrorMessage('SMS service requires Phone Auth enabled in Firebase Console. Please sign in instantly with Google below, or use the authorized admin number.');
+          setErrorMessage('Live SMS requires Phone Provider enabled in Firebase Console. Please enable Phone in console.firebase.google.com to send live SMS.');
         } else {
           setErrorMessage(res.error || 'Failed to dispatch SMS code. Please try again or sign in with Google.');
         }
         return;
       }
+    }
+
+    const isAdmin = checkIsAdmin(cleanPhone, emailAddress);
+    setIsMasterAdmin(isAdmin);
+
+    if (isAdmin) {
+      setOtpCode(['', '', '', '']);
+      setIsLoading(false);
+      setOtpStep(true);
+      setCountdown(60);
+      showToast(`Admin verification initialized for ${emailAddress}`, 'info');
+      return;
     }
 
     setIsLoading(false);
@@ -520,9 +517,7 @@ export const LoginModal: React.FC = () => {
                   />
                 </div>
                 <span className="text-[9px] text-[#73706B] block">
-                  {phoneNumber === '7977641125'
-                    ? 'Administrator security code will be verified'
-                    : 'SMS verification code will be dispatched'}
+                  6-digit SMS verification code will be dispatched to your phone
                 </span>
               </div>
 
