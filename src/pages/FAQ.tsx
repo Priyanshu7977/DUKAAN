@@ -55,6 +55,8 @@ export const FAQ: React.FC = () => {
           <div className="relative max-w-xl">
             <input
               type="text"
+              id="faq-search-input"
+              name="search"
               value={filterQuery}
               onChange={(e) => setFilterQuery(e.target.value)}
               placeholder="Filter topics (e.g., shipping, linen, returns, sizes)..."

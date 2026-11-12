@@ -112,6 +112,8 @@ export const Returns: React.FC = () => {
                     <input
                       type="text"
                       required
+                      id="return-order-id"
+                      name="orderId"
                       value={orderId}
                       onChange={(e) => setOrderId(e.target.value)}
                       placeholder="e.g. DUK-IN-882194"
@@ -126,6 +128,8 @@ export const Returns: React.FC = () => {
                     <input
                       type="tel"
                       required
+                      id="return-phone"
+                      name="phone"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
                       placeholder="10-digit delivery mobile"
@@ -206,6 +210,8 @@ export const Returns: React.FC = () => {
                     Reason for Return / Exchange
                   </label>
                   <select
+                    id="return-reason"
+                    name="reason"
                     value={reason}
                     onChange={(e) => setReason(e.target.value)}
                     className="w-full h-11 px-3 bg-[#FAF9F6] border border-[#141414]/15 rounded-xl text-xs focus:outline-none focus:border-[#141414]"
@@ -224,6 +230,8 @@ export const Returns: React.FC = () => {
                   </label>
                   <textarea
                     rows={2}
+                    id="return-comments"
+                    name="comments"
                     value={comments}
                     onChange={(e) => setComments(e.target.value)}
                     placeholder="Provide any specific instructions for the pickup executive..."

@@ -269,6 +269,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               <span className="text-[#73706B] uppercase tracking-wider text-[10px] hidden sm:inline">Sort:</span>
               <div className="relative">
                 <select
+                  id="shop-sort-select"
+                  name="sortBy"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
                   className="appearance-none bg-[#FAF8F5] border border-[#141414]/15 pl-3 pr-7 py-1 text-xs text-[#141414] font-medium focus:outline-none cursor-pointer"
@@ -367,6 +369,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                     <label key={g.id} className="flex items-center gap-2 cursor-pointer text-[#73706B] hover:text-[#141414]">
                       <input
                         type="radio"
+                        id={`gender-filter-${g.id}`}
                         name="genderFilter"
                         checked={selectedGender === g.id}
                         onChange={() => setSelectedGender(g.id as any)}
@@ -389,6 +392,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                 min="1000"
                 max="7500"
                 step="250"
+                id="price-range-desktop"
+                name="maxPrice"
                 value={priceRange}
                 onChange={(e) => setPriceRange(Number(e.target.value))}
                 className="w-full accent-[#141414] cursor-pointer"
@@ -452,6 +457,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               <label className="flex items-center gap-2 cursor-pointer text-[#141414]">
                 <input
                   type="checkbox"
+                  id="in-stock-only-desktop"
+                  name="inStockOnly"
                   checked={inStockOnly}
                   onChange={(e) => setInStockOnly(e.target.checked)}
                   className="accent-[#141414]"
@@ -599,6 +606,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
                   min="1000"
                   max="7500"
                   step="250"
+                  id="price-range-mobile"
+                  name="maxPriceMobile"
                   value={priceRange}
                   onChange={(e) => setPriceRange(Number(e.target.value))}
                   className="w-full accent-[#141414]"
@@ -627,6 +636,8 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
               <label className="flex items-center gap-2 pt-1 cursor-pointer">
                 <input
                   type="checkbox"
+                  id="in-stock-only-mobile"
+                  name="inStockOnlyMobile"
                   checked={inStockOnly}
                   onChange={(e) => setInStockOnly(e.target.checked)}
                   className="accent-[#141414]"

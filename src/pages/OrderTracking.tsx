@@ -163,6 +163,8 @@ export const OrderTracking: React.FC = () => {
                 type="text"
                 value={searchOrderId}
                 onChange={(e) => setSearchOrderId(e.target.value)}
+                id="tracking-order-id"
+                name="orderId"
                 placeholder="Enter Order ID (e.g. DUK-IN-882194 or DUK-88219)"
                 className="w-full h-12 pl-10 pr-4 bg-[#FAF9F6] border border-[#141414]/15 rounded-xl text-xs font-mono focus:outline-none focus:border-[#141414]"
               />
@@ -174,6 +176,8 @@ export const OrderTracking: React.FC = () => {
                 type="tel"
                 value={searchPhone}
                 onChange={(e) => setSearchPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
+                id="tracking-phone"
+                name="phone"
                 placeholder="Mobile (Optional)"
                 className="w-full h-12 px-4 bg-[#FAF9F6] border border-[#141414]/15 rounded-xl text-xs font-mono focus:outline-none focus:border-[#141414]"
               />

@@ -148,6 +148,8 @@ export const CheckoutModal: React.FC = () => {
                       </label>
                       <input
                         type="text"
+                        id="checkout-modal-fullname"
+                        name="fullName"
                         required
                         value={formData.fullName}
                         onChange={(e) => handleTextOnlyChange('fullName', e.target.value)}
@@ -165,6 +167,8 @@ export const CheckoutModal: React.FC = () => {
                         </span>
                         <input
                           type="tel"
+                          id="checkout-modal-phone"
+                          name="phone"
                           required
                           value={formData.phone}
                           onChange={(e) => handleNumberOnlyChange('phone', e.target.value, 10)}
@@ -181,6 +185,8 @@ export const CheckoutModal: React.FC = () => {
                     </label>
                     <input
                       type="email"
+                      id="checkout-modal-email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -195,6 +201,8 @@ export const CheckoutModal: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      id="checkout-modal-address"
+                      name="address"
                       required
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
@@ -210,6 +218,8 @@ export const CheckoutModal: React.FC = () => {
                       </label>
                       <input
                         type="text"
+                        id="checkout-modal-city"
+                        name="city"
                         required
                         value={formData.city}
                         onChange={(e) => handleTextOnlyChange('city', e.target.value)}
@@ -222,6 +232,8 @@ export const CheckoutModal: React.FC = () => {
                         State *
                       </label>
                       <select
+                        id="checkout-modal-state"
+                        name="state"
                         value={formData.state}
                         onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                         className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3 py-2 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
@@ -239,6 +251,8 @@ export const CheckoutModal: React.FC = () => {
                       </label>
                       <input
                         type="text"
+                        id="checkout-modal-pincode"
+                        name="pincode"
                         required
                         value={formData.pincode}
                         onChange={(e) => handleNumberOnlyChange('pincode', e.target.value, 6)}
@@ -269,6 +283,7 @@ export const CheckoutModal: React.FC = () => {
                         >
                           <input
                             type="radio"
+                            id={`checkout-modal-pm-${pm.id}`}
                             name="paymentMethod"
                             checked={formData.paymentMethod === pm.id}
                             onChange={() => setFormData({ ...formData, paymentMethod: pm.id })}

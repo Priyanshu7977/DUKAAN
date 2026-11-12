@@ -89,6 +89,8 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       required
+                      id="contact-fullname"
+                      name="name"
                       value={form.name}
                       onChange={(e) => handleNameChange(e.target.value)}
                       placeholder="Enter full name"
@@ -106,6 +108,8 @@ export const Contact: React.FC = () => {
                       </span>
                       <input
                         type="tel"
+                        id="contact-phone"
+                        name="phone"
                         value={form.phone}
                         onChange={(e) => handlePhoneChange(e.target.value)}
                         placeholder="10-digit number"
@@ -123,6 +127,8 @@ export const Contact: React.FC = () => {
                     <input
                       type="email"
                       required
+                      id="contact-email"
+                      name="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="Enter email address"
@@ -135,6 +141,8 @@ export const Contact: React.FC = () => {
                       How can we help you?
                     </label>
                     <select
+                      id="contact-inquiry-type"
+                      name="inquiryType"
                       value={form.inquiryType}
                       onChange={(e) => setForm({ ...form, inquiryType: e.target.value })}
                       className="w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414] transition-colors"
@@ -154,6 +162,8 @@ export const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    id="contact-subject"
+                    name="subject"
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     placeholder="Enter message subject"
@@ -168,6 +178,8 @@ export const Contact: React.FC = () => {
                   <textarea
                     required
                     rows={4}
+                    id="contact-message"
+                    name="message"
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Write your message here..."

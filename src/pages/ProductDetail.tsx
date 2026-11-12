@@ -162,6 +162,7 @@ export const ProductDetail: React.FC = () => {
       setHasStickyBottomBar(isVisible);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -630,39 +631,33 @@ export const ProductDetail: React.FC = () => {
           </div>
 
           
-          <div className="bg-[#FAF8F5] p-4 sm:p-6 rounded-xl border border-[#141414]/10 space-y-3 overflow-hidden">
-            <div className="flex flex-wrap items-center justify-between gap-1.5 text-xs font-semibold text-[#141414]">
+          <div className="bg-[#FAF8F5] p-4 sm:p-5 rounded-xl border border-[#141414]/10 space-y-3 overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs font-semibold text-[#141414]">
               <span className="flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-[#A7654A]" />
                 <span>True to Size Rating</span>
               </span>
-              <span className="text-emerald-800 font-bold whitespace-nowrap">92% say: Fits True to Size</span>
+              <span className="text-emerald-800 font-semibold text-[11px] sm:text-xs">92% say: Fits True to Size</span>
             </div>
 
-            <div className="space-y-2 text-[11px] text-[#73706B]">
+            <div className="space-y-2 text-[#73706B]">
               <div className="h-2 w-full bg-[#141414]/10 rounded-full overflow-hidden flex">
                 <div style={{ width: '4%' }} className="bg-amber-600 h-full" title="Runs Small (4%)" />
                 <div style={{ width: '92%' }} className="bg-emerald-700 h-full" title="True to Size (92%)" />
                 <div style={{ width: '4%' }} className="bg-blue-600 h-full" title="Runs Relaxed (4%)" />
               </div>
-              <div className="grid grid-cols-3 gap-2 pt-1 text-[9px] sm:text-[10px] uppercase font-medium text-[#73706B]">
-                <div className="text-left">
-                  <span className="block sm:inline">Runs Small</span>
-                  <span className="text-[#73706B]/75 sm:ml-1 text-[8px] sm:text-[10px] font-normal block sm:inline">
-                    (4%)
-                  </span>
+              <div className="flex items-center justify-between gap-1 pt-0.5 text-[9px] sm:text-[10px] uppercase font-medium">
+                <div className="text-left shrink-0">
+                  <span className="text-[#73706B]">Runs Small</span>
+                  <span className="text-[#73706B]/70 ml-1 font-normal">(4%)</span>
                 </div>
-                <div className="text-center text-[#141414] font-bold">
-                  <span className="block sm:inline">True to Size</span>
-                  <span className="text-emerald-700 sm:ml-1 text-[8px] sm:text-[10px] font-semibold block sm:inline">
-                    (92%)
-                  </span>
+                <div className="text-center font-bold text-[#141414] px-1 truncate">
+                  <span className="text-[#141414]">True to Size</span>
+                  <span className="text-emerald-700 ml-1 font-semibold">(92%)</span>
                 </div>
-                <div className="text-right">
-                  <span className="block sm:inline">Runs Relaxed</span>
-                  <span className="text-[#73706B]/75 sm:ml-1 text-[8px] sm:text-[10px] font-normal block sm:inline">
-                    (4%)
-                  </span>
+                <div className="text-right shrink-0">
+                  <span className="text-[#73706B]">Runs Relaxed</span>
+                  <span className="text-[#73706B]/70 ml-1 font-normal">(4%)</span>
                 </div>
               </div>
             </div>

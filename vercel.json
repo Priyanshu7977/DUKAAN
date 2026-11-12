@@ -22,7 +22,7 @@
       "headers": [
         {
           "key": "X-Frame-Options",
-          "value": "DENY"
+          "value": "SAMEORIGIN"
         },
         {
           "key": "X-Content-Type-Options",
@@ -42,7 +42,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: wss:; frame-src 'self' https://*.firebaseapp.com https://firebaseapp.com https://accounts.google.com https://apis.google.com https://*.google.com; frame-ancestors 'none';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https: wss:; frame-src 'self' https://*.firebaseapp.com https://firebaseapp.com https://accounts.google.com https://apis.google.com https://*.google.com https://www.google.com; child-src 'self' https://*.firebaseapp.com https://firebaseapp.com https://accounts.google.com https://apis.google.com https://*.google.com https://www.google.com; frame-ancestors 'self';"
         }
       ]
     }

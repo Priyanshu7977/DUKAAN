@@ -367,6 +367,8 @@ export const Profile: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      id="profile-new-street"
+                      name="street"
                       value={newStreet}
                       onChange={(e) => setNewStreet(e.target.value)}
                       placeholder="e.g. Flat 301, Palm Grove, Linking Road"
@@ -380,6 +382,8 @@ export const Profile: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      id="profile-new-city"
+                      name="city"
                       value={newCity}
                       onChange={(e) => setNewCity(e.target.value)}
                       placeholder="e.g. Mumbai"
@@ -393,6 +397,8 @@ export const Profile: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      id="profile-new-state"
+                      name="state"
                       value={newState}
                       onChange={(e) => setNewState(e.target.value)}
                       placeholder="e.g. Maharashtra"
@@ -406,6 +412,8 @@ export const Profile: React.FC = () => {
                     <input
                       type="text"
                       maxLength={6}
+                      id="profile-new-pincode"
+                      name="pincode"
                       value={newPincode}
                       onChange={(e) => setNewPincode(e.target.value.replace(/\D/g, ''))}
                       placeholder="400050"
@@ -547,6 +555,8 @@ export const Profile: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  id="profile-edit-name"
+                  name="name"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value.replace(/[^a-zA-Z\s]/g, ''))}
                   className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
@@ -559,6 +569,8 @@ export const Profile: React.FC = () => {
                 </label>
                 <input
                   type="email"
+                  id="profile-edit-email"
+                  name="email"
                   value={editEmail}
                   onChange={(e) => setEditEmail(e.target.value)}
                   className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414]"
@@ -571,6 +583,8 @@ export const Profile: React.FC = () => {
                 </label>
                 <input
                   type="tel"
+                  id="profile-edit-phone"
+                  name="phone"
                   value={editPhone}
                   onChange={(e) => setEditPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
                   className="w-full px-3.5 py-2.5 text-xs bg-[#FAF8F5] border border-[#141414]/15 rounded-lg focus:outline-none focus:border-[#141414] font-medium tabular-nums"
@@ -630,6 +644,8 @@ export const Profile: React.FC = () => {
               </label>
               <input
                 type="text"
+                id="profile-delete-confirm"
+                name="confirmDelete"
                 value={deleteConfirmationInput}
                 onChange={(e) => setDeleteConfirmationInput(e.target.value)}
                 placeholder="DELETE"

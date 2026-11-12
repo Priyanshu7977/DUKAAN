@@ -430,10 +430,15 @@ export const ChatbotWidget: React.FC = () => {
   return (
     <aside
       aria-label="Customer Care Concierge"
+      style={
+        hasStickyBottomBar && !isOpen
+          ? { bottom: 'calc(env(safe-area-inset-bottom, 0px) + 5.5rem)' }
+          : undefined
+      }
       className={cn(
         'fixed right-4 sm:right-6 z-50 select-none transition-all duration-300 ease-out',
         hasStickyBottomBar && !isOpen
-          ? 'bottom-[calc(env(safe-area-inset-bottom,0px)+4.75rem)] sm:bottom-6'
+          ? 'bottom-22 sm:bottom-24'
           : 'bottom-5 sm:bottom-6'
       )}
     >

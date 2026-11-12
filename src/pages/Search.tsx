@@ -61,6 +61,8 @@ export const Search: React.FC = () => {
           <form onSubmit={handleSearch} className="relative max-w-2xl">
             <input
               type="text"
+              id="search-page-input"
+              name="search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search shirts, linen, trousers, corduroy, co-ords..."

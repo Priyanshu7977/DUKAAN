@@ -510,6 +510,8 @@ export const Checkout: React.FC = () => {
                     <input
                       type="tel"
                       required
+                      id="checkout-phone"
+                      name="phone"
                       value={formData.phone}
                       onChange={(e) => handleDigitsOnly('phone', e.target.value, 10)}
                       placeholder="Enter 10-digit mobile number"
@@ -526,6 +528,8 @@ export const Checkout: React.FC = () => {
                   <input
                     type="email"
                     required
+                    id="checkout-email"
+                    name="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Enter email address"
@@ -555,6 +559,8 @@ export const Checkout: React.FC = () => {
                   <input
                     type="text"
                     required
+                    id="checkout-fullname"
+                    name="fullName"
                     value={formData.fullName}
                     onChange={(e) => handleTextOnly('fullName', e.target.value)}
                     placeholder="Enter full name"
@@ -569,6 +575,8 @@ export const Checkout: React.FC = () => {
                   <input
                     type="text"
                     required
+                    id="checkout-address"
+                    name="address"
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                     placeholder="House / Flat no, Building name"
@@ -584,6 +592,8 @@ export const Checkout: React.FC = () => {
                     <input
                       type="text"
                       required
+                      id="checkout-area"
+                      name="area"
                       value={formData.area}
                       onChange={(e) => setFormData({ ...formData, area: e.target.value })}
                       placeholder="Street, Sector, Area"
@@ -596,6 +606,8 @@ export const Checkout: React.FC = () => {
                     </label>
                     <input
                       type="text"
+                      id="checkout-landmark"
+                      name="landmark"
                       value={formData.landmark}
                       onChange={(e) => setFormData({ ...formData, landmark: e.target.value })}
                       placeholder="Near temple, metro station, etc."
@@ -612,6 +624,8 @@ export const Checkout: React.FC = () => {
                     <input
                       type="text"
                       required
+                      id="checkout-pincode"
+                      name="pincode"
                       value={formData.pincode}
                       onChange={(e) => handleDigitsOnly('pincode', e.target.value, 6)}
                       placeholder="6-digit PIN"
@@ -625,6 +639,8 @@ export const Checkout: React.FC = () => {
                     <input
                       type="text"
                       required
+                      id="checkout-city"
+                      name="city"
                       value={formData.city}
                       onChange={(e) => handleTextOnly('city', e.target.value)}
                       placeholder="Enter city"
@@ -636,6 +652,8 @@ export const Checkout: React.FC = () => {
                       State *
                     </label>
                     <select
+                      id="checkout-state"
+                      name="state"
                       value={formData.state}
                       onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                       className="w-full bg-[#FAF9F6] border border-[#141414]/15 px-3 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#141414]"
@@ -697,6 +715,7 @@ export const Checkout: React.FC = () => {
                       <input
                         type="radio"
                         name="paymentMethod"
+                        id="checkout-payment-prepaid"
                         value="prepaid"
                         checked={formData.paymentMethod === 'prepaid'}
                         onChange={() => setFormData({ ...formData, paymentMethod: 'prepaid' })}
@@ -732,6 +751,7 @@ export const Checkout: React.FC = () => {
                       <input
                         type="radio"
                         name="paymentMethod"
+                        id="checkout-payment-cod"
                         value="cod"
                         checked={formData.paymentMethod === 'cod'}
                         onChange={() => setFormData({ ...formData, paymentMethod: 'cod' })}
@@ -846,6 +866,8 @@ export const Checkout: React.FC = () => {
                 <div className="flex gap-2">
                   <input
                     type="text"
+                    id="checkout-coupon-code"
+                    name="couponCode"
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value)}
                     placeholder="Enter code (e.g. DUKAAN10)"
@@ -958,6 +980,9 @@ export const Checkout: React.FC = () => {
         }}
         totalAmount={finalTotal}
         orderNumber={pendingOrderId}
+        customerName={formData.fullName}
+        customerMobile={formData.phone}
+        customerEmail={formData.email}
       />
       <ToastContainer />
     </div>

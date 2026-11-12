@@ -202,6 +202,8 @@ export const CollectionDetail: React.FC = () => {
           <div className="flex items-center gap-2 text-xs text-[#73706B] ml-auto">
             <span className="text-[11px] uppercase tracking-wider font-semibold text-[#141414]">Sort:</span>
             <select
+              id="collection-sort-select"
+              name="sortBy"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               className="h-8 px-2.5 bg-[#FAF9F6] border border-[#141414]/15 rounded-lg text-xs text-[#141414] focus:outline-none"
