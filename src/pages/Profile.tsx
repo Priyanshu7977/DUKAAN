@@ -28,6 +28,7 @@ import {
   FileText,
 } from 'lucide-react';
 import { TaxInvoiceModal } from '../components/checkout/TaxInvoiceModal';
+import { SEOHead } from '../components/seo/SEOHead';
 
 export const Profile: React.FC = () => {
   const {
@@ -87,6 +88,7 @@ export const Profile: React.FC = () => {
   if (!isAuthenticated || !user) {
     return (
       <div className="min-h-[75vh] flex items-center justify-center px-4 py-16 bg-[#FAF9F6]">
+        <SEOHead title="Sign In | DUKAAN" noindex />
         <div className="max-w-md w-full bg-white border border-[#141414]/10 rounded-2xl p-8 text-center space-y-5 shadow-lg">
           <div className="w-16 h-16 bg-[#FAF8F5] border border-[#141414]/10 rounded-full flex items-center justify-center mx-auto text-[#141414]">
             <User className="w-8 h-8 stroke-[1.5]" />
@@ -148,6 +150,7 @@ export const Profile: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] py-6 sm:py-12 pb-32 sm:pb-24 border-b border-[#141414]/8">
+      <SEOHead title="Patron Profile | DUKAAN" noindex />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
 
         <div className="bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl p-5 sm:p-8 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-5">

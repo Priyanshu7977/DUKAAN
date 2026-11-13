@@ -9,6 +9,7 @@ export interface SEOHeadProps {
   ogImage?: string;
   ogType?: 'website' | 'article' | 'product';
   jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+  noindex?: boolean;
 }
 
 const DEFAULT_TITLE = 'DUKAAN — Objects of Everyday Expression';
@@ -25,6 +26,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogImage,
   ogType = 'website',
   jsonLd,
+  noindex = false,
 }) => {
   const location = useLocation();
 
@@ -50,7 +52,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
     setMetaTag('name', 'description', finalDescription);
     setMetaTag('name', 'keywords', finalKeywords);
-    setMetaTag('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    setMetaTag('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
     setMetaTag('name', 'author', 'DUKAAN');
 
     setMetaTag('property', 'og:site_name', 'DUKAAN');
@@ -91,7 +93,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       const dynamicScripts = document.head.querySelectorAll('script[data-dynamic-seo="true"]');
       dynamicScripts.forEach((s) => s.remove());
     };
-  }, [title, description, keywords, canonicalPath, ogImage, ogType, jsonLd, location.pathname]);
+  }, [title, description, keywords, canonicalPath, ogImage, ogType, jsonLd, location.pathname, noindex]);
 
   return null;
 };

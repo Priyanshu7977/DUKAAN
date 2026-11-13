@@ -28,6 +28,7 @@ import { TaxInvoiceModal } from '../components/checkout/TaxInvoiceModal';
 import { useAuthStore } from '../store/useAuthStore';
 import { UserOrder } from '../types';
 import { syncOrderToFirestore } from '../services/firestoreService';
+import { SEOHead } from '../components/seo/SEOHead';
 import {
   OrderNotificationPayload,
   dispatchAutomatedOrderNotifications,
@@ -264,6 +265,7 @@ export const Checkout: React.FC = () => {
   if (items.length === 0 && !isComplete) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center py-16 px-4 bg-[#FAF9F6]">
+        <SEOHead title="Your Bag is Empty | DUKAAN" noindex />
         <div className="max-w-md w-full text-center space-y-4 bg-white p-8 border border-[#141414]/10">
           <div className="w-14 h-14 bg-[#FAF9F6] rounded-full flex items-center justify-center mx-auto text-[#141414]">
             <ShoppingBag className="w-6 h-6 stroke-[1.5]" />
@@ -288,6 +290,7 @@ export const Checkout: React.FC = () => {
   if (isComplete && confirmedOrder) {
     return (
       <div className="min-h-screen bg-[#FAF9F6] py-10 px-4 sm:px-6">
+        <SEOHead title="Order Confirmed | DUKAAN" noindex />
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="bg-white p-6 sm:p-8 border border-[#141414]/10 text-center space-y-3">
             <div className="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center mx-auto text-emerald-800">
@@ -483,6 +486,7 @@ export const Checkout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] pb-16">
+      <SEOHead title="Secure Checkout | DUKAAN" noindex />
       <header className="bg-white border-b border-[#141414]/8 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
           <Link

@@ -39,6 +39,7 @@ import {
 import { TaxInvoiceModal } from '../components/checkout/TaxInvoiceModal';
 import { useUIStore } from '../store/useUIStore';
 import { useInventoryStore, SizeStock } from '../store/useInventoryStore';
+import { SEOHead } from '../components/seo/SEOHead';
 
 export const Admin: React.FC = () => {
   const user = useAuthStore((state) => state.user);
@@ -53,6 +54,41 @@ export const Admin: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(isAdminUser);
   const [passcode, setPasscode] = useState('');
   const [passcodeError, setPasscodeError] = useState('');
+  const [lockoutSeconds, setLockoutSeconds] = useState<number>(0);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('dukaan_admin_lockout_until');
+      if (stored) {
+        const until = parseInt(stored, 10);
+        const remaining = Math.ceil((until - Date.now()) / 1000);
+        if (remaining > 0) {
+          setLockoutSeconds(remaining);
+        } else {
+          localStorage.removeItem('dukaan_admin_lockout_until');
+          localStorage.removeItem('dukaan_admin_failed_attempts');
+        }
+      }
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    if (lockoutSeconds <= 0) return;
+    const timer = setInterval(() => {
+      setLockoutSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          try {
+            localStorage.removeItem('dukaan_admin_lockout_until');
+            localStorage.removeItem('dukaan_admin_failed_attempts');
+          } catch {}
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [lockoutSeconds]);
 
   const [activeTab, setActiveTab] = useState<'orders' | 'inventory' | 'patrons'>('orders');
   const [orders, setOrders] = useState<UserOrder[]>([]);
@@ -149,12 +185,33 @@ export const Admin: React.FC = () => {
 
   const handlePasscodeSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (lockoutSeconds > 0) {
+      setPasscodeError(`Security lockout active. Please wait ${lockoutSeconds}s before retrying.`);
+      return;
+    }
     if (passcode === '1997' || passcode === '7977' || passcode === '0000') {
+      try {
+        localStorage.removeItem('dukaan_admin_lockout_until');
+        localStorage.removeItem('dukaan_admin_failed_attempts');
+      } catch {}
       setIsAuthenticated(true);
       setPasscodeError('');
       showToast('Admin backoffice unlocked', 'success');
     } else {
-      setPasscodeError('Invalid admin master passcode. Contact atelier engineering.');
+      let attempts = 1;
+      try {
+        const prev = parseInt(localStorage.getItem('dukaan_admin_failed_attempts') || '0', 10);
+        attempts = prev + 1;
+        localStorage.setItem('dukaan_admin_failed_attempts', attempts.toString());
+        if (attempts >= 5) {
+          const lockUntil = Date.now() + 180 * 1000;
+          localStorage.setItem('dukaan_admin_lockout_until', lockUntil.toString());
+          setLockoutSeconds(180);
+          setPasscodeError('Security threshold reached: 5 failed attempts. Locked for 180 seconds.');
+          return;
+        }
+      } catch {}
+      setPasscodeError(`Invalid master passcode. ${5 - attempts} attempt(s) remaining before lockout.`);
     }
   };
 
@@ -264,6 +321,7 @@ export const Admin: React.FC = () => {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-[#FAF9F6] flex items-center justify-center p-4">
+        <SEOHead title="Merchant Backoffice | DUKAAN" noindex />
         <div className="max-w-md w-full bg-white border border-[#141414]/15 p-8 shadow-xl text-center space-y-5 rounded-sm">
           <div className="w-12 h-12 bg-[#FAF9F6] border border-[#141414]/15 rounded-full flex items-center justify-center mx-auto text-[#141414]">
             <Lock className="w-5 h-5" />
@@ -288,9 +346,10 @@ export const Admin: React.FC = () => {
                 setPasscode(e.target.value);
                 setPasscodeError('');
               }}
+              disabled={lockoutSeconds > 0}
               placeholder=""
               maxLength={8}
-              className="w-full h-11 px-4 text-center tracking-[0.3em] font-mono text-sm bg-[#FAF9F6] border border-[#141414]/20 focus:outline-none focus:border-[#141414] rounded-sm"
+              className="w-full h-11 px-4 text-center tracking-[0.3em] font-mono text-sm bg-[#FAF9F6] border border-[#141414]/20 focus:outline-none focus:border-[#141414] rounded-sm disabled:opacity-40 disabled:cursor-not-allowed"
               autoFocus
             />
 
@@ -300,9 +359,10 @@ export const Admin: React.FC = () => {
 
             <button
               type="submit"
-              className="w-full h-11 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition-all rounded-sm shadow-sm"
+              disabled={lockoutSeconds > 0}
+              className="w-full h-11 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition-all rounded-sm shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              <span>Authenticate Access</span>
+              <span>{lockoutSeconds > 0 ? `Locked (${lockoutSeconds}s)` : 'Authenticate Access'}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </form>
@@ -317,6 +377,7 @@ export const Admin: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-[#141414] pb-16">
+      <SEOHead title="Merchant Backoffice | DUKAAN" noindex />
       <header className="bg-white border-b border-[#141414]/10 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
