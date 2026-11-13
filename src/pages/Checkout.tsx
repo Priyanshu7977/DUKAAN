@@ -270,7 +270,7 @@ export const Checkout: React.FC = () => {
           <div className="w-14 h-14 bg-[#FAF9F6] rounded-full flex items-center justify-center mx-auto text-[#141414]">
             <ShoppingBag className="w-6 h-6 stroke-[1.5]" />
           </div>
-          <h2 className="font-serif text-2xl text-[#141414]">Your Shopping Bag is Empty</h2>
+          <h1 className="font-serif text-2xl text-[#141414]">Your Shopping Bag is Empty</h1>
           <p className="text-xs text-[#73706B] font-light leading-relaxed">
             You don't have any garments in your bag. Add pieces from our collection before proceeding to checkout.
           </p>
@@ -509,6 +509,18 @@ export const Checkout: React.FC = () => {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
+        <div className="mb-6">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-0.5">
+            Express Checkout
+          </span>
+          <h1 className="font-serif text-2xl sm:text-3xl text-[#141414] font-normal tracking-tight">
+            Complete Your Order
+          </h1>
+          <p className="text-xs text-[#73706B] font-light mt-0.5">
+            Encrypted 256-bit checkout with free express delivery and 7-day doorstep replacement.
+          </p>
+        </div>
+
         <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-7 space-y-6">
             <div className="bg-white p-5 sm:p-6 border border-[#141414]/10 space-y-4">

@@ -302,9 +302,9 @@ export const CollectionDetail: React.FC = () => {
             <span className="text-[10px] uppercase tracking-widest text-[#73706B] font-semibold block">
               Collection Archive
             </span>
-            <h3 className="font-serif text-lg sm:text-xl text-[#141414]">
+            <h2 className="font-serif text-lg sm:text-xl text-[#141414]">
               Explore Other Editions
-            </h3>
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -326,9 +326,9 @@ export const CollectionDetail: React.FC = () => {
                   <span className="text-[9px] text-[#A7654A] uppercase tracking-widest block font-medium">
                     {col.season} {col.year}
                   </span>
-                  <h4 className="font-serif text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors mt-0.5">
+                  <h3 className="font-serif text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors mt-0.5">
                     {col.title}
-                  </h4>
+                  </h3>
                   <div className="mt-2 flex items-center gap-1 text-[10px] uppercase tracking-widest text-[#73706B] group-hover:text-[#141414]">
                     <span>View Edition</span>
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

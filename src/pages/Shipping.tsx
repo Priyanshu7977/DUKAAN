@@ -22,12 +22,13 @@ export const Shipping: React.FC = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6">
+        <h2 className="sr-only">Shipping Benefits & Delivery Protocols</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 space-y-2">
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
               <Truck className="w-4 h-4" />
             </div>
-            <h4 className="font-serif text-base text-[#141414]">Free Shipping Above ₹1,999</h4>
+            <h3 className="font-serif text-base text-[#141414]">Free Shipping Above ₹1,999</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               All orders of ₹1,999 or more qualify for completely FREE express doorstep delivery anywhere in India.
             </p>
@@ -37,7 +38,7 @@ export const Shipping: React.FC = () => {
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
               <ShieldCheck className="w-4 h-4" />
             </div>
-            <h4 className="font-serif text-base text-[#141414]">Cash on Delivery (COD)</h4>
+            <h3 className="font-serif text-base text-[#141414]">Cash on Delivery (COD)</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               Convenient COD option available across most Indian PIN codes. Pay with cash or UPI at the time of delivery.
             </p>
@@ -47,7 +48,7 @@ export const Shipping: React.FC = () => {
             <div className="w-9 h-9 rounded-full bg-[#A7654A]/10 flex items-center justify-center text-[#A7654A]">
               <PackageCheck className="w-4 h-4" />
             </div>
-            <h4 className="font-serif text-base text-[#141414]">Safe & Secure Packaging</h4>
+            <h3 className="font-serif text-base text-[#141414]">Safe & Secure Packaging</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               Each garment is ironed, wrapped in protective natural paper, and placed in durable boxes so it arrives in pristine condition.
             </p>
@@ -60,7 +61,7 @@ export const Shipping: React.FC = () => {
               <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
                 Delivery Schedule
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">Estimated Delivery Timelines</h3>
+              <h2 className="font-serif text-xl sm:text-2xl text-[#141414]">Estimated Delivery Timelines</h2>
             </div>
             <span className="text-xs text-[#73706B]">Dispatched Monday through Saturday</span>
           </div>
@@ -101,14 +102,14 @@ export const Shipping: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
           <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
-            <h4 className="font-serif text-base text-[#141414]">Order Tracking</h4>
+            <h3 className="font-serif text-base text-[#141414]">Order Tracking</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               As soon as your order is packed and dispatched, you will receive an SMS and WhatsApp message with your tracking link to follow your parcel in real-time.
             </p>
           </div>
 
           <div className="bg-[#FAF8F5] p-5 rounded-2xl border border-[#141414]/8 space-y-2 shadow-xs">
-            <h4 className="font-serif text-base text-[#141414]">Address Changes</h4>
+            <h3 className="font-serif text-base text-[#141414]">Address Changes</h3>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               Need to modify your delivery address or contact number? Please contact us on WhatsApp at <strong>+91 7977641125</strong> within 6 hours of placing your order.
             </p>
@@ -117,7 +118,7 @@ export const Shipping: React.FC = () => {
 
         <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
-            <h4 className="font-serif text-base text-[#141414]">Need help with an ongoing delivery?</h4>
+            <h3 className="font-serif text-base text-[#141414]">Need help with an ongoing delivery?</h3>
             <p className="text-xs text-[#73706B] font-light">
               WhatsApp or call us at +91 7977641125 / Email: priyanshubipin2006@gmail.com
             </p>

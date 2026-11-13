@@ -56,7 +56,7 @@ export const Wishlist: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         {items.length === 0 ? (
           <div className="py-16 text-center max-w-md mx-auto space-y-4">
-            <h3 className="font-serif text-2xl text-[#141414]">No Objects in Wishlist</h3>
+            <h2 className="font-serif text-2xl text-[#141414]">No Objects in Wishlist</h2>
             <p className="text-xs text-[#73706B] font-light leading-relaxed">
               You haven't saved any garments yet. Click the heart icon on any product to preserve pieces for future orders.
             </p>
@@ -71,45 +71,47 @@ export const Wishlist: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
-            {items.map((product) => (
-              <div key={product.id} className="group relative flex flex-col justify-between bg-[#FAF8F5] border border-[#141414]/8 rounded-xl p-3 shadow-xs hover:border-[#141414]/20 transition-all">
-                <div>
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#ECE7DD] mb-2.5">
-                    <Link to={`/product/${product.slug}`} className="block w-full h-full">
-                      <ImageWithFallback
-                        src={product.images[0]}
-                        alt={product.name}
-                        aspectRatioClass="w-full h-full"
-                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </Link>
-                    <button
-                      onClick={() => {
-                        removeItem(product.id);
-                        showToast(`Removed ${product.name} from wishlist`, 'info');
-                      }}
-                      className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 shadow-2xs backdrop-blur-sm flex items-center justify-center text-[#73706B] hover:text-[#A7654A] transition-all"
-                      aria-label="Remove item"
-                    >
-                      <Trash2 className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
+          <div>
+            <h2 className="sr-only">Saved Garments List</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+              {items.map((product) => (
+                <div key={product.id} className="group relative flex flex-col justify-between bg-[#FAF8F5] border border-[#141414]/8 rounded-xl p-3 shadow-xs hover:border-[#141414]/20 transition-all">
+                  <div>
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-[#ECE7DD] mb-2.5">
+                      <Link to={`/product/${product.slug}`} className="block w-full h-full">
+                        <ImageWithFallback
+                          src={product.images[0]}
+                          alt={product.name}
+                          aspectRatioClass="w-full h-full"
+                          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </Link>
+                      <button
+                        onClick={() => {
+                          removeItem(product.id);
+                          showToast(`Removed ${product.name} from wishlist`, 'info');
+                        }}
+                        className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/90 shadow-2xs backdrop-blur-sm flex items-center justify-center text-[#73706B] hover:text-[#A7654A] transition-all"
+                        aria-label="Remove item"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
 
-                  <div className="space-y-0.5">
-                    <p className="text-[10px] uppercase tracking-wider text-[#73706B]">
-                      {product.category}
-                    </p>
-                    <Link to={`/product/${product.slug}`}>
-                      <h4 className="font-serif text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors font-normal line-clamp-1">
-                        {product.name}
-                      </h4>
-                    </Link>
-                    <p className="text-xs font-serif text-[#141414] font-semibold pt-0.5 tabular-nums">
-                      {formatPrice(product.price)}
-                    </p>
+                    <div className="space-y-0.5">
+                      <p className="text-[10px] uppercase tracking-wider text-[#73706B]">
+                        {product.category}
+                      </p>
+                      <Link to={`/product/${product.slug}`}>
+                        <h3 className="font-serif text-sm text-[#141414] group-hover:text-[#A7654A] transition-colors font-normal line-clamp-1">
+                          {product.name}
+                        </h3>
+                      </Link>
+                      <p className="text-xs font-serif text-[#141414] font-semibold pt-0.5 tabular-nums">
+                        {formatPrice(product.price)}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
                 <div className="mt-3">
                   <button
@@ -122,6 +124,7 @@ export const Wishlist: React.FC = () => {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         )}
       </section>

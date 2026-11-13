@@ -406,9 +406,9 @@ export const JournalArticle: React.FC = () => {
                 <Layers className="w-3.5 h-3.5" />
                 Curated Physical Objects
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">
+              <h2 className="font-serif text-xl sm:text-2xl text-[#141414]">
                 Garments Discussed in this Dispatch
-              </h3>
+              </h2>
             </div>
             <Link
               to="/shop"
@@ -432,9 +432,9 @@ export const JournalArticle: React.FC = () => {
             <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block mb-0.5">
               Read Further
             </span>
-            <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">
+            <h2 className="font-serif text-xl sm:text-2xl text-[#141414]">
               Related Dispatches & Monographs
-            </h3>
+            </h2>
           </div>
           <Link
             to={basePath}
@@ -464,9 +464,9 @@ export const JournalArticle: React.FC = () => {
                   <span className="text-[9px] uppercase tracking-widest text-[#A7654A] font-semibold">
                     {a.category}
                   </span>
-                  <h4 className="font-serif text-base text-[#141414] group-hover:text-[#A7654A] transition-colors mt-0.5 leading-snug">
+                  <h3 className="font-serif text-base text-[#141414] group-hover:text-[#A7654A] transition-colors mt-0.5 leading-snug">
                     {a.title}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-[#73706B] line-clamp-2 mt-1 font-light leading-relaxed">
                     {a.excerpt}
                   </p>

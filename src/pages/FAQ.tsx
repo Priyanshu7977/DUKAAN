@@ -84,9 +84,10 @@ export const FAQ: React.FC = () => {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
+        <h2 className="sr-only">Answers to Frequently Asked Questions</h2>
         {filteredItems.length === 0 ? (
           <div className="py-12 text-center space-y-3 bg-[#FAF8F5] p-6 border border-[#141414]/8">
-            <h3 className="font-serif text-lg text-[#141414]">No entries located</h3>
+            <h2 className="font-serif text-lg text-[#141414]">No entries located</h2>
             <p className="text-xs text-[#73706B] max-w-sm mx-auto font-light">
               We couldn't locate any questions matching "{filterQuery}". Please clear your search or message our concierge.
             </p>
@@ -108,7 +109,7 @@ export const FAQ: React.FC = () => {
 
         <div className="mt-8 p-5 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
-            <h4 className="font-serif text-base text-[#141414]">Have an unlisted inquiry?</h4>
+            <h2 className="font-serif text-base sm:text-lg text-[#141414]">Have an unlisted inquiry?</h2>
             <p className="text-xs text-[#73706B] font-light">
               Our concierge desk is at your disposal 24/7 for bespoke styling and orders: +91 7977641125 / priyanshubipin2006@gmail.com
             </p>

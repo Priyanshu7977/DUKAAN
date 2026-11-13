@@ -350,7 +350,7 @@ export const OrderTracking: React.FC = () => {
         ) : (
           <div className="bg-[#FAF8F5] p-12 rounded-2xl border border-[#141414]/8 text-center space-y-3">
             <Package className="w-10 h-10 text-[#73706B] mx-auto stroke-[1.5]" />
-            <h3 className="font-serif text-xl text-[#141414]">No Order Located</h3>
+            <h2 className="font-serif text-xl text-[#141414]">No Order Located</h2>
             <p className="text-xs text-[#73706B] max-w-sm mx-auto font-light leading-relaxed">
               We couldn't locate an order matching that ID. Check your confirmation WhatsApp/SMS for the order reference (e.g. DUK-IN-XXXXXX).
             </p>

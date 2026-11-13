@@ -94,7 +94,7 @@ export const Profile: React.FC = () => {
             <User className="w-8 h-8 stroke-[1.5]" />
           </div>
           <div className="space-y-1.5">
-            <h2 className="font-serif text-2xl text-[#141414]">Sign In to Your Account</h2>
+            <h1 className="font-serif text-2xl text-[#141414]">Sign In to Your Account</h1>
             <p className="text-xs text-[#73706B] font-light max-w-xs mx-auto">
               Access your order history, delivery tracking, and saved preferences with your phone or email.
             </p>

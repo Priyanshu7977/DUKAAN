@@ -79,6 +79,7 @@ export const Contact: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           <div className="lg:col-span-7">
+            <h2 className="sr-only">Send an Inquiry Message</h2>
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 bg-[#FAF8F5] p-6 sm:p-8 border border-[#141414]/8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -232,6 +233,7 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="lg:col-span-5 space-y-5">
+            <h2 className="sr-only">Direct Atelier Contact Details</h2>
             <div className="bg-white p-6 border border-[#141414]/8 space-y-3">
               <div className="flex items-center gap-2.5 text-[#141414]">
                 <Phone className="w-4 h-4 text-[#A7654A]" />

@@ -714,9 +714,9 @@ export const ProductDetail: React.FC = () => {
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block mb-1">
                 Patron Impressions
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#141414] font-medium">
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#141414] font-medium">
                 Client Reviews & Sizing Insights
-              </h3>
+              </h2>
               <p className="text-xs text-[#73706B] font-light mt-1">
                 Real feedback from verified purchasers on material drape, tactile comfort, and fit accuracy.
               </p>
@@ -964,9 +964,9 @@ export const ProductDetail: React.FC = () => {
             <span className="text-[10px] uppercase tracking-widest text-[#73706B] font-semibold block">
               Wardrobe Memory
             </span>
-            <h3 className="font-serif text-base sm:text-lg text-[#141414]">
+            <h2 className="font-serif text-base sm:text-lg text-[#141414]">
               Recently Inspected
-            </h3>
+            </h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">

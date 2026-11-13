@@ -42,6 +42,11 @@ export const HeroCampaign: React.FC = () => {
 
   return (
     <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden bg-[#FAF9F6] flex items-end justify-center pb-8 sm:pb-12 select-none">
+      <div className="sr-only">
+        <h1>DUKAAN | Objects of Everyday Expression</h1>
+        <p>Contemporary clothing engineered with pure European linen, soft cotton gauze, and timeless comfortable silhouettes.</p>
+      </div>
+
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === currentSlide;
         return (

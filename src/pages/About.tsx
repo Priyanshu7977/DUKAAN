@@ -97,7 +97,7 @@ export const About: React.FC = () => {
       <section className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-6 bg-[#FAF8F5] rounded-2xl border border-[#141414]/8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
           <div>
-            <h4 className="font-serif text-base text-[#141414]">Have questions about our fabrics or fit?</h4>
+            <h2 className="font-serif text-base text-[#141414]">Have questions about our fabrics or fit?</h2>
             <p className="text-xs text-[#73706B] font-light">
               Chat directly with our styling team on WhatsApp: +91 7977641125 / Email: priyanshubipin2006@gmail.com
             </p>

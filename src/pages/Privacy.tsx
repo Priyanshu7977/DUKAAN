@@ -26,7 +26,7 @@ export const Privacy: React.FC = () => {
             <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
               Designated Data Protection Officer (DPO)
             </span>
-            <h4 className="font-serif text-base text-[#141414]">Priyanshu Bipin · Lead Data Governance</h4>
+            <h2 className="font-serif text-base text-[#141414]">Priyanshu Bipin · Lead Data Governance</h2>
             <p className="text-xs text-[#73706B]">Dukaan Apparel Private Ltd. • Customer Protection Office</p>
           </div>
           <div className="flex flex-col gap-1 text-xs text-[#141414]">
@@ -42,7 +42,7 @@ export const Privacy: React.FC = () => {
         </div>
 
         <div className="space-y-2.5">
-          <h3 className="font-serif text-lg sm:text-xl text-[#141414]">1. Purpose & Core Principles</h3>
+          <h2 className="font-serif text-lg sm:text-xl text-[#141414]">1. Purpose & Core Principles</h2>
           <p>
             Dukaan ("we", "our") is committed to absolute discretion and respectful stewardship of client personal records. We collect and process personal data exclusively to prepare bespoke wardrobe pieces, fulfill worldwide air courier deliveries, issue transparent invoices, and transmit curated notifications with explicit client consent.
           </p>
@@ -52,7 +52,7 @@ export const Privacy: React.FC = () => {
         </div>
 
         <div className="space-y-2.5">
-          <h3 className="font-serif text-lg sm:text-xl text-[#141414]">2. Categories of Information Collected</h3>
+          <h2 className="font-serif text-lg sm:text-xl text-[#141414]">2. Categories of Information Collected</h2>
           <p>
             To deliver your order seamlessly, we collect only essential coordinates:
           </p>
@@ -65,7 +65,7 @@ export const Privacy: React.FC = () => {
         </div>
 
         <div className="space-y-2.5">
-          <h3 className="font-serif text-lg sm:text-xl text-[#141414]">3. Data Subject Rights & Deletion Inquiries</h3>
+          <h2 className="font-serif text-lg sm:text-xl text-[#141414]">3. Data Subject Rights & Deletion Inquiries</h2>
           <p>
             Under European GDPR and California CCPA regulations, you hold the sovereign right to inspect, export, correct, or permanently erase your client dossier from our database at any time. Simply contact Data Protection Officer Priyanshu Bipin at <a href="mailto:priyanshubipin2006@gmail.com" className="text-[#141414] font-medium underline">priyanshubipin2006@gmail.com</a>.
           </p>

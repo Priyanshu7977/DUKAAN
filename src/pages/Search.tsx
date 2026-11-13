@@ -99,14 +99,14 @@ export const Search: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-5 border-b border-[#141414]/8 gap-3 text-xs">
           <div>
             {queryParam ? (
-              <p className="font-serif text-base sm:text-lg text-[#141414]">
+              <h2 className="font-serif text-base sm:text-lg text-[#141414] font-normal">
                 Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'object' : 'objects'} for{' '}
                 <span className="italic font-normal">"{queryParam}"</span>
-              </p>
+              </h2>
             ) : (
-              <p className="font-serif text-base sm:text-lg text-[#141414]">
+              <h2 className="font-serif text-base sm:text-lg text-[#141414] font-normal">
                 Complete Catalogue ({PRODUCTS.length} Objects)
-              </p>
+              </h2>
             )}
           </div>
 
@@ -135,7 +135,7 @@ export const Search: React.FC = () => {
           </div>
         ) : (
           <div className="py-16 text-center space-y-3 bg-white p-8 border border-dashed border-[#141414]/15">
-            <h3 className="font-serif text-lg text-[#141414]">No matches found</h3>
+            <h2 className="font-serif text-lg text-[#141414]">No matches found</h2>
             <p className="text-xs text-[#73706B] max-w-sm mx-auto font-light">
               We couldn't locate any garments matching "{queryParam}". Try searching for linen, shirts, trousers, or explore our full collection.
             </p>

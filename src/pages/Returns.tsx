@@ -255,16 +255,16 @@ export const Returns: React.FC = () => {
           <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
             Quality Standards
           </span>
-          <h3 className="font-serif text-xl sm:text-2xl text-[#141414]">
+          <h2 className="font-serif text-xl sm:text-2xl text-[#141414]">
             Simple 3-Step Return Process
-          </h3>
+          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-1">
             <div className="p-5 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl space-y-2 shadow-xs">
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 01
               </div>
-              <h4 className="font-serif text-base text-[#141414]">Submit Request Online</h4>
+              <h3 className="font-serif text-base text-[#141414]">Submit Request Online</h3>
               <p className="text-xs text-[#73706B] leading-relaxed font-light">
                 Enter your order ID above or send a message to our WhatsApp Concierge at +91 7977641125.
               </p>
@@ -274,7 +274,7 @@ export const Returns: React.FC = () => {
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 02
               </div>
-              <h4 className="font-serif text-base text-[#141414]">Doorstep Package Pickup</h4>
+              <h3 className="font-serif text-base text-[#141414]">Doorstep Package Pickup</h3>
               <p className="text-xs text-[#73706B] leading-relaxed font-light">
                 BlueDart / Delhivery collects the parcel directly from your doorstep. No printing or label attachment needed.
               </p>
@@ -284,7 +284,7 @@ export const Returns: React.FC = () => {
               <div className="w-8 h-8 rounded-full bg-[#A7654A]/10 flex items-center justify-center tabular-nums text-xs font-bold text-[#A7654A]">
                 03
               </div>
-              <h4 className="font-serif text-base text-[#141414]">Instant Dispatch or Refund</h4>
+              <h3 className="font-serif text-base text-[#141414]">Instant Dispatch or Refund</h3>
               <p className="text-xs text-[#73706B] leading-relaxed font-light">
                 Exchanged sizes dispatch within 24 hours. Refunds are credited via instant UPI / IMPS within 48 hours.
               </p>
@@ -294,9 +294,9 @@ export const Returns: React.FC = () => {
 
         <div className="p-6 bg-[#FAF8F5] border border-[#141414]/8 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
           <div>
-            <h4 className="font-serif text-base text-[#141414]">Need personalized assistance?</h4>
+            <h2 className="font-serif text-base text-[#141414]">Need personalized assistance?</h2>
             <p className="text-xs text-[#73706B] font-light">
-              Speak directly with an personal stylist via WhatsApp or telephone:
+              Speak directly with a personal stylist via WhatsApp or telephone:
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-2 text-xs">
               <a
