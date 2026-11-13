@@ -56,6 +56,9 @@ export const Admin: React.FC = () => {
   const [orderSearchQuery, setOrderSearchQuery] = useState('');
   const [orderStatusFilter, setOrderStatusFilter] = useState<string>('all');
   const [inventorySearchQuery, setInventorySearchQuery] = useState('');
+  const [inventoryCategoryFilter, setInventoryCategoryFilter] = useState<string>('all');
+  const [inventoryPage, setInventoryPage] = useState<number>(1);
+  const INVENTORY_PAGE_SIZE = 15;
   const [selectedInvoiceOrder, setSelectedInvoiceOrder] = useState<any>(null);
 
   const [inventoryStockOverrides, setInventoryStockOverrides] = useState<Record<string, string>>({});
@@ -188,12 +191,20 @@ export const Admin: React.FC = () => {
   });
 
   const filteredProducts = PRODUCTS.filter((p: Product) => {
-    return (
+    const matchesCategory =
+      inventoryCategoryFilter === 'all' || p.category.toLowerCase() === inventoryCategoryFilter.toLowerCase();
+    const matchesSearch =
       p.name.toLowerCase().includes(inventorySearchQuery.toLowerCase()) ||
       p.category.toLowerCase().includes(inventorySearchQuery.toLowerCase()) ||
-      p.collection.toLowerCase().includes(inventorySearchQuery.toLowerCase())
-    );
+      p.collection.toLowerCase().includes(inventorySearchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
   });
+
+  const totalInventoryPages = Math.ceil(filteredProducts.length / INVENTORY_PAGE_SIZE) || 1;
+  const paginatedProducts = filteredProducts.slice(
+    (inventoryPage - 1) * INVENTORY_PAGE_SIZE,
+    inventoryPage * INVENTORY_PAGE_SIZE
+  );
 
   if (!isAuthenticated) {
     return (
@@ -447,26 +458,29 @@ export const Admin: React.FC = () => {
                           </span>
                         </td>
 
-                        <td className="py-3.5 px-4">
-                          <div className="space-y-1">
-                            <select
-                              value={order.status}
-                              onChange={(e) => handleUpdateStatus(order.id, e.target.value as any)}
-                              className={`h-7 px-2 text-[11px] font-medium rounded-sm border focus:outline-none ${
-                                order.status === 'Delivered'
-                                  ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
-                                  : order.status === 'In Transit'
-                                  ? 'bg-blue-50 text-blue-800 border-blue-300'
-                                  : order.status === 'Cancelled'
-                                  ? 'bg-red-50 text-red-800 border-red-300'
-                                  : 'bg-amber-50 text-amber-800 border-amber-300'
-                              }`}
-                            >
-                              <option value="Processing">Processing</option>
-                              <option value="In Transit">In Transit</option>
-                              <option value="Delivered">Delivered</option>
-                              <option value="Cancelled">Cancelled</option>
-                            </select>
+                        <td className="py-3.5 px-4 align-middle">
+                          <div className="space-y-1.5">
+                            <div className="relative inline-block">
+                              <select
+                                value={order.status}
+                                onChange={(e) => handleUpdateStatus(order.id, e.target.value as any)}
+                                className={`min-w-[130px] h-8 pl-3 pr-7 text-xs font-semibold rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
+                                  order.status === 'Delivered'
+                                    ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
+                                    : order.status === 'In Transit'
+                                    ? 'bg-blue-50 text-blue-800 border-blue-300'
+                                    : order.status === 'Cancelled'
+                                    ? 'bg-red-50 text-red-800 border-red-300'
+                                    : 'bg-amber-50 text-amber-800 border-amber-300'
+                                }`}
+                              >
+                                <option value="Processing">Processing</option>
+                                <option value="In Transit">In Transit</option>
+                                <option value="Delivered">Delivered</option>
+                                <option value="Cancelled">Cancelled</option>
+                              </select>
+                              <ChevronDown className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
+                            </div>
 
                             {order.trackingNumber ? (
                               <div className="flex items-center gap-1 text-[10px] text-[#73706B]">
@@ -476,7 +490,7 @@ export const Admin: React.FC = () => {
                             ) : (
                               <button
                                 onClick={() => handleAssignTracking(order.id)}
-                                className="text-[10px] text-[#A7654A] underline block hover:text-[#141414]"
+                                className="text-[10px] text-[#A7654A] underline block hover:text-[#141414] font-medium"
                               >
                                 + Assign Tracking AWB
                               </button>
@@ -524,15 +538,46 @@ export const Admin: React.FC = () => {
 
         {activeTab === 'inventory' && (
           <div className="space-y-4">
-            <div className="relative max-w-md">
-              <Search className="w-4 h-4 text-[#73706B] absolute left-3 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={inventorySearchQuery}
-                onChange={(e) => setInventorySearchQuery(e.target.value)}
-                placeholder="Search garments by name, collection, category..."
-                className="w-full pl-9 pr-3 h-10 text-xs bg-white border border-[#141414]/15 rounded-sm focus:outline-none focus:border-[#141414]"
-              />
+            <div className="flex flex-col sm:flex-row gap-3 justify-between items-stretch sm:items-center">
+              <div className="relative flex-1 max-w-md">
+                <Search className="w-4 h-4 text-[#73706B] absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={inventorySearchQuery}
+                  onChange={(e) => {
+                    setInventorySearchQuery(e.target.value);
+                    setInventoryPage(1);
+                  }}
+                  placeholder="Search garments by name, collection, category..."
+                  className="w-full pl-9 pr-3 h-10 text-xs bg-white border border-[#141414]/15 rounded-sm focus:outline-none focus:border-[#141414]"
+                />
+              </div>
+
+              <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+                {[
+                  { id: 'all', label: `All (${PRODUCTS.length})` },
+                  { id: 'shirts', label: 'Shirts' },
+                  { id: 'trousers', label: 'Trousers' },
+                  { id: 'co-ords', label: 'Co-Ords' },
+                  { id: 'knitwear', label: 'Knitwear' },
+                ].map((cat) => (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => {
+                      setInventoryCategoryFilter(cat.id);
+                      setInventoryPage(1);
+                    }}
+                    className={`px-3 py-1.5 text-xs font-semibold rounded-full border transition-all whitespace-nowrap ${
+                      inventoryCategoryFilter === cat.id
+                        ? 'bg-[#141414] text-white border-[#141414] shadow-xs'
+                        : 'bg-white text-[#73706B] border-[#141414]/15 hover:border-[#141414] hover:text-[#141414]'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="bg-white border border-[#141414]/10 rounded-sm overflow-x-auto shadow-xs">
@@ -547,48 +592,50 @@ export const Admin: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#141414]/8">
-                  {filteredProducts.map((p: Product) => {
+                  {paginatedProducts.map((p: Product) => {
                     const status = inventoryStockOverrides[p.id] || 'In Stock';
                     return (
-                      <tr key={p.id} className="hover:bg-[#FAF9F6]/50">
-                        <td className="py-3.5 px-4 flex items-center gap-3">
-                          <img
-                            src={p.images[0]}
-                            alt={p.name}
-                            className="w-10 h-12 object-cover bg-[#ECE7DD] rounded-2xs"
-                          />
-                          <div>
-                            <span className="font-serif font-medium text-[#141414] block">
-                              {p.name}
-                            </span>
-                            <span className="text-[10px] text-[#73706B]">
-                              {p.details.composition}
-                            </span>
+                      <tr key={p.id} className="hover:bg-[#FAF9F6]/50 transition-colors">
+                        <td className="py-3.5 px-4 align-middle">
+                          <div className="flex items-center gap-3.5 min-w-[260px]">
+                            <img
+                              src={p.images[0]}
+                              alt={p.name}
+                              className="w-12 h-14 object-cover rounded-md bg-[#ECE7DD] border border-[#141414]/10 shrink-0 shadow-2xs"
+                            />
+                            <div>
+                              <span className="font-serif text-sm font-normal text-[#141414] block leading-snug">
+                                {p.name}
+                              </span>
+                              <span className="text-[11px] text-[#73706B] block mt-0.5 font-light">
+                                {p.details.composition}
+                              </span>
+                            </div>
                           </div>
                         </td>
 
-                        <td className="py-3.5 px-4">
-                          <span className="uppercase text-[10px] font-semibold text-[#141414] block">
+                        <td className="py-3.5 px-4 align-middle min-w-[160px]">
+                          <span className="inline-block px-2 py-0.5 bg-[#FAF9F6] border border-[#141414]/10 uppercase text-[9px] font-semibold text-[#141414] rounded-xs tracking-wider">
                             {p.category}
                           </span>
-                          <span className="text-[10px] text-[#73706B]">
+                          <span className="text-[11px] text-[#73706B] block mt-1">
                             {p.collection}
                           </span>
                         </td>
 
-                        <td className="py-3.5 px-4 font-serif text-[#141414]">
+                        <td className="py-3.5 px-4 align-middle font-serif text-sm font-medium text-[#141414] tabular-nums whitespace-nowrap">
                           {formatPrice(p.price)}
                         </td>
 
-                        <td className="py-3.5 px-4">
-                          <div className="flex gap-1 flex-wrap">
+                        <td className="py-3.5 px-4 align-middle">
+                          <div className="flex items-center gap-1 shrink-0">
                             {p.sizes.map((s: ProductSize) => (
                               <span
                                 key={s.size}
-                                className={`px-1.5 py-0.5 text-[9px] font-medium rounded-2xs ${
+                                className={`min-w-6 h-6 px-1.5 text-[10px] font-semibold flex items-center justify-center rounded-xs transition-colors ${
                                   s.inStock
                                     ? 'bg-[#FAF9F6] border border-[#141414]/15 text-[#141414]'
-                                    : 'bg-red-50 text-red-500 line-through'
+                                    : 'bg-red-50/60 border border-red-200/50 text-red-400 line-through opacity-60'
                                 }`}
                               >
                                 {s.size}
@@ -597,32 +644,62 @@ export const Admin: React.FC = () => {
                           </div>
                         </td>
 
-                        <td className="py-3.5 px-4">
-                          <select
-                            value={status}
-                            onChange={(e) => {
-                              const val = e.target.value;
-                              setInventoryStockOverrides((prev) => ({ ...prev, [p.id]: val }));
-                              showToast(`${p.name} set to ${val}`, 'info');
-                            }}
-                            className={`h-7 px-2 text-[11px] font-medium rounded-sm border focus:outline-none ${
-                              status === 'In Stock'
-                                ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
-                                : status === 'Low Batch'
-                                ? 'bg-amber-50 text-amber-800 border-amber-300'
-                                : 'bg-purple-50 text-purple-800 border-purple-300'
-                            }`}
-                          >
-                            <option value="In Stock">In Stock</option>
-                            <option value="Low Batch">Low Batch</option>
-                            <option value="Made to Order">Made to Order</option>
-                          </select>
+                        <td className="py-3.5 px-4 align-middle">
+                          <div className="relative inline-block">
+                            <select
+                              value={status}
+                              onChange={(e) => {
+                                const val = e.target.value;
+                                setInventoryStockOverrides((prev) => ({ ...prev, [p.id]: val }));
+                                showToast(`${p.name} set to ${val}`, 'info');
+                              }}
+                              className={`min-w-[130px] h-8 pl-3 pr-7 text-xs font-semibold rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
+                                status === 'In Stock'
+                                  ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
+                                  : status === 'Low Batch'
+                                  ? 'bg-amber-50 text-amber-800 border-amber-300'
+                                  : 'bg-purple-50 text-purple-800 border-purple-300'
+                              }`}
+                            >
+                              <option value="In Stock">In Stock</option>
+                              <option value="Low Batch">Low Batch</option>
+                              <option value="Made to Order">Made to Order</option>
+                            </select>
+                            <ChevronDown className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
+                          </div>
                         </td>
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-[#73706B] px-1 pt-1">
+              <span>
+                Showing {(inventoryPage - 1) * INVENTORY_PAGE_SIZE + 1}–{Math.min(inventoryPage * INVENTORY_PAGE_SIZE, filteredProducts.length)} of {filteredProducts.length} designs
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  disabled={inventoryPage <= 1}
+                  onClick={() => setInventoryPage((p) => Math.max(1, p - 1))}
+                  className="px-3 py-1.5 border border-[#141414]/15 rounded-md hover:border-[#141414] disabled:opacity-40 disabled:cursor-not-allowed bg-white text-[#141414] font-medium transition-colors"
+                >
+                  Previous
+                </button>
+                <span className="tabular-nums font-semibold text-[#141414] px-1">
+                  Page {inventoryPage} of {totalInventoryPages}
+                </span>
+                <button
+                  type="button"
+                  disabled={inventoryPage >= totalInventoryPages}
+                  onClick={() => setInventoryPage((p) => Math.min(totalInventoryPages, p + 1))}
+                  className="px-3 py-1.5 border border-[#141414]/15 rounded-md hover:border-[#141414] disabled:opacity-40 disabled:cursor-not-allowed bg-white text-[#141414] font-medium transition-colors"
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         )}
