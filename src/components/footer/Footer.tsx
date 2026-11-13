@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
             </span>
             <ul className="space-y-1.5 text-[11px] text-[#8A8780]">
               <li><Link to="/shop" className="hover:text-white transition-colors block py-0.5">All Objects</Link></li>
-              <li><Link to="/lookbook" className="hover:text-white transition-colors block py-0.5 text-amber-200/90 font-medium">✨ Lookbook Styler</Link></li>
+              <li><Link to="/lookbook" className="hover:text-white transition-colors block py-0.5 font-medium">Lookbook Styler</Link></li>
               <li><Link to="/men" className="hover:text-white transition-colors block py-0.5">Men's Edit</Link></li>
               <li><Link to="/women" className="hover:text-white transition-colors block py-0.5">Women's Edit</Link></li>
               <li><Link to="/shop?category=shirts" className="hover:text-white transition-colors block py-0.5">Linen Shirts</Link></li>

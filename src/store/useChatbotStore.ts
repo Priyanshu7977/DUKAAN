@@ -47,11 +47,11 @@ const INITIAL_GREETING: ChatMessage = {
   timestamp: 'Just now',
   type: 'text',
   quickReplies: [
-    '📦 Track My Order',
-    '🔄 Returns & Exchanges',
-    '📐 Size & Fit Guide',
-    '🌿 Fabric Care Guide',
-    '💬 Speak to Human Concierge',
+    'Track My Order',
+    'Returns & Exchanges',
+    'Size & Fit Guide',
+    'Fabric Care Guide',
+    'Speak to Human Concierge',
   ],
 };
 

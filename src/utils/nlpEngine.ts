@@ -718,7 +718,7 @@ export class NLPEngine {
       return {
         text: `I apologize if I caused any frustration. I will step back and give you space.\n\nIf you ever need assistance with an order or would like to speak directly with our human team, we are here for you anytime.`,
         type: 'text',
-        quickReplies: ['💬 Speak to Human Concierge', '📦 Track an Order', 'Clear Chat'],
+        quickReplies: ['Speak to Human Concierge', 'Track an Order', 'Clear Chat'],
       };
     }
 
@@ -734,7 +734,7 @@ export class NLPEngine {
           phone: '+91 7977641125',
           email: 'concierge@dukaan-store.com',
         },
-        quickReplies: ['💬 Open WhatsApp Chat', '📦 Check Order', '🔄 7-Day Returns', '📐 Sizing Help'],
+        quickReplies: ['Open WhatsApp Chat', 'Check Order', '7-Day Returns', 'Sizing Help'],
       };
     }
 
@@ -754,7 +754,7 @@ export class NLPEngine {
               status: 'Queued for Airway Bill Update',
               phone: '+91 7977641125',
             },
-            quickReplies: ['💬 Confirm on WhatsApp', '📦 Track My Order', 'Speak to Concierge'],
+            quickReplies: ['Confirm on WhatsApp', 'Track My Order', 'Speak to Concierge'],
             pendingAction: null,
           };
         }
@@ -787,7 +787,7 @@ export class NLPEngine {
           return {
             text: `I could not locate an active order matching **#${orderId}** in our dispatch records.\n\nPlease double-check that the order number matches the one in your confirmation email or SMS. If you placed the order under a different mobile number or need manual record verification, please connect directly with our concierge team.`,
             type: 'text',
-            quickReplies: ['Track by Mobile Number', '💬 Connect on WhatsApp', 'Speak to Concierge'],
+            quickReplies: ['Track by Mobile Number', 'Connect on WhatsApp', 'Speak to Concierge'],
           };
         }
 
@@ -903,7 +903,7 @@ export class NLPEngine {
         return {
           text: `Wonderful! How may I best proceed to assist you? You can ask for real-time order tracking, doorstep size replacement, fabric care guidance, or direct human concierge connection.`,
           type: 'text',
-          quickReplies: ['📦 Track My Order', '🔄 7-Day Exchange', '💬 Speak to Human Concierge'],
+          quickReplies: ['Track My Order', '7-Day Exchange', 'Speak to Human Concierge'],
         };
       }
 
@@ -1006,7 +1006,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
             action: 'Doorstep exchange within 24-48 hours',
             phone: '+91 7977641125',
           },
-          quickReplies: ['💬 Connect on WhatsApp', 'Provide Order ID', 'Request Full Refund'],
+          quickReplies: ['Connect on WhatsApp', 'Provide Order ID', 'Request Full Refund'],
         };
       }
 
@@ -1024,7 +1024,7 @@ Natural flax linen softens gracefully and increases in tactile nobility with eve
             phone: '+91 7977641125',
             email: 'concierge@dukaan-store.com',
           },
-          quickReplies: ['💬 Chat on WhatsApp', 'Track an Order', 'Size Consultation', 'Returns Help'],
+          quickReplies: ['Chat on WhatsApp', 'Track an Order', 'Size Consultation', 'Returns Help'],
         };
       }
 
@@ -1059,7 +1059,7 @@ Enter the code in the discount field on the checkout page to apply your savings.
         return {
           text: `Welcome to DUKAAN Concierge. I am here to assist you with order tracking, doorstep size exchanges, fabric care instructions, or personalized styling recommendations.\n\nHow may I assist you today?`,
           type: 'text',
-          quickReplies: ['📦 Track My Order', '🔄 Returns & Exchanges', '📐 Size & Fit Guide', '🌿 Fabric Care Guide', '💬 Speak to Concierge'],
+          quickReplies: ['Track My Order', 'Returns & Exchanges', 'Size & Fit Guide', 'Fabric Care Guide', 'Speak to Concierge'],
         };
       }
 
@@ -1067,7 +1067,7 @@ Enter the code in the discount field on the checkout page to apply your savings.
         return {
           text: `While our pure European linens and mulberry silks feel undeniably sensual against bare skin, as the DUKAAN digital concierge my role is to help you get dressed, not undressed.\n\nMay I assist you with tailored sizing, live order tracking, or styling your next ensemble?`,
           type: 'text',
-          quickReplies: ['🌿 Explore Pure Linens', '📐 Size & Fit Guide', '📦 Track My Order', '💬 Speak to Human Team'],
+          quickReplies: ['Explore Pure Linens', 'Size & Fit Guide', 'Track My Order', 'Speak to Human Team'],
         };
       }
 
@@ -1076,7 +1076,7 @@ Enter the code in the discount field on the checkout page to apply your savings.
         return {
           text: `I want to make sure I assist you accurately. As the DUKAAN digital concierge, I specialize in:\n\n• **Live Order Tracking** — Real-time transit & dispatch updates\n• **7-Day Doorstep Returns & Exchanges** — Size swaps with free pickup\n• **Fabric & Linen Care** — Washing, pressing & maintenance advice\n• **Sizing & Silhouette Guide** — Relaxed European tailoring guidance\n• **Payments & Billing** — COD, UPI & instant digital invoices\n\nCould you please rephrase your request, or would you like to speak directly with our concierge team?`,
           type: 'text',
-          quickReplies: ['📦 Track My Order', '🔄 Returns & Exchanges', '📐 Size & Fit Guide', '💬 Speak to Concierge'],
+          quickReplies: ['Track My Order', 'Returns & Exchanges', 'Size & Fit Guide', 'Speak to Concierge'],
         };
       }
     }

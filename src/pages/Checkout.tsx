@@ -444,7 +444,7 @@ export const Checkout: React.FC = () => {
 
               {confirmedOrder.paymentMethod === 'cod' && (
                 <div className="p-2.5 bg-amber-50 border border-amber-200 text-[11px] text-amber-900 leading-relaxed">
-                  💡 Please keep <strong>{formatPrice(confirmedOrder.total)}</strong> ready in cash or UPI QR code for the delivery agent.
+                  Please keep <strong>{formatPrice(confirmedOrder.total)}</strong> ready in cash or UPI QR code for the delivery agent.
                 </div>
               )}
             </div>
