@@ -492,7 +492,7 @@ export const ShopCatalog: React.FC<ShopCatalogProps> = ({
 
                 <div className="mt-8 sm:mt-10 pt-5 border-t border-[#141414]/8 flex flex-col md:flex-row items-center justify-between gap-4">
                   <div className="text-xs text-[#73706B]">
-                    Showing <strong className="text-[#141414] font-medium">{startIndex + 1}–{endIndex}</strong> of{' '}
+                    Showing <strong className="text-[#141414] font-medium">{startIndex + 1} to {endIndex}</strong> of{' '}
                     <strong className="text-[#141414] font-medium">{filteredProducts.length}</strong> garments
                   </div>
 

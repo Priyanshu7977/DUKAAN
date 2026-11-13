@@ -12,7 +12,7 @@ export interface SEOHeadProps {
   noindex?: boolean;
 }
 
-const DEFAULT_TITLE = 'DUKAAN — Objects of Everyday Expression';
+const DEFAULT_TITLE = 'DUKAAN | Objects of Everyday Expression';
 const DEFAULT_DESCRIPTION = 'Contemporary unisex clothing engineered with pure European linen, soft cotton gauze, and timeless comfortable silhouettes.';
 const DEFAULT_IMAGE = 'https://cdn.shopify.com/s/files/1/0683/8947/0389/files/AWGauze1.jpg?v=1780592855';
 const DEFAULT_KEYWORDS = 'European linen shirts India, Normandy flax clothing, pure linen shirts, breathable double gauze cotton, unstructured relaxed tailoring India, minimalist capsule wardrobe, slow fashion India, organic cotton clothing';

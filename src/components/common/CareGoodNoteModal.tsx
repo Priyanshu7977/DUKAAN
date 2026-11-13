@@ -105,7 +105,7 @@ export const CareGoodNoteModal: React.FC<CareGoodNoteModalProps> = ({
               <p className="text-[#55524E] text-[11px] leading-tight">{order.shippingAddress.address}</p>
               {order.shippingAddress.area && <p className="text-[#55524E] text-[11px] leading-tight">{order.shippingAddress.area}</p>}
               <p className="text-[#55524E] text-[11px]">
-                {order.shippingAddress.city}, {order.shippingAddress.state} — <span className="font-mono font-bold">{order.shippingAddress.pincode}</span>
+                {order.shippingAddress.city}, {order.shippingAddress.state}, <span className="font-mono font-bold">{order.shippingAddress.pincode}</span>
               </p>
               <p className="text-[10px] text-[#73706B] pt-0.5">
                 Phone: {order.customerPhone} • Email: {order.customerEmail}
@@ -118,7 +118,7 @@ export const CareGoodNoteModal: React.FC<CareGoodNoteModalProps> = ({
               </span>
               <p className="text-[#141414] text-[11px]">Carrier: <strong>BlueDart / Delhivery Express Air</strong></p>
               <p className="text-[#141414] text-[11px]">Payment: <strong>{order.paymentMethod === 'cod' ? 'Cash on Delivery (COD)' : 'Prepaid (256-Bit SSL)'}</strong></p>
-              <p className="text-[#141414] text-[11px]">Estimated Delivery: <strong>2 – 3 Business Days</strong></p>
+              <p className="text-[#141414] text-[11px]">Estimated Delivery: <strong>2 to 3 Business Days</strong></p>
               <p className="text-[10px] text-emerald-800 font-semibold pt-0.5">
                 ✓ 7-Day Doorstep Size Replacement Enabled
               </p>

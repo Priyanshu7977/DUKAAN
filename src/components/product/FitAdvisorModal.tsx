@@ -69,7 +69,8 @@ export const FitAdvisorModal: React.FC<FitAdvisorModalProps> = ({
     if (fitPreference === 'relaxed') confidence = 97;
     if (bodyFrame === 'athletic') confidence = 95;
 
-    let rationale = `For your height of ${heightCm}cm and ${weightKg}kg with an ${bodyFrame} frame, Size ${finalSize} balances the architectural silhouette with relaxed ease across the chest and shoulders.`;
+    const frameArticle = bodyFrame === 'athletic' ? 'an' : 'a';
+    let rationale = `For your height of ${heightCm}cm and ${weightKg}kg with ${frameArticle} ${bodyFrame} frame, Size ${finalSize} balances the architectural silhouette with relaxed ease across the chest and shoulders.`;
     if (fitPreference === 'oversized') {
       rationale = `Given your preference for an editorial oversized drape, Size ${finalSize} delivers the relaxed drop-shoulder proportion without feeling ungrounded.`;
     } else if (fitPreference === 'tailored') {

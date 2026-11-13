@@ -97,7 +97,7 @@ export const TaxInvoiceModal: React.FC<TaxInvoiceModalProps> = ({
               <p className="mt-2 text-[11px] text-[#73706B] leading-tight">
                 Dukaan Atelier Apparel Pvt. Ltd.<br />
                 Rampart Row, Kala Ghoda, Fort<br />
-                Mumbai, Maharashtra — 400001<br />
+                Mumbai, Maharashtra, 400001<br />
                 GSTIN: <strong className="text-[#141414]">27AAACD9281F1Z8</strong><br />
                 State Code: 27 (Maharashtra)
               </p>
@@ -126,7 +126,7 @@ export const TaxInvoiceModal: React.FC<TaxInvoiceModalProps> = ({
               </p>
               <p className="text-[11px] text-[#73706B] mt-0.5">
                 {order.customer?.address || 'Patron Residence'}<br />
-                {order.customer?.city ? `${order.customer.city}, ` : ''}{order.customer?.state || 'India'} — {order.customer?.pincode || '400001'}<br />
+                {order.customer?.city ? `${order.customer.city}, ` : ''}{order.customer?.state || 'India'}, {order.customer?.pincode || '400001'}<br />
                 Phone: {order.customer?.phone || '+91 7977641125'}<br />
                 {order.customer?.email && <span>Email: {order.customer.email}</span>}
               </p>

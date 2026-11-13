@@ -575,7 +575,7 @@ export const UPIPaymentModal: React.FC<UPIPaymentModalProps> = ({
                   disabled={isSubmittingUtr}
                   className="w-full h-11 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-widest font-semibold rounded-xl shadow-md flex items-center justify-center gap-2 transition-all active:scale-[0.99] disabled:bg-[#73706B]"
                 >
-                  <span>I Have Transferred {payableFormatted} — Confirm</span>
+                  <span>I Have Transferred {payableFormatted} · Confirm</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
