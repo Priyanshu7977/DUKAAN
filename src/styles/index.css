@@ -47,6 +47,17 @@
     font-variant-numeric: normal;
   }
 
+  select.clean-select, select.appearance-none {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+  }
+
+  select.clean-select::-ms-expand, select.appearance-none::-ms-expand {
+    display: none !important;
+  }
+
   @media screen and (max-width: 767px) {
     input, select, textarea {
       font-size: 16px !important;

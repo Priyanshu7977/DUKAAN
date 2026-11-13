@@ -233,7 +233,7 @@ export const Admin: React.FC = () => {
                 setPasscode(e.target.value);
                 setPasscodeError('');
               }}
-              placeholder="Master Passcode (e.g. 1997)"
+              placeholder=""
               maxLength={8}
               className="w-full h-11 px-4 text-center tracking-[0.3em] font-mono text-sm bg-[#FAF9F6] border border-[#141414]/20 focus:outline-none focus:border-[#141414] rounded-sm"
               autoFocus
@@ -464,7 +464,8 @@ export const Admin: React.FC = () => {
                               <select
                                 value={order.status}
                                 onChange={(e) => handleUpdateStatus(order.id, e.target.value as any)}
-                                className={`min-w-[130px] h-8 pl-3 pr-7 text-xs font-semibold rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
+                                style={{ WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none', backgroundImage: 'none' }}
+                                className={`clean-select min-w-[130px] h-8 pl-3 pr-7 text-xs font-semibold rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
                                   order.status === 'Delivered'
                                     ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
                                     : order.status === 'In Transit'
@@ -474,12 +475,12 @@ export const Admin: React.FC = () => {
                                     : 'bg-amber-50 text-amber-800 border-amber-300'
                                 }`}
                               >
-                                <option value="Processing">Processing</option>
-                                <option value="In Transit">In Transit</option>
-                                <option value="Delivered">Delivered</option>
-                                <option value="Cancelled">Cancelled</option>
+                                <option value="Processing" className="bg-white text-[#141414]">Processing</option>
+                                <option value="In Transit" className="bg-white text-[#141414]">In Transit</option>
+                                <option value="Delivered" className="bg-white text-[#141414]">Delivered</option>
+                                <option value="Cancelled" className="bg-white text-[#141414]">Cancelled</option>
                               </select>
-                              <ChevronDown className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
+                              <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-60 text-current" />
                             </div>
 
                             {order.trackingNumber ? (
@@ -653,7 +654,8 @@ export const Admin: React.FC = () => {
                                 setInventoryStockOverrides((prev) => ({ ...prev, [p.id]: val }));
                                 showToast(`${p.name} set to ${val}`, 'info');
                               }}
-                              className={`min-w-[130px] h-8 pl-3 pr-7 text-xs font-semibold rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
+                              style={{ WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none', backgroundImage: 'none' }}
+                              className={`clean-select w-[138px] h-8 pl-3 pr-7 text-xs font-medium rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
                                 status === 'In Stock'
                                   ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
                                   : status === 'Low Batch'
@@ -661,11 +663,11 @@ export const Admin: React.FC = () => {
                                   : 'bg-purple-50 text-purple-800 border-purple-300'
                               }`}
                             >
-                              <option value="In Stock">In Stock</option>
-                              <option value="Low Batch">Low Batch</option>
-                              <option value="Made to Order">Made to Order</option>
+                              <option value="In Stock" className="bg-white text-[#141414]">In Stock</option>
+                              <option value="Low Batch" className="bg-white text-[#141414]">Low Batch</option>
+                              <option value="Made to Order" className="bg-white text-[#141414]">Made to Order</option>
                             </select>
-                            <ChevronDown className="w-3.5 h-3.5 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none opacity-60" />
+                            <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-60 text-current" />
                           </div>
                         </td>
                       </tr>
