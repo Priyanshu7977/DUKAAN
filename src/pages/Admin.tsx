@@ -19,7 +19,8 @@ import {
   RotateCcw,
   Sparkles,
   ExternalLink,
-  ChevronDown
+  ChevronDown,
+  Check
 } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
 import { PRODUCTS } from '../data/products';
@@ -62,6 +63,19 @@ export const Admin: React.FC = () => {
   const [selectedInvoiceOrder, setSelectedInvoiceOrder] = useState<any>(null);
 
   const [inventoryStockOverrides, setInventoryStockOverrides] = useState<Record<string, string>>({});
+  const [openInventoryMenuId, setOpenInventoryMenuId] = useState<string | null>(null);
+  const [openOrderMenuId, setOpenOrderMenuId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest('.status-menu-container')) {
+        setOpenInventoryMenuId(null);
+        setOpenOrderMenuId(null);
+      }
+    };
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, []);
 
   useEffect(() => {
     if (isAdminUser) {
@@ -460,12 +474,14 @@ export const Admin: React.FC = () => {
 
                         <td className="py-3.5 px-4 align-middle">
                           <div className="space-y-1.5">
-                            <div className="relative inline-block">
-                              <select
-                                value={order.status}
-                                onChange={(e) => handleUpdateStatus(order.id, e.target.value as any)}
-                                style={{ WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none', backgroundImage: 'none' }}
-                                className={`clean-select min-w-[130px] h-8 pl-3 pr-7 text-xs font-semibold rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
+                            <div className="relative inline-block status-menu-container">
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setOpenOrderMenuId(openOrderMenuId === order.id ? null : order.id);
+                                }}
+                                className={`w-[130px] h-8 px-3 text-xs font-semibold rounded-md border flex items-center justify-between cursor-pointer transition-all ${
                                   order.status === 'Delivered'
                                     ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
                                     : order.status === 'In Transit'
@@ -475,12 +491,30 @@ export const Admin: React.FC = () => {
                                     : 'bg-amber-50 text-amber-800 border-amber-300'
                                 }`}
                               >
-                                <option value="Processing" className="bg-white text-[#141414]">Processing</option>
-                                <option value="In Transit" className="bg-white text-[#141414]">In Transit</option>
-                                <option value="Delivered" className="bg-white text-[#141414]">Delivered</option>
-                                <option value="Cancelled" className="bg-white text-[#141414]">Cancelled</option>
-                              </select>
-                              <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-60 text-current" />
+                                <span className="truncate">{order.status}</span>
+                                <ChevronDown className="w-3.5 h-3.5 shrink-0 opacity-60 ml-1.5" />
+                              </button>
+
+                              {openOrderMenuId === order.id && (
+                                <div className="absolute left-0 top-full mt-1 w-[135px] bg-white border border-[#141414]/15 rounded-md shadow-lg py-1 z-30 animate-in fade-in zoom-in-95 duration-100">
+                                  {(['Processing', 'In Transit', 'Delivered', 'Cancelled'] as const).map((st) => (
+                                    <button
+                                      key={st}
+                                      type="button"
+                                      onClick={() => {
+                                        handleUpdateStatus(order.id, st);
+                                        setOpenOrderMenuId(null);
+                                      }}
+                                      className={`w-full px-3 py-1.5 text-xs text-left flex items-center justify-between hover:bg-[#FAF9F6] transition-colors ${
+                                        order.status === st ? 'font-semibold text-[#141414] bg-[#ECE7DD]/40' : 'text-[#73706B]'
+                                      }`}
+                                    >
+                                      <span>{st}</span>
+                                      {order.status === st && <Check className="w-3 h-3 text-[#141414]" />}
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
                             </div>
 
                             {order.trackingNumber ? (
@@ -646,28 +680,46 @@ export const Admin: React.FC = () => {
                         </td>
 
                         <td className="py-3.5 px-4 align-middle">
-                          <div className="relative inline-block">
-                            <select
-                              value={status}
-                              onChange={(e) => {
-                                const val = e.target.value;
-                                setInventoryStockOverrides((prev) => ({ ...prev, [p.id]: val }));
-                                showToast(`${p.name} set to ${val}`, 'info');
+                          <div className="relative inline-block status-menu-container">
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setOpenInventoryMenuId(openInventoryMenuId === p.id ? null : p.id);
                               }}
-                              style={{ WebkitAppearance: 'none', MozAppearance: 'none', appearance: 'none', backgroundImage: 'none' }}
-                              className={`clean-select w-[138px] h-8 pl-3 pr-7 text-xs font-medium rounded-md border appearance-none cursor-pointer focus:outline-none transition-all ${
+                              className={`w-[136px] h-8 px-3 text-xs font-medium rounded-md border flex items-center justify-between cursor-pointer transition-all ${
                                 status === 'In Stock'
-                                  ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
+                                  ? 'bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100/60'
                                   : status === 'Low Batch'
-                                  ? 'bg-amber-50 text-amber-800 border-amber-300'
-                                  : 'bg-purple-50 text-purple-800 border-purple-300'
+                                  ? 'bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100/60'
+                                  : 'bg-purple-50 text-purple-800 border-purple-300 hover:bg-purple-100/60'
                               }`}
                             >
-                              <option value="In Stock" className="bg-white text-[#141414]">In Stock</option>
-                              <option value="Low Batch" className="bg-white text-[#141414]">Low Batch</option>
-                              <option value="Made to Order" className="bg-white text-[#141414]">Made to Order</option>
-                            </select>
-                            <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none opacity-60 text-current" />
+                              <span className="truncate">{status}</span>
+                              <ChevronDown className="w-3.5 h-3.5 shrink-0 opacity-60 ml-1.5" />
+                            </button>
+
+                            {openInventoryMenuId === p.id && (
+                              <div className="absolute right-0 top-full mt-1 w-[140px] bg-white border border-[#141414]/15 rounded-md shadow-lg py-1 z-30 animate-in fade-in zoom-in-95 duration-100">
+                                {(['In Stock', 'Low Batch', 'Made to Order'] as const).map((opt) => (
+                                  <button
+                                    key={opt}
+                                    type="button"
+                                    onClick={() => {
+                                      setInventoryStockOverrides((prev) => ({ ...prev, [p.id]: opt }));
+                                      setOpenInventoryMenuId(null);
+                                      showToast(`${p.name} set to ${opt}`, 'info');
+                                    }}
+                                    className={`w-full px-3 py-1.5 text-xs text-left flex items-center justify-between hover:bg-[#FAF9F6] transition-colors ${
+                                      status === opt ? 'font-semibold text-[#141414] bg-[#ECE7DD]/40' : 'text-[#73706B]'
+                                    }`}
+                                  >
+                                    <span>{opt}</span>
+                                    {status === opt && <Check className="w-3 h-3 text-[#141414]" />}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         </td>
                       </tr>
