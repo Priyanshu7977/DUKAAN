@@ -20,7 +20,11 @@ import {
   Sparkles,
   ExternalLink,
   ChevronDown,
-  Check
+  Check,
+  Sliders,
+  X,
+  Plus,
+  Minus
 } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
 import { PRODUCTS } from '../data/products';
@@ -34,6 +38,7 @@ import {
 } from '../services/firestoreService';
 import { TaxInvoiceModal } from '../components/checkout/TaxInvoiceModal';
 import { useUIStore } from '../store/useUIStore';
+import { useInventoryStore, SizeStock } from '../store/useInventoryStore';
 
 export const Admin: React.FC = () => {
   const user = useAuthStore((state) => state.user);
@@ -65,6 +70,42 @@ export const Admin: React.FC = () => {
   const [inventoryStockOverrides, setInventoryStockOverrides] = useState<Record<string, string>>({});
   const [openInventoryMenuId, setOpenInventoryMenuId] = useState<string | null>(null);
   const [openOrderMenuId, setOpenOrderMenuId] = useState<string | null>(null);
+
+  const {
+    overrides: inventoryOverrides,
+    updateProductStatus,
+    updateSizeStock,
+    updateProductSizes,
+    getProductInventory,
+    syncWithFirestore: syncInventoryWithFirestore,
+  } = useInventoryStore();
+
+  const [matrixProduct, setMatrixProduct] = useState<Product | null>(null);
+  const [matrixSizes, setMatrixSizes] = useState<Record<string, SizeStock>>({});
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      syncInventoryWithFirestore();
+    }
+  }, [isAuthenticated, syncInventoryWithFirestore]);
+
+  const openSizeMatrix = (p: Product) => {
+    const inv = getProductInventory(p.id, p.sizes);
+    setMatrixProduct(p);
+    setMatrixSizes(JSON.parse(JSON.stringify(inv.sizes)));
+  };
+
+  const handleQuickToggleSize = (p: Product, sizeKey: string) => {
+    const inv = getProductInventory(p.id, p.sizes);
+    const currentSize = inv.sizes[sizeKey] || { inStock: true, quantityRemaining: 10 };
+    const nextInStock = !currentSize.inStock;
+    const nextQty = nextInStock ? (currentSize.quantityRemaining > 0 ? currentSize.quantityRemaining : 10) : 0;
+    updateSizeStock(p.id, sizeKey, nextInStock, nextQty);
+    showToast(
+      `${p.name} · Size ${sizeKey} marked ${nextInStock ? 'In Stock (' + nextQty + ' units)' : 'Sold Out (0 units)'}`,
+      'info'
+    );
+  };
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -622,13 +663,14 @@ export const Admin: React.FC = () => {
                     <th className="py-3 px-4">Garment</th>
                     <th className="py-3 px-4">Category & Collection</th>
                     <th className="py-3 px-4">Retail Price</th>
-                    <th className="py-3 px-4">Sizes Available</th>
+                    <th className="py-3 px-4">Size & Stock Units</th>
                     <th className="py-3 px-4">Atelier Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#141414]/8">
                   {paginatedProducts.map((p: Product) => {
-                    const status = inventoryStockOverrides[p.id] || 'In Stock';
+                    const inv = getProductInventory(p.id, p.sizes);
+                    const status = inv.status;
                     return (
                       <tr key={p.id} className="hover:bg-[#FAF9F6]/50 transition-colors">
                         <td className="py-3.5 px-4 align-middle">
@@ -663,19 +705,51 @@ export const Admin: React.FC = () => {
                         </td>
 
                         <td className="py-3.5 px-4 align-middle">
-                          <div className="flex items-center gap-1 shrink-0">
-                            {p.sizes.map((s: ProductSize) => (
-                              <span
-                                key={s.size}
-                                className={`min-w-6 h-6 px-1.5 text-[10px] font-semibold flex items-center justify-center rounded-xs transition-colors ${
-                                  s.inStock
-                                    ? 'bg-[#FAF9F6] border border-[#141414]/15 text-[#141414]'
-                                    : 'bg-red-50/60 border border-red-200/50 text-red-400 line-through opacity-60'
-                                }`}
-                              >
-                                {s.size}
-                              </span>
-                            ))}
+                          <div className="flex items-center gap-2 flex-wrap min-w-[220px]">
+                            <div className="flex items-center gap-1 shrink-0">
+                              {p.sizes.map((s: ProductSize) => {
+                                const live = inv.sizes[s.size] || {
+                                  inStock: s.inStock,
+                                  quantityRemaining: s.quantityRemaining ?? (s.inStock ? 10 : 0),
+                                };
+                                const isAvailable = live.inStock && live.quantityRemaining > 0;
+                                const isLow = isAvailable && live.quantityRemaining <= 5;
+                                return (
+                                  <button
+                                    key={s.size}
+                                    type="button"
+                                    onClick={() => handleQuickToggleSize(p, s.size)}
+                                    title={`${s.size}: ${live.quantityRemaining} units (${isAvailable ? 'In Stock' : 'Sold Out'}). Click to toggle.`}
+                                    className={`min-w-7 h-7 px-1.5 text-[10px] font-semibold flex items-center justify-center gap-1 rounded-xs border transition-all cursor-pointer shadow-2xs ${
+                                      !isAvailable
+                                        ? 'bg-red-50/70 border-red-200/80 text-red-500 line-through opacity-70 hover:opacity-100'
+                                        : isLow
+                                        ? 'bg-amber-50 border-amber-300 text-amber-800 hover:bg-amber-100'
+                                        : 'bg-[#FAF9F6] border-[#141414]/15 text-[#141414] hover:border-[#141414] hover:bg-white'
+                                    }`}
+                                  >
+                                    <span>{s.size}</span>
+                                    <span
+                                      className={`text-[8px] font-mono tabular-nums leading-none ${
+                                        !isAvailable ? 'text-red-400' : isLow ? 'text-amber-700' : 'text-[#73706B]'
+                                      }`}
+                                    >
+                                      {live.quantityRemaining}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+
+                            <button
+                              type="button"
+                              onClick={() => openSizeMatrix(p)}
+                              className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider bg-white border border-[#141414]/20 hover:border-[#141414] hover:bg-[#FAF9F6] text-[#141414] rounded-xs transition-all shadow-2xs cursor-pointer shrink-0"
+                              title="Manage exact units and availability per size"
+                            >
+                              <Sliders className="w-3 h-3 text-[#A7654A]" />
+                              <span>Manage Units</span>
+                            </button>
                           </div>
                         </td>
 
@@ -706,7 +780,7 @@ export const Admin: React.FC = () => {
                                     key={opt}
                                     type="button"
                                     onClick={() => {
-                                      setInventoryStockOverrides((prev) => ({ ...prev, [p.id]: opt }));
+                                      updateProductStatus(p.id, opt);
                                       setOpenInventoryMenuId(null);
                                       showToast(`${p.name} set to ${opt}`, 'info');
                                     }}
@@ -819,6 +893,298 @@ export const Admin: React.FC = () => {
           onClose={() => setSelectedInvoiceOrder(null)}
           order={selectedInvoiceOrder}
         />
+      )}
+
+      {matrixProduct && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-150">
+          <div className="max-w-2xl w-full bg-[#FAF9F6] border border-[#141414]/15 rounded-lg shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+            <div className="p-4 sm:p-5 bg-white border-b border-[#141414]/10 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3.5 min-w-0">
+                <img
+                  src={matrixProduct.images[0]}
+                  alt={matrixProduct.name}
+                  className="w-12 h-14 object-cover rounded-md bg-[#ECE7DD] border border-[#141414]/10 shrink-0 shadow-2xs"
+                />
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] uppercase font-semibold text-[#A7654A] tracking-wider px-2 py-0.5 bg-[#FAF9F6] border border-[#141414]/10 rounded-xs">
+                      {matrixProduct.category}
+                    </span>
+                    <span className="text-xs text-[#73706B] font-light">
+                      {formatPrice(matrixProduct.price)}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-base sm:text-lg font-normal text-[#141414] truncate mt-0.5">
+                    {matrixProduct.name}
+                  </h3>
+                  <p className="text-[11px] text-[#73706B] font-light truncate">
+                    Manage size availability and unit stock matrix
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setMatrixProduct(null)}
+                className="w-8 h-8 rounded-full border border-[#141414]/15 flex items-center justify-center text-[#73706B] hover:text-[#141414] hover:bg-[#FAF9F6] transition-colors shrink-0"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="p-4 sm:p-6 overflow-y-auto space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 p-3 bg-white border border-[#141414]/10 rounded-md text-xs">
+                <span className="font-semibold text-[#141414] uppercase text-[10px] tracking-wider">
+                  Batch Actions
+                </span>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const updated: Record<string, SizeStock> = {};
+                      matrixProduct.sizes.forEach((s) => {
+                        updated[s.size] = { inStock: true, quantityRemaining: 10 };
+                      });
+                      setMatrixSizes(updated);
+                    }}
+                    className="px-2.5 py-1 text-[11px] bg-[#FAF9F6] border border-[#141414]/15 hover:border-[#141414] text-[#141414] rounded-sm transition-colors font-medium"
+                  >
+                    Restock All (10 Units)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const updated: Record<string, SizeStock> = {};
+                      matrixProduct.sizes.forEach((s) => {
+                        const cur = matrixSizes[s.size] || { quantityRemaining: 10 };
+                        updated[s.size] = {
+                          inStock: true,
+                          quantityRemaining: cur.quantityRemaining > 0 ? cur.quantityRemaining : 10,
+                        };
+                      });
+                      setMatrixSizes(updated);
+                    }}
+                    className="px-2.5 py-1 text-[11px] bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100 rounded-sm transition-colors font-medium"
+                  >
+                    Mark All Available
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const updated: Record<string, SizeStock> = {};
+                      matrixProduct.sizes.forEach((s) => {
+                        updated[s.size] = { inStock: false, quantityRemaining: 0 };
+                      });
+                      setMatrixSizes(updated);
+                    }}
+                    className="px-2.5 py-1 text-[11px] bg-red-50 border border-red-200 text-red-600 hover:bg-red-100 rounded-sm transition-colors font-medium"
+                  >
+                    Mark All Sold Out
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-white border border-[#141414]/10 rounded-md overflow-hidden">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-[#FAF9F6] border-b border-[#141414]/10 text-[10px] uppercase tracking-wider text-[#73706B] font-semibold">
+                    <tr>
+                      <th className="py-2.5 px-4">Size</th>
+                      <th className="py-2.5 px-4">Availability</th>
+                      <th className="py-2.5 px-4">Units in Stock</th>
+                      <th className="py-2.5 px-4">Stock Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#141414]/8">
+                    {matrixProduct.sizes.map((s) => {
+                      const cur = matrixSizes[s.size] || {
+                        inStock: s.inStock,
+                        quantityRemaining: s.quantityRemaining ?? (s.inStock ? 10 : 0),
+                      };
+                      const isAvailable = cur.inStock && cur.quantityRemaining > 0;
+                      const isLow = isAvailable && cur.quantityRemaining <= 5;
+
+                      return (
+                        <tr key={s.size} className="hover:bg-[#FAF9F6]/40 transition-colors">
+                          <td className="py-3 px-4 align-middle">
+                            <span className="w-8 h-8 rounded-sm bg-[#FAF9F6] border border-[#141414]/15 font-serif text-sm font-semibold flex items-center justify-center text-[#141414]">
+                              {s.size}
+                            </span>
+                          </td>
+
+                          <td className="py-3 px-4 align-middle">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const nextInStock = !cur.inStock;
+                                const nextQty = nextInStock
+                                  ? cur.quantityRemaining > 0
+                                    ? cur.quantityRemaining
+                                    : 10
+                                  : 0;
+                                setMatrixSizes((prev) => ({
+                                  ...prev,
+                                  [s.size]: { inStock: nextInStock, quantityRemaining: nextQty },
+                                }));
+                              }}
+                              className={`h-7 px-2.5 text-[11px] font-semibold rounded-sm border inline-flex items-center gap-1.5 transition-all ${
+                                isAvailable
+                                  ? 'bg-emerald-600 text-white border-emerald-600 hover:bg-emerald-700 shadow-2xs'
+                                  : 'bg-red-50 text-red-600 border-red-200 hover:bg-red-100'
+                              }`}
+                            >
+                              {isAvailable ? <Check className="w-3 h-3" /> : <X className="w-3 h-3" />}
+                              <span>{isAvailable ? 'In Stock' : 'Sold Out'}</span>
+                            </button>
+                          </td>
+
+                          <td className="py-3 px-4 align-middle">
+                            <div className="flex items-center gap-1.5">
+                              <div className="flex items-center border border-[#141414]/15 bg-[#FAF9F6] rounded-sm overflow-hidden h-7">
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    const nextQty = Math.max(0, cur.quantityRemaining - 1);
+                                    setMatrixSizes((prev) => ({
+                                      ...prev,
+                                      [s.size]: {
+                                        inStock: nextQty > 0,
+                                        quantityRemaining: nextQty,
+                                      },
+                                    }));
+                                  }}
+                                  className="w-6 h-full flex items-center justify-center hover:bg-white text-[#141414] transition-colors"
+                                >
+                                  <Minus className="w-3 h-3" />
+                                </button>
+                                <input
+                                  type="number"
+                                  min={0}
+                                  max={999}
+                                  value={cur.quantityRemaining}
+                                  onChange={(e) => {
+                                    const val = Math.max(0, parseInt(e.target.value, 10) || 0);
+                                    setMatrixSizes((prev) => ({
+                                      ...prev,
+                                      [s.size]: {
+                                        inStock: val > 0,
+                                        quantityRemaining: val,
+                                      },
+                                    }));
+                                  }}
+                                  className="w-12 h-full text-center text-xs font-mono font-semibold bg-white border-x border-[#141414]/10 focus:outline-none tabular-nums"
+                                />
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    const nextQty = cur.quantityRemaining + 1;
+                                    setMatrixSizes((prev) => ({
+                                      ...prev,
+                                      [s.size]: {
+                                        inStock: true,
+                                        quantityRemaining: nextQty,
+                                      },
+                                    }));
+                                  }}
+                                  className="w-6 h-full flex items-center justify-center hover:bg-white text-[#141414] transition-colors"
+                                >
+                                  <Plus className="w-3 h-3" />
+                                </button>
+                              </div>
+
+                              <div className="flex items-center gap-1">
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    const nextQty = cur.quantityRemaining + 5;
+                                    setMatrixSizes((prev) => ({
+                                      ...prev,
+                                      [s.size]: { inStock: true, quantityRemaining: nextQty },
+                                    }));
+                                  }}
+                                  className="px-1.5 h-6 text-[10px] bg-white border border-[#141414]/15 hover:border-[#141414] rounded-xs text-[#73706B] hover:text-[#141414] transition-colors font-mono"
+                                >
+                                  +5
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    const nextQty = cur.quantityRemaining + 10;
+                                    setMatrixSizes((prev) => ({
+                                      ...prev,
+                                      [s.size]: { inStock: true, quantityRemaining: nextQty },
+                                    }));
+                                  }}
+                                  className="px-1.5 h-6 text-[10px] bg-white border border-[#141414]/15 hover:border-[#141414] rounded-xs text-[#73706B] hover:text-[#141414] transition-colors font-mono"
+                                >
+                                  +10
+                                </button>
+                              </div>
+                            </div>
+                          </td>
+
+                          <td className="py-3 px-4 align-middle">
+                            <span
+                              className={`inline-block px-2 py-0.5 text-[10px] font-semibold rounded-xs border ${
+                                !isAvailable
+                                  ? 'bg-red-50 text-red-700 border-red-200'
+                                  : isLow
+                                  ? 'bg-amber-50 text-amber-800 border-amber-300'
+                                  : 'bg-emerald-50 text-emerald-800 border-emerald-300'
+                              }`}
+                            >
+                              {!isAvailable ? 'Sold Out' : isLow ? 'Low Batch' : 'Available'}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="p-3 bg-[#ECE7DD]/50 border border-[#141414]/10 rounded-md flex items-center justify-between text-xs text-[#73706B]">
+                <span>
+                  Total Units in Atelier:{' '}
+                  <strong className="text-[#141414] font-mono">
+                    {Object.values(matrixSizes).reduce((acc, cur) => acc + (cur.quantityRemaining || 0), 0)}
+                  </strong>
+                </span>
+                <span>
+                  Storefront Status:{' '}
+                  <strong className="text-[#141414]">
+                    {Object.values(matrixSizes).every((s) => !s.inStock || s.quantityRemaining === 0)
+                      ? 'Made to Order'
+                      : Object.values(matrixSizes).reduce((acc, cur) => acc + (cur.quantityRemaining || 0), 0) <= 10
+                      ? 'Low Batch'
+                      : 'In Stock'}
+                  </strong>
+                </span>
+              </div>
+            </div>
+
+            <div className="p-4 bg-white border-t border-[#141414]/10 flex items-center justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setMatrixProduct(null)}
+                className="px-4 py-2 text-xs font-semibold text-[#73706B] hover:text-[#141414] transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  updateProductSizes(matrixProduct.id, matrixSizes);
+                  showToast(`Inventory Matrix saved & synced for ${matrixProduct.name}`, 'success');
+                  setMatrixProduct(null);
+                }}
+                className="px-5 py-2 bg-[#141414] hover:bg-black text-white text-xs uppercase tracking-wider font-semibold rounded-sm shadow-sm transition-all flex items-center gap-1.5"
+              >
+                <Check className="w-3.5 h-3.5" />
+                <span>Save & Sync Cloud</span>
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

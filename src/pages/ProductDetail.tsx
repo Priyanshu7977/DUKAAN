@@ -12,6 +12,7 @@ import { ProductCard } from '../components/product/ProductCard';
 import { Heart, Plus, Minus, Check, ShieldCheck, Truck, RotateCcw, Sparkles, MapPin, Star, ThumbsUp, X, Sparkle } from 'lucide-react';
 import { ImageWithFallback } from '../components/common/ImageWithFallback';
 import { FitAdvisorModal } from '../components/product/FitAdvisorModal';
+import { useInventoryStore } from '../store/useInventoryStore';
 
 const RECENTLY_VIEWED_KEY = 'dukaan_recently_viewed';
 
@@ -25,6 +26,9 @@ export const ProductDetail: React.FC = () => {
   const items = useCartStore((state) => state.items);
   const { toggleWishlist, isInWishlist } = useWishlistStore();
   const { showToast, openSizeGuide, setHasStickyBottomBar } = useUIStore();
+  const getEffectiveSizes = useInventoryStore((state) => state.getEffectiveSizes);
+  const syncWithFirestore = useInventoryStore((state) => state.syncWithFirestore);
+  const inventoryOverrides = useInventoryStore((state) => state.overrides);
 
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedSize, setSelectedSize] = useState<string>('');
@@ -32,6 +36,19 @@ export const ProductDetail: React.FC = () => {
   const [activeImageIdx, setActiveImageIdx] = useState<number>(0);
   const [recentlyViewed, setRecentlyViewed] = useState<Product[]>([]);
   const [isFitAdvisorOpen, setIsFitAdvisorOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    syncWithFirestore();
+  }, [syncWithFirestore]);
+
+  const effectiveSizes = product ? getEffectiveSizes(product.id, product.sizes) : [];
+  const selectedSizeData = effectiveSizes.find((s) => s.size === selectedSize);
+  const isSelectedSizeAvailable = Boolean(
+    selectedSizeData &&
+      selectedSizeData.inStock &&
+      (selectedSizeData.quantityRemaining === undefined || selectedSizeData.quantityRemaining > 0)
+  );
+  const availableStockUnits = selectedSizeData?.quantityRemaining ?? 10;
 
   const ctaRef = useRef<HTMLDivElement>(null);
   const [showStickyBar, setShowStickyBar] = useState(false);
@@ -176,7 +193,11 @@ export const ProductDetail: React.FC = () => {
   useEffect(() => {
     if (product) {
       setSelectedColor(product.colors[0]?.name || '');
-      const firstAvailableSize = product.sizes.find((s) => s.inStock)?.size || product.sizes[0]?.size || '';
+      const eff = getEffectiveSizes(product.id, product.sizes);
+      const firstAvailableSize =
+        eff.find((s) => s.inStock && (s.quantityRemaining === undefined || s.quantityRemaining > 0))?.size ||
+        eff[0]?.size ||
+        '';
       setSelectedSize(firstAvailableSize);
       setQuantity(1);
       setActiveImageIdx(0);
@@ -196,7 +217,7 @@ export const ProductDetail: React.FC = () => {
       } catch (e) {
       }
     }
-  }, [product, slug]);
+  }, [product, slug, inventoryOverrides]);
 
   if (!product) {
     return (
@@ -226,11 +247,20 @@ export const ProductDetail: React.FC = () => {
       showToast('Please select a size', 'error');
       return;
     }
+    if (!isSelectedSizeAvailable) {
+      showToast(`Size ${selectedSize} is currently sold out. Please select an available size.`, 'error');
+      return;
+    }
     const currentItem = items.find(
       (it) => it.product.id === product.id && it.selectedSize === selectedSize && it.selectedColor === selectedColor
     );
-    if (currentItem && currentItem.quantity >= 5) {
+    const inBag = currentItem?.quantity || 0;
+    if (inBag >= 5) {
       showToast('Maximum 5 pieces allowed per garment. You already have 5 in your bag.', 'info');
+      return;
+    }
+    if (inBag + quantity > availableStockUnits) {
+      showToast(`Only ${availableStockUnits} units available in size ${selectedSize}.`, 'info');
       return;
     }
     addItem(product, selectedSize, selectedColor, quantity);
@@ -240,6 +270,18 @@ export const ProductDetail: React.FC = () => {
   const handleBuyNow = () => {
     if (!selectedSize) {
       showToast('Please select a size first', 'error');
+      return;
+    }
+    if (!isSelectedSizeAvailable) {
+      showToast(`Size ${selectedSize} is currently sold out. Please select an available size.`, 'error');
+      return;
+    }
+    const currentItem = items.find(
+      (it) => it.product.id === product.id && it.selectedSize === selectedSize && it.selectedColor === selectedColor
+    );
+    const inBag = currentItem?.quantity || 0;
+    if (inBag + quantity > availableStockUnits) {
+      showToast(`Only ${availableStockUnits} units available in size ${selectedSize}.`, 'info');
       return;
     }
     addItem(product, selectedSize, selectedColor, quantity);
@@ -459,33 +501,58 @@ export const ProductDetail: React.FC = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-5 gap-1">
-                  {product.sizes.map((s) => {
+                  {effectiveSizes.map((s) => {
                     const isSelected = selectedSize === s.size;
+                    const isAvailable = s.inStock && (s.quantityRemaining === undefined || s.quantityRemaining > 0);
                     return (
                       <button
                         key={s.size}
-                        disabled={!s.inStock}
-                        onClick={() => setSelectedSize(s.size)}
-                        className={`h-11 text-xs uppercase font-medium tracking-wider border transition-all flex items-center justify-center rounded-lg ${
-                          !s.inStock
+                        disabled={!isAvailable}
+                        onClick={() => {
+                          setSelectedSize(s.size);
+                          setQuantity(1);
+                        }}
+                        className={`h-11 text-xs uppercase font-medium tracking-wider border transition-all flex flex-col items-center justify-center rounded-lg ${
+                          !isAvailable
                             ? 'border-black/10 text-black/25 line-through cursor-not-allowed bg-black/5'
                             : isSelected
                             ? 'border-[#141414] bg-[#141414] text-white shadow-xs'
                             : 'border-[#141414]/15 text-[#141414] hover:border-[#141414] bg-white'
                         }`}
                       >
-                        {s.size}
+                        <span>{s.size}</span>
+                        {isAvailable && s.quantityRemaining !== undefined && s.quantityRemaining <= 5 && (
+                          <span
+                            className={`text-[8px] leading-none mt-0.5 font-semibold ${
+                              isSelected ? 'text-amber-200' : 'text-amber-700'
+                            }`}
+                          >
+                            {s.quantityRemaining} left
+                          </span>
+                        )}
                       </button>
                     );
                   })}
                 </div>
-                {product.sizes.find((s) => s.size === selectedSize && s.quantityRemaining) && (
-                  <p className="text-[10px] text-[#A7654A] font-medium mt-1 flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
-                    <span>
-                      Low batch: Only {product.sizes.find((s) => s.size === selectedSize)?.quantityRemaining} left in size {selectedSize}.
-                    </span>
-                  </p>
+                {selectedSizeData && (
+                  <div>
+                    {!isSelectedSizeAvailable ? (
+                      <p className="text-[10px] text-red-600 font-medium mt-1.5 flex items-center gap-1">
+                        <span>Size {selectedSize} is currently sold out. Inquire via Concierge for bespoke atelier queue.</span>
+                      </p>
+                    ) : selectedSizeData.quantityRemaining !== undefined && selectedSizeData.quantityRemaining <= 5 ? (
+                      <p className="text-[10px] text-[#A7654A] font-medium mt-1.5 flex items-center gap-1">
+                        <Sparkles className="w-3 h-3" />
+                        <span>
+                          Low batch: Only {selectedSizeData.quantityRemaining} units left in size {selectedSize}.
+                        </span>
+                      </p>
+                    ) : (
+                      <p className="text-[10px] text-emerald-700 font-medium mt-1.5 flex items-center gap-1">
+                        <span>In Stock • Ready to dispatch from atelier</span>
+                      </p>
+                    )}
+                  </div>
                 )}
               </div>
 
@@ -507,23 +574,26 @@ export const ProductDetail: React.FC = () => {
                     </span>
                     <button
                       onClick={() => {
-                        if (quantity >= 5) {
-                          showToast('Maximum 5 pieces per garment. For bulk inquiries, please contact Concierge.', 'info');
+                        const maxLimit = Math.min(5, availableStockUnits);
+                        if (quantity >= maxLimit) {
+                          showToast(`Maximum ${maxLimit} units available for size ${selectedSize}.`, 'info');
                           return;
                         }
-                        setQuantity((q) => Math.min(5, q + 1));
+                        setQuantity((q) => Math.min(maxLimit, q + 1));
                       }}
                       className={`w-7 h-full flex items-center justify-center transition-colors ${
-                        quantity >= 5 ? 'opacity-30 cursor-not-allowed text-[#73706B]' : 'hover:text-[#A7654A]'
+                        quantity >= Math.min(5, availableStockUnits)
+                          ? 'opacity-30 cursor-not-allowed text-[#73706B]'
+                          : 'hover:text-[#A7654A]'
                       }`}
                       aria-label="Increase quantity"
                     >
                       <Plus className="w-3.5 h-3.5" />
                     </button>
                   </div>
-                  {quantity >= 5 && (
+                  {quantity >= Math.min(5, availableStockUnits) && (
                     <span className="text-[10px] text-[#A7654A] font-medium">
-                      Max 5 per order
+                      Max {Math.min(5, availableStockUnits)} units per order
                     </span>
                   )}
                 </div>
@@ -531,17 +601,27 @@ export const ProductDetail: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <button
                     onClick={handleAddToBag}
-                    className="w-full h-12 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-lg font-semibold"
+                    disabled={!isSelectedSizeAvailable}
+                    className={`w-full h-12 text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.99] rounded-lg font-semibold ${
+                      !isSelectedSizeAvailable
+                        ? 'bg-[#141414]/30 text-white/60 cursor-not-allowed'
+                        : 'bg-[#141414] hover:bg-black text-white'
+                    }`}
                   >
                     <Check className="w-3.5 h-3.5" />
-                    <span>Add to Bag</span>
+                    <span>{!isSelectedSizeAvailable ? 'Size Sold Out' : 'Add to Bag'}</span>
                   </button>
 
                   <button
                     onClick={handleBuyNow}
-                    className="w-full h-12 border border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center transition-all active:scale-[0.99] rounded-lg font-semibold bg-white"
+                    disabled={!isSelectedSizeAvailable}
+                    className={`w-full h-12 border text-[11px] uppercase tracking-[0.2em] font-medium flex items-center justify-center transition-all active:scale-[0.99] rounded-lg font-semibold ${
+                      !isSelectedSizeAvailable
+                        ? 'border-[#141414]/20 text-[#141414]/30 cursor-not-allowed bg-transparent'
+                        : 'border-[#141414] hover:bg-[#141414] hover:text-white text-[#141414] bg-white'
+                    }`}
                   >
-                    <span>Instant Checkout</span>
+                    <span>{!isSelectedSizeAvailable ? 'Sold Out' : 'Instant Checkout'}</span>
                   </button>
                 </div>
               </div>
@@ -924,10 +1004,15 @@ export const ProductDetail: React.FC = () => {
 
           <button
             onClick={handleAddToBag}
-            className="h-11 px-5 bg-[#141414] hover:bg-black text-white text-[11px] uppercase tracking-wider font-semibold rounded-lg shrink-0 flex items-center gap-1.5 shadow-sm active:scale-98 transition-all"
+            disabled={!isSelectedSizeAvailable}
+            className={`h-11 px-5 text-[11px] uppercase tracking-wider font-semibold rounded-lg shrink-0 flex items-center gap-1.5 shadow-sm active:scale-98 transition-all ${
+              !isSelectedSizeAvailable
+                ? 'bg-[#141414]/30 text-white/60 cursor-not-allowed'
+                : 'bg-[#141414] hover:bg-black text-white'
+            }`}
           >
             <Check className="w-3.5 h-3.5" />
-            <span>Add to Bag</span>
+            <span>{!isSelectedSizeAvailable ? 'Sold Out' : 'Add to Bag'}</span>
           </button>
         </div>
       </div>
@@ -936,7 +1021,7 @@ export const ProductDetail: React.FC = () => {
         isOpen={isFitAdvisorOpen}
         onClose={() => setIsFitAdvisorOpen(false)}
         productName={product.name}
-        availableSizes={product.sizes}
+        availableSizes={effectiveSizes}
         onSelectSize={(sz) => setSelectedSize(sz)}
       />
     </div>

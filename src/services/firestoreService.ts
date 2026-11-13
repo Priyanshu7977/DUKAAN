@@ -171,3 +171,39 @@ export const fetchAllUsersFromFirestore = async (): Promise<UserProfileDocument[
     return [];
   }
 };
+
+export const syncInventoryOverrideToFirestore = async (
+  productId: string,
+  data: any
+): Promise<boolean> => {
+  if (!isFirebaseConfigured || !productId) return false;
+  try {
+    const invRef = doc(db, 'inventory_overrides', productId);
+    await setDoc(
+      invRef,
+      {
+        ...data,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    );
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+export const fetchAllInventoryOverridesFromFirestore = async (): Promise<Record<string, any>> => {
+  if (!isFirebaseConfigured) return {};
+  try {
+    const invCol = collection(db, 'inventory_overrides');
+    const snapshot = await getDocs(invCol);
+    const result: Record<string, any> = {};
+    snapshot.forEach((docSnap) => {
+      result[docSnap.id] = docSnap.data();
+    });
+    return result;
+  } catch {
+    return {};
+  }
+};

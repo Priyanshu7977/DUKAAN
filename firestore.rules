@@ -9,5 +9,9 @@ service cloud.firestore {
       allow read: if request.auth != null && (resource.data.userId == request.auth.uid || request.auth.token.email == 'dukaancreate@gmail.com');
       allow update, delete: if request.auth != null && request.auth.token.email == 'dukaancreate@gmail.com';
     }
+    match /inventory_overrides/{productId} {
+      allow read: if true;
+      allow write: if true;
+    }
   }
 }

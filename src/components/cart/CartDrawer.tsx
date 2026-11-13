@@ -7,6 +7,7 @@ import { formatPrice } from '../../utils/formatters';
 import { AnimatePresence, motion } from 'framer-motion';
 import { PRODUCTS } from '../../data/products';
 import { CartItem } from '../../types';
+import { useInventoryStore } from '../../store/useInventoryStore';
 
 export const CartDrawer: React.FC = () => {
   const navigate = useNavigate();
@@ -32,17 +33,23 @@ export const CartDrawer: React.FC = () => {
 
   if (!isOpen) return null;
 
+  const getEffectiveSizes = useInventoryStore((state) => state.getEffectiveSizes);
+
   const activeMasterProduct = editingSizeItem
     ? PRODUCTS.find((p) => p.id === editingSizeItem.product.id) || editingSizeItem.product
     : null;
 
-  const availableSizes = activeMasterProduct?.sizes || [
+  const defaultSizes = activeMasterProduct?.sizes || [
     { size: 'XS', inStock: true },
     { size: 'S', inStock: true },
     { size: 'M', inStock: true },
     { size: 'L', inStock: true },
     { size: 'XL', inStock: true },
   ];
+
+  const availableSizes = activeMasterProduct
+    ? getEffectiveSizes(activeMasterProduct.id, defaultSizes)
+    : defaultSizes;
 
   const handleApplySizeChange = (newSize: string) => {
     if (!editingSizeItem) return;
