@@ -58,7 +58,7 @@ export const LookbookStyler: React.FC = () => {
     const randomBottom = Math.floor(Math.random() * bottoms.length);
     setSelectedTopIndex(randomTop);
     setSelectedBottomIndex(randomBottom);
-    showToast('Randomized Atelier Ensemble', 'info');
+    showToast('Randomized Outfit Ensemble', 'info');
   };
 
   const handleAddEnsembleToBag = () => {
@@ -74,7 +74,7 @@ export const LookbookStyler: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200/80 rounded-full text-amber-900 text-[10px] font-semibold uppercase tracking-widest">
             <Sparkles className="w-3 h-3 text-[#A7654A]" />
-            <span>Atelier Lookbook Canvas</span>
+            <span>Wardrobe Lookbook Canvas</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl text-[#141414] font-normal tracking-tight">
             The Ensemble Styler
@@ -289,7 +289,7 @@ export const LookbookStyler: React.FC = () => {
               <div className="p-3.5 bg-[#FAF9F6] border border-[#141414]/10 rounded-sm space-y-2 text-[11px] text-[#73706B]">
                 <div className="flex items-center gap-2 text-[#141414] font-medium">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#A7654A]" />
-                  <span>Atelier Complimentary Alterations</span>
+                  <span>Complimentary Custom Alterations</span>
                 </div>
                 <p className="leading-relaxed">
                   Both garments ship together in our signature archival gift box with wax-sealed certification.

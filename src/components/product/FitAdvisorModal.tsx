@@ -94,7 +94,7 @@ export const FitAdvisorModal: React.FC<FitAdvisorModalProps> = ({
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-[#A7654A]" />
             <span className="text-xs uppercase tracking-widest font-semibold text-[#141414]">
-              Atelier Fit Advisor
+              Studio Fit Advisor
             </span>
           </div>
           <button
@@ -168,7 +168,7 @@ export const FitAdvisorModal: React.FC<FitAdvisorModalProps> = ({
                   <div className="grid grid-cols-3 gap-2">
                     {[
                       { id: 'tailored', label: 'Tailored', desc: 'Closer cut' },
-                      { id: 'relaxed', label: 'Relaxed', desc: 'Atelier ease' },
+                      { id: 'relaxed', label: 'Relaxed', desc: 'Relaxed drape' },
                       { id: 'oversized', label: 'Oversized', desc: 'Drop shoulder' },
                     ].map((f) => (
                       <button

@@ -95,7 +95,7 @@ export const TaxInvoiceModal: React.FC<TaxInvoiceModalProps> = ({
                 Objects of Everyday Expression
               </span>
               <p className="mt-2 text-[11px] text-[#73706B] leading-tight">
-                Dukaan Atelier Apparel Pvt. Ltd.<br />
+                Dukaan Apparel Pvt. Ltd.<br />
                 Rampart Row, Kala Ghoda, Fort<br />
                 Mumbai, Maharashtra, 400001<br />
                 GSTIN: <strong className="text-[#141414]">27AAACD9281F1Z8</strong><br />
@@ -232,14 +232,14 @@ export const TaxInvoiceModal: React.FC<TaxInvoiceModalProps> = ({
 
           <div className="pt-6 border-t border-[#141414]/15 flex flex-col sm:flex-row justify-between items-end gap-4">
             <div className="text-[10px] text-[#73706B] space-y-1">
-              <p className="font-semibold text-[#141414]">DUKAAN Atelier Guarantee</p>
+              <p className="font-semibold text-[#141414]">DUKAAN Quality Guarantee</p>
               <p>Hand-tailored in small editions using 100% natural fibers.</p>
-              <p>Support: concierge@dukaan-atelier.com • +91 7977641125</p>
+              <p>Support: priyanshubipin2006@gmail.com • +91 7977641125</p>
             </div>
 
             <div className="text-center sm:text-right">
               <div className="w-32 h-10 border-b border-[#141414]/40 mx-auto sm:ml-auto mb-1 flex items-center justify-center">
-                <span className="font-serif italic text-xs text-[#A7654A] font-medium">Dukaan Atelier</span>
+                <span className="font-serif italic text-xs text-[#A7654A] font-medium">DUKAAN</span>
               </div>
               <span className="text-[9px] uppercase tracking-wider text-[#73706B] block">
                 Authorized Signatory

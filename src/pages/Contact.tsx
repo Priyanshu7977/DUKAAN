@@ -233,7 +233,7 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="lg:col-span-5 space-y-5">
-            <h2 className="sr-only">Direct Atelier Contact Details</h2>
+            <h2 className="sr-only">Direct Store Contact Details</h2>
             <div className="bg-white p-6 border border-[#141414]/8 space-y-3">
               <div className="flex items-center gap-2.5 text-[#141414]">
                 <Phone className="w-4 h-4 text-[#A7654A]" />

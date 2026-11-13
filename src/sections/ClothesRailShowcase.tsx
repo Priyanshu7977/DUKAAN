@@ -21,7 +21,7 @@ const RAIL_PRODUCT_IDS = [
   'fa-10655700877493',
 ];
 
-export const AtelierRailShowcase: React.FC = () => {
+export const ClothesRailShowcase: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -124,7 +124,7 @@ export const AtelierRailShowcase: React.FC = () => {
           <span className="w-1.5 h-1.5 rounded-full bg-[#A7654A] animate-ping" />
         </div>
         <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[#141414] font-normal tracking-tight mb-2">
-          The Atelier Clothes Rail
+          The Curated Clothes Rail
         </h2>
         <p className="text-xs sm:text-sm text-[#73706B] font-light max-w-xl mx-auto">
           Suspended European tailoring in kinetic motion. Hover any garment to inspect the 180° back drape silhouette.

@@ -250,7 +250,7 @@ export const Admin: React.FC = () => {
     const customerPhone = '917977641125';
     const tracking = order.trackingNumber || 'Pending AWB';
     const message = encodeURIComponent(
-      `*DUKAAN ATELIER | Dispatch Notice*\n\n` +
+      `*DUKAAN | Dispatch Notice*\n\n` +
       `Valued Patron,\n` +
       `Your bespoke garment order *Order ${order.id}* has been tailored and dispatched via Blue Dart Express.\n\n` +
       `• *AWB Tracking:* ${tracking}\n` +
@@ -328,13 +328,13 @@ export const Admin: React.FC = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase tracking-[0.25em] text-[#A7654A] font-semibold block">
-              Atelier Management
+              Storefront Management
             </span>
             <h1 className="font-serif text-2xl text-[#141414] mt-1 font-normal">
               Merchant Backoffice
             </h1>
             <p className="text-xs text-[#73706B] mt-1 font-light leading-relaxed">
-              Enter the authorized administration passcode to access orders, revenue analytics, and atelier inventory.
+              Enter the authorized administration passcode to access orders, revenue analytics, and store inventory.
             </p>
           </div>
 
@@ -368,7 +368,7 @@ export const Admin: React.FC = () => {
           </form>
 
           <div className="pt-2 text-[10px] text-[#73706B]">
-            DUKAAN Atelier Apparel Pvt. Ltd. • Encrypted TLS 1.3
+            DUKAAN Apparel Pvt. Ltd. • Encrypted TLS 1.3
           </div>
         </div>
       </div>
@@ -450,7 +450,7 @@ export const Admin: React.FC = () => {
 
           <div className="bg-white p-5 border border-[#141414]/10 rounded-sm space-y-1">
             <span className="text-[10px] uppercase tracking-wider text-[#73706B] font-semibold flex items-center justify-between">
-              <span>Atelier Garments</span>
+              <span>Inventory Garments</span>
               <Users className="w-3.5 h-3.5 text-[#141414]" />
             </span>
             <div className="font-serif text-2xl text-[#141414] font-medium pt-1">
@@ -725,7 +725,7 @@ export const Admin: React.FC = () => {
                     <th className="py-3 px-4">Category & Collection</th>
                     <th className="py-3 px-4">Retail Price</th>
                     <th className="py-3 px-4">Size & Stock Units</th>
-                    <th className="py-3 px-4">Atelier Status</th>
+                    <th className="py-3 px-4">Stock Status</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#141414]/8">
@@ -1205,7 +1205,7 @@ export const Admin: React.FC = () => {
 
               <div className="p-3 bg-[#ECE7DD]/50 border border-[#141414]/10 rounded-md flex items-center justify-between text-xs text-[#73706B]">
                 <span>
-                  Total Units in Atelier:{' '}
+                  Total Units in Stock:{' '}
                   <strong className="text-[#141414] font-mono">
                     {Object.values(matrixSizes).reduce((acc, cur) => acc + (cur.quantityRemaining || 0), 0)}
                   </strong>

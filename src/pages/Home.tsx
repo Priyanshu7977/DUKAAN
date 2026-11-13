@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeroCampaign } from '../sections/HeroCampaign';
-import { AtelierRailShowcase } from '../sections/AtelierRailShowcase';
+import { ClothesRailShowcase } from '../sections/ClothesRailShowcase';
 import { SignatureProducts } from '../sections/SignatureProducts';
 import { EditorialSplitBanners } from '../sections/EditorialSplitBanners';
 import { FeaturedCategories } from '../sections/FeaturedCategories';
@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
     <div className="w-full">
       <HeroCampaign />
 
-      <AtelierRailShowcase />
+      <ClothesRailShowcase />
 
       <SignatureProducts />
 

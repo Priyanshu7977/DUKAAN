@@ -538,7 +538,7 @@ export const ProductDetail: React.FC = () => {
                   <div>
                     {!isSelectedSizeAvailable ? (
                       <p className="text-[10px] text-red-600 font-medium mt-1.5 flex items-center gap-1">
-                        <span>Size {selectedSize} is currently sold out. Inquire via Concierge for bespoke atelier queue.</span>
+                        <span>Size {selectedSize} is currently sold out. Inquire via Concierge for custom restocking queue.</span>
                       </p>
                     ) : selectedSizeData.quantityRemaining !== undefined && selectedSizeData.quantityRemaining <= 5 ? (
                       <p className="text-[10px] text-[#A7654A] font-medium mt-1.5 flex items-center gap-1">
@@ -549,7 +549,7 @@ export const ProductDetail: React.FC = () => {
                       </p>
                     ) : (
                       <p className="text-[10px] text-emerald-700 font-medium mt-1.5 flex items-center gap-1">
-                        <span>In Stock • Ready to dispatch from atelier</span>
+                        <span>In Stock • Ready for express dispatch</span>
                       </p>
                     )}
                   </div>
