@@ -27,6 +27,8 @@ const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms
 const Checkout = lazy(() => import('./pages/Checkout').then((m) => ({ default: m.Checkout })));
 const Profile = lazy(() => import('./pages/Profile').then((m) => ({ default: m.Profile })));
 const OrderTracking = lazy(() => import('./pages/OrderTracking').then((m) => ({ default: m.OrderTracking })));
+const LookbookStyler = lazy(() => import('./pages/LookbookStyler').then((m) => ({ default: m.LookbookStyler })));
+const Admin = lazy(() => import('./pages/Admin').then((m) => ({ default: m.Admin })));
 const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
 
 const RouteFallback: React.FC = () => (
@@ -51,12 +53,15 @@ export const App: React.FC = () => {
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="checkout" element={<Checkout />} />
+            <Route path="admin" element={<Admin />} />
 
             <Route path="/" element={<RootLayout />}>
               <Route index element={<Home />} />
               <Route path="shop" element={<Shop />} />
               <Route path="men" element={<Men />} />
               <Route path="women" element={<Women />} />
+              <Route path="lookbook" element={<LookbookStyler />} />
+              <Route path="styler" element={<LookbookStyler />} />
               <Route path="collections/:slug" element={<CollectionDetail />} />
               <Route path="product/:slug" element={<ProductDetail />} />
               <Route path="about" element={<About />} />

@@ -24,6 +24,7 @@ import { ToastContainer } from '../components/common/ToastContainer';
 import { isValidIndianPhone, isValidPincode, sanitizeInput } from '../utils/security';
 import { CareGoodNoteModal } from '../components/common/CareGoodNoteModal';
 import { UPIPaymentModal } from '../components/checkout/UPIPaymentModal';
+import { TaxInvoiceModal } from '../components/checkout/TaxInvoiceModal';
 import { useAuthStore } from '../store/useAuthStore';
 import { UserOrder } from '../types';
 import { syncOrderToFirestore } from '../services/firestoreService';
@@ -75,6 +76,7 @@ export const Checkout: React.FC = () => {
   const [confirmedOrder, setConfirmedOrder] = useState<any>(null);
   const [confirmedNotificationPayload, setConfirmedNotificationPayload] = useState<OrderNotificationPayload | null>(null);
   const [showGoodNoteModal, setShowGoodNoteModal] = useState(false);
+  const [showInvoiceModal, setShowInvoiceModal] = useState(false);
   const [notificationStatus, setNotificationStatus] = useState<{
     emailDispatched: boolean;
     whatsAppReady: boolean;
@@ -330,21 +332,30 @@ export const Checkout: React.FC = () => {
             </div>
 
             {confirmedNotificationPayload && (
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 max-w-2xl mx-auto">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-4 max-w-3xl mx-auto">
                 <button
                   type="button"
                   onClick={() => setShowGoodNoteModal(true)}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#141414] hover:bg-[#A7654A] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-3 bg-[#141414] hover:bg-[#A7654A] text-white text-[11px] font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
                 >
-                  <FileText className="w-4 h-4" />
+                  <FileText className="w-3.5 h-3.5" />
                   <span>Archival Note</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setShowInvoiceModal(true)}
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-3 bg-white border border-[#141414]/20 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                >
+                  <FileText className="w-3.5 h-3.5 text-emerald-800" />
+                  <span>GST Invoice</span>
                 </button>
 
                 <Link
                   to={`/track/${confirmedOrder.orderId}`}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#FAF8F5] border border-[#141414]/20 hover:border-[#141414] text-[#141414] text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-3 bg-[#FAF8F5] border border-[#141414]/20 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
                 >
-                  <Truck className="w-4 h-4 text-[#A7654A]" />
+                  <Truck className="w-3.5 h-3.5 text-[#A7654A]" />
                   <span>Track Live</span>
                 </Link>
 
@@ -352,10 +363,10 @@ export const Checkout: React.FC = () => {
                   href={buildWhatsAppOrderLink(confirmedNotificationPayload)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-[11px] font-semibold uppercase tracking-wider transition-all rounded-sm shadow-sm active:scale-98"
                 >
-                  <MessageSquare className="w-4 h-4 fill-white" />
-                  <span>WhatsApp Receipt</span>
+                  <MessageSquare className="w-3.5 h-3.5 fill-white" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
             )}
@@ -993,6 +1004,21 @@ export const Checkout: React.FC = () => {
         customerMobile={formData.phone}
         customerEmail={formData.email}
       />
+      {confirmedOrder && (
+        <TaxInvoiceModal
+          isOpen={showInvoiceModal}
+          onClose={() => setShowInvoiceModal(false)}
+          order={{
+            id: confirmedOrder.orderId,
+            date: confirmedOrder.date,
+            total: confirmedOrder.total,
+            paymentMethod: confirmedOrder.paymentMethod,
+            items: confirmedOrder.items,
+            customer: confirmedOrder.customer,
+            trackingNumber: confirmedOrder.trackingNumber,
+          }}
+        />
+      )}
       <ToastContainer />
     </div>
   );

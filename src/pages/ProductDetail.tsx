@@ -9,8 +9,9 @@ import { formatPrice } from '../utils/formatters';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { Accordion } from '../components/common/Accordion';
 import { ProductCard } from '../components/product/ProductCard';
-import { Heart, Plus, Minus, Check, ShieldCheck, Truck, RotateCcw, Sparkles, MapPin, Star, ThumbsUp, X } from 'lucide-react';
+import { Heart, Plus, Minus, Check, ShieldCheck, Truck, RotateCcw, Sparkles, MapPin, Star, ThumbsUp, X, Sparkle } from 'lucide-react';
 import { ImageWithFallback } from '../components/common/ImageWithFallback';
+import { FitAdvisorModal } from '../components/product/FitAdvisorModal';
 
 const RECENTLY_VIEWED_KEY = 'dukaan_recently_viewed';
 
@@ -30,6 +31,7 @@ export const ProductDetail: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [activeImageIdx, setActiveImageIdx] = useState<number>(0);
   const [recentlyViewed, setRecentlyViewed] = useState<Product[]>([]);
+  const [isFitAdvisorOpen, setIsFitAdvisorOpen] = useState<boolean>(false);
 
   const ctaRef = useRef<HTMLDivElement>(null);
   const [showStickyBar, setShowStickyBar] = useState(false);
@@ -438,12 +440,23 @@ export const ProductDetail: React.FC = () => {
                   <span className="uppercase tracking-wider text-[#73706B] text-[10px] font-medium">
                     Select Size
                   </span>
-                  <button
-                    onClick={openSizeGuide}
-                    className="text-[#A7654A] underline uppercase tracking-wider text-[10px] font-medium hover:text-[#141414] transition-colors"
-                  >
-                    Size Guide
-                  </button>
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setIsFitAdvisorOpen(true)}
+                      className="text-[#141414] underline uppercase tracking-wider text-[10px] font-semibold hover:text-[#A7654A] transition-colors flex items-center gap-1"
+                    >
+                      <Sparkles className="w-3 h-3 text-[#A7654A]" />
+                      <span>Fit Advisor</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={openSizeGuide}
+                      className="text-[#A7654A] underline uppercase tracking-wider text-[10px] font-medium hover:text-[#141414] transition-colors"
+                    >
+                      Size Guide
+                    </button>
+                  </div>
                 </div>
                 <div className="grid grid-cols-5 gap-1">
                   {product.sizes.map((s) => {
@@ -918,6 +931,14 @@ export const ProductDetail: React.FC = () => {
           </button>
         </div>
       </div>
+
+      <FitAdvisorModal
+        isOpen={isFitAdvisorOpen}
+        onClose={() => setIsFitAdvisorOpen(false)}
+        productName={product.name}
+        availableSizes={product.sizes}
+        onSelectSize={(sz) => setSelectedSize(sz)}
+      />
     </div>
   );
 };

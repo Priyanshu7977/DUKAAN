@@ -51,6 +51,7 @@ export const MobileMenu: React.FC = () => {
           <ul className="space-y-4">
             {[
               { label: 'All Clothes', path: '/shop' },
+              { label: '✨ Lookbook Styler', path: '/lookbook' },
               { label: "Men's Collection", path: '/men' },
               { label: "Women's Collection", path: '/women' },
               { label: 'Summer Collections', path: '/collections/solstice-edition' },

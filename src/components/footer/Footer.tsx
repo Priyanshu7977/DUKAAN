@@ -89,6 +89,7 @@ export const Footer: React.FC = () => {
             </span>
             <ul className="space-y-1.5 text-[11px] text-[#8A8780]">
               <li><Link to="/shop" className="hover:text-white transition-colors block py-0.5">All Objects</Link></li>
+              <li><Link to="/lookbook" className="hover:text-white transition-colors block py-0.5 text-amber-200/90 font-medium">✨ Lookbook Styler</Link></li>
               <li><Link to="/men" className="hover:text-white transition-colors block py-0.5">Men's Edit</Link></li>
               <li><Link to="/women" className="hover:text-white transition-colors block py-0.5">Women's Edit</Link></li>
               <li><Link to="/shop?category=shirts" className="hover:text-white transition-colors block py-0.5">Linen Shirts</Link></li>
@@ -109,6 +110,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/faq" className="hover:text-white transition-colors block py-0.5">Client FAQs</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors block py-0.5">Brand Philosophy</Link></li>
               <li><Link to="/blog" className="hover:text-white transition-colors block py-0.5">Editorial Blog</Link></li>
+              <li><Link to="/admin" className="hover:text-white transition-colors block py-0.5 opacity-60 hover:opacity-100">Merchant Terminal</Link></li>
             </ul>
           </div>
 

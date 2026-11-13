@@ -88,3 +88,86 @@ export const fetchOrdersFromFirestore = async (userId: string): Promise<UserOrde
     return [];
   }
 };
+
+export const fetchAllOrdersFromFirestore = async (): Promise<UserOrder[]> => {
+  if (!isFirebaseConfigured) return [];
+  try {
+    const ordersRef = collection(db, 'orders');
+    const q = query(ordersRef, orderBy('createdAt', 'desc'));
+    const snapshot = await getDocs(q);
+    const orders: UserOrder[] = [];
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+      orders.push({
+        id: docSnap.id,
+        date: data.date || '',
+        status: data.status || 'Processing',
+        total: data.total || 0,
+        paymentMethod: data.paymentMethod || 'Prepaid',
+        trackingNumber: data.trackingNumber,
+        estimatedDelivery: data.estimatedDelivery,
+        items: data.items || [],
+      });
+    });
+    return orders;
+  } catch {
+    try {
+      const ordersRef = collection(db, 'orders');
+      const snapshot = await getDocs(ordersRef);
+      const orders: UserOrder[] = [];
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        orders.push({
+          id: docSnap.id,
+          date: data.date || '',
+          status: data.status || 'Processing',
+          total: data.total || 0,
+          paymentMethod: data.paymentMethod || 'Prepaid',
+          trackingNumber: data.trackingNumber,
+          estimatedDelivery: data.estimatedDelivery,
+          items: data.items || [],
+        });
+      });
+      return orders;
+    } catch {
+      return [];
+    }
+  }
+};
+
+export const updateOrderStatusInFirestore = async (
+  orderId: string,
+  newStatus: 'Processing' | 'In Transit' | 'Delivered' | 'Cancelled',
+  trackingNumber?: string,
+  carrier?: string
+): Promise<boolean> => {
+  if (!isFirebaseConfigured || !orderId) return false;
+  try {
+    const orderRef = doc(db, 'orders', orderId);
+    const updatePayload: any = {
+      status: newStatus,
+      updatedAt: serverTimestamp(),
+    };
+    if (trackingNumber) updatePayload.trackingNumber = trackingNumber;
+    if (carrier) updatePayload.carrier = carrier;
+    await setDoc(orderRef, updatePayload, { merge: true });
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+export const fetchAllUsersFromFirestore = async (): Promise<UserProfileDocument[]> => {
+  if (!isFirebaseConfigured) return [];
+  try {
+    const usersRef = collection(db, 'users');
+    const snapshot = await getDocs(usersRef);
+    const usersList: UserProfileDocument[] = [];
+    snapshot.forEach((docSnap) => {
+      usersList.push(docSnap.data() as UserProfileDocument);
+    });
+    return usersList;
+  } catch {
+    return [];
+  }
+};

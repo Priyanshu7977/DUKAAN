@@ -25,7 +25,9 @@ import {
   AlertTriangle,
   CheckCircle2,
   ArrowRight,
+  FileText,
 } from 'lucide-react';
+import { TaxInvoiceModal } from '../components/checkout/TaxInvoiceModal';
 
 export const Profile: React.FC = () => {
   const {
@@ -45,6 +47,7 @@ export const Profile: React.FC = () => {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] = useState<'orders' | 'addresses' | 'wishlist' | 'settings'>('orders');
+  const [selectedInvoiceOrder, setSelectedInvoiceOrder] = useState<any>(null);
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [editName, setEditName] = useState(user?.name || '');
   const [editPhone, setEditPhone] = useState(user?.phone || '');
@@ -331,13 +334,23 @@ export const Profile: React.FC = () => {
                           : `Estimated Delivery: ${order.estimatedDelivery}`}
                       </span>
                     </div>
-                    <Link
-                      to={`/track/${order.id}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF9F6] border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-colors w-fit shadow-xs"
-                    >
-                      <span>Track Shipment</span>
-                      <ArrowRight className="w-3 h-3 text-[#A7654A]" />
-                    </Link>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedInvoiceOrder(order)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF9F6] border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
+                      >
+                        <FileText className="w-3 h-3 text-emerald-800" />
+                        <span>Tax Invoice</span>
+                      </button>
+                      <Link
+                        to={`/track/${order.id}`}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF9F6] border border-[#141414]/15 hover:border-[#141414] text-[#141414] text-[11px] font-semibold uppercase tracking-wider rounded-lg transition-colors shadow-xs"
+                      >
+                        <span>Track Shipment</span>
+                        <ArrowRight className="w-3 h-3 text-[#A7654A]" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))
@@ -675,6 +688,30 @@ export const Profile: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {selectedInvoiceOrder && (
+        <TaxInvoiceModal
+          isOpen={Boolean(selectedInvoiceOrder)}
+          onClose={() => setSelectedInvoiceOrder(null)}
+          order={{
+            id: selectedInvoiceOrder.id,
+            date: selectedInvoiceOrder.date,
+            total: selectedInvoiceOrder.total,
+            paymentMethod: selectedInvoiceOrder.paymentMethod,
+            items: selectedInvoiceOrder.items,
+            customer: {
+              fullName: user.name,
+              phone: user.phone,
+              email: user.email,
+              address: user.addresses[0]?.street,
+              city: user.addresses[0]?.city,
+              state: user.addresses[0]?.state,
+              pincode: user.addresses[0]?.pincode,
+            },
+            trackingNumber: selectedInvoiceOrder.trackingNumber,
+          }}
+        />
       )}
     </div>
   );
