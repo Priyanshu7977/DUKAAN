@@ -234,7 +234,7 @@ export const Checkout: React.FC = () => {
         total: finalTotal,
         paymentMethod: formData.paymentMethod === 'cod' ? 'COD' : 'Prepaid Online',
         trackingNumber: `BLUEDART-${Math.floor(1000000 + Math.random() * 9000000)}`,
-        estimatedDelivery: '3 – 5 Business Days',
+        estimatedDelivery: '3 to 5 Business Days',
         items: items.map((it, idx) => ({
           id: `item-${idx}-${Date.now()}`,
           name: it.product.name,
@@ -388,7 +388,7 @@ export const Checkout: React.FC = () => {
                   {confirmedOrder.customer.landmark && `, Near ${confirmedOrder.customer.landmark}`}
                 </p>
                 <p className="text-[#73706B] font-light">
-                  {confirmedOrder.customer.city}, {confirmedOrder.customer.state} — {confirmedOrder.customer.pincode}
+                  {confirmedOrder.customer.city}, {confirmedOrder.customer.state}, {confirmedOrder.customer.pincode}
                 </p>
                 <p className="pt-1 font-medium text-[#141414] tabular-nums">
                   Mobile: +91 {confirmedOrder.customer.phone}
@@ -398,7 +398,7 @@ export const Checkout: React.FC = () => {
 
               <div className="pt-2 border-t border-[#141414]/8 text-[11px] text-[#73706B] flex items-center gap-1.5">
                 <Truck className="w-3.5 h-3.5 text-[#A7654A]" />
-                <span>Estimated Delivery: Within 2 – 4 working days</span>
+                <span>Estimated Delivery: Within 2 to 4 working days</span>
               </div>
             </div>
 

@@ -830,7 +830,7 @@ export class NLPEngine {
         const size = (entities.size || '').toUpperCase();
         if (size === 'M' || size === 'MEDIUM') {
           return {
-            text: `Here is the comprehensive fit dossier for size **Medium (M)**:\n\n• **Chest Width**: 40 inches (102 cm) with 2 inches of comfortable European drape\n• **Shoulder Posture**: Architectural relaxed dropped shoulder\n• **Recommended Body**: Height 5'8" – 5'11" (172 – 180 cm), chest 38"–40"\n• **Fit Silhouette**: Unrestrictive and airy. Standard M provides clean drape without cling.\n• **Trouser Pairing**: Size 32 waist with double pleats and back elastic ease.\n\nAll Dukaan orders include complimentary 7-day doorstep size replacement.`,
+            text: `Here is the comprehensive fit dossier for size **Medium (M)**:\n\n• **Chest Width**: 40 inches (102 cm) with 2 inches of comfortable European drape\n• **Shoulder Posture**: Architectural relaxed dropped shoulder\n• **Recommended Body**: Height 5'8" - 5'11" (172 - 180 cm), chest 38"-40"\n• **Fit Silhouette**: Unrestrictive and airy. Standard M provides clean drape without cling.\n• **Trouser Pairing**: Size 32 waist with double pleats and back elastic ease.\n\nAll Dukaan orders include complimentary 7-day doorstep size replacement.`,
             type: 'text',
             quickReplies: ['Check Size L Fit', 'Check Size S Fit', 'Recommend M Shirt', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -839,7 +839,7 @@ export class NLPEngine {
 
         if (size === 'L' || size === 'LARGE') {
           return {
-            text: `Here is the comprehensive fit dossier for size **Large (L)**:\n\n• **Chest Width**: 42 inches (107 cm) with generous volume\n• **Shoulder Posture**: Modern dropped shoulder cut\n• **Recommended Body**: Height 5'10" – 6'2" (178 – 188 cm), chest 41"–43"\n• **Trouser Pairing**: Size 34 waist with relaxed wide-leg drape.\n\nIncludes 7-day doorstep replacement if you need a size adjustment.`,
+            text: `Here is the comprehensive fit dossier for size **Large (L)**:\n\n• **Chest Width**: 42 inches (107 cm) with generous volume\n• **Shoulder Posture**: Modern dropped shoulder cut\n• **Recommended Body**: Height 5'10" - 6'2" (178 - 188 cm), chest 41"-43"\n• **Trouser Pairing**: Size 34 waist with relaxed wide-leg drape.\n\nIncludes 7-day doorstep replacement if you need a size adjustment.`,
             type: 'text',
             quickReplies: ['Check Size M Fit', 'Check Size XL Fit', 'Recommend L Shirt', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -848,7 +848,7 @@ export class NLPEngine {
 
         if (size === 'S' || size === 'SMALL') {
           return {
-            text: `Here is the comprehensive fit dossier for size **Small (S)**:\n\n• **Chest Width**: 38 inches (96 cm)\n• **Shoulder Posture**: Clean subtle drop shoulder\n• **Recommended Body**: Height 5'5" – 5'8" (165 – 173 cm), chest 36"–38"\n• **Trouser Pairing**: Size 30 waist.`,
+            text: `Here is the comprehensive fit dossier for size **Small (S)**:\n\n• **Chest Width**: 38 inches (96 cm)\n• **Shoulder Posture**: Clean subtle drop shoulder\n• **Recommended Body**: Height 5'5" - 5'8" (165 - 173 cm), chest 36"-38"\n• **Trouser Pairing**: Size 30 waist.`,
             type: 'text',
             quickReplies: ['Check Size M Fit', 'Recommend S Shirt', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -857,7 +857,7 @@ export class NLPEngine {
 
         if (size === 'XL' || size === 'EXTRA LARGE') {
           return {
-            text: `Here is the comprehensive fit dossier for size **Extra Large (XL)**:\n\n• **Chest Width**: 44 inches (112 cm)\n• **Recommended Body**: Height 6'0"+ (183 cm+), chest 43"–45"\n• **Trouser Pairing**: Size 36 waist.`,
+            text: `Here is the comprehensive fit dossier for size **Extra Large (XL)**:\n\n• **Chest Width**: 44 inches (112 cm)\n• **Recommended Body**: Height 6'0"+ (183 cm+), chest 43"-45"\n• **Trouser Pairing**: Size 36 waist.`,
             type: 'text',
             quickReplies: ['Check Size L Fit', 'Check Size XXL Fit', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -866,7 +866,7 @@ export class NLPEngine {
 
         if (size === 'XS') {
           return {
-            text: `Here is the comprehensive fit dossier for size **Extra Small (XS)**:\n\n• **Chest Width**: 36 inches (91 cm)\n• **Recommended Body**: Height up to 5'6" (167 cm), chest 34"–36"\n• **Trouser Pairing**: Size 28 waist.`,
+            text: `Here is the comprehensive fit dossier for size **Extra Small (XS)**:\n\n• **Chest Width**: 36 inches (91 cm)\n• **Recommended Body**: Height up to 5'6" (167 cm), chest 34"-36"\n• **Trouser Pairing**: Size 28 waist.`,
             type: 'text',
             quickReplies: ['Check Size S Fit', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -875,7 +875,7 @@ export class NLPEngine {
 
         if (size === 'XXL' || size === '2XL') {
           return {
-            text: `Here is the comprehensive fit dossier for size **XXL (46")**:\n\n• **Chest Width**: 46 inches (117 cm)\n• **Recommended Body**: Chest 45"–48"\n• **Trouser Pairing**: Size 38 waist.`,
+            text: `Here is the comprehensive fit dossier for size **XXL (46")**:\n\n• **Chest Width**: 46 inches (117 cm)\n• **Recommended Body**: Chest 45"-48"\n• **Trouser Pairing**: Size 38 waist.`,
             type: 'text',
             quickReplies: ['Check Size XL Fit', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -884,7 +884,7 @@ export class NLPEngine {
 
         if (['28', '30', '32', '34', '36', '38', '40'].includes(size)) {
           return {
-            text: `Here is the trouser sizing breakdown for waist **${size}**:\n\n• Built-in internal drawstring with elasticated back waist for 2 inches of natural ease\n• Features deep front architectural double pleats and fluid wide-leg cut\n• Inseam length: 30–31 inches tailored for clean break over loafers or sandals.`,
+            text: `Here is the trouser sizing breakdown for waist **${size}**:\n\n• Built-in internal drawstring with elasticated back waist for 2 inches of natural ease\n• Features deep front architectural double pleats and fluid wide-leg cut\n• Inseam length: 30-31 inches tailored for clean break over loafers or sandals.`,
             type: 'text',
             quickReplies: ['Explore Trousers', 'Check Shirt Sizing', 'View Size Guide'],
             pendingAction: 'AWAITING_SIZE',
@@ -1074,7 +1074,7 @@ Enter the code in the discount field on the checkout page to apply your savings.
       case 'FALLBACK':
       default: {
         return {
-          text: `I want to make sure I assist you accurately. As the DUKAAN digital concierge, I specialize in:\n\n• **Live Order Tracking** — Real-time transit & dispatch updates\n• **7-Day Doorstep Returns & Exchanges** — Size swaps with free pickup\n• **Fabric & Linen Care** — Washing, pressing & maintenance advice\n• **Sizing & Silhouette Guide** — Relaxed European tailoring guidance\n• **Payments & Billing** — COD, UPI & instant digital invoices\n\nCould you please rephrase your request, or would you like to speak directly with our concierge team?`,
+          text: `I want to make sure I assist you accurately. As the DUKAAN digital concierge, I specialize in:\n\n• **Live Order Tracking**: Real-time transit & dispatch updates\n• **7-Day Doorstep Returns & Exchanges**: Size swaps with free pickup\n• **Fabric & Linen Care**: Washing, pressing & maintenance advice\n• **Sizing & Silhouette Guide**: Relaxed European tailoring guidance\n• **Payments & Billing**: COD, UPI & instant digital invoices\n\nCould you please rephrase your request, or would you like to speak directly with our concierge team?`,
           type: 'text',
           quickReplies: ['Track My Order', 'Returns & Exchanges', 'Size & Fit Guide', 'Speak to Concierge'],
         };

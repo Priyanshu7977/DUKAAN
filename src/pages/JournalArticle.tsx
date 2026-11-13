@@ -50,7 +50,7 @@ export const JournalArticle: React.FC = () => {
   };
 
   const shareOnWhatsApp = () => {
-    const text = encodeURIComponent(`${article.title} — Read on DUKAAN: ${currentUrl}`);
+    const text = encodeURIComponent(`${article.title} | Read on DUKAAN: ${currentUrl}`);
     window.open(`https://wa.me/?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -145,7 +145,7 @@ export const JournalArticle: React.FC = () => {
   return (
     <article className="w-full pb-20 bg-[#FAF9F6]">
       <SEOHead
-        title={`${article.title} — DUKAAN`}
+        title={`${article.title} | DUKAAN`}
         description={article.excerpt}
         keywords={article.tags ? article.tags.join(', ') : 'European linen, slow fashion, DUKAAN'}
         canonicalPath={`${basePath}/${article.slug}`}

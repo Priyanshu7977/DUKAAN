@@ -26,7 +26,7 @@ export const Privacy: React.FC = () => {
             <span className="text-[10px] uppercase tracking-widest text-[#A7654A] font-semibold block">
               Designated Data Protection Officer (DPO)
             </span>
-            <h4 className="font-serif text-base text-[#141414]">Priyanshu Bipin — Lead Data Governance</h4>
+            <h4 className="font-serif text-base text-[#141414]">Priyanshu Bipin · Lead Data Governance</h4>
             <p className="text-xs text-[#73706B]">Dukaan Apparel Private Ltd. • Customer Protection Office</p>
           </div>
           <div className="flex flex-col gap-1 text-xs text-[#141414]">

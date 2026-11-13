@@ -31,7 +31,7 @@ export function buildWhatsAppOrderLink(order: OrderNotificationPayload): string 
     .join('\n');
 
   const text = 
-`*DUKAAN — Order Confirmed*
+`*DUKAAN | Order Confirmed*
 Dear ${order.customerName}, your order *#${order.orderNumber}* has been received.
 
 *Garments in Dispatch:*
@@ -39,7 +39,7 @@ ${itemsText}
 
 *Total:* ₹${order.totalAmount.toLocaleString('en-IN')} (${order.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Prepaid'})
 *Courier:* BlueDart / Delhivery Express Air
-*Timeline:* 2 – 3 Business Days to ${order.shippingAddress.city} (${order.shippingAddress.pincode})
+*Timeline:* 2 to 3 Business Days to ${order.shippingAddress.city} (${order.shippingAddress.pincode})
 
 *DUKAAN Care Good Note:*
 Crafted in 100% pure Normandy flax & organic cotton gauze. 7-day complimentary doorstep size exchange included.

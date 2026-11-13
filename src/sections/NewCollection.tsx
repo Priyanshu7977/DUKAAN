@@ -65,7 +65,7 @@ export const NewCollection: React.FC = () => {
                   "We stripped every excess stitch to let the natural tension of the linen define its silhouette."
                 </blockquote>
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[#777765] block mt-1.5">
-                  — Studio Notes, Porto
+                  Studio Notes, Porto
                 </span>
               </div>
 

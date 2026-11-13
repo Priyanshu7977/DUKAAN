@@ -237,7 +237,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       },
       {
         type: 'paragraph',
-        text: 'When every garment adheres to a consistent chromatic scale—Almond White, Clay Sand, Moss Taupe, and Deep Obsidian—dressing becomes frictionless. A relaxed cropped linen overshirt pairs with pleated trousers for an evening gallery opening, or slips over loose shorts for morning espresso.',
+        text: 'When every garment adheres to a consistent chromatic scale (Almond White, Clay Sand, Moss Taupe, and Deep Obsidian), dressing becomes frictionless. A relaxed cropped linen overshirt pairs with pleated trousers for an evening gallery opening, or slips over loose shorts for morning espresso.',
       },
       {
         type: 'paragraph',

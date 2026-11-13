@@ -73,7 +73,7 @@ export const Journal: React.FC = () => {
   return (
     <div className="w-full pb-16 bg-[#FAF9F6]">
       <SEOHead
-        title="Editorial Journal & Blog — DUKAAN | Textile Botany & Slow Tailoring"
+        title="Editorial Journal & Blog | DUKAAN | Textile Botany & Slow Tailoring"
         description="Authoritative monographs on European linen care, double gauze breathability, tropical summer styling, and unstructured tailoring geometry."
         keywords="linen shirts India, European flax clothing, slow fashion blog, linen care guide, minimalist capsule wardrobe, double gauze cotton, tropical summer styling"
         canonicalPath={basePath}

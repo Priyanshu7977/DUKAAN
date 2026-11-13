@@ -250,7 +250,7 @@ export const Admin: React.FC = () => {
     const customerPhone = '917977641125';
     const tracking = order.trackingNumber || 'Pending AWB';
     const message = encodeURIComponent(
-      `*DUKAAN ATELIER — Dispatch Notice*\n\n` +
+      `*DUKAAN ATELIER | Dispatch Notice*\n\n` +
       `Valued Patron,\n` +
       `Your bespoke garment order *Order ${order.id}* has been tailored and dispatched via Blue Dart Express.\n\n` +
       `• *AWB Tracking:* ${tracking}\n` +
@@ -866,7 +866,7 @@ export const Admin: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-[#73706B] px-1 pt-1">
               <span>
-                Showing {(inventoryPage - 1) * INVENTORY_PAGE_SIZE + 1}–{Math.min(inventoryPage * INVENTORY_PAGE_SIZE, filteredProducts.length)} of {filteredProducts.length} designs
+                Showing {(inventoryPage - 1) * INVENTORY_PAGE_SIZE + 1} to {Math.min(inventoryPage * INVENTORY_PAGE_SIZE, filteredProducts.length)} of {filteredProducts.length} designs
               </span>
               <div className="flex items-center gap-2">
                 <button
@@ -929,8 +929,8 @@ export const Admin: React.FC = () => {
                       {u.displayName || 'Patron'}
                     </td>
                     <td className="py-3.5 px-4 text-[#73706B]">
-                      {u.phoneNumber || '—'}<br />
-                      {u.email || '—'}
+                      {u.phoneNumber || '-'}<br />
+                      {u.email || '-'}
                     </td>
                     <td className="py-3.5 px-4">
                       <span className="px-2 py-0.5 bg-[#FAF9F6] border border-[#141414]/10 text-[#141414] text-[10px] font-medium rounded-sm uppercase tracking-wider">

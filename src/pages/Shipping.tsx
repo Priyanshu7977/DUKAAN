@@ -79,19 +79,19 @@ export const Shipping: React.FC = () => {
                 <tr className="hover:bg-[#FAF9F6] transition-colors">
                   <td className="p-3.5 font-medium">Metro Cities (Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Kolkata, Pune)</td>
                   <td className="p-3.5 text-[#73706B]">BlueDart / Delhivery Express</td>
-                  <td className="p-3.5 tabular-nums font-medium">2 – 3 working days</td>
+                  <td className="p-3.5 tabular-nums font-medium">2 to 3 working days</td>
                   <td className="p-3.5 font-medium text-emerald-700">FREE on ₹1,999+ (or ₹150)</td>
                 </tr>
                 <tr className="hover:bg-[#FAF9F6] transition-colors">
                   <td className="p-3.5 font-medium">Tier 2 & Tier 3 Cities</td>
                   <td className="p-3.5 text-[#73706B]">BlueDart / DTDC Air / Delhivery</td>
-                  <td className="p-3.5 tabular-nums font-medium">3 – 5 working days</td>
+                  <td className="p-3.5 tabular-nums font-medium">3 to 5 working days</td>
                   <td className="p-3.5 font-medium text-emerald-700">FREE on ₹1,999+ (or ₹150)</td>
                 </tr>
                 <tr className="hover:bg-[#FAF9F6] transition-colors">
                   <td className="p-3.5 font-medium">North East, Jammu & Kashmir, Remote Areas</td>
                   <td className="p-3.5 text-[#73706B]">India Post Speed Post / Delhivery</td>
-                  <td className="p-3.5 tabular-nums font-medium">5 – 7 working days</td>
+                  <td className="p-3.5 tabular-nums font-medium">5 to 7 working days</td>
                   <td className="p-3.5 font-medium text-emerald-700">FREE on ₹1,999+ (or ₹150)</td>
                 </tr>
               </tbody>

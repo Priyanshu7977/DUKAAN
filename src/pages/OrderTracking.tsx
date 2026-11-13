@@ -116,7 +116,7 @@ export const OrderTracking: React.FC = () => {
       isCurrent: activeOrder?.status === 'In Transit',
     },
     {
-      title: 'In Transit — Destination Hub',
+      title: 'In Transit · Destination Hub',
       description: 'Package routed through regional express logistics terminal.',
       date: 'In Transit',
       isCompleted: activeOrder?.status === 'Delivered',
@@ -226,7 +226,7 @@ export const OrderTracking: React.FC = () => {
                     Estimated Delivery
                   </span>
                   <span className="font-serif text-lg font-semibold text-emerald-800">
-                    {activeOrder.estimatedDelivery || 'Within 2 – 4 Days'}
+                    {activeOrder.estimatedDelivery || 'Within 2 to 4 Days'}
                   </span>
                 </div>
               </div>

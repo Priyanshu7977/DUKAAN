@@ -165,7 +165,7 @@ export const CollectionDetail: React.FC = () => {
           </div>
           <div className="flex items-center gap-4 text-xs text-[#73706B]">
             <span>
-              Showing {filteredAndSortedProducts.length > 0 ? startIndex + 1 : 0}–{endIndex} of {filteredAndSortedProducts.length} pieces
+              Showing {filteredAndSortedProducts.length > 0 ? startIndex + 1 : 0} to {endIndex} of {filteredAndSortedProducts.length} pieces
             </span>
             <span className="hidden sm:inline text-[#141414]/20">•</span>
             <span className="hidden sm:inline text-[10px] uppercase tracking-wider text-[#141414] font-medium bg-[#ECE7DD] px-2 py-0.5 rounded-sm">
@@ -211,7 +211,7 @@ export const CollectionDetail: React.FC = () => {
               <option value="featured">Featured Curations</option>
               <option value="price-asc">Price: Low to High</option>
               <option value="price-desc">Price: High to Low</option>
-              <option value="name-asc">Alphabetical (A–Z)</option>
+              <option value="name-asc">Alphabetical (A to Z)</option>
             </select>
           </div>
         </div>

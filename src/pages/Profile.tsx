@@ -481,7 +481,7 @@ export const Profile: React.FC = () => {
                     {addr.street}
                     {addr.apartment && `, ${addr.apartment}`}
                     <br />
-                    {addr.city}, {addr.state} — {addr.pincode}
+                    {addr.city}, {addr.state}, {addr.pincode}
                   </p>
                   <span className="text-xs text-[#141414] font-medium block">Phone: {addr.phone}</span>
 
