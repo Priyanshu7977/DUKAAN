@@ -546,6 +546,8 @@ export const LoginModal: React.FC = () => {
                 </span>
               </div>
 
+              <div id="recaptcha-container" />
+
               <button
                 type="submit"
                 disabled={isLoading || phoneNumber.length < 10}

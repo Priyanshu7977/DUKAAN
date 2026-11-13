@@ -105,56 +105,51 @@ export const resetPassword = async (email: string): Promise<AuthResponse> => {
 };
 
 let activeRecaptcha: RecaptchaVerifier | null = null;
-let currentContainerId: string | null = null;
-let containerCounter = 0;
 
-export const clearRecaptcha = (_containerId?: string) => {
+export const clearRecaptcha = () => {
   if (typeof window === 'undefined') return;
   try {
     if (activeRecaptcha) {
-      try {
-        activeRecaptcha.clear();
-      } catch {}
-      activeRecaptcha = null;
+      activeRecaptcha.render().then((widgetId) => {
+        if (typeof widgetId === 'number' && (window as any).grecaptcha?.reset) {
+          (window as any).grecaptcha.reset(widgetId);
+        }
+      }).catch(() => {});
     }
-    if (currentContainerId) {
-      const el = document.getElementById(currentContainerId);
-      if (el && el.parentNode) {
-        el.parentNode.removeChild(el);
-      }
-      currentContainerId = null;
-    }
-    const legacy = document.getElementById('recaptcha-container');
-    if (legacy) {
-      legacy.innerHTML = '';
-    }
-    const badges = document.querySelectorAll('.grecaptcha-badge');
-    badges.forEach((b) => b.remove());
   } catch {}
 };
 
-export const setupRecaptcha = (_containerId?: string): RecaptchaVerifier | null => {
+export const setupRecaptcha = (containerId = 'recaptcha-container'): RecaptchaVerifier | null => {
   if (!isFirebaseConfigured || typeof window === 'undefined') return null;
+
   try {
-    clearRecaptcha();
+    let container = document.getElementById(containerId);
+    if (!container) {
+      container = document.createElement('div');
+      container.id = containerId;
+      container.style.position = 'fixed';
+      container.style.bottom = '0';
+      container.style.right = '0';
+      container.style.width = '0';
+      container.style.height = '0';
+      container.style.opacity = '0';
+      container.style.pointerEvents = 'none';
+      container.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(container);
+    }
 
-    containerCounter += 1;
-    const dynamicId = `recaptcha-container-${Date.now()}-${containerCounter}`;
-    const dynamicDiv = document.createElement('div');
-    dynamicDiv.id = dynamicId;
-    dynamicDiv.setAttribute('aria-hidden', 'true');
-    dynamicDiv.style.position = 'absolute';
-    dynamicDiv.style.left = '-9999px';
-    dynamicDiv.style.top = '-9999px';
-    dynamicDiv.style.width = '1px';
-    dynamicDiv.style.height = '1px';
-    dynamicDiv.style.opacity = '0';
-    dynamicDiv.style.pointerEvents = 'none';
-    document.body.appendChild(dynamicDiv);
+    if (activeRecaptcha) {
+      try {
+        activeRecaptcha.render().then((widgetId) => {
+          if (typeof widgetId === 'number' && (window as any).grecaptcha?.reset) {
+            (window as any).grecaptcha.reset(widgetId);
+          }
+        }).catch(() => {});
+        return activeRecaptcha;
+      } catch {}
+    }
 
-    currentContainerId = dynamicId;
-
-    activeRecaptcha = new RecaptchaVerifier(auth, dynamicDiv, {
+    activeRecaptcha = new RecaptchaVerifier(auth, containerId, {
       size: 'invisible',
       callback: () => {},
       'expired-callback': () => {
@@ -163,9 +158,31 @@ export const setupRecaptcha = (_containerId?: string): RecaptchaVerifier | null 
     });
 
     return activeRecaptcha;
-  } catch {
-    clearRecaptcha();
-    return null;
+  } catch (err: any) {
+    if (activeRecaptcha) {
+      return activeRecaptcha;
+    }
+    try {
+      const dynamicId = `recaptcha-container-${Date.now()}`;
+      const dynamicDiv = document.createElement('div');
+      dynamicDiv.id = dynamicId;
+      dynamicDiv.style.position = 'fixed';
+      dynamicDiv.style.bottom = '0';
+      dynamicDiv.style.right = '0';
+      dynamicDiv.style.width = '0';
+      dynamicDiv.style.height = '0';
+      dynamicDiv.style.opacity = '0';
+      dynamicDiv.style.pointerEvents = 'none';
+      document.body.appendChild(dynamicDiv);
+
+      activeRecaptcha = new RecaptchaVerifier(auth, dynamicId, {
+        size: 'invisible',
+        callback: () => {},
+      });
+      return activeRecaptcha;
+    } catch {
+      return null;
+    }
   }
 };
 
@@ -190,19 +207,19 @@ export const sendPhoneOtp = async (
     if (err.message === 'timeout') {
       message = 'SMS request timed out. Please check connection and try again.';
     } else if (err.code === 'auth/operation-not-allowed') {
-      message = 'Phone provider is not enabled in Firebase Console.';
+      message = 'Phone provider is not enabled in Firebase Console. Please verify Phone is enabled under Authentication > Sign-in method.';
     } else if (err.code === 'auth/unauthorized-domain') {
-      message = 'Domain not authorized. Please add dukaan-j5l5.vercel.app to Authorized Domains in Firebase Console.';
+      message = 'Domain not authorized. Please add dukaan-j5l5.vercel.app to Authorized Domains in Firebase Console > Authentication > Settings.';
     } else if (err.code === 'auth/invalid-phone-number') {
       message = 'Invalid phone number. Please enter a valid Indian number (+91).';
     } else if (err.code === 'auth/quota-exceeded') {
-      message = 'Daily SMS quota reached for this project. Please contact concierge or use Google login.';
+      message = 'Daily SMS quota reached (Spark plan: 10 SMS/day). Upgrade to Blaze or sign in with Google / Email.';
     } else if (err.code === 'auth/captcha-check-failed') {
-      message = 'Security verification failed. Please try again.';
+      message = 'Security check was not completed. Please tap Get Verification Code again.';
     } else if (err.code === 'auth/too-many-requests') {
       message = 'Too many requests. Please wait a few moments before trying again.';
     } else if (err.message) {
-      if (err.message.includes('reCAPTCHA has already been rendered')) {
+      if (err.message.includes('already been rendered') || err.message.includes('reCAPTCHA has already been rendered')) {
         message = 'Security check refreshed. Please tap Get Verification Code again.';
       } else {
         message = err.message;
