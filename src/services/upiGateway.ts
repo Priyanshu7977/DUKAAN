@@ -35,7 +35,6 @@ const DEFAULT_VPA = '7977641125@ybl';
 const DEFAULT_MERCHANT = 'DUKAAN';
 const GATEWAY_BASE_URL = (import.meta.env.VITE_UPI_GATEWAY_URL || '').replace(/\/+$/, '');
 const GATEWAY_API_KEY = import.meta.env.VITE_UPI_GATEWAY_API_KEY || '';
-const GATEWAY_API_SECRET = import.meta.env.VITE_UPI_GATEWAY_API_SECRET || '';
 
 export class UPIGatewayService {
   public static buildUPIIntentUri(params: {
@@ -103,14 +102,13 @@ export class UPIGatewayService {
     const merchantName = params.merchantName || DEFAULT_MERCHANT;
     const clientOrderId = params.clientOrderId;
 
-    if (GATEWAY_BASE_URL && GATEWAY_API_KEY && GATEWAY_API_SECRET) {
+    if (GATEWAY_BASE_URL && GATEWAY_API_KEY) {
       try {
         const response = await fetch(`${GATEWAY_BASE_URL}/api/v1/orders`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'X-Api-Key': GATEWAY_API_KEY,
-            'X-Api-Secret': GATEWAY_API_SECRET,
           },
           body: JSON.stringify({
             amount: Number(formattedAmount),
@@ -233,12 +231,11 @@ export class UPIGatewayService {
     paid: boolean;
     utr?: string;
   }> {
-    if (GATEWAY_BASE_URL && GATEWAY_API_KEY && GATEWAY_API_SECRET) {
+    if (GATEWAY_BASE_URL && GATEWAY_API_KEY) {
       try {
         const response = await fetch(`${GATEWAY_BASE_URL}/api/v1/orders/${encodeURIComponent(orderId)}`, {
           headers: {
             'X-Api-Key': GATEWAY_API_KEY,
-            'X-Api-Secret': GATEWAY_API_SECRET,
             Accept: 'application/json',
           },
         });

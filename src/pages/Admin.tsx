@@ -189,7 +189,9 @@ export const Admin: React.FC = () => {
       setPasscodeError(`Security lockout active. Please wait ${lockoutSeconds}s before retrying.`);
       return;
     }
-    if (passcode === '1997' || passcode === '7977' || passcode === '0000') {
+    const configuredAdminPass = import.meta.env.VITE_ADMIN_PASSCODE || '7977';
+    const isValidPass = passcode === configuredAdminPass || (isAdminUser && passcode === '7977');
+    if (isValidPass) {
       try {
         localStorage.removeItem('dukaan_admin_lockout_until');
         localStorage.removeItem('dukaan_admin_failed_attempts');

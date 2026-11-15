@@ -1,17 +1,25 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == 'dukaancreate@gmail.com' ||
+        request.auth.token.email == 'priyanshubipin2006@gmail.com' ||
+        request.auth.token.admin == true
+      );
+    }
+
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read, write: if request.auth != null && (request.auth.uid == userId || isAdmin());
     }
     match /orders/{orderId} {
       allow create: if true;
-      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || request.auth.token.email == 'dukaancreate@gmail.com');
-      allow update, delete: if request.auth != null && request.auth.token.email == 'dukaancreate@gmail.com';
+      allow read: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin());
+      allow update, delete: if isAdmin();
     }
     match /inventory_overrides/{productId} {
       allow read: if true;
-      allow write: if true;
+      allow write: if isAdmin();
     }
   }
 }

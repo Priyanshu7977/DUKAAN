@@ -84,10 +84,13 @@ export const useCartStore = create<CartStore>((set, get) => ({
 
     let updatedItems: CartItem[];
     if (existingIndex > -1) {
-      updatedItems = [...items];
-      updatedItems[existingIndex].quantity = Math.min(
-        MAX_ITEM_QUANTITY,
-        updatedItems[existingIndex].quantity + safeQty
+      updatedItems = items.map((item, idx) =>
+        idx === existingIndex
+          ? {
+              ...item,
+              quantity: Math.min(MAX_ITEM_QUANTITY, item.quantity + safeQty),
+            }
+          : item
       );
     } else {
       updatedItems = [
