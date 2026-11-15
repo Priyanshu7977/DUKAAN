@@ -1,6 +1,10 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'dukaan_production_secret_key_change_in_env_9921!';
+if (process.env.NODE_ENV === 'production' && !process.env.JWT_SECRET) {
+  console.error('[SECURITY CRITICAL] JWT_SECRET must be configured via environment variables in production.');
+}
+
+const JWT_SECRET = process.env.JWT_SECRET || 'dukaan_dev_jwt_secret_token_local_only';
 
 function requireAuth(req, res, next) {
   const authHeader = req.headers.authorization;

@@ -1,12 +1,22 @@
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddress }) {
   const itemsList = (items || []).map((it) => `
     <tr>
       <td style="padding: 14px 0; border-bottom: 1px solid #ECE7DD; font-size: 14px; color: #141414;">
-        <strong>${it.name || 'Garment'}</strong><br>
-        <span style="font-size: 11px; color: #73706B; text-transform: uppercase;">Shade: ${it.color || 'Standard'} • Size: ${it.size || 'M'}</span>
+        <strong>${escapeHtml(it.name || 'Garment')}</strong><br>
+        <span style="font-size: 11px; color: #73706B; text-transform: uppercase;">Shade: ${escapeHtml(it.color || 'Standard')} • Size: ${escapeHtml(it.size || 'M')}</span>
       </td>
       <td style="padding: 14px 0; border-bottom: 1px solid #ECE7DD; text-align: center; font-size: 13px; color: #141414;">
-        ${it.quantity || 1}
+        ${parseInt(it.quantity, 10) || 1}
       </td>
       <td style="padding: 14px 0; border-bottom: 1px solid #ECE7DD; text-align: right; font-size: 14px; font-weight: 600; color: #141414;">
         ₹${((it.price || 0) * (it.quantity || 1)).toLocaleString('en-IN')}
@@ -36,7 +46,7 @@ function buildOrderConfirmationEmailHtml({ order, customer, items, shippingAddre
     <tr>
       <td style="padding: 32px;">
         <span style="display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #A7654A; font-weight: 600; margin-bottom: 8px;">Order Confirmed • #${order.orderNumber}</span>
-        <h2 style="margin: 0 0 16px 0; font-family: 'Times New Roman', serif; font-size: 24px; color: #141414; font-weight: normal;">Your pieces are being prepared, ${customer.fullName || 'Patron'}.</h2>
+        <h2 style="margin: 0 0 16px 0; font-family: 'Times New Roman', serif; font-size: 24px; color: #141414; font-weight: normal;">Your pieces are being prepared, ${escapeHtml(customer.fullName || 'Patron')}.</h2>
 
         <p style="font-size: 13px; line-height: 1.7; color: #55524E; margin: 0 0 24px 0;">
           We have received your order and our tailors have begun hand-checking, pressing, and packaging your garments in natural protective kraft dust bags at our Mumbai Studio.

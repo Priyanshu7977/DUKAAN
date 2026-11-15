@@ -195,9 +195,11 @@ app.post('/api/v1/orders/:orderId/utr', (req, res) => {
 app.post('/api/v1/webhooks/upi', (req, res) => {
   const secret = process.env.UPI_WEBHOOK_SECRET;
   if (secret) {
-    const signature = req.headers['x-signature'];
+    const signature = String(req.headers['x-signature'] || '');
     const expected = crypto.createHmac('sha256', secret).update(JSON.stringify(req.body)).digest('hex');
-    if (!signature || signature !== expected) {
+    const sigBuffer = Buffer.from(signature, 'utf8');
+    const expBuffer = Buffer.from(expected, 'utf8');
+    if (sigBuffer.length !== expBuffer.length || !crypto.timingSafeEqual(sigBuffer, expBuffer)) {
       return res.status(401).json({ success: false, message: 'Invalid webhook signature' });
     }
   }

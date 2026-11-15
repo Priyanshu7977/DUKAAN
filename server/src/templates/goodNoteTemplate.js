@@ -1,3 +1,13 @@
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 function buildGoodNoteHtml(order) {
   const {
     orderNumber = 'DUK-IN-000000',
@@ -28,13 +38,13 @@ function buildGoodNoteHtml(order) {
   const itemsHtml = items.map((it, idx) => `
     <tr style="border-bottom: 1px solid #ECE7DD;">
       <td style="padding: 16px 8px; font-family: 'Times New Roman', serif; font-size: 15px; color: #141414;">
-        <span style="display: block; font-weight: 600; letter-spacing: 0.02em;">${it.name || 'Artisanal Piece'}</span>
+        <span style="display: block; font-weight: 600; letter-spacing: 0.02em;">${escapeHtml(it.name || 'Artisanal Piece')}</span>
         <span style="display: block; font-size: 11px; text-transform: uppercase; color: #A7654A; letter-spacing: 0.15em; margin-top: 4px;">
-          Shade: ${it.color || 'Standard'} • Size: ${it.size || 'M'}
+          Shade: ${escapeHtml(it.color || 'Standard')} • Size: ${escapeHtml(it.size || 'M')}
         </span>
       </td>
       <td style="padding: 16px 8px; text-align: center; font-size: 13px; color: #141414; font-variant-numeric: tabular-nums;">
-        ${it.quantity || 1}
+        ${parseInt(it.quantity, 10) || 1}
       </td>
       <td style="padding: 16px 8px; text-align: right; font-size: 14px; font-weight: 600; color: #141414; font-variant-numeric: tabular-nums;">
         ₹${((it.price || 0) * (it.quantity || 1)).toLocaleString('en-IN')}
@@ -177,8 +187,8 @@ function buildGoodNoteHtml(order) {
       </div>
       <div style="text-align: right;">
         <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #73706B;">Order Coordinate</div>
-        <div style="font-family: monospace; font-size: 16px; font-weight: bold; color: #141414; margin-top: 2px;">#${orderNumber}</div>
-        <div style="font-size: 11px; color: #73706B; margin-top: 2px;">${dateStr}</div>
+        <div style="font-family: monospace; font-size: 16px; font-weight: bold; color: #141414; margin-top: 2px;">#${escapeHtml(orderNumber)}</div>
+        <div style="font-size: 11px; color: #73706B; margin-top: 2px;">${escapeHtml(dateStr)}</div>
       </div>
     </div>
 
@@ -186,7 +196,7 @@ function buildGoodNoteHtml(order) {
     <div class="note-box">
       <h3 class="note-heading">A Personal Note From The DUKAAN Desk</h3>
       <p class="note-text">
-        Dear <strong>${customerName}</strong>,<br><br>
+        Dear <strong>${escapeHtml(customerName)}</strong>,<br><br>
         Thank you for welcoming DUKAAN into your wardrobe. Each piece in this dispatch has been individually inspected, hand-steamed, and wrapped in natural kraft paper by our tailors in Mumbai.
         <br><br>
         We work strictly with pure Normandy flax linen, airy double-gauze cotton, and raw textural weaves. As you wear these garments, the natural plant fibres will soften and mold to your movement, developing unique personal character with every gentle wash.

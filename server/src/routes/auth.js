@@ -47,7 +47,6 @@ router.post('/register', authLimiter, async (req, res) => {
       message: 'Account created successfully. Please verify your email.',
       token,
       user,
-      verificationToken,
     });
   } catch (err) {
     if (err.code === '23505') {
@@ -66,11 +65,11 @@ router.post('/login', authLimiter, async (req, res) => {
   }
 
   try {
-    const isEmail = emailOrPhone.includes('@');
-    const queryField = isEmail ? 'email' : 'phone';
-    const cleanIdentifier = isEmail ? emailOrPhone.trim().toLowerCase() : emailOrPhone.trim();
-
-    const userRes = await db.query(`SELECT * FROM users WHERE ${queryField} = $1`, [cleanIdentifier]);
+    const cleanIdentifier = emailOrPhone.trim().toLowerCase();
+    const userRes = await db.query(
+      'SELECT * FROM users WHERE email = $1 OR phone = $2 LIMIT 1',
+      [cleanIdentifier, emailOrPhone.trim()]
+    );
     if (userRes.rows.length === 0) {
       return res.status(401).json({ status: 'error', message: 'Invalid credentials. User not found.' });
     }
@@ -160,7 +159,6 @@ router.post('/forgot-password', authLimiter, async (req, res) => {
     res.json({
       status: 'success',
       message: 'Password reset link dispatched to your email address.',
-      resetToken,
     });
   } catch (err) {
     console.error('[Forgot Password Error]', err);
