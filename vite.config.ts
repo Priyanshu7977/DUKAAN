@@ -13,6 +13,11 @@ export default defineConfig({
     port: 3000,
     open: false,
   },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext',
+    },
+  },
   build: {
     target: 'esnext',
     chunkSizeWarningLimit: 800,
