@@ -29,7 +29,7 @@ export const analytics = {
         else (window as any).fbq('trackCustom', eventName, payload);
       }
 
-      if (process.env.NODE_ENV !== 'production') {
+      if (import.meta.env.DEV) {
         console.info(`[Analytics Event: ${eventName}]`, payload || {});
       }
     } catch (e) {

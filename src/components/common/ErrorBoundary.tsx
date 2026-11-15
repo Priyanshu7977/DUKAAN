@@ -55,6 +55,17 @@ export class ErrorBoundary extends Component<Props, State> {
               We encountered an unexpected display anomaly. Our automated systems have logged this issue and our team has been notified.
             </p>
 
+            {this.state.error && (
+              <div className="p-3 bg-red-50/90 border border-red-200 rounded-lg text-left text-xs font-mono text-red-800 overflow-auto max-h-48 whitespace-pre-wrap select-text">
+                <div className="font-semibold text-red-900">{this.state.error.name}: {this.state.error.message}</div>
+                {this.state.error.stack && (
+                  <div className="mt-1 text-[10px] text-red-700/80 leading-relaxed font-mono">
+                    {this.state.error.stack.split('\n').slice(0, 5).join('\n')}
+                  </div>
+                )}
+              </div>
+            )}
+
             <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
               <button
                 onClick={this.handleReload}

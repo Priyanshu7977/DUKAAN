@@ -23,6 +23,7 @@ export const CartDrawer: React.FC = () => {
   } = useCartStore();
 
   const { showToast, openSizeGuide } = useUIStore();
+  const getEffectiveSizes = useInventoryStore((state) => state.getEffectiveSizes);
 
   const [editingSizeItem, setEditingSizeItem] = useState<CartItem | null>(null);
   const [tempSelectedSize, setTempSelectedSize] = useState<string>('');
@@ -32,8 +33,6 @@ export const CartDrawer: React.FC = () => {
   const progressPercent = Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100));
 
   if (!isOpen) return null;
-
-  const getEffectiveSizes = useInventoryStore((state) => state.getEffectiveSizes);
 
   const activeMasterProduct = editingSizeItem
     ? PRODUCTS.find((p) => p.id === editingSizeItem.product.id) || editingSizeItem.product
